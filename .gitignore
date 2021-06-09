@@ -102,3 +102,11 @@ dist
 
 # TernJS port file
 .tern-port
+
+# MacOS Files && Eleventy temps
+/dist/
+/src/compiled-assets/
+.DS_Store
+Thumbs.db
+yarn.lock
+package-lock.json
