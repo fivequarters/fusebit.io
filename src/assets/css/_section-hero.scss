@@ -1,0 +1,313 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--neutral);
+    overflow-y: visible;
+    overflow-x: hidden;
+}
+
+.hero__background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero__container {
+    width: 90%;
+    max-width: var(--container);
+    display: flex;
+}
+
+.hero__content {
+    width: 100%;
+    max-width: 540px;
+}
+
+.hero__subtitle {
+    font-weight: 700;
+    @include font-size(18);
+    margin-bottom: 2rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .hero__subtitle--badge {
+        background: var(--yellow);
+        margin-right: 1rem;
+        padding: 0.5rem 0.8rem;
+        color: var(--dark);
+        border-radius: 0.3rem;
+        text-transform: uppercase;
+        @include font-size(14);
+        transition: all 0.2s;
+
+        &:hover {
+            background: var(--orange);
+            color: var(--neutralLight);
+        }
+    }
+
+    span:not(.hero__subtitle--badge) {
+        background: -webkit-linear-gradient(
+            left,
+            var(--yellow) -70%,
+            var(--neutralLight)
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.hero__title {
+    font-family: var(--robotoSlab);
+    @include font-size(60);
+    line-height: 78px;
+    color: var(--neutralLight);
+    margin-bottom: 2rem;
+}
+
+.hero__text {
+    width: 450px;
+    @include font-size(18);
+    line-height: 32px;
+    margin-bottom: 3rem;
+}
+
+.hero__cta {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    background: var(--orange);
+    padding: 1rem 0;
+    border-radius: 2rem;
+    color: var(--neutralLight);
+    z-index: 5;
+    overflow: hidden;
+
+    svg {
+        position: relative;
+        margin-left: 0.8rem;
+        width: 6px;
+        transition: all 1s ease-in-out;
+        path {
+            stroke: white;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -105%;
+        width: 100%;
+        height: 100%;
+        background: var(--yellow);
+        border-radius: 2rem;
+        z-index: 0;
+        transition: all 0.8s cubic-bezier(1, 0, 0.64, 0.72);
+        @include box-shadow(0px, 0px, 30px, transparentize(black, 0.8));
+    }
+
+    &:hover {
+        svg {
+            transform: translateX(1rem) scale(1.5);
+        }
+
+        &::before {
+            left: 68%;
+        }
+    }
+
+    &:active {
+        background: var(--yellow);
+    }
+}
+
+.hero__images {
+    width: 100%;
+    position: relative;
+}
+
+.hero__images--desktop,
+.hero__images--mobile {
+    position: absolute;
+    background-color: var(--neutral);
+    border-radius: 2rem;
+    overflow: hidden;
+    @include box-shadow(0px, 10px, 30px, transparentize(#a1a1c0, 0.8));
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: 0;
+        object-fit: cover;
+        object-position: left center;
+    }
+}
+
+.hero__images--desktop {
+    top: 0%;
+    right: 0%;
+    transform: translate(58%, 0);
+    width: 750px;
+    height: 576px;
+    border: 1rem solid var(--neutralLight);
+}
+
+.hero__images--mobile {
+    top: 30%;
+    right: 0%;
+    transform: translate(-50%, 0);
+    width: 260px;
+    height: 507px;
+    border: 0.8rem solid var(--neutralLight);
+}
+
+@media only screen and (max-width: 1500px) {
+    .hero__background {
+    }
+
+    .hero__images--desktop {
+        transform: translate(45%, 0);
+        width: 450px;
+        height: 498px;
+    }
+
+    .hero__images--mobile {
+        width: 230px;
+        height: 448px;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .hero__container {
+        margin-top: 2rem;
+    }
+
+    .hero__content {
+        max-width: 500px;
+    }
+
+    .hero__subtitle {
+        @include font-size(16);
+        margin-bottom: 1.5rem;
+
+        .hero__subtitle--badge {
+            @include font-size(12);
+        }
+    }
+    .hero__title {
+        @include font-size(52);
+        line-height: 62px;
+        margin-bottom: 1.5rem;
+    }
+    .hero__text {
+        width: 400px;
+        @include font-size(16);
+        line-height: 24px;
+        margin-bottom: 2rem;
+    }
+
+    .hero__images--desktop {
+        transform: translate(38%, 0);
+        width: 380px;
+        height: 420px;
+    }
+    .hero__images--mobile {
+        transform: translate(-70%, -5%);
+        width: 180px;
+        height: 350px;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .hero__background {
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .hero {
+        height: auto;
+    }
+    .hero__container {
+        margin-top: 10rem;
+        margin-bottom: 5rem;
+    }
+
+    .hero__content {
+        max-width: 380px;
+    }
+
+    .hero__subtitle {
+        @include font-size(14);
+
+        .hero__subtitle--badge {
+            @include font-size(10);
+        }
+    }
+    .hero__title {
+        @include font-size(42);
+        line-height: 56px;
+    }
+    .hero__text {
+        width: 350px;
+        @include font-size(14);
+    }
+
+    .hero__images--desktop {
+        transform: translate(35%, 0);
+        width: 320px;
+        height: 350px;
+    }
+    .hero__images--mobile {
+        transform: translate(-70%, -5%);
+        width: 150px;
+        height: 290px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .hero__background {
+        width: 100%;
+        object-position: 30%;
+    }
+
+    .hero__container {
+        flex-wrap: wrap;
+        margin-top: 6rem;
+    }
+
+    .hero__content {
+        max-width: 100%;
+    }
+    .hero__subtitle {
+        margin-bottom: 1rem;
+    }
+    .hero__title {
+        @include font-size(52);
+        line-height: 60px;
+    }
+    .hero__text {
+        @include font-size(16);
+    }
+
+    .hero__images {
+        margin-top: 5rem;
+    }
+    .hero__images--desktop {
+        position: relative;
+    }
+}

@@ -1,2 +1,28 @@
+:root {
+    --container: 1100px;
+
+    --orange: #fb310a;
+    --yellow: #ffa700;
+    --green: #15d6cf;
+    --dark: #03032d;
+    --neutral: #a1a1c0;
+    --neutralLight: #f0f7ff;
+
+    --robotoSlab: 'Roboto Slab', serif;
+    --poppins: 'Poppins', sans-serif;
+}
+
+// Settings
+@import 'mixins';
 @import 'reset';
+
+// Pages
 @import '404';
+
+// Partials
+@import 'header';
+
+// Sections
+@import 'section-hero';
+
+// Components
