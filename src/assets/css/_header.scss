@@ -89,6 +89,7 @@
     position: relative;
     margin-bottom: 0.3rem;
     cursor: pointer;
+    display: none;
     span {
         display: block;
         width: 30px;
@@ -184,5 +185,9 @@
     .header__menu,
     .header__links {
         display: none;
+    }
+
+    .header__menuMobile--btn {
+        display: block;
     }
 }
