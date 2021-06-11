@@ -1,0 +1,73 @@
+header.header 
+    .header__container 
+        .header__logo 
+            a(href="#") 
+                include ../Logo/Logo
+
+        .header__menu 
+            ul 
+                li
+                    a(href="#") Integrations
+                li
+                    a(href="#") Docs
+                li
+                    a(href="#") Blog
+
+        .header__links 
+            ul 
+                li 
+                    a.header__links--signIn(href="#") Login
+                li 
+                    a.header__links--signUp.header__links--active(href="#") Sign up
+
+        .header__menuMobile--btn 
+            span.top 
+            span.center1
+            span.center2
+            span.bottom
+                
+        .header__link--active
+
+    .header__menuMobile
+        h1 Menu Mobile
+
+    script.
+        window.addEventListener('load', ()=> {
+            const header = document.querySelector('.header');
+            const headerLinks = [...header.querySelectorAll('.header a')];
+            const headerSignUp = header.querySelector('.header__links--signUp');
+            const headerIndicator = header.querySelector('.header__link--active');
+            const menuMobileBtn = document.querySelector('.header__menuMobile--btn');
+
+            headerLinks.shift(); // Remuevo el logo
+            headerLinks.forEach((link) => {
+                link.addEventListener('mouseenter', () => {
+                    const { x, width, height } = link.getBoundingClientRect();
+
+                    Object.assign(headerIndicator.style, {
+                        width: `${width}px`,
+                        height: `${height}px`,
+                        left: `${x}px`,
+                    });
+                });
+            });
+
+            function restoreHeaderIndicatorPosition() {
+                const { x, width, height } = headerSignUp.getBoundingClientRect();
+
+                Object.assign(headerIndicator.style, {
+                    opacity: 1,
+                    width: `${width}px`,
+                    height: `${height}px`,
+                    left: `${x}px`,
+                });
+            }
+
+            restoreHeaderIndicatorPosition();
+            header.addEventListener('mouseleave', restoreHeaderIndicatorPosition);
+            window.addEventListener('resize', restoreHeaderIndicatorPosition);
+
+            menuMobileBtn.addEventListener('click', ()=> {
+                header.classList.toggle('header__menuMobile--open');
+            })
+        })

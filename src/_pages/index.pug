@@ -1,5 +1,7 @@
 extends ../_layouts/default.pug
 
+block header
+    include ../_components/Header/Header
+
 block content
-    section
-        h1 Hello World!
+    include ../_components/Hero/Hero
