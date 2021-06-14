@@ -1,0 +1,116 @@
+section.support
+    .support__container
+        .support__content 
+            h2.support__title
+                | Spend 
+                span less time learning 
+                | and more time coding_
+
+            p.support__text Fusebit supports popular SaaS APIs so you don't have to become an integration expert. Our simple, uniform model covers all your integration needs in one place.
+
+        .support__image 
+
+            .badges__wrapper
+                
+                - 
+                    function repeatArr(arr, repeat) {
+                        let newArr = [];
+                        for (let i = 0; i < repeat; i++) {
+                            newArr.push(...arr);
+                        }
+                        return newArr;
+                    }
+
+                    const brandsRow1 = [
+                        {
+                            img: '../assets/images/icons/slack.svg',
+                            name: 'Slack bot'
+                        },
+                        {
+                            img: '../assets/images/icons/slack.svg',
+                            name: 'Salesforce\'s'
+                        },
+                        {
+                            img: '../assets/images/icons/slack.svg',
+                            name: 'Asana synk'
+                        },
+                    ];
+                    const brandsRow2 = [
+                        {
+                            img: '../assets/images/icons/slack.svg',
+                            name: 'Salesforce opportunity synk'
+                        },
+                        {
+                            img: '../assets/images/icons/slack.svg',
+                            name: 'Jira synk'
+                        },
+                    ];
+                    const brandsRow3 = [
+                        {
+                            img: '../assets/images/icons/slack.svg',
+                            name: 'Slack synk'
+                        },
+                        {
+                            img: '../assets/images/icons/slack.svg',
+                            name: 'Quickbooks'
+                        },
+                    ];
+                    const brandsRow4 = [
+                        {
+                            img: '../assets/images/icons/slack.svg',
+                            name: 'Asana synk'
+                        },
+                        {
+                            img: '../assets/images/icons/slack.svg',
+                            name: 'Salesforce opportunity'
+                        },
+                    ];
+                    const brandsRow5 = [
+                        {
+                            img: '../assets/images/icons/slack.svg',
+                            name: 'Jira synk'
+                        },
+                        {
+                            img: '../assets/images/icons/slack.svg',
+                            name: 'Quickbooks'
+                        },
+                    ];
+
+                .badges__row 
+                    each brand in repeatArr(brandsRow1, 3)
+                        span.badges__item 
+                            img(src=brand.img, alt=brand.name)
+                            | #{brand.name}
+                
+                .badges__row 
+                    each brand in repeatArr(brandsRow2, 3)
+                        span.badges__item 
+                            img(src=brand.img, alt=brand.name)
+                            | #{brand.name}
+
+                .badges__row 
+                    each brand in repeatArr(brandsRow3, 3)
+                        span.badges__item 
+                            img(src=brand.img, alt=brand.name)
+                            | #{brand.name}
+
+                .badges__row 
+                    each brand in repeatArr(brandsRow4, 3)
+                        span.badges__item 
+                            img(src=brand.img, alt=brand.name)
+                            | #{brand.name}
+
+                .badges__row 
+                    each brand in repeatArr(brandsRow5, 3)
+                        span.badges__item 
+                            img(src=brand.img, alt=brand.name)
+                            | #{brand.name}
+
+            svg(id="support__image--frame" viewBox="-20 0 640 430" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M633 12H204.5C92.1101 12 1 103.11 1 215.5V215.5C1 327.89 92.11 419 204.5 419H633" stroke="#D7E5FE" stroke-width="2" id="support__image--frame-line")
+                circle(r="8" fill="white" stroke="#D7E5FE" stroke-width="2")
+                    animateMotion(dur="10s" repeatCount="indefinite" path="M527 12H204.5C92.1101 12 1 103.11 1 215.5V215.5C1 327.89 92.1101 419 204.5 419H527")
+                circle(r="10.5" stroke="white" stroke-width="3")
+                    animateMotion(dur="10s" repeatCount="indefinite" path="M527 12H204.5C92.1101 12 1 103.11 1 215.5V215.5C1 327.89 92.1101 419 204.5 419H527")
+
+                
