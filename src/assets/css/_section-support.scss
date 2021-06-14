@@ -1,8 +1,8 @@
 .support {
     position: relative;
     width: 100%;
-    height: 50vh;
-    padding: 8rem 0;
+    min-height: 50vh;
+    padding: 12rem 0 8rem 0;
     display: flex;
     justify-content: center;
     overflow: hidden;
@@ -17,16 +17,20 @@
         justify-content: space-between;
         align-items: center;
         position: relative;
+        margin-left: 3rem;
 
-        &:nth-child(1) {
-            margin-bottom: 10rem;
+        @media only screen and (max-width: 700px) {
+            margin-left: 2rem;
         }
     }
 
     &__content {
         width: 100%;
         max-width: 570px;
-        margin-left: 3rem;
+
+        @media only screen and (max-width: 1200px) {
+            max-width: 450px;
+        }
     }
 
     &__title {
@@ -40,6 +44,12 @@
             font-family: var(--robotoSlab);
             color: var(--orange);
         }
+
+        @media only screen and (max-width: 1200px) {
+            @include font-size(36);
+            line-height: 42px;
+            margin-bottom: 1rem;
+        }
     }
 
     &__text {
@@ -47,14 +57,19 @@
         line-height: 24px;
         color: var(--neutralDark);
         font-weight: 300;
+
+        @media only screen and (max-width: 1200px) {
+            @include font-size(16);
+        }
     }
 
     &__image {
         position: absolute;
         top: 50%;
         right: 0;
-        transform: translate(30%, -50%);
+        transform: translate(20vw, -50%) scale(1.1);
         width: 526px;
+        transition: all 0.2s;
 
         .bubbles {
             &__wrapper {
@@ -131,5 +146,82 @@
             z-index: 0;
             width: 100%;
         }
+
+        @media only screen and (max-width: 1500px) {
+            transform: translate(13vw, -50%) scale(1);
+        }
+
+        @media only screen and (max-width: 1200px) {
+            transform: translate(13vw, -50%) scale(0.9);
+        }
+
+        @media only screen and (max-width: 1000px) {
+            transform: translate(13vw, -50%) scale(0.9);
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        @media only screen and (max-width: 700px) {
+            transform: translate(13vw, -35%) scale(1.4);
+            opacity: 0.04;
+        }
+    }
+
+    &__cards {
+        margin-top: 14rem;
+        display: flex;
+        justify-content: flex-start;
+
+        .card {
+            width: 100%;
+            max-width: 300px;
+
+            &:not(:last-child) {
+                margin-right: 3rem;
+            }
+
+            &__image {
+                display: inline-block;
+                padding: 1rem;
+                margin-bottom: 1.5rem;
+                border-radius: 1rem;
+                background: var(--gray2);
+            }
+
+            &__content {
+                @include font-size(18);
+                line-height: 28px;
+                color: var(--dark);
+
+                strong {
+                    font-weight: 700;
+                }
+
+                @media only screen and (max-width: 1200px) {
+                    @include font-size(16);
+                    line-height: 24px;
+                }
+            }
+
+            @media only screen and (max-width: 700px) {
+                max-width: 100%;
+                &:not(:last-child) {
+                    margin-right: 0rem;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            margin-top: 5rem;
+        }
+
+        @media only screen and (max-width: 700px) {
+            flex-direction: column;
+        }
+    }
+
+    @media only screen and (max-width: 1000px) {
+        padding: 6rem 0 6rem 0;
     }
 }

@@ -1,4 +1,5 @@
 include ./Bubble/Bubble
+include ./Card/Card
 
 section.support
     .support__container
@@ -97,10 +98,26 @@ section.support
                         animateMotion(dur="10s" repeatCount="indefinite" path="M527 12H204.5C92.1101 12 1 103.11 1 215.5V215.5C1 327.89 92.1101 419 204.5 419H527")
 
         .support__wrapper
-            .support__content 
-                h2.support__title
-                    | Spend 
-                    span less time learning 
-                    | and more time coding_
-
-                p.support__text Fusebit supports popular SaaS APIs so you don't have to become an integration expert. Our simple, uniform model covers all your integration needs in one place.
+            .support__cards
+                - 
+                    const cardsData = [
+                        {
+                            img: `../assets/images/support_icon.svg`,
+                            highlight: `Connectors`,
+                            text: `to most popular third-party APIs to help simplify and speed up developers' work.`,
+                        },
+                        {
+                            img: `../assets/images/support_icon.svg`,
+                            highlight: `Ready-made templates`,
+                            text: `for common scenariossuch as bots, task sync and many other things.`,
+                        },
+                        {
+                            img: `../assets/images/support_icon.svg`,
+                            highlight: `Standarized authentications`,
+                            text: `model fully covering OAuth2 and other auth schemes.`,
+                        },
+                    ];
+                
+                +card(cardsData[0])
+                +card(cardsData[1])
+                +card(cardsData[2])
