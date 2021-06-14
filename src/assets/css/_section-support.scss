@@ -10,9 +10,17 @@
     &__container {
         width: 90%;
         max-width: var(--container);
+    }
+
+    &__wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
+
+        &:nth-child(1) {
+            margin-bottom: 10rem;
+        }
     }
 
     &__content {
@@ -45,65 +53,73 @@
         position: absolute;
         top: 50%;
         right: 0;
-        transform: translateY(-50%);
+        transform: translate(30%, -50%);
         width: 526px;
 
-        .badges__wrapper {
-            border-top-left-radius: 20rem;
-            border-bottom-left-radius: 20rem;
-            padding: 1rem 0;
-            overflow: hidden;
-            background: var(--gray1);
-            background: -webkit-linear-gradient(
-                to left,
-                transparent 20%,
-                var(--gray1)
-            );
-            background: linear-gradient(to left, transparent 20%, var(--gray1));
-        }
-
-        @keyframes toLeft {
-            100% {
-                transform: translateX(-104%);
+        .bubbles {
+            &__wrapper {
+                position: relative;
+                border-top-left-radius: 20rem;
+                border-bottom-left-radius: 20rem;
+                padding: 1rem 0;
+                overflow: hidden;
+                background: var(--gray1);
+                background: -webkit-linear-gradient(
+                    to left,
+                    transparent 20%,
+                    var(--gray1)
+                );
+                background: linear-gradient(
+                    to left,
+                    transparent 20%,
+                    var(--gray1)
+                );
+                z-index: 1;
             }
-        }
 
-        .badges__row {
-            display: flex;
-            justify-content: flex-start;
-            transition: all 0.2s;
-
-            @for $i from 1 through 5 {
-                &:nth-child(#{$i}) {
-                    $speed: random(20) + 20s;
-
-                    animation: toLeft $speed linear infinite;
+            @keyframes toLeft {
+                100% {
+                    transform: translateX(-104%);
                 }
             }
 
-            &:not(:last-child) {
-                margin-bottom: 1rem;
-            }
-        }
+            &__row {
+                display: flex;
+                justify-content: flex-start;
+                transition: all 0.2s;
 
-        .badges__item {
-            display: flex;
-            flex: 0 0 auto;
-            justify-content: center;
-            align-items: center;
-            @include font-size(14);
-            margin-right: 1rem;
-            background: var(--gray2);
-            padding: 1rem;
-            border-radius: 2rem;
+                @for $i from 1 through 5 {
+                    &:nth-child(#{$i}) {
+                        $speed: random(20) + 30s;
 
-            &:nth-child(2n + 2) {
-                margin-right: 5rem;
+                        animation: toLeft $speed linear infinite;
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
             }
 
-            img {
-                width: 20px;
-                margin-right: 0.5rem;
+            &__item {
+                display: flex;
+                flex: 0 0 auto;
+                justify-content: center;
+                align-items: center;
+                @include font-size(14);
+                margin-right: 1rem;
+                background: var(--gray2);
+                padding: 1rem;
+                border-radius: 2rem;
+
+                &:nth-child(2n + 2) {
+                    margin-right: 5rem;
+                }
+
+                img {
+                    width: 20px;
+                    margin-right: 0.5rem;
+                }
             }
         }
 
@@ -112,7 +128,7 @@
             top: 50%;
             right: 0;
             transform: translate(1.5%, -50%) scale(1.2);
-            z-index: 5;
+            z-index: 0;
             width: 100%;
         }
     }
