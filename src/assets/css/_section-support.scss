@@ -8,6 +8,7 @@
     overflow: hidden;
 
     &__container {
+        position: relative;
         width: 90%;
         max-width: var(--container);
     }
@@ -168,24 +169,47 @@
     }
 
     &__cards {
-        margin-top: 14rem;
         display: flex;
         justify-content: flex-start;
-
+        width: 100%;
+        margin-top: 14rem;
+        margin-left: 1.8rem;
         .card {
             width: 100%;
             max-width: 300px;
 
             &:not(:last-child) {
-                margin-right: 3rem;
+                margin-right: 2rem;
             }
 
             &__image {
+                position: relative;
                 display: inline-block;
                 padding: 1rem;
                 margin-bottom: 1.5rem;
                 border-radius: 1rem;
                 background: var(--gray2);
+                overflow: hidden;
+
+                @include box-shadow(0px, 0px, 0px, transparentize(#fb310a, 1));
+
+                img {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 20rem;
+                    background: var(--yellow);
+                    transform: translateY(-2.2rem) scale(0.2);
+                    z-index: 0;
+                }
             }
 
             &__content {
@@ -200,6 +224,40 @@
                 @media only screen and (max-width: 1200px) {
                     @include font-size(16);
                     line-height: 24px;
+                }
+            }
+
+            &:hover {
+                .card__image {
+                    animation: cardImageShadowHover 0.5s forwards;
+                    animation-delay: 2.6s;
+
+                    &::before {
+                        animation: cardImageBeforeHover 0.5s forwards;
+                        animation-delay: 2.4s;
+                    }
+                }
+            }
+
+            @keyframes cardImageBeforeHover {
+                to {
+                    transform: translateY(0rem) scale(1.2);
+                    @include box-shadow(
+                        0px,
+                        10px,
+                        20px,
+                        transparentize(yellow, 0)
+                    );
+                }
+            }
+            @keyframes cardImageShadowHover {
+                to {
+                    @include box-shadow(
+                        0px,
+                        5px,
+                        15px,
+                        transparentize(#fb310a, 0.8)
+                    );
                 }
             }
 
@@ -221,7 +279,94 @@
         }
     }
 
+    .pathcito {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        pointer-events: none;
+        z-index: -1;
+        //border: 1px solid red;
+
+        .indicator {
+            position: absolute;
+            top: 0.24rem;
+            left: 0.7rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 1rem;
+            background: var(--yellow);
+            z-index: 11111;
+            transform: translate(0px, 0.4px);
+        }
+
+        svg {
+            width: 100%;
+            circle,
+            path {
+                stroke: var(--gray2);
+            }
+
+            #path__001 {
+                stroke: red;
+                z-index: 99;
+            }
+        }
+
+        $paths: 1
+                'M104 451L104 401.435C104 374.209 80.9143 361.92 64.4571 361.92L55.3143 361.92C33.6016 361.92 16 344.331 16 322.634L16 33',
+            2
+                'M437 451L437 399.463C437 371.153 412.978 362 395.854 362L56.9089 362C34.316 362 16.0008 345.061 16.0008 322.5L16.0008 33.0004',
+            3
+                'M767 451L767 399.463C767 371.153 743.003 362 725.896 362L56.8662 362C34.2964 362 16 345.061 16 322.5L16 33';
+
+        @each $i, $path in $paths {
+            .path__0#{$i} {
+                &--intro,
+                &--outro {
+                    offset-path: path('#{$path}');
+                    top: 0;
+                    left: 0;
+                }
+
+                &--intro {
+                    animation: pathIntro 2.8s reverse ease-in-out;
+                }
+                &--outro {
+                    animation: pathOutro 2s reverse ease-in-out;
+                }
+            }
+        }
+
+        @keyframes pathIntro {
+            0% {
+                offset-distance: 0%;
+            }
+            100% {
+                offset-distance: 100%;
+            }
+        }
+        @keyframes pathOutro {
+            0% {
+                offset-distance: 100%;
+            }
+            100% {
+                offset-distance: 0%;
+            }
+        }
+
+        @media only screen and (max-width: 1200px) {
+            top: 0;
+            width: 72%;
+        }
+    }
+
     @media only screen and (max-width: 1000px) {
         padding: 6rem 0 6rem 0;
     }
+}
+
+.test {
+    width: 100%;
+    height: 120vh;
+    background: var(--neutral);
 }
