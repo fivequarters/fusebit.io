@@ -7,6 +7,9 @@
     --dark: #03032d;
     --neutral: #a1a1c0;
     --neutralLight: #f0f7ff;
+    --neutralDark: #6f6f86;
+    --gray1: #eef6ff;
+    --gray2: #e6f0fe;
 
     --robotoSlab: 'Roboto Slab', serif;
     --poppins: 'Poppins', sans-serif;
@@ -24,5 +27,6 @@
 
 // Sections
 @import 'section-hero';
+@import 'section-support';
 
 // Components
