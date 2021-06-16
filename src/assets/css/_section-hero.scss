@@ -119,9 +119,10 @@
     }
 
     &__title {
-        font-family: var(--robotoSlab);
-        @include font-size(60);
-        line-height: 78px;
+        font-family: var(--sora);
+        font-weight: 700;
+        @include font-size(56);
+        line-height: 110%;
         color: var(--neutralLight);
         margin-bottom: 2rem;
 

@@ -66,14 +66,14 @@
     }
 
     &__title {
-        font-family: var(--robotoSlab);
+        font-family: var(--sora);
         @include font-size(48);
         line-height: 58px;
         color: var(--neutralLight);
         margin-bottom: 1.5rem;
 
         & > span {
-            font-family: var(--robotoSlab);
+            font-family: var(--sora);
             color: var(--orange);
         }
     }

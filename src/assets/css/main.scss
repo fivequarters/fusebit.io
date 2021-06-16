@@ -1,6 +1,7 @@
 :root {
     --container: 1100px;
 
+    // Colors
     --orange: #fb310a;
     --yellow: #ffa700;
     --green: #15d6cf;
@@ -12,8 +13,10 @@
     --gray1: #eef6ff;
     --gray2: #e6f0fe;
 
-    --robotoSlab: 'Roboto Slab', serif;
+    // Fonts
+    --sora: 'Sora', sans-serif;
     --poppins: 'Poppins', sans-serif;
+    --roboto: 'Roboto', serif;
 }
 
 ::selection {
