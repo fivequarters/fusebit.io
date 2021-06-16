@@ -41,7 +41,7 @@ section.features
                             
 
             .features__images
-                img(src="../../assets/images/features__img1.png", alt="")
+                include ./Integrations/Integrations
 
 
         .features__wrapper
@@ -87,9 +87,11 @@ section.features
                 img(src="../../assets/images/features__img1.png", alt="")
 
     .features__backgrounds 
-        .background1  
-        .background2  
-        .background3  
-        .background4 
-        .background5  
+        - for(let i = 0; i < 5; i++)
+            div(class='background' + i)
 
+    .asset1
+    .asset2
+
+
+section(style="padding: 10rem 0")

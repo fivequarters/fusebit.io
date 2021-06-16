@@ -122,7 +122,6 @@
                 flex: 0 0 auto;
                 justify-content: center;
                 align-items: center;
-                @include font-size(14);
                 margin-right: 1rem;
                 background: var(--gray2);
                 padding: 1rem;
@@ -133,8 +132,8 @@
                 }
 
                 img {
-                    width: 20px;
-                    margin-right: 0.5rem;
+                    height: 20px;
+                    object-fit: contain;
                 }
             }
         }

@@ -4,6 +4,7 @@
     --orange: #fb310a;
     --yellow: #ffa700;
     --green: #15d6cf;
+    --purple: #441b49;
     --dark: #03032d;
     --neutral: #a1a1c0;
     --neutralLight: #f0f7ff;
@@ -13,6 +14,11 @@
 
     --robotoSlab: 'Roboto Slab', serif;
     --poppins: 'Poppins', sans-serif;
+}
+
+::selection {
+    background: var(--yellow);
+    color: white;
 }
 
 // Settings
@@ -31,3 +37,4 @@
 @import 'section-features';
 
 // Components
+@import 'component-integrations';
