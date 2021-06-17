@@ -62,7 +62,6 @@
             .step2__form--row 
                 button(type="submit" id="step2__submit") 
                     span Sign in
-            
 
     script.
         let step1View = document.querySelector('.integrations__step1') 
@@ -72,7 +71,22 @@
         let step2Btns = [...step2View.querySelectorAll('button')];
 
         step1Btns.forEach(btn => {
-            btn.addEventListener('click', ()=> {toggleView([step1View, step2View])})
+            btn.addEventListener('click', (e)=> {
+                e.preventDefault();
+
+                if(e.target.dataset.app == 'jira') {
+                   changeImageSrc('jira-logo.svg');
+
+                } else if(e.target.dataset.app == 'asana') {
+                    changeImageSrc('asana-logo.png');
+
+                } else if(e.target.dataset.app == 'slack') {
+                    changeImageSrc('slack-logo.svg');
+                }
+
+
+                toggleView([step1View, step2View]);
+            })
         })
         step2Btns.forEach(btn => {
             btn.addEventListener('click', (e)=> {
@@ -83,4 +97,12 @@
 
         function toggleView(arrObjs) {
             arrObjs.forEach(obj => obj.classList.toggle('dnone'))
+        }
+        function changeImageSrc(imgName) {
+            let img = document.querySelector('.step2__header--brand img');
+            let imgSrcArr = img.src.split('icons/');
+            imgSrcArr[1] = imgName;
+
+            img.src = imgSrcArr.join('icons/');
+            console.log(img)
         }
