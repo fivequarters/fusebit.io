@@ -84,7 +84,7 @@ video {
     border: 0;
     font-size: 100%;
     font: inherit;
-    font-family: var(--poppins);
+    font-family: var(--sora);
     vertical-align: baseline;
     text-decoration: none;
 }
@@ -123,4 +123,13 @@ q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+::selection {
+    background: var(--yellow);
+    color: white;
+}
+
+.dnone {
+    display: none;
 }

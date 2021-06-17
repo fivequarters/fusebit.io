@@ -9,3 +9,19 @@
     -moz-box-shadow: $x $y $blur $spread $color;
     box-shadow: $x $y $blur $spread $color;
 }
+
+@mixin prefix($property, $value, $onlyValue: false) {
+    //$vendors: 'webkit moz ms o';
+    $vendors: webkit moz ms o;
+    $default: true;
+
+    @if $vendors {
+        @each $vendor in $vendors {
+            #{"-" + $vendor + "-" + $property}: #{$value};
+        }
+    }
+
+    @if $default {
+        #{$property}: #{$value};
+    }
+}
