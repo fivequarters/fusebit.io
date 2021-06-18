@@ -1,0 +1,102 @@
+.integrations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--neutralLight);
+    padding: 8rem 0;
+    overflow: hidden;
+
+    &__container {
+        width: 90%;
+        max-width: var(--container);
+    }
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &--head {
+            margin-bottom: 7rem;
+        }
+    }
+
+    &__title {
+        width: 100%;
+        max-width: 460px;
+        font-family: var(--sora);
+        font-weight: 900;
+        @include font-size(48);
+        line-height: 120%;
+        letter-spacing: -2%;
+        color: var(--dark);
+
+        & > span {
+            font-family: var(--sora);
+            color: var(--orange);
+            display: block;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            @include font-size(36);
+            line-height: 42px;
+        }
+    }
+
+    &__text {
+        width: 100%;
+        max-width: 460px;
+        @include font-size(20);
+        line-height: 24px;
+        color: var(--neutralDark);
+        font-weight: 300;
+
+        @media only screen and (max-width: 1200px) {
+            @include font-size(16);
+        }
+    }
+
+    &__dataList {
+        width: 50%;
+        margin-right: 2rem;
+    }
+
+    &__item {
+        width: calc(100% - 4rem);
+        padding: 1rem 2rem;
+        background: #ffffff;
+        margin-bottom: 3rem;
+        border-radius: 1rem;
+
+        &--title {
+            @include font-size(16);
+            font-weight: 700;
+            line-height: 26px;
+            color: var(--dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &--content {
+            @include font-size(16);
+            font-weight: 300;
+            line-height: 26px;
+            color: var(--neutralDark);
+        }
+    }
+
+    &__imageList {
+        position: relative;
+        width: 50%;
+        margin-left: 2rem;
+        padding: 10rem 0;
+
+        img {
+            width: 100%;
+            transform-origin: left center;
+            transform: scale(2.5);
+        }
+    }
+}

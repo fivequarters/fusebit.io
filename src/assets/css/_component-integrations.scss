@@ -1,4 +1,4 @@
-.integrations {
+.features__integrations {
     position: relative;
     background: #ffffff;
     padding: 3rem 3.5rem;
@@ -16,7 +16,7 @@
 }
 
 @for $i from 1 through 4 {
-    .integrations__step#{$i} {
+    .features__integrations__step#{$i} {
         .step#{$i} {
             &__badge {
                 position: absolute;
@@ -70,7 +70,7 @@
     }
 }
 
-.integrations__step1 {
+.features__integrations__step1 {
     .step1 {
         &__instalable {
             position: relative;
@@ -178,7 +178,7 @@
     }
 }
 
-.integrations__step2 {
+.features__integrations__step2 {
     .step2 {
         &__form {
             &--row {

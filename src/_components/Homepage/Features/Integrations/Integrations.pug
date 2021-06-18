@@ -1,5 +1,5 @@
-.integrations
-    .integrations__step1
+.features__integrations
+    .features__integrations__step1
         span.step1__badge Step 1
 
         .step1__header
@@ -42,7 +42,7 @@
                     button(data-app="asana")
                         span Install   
 
-    .integrations__step2.dnone
+    .features__integrations__step2.dnone
         span.step2__badge Step 2
 
         .step2__header
@@ -64,10 +64,10 @@
                     span Sign in
 
     script.
-        let step1View = document.querySelector('.integrations__step1') 
+        let step1View = document.querySelector('.features__integrations__step1') 
         let step1Btns = [...step1View.querySelectorAll('button')];
 
-        let step2View = document.querySelector('.integrations__step2') 
+        let step2View = document.querySelector('.features__integrations__step2') 
         let step2Btns = [...step2View.querySelectorAll('button')];
 
         step1Btns.forEach(btn => {
