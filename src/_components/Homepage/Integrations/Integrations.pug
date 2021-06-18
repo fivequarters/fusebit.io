@@ -11,29 +11,68 @@ section.integrations
 
         .integrations__wrapper.integrations__wrapper--content
             ul.integrations__dataList
-                li.integrations__item 
+                li.integrations__item.integrations__item-active(data-image="0") 
                     h5.integrations__item--title 
                         | We provide an extensible code-first model 
-                        span >
+                        span 
+                            svg(width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M1.65685 1.17518L7.31371 6.83203L1.65685 12.4889" stroke="#03032D" stroke-width="2")
 
                     p.integrations__item--content 
                         | Based on Node.js and serverless which should make working with Fusebit confortable.
 
-                li.integrations__item 
+                li.integrations__item(data-image="1")
                     h5.integrations__item--title 
                         | The package's powerful ecosystem
-                        span >
+                        span 
+                            svg(width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M1.65685 1.17518L7.31371 6.83203L1.65685 12.4889" stroke="#03032D" stroke-width="2")
 
                     p.integrations__item--content 
                         | Based on Node.js and serverless which should make working with Fusebit confortable.
 
-                li.integrations__item 
+                li.integrations__item(data-image="2") 
                     h5.integrations__item--title 
                         | First-class support for versioning
-                        span >
+                        span 
+                            svg(width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M1.65685 1.17518L7.31371 6.83203L1.65685 12.4889" stroke="#03032D" stroke-width="2")
 
                     p.integrations__item--content 
                         | Based on Node.js and serverless which should make working with Fusebit confortable.
 
             .integrations__imageList
-                img(src="../../assets/images/integrations__img-01.png", alt="")
+                img(src="../../assets/images/integrations__img-00.png", alt="We provide an extensible code-first model")
+                img(src="../../assets/images/integrations__img-01.png", alt="The package's powerful ecosystem" class="dnone")
+                img(src="../../assets/images/integrations__img-02.png", alt="First-class support for versioning" class="dnone")
+
+            
+            script.
+                let integrationsSection = document.querySelector('.integrations');
+                if(integrationsSection) {
+
+                    let desplegables = [...integrationsSection.querySelectorAll('.integrations__item--title')];
+                    let desplegablesImages = [...integrationsSection.querySelectorAll('.integrations__imageList img')]
+
+                    desplegables.forEach(desplegable => {
+
+                        desplegable.addEventListener('click', () => {
+                            if(!desplegable.parentNode.classList.contains('integrations__item-active')) {
+                                let parent = desplegable.parentNode;
+                                let image = desplegablesImages[parent.dataset.image];
+
+                                desplegables.forEach(item => item.parentNode.classList.remove('integrations__item-active'));
+                                desplegablesImages.forEach(image => image.classList.add('dnone'))
+
+                            
+                                image.classList.remove('dnone');
+                                setTimeout(()=> {
+                                    desplegable.parentNode.classList.add('integrations__item-active');
+                                }, 500)
+                            }
+                        })
+
+                    })
+
+                }
+
