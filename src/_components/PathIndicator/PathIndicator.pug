@@ -1,0 +1,75 @@
+.pathcito 
+    div.indicator
+
+    svg(id="path__box" width="769" height="722" viewBox="0 0 769 722" fill="none" xmlns="http://www.w3.org/2000/svg")
+        circle(cx="16" cy="9" r="7.5" stroke="black" stroke-width="2")
+        circle(cx="1" cy="9" r="2" fill="#e6f0fe")
+        circle(cx="30.625" cy="9" r="2" fill="#e6f0fe")
+        path(class="path__00" d="M16 33V721.5" stroke="black" stroke-width="2")
+        path(class="path__01" d="M104 451L104 401.435C104 374.209 80.9143 361.92 64.4571 361.92L55.3143 361.92C33.6016 361.92 16 344.331 16 322.634L16 33" stroke="#FF0000" stroke-width="2")
+        path(class="path__02" d="M437 451L437 399.463C437 371.153 412.978 362 395.854 362L56.9089 362C34.316 362 16.0008 345.061 16.0008 322.5L16.0008 33.0004" stroke="#17BE28" stroke-width="2")
+        path(class="path__03" d="M767 451L767 399.463C767 371.153 743.003 362 725.896 362L56.8662 362C34.2964 362 16 345.061 16 322.5L16 33" stroke="#0057FF" stroke-width="2")
+
+    script.
+        const supportCircle = document.querySelector(".indicator");
+        const supportPath = document.querySelector('.path__00');
+        const supportPathLength = supportPath.getTotalLength();
+        const supportPathParent = document.querySelector('#path__box');
+
+
+        function updateOffset(offset){
+            if(offset < 0) offset = 0;
+
+            supportCircle.style.transform = `translate(0px, ${offset}px)`;
+        }
+        updateOffset(500);
+
+        function pathScroll(){
+            requestAnimationFrame(function(){
+                const rect = supportPathParent.getBoundingClientRect();
+
+                let scrollpercent = window.scrollY - rect.top - 250;
+
+                updateOffset(scrollpercent * .5);
+            });
+        }
+
+        window.addEventListener('scroll', pathScroll);
+
+        /*let supportCards = [...document.querySelectorAll('.support .card')];
+        supportCards.forEach(card => {
+            
+            card.addEventListener('mouseenter', cardHover);
+            card.addEventListener('mouseleave', cardHover);
+
+        })
+
+        function cardHover() {
+            if(supportCircle.classList.contains('indicator--active')) {            
+                supportCircle.classList.add(`${this.dataset.path}--outro`);
+                supportCircle.classList.remove(`${this.dataset.path}--intro`);
+
+                setTimeout(()=> {
+                    supportCircle.classList.remove(`${this.dataset.path}--outro`);
+                    //supportCircle.style.transform = supportCircle.dataset.position;
+                }, 1900)
+
+            } else {
+                supportCircle.setAttribute('data-position', supportCircle.style.transform);
+                supportCircle.style.transform = 'translate(0px, 0.4px)';
+
+                supportCircle.classList.remove(`${this.dataset.path}--outro`);
+                supportCircle.classList.add(`${this.dataset.path}--intro`);
+
+            }
+
+            
+
+            supportCircle.classList.toggle('indicator--active');
+
+        }
+
+        console.log(supportCards);*/
+
+
+        

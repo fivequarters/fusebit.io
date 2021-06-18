@@ -1,0 +1,20 @@
+<svg width="1360" height="960" viewBox="0 0 1360 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1360" height="808">
+<path d="M0 0H1360V607L312.419 803.372C168.528 830.344 32.3554 728.459 17.6263 582.804L0 408.5V0Z" fill="#160A36"/>
+</mask>
+<g mask="url(#mask0)">
+<rect x="353" y="194.654" width="720.759" height="261.857" rx="130.928" transform="rotate(-45 353 194.654)" fill="#A1A1C0" fill-opacity="0.05"/>
+<path d="M0 0H1360V607L312.419 803.372C168.528 830.344 32.3554 728.459 17.6263 582.804L0 408.5V0Z" fill="#160A36"/>
+<rect x="-148" y="957.654" width="720.759" height="261.857" rx="130.928" transform="rotate(-45 -148 957.654)" fill="#A1A1C0" fill-opacity="0.05"/>
+<rect x="-227" y="785.654" width="720.759" height="261.857" rx="130.928" transform="rotate(-45 -227 785.654)" fill="#A1A1C0" fill-opacity="0.05"/>
+<rect x="515" y="825.654" width="835.27" height="261.857" rx="130.928" transform="rotate(-45 515 825.654)" fill="#A1A1C0" fill-opacity="0.05"/>
+<rect x="-148" y="460.741" width="1085.75" height="261.857" rx="130.928" transform="rotate(-45 -148 460.741)" fill="#A1A1C0" fill-opacity="0.05"/>
+<rect x="-138" y="-23.2585" width="1085.75" height="261.857" rx="130.928" transform="rotate(-45 -138 -23.2585)" fill="#A1A1C0" fill-opacity="0.05"/>
+<rect x="-544" y="645.741" width="1085.75" height="261.857" rx="130.928" transform="rotate(-45 -544 645.741)" fill="#A1A1C0" fill-opacity="0.05"/>
+<rect x="420" y="379.741" width="1085.75" height="261.857" rx="130.928" transform="rotate(-45 420 379.741)" fill="#A1A1C0" fill-opacity="0.05"/>
+<rect x="1086" y="168.741" width="1085.75" height="261.857" rx="130.928" transform="rotate(-45 1086 168.741)" fill="#A1A1C0" fill-opacity="0.05"/>
+<rect x="1163" y="622.741" width="1085.75" height="261.857" rx="130.928" transform="rotate(-45 1163 622.741)" fill="#A1A1C0" fill-opacity="0.05"/>
+<rect x="718" y="785.741" width="1085.75" height="261.857" rx="130.928" transform="rotate(-45 718 785.741)" fill="#A1A1C0" fill-opacity="0.05"/>
+<rect x="184" y="838.741" width="1085.75" height="261.857" rx="130.928" transform="rotate(-45 184 838.741)" fill="#A1A1C0" fill-opacity="0.05"/>
+</g>
+</svg>

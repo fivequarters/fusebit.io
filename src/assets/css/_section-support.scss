@@ -1,0 +1,406 @@
+.support {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    padding: 12rem 0 8rem 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    &__container {
+        position: relative;
+        width: 90%;
+        max-width: var(--container);
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        margin-left: 3rem;
+
+        @media only screen and (max-width: 700px) {
+            margin-left: 4rem;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        max-width: 570px;
+
+        @media only screen and (max-width: 1200px) {
+            max-width: 450px;
+        }
+    }
+
+    &__title {
+        font-family: var(--robotoSlab);
+        @include font-size(48);
+        line-height: 58px;
+        color: var(--dark);
+        margin-bottom: 1.5rem;
+
+        & > span {
+            font-family: var(--robotoSlab);
+            color: var(--orange);
+        }
+
+        @media only screen and (max-width: 1200px) {
+            @include font-size(36);
+            line-height: 42px;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__text {
+        @include font-size(18);
+        line-height: 24px;
+        color: var(--neutralDark);
+        font-weight: 300;
+
+        @media only screen and (max-width: 1200px) {
+            @include font-size(16);
+        }
+    }
+
+    &__image {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(20vw, -50%) scale(1.1);
+        width: 526px;
+        transition: all 0.2s;
+
+        .bubbles {
+            &__wrapper {
+                position: relative;
+                border-top-left-radius: 20rem;
+                border-bottom-left-radius: 20rem;
+                padding: 1rem 0;
+                overflow: hidden;
+                background: var(--gray1);
+                background: -webkit-linear-gradient(
+                    to left,
+                    transparent 20%,
+                    var(--gray1)
+                );
+                background: linear-gradient(
+                    to left,
+                    transparent 20%,
+                    var(--gray1)
+                );
+                z-index: 1;
+            }
+
+            @keyframes toLeft {
+                100% {
+                    transform: translateX(-104%);
+                }
+            }
+
+            &__row {
+                display: flex;
+                justify-content: flex-start;
+                transition: all 0.2s;
+
+                @for $i from 1 through 5 {
+                    &:nth-child(#{$i}) {
+                        $speed: random(20) + 30s;
+
+                        animation: toLeft $speed linear infinite;
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
+            }
+
+            &__item {
+                display: flex;
+                flex: 0 0 auto;
+                justify-content: center;
+                align-items: center;
+                @include font-size(14);
+                margin-right: 1rem;
+                background: var(--gray2);
+                padding: 1rem;
+                border-radius: 2rem;
+
+                &:nth-child(2n + 2) {
+                    margin-right: 5rem;
+                }
+
+                img {
+                    width: 20px;
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+
+        #support__image--frame {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(1.5%, -50%) scale(1.2);
+            z-index: 0;
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 1500px) {
+            transform: translate(13vw, -50%) scale(1);
+        }
+
+        @media only screen and (max-width: 1200px) {
+            transform: translate(13vw, -50%) scale(0.9);
+        }
+
+        @media only screen and (max-width: 1000px) {
+            transform: translate(13vw, -50%) scale(0.9);
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        @media only screen and (max-width: 700px) {
+            transform: translate(13vw, -35%) scale(1.4);
+            opacity: 0.04;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 14rem;
+        margin-left: 1.8rem;
+        .card {
+            width: 100%;
+            max-width: 300px;
+
+            &:not(:last-child) {
+                margin-right: 2rem;
+
+                @media only screen and (max-width: 1200px) {
+                    margin-right: 8rem;
+                }
+
+                @media only screen and (max-width: 1000px) {
+                    margin-right: 2rem;
+                }
+            }
+
+            &__image {
+                position: relative;
+                display: inline-block;
+                padding: 1rem;
+                margin-bottom: 1.5rem;
+                border-radius: 1rem;
+                background: var(--gray2);
+                overflow: hidden;
+
+                @include box-shadow(0px, 0px, 0px, transparentize(#fb310a, 1));
+
+                img {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 20rem;
+                    background: var(--yellow);
+                    transform: translateY(-2.2rem) scale(0.2);
+                    z-index: 0;
+                }
+            }
+
+            &__content {
+                @include font-size(18);
+                line-height: 28px;
+                color: var(--dark);
+
+                strong {
+                    font-weight: 700;
+                }
+
+                @media only screen and (max-width: 1200px) {
+                    @include font-size(16);
+                    line-height: 24px;
+                }
+            }
+
+            &:hover {
+                .card__image {
+                    animation: cardImageShadowHover 0.5s forwards;
+                    animation-delay: 2.6s;
+
+                    &::before {
+                        animation: cardImageBeforeHover 0.5s forwards;
+                        animation-delay: 2.4s;
+                    }
+                }
+            }
+
+            @keyframes cardImageBeforeHover {
+                to {
+                    transform: translateY(0rem) scale(1.2);
+                    @include box-shadow(
+                        0px,
+                        10px,
+                        20px,
+                        transparentize(yellow, 0)
+                    );
+                }
+            }
+            @keyframes cardImageShadowHover {
+                to {
+                    @include box-shadow(
+                        0px,
+                        5px,
+                        15px,
+                        transparentize(#fb310a, 0.8)
+                    );
+                }
+            }
+
+            @media only screen and (max-width: 1200px) {
+                max-width: 260px;
+            }
+
+            @media only screen and (max-width: 1000px) {
+                max-width: 300px;
+            }
+
+            @media only screen and (max-width: 700px) {
+                max-width: 100%;
+                &:not(:last-child) {
+                    margin-right: 0rem;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            margin-top: 5rem;
+        }
+
+        @media only screen and (max-width: 700px) {
+            flex-direction: column;
+        }
+    }
+
+    .pathcito {
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        pointer-events: none;
+        z-index: -1;
+        //border: 1px solid red;
+
+        .indicator {
+            position: absolute;
+            top: 0.24rem;
+            left: 0.7rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 1rem;
+            background: var(--yellow);
+            z-index: 11111;
+            transform: translate(0px, 0.4px);
+
+            @media only screen and (max-width: 700px) {
+                top: 0.5rem;
+                left: 1.2rem;
+            }
+        }
+
+        svg {
+            width: 100%;
+            circle,
+            path {
+                stroke: var(--gray2);
+            }
+
+            #path__001 {
+                stroke: red;
+                z-index: 99;
+            }
+
+            @media only screen and (max-width: 700px) {
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        $paths: 1
+                'M104 451L104 401.435C104 374.209 80.9143 361.92 64.4571 361.92L55.3143 361.92C33.6016 361.92 16 344.331 16 322.634L16 33',
+            2
+                'M437 451L437 399.463C437 371.153 412.978 362 395.854 362L56.9089 362C34.316 362 16.0008 345.061 16.0008 322.5L16.0008 33.0004',
+            3
+                'M767 451L767 399.463C767 371.153 743.003 362 725.896 362L56.8662 362C34.2964 362 16 345.061 16 322.5L16 33';
+
+        @each $i, $path in $paths {
+            .path__0#{$i} {
+                @media only screen and (min-width: 1000px) {
+                    &--intro,
+                    &--outro {
+                        offset-path: path('#{$path}');
+                        top: 0;
+                        left: 0;
+                    }
+
+                    &--intro {
+                        animation: pathIntro 2.8s reverse ease-in-out;
+                    }
+                    &--outro {
+                        animation: pathOutro 2s reverse ease-in-out;
+                    }
+                }
+
+                @media only screen and (max-width: 1000px) {
+                    display: none;
+                }
+            }
+        }
+
+        @keyframes pathIntro {
+            0% {
+                offset-distance: 0%;
+            }
+            100% {
+                offset-distance: 100%;
+            }
+        }
+        @keyframes pathOutro {
+            0% {
+                offset-distance: 100%;
+            }
+            100% {
+                offset-distance: 0%;
+            }
+        }
+
+        @media only screen and (max-width: 1200px) {
+            top: -3rem;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            top: 0rem;
+        }
+
+        @media only screen and (max-width: 700px) {
+            top: 1rem;
+            height: 110%;
+        }
+    }
+
+    @media only screen and (max-width: 1000px) {
+        padding: 6rem 0 6rem 0;
+    }
+}

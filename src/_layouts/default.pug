@@ -1,3 +1,4 @@
+block seo_variables
 doctype html
 html(lang='en')
   head
@@ -7,10 +8,11 @@ html(lang='en')
     meta(name='fragment' content='!')
     meta(name='msapplication-TileColor' content='#2b5797')
     meta(name='theme-color' content='#ffffff')
-    meta(property='og:title' content='Fusebit: a powerful integration platform built for developers')
-    meta(property='og:description' content='With Fusebit, quickly integrate your application to other SaaS applications using flexible API building blocks. Fusebit provides connectors to popular APIs and hosts your integrations at scale.')
-    meta(property='twitter:title' content='Fusebit: a powerful integration platform built for developers')
-    meta(property='twitter:description' content='With Fusebit, quickly integrate your application to other SaaS applications using flexible API building blocks. Fusebit provides connectors to popular APIs and hosts your integrations at scale.')
+    title=(title || "Fusebit")
+    meta(property='og:title' content=(og_title || 'Fusebit: a powerful integration platform built for developers'))
+    meta(property='og:description' content=(og_description || 'With Fusebit, quickly integrate your application to other SaaS applications using flexible API building blocks. Fusebit provides connectors to popular APIs and hosts your integrations at scale.'))
+    meta(property='twitter:title' content=(og_title || 'Fusebit: a powerful integration platform built for developers'))
+    meta(property='twitter:description' content=(og_description || 'With Fusebit, quickly integrate your application to other SaaS applications using flexible API building blocks. Fusebit provides connectors to popular APIs and hosts your integrations at scale.'))
     meta(property='og:type' content='website')
     meta(property='og:site_name' content='Fusebit')
     meta(property='og:locale' content='en')
@@ -18,20 +20,27 @@ html(lang='en')
     meta(name='twitter:site' content='@fusebitio')
     meta(name='twitter:creator' content='@fusebitio')
     meta(name='twitter:card' content='summary_large_image')
-    meta(property='og:image' content='https://cdn.fusebit.io/twitter/twitter-orange.png')
-    meta(property='og:image:secure_url' content='https://cdn.fusebit.io/twitter/twitter-orange.png')
-    meta(name='twitter:image:src' content='https://cdn.fusebit.io/twitter/twitter-orange.png')
+    meta(property='og:image' content=(og_image || 'https://cdn.fusebit.io/twitter/twitter-orange.png'))
+    meta(property='og:image:secure_url' content=(og_image || 'https://cdn.fusebit.io/twitter/twitter-orange.png'))
+    meta(name='twitter:image:src' content=(og_image || 'https://cdn.fusebit.io/twitter/twitter-orange.png'))
     meta(name='twitter:image:width' content='1024')
     meta(name='twitter:image:height' content='512')
-    title Fusebit
     link(rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png')
     link(rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png')
     link(rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png')
     link(rel='manifest' href='/site.webmanifest')
     link(rel='mask-icon' href='/safari-pinned-tab.svg' color='#fb310a')
+    link(rel='preconnect' href='https://fonts.gstatic.com')
+    link(href='https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Poppins:wght@300;400;700&display=swap' rel='stylesheet')
     link(rel='stylesheet' href='/assets/main.css?' + cacheBust.mainCss)
   body
+
+    include ../_components/Header/Header
+
     main
       block content
-    script(src='/assets/vendor.js?' + cacheBust.vendorJs)
+
+    //- block footer
+    //- script(src='/assets/vendor.js?' + cacheBust.vendorJs)
     script(src='/assets/main.js?' + cacheBust.mainJs)
+    //- script(src='/assets/app.js)
