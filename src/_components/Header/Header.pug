@@ -31,3 +31,66 @@ header.header
     .header__menuMobile
         h5 Menu Mobile
         
+
+    script.
+        function toggleClasses(target, addClass, removeClass) {
+            target.classList.remove(removeClass);
+            target.classList.add(addClass);
+        }
+
+        window.addEventListener('load', () => {
+            let lastScroll = window.pageYOffset;
+
+            window.addEventListener('scroll', () => {
+                const currentScrollPos = window.pageYOffset;
+                const header = document.querySelector('.header');
+
+                if (currentScrollPos === 0) {
+                    header.classList.remove('header--compact');
+                } else if (lastScroll > currentScrollPos) {
+                    toggleClasses(header, 'header--compact', 'header--hidden');
+                } else {
+                    toggleClasses(header, 'header--hidden', 'header--compact');
+                }
+                lastScroll = currentScrollPos;
+            });
+
+            const header = document.querySelector('.header');
+            const headerLinks = [...header.querySelectorAll('.header a')];
+            const headerSignUp = header.querySelector('.header__links--signUp');
+            const headerIndicator = header.querySelector('.header__link--active');
+            const menuMobileBtn = document.querySelector('.header__menuMobile--btn');
+
+            headerLinks.shift(); // Remuevo el logo
+            headerLinks.forEach((link) => {
+                link.addEventListener('mouseenter', () => {
+                    const { x, width, height } = link.getBoundingClientRect();
+
+                    Object.assign(headerIndicator.style, {
+                        width: `${width}px`,
+                        height: `${height}px`,
+                        left: `${x}px`,
+                    });
+                });
+            });
+
+            function restoreHeaderIndicatorPosition() {
+                const { x, width, height } = headerSignUp.getBoundingClientRect();
+
+                Object.assign(headerIndicator.style, {
+                    opacity: 1,
+                    width: `${width}px`,
+                    height: `${height}px`,
+                    left: `${x}px`,
+                });
+            }
+
+            restoreHeaderIndicatorPosition();
+            header.addEventListener('mouseleave', restoreHeaderIndicatorPosition);
+            window.addEventListener('resize', restoreHeaderIndicatorPosition);
+
+            menuMobileBtn.addEventListener('click', () => {
+                header.classList.toggle('header__menuMobile--open');
+                document.querySelector('html').classList.toggle('hidden');
+            });
+        });
