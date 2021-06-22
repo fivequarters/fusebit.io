@@ -2,17 +2,6 @@ extends ../_layouts/default.pug
 
 block content
     include ../_components/Homepage/Hero/Hero
-    - 
-        const HeroData = {
-            title: 'Build awesome integrations without the hassle',
-            content: 'Friends don’t let friends build integrations alone. Our code-first integration platform and SaaS connectors remove the headaches of dealing with different APIs and eliminate the operational burden when running at scale.',
-            subtitleBadge: 'Try it now',
-            subtitle: 'First-class integration tool',
-            linkText: 'Sign up',
-            link: '#hero-cta'
-        }
-    +Hero(HeroData)
-
     include ../_components/Homepage/Support/Support
     include ../_components/Homepage/Features/Features
     include ../_components/Homepage/Integrate/Integrate
