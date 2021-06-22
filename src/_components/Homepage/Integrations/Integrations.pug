@@ -84,7 +84,6 @@ section.integrations
                     let desplegables = [...integrationsSection.querySelectorAll('.integrations__item--title')];
 
                     desplegables.forEach(desplegable => {
-                        console.log(desplegable.getBoundingClientRect());
 
                         desplegable.addEventListener('click', () => {
                             if(!desplegable.parentNode.parentNode.classList.contains('integrations__item-active')) {
