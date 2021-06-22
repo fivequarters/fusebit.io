@@ -45,7 +45,7 @@ header.header
                 const currentScrollPos = window.pageYOffset;
                 const header = document.querySelector('.header');
 
-                if (currentScrollPos === 0) {
+                if (currentScrollPos < 150) {
                     header.classList.remove('header--compact');
                 } else if (lastScroll > currentScrollPos) {
                     toggleClasses(header, 'header--compact', 'header--hidden');

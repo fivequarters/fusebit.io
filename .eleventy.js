@@ -8,7 +8,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addWatchTarget('./src/compiled-assets/main.css');
     eleventyConfig.addWatchTarget('./src/compiled-assets/main.js');
     eleventyConfig.addWatchTarget('./src/compiled-assets/vendor.js');
-    eleventyConfig.addWatchTarget('./src/compiled-assets/app.js');
 
     // Copy src/compiled-assets to /assets
     eleventyConfig.addPassthroughCopy({ 'src/compiled-assets': 'assets' });
