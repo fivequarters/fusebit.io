@@ -36,7 +36,7 @@ html(lang='en')
     link(rel='stylesheet' href='/assets/main.css?' + cacheBust.mainCss)
   body
 
-    block header
+    include ../_components/Header/Header
 
     main
       block content
@@ -44,4 +44,4 @@ html(lang='en')
     block footer
     //- script(src='/assets/vendor.js?' + cacheBust.vendorJs)
     script(src='/assets/main.js?' + cacheBust.mainJs)
-    //- script(src='/assets/app.js)
+    script(src='/assets/app.js?' + cacheBust.mainJs)
