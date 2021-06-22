@@ -56,26 +56,19 @@ section.integrations
             
             script.
                 let integrationsSection = document.querySelector('.integrations');
-                if(integrationsSection && false) {
+                if(integrationsSection) {
 
                     let desplegables = [...integrationsSection.querySelectorAll('.integrations__item--title')];
-                    let desplegablesImages = [...integrationsSection.querySelectorAll('.integrations__imageList img')]
 
                     desplegables.forEach(desplegable => {
+                        console.log(desplegable)
 
                         desplegable.addEventListener('click', () => {
-                            if(!desplegable.parentNode.classList.contains('integrations__item-active')) {
+                            if(!desplegable.parentNode.parentNode.classList.contains('integrations__item-active')) {
                                 let parent = desplegable.parentNode;
-                                let image = desplegablesImages[parent.dataset.image];
 
-                                desplegables.forEach(item => item.parentNode.classList.remove('integrations__item-active'));
-                                desplegablesImages.forEach(image => image.classList.add('dnone'))
-
-                            
-                                image.classList.remove('dnone');
-                                setTimeout(()=> {
-                                    desplegable.parentNode.classList.add('integrations__item-active');
-                                }, 500)
+                                desplegables.forEach(item => item.parentNode.parentNode.classList.remove('integrations__item-active'));
+                                desplegable.parentNode.parentNode.classList.add('integrations__item-active');
                             }
                         })
 
