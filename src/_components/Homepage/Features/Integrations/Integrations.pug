@@ -65,10 +65,10 @@
 
     script.
         let step1View = document.querySelector('.features__integrations__step1') 
-        let step1Btns = [...step1View.querySelectorAll('button')];
+        let step1Btns = step1View.querySelectorAll('button');
 
         let step2View = document.querySelector('.features__integrations__step2') 
-        let step2Btns = [...step2View.querySelectorAll('button')];
+        let step2Btns = step2View.querySelectorAll('button');
 
         step1Btns.forEach(btn => {
             btn.addEventListener('click', (e)=> {
