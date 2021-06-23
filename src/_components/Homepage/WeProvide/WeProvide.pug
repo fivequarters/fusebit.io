@@ -1,0 +1,78 @@
+mixin checkIcon
+    svg(class="checkicon" width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg")
+        g(clip-path="url(#clip0)")
+            path(d="M6.365 11.514a1.549 1.549 0 01-2.19 0L.782 8.123a1.548 1.548 0 112.19-2.19l2.021 2.022c.153.152.4.152.553 0L11.02 2.48a1.549 1.549 0 012.19 2.189l-6.845 6.845z" fill="#03032D")
+        defs
+            clipPath(id="clip0")
+                path(fill="#fff" transform="translate(.33 .332)" d="M0 0h13.333v13.333H0z")
+
+mixin emptyIcon 
+    svg(class="emptyicon" width="17" height="28" fill="none" xmlns="http://www.w3.org/2000/svg")
+        g(opacity=".2")
+            circle(cx="8.998" cy="27" r="1" transform="rotate(-90 8.998 27)" fill="#D7E5FF")
+            circle(cx="8.998" cy="1" r="1" transform="rotate(-90 8.998 1)" fill="#D7E5FF")
+            circle(cx="8.998" cy="14" r="7" transform="rotate(-90 8.998 14)" stroke="#D7E5FF" stroke-width="2")
+
+
+    
+
+
+section.weprovide 
+    .weprovide__container
+        .weprovide__wrapper.weprovide__wrapper--head
+            h2.weprovide__title 
+                | We provide 
+                span Everything you need_
+                .weprovide__title--icon 
+                    +emptyIcon
+
+            p.weprovide__text 
+                | We know how valuable developers' time is. This is why we worked hard to develop a tool that would be easy to use.
+
+        .weprovide__wrapper.weprovide__wrapper--content
+            ul.weprovide__dataList
+                li.weprovide__item.weprovide__item--active
+                    .weprovide__item--icon 
+                        +checkIcon
+                        +emptyIcon
+
+                    h4.weprovide__item--title SLA 
+                    ul.weprovide__item--itemList 
+                        li Build by Azure veterans 
+                        li SLA
+
+                li.weprovide__item 
+                    .weprovide__item--icon 
+                        +checkIcon
+                        +emptyIcon
+                            
+                    h4.weprovide__item--title Security 
+                    ul.weprovide__item--itemList 
+                        li SOC 2
+                        li GDPR 
+                        li Enterprise WAF
+
+                li.weprovide__item 
+                    .weprovide__item--icon 
+                        +checkIcon
+                        +emptyIcon
+                            
+                    h4.weprovide__item--title Enterprise-ready 
+                    ul.weprovide__item--itemList 
+                        li SSO
+                        li SOC 2 (in progress)
+                        li GDPR 
+
+                li.weprovide__item 
+                    .weprovide__item--icon 
+                        +checkIcon
+                        +emptyIcon
+                        
+                    h4.weprovide__item--title Data privacy 
+                    ul.weprovide__item--itemList 
+                        li On-prem deployment
+                        li Need text 1
+                        li Need text 2
+                     
+        svg(class="weprovide__path" width="907" height="992" fill="none")
+            path(opacity=".2" fill-rule="evenodd" clip-rule="evenodd" d="M0 0v992h2V116.653C6.646 129.399 18.874 138.5 33.227 138.5c17.264 0 31.252 14.008 31.228 31.271L64 495H64v39.5c0 22.644 18.356 41 41 41h802v-2H105c-21.54 0-39-17.461-39-39v-38.999l.455-325.727c.026-18.369-14.858-33.274-33.227-33.274C15.98 136.5 2 122.519 2 105.273V0H0z" fill="#D7E5FF")
