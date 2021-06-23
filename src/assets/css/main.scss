@@ -1,21 +1,5 @@
-:root {
-    --container: 1100px;
-
-    --orange: #fb310a;
-    --yellow: #ffa700;
-    --green: #15d6cf;
-    --dark: #03032d;
-    --neutral: #a1a1c0;
-    --neutralLight: #f0f7ff;
-    --neutralDark: #6f6f86;
-    --gray1: #eef6ff;
-    --gray2: #e6f0fe;
-
-    --robotoSlab: 'Roboto Slab', serif;
-    --poppins: 'Poppins', sans-serif;
-}
-
 // Settings
+@import 'variables';
 @import 'mixins';
 @import 'reset';
 
@@ -28,5 +12,9 @@
 // Sections
 @import 'section-hero';
 @import 'section-support';
+@import 'section-features';
+@import 'section-integrate';
+@import 'section-integrations';
 
 // Components
+@import 'component-integrations';
