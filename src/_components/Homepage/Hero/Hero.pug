@@ -1,25 +1,37 @@
 section.hero
-        img.hero__background(src="../assets/images/home__bg-min.png", alt="home bg")
+    img.hero__background(src="../assets/images/home__bg-min.png", alt="home bg")
 
-        .hero__container  
-            .hero__content 
-                if(subtitle)
-                    p.hero__subtitle
-                        span.hero__subtitle--badge Try it now
-                        span First-class integration tool
+    .hero__container  
+        .hero__content 
+            if(subtitle)
+                p.hero__subtitle
+                    span.hero__subtitle--badge Try it now
+                    span First-class integration tool
+            
+            h1.hero__title Build awesome integrations without the hassle
+            p.hero__text
+                | Friends don’t let friends build integrations alone. Our code-first integration platform and SaaS connectors remove the headaches of dealing with different APIs and eliminate the operational burden when running at scale.
+            a.hero__cta(href="#hero-cta") 
+                | Sign up
+                svg(viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
+
+        .hero__images 
+            .hero__images--desktop 
+                img(src="../assets/images/home__img-1.png", alt="Img 1")
+
+            .hero__images--mobile 
+                img(src="../assets/images/home__img-2.png", alt="Img 2")
+
+
+    script.
+        window.addEventListener('load', () => {
+            const heroSignUp = document.querySelector('.hero__cta');
+            heroSignUp.addEventListener('click', (e) => {
+                e.preventDefault();
                 
-                h1.hero__title Build awesome integrations without the hassle
-                p.hero__text
-                    | Friends don’t let friends build integrations alone. Our code-first integration platform and SaaS connectors remove the headaches of dealing with different APIs and eliminate the operational burden when running at scale.
-                a.hero__cta(href="#hero-cta") 
-                    | Sign up
-                    svg(viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg")
-                        path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-
-
-            .hero__images 
-                .hero__images--desktop 
-                    img(src="../assets/images/home__img-1.png", alt="Img 1")
-
-                .hero__images--mobile 
-                    img(src="../assets/images/home__img-2.png", alt="Img 2")
+                let modal = document.querySelector('#modal__signUp')
+                modal.style.display = 'block';
+            })
+        })

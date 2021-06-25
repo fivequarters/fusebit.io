@@ -13,10 +13,6 @@ mixin emptyIcon
             circle(cx="8.998" cy="1" r="1" transform="rotate(-90 8.998 1)" fill="#D7E5FF")
             circle(cx="8.998" cy="14" r="7" transform="rotate(-90 8.998 14)" stroke="#D7E5FF" stroke-width="2")
 
-
-    
-
-
 section.weprovide 
     .weprovide__container
         .weprovide__wrapper.weprovide__wrapper--head
@@ -30,62 +26,81 @@ section.weprovide
                 | We know how valuable developers' time is. This is why we worked hard to develop a tool that would be easy to use.
 
         .weprovide__wrapper.weprovide__wrapper--content
-            ul.weprovide__dataList
-                li.weprovide__item.weprovide__item--active
-                    .weprovide__item--icon 
-                        +checkIcon
-                        +emptyIcon
+            ul.weprovide__dataList.swiper-container
+                .swiper-wrapper
+                    .swiper-slide
+                        li.weprovide__item.weprovide__item--active
+                            .weprovide__item--icon 
+                                +checkIcon
+                                +emptyIcon
 
-                    h4.weprovide__item--title SLA 
-                    ul.weprovide__item--itemList 
-                        li Build by Azure veterans 
-                        li SLA
+                            h4.weprovide__item--title SLA 
+                            ul.weprovide__item--itemList 
+                                li Build by Azure veterans 
+                                li SLA
+                    .swiper-slide
+                        li.weprovide__item 
+                            .weprovide__item--icon 
+                                +checkIcon
+                                +emptyIcon
+                                    
+                            h4.weprovide__item--title Security 
+                            ul.weprovide__item--itemList 
+                                li SOC 2
+                                li GDPR 
+                                li Enterprise WAF
 
-                li.weprovide__item 
-                    .weprovide__item--icon 
-                        +checkIcon
-                        +emptyIcon
-                            
-                    h4.weprovide__item--title Security 
-                    ul.weprovide__item--itemList 
-                        li SOC 2
-                        li GDPR 
-                        li Enterprise WAF
+                    .swiper-slide
+                        li.weprovide__item 
+                            .weprovide__item--icon 
+                                +checkIcon
+                                +emptyIcon
+                                    
+                            h4.weprovide__item--title Enterprise-ready 
+                            ul.weprovide__item--itemList 
+                                li SSO
+                                li SOC 2 (in progress)
+                                li GDPR 
 
-                li.weprovide__item 
-                    .weprovide__item--icon 
-                        +checkIcon
-                        +emptyIcon
-                            
-                    h4.weprovide__item--title Enterprise-ready 
-                    ul.weprovide__item--itemList 
-                        li SSO
-                        li SOC 2 (in progress)
-                        li GDPR 
+                    .swiper-slide
+                        li.weprovide__item 
+                            .weprovide__item--icon 
+                                +checkIcon
+                                +emptyIcon
+                                
+                            h4.weprovide__item--title Data privacy 
+                            ul.weprovide__item--itemList 
+                                li On-prem deployment
+                                li Need text 1
+                                li Need text 2
 
-                li.weprovide__item 
-                    .weprovide__item--icon 
-                        +checkIcon
-                        +emptyIcon
-                        
-                    h4.weprovide__item--title Data privacy 
-                    ul.weprovide__item--itemList 
-                        li On-prem deployment
-                        li Need text 1
-                        li Need text 2
-                     
+                div.weprovide__pagination.swiper-pagination
+
         svg(class="weprovide__path" width="907" height="992" fill="none")
             path(opacity=".2" fill-rule="evenodd" clip-rule="evenodd" d="M0 0v992h2V116.653C6.646 129.399 18.874 138.5 33.227 138.5c17.264 0 31.252 14.008 31.228 31.271L64 495H64v39.5c0 22.644 18.356 41 41 41h802v-2H105c-21.54 0-39-17.461-39-39v-38.999l.455-325.727c.026-18.369-14.858-33.274-33.227-33.274C15.98 136.5 2 122.519 2 105.273V0H0z" fill="#D7E5FF")
 
     .weprovide__bg 
-        .weprovide__bg--01
-        .weprovide__bg--02
-        .weprovide__bg--03
-        .weprovide__bg--04
-        .weprovide__bg--05
-        .weprovide__bg--06
-        .weprovide__bg--07
-        .weprovide__bg--08
-        .weprovide__bg--09
-        .weprovide__bg--10
-        .weprovide__bg--11
+        - for(let i = 0; i < 12; i++)
+            - let bgNo = ('0' + i).slice(-2);
+            div(class='weprovide__bg--' + bgNo)
+
+    script.
+        const swiper = new Swiper('.swiper-container', {
+            loop: false,
+            slidesPerView: 1,
+            slidesPerColumnFill: 'row',
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            breakpoints: {
+                700: {
+                    slidesPerView: 2,
+                },
+                1000: {
+                    slidesPerView: 3,
+                },
+                1200: {
+                    slidesPerView: 4,
+                },
+            },
+        });

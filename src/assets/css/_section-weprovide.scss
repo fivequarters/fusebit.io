@@ -24,10 +24,11 @@
         z-index: 1;
 
         &--head {
-            margin-bottom: 10rem;
+            margin-bottom: 6.5rem;
         }
 
         &--content {
+            margin-left: 8rem;
         }
     }
 
@@ -70,6 +71,14 @@
             border-radius: 3rem;
             background: var(--dark);
             transform: rotate(-90deg);
+
+            @media only screen and (max-width: 1000px) {
+                left: -4.2rem;
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            margin-left: 1rem;
         }
     }
 
@@ -80,12 +89,17 @@
         line-height: 32px;
         color: var(--neutralDark);
         font-weight: 300;
+
+        @media only screen and (max-width: 1000px) {
+            margin-left: 1rem;
+        }
     }
 
     &__dataList {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        padding: 3.5rem 0;
     }
 
     &__item {
@@ -160,6 +174,16 @@
         }
     }
 
+    &__pagination {
+        .swiper-pagination-bullet {
+            background: #ffffff;
+        }
+
+        @media only screen and (min-width: 1200px) {
+            display: none;
+        }
+    }
+
     &__bg {
         pointer-events: none;
 
@@ -196,9 +220,9 @@
             top: 0;
             left: 100%;
             transform: translate(-100%, 0);
-            width: 50%;
+            width: 100%;
             height: 50%;
-            background: url(./images/colors/bg04.png) center no-repeat;
+            background: url(./images/colors/bg04.png) right center no-repeat;
             z-index: 2;
         }
         &--05 {
@@ -206,10 +230,9 @@
             top: 0;
             left: 100%;
             transform: translate(-100%, 0);
-            width: 50%;
+            width: 100%;
             height: 50%;
-            //border: 1px solid red;
-            background: url(./images/colors/bg05.png) center no-repeat;
+            background: url(./images/colors/bg05.png) right center no-repeat;
             z-index: 2;
         }
         &--06 {
@@ -217,9 +240,8 @@
             top: 0;
             left: 100%;
             transform: translate(-100%, 0);
-            width: 50%;
+            width: 100%;
             height: 50%;
-            //border: 1px solid red;
             background: url(./images/colors/bg06.png) right center no-repeat;
             z-index: 2;
         }
@@ -228,9 +250,8 @@
             top: 0;
             left: 100%;
             transform: translate(-100%, 0);
-            width: 50%;
+            width: 100%;
             height: 70%;
-            //border: 1px solid red;
             background: url(./images/colors/bg07.png) right center no-repeat;
             z-index: 2;
         }
@@ -239,9 +260,8 @@
             top: 0;
             left: 100%;
             transform: translate(-100%, 0);
-            width: 50%;
+            width: 100%;
             height: 70%;
-            //border: 1px solid red;
             background: url(./images/colors/bg08.png) right center no-repeat;
             z-index: 2;
         }
@@ -250,10 +270,9 @@
             top: 0;
             left: 100%;
             transform: translate(-100%, 0);
-            width: 50%;
+            width: 100%;
             height: 70%;
             opacity: 0.6;
-            //border: 1px solid red;
             background: url(./images/colors/bg09.png) right center no-repeat;
             z-index: 2;
         }
@@ -262,22 +281,20 @@
             top: 0;
             left: 100%;
             transform: translate(-100%, 0);
-            width: 50%;
+            width: 100%;
             height: 100%;
-            //border: 1px solid red;
             background: url(./images/colors/bg10.png) right center no-repeat;
             z-index: 2;
         }
-        &--11 {
+        &--00 {
             position: absolute;
             top: 0;
             left: 100%;
             transform: translate(-100%, 0);
-            width: 50%;
+            width: 100%;
             height: 100%;
-            //border: 1px solid red;
             background: url(./images/weprovide__bg.png) right center no-repeat;
-            z-index: 2;
+            z-index: 3;
         }
     }
 }

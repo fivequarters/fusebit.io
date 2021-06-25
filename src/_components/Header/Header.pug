@@ -93,4 +93,11 @@ header.header
                 header.classList.toggle('header__menuMobile--open');
                 document.querySelector('html').classList.toggle('hidden');
             });
+
+            headerSignUp.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                let modal = document.querySelector('#modal__signUp')
+                modal.style.display = 'block';
+            })
         });
