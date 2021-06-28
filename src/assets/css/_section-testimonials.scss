@@ -1,0 +1,133 @@
+.testimonials {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark);
+    background: linear-gradient(to top, var(--neutralLight) 50%, #ffffff 120%);
+    //background: linear-gradient(to top, red -20%, blue 120%);
+
+    &__container {
+        position: relative;
+        width: 90%;
+        max-width: var(--container);
+        padding: 2rem 0;
+    }
+
+    &__wrapper {
+        position: relative;
+        width: 100%;
+
+        &--head {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        &--content {
+        }
+    }
+
+    &__title {
+        position: relative;
+        width: 100%;
+        max-width: 750px;
+        font-family: var(--sora);
+        font-weight: 900;
+        @include font-size(48);
+        line-height: 56px;
+        margin-bottom: 2rem;
+
+        & > span {
+            font-family: var(--sora);
+            color: var(--orange);
+        }
+    }
+
+    &__text {
+        width: 100%;
+        max-width: 720px;
+        @include font-size(20);
+        line-height: 32px;
+        color: var(--neutralDark);
+        font-weight: 300;
+
+        @media only screen and (max-width: 1000px) {
+            color: #ffffff;
+            opacity: 0.6;
+        }
+
+        @media only screen and (max-width: 700px) {
+            @include font-size(16);
+        }
+    }
+
+    &__cards {
+        .swiper-wrapper {
+            padding: 2rem 0;
+
+            &--disable {
+                transform: translate3d(0px, 0, 0) !important;
+            }
+        }
+    }
+
+    &__card {
+        width: calc(100% - 2rem);
+        max-width: 340px;
+        box-sizing: border-box;
+        border-radius: 1rem;
+        background: #ffffff;
+        padding: 2rem 2.5rem;
+        @include box-shadow(0px, 10px, 20px, rgba(0, 0, 0, 0.05));
+
+        &--brand {
+            margin-bottom: 2rem;
+
+            img {
+                width: 100%;
+                max-width: 130px;
+                object-fit: contain;
+            }
+        }
+
+        &--text {
+            font-weight: 300;
+            line-height: 26px;
+            margin-bottom: 2rem;
+
+            strong {
+                font-weight: 700;
+            }
+        }
+
+        &--user {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            &-image {
+                margin-right: 0.8rem;
+                img {
+                    width: 100%;
+                    max-width: 54px;
+                    object-fit: contain;
+                }
+            }
+
+            &-data {
+                h4 {
+                    font-weight: 700;
+                    margin-bottom: 0.5rem;
+                }
+
+                p {
+                    color: var(--neutral);
+                }
+            }
+        }
+    }
+}
