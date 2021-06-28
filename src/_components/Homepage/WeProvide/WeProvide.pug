@@ -121,39 +121,36 @@ section.weprovide
 
         function handleScrolledSwiper() {
             const weProvideItems = document.querySelectorAll('.weprovide__dataList .swiper-slide');
-            weProvideItems.forEach(slide => {
+            weProvideItems.forEach(slide => slide.children[0].classList.remove('weprovide__item--active'));
 
-                let slideIndex = weprovideSwiper.realIndex;
-                let currentSlide = weprovideSwiper.slides[slideIndex]
+            const slideIndex = weprovideSwiper.realIndex;
+            const currentSlide = weprovideSwiper.slides[slideIndex]
 
-                //weprovide__path--mobile-scrolled
-                const pathMobile = document.querySelector('.weprovide__path--mobile');
-                const titleIcon = document.querySelector('.weprovide__title--icon');
+            const pathMobile = document.querySelector('.weprovide__path--mobile');
+            const titleIcon = document.querySelector('.weprovide__title--icon');
 
-                switch(slideIndex) {
-                    case 0:
-                        pathMobile.classList.remove('weprovide__path--mobile--scrolled-1');
-                        pathMobile.classList.remove('weprovide__path--mobile--scrolled-2');
-                        titleIcon.classList.remove('weprovide__title--icon--scrolled');
-                        break;
+            switch(slideIndex) {
+                case 0:
+                    pathMobile.classList.remove(
+                        'weprovide__path--mobile--scrolled-1',
+                        'weprovide__path--mobile--scrolled-2'
+                    );
+                    titleIcon.classList.remove('weprovide__title--icon--scrolled');
+                    break;
 
-                    case 3:
-                        pathMobile.classList.add('weprovide__path--mobile--scrolled-2');
-                        pathMobile.classList.remove('weprovide__path--mobile--scrolled-1');
-                        break;
+                case 3:
+                    pathMobile.classList.add('weprovide__path--mobile--scrolled-2');
+                    pathMobile.classList.remove('weprovide__path--mobile--scrolled-1');
+                    break;
 
-                    default:
-                        pathMobile.classList.add('weprovide__path--mobile--scrolled-1');
-                        pathMobile.classList.remove('weprovide__path--mobile--scrolled-2');
-                        titleIcon.classList.add('weprovide__title--icon--scrolled');
-                        slide.children[0].classList.remove('weprovide__item--active')
-                }
+                default:
+                    pathMobile.classList.add('weprovide__path--mobile--scrolled-1');
+                    pathMobile.classList.remove('weprovide__path--mobile--scrolled-2');
+                    titleIcon.classList.add('weprovide__title--icon--scrolled');
+                    
+            }
 
-                currentSlide.children[0].classList.add('weprovide__item--active');
-
-                
-                
-            })
+            currentSlide.children[0].classList.add('weprovide__item--active');
         }
 
         
