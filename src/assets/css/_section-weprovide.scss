@@ -53,6 +53,7 @@
             top: 0;
             left: 0;
             z-index: 0;
+            transition: all 0.25s;
         }
 
         &--mobile {
@@ -68,6 +69,13 @@
                 display: block;
                 top: -0.3rem;
                 left: 0.3rem;
+
+                &--scrolled-1 {
+                    left: -24rem;
+                }
+                &--scrolled-2 {
+                    left: -48rem;
+                }
             }
         }
     }
@@ -107,6 +115,9 @@
 
             @media only screen and (max-width: 700px) {
                 left: -4rem;
+                &--scrolled {
+                    display: none;
+                }
             }
         }
 
@@ -126,6 +137,7 @@
 
         @media only screen and (max-width: 1000px) {
             color: #ffffff;
+            opacity: 0.6;
         }
 
         @media only screen and (max-width: 700px) {
@@ -269,7 +281,7 @@
 
             @media only screen and (max-width: 1000px) {
                 transform: translate(-85%, 0%);
-                opacity: 0.5;
+                opacity: 0.3;
                 background-size: contain;
             }
         }
@@ -284,7 +296,7 @@
             z-index: 2;
             @media only screen and (max-width: 1000px) {
                 transform: translate(-85%, 0%);
-                opacity: 0.5;
+                opacity: 0.3;
                 background-size: contain;
             }
         }
@@ -299,7 +311,7 @@
             z-index: 2;
             @media only screen and (max-width: 1000px) {
                 transform: translate(-85%, 0%);
-                opacity: 0.5;
+                opacity: 0.3;
                 background-size: contain;
             }
         }
@@ -314,7 +326,7 @@
             z-index: 2;
             @media only screen and (max-width: 1000px) {
                 transform: translate(-85%, 0%);
-                opacity: 0.5;
+                opacity: 0.3;
                 background-size: contain;
             }
         }
@@ -363,6 +375,10 @@
             height: 100%;
             background: url(./images/weprovide__bg.png) right center no-repeat;
             z-index: 3;
+
+            @media only screen and (max-width: 700px) {
+                background-size: contain;
+            }
         }
     }
 }

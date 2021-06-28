@@ -28,7 +28,7 @@ section.weprovide
             h2.weprovide__title 
                 | We provide 
                 span Everything you need_
-                .weprovide__title--icon 
+                .weprovide__title--icon
                     +emptyIcon
 
             p.weprovide__text 
@@ -94,7 +94,7 @@ section.weprovide
             div(class='weprovide__bg--' + bgNo)
 
     script.
-        const swiper = new Swiper('.swiper-container', {
+        const weprovideSwiper = new Swiper('.weprovide__dataList', {
             loop: false,
             slidesPerView: 1,
             slidesPerColumnFill: 'row',
@@ -112,4 +112,51 @@ section.weprovide
                     slidesPerView: 4,
                 },
             },
+            on: {
+                slideChange: () => {
+                    handleScrolledSwiper();
+                }
+            }
         });
+
+        function handleScrolledSwiper() {
+            const weProvideItems = document.querySelectorAll('.weprovide__dataList .swiper-slide');
+            weProvideItems.forEach(slide => {
+
+                let slideIndex = weprovideSwiper.realIndex;
+                let currentSlide = weprovideSwiper.slides[slideIndex]
+
+                //weprovide__path--mobile-scrolled
+                const pathMobile = document.querySelector('.weprovide__path--mobile');
+                const titleIcon = document.querySelector('.weprovide__title--icon');
+
+                switch(slideIndex) {
+                    case 0:
+                        pathMobile.classList.remove('weprovide__path--mobile--scrolled-1');
+                        pathMobile.classList.remove('weprovide__path--mobile--scrolled-2');
+                        titleIcon.classList.remove('weprovide__title--icon--scrolled');
+                        break;
+
+                    case 3:
+                        pathMobile.classList.add('weprovide__path--mobile--scrolled-2');
+                        pathMobile.classList.remove('weprovide__path--mobile--scrolled-1');
+                        break;
+
+                    default:
+                        pathMobile.classList.add('weprovide__path--mobile--scrolled-1');
+                        pathMobile.classList.remove('weprovide__path--mobile--scrolled-2');
+                        titleIcon.classList.add('weprovide__title--icon--scrolled');
+                        slide.children[0].classList.remove('weprovide__item--active')
+                }
+
+                currentSlide.children[0].classList.add('weprovide__item--active');
+
+                
+                
+            })
+        }
+
+        
+        
+
+    
