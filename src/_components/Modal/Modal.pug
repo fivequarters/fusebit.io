@@ -6,7 +6,7 @@
 
     .modal__content
         div(class="pipedriveWebForms" data-pd-webforms=waitlistFormURL)
-            script(src="https://webforms.pipedrive.com/f/loader")
+            
 
     script.
         window.addEventListener('load', () => {
@@ -19,4 +19,13 @@
                     modal.style.display = 'none';
                 })
             })
+
+            const pipedriveWebForms = document.querySelector('.pipedriveWebForms');
+            if(pipedriveWebForms) {
+                const _script = document.createElement('script')
+                _script.setAttribute('src', 'https://webforms.pipedrive.com/f/loader');
+                _script.setAttribute('lenny', '123');
+                
+                pipedriveWebForms.appendChild(_script);
+            }
         })
