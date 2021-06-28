@@ -1,0 +1,21 @@
+- const waitlistFormURL = 'https://webforms.pipedrive.com/f/1CtCQj4oy9I6GCWQRz889XwSmeA6SV6VE9uMqwuG4aHfqNp57ArSqPRB6v6bsJIs3';
+
+#modal__signUp.modal
+    button.modal__btn--close
+        span 
+
+    .modal__content
+        div(class="pipedriveWebForms" data-pd-webforms=waitlistFormURL)
+            script(src="https://webforms.pipedrive.com/f/loader")
+
+    script.
+        window.addEventListener('load', () => {
+            const modalCloseBtns = document.querySelectorAll('.modal__btn--close')
+            modalCloseBtns.forEach(btnClose => {
+                btnClose.addEventListener('click', () => {
+                    const modal = btnClose.parentNode;
+
+                    modal.style.display = 'none';
+                })
+            })
+        })

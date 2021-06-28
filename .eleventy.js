@@ -13,6 +13,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ 'src/compiled-assets': 'assets' });
     // Copy all images
     eleventyConfig.addPassthroughCopy('src/assets/images');
+    eleventyConfig.addPassthroughCopy('src/assets/vendor');
     eleventyConfig.addPassthroughCopy({ 'src/assets/meta': '/' });
 
     eleventyConfig.setBrowserSyncConfig({
