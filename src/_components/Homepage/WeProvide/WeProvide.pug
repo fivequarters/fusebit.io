@@ -36,7 +36,7 @@ section.weprovide
 
         .weprovide__wrapper.weprovide__wrapper--content
             ul.weprovide__dataList.swiper-container
-                .swiper-wrapper
+                .swiper-wrapper.swiper-wrapper--disable
                     .swiper-slide
                         li.weprovide__item.weprovide__item--active
                             .weprovide__item--icon 
@@ -96,6 +96,7 @@ section.weprovide
     script.
         const weprovideSwiper = new Swiper('.weprovide__dataList', {
             loop: false,
+            slidesPerView: 4,
             slidesPerView: 1,
             slidesPerColumnFill: 'row',
             pagination: {
@@ -113,12 +114,19 @@ section.weprovide
                 },
             },
             on: {
+                init: () => {
+                    toggleSwiperWrapperStatus();
+
+                    window.addEventListener('resize', toggleSwiperWrapperStatus);
+                },
                 slideChange: () => {
                     handleScrolledSwiper();
                 }
             }
         });
-
+        function esDesktop() {
+            return window.matchMedia('(min-width: 1200px)').matches;
+        }
         function handleScrolledSwiper() {
             const weProvideItems = document.querySelectorAll('.weprovide__dataList .swiper-slide');
             weProvideItems.forEach(slide => slide.children[0].classList.remove('weprovide__item--active'));
@@ -152,6 +160,15 @@ section.weprovide
 
             currentSlide.children[0].classList.add('weprovide__item--active');
         }
+        function toggleSwiperWrapperStatus() {
+            const swiperWrapper = document.querySelector('.weprovide__dataList .swiper-wrapper');
+            if(esDesktop()) {
+                swiperWrapper.classList.add('swiper-wrapper--disable');
+            } else {
+                swiperWrapper.classList.remove('swiper-wrapper--disable');
+            }
+        }
+        
 
         
         

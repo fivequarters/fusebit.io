@@ -150,6 +150,10 @@
         justify-content: space-between;
         align-items: flex-start;
         padding: 3.5rem 0;
+
+        .swiper-wrapper--disable {
+            transform: translate3d(0px, 0, 0) !important;
+        }
     }
 
     &__item {
