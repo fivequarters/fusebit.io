@@ -17,7 +17,7 @@ section.testimonials
                             .testimonials__card--brand
                                 img(src="../../../assets/images/testimonials/testimonials__brand-1.png" alt="Factory four logo")
 
-                            p.testimonials__card--text 
+                            p.testimonials__card--text.swiper-no-swiping
                                 | We’ve had bad experiences with call centers. 
                                 strong Through Fusebit, I hired my own remote team 
                                 | that I have complete control over. I started with one rep to see how it worked and am continuing to grow my team.
@@ -26,7 +26,7 @@ section.testimonials
                                 .testimonials__card--user-image 
                                     img(src="../../../assets/images/testimonials/testimonials__user-1.png" alt="Jane Doe profile image")
 
-                                .testimonials__card--user-data 
+                                .testimonials__card--user-data.swiper-no-swiping
                                     h4 Jane Doe
                                     p VP and CTO at CTL
 
@@ -35,7 +35,7 @@ section.testimonials
                             .testimonials__card--brand
                                 img(src="../../../assets/images/testimonials/testimonials__brand-2.png" alt="Hyperproof logo")
 
-                            p.testimonials__card--text 
+                            p.testimonials__card--text.swiper-no-swiping
                                 | We’ve had bad experiences with call centers. 
                                 strong Through Fusebit, I hired my own remote team 
                                 | that I have complete control over. I started with one rep to see how it worked and am continuing to grow my team.
@@ -44,7 +44,7 @@ section.testimonials
                                 .testimonials__card--user-image 
                                     img(src="../../../assets/images/testimonials/testimonials__user-2.png" alt="John Brown profile image")
 
-                                .testimonials__card--user-data 
+                                .testimonials__card--user-data.swiper-no-swiping
                                     h4 John Brown
                                     p VP and CTO at CTL
 
@@ -53,7 +53,7 @@ section.testimonials
                             .testimonials__card--brand
                                 img(src="../../../assets/images/testimonials/testimonials__brand-3.png" alt="On ramp logo")
 
-                            p.testimonials__card--text 
+                            p.testimonials__card--text.swiper-no-swiping
                                 | We’ve had bad experiences with call centers. 
                                 strong Through Fusebit, I hired my own remote team 
                                 | that I have complete control over. I started with one rep to see how it worked and am continuing to grow my team.
@@ -62,24 +62,54 @@ section.testimonials
                                 .testimonials__card--user-image 
                                     img(src="../../../assets/images/testimonials/testimonials__user-3.png" alt="Carol Nelson profile image")
 
-                                .testimonials__card--user-data 
+                                .testimonials__card--user-data.swiper-no-swiping 
                                     h4 Carol Nelson
                                     p VP and CTO at CTL
+
+                .testimonials__pagination.swiper-pagination
+
     script.
-        const testimonialsSwiper = new Swiper('.testimonials__cards', {
-            loop: false,
-            slidesPerView: 1,
-            slidesPerColumnFill: 'row',
-            gap: '30px',
-            pagination: {
-                el: '.swiper-pagination',
-            },
-            breakpoints: {
-                700: {
-                    slidesPerView: 2,
+
+        const testimonials = document.querySelector('.testimonials');
+        if(testimonials) {
+            const testimonialsSwiper = new Swiper('.testimonials__cards', {
+                loop: true,
+                slidesPerView: 1,
+                slidesPerColumnFill: 'row',
+                spaceBetween: 30,
+                pagination: {
+                    el: '.swiper-pagination',
                 },
-                1000: {
-                    slidesPerView: 3,
+                breakpoints: {
+                    700: {
+                        slidesPerView: 2,
+                    },
+                    1000: {
+                        slidesPerView: 3,
+                        loop: true,
+                    }
+                },
+                on: {
+                    init: () => {
+                        toggleSwiperWrapperStatus();
+
+                        window.addEventListener('resize', toggleSwiperWrapperStatus);
+                    },
+                    slideChange: () => {
+                        handleScrolledSwiper();
+                    }
                 }
-            },
-        });
+            });
+
+            function esDesktop() {
+                return window.matchMedia('(min-width: 1200px)').matches;
+            }
+            function toggleSwiperWrapperStatus() {
+                const swiperWrapper = document.querySelector('.testimonials__cards .swiper-wrapper');
+                if(esDesktop()) {
+                    swiperWrapper.classList.add('swiper-wrapper--disable');
+                } else {
+                    swiperWrapper.classList.remove('swiper-wrapper--disable');
+                }
+            }
+        }
