@@ -193,6 +193,10 @@
             width: 100%;
             justify-content: center;
         }
+
+        @media only screen and (max-width: 700px) {
+            justify-content: flex-start;
+        }
     }
 
     &__bg {
