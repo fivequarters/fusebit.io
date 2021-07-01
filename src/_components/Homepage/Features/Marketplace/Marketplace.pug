@@ -2,11 +2,12 @@ mixin marketplaceDemo__step2
     .step2.dnone
         .step2__head
             .step2__logo 
-                img(src="../../../../assets/images/icons/slack-logo.svg", alt="")
+                img(src="../../../../assets/images/icons/slack-logo.svg", alt="Slack logo")
 
             h5.step2__title Sign in to Fusebit 
             p.step2__text 5qtrs.slack.com
-            .step2__close 
+            button.step2__close 
+                span 
 
         .step2__content
             .step2__social
@@ -52,7 +53,54 @@ mixin marketplaceDemo__step2
                         | Looking for another workspace?
                         a(href="#") Find your workspaces
 
+mixin marketplaceDemo__step3 
+    .step3 
+        .step3__head 
+            .step3__logo 
+                img(src="../../../../assets/images/icons/slack-logo.svg", alt="Slack logo")
 
+            .step3__user 
+                .step3__user--image 
+                    svg(width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        rect(width="16" height="16.7111" rx="2.84444" fill="#36C5F0")
+                        path(d="M9.09766 9.18359H6.89453l-.46094 1.32421H5.40625l2.14844-5.68749h.88672l2.15239 5.68749H9.5625l-.46484-1.32421zm-1.92578-.79687h1.64843l-.82422-2.35938-.82421 2.35938z" fill="#fff")
+
+                h6.step3__user--name Acme 
+
+                .step3__user--arrow
+                    svg(width="10" height="5" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M1 .507812L5 4.50781 9 .507812" stroke="#000" stroke-linecap="round" stroke-linejoin="round")
+
+        .step3__content 
+            .step3__connection
+                img(src="../../../../assets/images/marketplaceDemo/step3__connect.png", alt="Logos")
+
+                h5 Budgetly bot is requesting permission to access the Acme Slack workspace
+
+            .step3__permissions
+                h5.step3__permissions--title What will Budgetly bot be able to do?
+                .step3__permissions--permission 
+                    .step3__permissions--permission--icon
+                        svg(width="10" height="10" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            rect(x=".130435" y=".130435" width="4.18394" height="4.18394" rx=".304348" stroke="#000")
+                            rect(x=".130435" y="5.68512" width="4.18394" height="4.18394" rx=".304348" stroke="#000")
+                            rect(x="5.6861" y=".130435" width="4.18394" height="4.18394" rx=".304348" stroke="#000")
+                            rect(x="5.6861" y="5.68512" width="4.18394" height="4.18394" rx=".304348" stroke="#000")
+
+                    p.step3__permissions--permission--text Perform actions in your workspaces
+
+                    .step3__permissions--permission--arrow
+                        svg(width="3" height="5" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M2.65188 2.14827c.19284.19484.19284.50862 0 .70346L.855371 4.66685C.541142 4.98434-2.5e-7 4.76182-2.3e-7 4.31513L-7e-8.684872C-5e-8.238176.541142.0156605.855371.333146L2.65188 2.14827z" fill="#000")
+
+            .step3__actions 
+                button.step3__actions--btn.step3__actions--btn--cancel 
+                    span Cancel
+                button.step3__actions--btn.step3__actions--btn--allow 
+                    span Allow
+
+                
+                  
 
 .marketplaceDemo 
     .marketplaceDemo__navbar 
@@ -154,6 +202,7 @@ mixin marketplaceDemo__step2
                 
     .marketplaceDemo__modal
         +marketplaceDemo__step2
+        +marketplaceDemo__step3
 
     
     script.
@@ -161,7 +210,6 @@ mixin marketplaceDemo__step2
         if(marketplaceDemo) {
             let currentBtnClicked;
             const buttonsStep1 = marketplaceDemo.querySelectorAll('.marketplaceDemo__card--btn');
-            const step2 = marketplaceDemo.querySelector('.step2');
             buttonsStep1.forEach(btn => {
                 btn.addEventListener('click', () => {
                     step2.classList.remove('dnone');
@@ -169,14 +217,17 @@ mixin marketplaceDemo__step2
                 })
             })
 
+            const step2 = marketplaceDemo.querySelector('.step2');
             const buttonsStep2 = step2.querySelectorAll('button');
             buttonsStep2.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
                     step2.classList.add('dnone');
-                    
-                    const card = currentBtnClicked.parentNode;
-                    card.classList.add('marketplaceDemo__card--installed');
+
+                    if(!btn.classList.contains('step2__close')) {
+                        const card = currentBtnClicked.parentNode;
+                        card.classList.add('marketplaceDemo__card--installed');
+                    }
                 })
             });
 
