@@ -1,0 +1,277 @@
+.footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background: var(--dark);
+    padding: 6.25rem 10.86rem;
+    border-radius: 4rem 4rem 0 0;
+    overflow: hidden;
+
+    &__container {
+        position: relative;
+        width: 90%;
+        max-width: var(--container);
+        z-index: 1;
+    }
+
+    &__wrapper {
+        &--head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8rem;
+
+            @media only screen and (max-width: 1000px) {
+                flex-wrap: wrap;
+                justify-content: space-around;
+                margin-bottom: 6rem;
+            }
+        }
+
+        &--content {
+            p {
+                @include font-size(14);
+                line-height: 24px;
+                font-weight: 300;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &__logo {
+        #fusebit__logo {
+            * {
+                transition: all 0.2s;
+            }
+
+            .logo {
+                fill: #ffffff;
+            }
+
+            .iso__fill {
+                fill: var(--orange);
+            }
+            .iso__stroke {
+                stroke: var(--orange);
+                stroke-width: 4px;
+            }
+        }
+
+        &:hover {
+            #fusebit__logo {
+                .iso__fill {
+                    fill: #ffffff;
+                }
+                .iso__stroke {
+                    stroke: #ffffff;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__links {
+        margin-top: 0.8rem;
+
+        &--title {
+            @include font-size(18);
+            line-height: 24px;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            margin-top: 0;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__link {
+        position: relative;
+        line-height: 24px;
+        margin-bottom: 1rem;
+
+        a {
+            color: #ffffff;
+            padding-left: 0rem;
+            transition: all 0.2s ease-in-out;
+        }
+
+        &--badge {
+            position: absolute;
+            top: 50%;
+            right: -0.5rem;
+            transform: translateY(-50%);
+            width: 25px;
+            height: 25px;
+            background: var(--orange);
+            border-radius: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 2rem;
+                background-color: var(--orange);
+                z-index: -1;
+
+                animation: notification 1s ease infinite;
+            }
+
+            span {
+                @include font-size(12);
+                font-weight: 700;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            transform-origin: left center;
+            transform: scaleX(0);
+            display: block;
+            width: 30%;
+            height: 2px;
+            background: var(--orange);
+            transition: all 0.2s ease-in-out;
+        }
+
+        &:hover {
+            a {
+                padding-left: 0.2rem;
+            }
+            &::after {
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.7rem;
+
+        li:not(li:last-child) {
+            margin-right: 1rem;
+        }
+
+        svg {
+            background: #ffffff;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+
+            &:hover {
+                background: var(--orange);
+                transform: scale(1.2);
+
+                path {
+                    fill: #ffffff;
+                }
+            }
+        }
+
+        path {
+            fill: var(--dark);
+        }
+
+        @media only screen and (max-width: 1000px) {
+            width: 100%;
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: 700px) {
+            justify-content: flex-start;
+        }
+    }
+
+    &__bg {
+        &--01 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+
+            background: url(./images/footer__bg/bg01.png) right top no-repeat;
+        }
+
+        &--02 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+
+            background: url(./images/footer__bg/bg02.png) right top no-repeat;
+        }
+
+        &--03 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+
+            background: url(./images/footer__bg/bg03.png) right top no-repeat;
+        }
+
+        &--04 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+
+            background: url(./images/footer__bg/bg04.png) right top no-repeat;
+        }
+
+        &--05 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+
+            background: url(./images/footer__bg/bg05.png) 30% bottom no-repeat;
+        }
+    }
+
+    @media only screen and (max-width: 1200px) {
+        padding: 4rem 5rem;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        padding: 4rem 2rem;
+        border-radius: 2rem 2rem 0 0;
+    }
+
+    @media only screen and (max-width: 700px) {
+        padding: 2rem 0rem;
+    }
+
+    @keyframes notification {
+        from {
+            transform: scale(1);
+            opacity: 0.8;
+        }
+        to {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+}

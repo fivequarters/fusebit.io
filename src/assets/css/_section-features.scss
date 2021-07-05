@@ -53,7 +53,6 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        //border: 1px solid blue;
 
         &:nth-child(2) {
             flex-direction: row-reverse;
@@ -73,7 +72,6 @@
     &__content {
         width: 50%;
         max-width: 490px;
-        //border: 1px solid red;
 
         @media only screen and (max-width: 1000px) {
             width: 100%;
@@ -296,13 +294,19 @@
             margin-top: 600px;
         }
 
-        @media only screen and (max-width: 550px) {
+        @media only screen and (max-width: 700px) {
             &.features__list--1st {
-                margin-top: 700px;
+                margin-top: 500px;
             }
 
             &.features__list--2nd {
                 margin-top: 400px;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            &.features__list--1st {
+                margin-top: 350px;
             }
         }
     }
@@ -320,30 +324,18 @@
             width: 100%;
             max-width: 600px;
 
-            &--integrations {
-                top: 26%;
-            }
-
             &--graph {
                 top: 26%;
             }
         }
 
         @media only screen and (max-width: 700px) {
-            &--integrations {
-                top: 20%;
-            }
-
             &--graph {
                 top: 20%;
             }
         }
 
         @media only screen and (max-width: 600px) {
-            &--integrations {
-                top: 23%;
-            }
-
             &--graph {
                 top: 25%;
             }
@@ -364,7 +356,6 @@
             left: -650px;
             width: 800px;
             height: 1000px;
-            //border: 1px solid red;
             border-radius: 57% 27% 48% 37% / 85% 59% 60% 33%;
             background: radial-gradient(
                 closest-side at 60% 55%,
@@ -380,7 +371,6 @@
             left: 50%;
             width: 800px;
             height: 800px;
-            //border: 1px solid red;
             //border-radius: 57% 27% 48% 37% / 85% 59% 60% 33%;
             background: radial-gradient(circle 400px, #3742fa, transparent);
             transform: scaleX(0.8);
@@ -393,7 +383,6 @@
             left: 60%;
             width: 700px;
             height: 800px;
-            //border: 1px solid red;
             //border-radius: 57% 27% 48% 37% / 85% 59% 60% 33%;
             background: radial-gradient(circle 320px, #ff6b81, transparent);
             z-index: 0;
@@ -406,7 +395,6 @@
             left: 13%;
             width: 600px;
             height: 600px;
-            //border: 1px solid red;
             //border-radius: 57% 27% 48% 37% / 85% 59% 60% 33%;
             background: radial-gradient(circle 300px, #f1c40f, transparent);
             z-index: 1;
@@ -418,7 +406,6 @@
             left: 15%;
             width: 700px;
             height: 800px;
-            //border: 1px solid red;
             //border-radius: 57% 27% 48% 37% / 85% 59% 60% 33%;
             background: radial-gradient(circle 320px, #ff6b81, transparent);
             z-index: 0;

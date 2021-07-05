@@ -8,6 +8,7 @@
 
 // Partials
 @import 'header';
+@import 'footer';
 
 // Sections
 @import 'section-hero';
@@ -17,7 +18,9 @@
 @import 'section-integrations';
 @import 'section-weprovide';
 @import 'section-testimonials';
+@import 'section-prefooter';
 
 // Components
 @import 'component-integrations';
+@import 'component-marketplace';
 @import 'component-modal';
