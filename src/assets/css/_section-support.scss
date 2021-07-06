@@ -1,7 +1,3 @@
-div[class*='__container'] {
-    //border: 1px solid red;
-}
-
 .support {
     position: relative;
     width: 100%;
@@ -32,6 +28,23 @@ div[class*='__container'] {
     }
 
     &__path {
+        &--dot {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transform-origin: center center;
+            transform: translate(-36%, 3px);
+            width: 10px;
+            height: 10px;
+            border-radius: 1rem;
+            background: var(--yellow);
+            z-index: 99;
+
+            @media only screen and (max-width: 1000px) {
+                transform: translate(90%, 3px);
+            }
+        }
+
         &--card1,
         &--card2,
         &--card3,
@@ -54,8 +67,8 @@ div[class*='__container'] {
         &--card1,
         &--card2,
         &--card3 {
-            top: 24px;
-            left: 0;
+            top: 0;
+            left: -13px;
 
             @media only screen and (max-width: 1175px) {
                 display: none;
@@ -194,6 +207,12 @@ div[class*='__container'] {
                 @media only screen and (max-width: 1200px) {
                     @include font-size(16);
                     line-height: 24px;
+                }
+            }
+
+            &--active {
+                .card__image {
+                    background: var(--yellow);
                 }
             }
 

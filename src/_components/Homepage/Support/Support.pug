@@ -1,24 +1,29 @@
 include ./Card/Card
 
+mixin pathDot 
+    .support__path--dot
+
 mixin path1 
-    svg.support__path--base(width="28" height="796" fill="none" xmlns="http://www.w3.org/2000/svg")
-        path(d="M14.0001 24v772" stroke="#D7E5FF" stroke-width="2")
+    svg.support__path--base(width="28" height="1043" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path.support__path--base--path(d="M14.0001 8v1035" stroke="#D7E5FF" stroke-width="2")
+        path(fill="#fff" d="M0 0h28v24H0z")
         circle(cx="1" cy="8" r="1" fill="#D7E5FF")
         circle(cx="27" cy="8" r="1" fill="#D7E5FF")
         circle(cx="14" cy="8" r="7" stroke="#D7E5FF" stroke-width="2")
-        circle.support__path--base--ball(cx="14" cy="8" r="4" fill="#FFA600")
 
 mixin pathCard1
-    svg.support__path--card1(width="98" height="364" fill="none" xmlns="http://www.w3.org/2000/svg")
-        path(d="M.999817 0v275.5c0 22.091 17.908583 40 39.999983 40h16c22.0914 0 40 17.908 40 40v8.5" stroke="#D7E5FF" stroke-width="2")
+    svg.support__path--card1(width="111" height="388" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path.support__path--card1--path(d="M13.9998 8v291.5c0 22.091 17.9086 40 40 40h16c22.0914 0 40.0002 17.908 40.0002 40v8.5" stroke="#D7E5FF" stroke-width="2")
 
 mixin pathCard2
-    svg.support__path--card2(width="465" height="364" fill="none" xmlns="http://www.w3.org/2000/svg")
-        path(d="M.999817 0v275.5c0 22.091 17.908583 40 39.999983 40H424c22.091 0 40 17.908 40 40v8.5" stroke="#D7E5FF" stroke-width="2")
+    svg.support__path--card2(width="478" height="388" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path.support__path--card2--path(d="M13.9998 8v291.5c0 22.091 17.9086 40 40 40H437c22.091 0 40 17.908 40 40v8.5" stroke="#D7E5FF" stroke-width="2")
+
 
 mixin pathCard3
-    svg.support__path--card3(width="834" height="364" fill="none" xmlns="http://www.w3.org/2000/svg")
-        path(d="M.999817 0v275.5c0 22.091 17.908583 40 39.999983 40H792.5c22.091 0 40 17.908 40 40v8.5" stroke="#D7E5FF" stroke-width="2")
+    svg.support__path--card3(width="847" height="388" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path.support__path--card3--path(d="M13.9998 8v291.498c0 22.091 17.9086 40 40 40H805.5c22.091 0 40 17.909 40 40v8.5" stroke="#D7E5FF" stroke-width="2")
+        
 
 
 
@@ -72,8 +77,8 @@ section.support
                 +card(cardsData[1])
                 +card(cardsData[2])
 
-        +path1
+        +pathDot
         +pathCard1
         +pathCard2
         +pathCard3
-
+        +path1

@@ -1,54 +1,30 @@
+[class*='__container'] {
+    //border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
 .features {
     position: relative;
     display: flex;
     justify-content: center;
     background: var(--dark);
-    padding: 380px 0;
+    padding: 26rem 0 22rem;
     overflow: hidden;
-
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 10vw;
-    }
-
-    @mixin diagonalGradient($direction) {
-        background: #ffffff;
-        background: -webkit-linear-gradient(
-            to $direction,
-            var(--dark) 49.7%,
-            #ffffff 50%
-        );
-        background: linear-gradient(
-            to $direction,
-            var(--dark) 49.7%,
-            #ffffff 50%
-        );
-    }
-
-    &::before {
-        top: 0;
-        @include diagonalGradient(left top);
-    }
-
-    &::after {
-        bottom: 0;
-        @include diagonalGradient(right bottom);
-    }
 
     &__container {
         position: relative;
         width: 90%;
-        max-width: var(--container);
+        max-width: calc(var(--container) - 4rem);
+        padding-left: 4rem;
         z-index: 9;
+
+        @media only screen and (max-width: 700px) {
+            width: calc(90% - 2.5rem);
+            padding-left: 2.5rem;
+        }
     }
 
     &__wrapper {
         position: relative;
-        margin-left: 3rem;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -66,6 +42,39 @@
 
         @media only screen and (max-width: 1000px) {
             flex-wrap: wrap;
+        }
+    }
+
+    &__path {
+        &--dot {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transform-origin: center center;
+            transform: translate(-36%, 0px);
+            width: 10px;
+            height: 10px;
+            border-radius: 1rem;
+            background: var(--yellow);
+            z-index: 99;
+
+            @media only screen and (max-width: 1000px) {
+                transform: translate(90%, 3px);
+            }
+        }
+
+        &--base {
+            position: absolute;
+            top: -28rem;
+            left: 0;
+            z-index: 0;
+            transition: all 0.25s;
+            pointer-events: none;
+            opacity: 0.7;
+
+            @media only screen and (max-width: 1000px) {
+                left: 0.85rem;
+            }
         }
     }
 
@@ -350,182 +359,47 @@
 
     &__backgrounds {
         opacity: 0.5;
-        .background0 {
-            position: absolute;
-            top: 5%;
-            left: -650px;
-            width: 800px;
-            height: 1000px;
-            border-radius: 57% 27% 48% 37% / 85% 59% 60% 33%;
-            background: radial-gradient(
-                closest-side at 60% 55%,
-                #3742fa,
-                transparent
-            );
-            z-index: 1;
-            opacity: 0.6;
-        }
-        .background1 {
-            position: absolute;
-            top: 18%;
-            left: 50%;
-            width: 800px;
-            height: 800px;
-            //border-radius: 57% 27% 48% 37% / 85% 59% 60% 33%;
-            background: radial-gradient(circle 400px, #3742fa, transparent);
-            transform: scaleX(0.8);
-            z-index: 1;
-            opacity: 0.8;
-        }
-        .background2 {
-            position: absolute;
-            top: 23%;
-            left: 60%;
-            width: 700px;
-            height: 800px;
-            //border-radius: 57% 27% 48% 37% / 85% 59% 60% 33%;
-            background: radial-gradient(circle 320px, #ff6b81, transparent);
-            z-index: 0;
-            opacity: 0.7;
-        }
-
-        .background3 {
-            position: absolute;
-            top: 49%;
-            left: 13%;
-            width: 600px;
-            height: 600px;
-            //border-radius: 57% 27% 48% 37% / 85% 59% 60% 33%;
-            background: radial-gradient(circle 300px, #f1c40f, transparent);
-            z-index: 1;
-            opacity: 0.8;
-        }
-        .background4 {
-            position: absolute;
-            top: 52%;
-            left: 15%;
-            width: 700px;
-            height: 800px;
-            //border-radius: 57% 27% 48% 37% / 85% 59% 60% 33%;
-            background: radial-gradient(circle 320px, #ff6b81, transparent);
-            z-index: 0;
-            opacity: 0.7;
-        }
+        z-index: 1;
     }
 
-    @mixin bgAsset1($direction) {
-        background: #1a2a6c;
-        background: -webkit-linear-gradient(
-            to $direction,
-            #fdbb2d,
-            #b21f1f,
-            #1a2a6c
-        );
-        background: linear-gradient(to $direction, #fdbb2d, #b21f1f, #1a2a6c);
-    }
-    @mixin asset1Position($top, $leftRigth, $leftRigthValue, $rotation) {
-        top: $top * 1%;
-        #{$leftRigth}: $leftRigthValue + px;
-        transform: rotate($rotation + deg);
-    }
-
-    @mixin bgAsset2($direction) {
-        background: #1a2a6c;
-        background: -webkit-linear-gradient(
-            to $direction,
-            #6867b6,
-            var(--neutralLight)
-        );
-        background: linear-gradient(to $direction, #6867b6, #ffffff 80%);
-    }
-
-    .asset1 {
-        display: none;
-        &::before,
-        &::after {
-            content: '';
-            position: absolute;
-            width: 415px;
-            height: 50px;
-            border-radius: 10rem;
-            z-index: 50;
-            transform: rotate(-10deg);
-        }
-
-        &::before {
-            top: 55px;
-            right: -30px;
-            @include bgAsset1(right);
-        }
-        &::after {
-            bottom: 52px;
-            left: -30px;
-            @include bgAsset1(left);
-        }
-    }
-    .asset2 {
-        display: none;
-        &::before,
-        &::after {
-            content: '';
-            position: absolute;
-            width: 630px;
-            height: 33px;
-            border-radius: 10rem;
-            z-index: 5;
-        }
-
-        &::before {
-            @include asset1Position(0.7, right, -30, -8);
-            @include bgAsset2(right);
-
-            @media only screen and (max-width: 1700px) {
-                @include asset1Position(0.8, right, -30, -8.5);
-            }
-
-            @media only screen and (max-width: 1500px) {
-                @include asset1Position(0.8, right, -30, -9.5);
-            }
-
-            @media only screen and (max-width: 1400px) {
-                @include asset1Position(0.8, right, -30, -9.8);
-            }
-            @media only screen and (max-width: 1300px) {
-                @include asset1Position(0.8, right, -30, -10.5);
-            }
-        }
-        &::after {
-            bottom: 39px;
-            left: -30px;
-            transform: rotate(-10deg);
-            @include bgAsset2(left);
-        }
-    }
-
-    &__path {
+    &::before,
+    &::after {
+        content: '';
         position: absolute;
-        top: -12.5%;
-        pointer-events: none;
+        left: 0;
+        width: 100%;
+        height: 330px;
+        z-index: 0;
+        //display: none;
+        //opacity: 0.5;
+    }
 
-        &#featuress__path--mobile {
-            display: none;
-        }
+    &::before {
+        top: 0;
+        background: url(./images/features__bg--top.svg) right 105% no-repeat,
+            #ffffff;
+        background-size: 100%;
 
         @media only screen and (max-width: 1000px) {
-            &#featuress__path--desktop {
-                display: none;
-            }
-            &#featuress__path--mobile {
-                display: block;
-            }
+            background-size: 200%;
+        }
+    }
+    &::after {
+        bottom: 0;
+        background: url(./images/features__bg--bottom.svg) 1% -5% no-repeat,
+            #ffffff;
+        background-size: 100%;
+
+        @media only screen and (max-width: 1000px) {
+            background-size: 200%;
         }
     }
 
     @media only screen and (max-width: 1000px) {
-        padding: 300px 0;
+        //padding: 300px 0;
     }
 
     @media only screen and (max-width: 700px) {
-        padding: 200px 0;
+        //padding: 200px 0;
     }
 }
