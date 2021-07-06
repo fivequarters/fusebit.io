@@ -166,23 +166,47 @@ if (sectionFeatures) {
     const featuresDot = sectionFeatures.querySelector('.features__path--dot');
     const featuresBase = new gsap.timeline();
 
-    featuresBase.to(featuresDot, {
-        duration: 0.5,
-        motionPath: {
-            path: `.features__path--base--path1`,
-            align: `.features__path--base--path1`,
-            alignOrigin: [0.5, 0.5],
-        },
-    });
+    if (window.matchMedia('(min-width: 1175px)').matches) {
+        featuresBase.to(featuresDot, {
+            duration: 0.5,
+            motionPath: {
+                path: `.features__path--base--path1`,
+                align: `.features__path--base--path1`,
+                alignOrigin: [0.5, 0.5],
+            },
+        });
 
-    new ScrollMagic.Scene({
-        triggerElement: '.features',
-        offset: -42,
-        duration:
-            document.querySelector('.features__path--base').clientHeight * 1.2,
-        triggerHook: 0.4,
-    })
-        .setTween(featuresBase)
-        //.addIndicators({ name: 'Base path' })
-        .addTo(scrollMagicController);
+        new ScrollMagic.Scene({
+            triggerElement: '.features',
+            offset: -42,
+            duration:
+                document.querySelector('.features__path--base').clientHeight *
+                1.2,
+            triggerHook: 0.4,
+        })
+            .setTween(featuresBase)
+            //.addIndicators({ name: 'Base path' })
+            .addTo(scrollMagicController);
+    } else {
+        featuresBase.to(featuresDot, {
+            duration: 0.5,
+            motionPath: {
+                path: `.features__path--base--path2`,
+                align: `.features__path--base--path2`,
+                alignOrigin: [0.5, 0.5],
+            },
+        });
+
+        new ScrollMagic.Scene({
+            triggerElement: '.features',
+            offset: -42,
+            duration:
+                document.querySelector('.features__path--base').clientHeight *
+                1.2,
+            triggerHook: 0.4,
+        })
+            .setTween(featuresBase)
+            //.addIndicators({ name: 'Base path' })
+            .addTo(scrollMagicController);
+    }
 }
