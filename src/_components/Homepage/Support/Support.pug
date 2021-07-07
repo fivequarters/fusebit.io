@@ -1,120 +1,66 @@
-include ./Bubble/Bubble
 include ./Card/Card
+
+mixin path1 
+    svg.support__path--base(width="28" height="796" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(d="M14.0001 24v772" stroke="#D7E5FF" stroke-width="2")
+        circle(cx="1" cy="8" r="1" fill="#D7E5FF")
+        circle(cx="27" cy="8" r="1" fill="#D7E5FF")
+        circle(cx="14" cy="8" r="7" stroke="#D7E5FF" stroke-width="2")
+
+mixin pathCard1
+    svg.support__path--card1(width="98" height="364" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(d="M.999817 0v275.5c0 22.091 17.908583 40 39.999983 40h16c22.0914 0 40 17.908 40 40v8.5" stroke="#D7E5FF" stroke-width="2")
+
+mixin pathCard2
+    svg.support__path--card2(width="465" height="364" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(d="M.999817 0v275.5c0 22.091 17.908583 40 39.999983 40H424c22.091 0 40 17.908 40 40v8.5" stroke="#D7E5FF" stroke-width="2")
+
+mixin pathCard3
+    svg.support__path--card3(width="834" height="364" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(d="M.999817 0v275.5c0 22.091 17.908583 40 39.999983 40H792.5c22.091 0 40 17.908 40 40v8.5" stroke="#D7E5FF" stroke-width="2")
+
+
 
 section.support
     .support__container
-        .support__wrapper
+        .support__wrapper.support__wrapper--head
             .support__content 
                 h2.support__title
                     | Spend 
                     span less time learning 
                     | and more time coding_
 
-                p.support__text Fusebit supports popular SaaS APIs so you don't have to become an integration expert. Our simple, uniform model covers all your integration needs in one place.
+                p.support__text Fusebit supports popular SaaS APIs so you don’t have to become an integration expert. Our simple, uniform model covers all your integration needs in one place.
 
             .support__image 
+                img.support__image--img(src="../../../assets/images/support/support __brands.png", alt="")
+                
+                svg.support__image--frame(viewBox="-35 -10 680 360" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(opacity=".8" d="M162.37 16.5035l288.478 1.5004C538.535 18.46 609.249 89.9138 608.793 177.6c-.456 87.687-71.91 158.401-159.597 157.945l-288.478-1.5c-87.6861-.456-158.40044-71.91-157.94436-159.597C3.22972 86.7617 74.6835 16.0474 162.37 16.5035z" stroke="#D7E5FF" stroke-width="1.9002")
+                    circle(r="14.2515" fill="#fff" stroke="#fff" stroke-width="1.9002")
+                        animateMotion(dur="10s" repeatCount="indefinite" path="M162.37 16.5035l288.478 1.5004C538.535 18.46 609.249 89.9138 608.793 177.6c-.456 87.687-71.91 158.401-159.597 157.945l-288.478-1.5c-87.6861-.456-158.40044-71.91-157.94436-159.597C3.22972 86.7617 74.6835 16.0474 162.37 16.5035z")
+                    circle(r="6.5499" fill="#fff" stroke="#D7E5FF" stroke-width="1.9002")
+                        animateMotion(dur="10s" repeatCount="indefinite" path="M162.37 16.5035l288.478 1.5004C538.535 18.46 609.249 89.9138 608.793 177.6c-.456 87.687-71.91 158.401-159.597 157.945l-288.478-1.5c-87.6861-.456-158.40044-71.91-157.94436-159.597C3.22972 86.7617 74.6835 16.0474 162.37 16.5035z")
 
-                .bubbles__wrapper
-                    
-                    - 
-                        function repeatArr(arr, repeat) {
-                            let newArr = [];
-                            for (let i = 0; i < repeat; i++) {
-                                newArr.push(...arr);
-                            }
-                            return newArr;
-                        }
 
-                        const brands = [
-                            [
-                                {
-                                    img: '../assets/images/icons/slack.svg',
-                                    name: 'Slack bot'
-                                },
-                                {
-                                    img: '../assets/images/icons/slack.svg',
-                                    name: 'Salesforce\'s'
-                                },
-                                {
-                                    img: '../assets/images/icons/slack.svg',
-                                    name: 'Asana synk'
-                                },
-                            ],
-                            [
-                                {
-                                    img: '../assets/images/icons/slack.svg',
-                                    name: 'Salesforce opportunity synk'
-                                },
-                                {
-                                    img: '../assets/images/icons/slack.svg',
-                                    name: 'Jira synk'
-                                },
-                            ],
-                            [
-                                {
-                                    img: '../assets/images/icons/slack.svg',
-                                    name: 'Slack synk'
-                                },
-                                {
-                                    img: '../assets/images/icons/slack.svg',
-                                    name: 'Quickbooks'
-                                },
-                            ],
-                            [
-                                {
-                                    img: '../assets/images/icons/slack.svg',
-                                    name: 'Asana synk'
-                                },
-                                {
-                                    img: '../assets/images/icons/slack.svg',
-                                    name: 'Salesforce opportunity'
-                                },
-                            ],
-                            [
-                                {
-                                    img: '../assets/images/icons/slack.svg',
-                                    name: 'Jira synk'
-                                },
-                                {
-                                    img: '../assets/images/icons/slack.svg',
-                                    name: 'Quickbooks'
-                                },
-                            ]
-                        ]
-
-                    - let n = 0;
-                    while n < 5
-                        .bubbles__row
-                            each brand in repeatArr(brands[n], 3)
-                                +Bubble(brand)
-                        - n++
-                        
-
-                svg(id="support__image--frame" viewBox="-20 0 640 430" fill="none" xmlns="http://www.w3.org/2000/svg")
-                    path(d="M633 12H204.5C92.1101 12 1 103.11 1 215.5V215.5C1 327.89 92.11 419 204.5 419H633" stroke="#D7E5FE" stroke-width="2" id="support__image--frame-line")
-                    circle(r="8" fill="white" stroke="#D7E5FE" stroke-width="2")
-                        animateMotion(dur="10s" repeatCount="indefinite" path="M527 12H204.5C92.1101 12 1 103.11 1 215.5V215.5C1 327.89 92.1101 419 204.5 419H527")
-                    circle(r="10.5" stroke="white" stroke-width="3")
-                        animateMotion(dur="10s" repeatCount="indefinite" path="M527 12H204.5C92.1101 12 1 103.11 1 215.5V215.5C1 327.89 92.1101 419 204.5 419H527")
-
-        .support__wrapper
+        .support__wrapper.support__wrapper--content
             .support__cards
                 - 
                     const cardsData = [
                         {
-                            img: `../assets/images/support_icon.svg`,
+                            img: `../assets/images/support/support__icon1.svg`,
                             highlight: `Connectors`,
                             text: `to most popular third-party APIs to help simplify and speed up developers' work.`,
                             path: `path__01`
                         },
                         {
-                            img: `../assets/images/support_icon.svg`,
+                            img: `../assets/images/support/support__icon2.svg`,
                             highlight: `Ready-made templates`,
                             text: `for common scenariossuch as bots, task sync and many other things.`,
                             path: `path__02`
                         },
                         {
-                            img: `../assets/images/support_icon.svg`,
+                            img: `../assets/images/support/support__icon3.svg`,
                             highlight: `Standarized authentications`,
                             text: `model fully covering OAuth2 and other auth schemes.`,
                             path: `path__03`
@@ -125,4 +71,8 @@ section.support
                 +card(cardsData[1])
                 +card(cardsData[2])
 
-        include ../../PathIndicator/PathIndicator
+        +path1
+        +pathCard1
+        +pathCard2
+        +pathCard3
+

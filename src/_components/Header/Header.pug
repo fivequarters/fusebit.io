@@ -29,10 +29,32 @@ header.header
         .header__link--active
 
     .header__menuMobile
-        h1 Menu Mobile
+        h5 Menu Mobile
+        
 
     script.
-        window.addEventListener('load', ()=> {
+        function toggleClasses(target, addClass, removeClass) {
+            target.classList.remove(removeClass);
+            target.classList.add(addClass);
+        }
+
+        window.addEventListener('load', () => {
+            let lastScroll = window.pageYOffset;
+
+            window.addEventListener('scroll', () => {
+                const currentScrollPos = window.pageYOffset;
+                const header = document.querySelector('.header');
+
+                if (currentScrollPos < 150) {
+                    header.classList.remove('header--compact');
+                } else if (lastScroll > currentScrollPos) {
+                    toggleClasses(header, 'header--compact', 'header--hidden');
+                } else {
+                    toggleClasses(header, 'header--hidden', 'header--compact');
+                }
+                lastScroll = currentScrollPos;
+            });
+
             const header = document.querySelector('.header');
             const headerLinks = [...header.querySelectorAll('.header a')];
             const headerSignUp = header.querySelector('.header__links--signUp');
@@ -67,7 +89,15 @@ header.header
             header.addEventListener('mouseleave', restoreHeaderIndicatorPosition);
             window.addEventListener('resize', restoreHeaderIndicatorPosition);
 
-            menuMobileBtn.addEventListener('click', ()=> {
+            menuMobileBtn.addEventListener('click', () => {
                 header.classList.toggle('header__menuMobile--open');
+                document.querySelector('html').classList.toggle('hidden');
+            });
+
+            headerSignUp.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                let modal = document.querySelector('#modal__signUp')
+                modal.style.display = 'block';
             })
-        })
+        });

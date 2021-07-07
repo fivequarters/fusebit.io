@@ -30,8 +30,13 @@ html(lang='en')
     link(rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png')
     link(rel='manifest' href='/site.webmanifest')
     link(rel='mask-icon' href='/safari-pinned-tab.svg' color='#fb310a')
+
+    link(rel='stylesheet' href='/assets/vendor/swiper-bundle.min.css')
+    script(src='/assets/vendor/swiper-bundle.min.js')
+
     link(rel='preconnect' href='https://fonts.gstatic.com')
-    link(href='https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Poppins:wght@300;400;700&display=swap' rel='stylesheet')
+    link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Roboto&family=Sora:wght@300;400;700;800&display=swap" rel="stylesheet")
+
     link(rel='stylesheet' href='/assets/main.css?' + cacheBust.mainCss)
   body
 
@@ -40,7 +45,7 @@ html(lang='en')
     main
       block content
 
-    //- block footer
+    include ../_components/Footer/Footer
+
     //- script(src='/assets/vendor.js?' + cacheBust.vendorJs)
     script(src='/assets/main.js?' + cacheBust.mainJs)
-    //- script(src='/assets/app.js)
