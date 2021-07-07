@@ -195,10 +195,9 @@ if (sectionFeatures) {
             .addTo(scrollMagicController);
     } else {
         featuresBase.to(featuresDot, {
-            duration: 0.5,
             motionPath: {
-                path: `.features__path--base--path2`,
-                align: `.features__path--base--path2`,
+                path: `.features__path--base--path3`,
+                align: `.features__path--base--path3`,
                 alignOrigin: [0.5, 0.5],
             },
         });
@@ -207,12 +206,13 @@ if (sectionFeatures) {
             triggerElement: '.features',
             offset: -42,
             duration:
-                document.querySelector('.features__path--base').clientHeight *
-                1.2,
+                document
+                    .querySelector('.features__path--base--path3')
+                    .getBoundingClientRect().height * 1.5,
             triggerHook: 0.4,
         })
             .setTween(featuresBase)
-            //.addIndicators({ name: 'Base path mobile' })
+            .addIndicators({ name: 'Base path mobile' })
             .addTo(scrollMagicController);
     }
 
@@ -224,7 +224,7 @@ if (sectionFeatures) {
             triggerHook: 0.7,
         })
             .setClassToggle('#f' + i, 'features__list--item-active')
-            //.addIndicators()
+            .addIndicators()
             .addTo(scrollMagicController);
     }
 }

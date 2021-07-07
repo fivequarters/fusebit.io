@@ -2,9 +2,13 @@ mixin pathDot
     .features__path--dot
 
 mixin path1 
-    svg.features__path--base(width="568" height="2720" fill="none" xmlns="http://www.w3.org/2000/svg")
+    svg.features__path--base.features__path--base--desktop(width="568" height="2720" fill="none" xmlns="http://www.w3.org/2000/svg")
         path.features__path--base--path1(d="M.999725 0v1024.47c0 22.09 17.908575 40 39.999975 40H526.051c22.092 0 40 17.91 40 40V1880" stroke="#D7E5FF" stroke-width="2")
         path.features__path--base--path2(d="M1.00044 0v3000" stroke="#D7E5FF" stroke-width="2")
+
+mixin path1--mobile
+    svg.features__path--base.features__path--base--mobile(width="568" height="2620" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path.features__path--base--path3(d="M1.00044 0v2620" stroke="#D7E5FF" stroke-width="2")
 
 section.features 
     .features__container 
@@ -80,6 +84,7 @@ section.features
         
         +pathDot
         +path1
+        +path1--mobile
 
     .features__bg
         - for(let i = 0; i < 5; i++)
