@@ -1,6 +1,12 @@
 /* eslint-disable */
 import '../css/main.scss';
 
+const screenRes = {
+    isMobile: window.matchMedia('screen and (max-width: 700px)').matches,
+    isTablet: window.matchMedia('screen and (max-width: 1000px)').matches,
+    isDesktop: window.matchMedia('screen and (min-width: 1001px)').matches,
+};
+
 const scrollMagicController = new ScrollMagic.Controller();
 
 const sectionSupport = document.querySelector('.support');
@@ -166,7 +172,7 @@ if (sectionFeatures) {
     const featuresDot = sectionFeatures.querySelector('.features__path--dot');
     const featuresBase = new gsap.timeline();
 
-    if (window.matchMedia('(min-width: 1175px)').matches) {
+    if (screenRes.isDesktop) {
         featuresBase.to(featuresDot, {
             duration: 0.5,
             motionPath: {
@@ -185,7 +191,7 @@ if (sectionFeatures) {
             triggerHook: 0.4,
         })
             .setTween(featuresBase)
-            //.addIndicators({ name: 'Base path' })
+            //.addIndicators({ name: 'Base path desktop' })
             .addTo(scrollMagicController);
     } else {
         featuresBase.to(featuresDot, {
@@ -206,7 +212,19 @@ if (sectionFeatures) {
             triggerHook: 0.4,
         })
             .setTween(featuresBase)
-            //.addIndicators({ name: 'Base path' })
+            //.addIndicators({ name: 'Base path mobile' })
+            .addTo(scrollMagicController);
+    }
+
+    // Toggle active class to items into Features
+    for (let i = 1; i <= 6; i++) {
+        new ScrollMagic.Scene({
+            triggerElement: '#f' + i,
+            duration: document.querySelector('#f' + i).clientHeight,
+            triggerHook: 0.7,
+        })
+            .setClassToggle('#f' + i, 'features__list--item-active')
+            //.addIndicators()
             .addTo(scrollMagicController);
     }
 }
