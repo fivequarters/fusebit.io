@@ -5,7 +5,7 @@
     align-items: center;
     color: var(--dark);
     background: linear-gradient(to top, var(--neutralLight) 50%, #ffffff 120%);
-    padding: 12rem 0 14rem;
+    padding: 4rem 0 14rem;
 
     &__container {
         position: relative;
@@ -24,7 +24,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
 
             @media only screen and (max-width: 700px) {
                 margin-bottom: 1rem;
