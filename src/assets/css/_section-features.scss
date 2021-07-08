@@ -94,6 +94,7 @@
     &__content {
         width: 50%;
         max-width: 490px;
+        opacity: 0;
 
         @media only screen and (max-width: 1000px) {
             width: 100%;
@@ -348,6 +349,10 @@
     &__images {
         width: 50%;
         max-width: 460px;
+
+        &--marketplace {
+            opacity: 0;
+        }
 
         img {
             width: 100%;

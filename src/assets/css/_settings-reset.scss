@@ -138,9 +138,41 @@ table {
 }
 
 // Animations
+.fadeInRight {
+    animation: fadeInLeft 0.5s ease-in-out forwards;
+}
+.fadeInRight {
+    animation: fadeInRight 0.5s ease-in-out forwards;
+}
+.fadeInUp {
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translate(-100%, 0%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0%, 0%);
+        opacity: 1;
+    }
+}
+
 @keyframes fadeInRight {
     from {
         transform: translate(100%, 0%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0%, 0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate(0%, 100%);
         opacity: 0;
     }
     to {

@@ -168,6 +168,28 @@ if (sectionFeatures) {
             .addTo(scrollMagicController);
     }
 
+    // Animaciones de entrada
+    new ScrollMagic.Scene({
+        triggerElement: '.features',
+        offset: 200,
+        duration: sectionFeatures.getBoundingClientRect().height - 400,
+        triggerHook: 0.5,
+    })
+        .setClassToggle('.features__content', 'fadeInUp')
+        .addIndicators()
+        .addTo(scrollMagicController);
+
+    //
+    new ScrollMagic.Scene({
+        triggerElement: '.features',
+        offset: 200,
+        duration: sectionFeatures.getBoundingClientRect().height - 400,
+        triggerHook: 0.5,
+    })
+        .setClassToggle('.features__images--marketplace', 'fadeInRight')
+        .addIndicators()
+        .addTo(scrollMagicController);
+
     // Toggle active class to items into Features
     for (let i = 1; i <= 6; i++) {
         new ScrollMagic.Scene({
