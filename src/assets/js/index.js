@@ -9,6 +9,11 @@ const screenRes = {
 
 const scrollMagicController = new ScrollMagic.Controller();
 
+const sectionHero = document.querySelector('.hero');
+if (sectionHero) {
+    const heroContent = new gsap.timeline();
+}
+
 const sectionSupport = document.querySelector('.support');
 if (sectionSupport) {
     const supportDot = sectionSupport.querySelector('.support__path--dot');
