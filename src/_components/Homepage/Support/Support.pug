@@ -1,7 +1,7 @@
 include ./Card/Card
 
-mixin pathDot 
-    .support__path--dot
+mixin pathDot(id="", color='') 
+    .support__path--dot(id=id style=`background: ${color} !important`)
 
 mixin path1 
     svg.support__path--base(width="28" height="1043" fill="none" xmlns="http://www.w3.org/2000/svg")
@@ -77,7 +77,10 @@ section.support
                 +card(cardsData[1])
                 +card(cardsData[2])
 
-        +pathDot
+        +pathDot('support__dot--card0')
+        +pathDot('support__dot--card1')
+        +pathDot('support__dot--card2')
+        +pathDot('support__dot--card3')
         +pathCard1
         +pathCard2
         +pathCard3
