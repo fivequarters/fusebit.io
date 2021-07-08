@@ -176,7 +176,7 @@ if (sectionFeatures) {
         triggerHook: 0.5,
     })
         .setClassToggle('.features__content', 'fadeInUp')
-        .addIndicators()
+        //.addIndicators()
         .addTo(scrollMagicController);
 
     //
@@ -187,7 +187,7 @@ if (sectionFeatures) {
         triggerHook: 0.5,
     })
         .setClassToggle('.features__images--marketplace', 'fadeInRight')
-        .addIndicators()
+        //.addIndicators()
         .addTo(scrollMagicController);
 
     // Toggle active class to items into Features
