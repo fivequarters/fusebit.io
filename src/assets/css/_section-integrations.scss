@@ -45,14 +45,13 @@
     }
 
     &__title {
+        position: relative;
+        top: 300px;
+        opacity: 0;
+
         width: 100%;
         max-width: 460px;
-        font-family: var(--sora);
-        font-weight: 900;
-        @include font-size(48);
-        line-height: 120%;
-        letter-spacing: -2%;
-        color: var(--dark);
+        @include titles;
 
         & > span {
             font-family: var(--sora);
@@ -78,6 +77,10 @@
     }
 
     &__text {
+        position: relative;
+        left: 500px;
+        opacity: 0;
+
         width: 100%;
         max-width: 460px;
         @include font-size(20);
@@ -144,10 +147,11 @@
         &--image {
             position: absolute;
             top: 0;
-            right: 0;
+            right: -400px;
             width: 50%;
             height: 100%;
             pointer-events: none;
+            opacity: 0;
 
             img {
                 position: absolute;

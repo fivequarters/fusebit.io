@@ -86,6 +86,9 @@
     }
 
     &__title {
+        position: relative;
+        top: 300px;
+        opacity: 0;
         @include titles;
 
         & > span {
@@ -98,6 +101,9 @@
     }
 
     &__text {
+        position: relative;
+        top: 300px;
+        opacity: 0;
         @include font-size(18);
         line-height: 28.8px;
         font-weight: 300;
@@ -113,6 +119,7 @@
         width: 608px;
         height: 320px;
         top: -1.5rem;
+        left: 400px;
 
         &--img {
             position: absolute;

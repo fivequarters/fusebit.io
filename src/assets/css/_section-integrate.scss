@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    min-height: 60vh;
+    max-height: 80vh;
     overflow: hidden;
 
     &__container {
@@ -17,19 +17,21 @@
         width: 100%;
         max-width: 570px;
         margin: 0 auto;
-        margin-top: 8rem;
+        margin-top: 6rem;
         z-index: 1;
     }
 
     &__title {
-        font-family: var(--sora);
-        font-weight: 900;
-        @include font-size(48);
-        line-height: 58px;
-        letter-spacing: -2%;
-        color: var(--dark);
-        margin-bottom: 2rem;
-        transition: all 0.2s;
+        position: relative;
+        top: 300px;
+        //opacity: 0;
+        background: radial-gradient(
+            rgba(255, 255, 255, 1) 70%,
+            rgba(255, 255, 255, 0)
+        );
+        //background: radial-gradient(red 50%, blue);
+
+        @include titles;
         margin-bottom: 56px;
         text-align: center;
 
@@ -47,6 +49,8 @@
 
     &__cta {
         position: relative;
+        top: 200px;
+        opacity: 0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -101,9 +105,10 @@
 
     &__orbits {
         position: relative;
-        bottom: 4rem;
         text-align: center;
         img {
+            position: relative;
+            bottom: 10rem;
             width: 100%;
             transform: scale(1.1);
 

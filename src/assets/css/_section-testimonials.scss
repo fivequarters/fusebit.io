@@ -37,6 +37,8 @@
 
     &__title {
         position: relative;
+        top: 300px;
+        opacity: 0;
         width: 100%;
         max-width: 750px;
         font-family: var(--sora);
@@ -61,6 +63,9 @@
     }
 
     &__text {
+        position: relative;
+        top: 200px;
+        opacity: 0;
         width: 100%;
         max-width: 720px;
         @include font-size(20);

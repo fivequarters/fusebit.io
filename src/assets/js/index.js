@@ -11,11 +11,67 @@ const scrollMagicController = new ScrollMagic.Controller();
 
 const sectionHero = document.querySelector('.hero');
 if (sectionHero) {
-    const heroContent = new gsap.timeline();
+    const heroHeight = sectionHero.getBoundingClientRect().height;
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionHero,
+        offset: heroHeight / 1.6,
+        duration: heroHeight / 2,
+    })
+        .setTween('.hero__images--desktop', {
+            left: '120%',
+            opacity: 0,
+        })
+        .addTo(scrollMagicController);
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionHero,
+        offset: heroHeight / 1.4,
+        duration: heroHeight / 2,
+    })
+        .setTween('.hero__images--mobile', {
+            left: '120%',
+            opacity: 0,
+        })
+        .addTo(scrollMagicController);
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionHero,
+        offset: heroHeight / 2,
+        duration: heroHeight,
+    })
+        .setTween('.hero__title', {
+            left: -400,
+            opacity: 0,
+        })
+        .addTo(scrollMagicController);
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionHero,
+        offset: heroHeight / 2,
+        duration: heroHeight,
+    })
+        .setTween('.hero__text', {
+            left: -200,
+            opacity: 0,
+        })
+        .addTo(scrollMagicController);
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionHero,
+        offset: heroHeight / 2,
+        duration: heroHeight,
+    })
+        .setTween('.hero__cta', {
+            left: -100,
+            opacity: 0,
+        })
+        .addTo(scrollMagicController);
 }
 
 const sectionSupport = document.querySelector('.support');
 if (sectionSupport) {
+    const supportHeight = sectionSupport.getBoundingClientRect().height;
     const supportDot = sectionSupport.querySelector('.support__path--dot');
     const allCards = sectionSupport.querySelectorAll('.card');
     const supportBase = new gsap.timeline();
@@ -122,10 +178,50 @@ if (sectionSupport) {
             //.addIndicators({ name: 'Base path' })
             .addTo(scrollMagicController);
     }
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionSupport,
+        triggerHook: 1,
+        offset: 100,
+        duration: 400,
+    })
+        .setTween('.support__title', {
+            top: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionSupport,
+        triggerHook: 1,
+        offset: 100,
+        duration: supportHeight / 1.5,
+    })
+        .setTween('.support__text', {
+            top: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionSupport,
+        triggerHook: 0.85,
+        offset: 0,
+        duration: 400,
+    })
+        .setTween('.support__image', {
+            left: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
 }
 
 const sectionFeatures = document.querySelector('.features');
 if (sectionFeatures) {
+    const featuresHeight = sectionFeatures.getBoundingClientRect().height;
     const featuresDot = sectionFeatures.querySelector('.features__path--dot');
     const featuresBase = new gsap.timeline();
 
@@ -173,25 +269,57 @@ if (sectionFeatures) {
             .addTo(scrollMagicController);
     }
 
-    // Animaciones de entrada
     new ScrollMagic.Scene({
         triggerElement: '.features',
-        offset: 200,
-        duration: sectionFeatures.getBoundingClientRect().height - 400,
-        triggerHook: 0.5,
+        triggerHook: 1,
+        offset: 400,
+        duration: 300,
     })
-        .setClassToggle('.features__content', 'fadeInUp')
+        .setTween('.features__title--1', {
+            top: 0,
+            opacity: 1,
+        })
         //.addIndicators()
         .addTo(scrollMagicController);
 
-    //
+    // Marketplace
     new ScrollMagic.Scene({
         triggerElement: '.features',
+        triggerHook: 1,
         offset: 200,
-        duration: sectionFeatures.getBoundingClientRect().height - 400,
-        triggerHook: 0.5,
+        duration: 500,
     })
-        .setClassToggle('.features__images--marketplace', 'fadeInRight')
+        .setTween('.features__images--marketplace', {
+            left: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
+
+    new ScrollMagic.Scene({
+        triggerElement: '.features',
+        triggerHook: 1,
+        offset: featuresHeight / 2,
+        duration: 500,
+    })
+        .setTween('.features__title--2', {
+            top: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
+
+    // graph
+    new ScrollMagic.Scene({
+        triggerElement: '.features',
+        triggerHook: 1,
+        offset: featuresHeight / 1.8,
+        duration: 300,
+    })
+        .setTween('.features__images--graph', {
+            left: 0,
+            opacity: 1,
+        })
         //.addIndicators()
         .addTo(scrollMagicController);
 
@@ -206,4 +334,172 @@ if (sectionFeatures) {
             //.addIndicators()
             .addTo(scrollMagicController);
     }
+}
+
+const sectionIntegrate = document.querySelector('.integrate');
+if (sectionIntegrate) {
+    new ScrollMagic.Scene({
+        triggerElement: sectionIntegrate,
+        triggerHook: 1,
+        offset: 0,
+        duration: 400,
+    })
+        .setTween('.integrate__title', {
+            top: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionIntegrate,
+        triggerHook: 1,
+        offset: 100,
+        duration: 500,
+    })
+        .setTween('.integrate__cta', {
+            top: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
+}
+
+const sectionIntegrations = document.querySelector('.integrations');
+if (sectionIntegrations) {
+    const integrationsHeight =
+        sectionIntegrations.getBoundingClientRect().height;
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionIntegrations,
+        triggerHook: 1,
+        offset: 0,
+        duration: integrationsHeight / 2,
+    })
+        .setTween('.integrations__title', {
+            top: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionIntegrations,
+        triggerHook: 1,
+        offset: 0,
+        duration: integrationsHeight / 2,
+    })
+        .setTween('.integrations__text', {
+            left: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionIntegrations,
+        triggerHook: 1,
+        offset: integrationsHeight / 4,
+        duration: integrationsHeight - integrationsHeight / 3,
+    })
+        .setTween('.integrations__item--image', {
+            right: -100,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
+}
+
+const sectionWeprovide = document.querySelector('.weprovide');
+if (sectionWeprovide) {
+    const weprovideHeight = sectionWeprovide.getBoundingClientRect().height;
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionWeprovide,
+        triggerHook: 1,
+        offset: 0,
+        duration: 400,
+    })
+        .setTween('.weprovide__title', {
+            top: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
+}
+
+const sectionTestimonials = document.querySelector('.testimonials');
+if (sectionTestimonials) {
+    const testimonialsHeight =
+        sectionTestimonials.getBoundingClientRect().height;
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionTestimonials,
+        triggerHook: 1,
+        offset: 0,
+        duration: testimonialsHeight / 2,
+    })
+        .setTween('.testimonials__title', {
+            top: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionTestimonials,
+        triggerHook: 1,
+        offset: 0,
+        duration: testimonialsHeight / 1.5,
+    })
+        .setTween('.testimonials__text', {
+            top: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
+}
+
+const sectionPrefooter = document.querySelector('.prefooter');
+if (sectionPrefooter) {
+    const prefooterHeight = sectionPrefooter.getBoundingClientRect().height;
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionPrefooter,
+        triggerHook: 1,
+        offset: 0,
+        duration: prefooterHeight / 2,
+    })
+        .setTween('.prefooter__title', {
+            left: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionPrefooter,
+        triggerHook: 1,
+        offset: 0,
+        duration: prefooterHeight / 1.5,
+    })
+        .setTween('.prefooter__text', {
+            left: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
+
+    new ScrollMagic.Scene({
+        triggerElement: sectionPrefooter,
+        triggerHook: 1,
+        offset: 0,
+        duration: prefooterHeight / 1,
+    })
+        .setTween('.prefooter__cta', {
+            left: 0,
+            opacity: 1,
+        })
+        //.addIndicators()
+        .addTo(scrollMagicController);
 }

@@ -1,13 +1,12 @@
 .hero {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 110vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--neutral);
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
 
     &__background {
         position: absolute;
@@ -126,6 +125,7 @@
     }
 
     &__title {
+        position: relative;
         font-family: var(--sora);
         font-weight: 700;
         @include font-size(56);
@@ -151,6 +151,7 @@
     }
 
     &__text {
+        position: relative;
         width: 450px;
         @include font-size(18);
         line-height: 32px;
@@ -232,7 +233,7 @@
         &--desktop,
         &--mobile {
             position: absolute;
-            transition: all 0.2s;
+            //transition: all 0.2s;
             opacity: 0;
             img {
                 width: 100%;
