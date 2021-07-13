@@ -130,32 +130,8 @@ if (sectionSupport) {
             'base',
             3,
             300,
-            sectionSupport.getBoundingClientRect().height,
-            'support card base'
-        );
-        ballpath(
-            '#support__dot--card1',
-            'card1',
-            0,
-            300,
-            220,
-            'support card 1'
-        );
-        ballpath(
-            '#support__dot--card2',
-            'card2',
-            1,
-            300,
-            220,
-            'support card 2'
-        );
-        ballpath(
-            '#support__dot--card3',
-            'card3',
-            2,
-            300,
-            220,
-            'support card 3'
+            screenRes.isDesktop ? supportHeight * 1.82 : supportHeight * 1.7,
+            'SUPPORT'
         );
     } else {
         supportBase.to(supportDot, {
@@ -225,49 +201,58 @@ if (sectionFeatures) {
     const featuresDot = sectionFeatures.querySelector('.features__path--dot');
     const featuresBase = new gsap.timeline();
 
-    if (screenRes.isDesktop) {
-        featuresBase.to(featuresDot, {
-            duration: 0.5,
-            motionPath: {
-                path: `.features__path--base--path1`,
-                align: `.features__path--base--path1`,
-                alignOrigin: [0.5, 0.5],
-            },
-        });
+    featuresBase.to(featuresDot, {
+        motionPath: {
+            path: screenRes.isDesktop
+                ? `.features__path--base--path1`
+                : `.features__path--base--path3`,
 
-        new ScrollMagic.Scene({
-            triggerElement: '.features',
-            offset: -42,
-            duration:
-                document.querySelector('.features__path--base').clientHeight *
-                1.2,
-            triggerHook: 0.4,
-        })
-            .setTween(featuresBase)
-            //.addIndicators({ name: 'Base path desktop' })
-            .addTo(scrollMagicController);
-    } else {
-        featuresBase.to(featuresDot, {
-            motionPath: {
-                path: `.features__path--base--path3`,
-                align: `.features__path--base--path3`,
-                alignOrigin: [0.5, 0.5],
-            },
-        });
+            align: screenRes.isDesktop
+                ? `.features__path--base--path1`
+                : `.features__path--base--path3`,
+            alignOrigin: [0.5, 0.5],
+        },
+    });
 
-        new ScrollMagic.Scene({
-            triggerElement: '.features',
-            offset: -42,
-            duration:
-                document
-                    .querySelector('.features__path--base--path3')
-                    .getBoundingClientRect().height * 1.5,
-            triggerHook: 0.4,
-        })
-            .setTween(featuresBase)
-            //.addIndicators({ name: 'Base path mobile' })
-            .addTo(scrollMagicController);
+    function setElement(obj, target) {
+        const item = sectionFeatures.querySelector(obj);
+        const itemRect = item.getBoundingClientRect();
+
+        return {
+            item: item,
+            rect: itemRect,
+        };
     }
+
+    function isIntersecting(obj1, obj2) {
+        if (obj1 >= obj2.rect.top && obj1 <= obj2.rect.bottom) {
+            obj2.item.classList.add('features__list--item-active');
+        } else {
+            obj2.item.classList.remove('features__list--item-active');
+        }
+    }
+
+    new ScrollMagic.Scene({
+        triggerElement: '.features',
+        offset: -55,
+        duration: screenRes.isDesktop
+            ? featuresHeight * 1.1
+            : featuresHeight * 1.2,
+        triggerHook: 0.25,
+    })
+        .setTween(featuresBase)
+        .on('progress', (e) => {
+            const dotRect = featuresDot.getBoundingClientRect();
+            const dotMiddle = dotRect.top + dotRect.height / 2;
+
+            for (let i = 1; i <= 6; i++) {
+                const item = setElement('#f' + i);
+
+                isIntersecting(dotMiddle, item);
+            }
+        })
+        //.addIndicators({ name: 'FEATURES' })
+        .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
         triggerElement: '.features',
@@ -322,18 +307,6 @@ if (sectionFeatures) {
         })
         //.addIndicators()
         .addTo(scrollMagicController);
-
-    // Toggle active class to items into Features
-    for (let i = 1; i <= 6; i++) {
-        new ScrollMagic.Scene({
-            triggerElement: '#f' + i,
-            duration: document.querySelector('#f' + i).clientHeight,
-            triggerHook: 0.7,
-        })
-            .setClassToggle('#f' + i, 'features__list--item-active')
-            //.addIndicators()
-            .addTo(scrollMagicController);
-    }
 }
 
 const sectionIntegrate = document.querySelector('.integrate');

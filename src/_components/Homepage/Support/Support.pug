@@ -5,7 +5,8 @@ mixin pathDot(id="", color='')
 
 mixin path1 
     svg.support__path--base(width="28" height="1043" fill="none" xmlns="http://www.w3.org/2000/svg")
-        path.support__path--base--path(d="M14.0001 8v1035" stroke="#D7E5FF" stroke-width="2")
+        path.support__path--base--path(d="M14.0001 8v817" stroke="#D7E5FF" stroke-width="2")
+        path.support__path--base--path--mobile(d="M14.0001 8v910" stroke="#D7E5FF" stroke-width="2")
         path(fill="#fff" d="M0 0h28v24H0z")
         circle(cx="1" cy="8" r="1" fill="#D7E5FF")
         circle(cx="27" cy="8" r="1" fill="#D7E5FF")
@@ -78,9 +79,6 @@ section.support
                 +card(cardsData[2])
 
         +pathDot('support__dot--card0')
-        +pathDot('support__dot--card1')
-        +pathDot('support__dot--card2')
-        +pathDot('support__dot--card3')
         +pathCard1
         +pathCard2
         +pathCard3
