@@ -118,6 +118,7 @@
             &--indicator {
                 position: absolute;
                 top: 0;
+                left: -4.95rem;
                 width: 30px;
                 height: 30px;
 
@@ -143,19 +144,16 @@
                 }
 
                 @media only screen and (max-width: 700px) {
-                    left: -2.45rem;
+                    left: -2.5rem;
                 }
             }
         }
 
         &--1 {
             &--indicator {
-                left: -4.85rem;
-            }
-        }
-        &--2 {
-            &--indicator {
-                left: -4.95rem;
+                @media only screen and (min-width: 1000px) {
+                    left: -4.85rem;
+                }
             }
         }
 
@@ -309,6 +307,7 @@
                 top: 50%;
                 left: -4.95rem;
                 transform: translateY(-40%);
+                transform-origin: center;
                 width: 30px;
                 height: 30px;
 
@@ -334,7 +333,8 @@
                 }
 
                 @media only screen and (max-width: 700px) {
-                    left: -2.45rem;
+                    transform: translateY(-40%) scale(1.1);
+                    left: -2.5rem;
                 }
             }
 
