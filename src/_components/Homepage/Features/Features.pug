@@ -10,13 +10,13 @@ mixin path1--mobile
     svg.features__path--base.features__path--base--mobile(width="568" height="2620" fill="none" xmlns="http://www.w3.org/2000/svg")
         path.features__path--base--path3(d="M1.00044 0v2560" stroke="#D7E5FF" stroke-width="2")
 
-mixin indicator 
-    div.features__list--item-indicator 
-        svg(width="28" height="16" fill="none" xmlns="http://www.w3.org/2000/svg")
-            circle(cx="1" cy="8" r="1" fill="#D7E5FF")
-            circle(cx="27" cy="8" r="1" fill="#D7E5FF")
-            circle(cx="14" cy="8" r="8" fill="#3474EC")
-            circle(cx="14" cy="8" r="7" stroke="#D7E5FF" stroke-width="2")
+mixin indicator(title)
+    div(class=`${!title ? 'features__list--item-indicator' : title}`)
+        svg(width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg")
+            circle(cx="15" cy="15" r="15" fill="#3474EC")
+            circle(cx="2" cy="15" r="1" fill="#D7E5FF")
+            circle(cx="28" cy="15" r="1" fill="#D7E5FF")
+            circle(cx="15" cy="15" r="7" stroke="#D7E5FF" stroke-width="2")
 
 section.features 
     .features__container 
@@ -27,6 +27,8 @@ section.features
                     | Leave boilerplate 
                     span integration code 
                     | to us_
+
+                    +indicator('features__title--1--indicator')
 
                 p.features__text 
                     | Focus your time on the core integration logic while Fusebit takesthe boilerplate off your plate.
@@ -101,6 +103,8 @@ section.features
                 h2.features__title.features__title--sm.features__title--2
                     | Don't spend time worrying about 
                     span infrastructure_
+
+                    +indicator('features__title--2--indicator')
 
                 p.features__text 
                     | Spend time on what matters while Fusebit ensures your integrations are running and healthy

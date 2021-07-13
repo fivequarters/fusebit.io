@@ -113,6 +113,52 @@
             }
         }
 
+        &--1,
+        &--2 {
+            &--indicator {
+                position: absolute;
+                top: 0;
+                width: 30px;
+                height: 30px;
+
+                svg {
+                    circle {
+                        &:nth-child(3),
+                        &:nth-child(2) {
+                            fill: var(--neutralDark);
+                        }
+
+                        &:nth-child(1) {
+                            fill: var(--dark);
+                        }
+
+                        &:nth-child(4) {
+                            stroke: var(--neutralDark);
+                        }
+                    }
+                }
+
+                @media only screen and (max-width: 1000px) {
+                    left: -3.95rem;
+                }
+
+                @media only screen and (max-width: 700px) {
+                    left: -2.45rem;
+                }
+            }
+        }
+
+        &--1 {
+            &--indicator {
+                left: -4.85rem;
+            }
+        }
+        &--2 {
+            &--indicator {
+                left: -4.95rem;
+            }
+        }
+
         @media only screen and (max-width: 1000px) {
             @include font-size(48);
             line-height: 57.6px;
@@ -261,17 +307,19 @@
             &-indicator {
                 position: absolute;
                 top: 50%;
-                left: -4.9rem;
+                left: -4.95rem;
                 transform: translateY(-40%);
+                width: 30px;
+                height: 30px;
 
                 svg {
                     circle {
-                        &:nth-child(1),
+                        &:nth-child(3),
                         &:nth-child(2) {
                             fill: var(--neutralDark);
                         }
 
-                        &:nth-child(3) {
+                        &:nth-child(1) {
                             fill: var(--dark);
                         }
 
@@ -362,12 +410,12 @@
                 .features__list--item-indicator {
                     svg {
                         circle {
-                            &:nth-child(1),
+                            &:nth-child(3),
                             &:nth-child(2) {
                                 fill: var(--neutralLight);
                             }
 
-                            &:nth-child(3) {
+                            &:nth-child(1) {
                                 fill: var(--dark);
                             }
 
@@ -384,7 +432,7 @@
             .features__list--item {
                 &-indicator {
                     @media only screen and (min-width: 1000px) {
-                        left: -4.8rem;
+                        left: -4.85rem;
                     }
                 }
             }
