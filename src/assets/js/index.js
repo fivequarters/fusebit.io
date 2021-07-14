@@ -342,6 +342,59 @@ const sectionIntegrations = document.querySelector('.integrations');
 if (sectionIntegrations) {
     const integrationsHeight =
         sectionIntegrations.getBoundingClientRect().height;
+    const integrationsDot = sectionIntegrations.querySelector(
+        '.integrations__path--dot'
+    );
+
+    const integrationsItems = sectionIntegrations.querySelectorAll(
+        '.integrations__item'
+    );
+    function isDotIntersecting(obj1, obj2) {
+        if (
+            obj1 >= obj2.getBoundingClientRect().top &&
+            obj1 <= obj2.getBoundingClientRect().bottom
+        ) {
+            return true;
+        }
+
+        return false;
+    }
+
+    new ScrollMagic.Scene({
+        triggerElement: '.integrations',
+        triggerHook: 0.5,
+        offset: integrationsHeight / 3,
+        duration: integrationsHeight,
+    })
+        .setTween(integrationsDot, {
+            motionPath: {
+                path: `.integrations__path--path`,
+                align: `.integrations__path--path`,
+                alignOrigin: [0.5, 0.5],
+            },
+        })
+        .on('progress', (e) => {
+            const dotRect = integrationsDot.getBoundingClientRect();
+            const dotMiddle = dotRect.top + dotRect.height / 2;
+
+            for (let i = 0; i < integrationsItems.length; i++) {
+                const item = integrationsItems[i];
+                const itemIcon = item.querySelector(
+                    '.integrations__item--icon'
+                );
+
+                if (isDotIntersecting(dotMiddle, itemIcon)) {
+                    item.classList.add('integrations__item-active');
+                } else if (
+                    !isDotIntersecting(dotMiddle, itemIcon) &&
+                    item.classList.contains('integrations__item-active')
+                ) {
+                    item.classList.remove('integrations__item-active');
+                }
+            }
+        })
+        .addIndicators()
+        .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
         triggerElement: sectionIntegrations,
@@ -373,10 +426,12 @@ if (sectionIntegrations) {
         triggerElement: sectionIntegrations,
         triggerHook: 1,
         offset: integrationsHeight / 4,
-        duration: integrationsHeight - integrationsHeight / 3,
+        duration: screenRes.isMobile
+            ? 400
+            : integrationsHeight - integrationsHeight / 3,
     })
         .setTween('.integrations__item--image', {
-            right: -100,
+            right: screenRes.isMobile ? -50 : -100,
             opacity: 1,
         })
         //.addIndicators()
