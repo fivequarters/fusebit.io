@@ -436,6 +436,7 @@ if (sectionTestimonials) {
 const sectionPrefooter = document.querySelector('.prefooter');
 if (sectionPrefooter) {
     const prefooterHeight = sectionPrefooter.getBoundingClientRect().height;
+    const prefooterDot = document.querySelector('.prefooter__path--dot');
 
     new ScrollMagic.Scene({
         triggerElement: sectionPrefooter,
@@ -475,4 +476,30 @@ if (sectionPrefooter) {
         })
         //.addIndicators()
         .addTo(scrollMagicController);
+
+    gsap.timeline({
+        repeat: -1,
+        repeatDelay: 3,
+    }).to(prefooterDot, {
+        motionPath: {
+            path: '.prefooter__path--path',
+            align: '.prefooter__path--path',
+            alignOrigin: [0.5, 0.5],
+            autoRotate: true,
+            start: 0.9,
+            //start: 0.53,
+            end: 1.9,
+        },
+        duration: 8,
+        ease: 'power1.inOut',
+        onUpdate: function () {
+            if (this.progress() > 0.55 && this.progress() < 0.76) {
+                prefooterDot.classList.add('prefooter__path--dot--blured');
+            } else if (
+                prefooterDot.classList.contains('prefooter__path--dot--blured')
+            ) {
+                prefooterDot.classList.remove('prefooter__path--dot--blured');
+            }
+        },
+    });
 }
