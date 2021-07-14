@@ -534,9 +534,15 @@
             background: url(./images/features__bg/bg-00.png) left center
                 no-repeat;
 
+            background-size: contain;
+
             @media only screen and (max-width: 1000px) {
                 background-size: contain;
-                top: 200px;
+            }
+
+            @media only screen and (max-width: 700px) {
+                top: 80px;
+                opacity: 0.6;
             }
         }
 
@@ -557,7 +563,8 @@
             }
 
             @media only screen and (max-width: 700px) {
-                transform: scale(1);
+                top: 370px;
+                transform: scale(0.8);
             }
         }
         &--02 {
@@ -575,7 +582,8 @@
                 top: 700px;
             }
             @media only screen and (max-width: 700px) {
-                transform: scale(1);
+                top: 450px;
+                transform: scale(0.8);
             }
         }
 
@@ -595,9 +603,10 @@
                 left: 0;
             }
             @media only screen and (max-width: 700px) {
-                top: 1720px;
-                left: -50px;
-                transform: scale(1);
+                top: 1340px;
+                left: -60px;
+                transform: scale(0.8);
+                opacity: 0.6;
             }
         }
         &--04 {
@@ -616,7 +625,7 @@
                 left: 0;
             }
             @media only screen and (max-width: 700px) {
-                top: 1800px;
+                top: 1450px;
                 left: 0px;
                 transform: scale(1);
             }
