@@ -5,6 +5,7 @@ const screenRes = {
     isMobile: window.matchMedia('screen and (max-width: 700px)').matches,
     isTablet: window.matchMedia('screen and (max-width: 1000px)').matches,
     isDesktop: window.matchMedia('screen and (min-width: 1001px)').matches,
+    isBigRes: window.matchMedia('screen and (min-height: 1439px)').matches,
 };
 
 const scrollMagicController = new ScrollMagic.Controller();
@@ -15,6 +16,7 @@ if (sectionHero) {
 
     new ScrollMagic.Scene({
         triggerElement: sectionHero,
+        triggerHook: screenRes.isBigRes ? 0.2 : 0.5,
         offset: heroHeight / 1.6,
         duration: heroHeight / 2,
     })
@@ -26,6 +28,7 @@ if (sectionHero) {
 
     new ScrollMagic.Scene({
         triggerElement: sectionHero,
+        triggerHook: screenRes.isBigRes ? 0.2 : 0.5,
         offset: heroHeight / 1.4,
         duration: heroHeight / 2,
     })
@@ -37,6 +40,7 @@ if (sectionHero) {
 
     new ScrollMagic.Scene({
         triggerElement: sectionHero,
+        triggerHook: screenRes.isBigRes ? 0.185 : 0.5,
         offset: heroHeight / 2,
         duration: heroHeight,
     })
@@ -48,6 +52,7 @@ if (sectionHero) {
 
     new ScrollMagic.Scene({
         triggerElement: sectionHero,
+        triggerHook: screenRes.isBigRes ? 0.2 : 0.5,
         offset: heroHeight / 2,
         duration: heroHeight,
     })
@@ -59,6 +64,7 @@ if (sectionHero) {
 
     new ScrollMagic.Scene({
         triggerElement: sectionHero,
+        triggerHook: screenRes.isBigRes ? 0.2 : 0.5,
         offset: heroHeight / 2,
         duration: heroHeight,
     })
@@ -165,7 +171,7 @@ if (sectionSupport) {
             top: 0,
             opacity: 1,
         })
-        //.addIndicators()
+        .addIndicators()
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
