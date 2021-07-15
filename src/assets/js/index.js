@@ -171,7 +171,7 @@ if (sectionSupport) {
             top: 0,
             opacity: 1,
         })
-        .addIndicators()
+        //.addIndicators()
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
