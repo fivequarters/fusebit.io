@@ -18,11 +18,12 @@ mixin emptyIcon
 
 mixin pathMobile
     svg(class="weprovide__path--mobile" width="844" height="555" fill="none" xmlns="http://www.w3.org/2000/svg")
-        path(opacity=".2" fill-rule="evenodd" clip-rule="evenodd" d="M.8 513.5V0h2v513.5c0 21.539 17.462 39 39 39h802.001v2h-802c-22.644 0-41-18.356-41-41z" fill="#D7E5FF")
+        path.weprovide__path--mobile--path(opacity=".2" fill-rule="evenodd" clip-rule="evenodd" d="M.8 513.5V0h2v513.5c0 21.539 17.462 39 39 39h802.001v2h-802c-22.644 0-41-18.356-41-41z" fill="#D7E5FF")
 
 mixin pathDesktop 
     svg(class="weprovide__path--desktop" width="907" height="992" fill="none")
-            path(opacity=".2" fill-rule="evenodd" clip-rule="evenodd" d="M0 0v992h2V116.653C6.646 129.399 18.874 138.5 33.227 138.5c17.264 0 31.252 14.008 31.228 31.271L64 495H64v39.5c0 22.644 18.356 41 41 41h802v-2H105c-21.54 0-39-17.461-39-39v-38.999l.455-325.727c.026-18.369-14.858-33.274-33.227-33.274C15.98 136.5 2 122.519 2 105.273V0H0z" fill="#D7E5FF")
+        path(opacity=".2" fill-rule="evenodd" clip-rule="evenodd" d="M0 0v724h2V0H0z" fill="#D7E5FF")
+        path.weprovide__path--desktop--path(opacity=".2" d="M1 0v19c0 13.8071 11.1929 25 25 25h14c13.8071 0 25 11.1929 25 25v307c0 19.33 15.67 35 35 35h810" stroke="#D7E5FF" stroke-width="2")
 
 
 section.weprovide 
@@ -111,11 +112,8 @@ section.weprovide
                     slidesPerView: 2,
                 },
                 1000: {
-                    slidesPerView: 3,
-                },
-                1200: {
                     slidesPerView: 4,
-                },
+                }
             },
             on: {
                 init: () => {

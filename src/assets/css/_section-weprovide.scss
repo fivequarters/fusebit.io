@@ -12,7 +12,7 @@
         position: relative;
         width: 90%;
         max-width: calc(var(--container) - 3rem);
-        padding: 8rem 0 0;
+        padding: 6.5rem 0 0;
         padding-left: 1.4rem;
         z-index: 5;
 
@@ -25,11 +25,14 @@
         position: relative;
         width: calc(100% - 5rem);
         margin-left: 5rem;
-        margin-top: 5rem;
         z-index: 1;
 
         &--head {
-            margin-bottom: 6.5rem;
+            margin-bottom: 2.55rem;
+
+            @media only screen and (max-width: 1200px) {
+                margin-bottom: 5.5rem;
+            }
 
             @media only screen and (max-width: 700px) {
                 margin-bottom: 4rem;
@@ -52,43 +55,13 @@
             top: 0rem;
             left: 0rem;
             transform-origin: center center;
-            transform: translate(-36%, 3px);
+            //transform: translate(-36%, 3px);
             width: 10px;
             height: 10px;
             border-radius: 1rem;
             background: var(--yellow);
             z-index: 99;
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform-origin: center;
-                transform: translate(-50%, -50%) scale(0);
-                width: 100%;
-                height: 100%;
-                border-radius: 2rem;
-                background: radial-gradient(
-                    closest-side,
-                    var(--yellow),
-                    rgba(0, 0, 0, 0)
-                );
-                transition: all 0.1s;
-            }
-
-            &--blured {
-                background: rgba(0, 0, 0, 0);
-
-                &::before {
-                    transform: translate(-50%, -50%) scale(5);
-                }
-                opacity: 0.2;
-            }
-
-            @media only screen and (max-width: 1000px) {
-                transform: translate(90%, 3px);
-            }
+            opacity: 0;
         }
 
         &--mobile,

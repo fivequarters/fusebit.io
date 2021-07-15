@@ -363,8 +363,10 @@ if (sectionIntegrations) {
     new ScrollMagic.Scene({
         triggerElement: '.integrations',
         triggerHook: 0.5,
-        offset: integrationsHeight / 3,
-        duration: integrationsHeight,
+        offset: screenRes.isMobile ? 100 : integrationsHeight / 3,
+        duration: screenRes.isMobile
+            ? integrationsHeight - 100
+            : integrationsHeight * 1.5,
     })
         .setTween(integrationsDot, {
             motionPath: {
@@ -383,17 +385,19 @@ if (sectionIntegrations) {
                     '.integrations__item--icon'
                 );
 
-                if (isDotIntersecting(dotMiddle, itemIcon)) {
+                if (isDotIntersecting(dotMiddle, item)) {
                     item.classList.add('integrations__item-active');
+                    integrationsDot.style.opacity = 0;
                 } else if (
-                    !isDotIntersecting(dotMiddle, itemIcon) &&
+                    !isDotIntersecting(dotMiddle, item) &&
                     item.classList.contains('integrations__item-active')
                 ) {
                     item.classList.remove('integrations__item-active');
+                    integrationsDot.style.opacity = 1;
                 }
             }
         })
-        .addIndicators()
+        //.addIndicators({ name: 'INTEGRATIONS' })
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
@@ -441,6 +445,64 @@ if (sectionIntegrations) {
 const sectionWeprovide = document.querySelector('.weprovide');
 if (sectionWeprovide) {
     const weprovideHeight = sectionWeprovide.getBoundingClientRect().height;
+    const weprovideDot = sectionWeprovide.querySelector(
+        '.weprovide__path--dot'
+    );
+
+    const weprovideItems =
+        sectionWeprovide.querySelectorAll('.weprovide__item');
+    function isDotIntersecting(obj1, obj2) {
+        if (
+            obj1 >= obj2.getBoundingClientRect().left &&
+            obj1 <= obj2.getBoundingClientRect().right
+        ) {
+            return true;
+        }
+
+        return false;
+    }
+
+    new ScrollMagic.Scene({
+        triggerElement: '.weprovide',
+        triggerHook: 0.5,
+        offset: weprovideHeight / 5.7,
+        duration: weprovideHeight - weprovideHeight / 2,
+    })
+        .setTween(weprovideDot, {
+            motionPath: {
+                path: screenRes.isDesktop
+                    ? '.weprovide__path--desktop--path'
+                    : '.weprovide__path--mobile--path',
+                align: screenRes.isDesktop
+                    ? '.weprovide__path--desktop--path'
+                    : '.weprovide__path--mobile--path',
+                alignOrigin: [0.5, 0.5],
+            },
+        })
+        .on('progress', (e) => {
+            weprovideDot.style.opacity = e.progress > 0 ? 1 : 0;
+
+            const dotRect = weprovideDot.getBoundingClientRect();
+            const dotMiddle = dotRect.left - dotRect.width / 2;
+
+            for (let i = 0; i < weprovideItems.length; i++) {
+                const item = weprovideItems[i];
+                const itemIcon = item.querySelector('.weprovide__item--icon');
+
+                if (isDotIntersecting(dotMiddle, itemIcon)) {
+                    item.classList.add('weprovide__item--active');
+                    weprovideDot.style.opacity = 0;
+                } else if (
+                    !isDotIntersecting(dotMiddle, itemIcon) &&
+                    item.classList.contains('weprovide__item--active')
+                ) {
+                    item.classList.remove('weprovide__item--active');
+                    weprovideDot.style.opacity = 0;
+                }
+            }
+        })
+        //.addIndicators({ name: 'WEPROVIDE' })
+        .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
         triggerElement: sectionWeprovide,
