@@ -24,7 +24,7 @@ if (sectionHero) {
             left: '120%',
             opacity: 0,
         })
-        .addIndicators()
+        //.addIndicators()
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
@@ -464,8 +464,10 @@ if (sectionWeprovide) {
     new ScrollMagic.Scene({
         triggerElement: '.weprovide',
         triggerHook: 0.5,
-        offset: weprovideHeight / 5.7,
-        duration: weprovideHeight - weprovideHeight / 2,
+        offset: screenRes.isMobile ? 0 : weprovideHeight / 5.7,
+        duration: screenRes.isMobile
+            ? 300
+            : weprovideHeight - weprovideHeight / 2,
     })
         .setTween(weprovideDot, {
             motionPath: {
@@ -476,6 +478,7 @@ if (sectionWeprovide) {
                     ? '.weprovide__path--desktop--path'
                     : '.weprovide__path--mobile--path',
                 alignOrigin: [0.5, 0.5],
+                end: screenRes.isMobile ? 0.4 : 1,
             },
         })
         .on('progress', (e) => {
