@@ -511,7 +511,7 @@ if (sectionWeprovide) {
                 }
             }
         })
-        .addIndicators({ name: 'WEPROVIDE' })
+        //.addIndicators({ name: 'WEPROVIDE' })
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
