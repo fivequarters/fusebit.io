@@ -83,8 +83,19 @@
             }
         }
 
+        &--mobile--path {
+            display: none;
+        }
+
         @media only screen and (max-width: 700px) {
             left: 0.5rem;
+
+            &--desktop--path {
+                display: none;
+            }
+            &--mobile--path {
+                display: block;
+            }
         }
     }
 

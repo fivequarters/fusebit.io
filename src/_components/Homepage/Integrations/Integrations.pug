@@ -2,8 +2,9 @@ mixin pathDot
     .integrations__path--dot
 
 mixin path 
-    svg(class="integrations__path" width="28" height="948" fill="none")
-        path.integrations__path--path(d="M14 8.004v923" stroke="#D7E5FF" stroke-width="2")
+    svg(class="integrations__path" width="28" height="1200" fill="none")
+        path.integrations__path--desktop--path(d="M14 8.004v923" stroke="#D7E5FF" stroke-width="2")
+        path.integrations__path--mobile--path(d="M14 8.004v1175" stroke="#D7E5FF" stroke-width="2")
         g(opacity=".9")
             circle(cx="1" cy="8.004" r="1" fill="#D7E5FF")
             circle(cx="27" cy="8.004" r="1" fill="#D7E5FF")

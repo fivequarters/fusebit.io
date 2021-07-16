@@ -365,8 +365,12 @@ if (sectionIntegrations) {
     })
         .setTween(integrationsDot, {
             motionPath: {
-                path: `.integrations__path--path`,
-                align: `.integrations__path--path`,
+                path: screenRes.isMobile
+                    ? `.integrations__path--mobile--path`
+                    : `.integrations__path--desktop--path`,
+                align: screenRes.isMobile
+                    ? `.integrations__path--mobile--path`
+                    : `.integrations__path--desktop--path`,
                 alignOrigin: [0.5, 0.5],
             },
         })
