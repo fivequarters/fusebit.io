@@ -118,7 +118,7 @@
             }
             @media only screen and (max-width: 700px) {
                 width: 100%;
-                transform: scale(1.5);
+                transform: translate(0%, 50%) scale(1.5);
             }
         }
 
@@ -155,5 +155,9 @@
         @media only screen and (max-width: 700px) {
             //height: 400px;
         }
+    }
+
+    @media only screen and (max-width: 700px) {
+        margin-top: 4rem;
     }
 }
