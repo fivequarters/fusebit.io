@@ -17,25 +17,14 @@ if (sectionHero) {
     new ScrollMagic.Scene({
         triggerElement: sectionHero,
         triggerHook: screenRes.isBigRes ? 0.2 : 0.5,
-        offset: heroHeight / 1.6,
-        duration: heroHeight / 2,
+        offset: heroHeight / 1.8,
+        duration: heroHeight * 2,
     })
-        .setTween('.hero__images--desktop', {
+        .setTween(['.hero__images'], {
             left: '120%',
             opacity: 0,
         })
-        .addTo(scrollMagicController);
-
-    new ScrollMagic.Scene({
-        triggerElement: sectionHero,
-        triggerHook: screenRes.isBigRes ? 0.2 : 0.5,
-        offset: heroHeight / 1.4,
-        duration: heroHeight / 2,
-    })
-        .setTween('.hero__images--mobile', {
-            left: '120%',
-            opacity: 0,
-        })
+        .addIndicators()
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
