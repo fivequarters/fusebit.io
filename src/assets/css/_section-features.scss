@@ -668,6 +668,13 @@
             background-size: cover;
         }
 
+        @media only screen and (min-width: 3000px) {
+            background: url(./images/features__bg--top--3000.svg) right top
+                no-repeat;
+            background-size: cover;
+            height: 400px;
+        }
+
         @media only screen and (max-width: 1000px) {
             background-size: 200%;
         }
@@ -683,6 +690,13 @@
             background: url(./images/features__bg--bottom--2000.svg) left bottom
                 no-repeat;
             background-size: cover;
+        }
+
+        @media only screen and (min-width: 3000px) {
+            background: url(./images/features__bg--bottom--3000.svg) left bottom
+                no-repeat;
+            background-size: cover;
+            height: 400px;
         }
 
         @media only screen and (max-width: 1000px) {

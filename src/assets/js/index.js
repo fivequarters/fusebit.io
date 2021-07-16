@@ -391,14 +391,18 @@ if (sectionIntegrations) {
                     '.integrations__item--icon'
                 );
 
+                const activeClass = screenRes.isDesktop
+                    ? 'integrations__item-active'
+                    : 'integrations__item-active-indicator';
+
                 if (isDotIntersecting(dotMiddle, item)) {
-                    item.classList.add('integrations__item-active');
+                    item.classList.add(activeClass);
                     integrationsDot.style.opacity = 0;
                 } else if (
                     !isDotIntersecting(dotMiddle, item) &&
-                    item.classList.contains('integrations__item-active')
+                    item.classList.contains(activeClass)
                 ) {
-                    item.classList.remove('integrations__item-active');
+                    item.classList.remove(activeClass);
                     integrationsDot.style.opacity = 1;
                 }
             }
@@ -507,7 +511,7 @@ if (sectionWeprovide) {
                 }
             }
         })
-        //.addIndicators({ name: 'WEPROVIDE' })
+        .addIndicators({ name: 'WEPROVIDE' })
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({

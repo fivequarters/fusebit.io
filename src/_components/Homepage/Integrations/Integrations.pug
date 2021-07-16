@@ -101,7 +101,7 @@ section.integrations
                             if(!desplegable.parentNode.parentNode.classList.contains('integrations__item-active')) {
                                 let parent = desplegable.parentNode;
 
-                                desplegables.forEach(item => item.parentNode.parentNode.classList.remove('integrations__item-active'));
+                                desplegables.forEach(item => item.parentNode.parentNode.classList.remove('integrations__item-active', 'integrations__item-active-indicator'));
                                 desplegable.parentNode.parentNode.classList.add('integrations__item-active');
 
                                 if (window.matchMedia('(max-width: 720px)').matches) {

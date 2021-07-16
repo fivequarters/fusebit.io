@@ -18,8 +18,15 @@
         object-position: center bottom;
         z-index: 0;
 
-        @media only screen and (min-width: 2000px) {
-            height: 110%;
+        @media only screen and (min-height: 1439px) {
+            bottom: 5rem;
+            left: 15%;
+        }
+
+        @media only screen and (min-height: 3000px) {
+            bottom: -5rem;
+            left: 25% !important;
+            height: 2000px;
         }
 
         @media only screen and (max-width: 700px) {

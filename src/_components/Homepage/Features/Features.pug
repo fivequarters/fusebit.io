@@ -138,30 +138,7 @@ section.features
 
             .features__images.features__images--graph
                 img(src="../../../assets/images/features__bg/graph1.png", alt="Don't spend time worrying about infrastructure" data-graph='1')
-                script.
-                    const imgGraph = document.querySelector('.features__images--graph > img');
 
-                    function featuresGraphAnimation(obj) {
-                        let newSrc = obj.src.slice(0, -10);
-
-                        switch( obj.dataset.graph ) {
-                            case '1':
-                                obj.src = newSrc + 'graph2.png';
-                                obj.dataset.graph = 2;
-                                break;
-
-                            default:
-                                obj.src = newSrc + 'graph1.png';
-                                obj.dataset.graph = 1;
-                                break;
-                        }
-                    }
-
-                    setInterval(() => {
-                        featuresGraphAnimation(imgGraph);
-                    }, 1500)
-
-        
         +pathDot
         +path1
         +path1--mobile

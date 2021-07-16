@@ -17,7 +17,7 @@
         width: 100%;
         max-width: 570px;
         margin: 0 auto;
-        margin-top: 6rem;
+        margin-top: 0rem;
         z-index: 1;
     }
 
@@ -108,9 +108,9 @@
         text-align: center;
         img {
             position: relative;
-            bottom: 10rem;
+            bottom: 7rem;
             width: 100%;
-            transform: scale(1.1);
+            transform: scale(1);
 
             @media only screen and (max-width: 1500px) {
                 width: 80%;

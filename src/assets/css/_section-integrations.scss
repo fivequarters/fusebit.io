@@ -280,6 +280,12 @@
             }
         }
 
+        &-active-indicator {
+            .integrations__item--icon {
+                background: var(--yellow);
+            }
+        }
+
         &:hover {
             .integrations__item--content {
                 @include box-shadow(
