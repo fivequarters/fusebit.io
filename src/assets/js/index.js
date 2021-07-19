@@ -10,6 +10,11 @@ const screenRes = {
 
 const scrollMagicController = new ScrollMagic.Controller();
 
+const initialPosition = {
+    top: 0,
+    opacity: 1,
+};
+
 const sectionHero = document.querySelector('.hero');
 if (sectionHero) {
     const heroHeight = sectionHero.getBoundingClientRect().height;
@@ -24,7 +29,6 @@ if (sectionHero) {
             left: '120%',
             opacity: 0,
         })
-        //.addIndicators()
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
@@ -146,7 +150,6 @@ if (sectionSupport) {
             triggerHook: 0,
         })
             .setTween(supportBase)
-            //.addIndicators({ name: 'Base path' })
             .addTo(scrollMagicController);
     }
 
@@ -156,11 +159,7 @@ if (sectionSupport) {
         offset: 100,
         duration: 400,
     })
-        .setTween('.support__title', {
-            top: 0,
-            opacity: 1,
-        })
-        //.addIndicators()
+        .setTween('.support__title', initialPosition)
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
@@ -169,11 +168,7 @@ if (sectionSupport) {
         offset: 100,
         duration: supportHeight / 1.5,
     })
-        .setTween('.support__text', {
-            top: 0,
-            opacity: 1,
-        })
-        //.addIndicators()
+        .setTween('.support__text', initialPosition)
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
@@ -186,7 +181,6 @@ if (sectionSupport) {
             left: 0,
             opacity: 1,
         })
-        //.addIndicators()
         .addTo(scrollMagicController);
 }
 
@@ -246,7 +240,6 @@ if (sectionFeatures) {
                 isIntersecting(dotMiddle, item);
             }
         })
-        //.addIndicators({ name: 'FEATURES' })
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
@@ -255,11 +248,7 @@ if (sectionFeatures) {
         offset: 400,
         duration: 300,
     })
-        .setTween('.features__title--1', {
-            top: 0,
-            opacity: 1,
-        })
-        //.addIndicators()
+        .setTween('.features__title--1', initialPosition)
         .addTo(scrollMagicController);
 
     // Marketplace
@@ -273,7 +262,6 @@ if (sectionFeatures) {
             left: 0,
             opacity: 1,
         })
-        //.addIndicators()
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
@@ -282,11 +270,7 @@ if (sectionFeatures) {
         offset: featuresHeight / 2,
         duration: 500,
     })
-        .setTween('.features__title--2', {
-            top: 0,
-            opacity: 1,
-        })
-        //.addIndicators()
+        .setTween('.features__title--2', initialPosition)
         .addTo(scrollMagicController);
 
     // graph
@@ -312,10 +296,7 @@ if (sectionIntegrate) {
         offset: 0,
         duration: 400,
     })
-        .setTween('.integrate__title', {
-            top: 0,
-            opacity: 1,
-        })
+        .setTween('.integrate__title', initialPosition)
         //.addIndicators()
         .addTo(scrollMagicController);
 
@@ -325,10 +306,7 @@ if (sectionIntegrate) {
         offset: 100,
         duration: 500,
     })
-        .setTween('.integrate__cta', {
-            top: 0,
-            opacity: 1,
-        })
+        .setTween('.integrate__cta', initialPosition)
         //.addIndicators()
         .addTo(scrollMagicController);
 }
@@ -390,7 +368,6 @@ if (sectionIntegrations) {
                 }
             }
         })
-        //.addIndicators({ name: 'INTEGRATIONS' })
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
@@ -399,11 +376,7 @@ if (sectionIntegrations) {
         offset: 0,
         duration: integrationsHeight / 2,
     })
-        .setTween('.integrations__title', {
-            top: 0,
-            opacity: 1,
-        })
-        //.addIndicators()
+        .setTween('.integrations__title', initialPosition)
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
@@ -416,7 +389,6 @@ if (sectionIntegrations) {
             left: 0,
             opacity: 1,
         })
-        //.addIndicators()
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
@@ -506,11 +478,7 @@ if (sectionWeprovide) {
         offset: 0,
         duration: 400,
     })
-        .setTween('.weprovide__title', {
-            top: 0,
-            opacity: 1,
-        })
-        //.addIndicators()
+        .setTween('.weprovide__title', initialPosition)
         .addTo(scrollMagicController);
 }
 
@@ -525,11 +493,7 @@ if (sectionTestimonials) {
         offset: 0,
         duration: testimonialsHeight / 2,
     })
-        .setTween('.testimonials__title', {
-            top: 0,
-            opacity: 1,
-        })
-        //.addIndicators()
+        .setTween('.testimonials__title', initialPosition)
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
@@ -538,11 +502,7 @@ if (sectionTestimonials) {
         offset: 0,
         duration: testimonialsHeight / 1.5,
     })
-        .setTween('.testimonials__text', {
-            top: 0,
-            opacity: 1,
-        })
-        //.addIndicators()
+        .setTween('.testimonials__text', initialPosition)
         .addTo(scrollMagicController);
 }
 
@@ -561,7 +521,6 @@ if (sectionPrefooter) {
             left: 0,
             opacity: 1,
         })
-        //.addIndicators()
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
@@ -574,7 +533,6 @@ if (sectionPrefooter) {
             left: 0,
             opacity: 1,
         })
-        //.addIndicators()
         .addTo(scrollMagicController);
 
     new ScrollMagic.Scene({
@@ -587,7 +545,6 @@ if (sectionPrefooter) {
             left: 0,
             opacity: 1,
         })
-        //.addIndicators()
         .addTo(scrollMagicController);
 
     gsap.timeline({
