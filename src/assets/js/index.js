@@ -385,6 +385,8 @@ if (sectionIntegrations) {
 
                 if (isDotIntersecting(dotMiddle, item)) {
                     item.classList.add(activeClass);
+                } else if (screenRes.isDesktop) {
+                    item.classList.remove(activeClass);
                 }
             }
         })
