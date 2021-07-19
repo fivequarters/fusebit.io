@@ -360,7 +360,7 @@ if (sectionIntegrations) {
         triggerHook: 0.5,
         offset: screenRes.isMobile ? 100 : integrationsHeight / 3,
         duration: screenRes.isMobile
-            ? integrationsHeight - 100
+            ? integrationsHeight * 2
             : integrationsHeight * 1.5,
     })
         .setTween(integrationsDot, {
@@ -380,23 +380,11 @@ if (sectionIntegrations) {
 
             for (let i = 0; i < integrationsItems.length; i++) {
                 const item = integrationsItems[i];
-                const itemIcon = item.querySelector(
-                    '.integrations__item--icon'
-                );
 
-                const activeClass = screenRes.isDesktop
-                    ? 'integrations__item-active'
-                    : 'integrations__item-active-indicator';
+                const activeClass = 'integrations__item-active';
 
                 if (isDotIntersecting(dotMiddle, item)) {
                     item.classList.add(activeClass);
-                    integrationsDot.style.opacity = 0;
-                } else if (
-                    !isDotIntersecting(dotMiddle, item) &&
-                    item.classList.contains(activeClass)
-                ) {
-                    item.classList.remove(activeClass);
-                    integrationsDot.style.opacity = 1;
                 }
             }
         })
