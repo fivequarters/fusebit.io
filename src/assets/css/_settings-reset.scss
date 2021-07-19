@@ -191,3 +191,15 @@ table {
         opacity: 0;
     }
 }
+
+@keyframes caret {
+    from,
+    to {
+        opacity: 0;
+    }
+
+    33%,
+    66% {
+        opacity: 1;
+    }
+}
