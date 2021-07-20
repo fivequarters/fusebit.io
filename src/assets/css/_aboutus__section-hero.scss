@@ -1,0 +1,17 @@
+.hero {
+    position: relative;
+    width: 100%;
+    padding: 8rem 0;
+
+    &__container {
+        width: 90%;
+        max-width: var(--container);
+        margin: 0 auto;
+    }
+
+    &__title {
+        width: 100%;
+        max-width: 725px;
+        @include titles;
+    }
+}

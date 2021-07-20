@@ -11,14 +11,20 @@
 @import 'footer';
 
 // Sections
-@import 'section-hero';
-@import 'section-support';
-@import 'section-features';
-@import 'section-integrate';
-@import 'section-integrations';
-@import 'section-weprovide';
-@import 'section-testimonials';
-@import 'section-prefooter';
+.homepage {
+    @import 'homepage__section-hero';
+    @import 'homepage__section-support';
+    @import 'homepage__section-features';
+    @import 'homepage__section-integrate';
+    @import 'homepage__section-integrations';
+    @import 'homepage__section-weprovide';
+    @import 'homepage__section-testimonials';
+    @import 'homepage__section-prefooter';
+}
+
+.aboutUs {
+    @import 'aboutus__section-hero';
+}
 
 // Components
 @import 'component-integrations';
