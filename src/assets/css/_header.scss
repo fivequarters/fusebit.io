@@ -199,6 +199,10 @@
 
     &__menuMobile--open {
         .header__menuMobile--btn {
+            span {
+                background: #ffffff;
+            }
+
             .top,
             .bottom {
                 transform: scaleX(0);
@@ -252,6 +256,69 @@
         &__menu,
         &__links {
             display: none;
+        }
+    }
+}
+
+.aboutUs {
+    .header {
+        &:not(&--compact) {
+            .header__menu,
+            .header__links {
+                a:not(.header__links--signUp) {
+                    color: var(--dark);
+                }
+            }
+
+            .header__logo {
+                #fusebit__logo {
+                    .logo {
+                        fill: var(--dark);
+                    }
+
+                    .iso__fill {
+                        fill: var(--orange);
+                    }
+                    .iso__stroke {
+                        stroke: var(--orange);
+                    }
+                }
+
+                &:hover {
+                    #fusebit__logo {
+                        .logo {
+                            fill: var(--orange);
+                        }
+                    }
+                }
+            }
+
+            .header__menuMobile--btn {
+                span {
+                    background: var(--dark);
+                }
+            }
+
+            &.header__menuMobile--open {
+                .header__logo {
+                    #fusebit__logo {
+                        .iso__fill,
+                        .logo {
+                            fill: #ffffff;
+                        }
+
+                        .iso__stroke {
+                            stroke: var(--orange);
+                        }
+                    }
+                }
+
+                .header__menuMobile--btn {
+                    span {
+                        background: #ffffff;
+                    }
+                }
+            }
         }
     }
 }
