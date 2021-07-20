@@ -309,6 +309,34 @@ if (sectionIntegrate) {
         .setTween('.integrate__cta', initialPosition)
         //.addIndicators()
         .addTo(scrollMagicController);
+
+    // Orbital
+    function initOrbitalBall(obj, path, startEnd, duration) {
+        // Paths 1 - 2 - 3 - 4
+
+        gsap.timeline({
+            repeat: -1,
+        }).to(document.querySelector(obj), {
+            motionPath: {
+                path: `.integrate__orbital--${path}`,
+                align: `.integrate__orbital--${path}`,
+                alignOrigin: [0.5, 0.5],
+                autoRotate: false,
+                start: startEnd,
+                end: startEnd,
+            },
+            duration: duration,
+            ease: 'linear',
+        });
+    }
+    initOrbitalBall('#orbit__ball--2', 1, 0.1, 12);
+    initOrbitalBall('#orbit__ball--3', 2, 0, 15);
+    initOrbitalBall('#orbit__ball--4', 2, 0.8, 15);
+    initOrbitalBall('#orbit__ball--5', 3, 0.3, 18);
+    initOrbitalBall('#orbit__ball--6', 3, 0.9, 18);
+    initOrbitalBall('#orbit__ball--7', 4, 0.3, 21);
+    initOrbitalBall('#orbit__ball--8', 4, 0.6, 21);
+    initOrbitalBall('#orbit__ball--9', 4, 0.8, 21);
 }
 
 const sectionIntegrations = document.querySelector('.integrations');
