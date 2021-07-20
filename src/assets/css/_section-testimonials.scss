@@ -5,7 +5,7 @@
     align-items: center;
     color: var(--dark);
     background: linear-gradient(to top, var(--neutralLight) 50%, #ffffff 120%);
-    padding: 12rem 0 14rem;
+    padding: 4rem 0 14rem;
 
     &__container {
         position: relative;
@@ -24,7 +24,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
 
             @media only screen and (max-width: 700px) {
                 margin-bottom: 1rem;
@@ -37,13 +37,11 @@
 
     &__title {
         position: relative;
+        top: 300px;
+        opacity: 0;
         width: 100%;
         max-width: 750px;
-        font-family: var(--sora);
-        font-weight: 900;
-        @include font-size(48);
-        line-height: 56px;
-        margin-bottom: 2rem;
+        @include titles;
 
         & > span {
             font-family: var(--sora);
@@ -61,6 +59,9 @@
     }
 
     &__text {
+        position: relative;
+        top: 200px;
+        opacity: 0;
         width: 100%;
         max-width: 720px;
         @include font-size(20);

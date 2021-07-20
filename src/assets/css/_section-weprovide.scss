@@ -12,10 +12,9 @@
         position: relative;
         width: 90%;
         max-width: calc(var(--container) - 3rem);
-        padding: 8rem 0;
+        padding: 6.5rem 0 0;
         padding-left: 1.4rem;
         z-index: 5;
-        border-left: 1px solid rgba(255, 0, 0, 0.5);
 
         @media only screen and (max-width: 700px) {
             padding: 5rem 0;
@@ -26,11 +25,14 @@
         position: relative;
         width: calc(100% - 5rem);
         margin-left: 5rem;
-        margin-top: 5rem;
         z-index: 1;
 
         &--head {
-            margin-bottom: 6.5rem;
+            margin-bottom: 2.55rem;
+
+            @media only screen and (max-width: 1200px) {
+                margin-bottom: 5.5rem;
+            }
 
             @media only screen and (max-width: 700px) {
                 margin-bottom: 4rem;
@@ -48,6 +50,20 @@
     }
 
     &__path {
+        &--dot {
+            position: absolute;
+            top: 0rem;
+            left: 0rem;
+            transform-origin: center center;
+            //transform: translate(-36%, 3px);
+            width: 10px;
+            height: 10px;
+            border-radius: 1rem;
+            background: var(--yellow);
+            z-index: 99;
+            opacity: 0;
+        }
+
         &--mobile,
         &--desktop {
             position: absolute;
@@ -69,7 +85,7 @@
             &--mobile {
                 display: block;
                 top: -0.3rem;
-                left: 0.3rem;
+                left: 0.15rem;
 
                 &--scrolled-1 {
                     left: -24rem;
@@ -83,13 +99,11 @@
 
     &__title {
         position: relative;
+        top: 300px;
+        opacity: 0;
         width: 100%;
         max-width: 540px;
-        font-family: var(--sora);
-        font-weight: 900;
-        @include font-size(48);
-        line-height: 56px;
-        color: #ffffff;
+        @include titles(false);
         margin-bottom: 2rem;
 
         & > span {
@@ -115,7 +129,7 @@
             }
 
             @media only screen and (max-width: 700px) {
-                left: -4rem;
+                left: -4.2rem;
                 &--scrolled {
                     display: none;
                 }
@@ -214,7 +228,6 @@
             }
         }
 
-        &:hover,
         &--active {
             .weprovide__item--icon {
                 background: var(--yellow);
