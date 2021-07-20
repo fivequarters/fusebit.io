@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    min-height: 60vh;
+    max-height: 700px;
     overflow: hidden;
 
     &__container {
@@ -17,19 +17,21 @@
         width: 100%;
         max-width: 570px;
         margin: 0 auto;
-        margin-top: 8rem;
+        margin-top: 0rem;
         z-index: 1;
     }
 
     &__title {
-        font-family: var(--sora);
-        font-weight: 900;
-        @include font-size(48);
-        line-height: 58px;
-        letter-spacing: -2%;
-        color: var(--dark);
-        margin-bottom: 2rem;
-        transition: all 0.2s;
+        position: relative;
+        top: 300px;
+        //opacity: 0;
+        background: radial-gradient(
+            rgba(255, 255, 255, 1) 70%,
+            rgba(255, 255, 255, 0)
+        );
+        //background: radial-gradient(red 50%, blue);
+
+        @include titles;
         margin-bottom: 56px;
         text-align: center;
 
@@ -47,6 +49,8 @@
 
     &__cta {
         position: relative;
+        top: 200px;
+        opacity: 0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -99,13 +103,14 @@
         }
     }
 
-    &__orbits {
+    /* &__orbits {
         position: relative;
-        bottom: 4rem;
         text-align: center;
         img {
+            position: relative;
+            bottom: 7rem;
             width: 100%;
-            transform: scale(1.1);
+            transform: scale(1);
 
             @media only screen and (max-width: 1500px) {
                 width: 80%;
@@ -113,7 +118,7 @@
             }
             @media only screen and (max-width: 700px) {
                 width: 100%;
-                transform: scale(1.5);
+                transform: translate(0%, 50%) scale(1.5);
             }
         }
 
@@ -123,6 +128,77 @@
 
         @media only screen and (max-width: 700px) {
             bottom: 1rem;
+        }
+    } */
+
+    &__orbits {
+        position: relative;
+    }
+
+    &__orbital {
+        position: relative;
+        left: -2.3rem;
+        bottom: 15rem;
+        margin: 0 auto;
+
+        &ball {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            border-radius: 20rem;
+            background: #ffffff;
+            @include box-shadow(0px, 8px, 20px, rgba(0, 0, 0, 0.07));
+
+            &--sm {
+                left: 50px;
+                width: 70px;
+                height: 70px;
+                @media only screen and (max-width: 500px) {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+            &--md {
+                left: 250px;
+                width: 90px;
+                height: 90px;
+                @media only screen and (max-width: 500px) {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+            &--lg {
+                left: 450px;
+                width: 105px;
+                height: 105px;
+                @media only screen and (max-width: 500px) {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 30px;
+
+                @media only screen and (max-width: 500px) {
+                    width: 20px;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            left: -12rem;
+        }
+        @media only screen and (max-width: 500px) {
+            left: -26rem;
+            bottom: 20rem;
+            transform: scale(0.5);
         }
     }
 
@@ -150,5 +226,10 @@
         @media only screen and (max-width: 700px) {
             //height: 400px;
         }
+    }
+
+    @media only screen and (max-width: 700px) {
+        margin-top: 4rem;
+        max-height: 500px;
     }
 }
