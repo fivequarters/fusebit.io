@@ -1,10 +1,30 @@
+mixin pathDot 
+    .prefooter__path--dot
+
+mixin path 
+    svg(width="926" height="461" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(fill-rule="evenodd" clip-rule="evenodd" d="M806 15c0 .3359-.01.6693-.031 1H926v-2H805.969c.021.3307.031.6641.031 1zm-210 1h178.031c-.021-.3307-.031-.6641-.031-1s.01-.6693.031-1H596c-22.644 0-41 18.3563-41 41v79h2V55c0-21.5391 17.461-39 39-39z" fill="#D7E5FF")
+        path(class="prefooter__path--path" d="M15 364h278c19.33 0 35 15.67 35 35v26c0 19.33 15.67 35 35 35h206c19.33 0 35-15.67 35-35V264c0-19.33 15.67-35 35-35h28c19.33 0 35-15.67 35-35V50c0-19.33 15.67-35 35-35h189" stroke="#D7E5FF" stroke-width="2")
+        path(fill="#fff" d="M572 80h161v316H572z")
+        circle(cx="790" cy="15" transform="rotate(90 790 15)" fill="#fff" r="15")
+        circle(cx="790" cy="2" r="1" transform="rotate(90 790 2)" fill="#D7E5FF")
+        circle(cx="790" cy="28" r="1" transform="rotate(90 790 28)" fill="#D7E5FF")
+        circle(cx="790" cy="15" r="7" transform="rotate(90 790 15)" stroke="#D7E5FF" stroke-width="2")
+        circle(cx="15" cy="364" transform="rotate(90 15 364)" fill="#ffffff" r="15")
+        circle(cx="15" cy="351" r="1" transform="rotate(90 15 351)" fill="#D7E5FF")
+        circle(cx="15" cy="377" r="1" transform="rotate(90 15 377)" fill="#D7E5FF")
+        circle(cx="15" cy="364" r="7" transform="rotate(90 15 364)" stroke="#D7E5FF" stroke-width="2")
+
+
+
 section.prefooter 
     .prefooter__container
         .prefooter__content
             h2.prefooter__title 
                 | Let's build something 
                 span completely new 
-                | together_
+                | together
+                i _
 
             p.prefooter__text 
                 | Join our platform, and make integrating services into your workflow easier several times over.
@@ -16,4 +36,6 @@ section.prefooter
                         path(d="M1.36396 1.44268L7.72792 7.80664L1.36396 14.1706" stroke="white" stroke-width="2")
 
         .prefooter__image 
-            img(src="../../../assets/images/prefooter__bg.svg", alt="")
+            img(src="../../../assets/images/prefooter__img.svg", alt="imagen")
+            +path
+            +pathDot

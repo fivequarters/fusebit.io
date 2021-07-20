@@ -1,0 +1,62 @@
+@mixin font-size($size) {
+    $base: 16;
+    font-size: $size + px;
+    font-size: ($size / $base) * 1rem;
+}
+
+@mixin box-shadow($x, $y, $blur, $color, $spread: 0) {
+    -webkit-box-shadow: $x $y $blur $spread $color;
+    -moz-box-shadow: $x $y $blur $spread $color;
+    box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin prefix($property, $value, $onlyValue: false) {
+    //$vendors: 'webkit moz ms o';
+    $vendors: webkit moz ms o;
+    $default: true;
+
+    @if $vendors {
+        @each $vendor in $vendors {
+            #{"-" + $vendor + "-" + $property}: #{$value};
+        }
+    }
+
+    @if $default {
+        #{$property}: #{$value};
+    }
+}
+
+@mixin titles($lightTheme: true) {
+    @include font-size(48);
+    line-height: 57.6px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+
+    @if $lightTheme {
+        color: var(--dark);
+    } @else {
+        color: var(--neutralLight);
+    }
+
+    & > span {
+        font-family: var(--sora);
+        color: var(--orange);
+    }
+
+    i {
+        transition: none;
+        animation: caret 0.6s infinite;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        @include font-size(36);
+        line-height: 42px;
+        margin-bottom: 1rem;
+    }
+
+    @media only screen and (max-width: 700px) {
+        @include font-size(32);
+        line-height: 38.4px;
+    }
+}
