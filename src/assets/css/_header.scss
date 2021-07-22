@@ -41,34 +41,23 @@
             border-radius: 2rem;
 
             &:not(.header__links--signUp) {
-                &::before,
                 &::after {
                     content: '';
                     position: absolute;
-                    //bottom: -0.5rem;
-                    bottom: -1rem;
-                    left: 45%;
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 1rem;
-                    background: var(--yellow);
+                    bottom: 0px;
+                    left: 0.5rem;
+                    transform-origin: left center;
+                    transform: scaleX(0);
+                    display: block;
+                    width: 30%;
+                    height: 2px;
+                    background: var(--orange);
                     transition: all 0.2s ease-in-out;
-                    opacity: 0;
-                }
-
-                &::after {
-                    transform: scale(0.7);
                 }
 
                 &:hover {
-                    &::before,
                     &::after {
-                        bottom: -0.5rem;
-                        opacity: 1;
-                    }
-
-                    &::before {
-                        animation: pulse 1s ease infinite;
+                        transform: scaleX(1);
                     }
                 }
             }
@@ -86,10 +75,19 @@
                 border-radius: 2rem;
                 pointer-events: none;
                 z-index: -1;
+                transition: all 0.2s ease-in-out;
             }
 
             &:hover {
                 &::before {
+                    border-radius: 0.8rem;
+                    background: var(--orangeDark);
+                }
+            }
+
+            &:active {
+                &::before {
+                    transition: none;
                     background: var(--yellow);
                 }
             }

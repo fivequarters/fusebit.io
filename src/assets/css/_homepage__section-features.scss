@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     background: var(--dark);
-    padding: 26rem 0 18rem;
+    padding: 15rem 0 14rem;
     overflow: hidden;
 
     &__container {
@@ -12,6 +12,7 @@
         max-width: calc(var(--container) - 4rem);
         padding-left: 4rem;
         z-index: 9;
+        //border: 1px solid red;
 
         @media only screen and (max-width: 700px) {
             width: calc(90% - 2.5rem);
@@ -195,7 +196,7 @@
             @include font-size(16);
             line-height: 25px;
             font-weight: 300;
-            color: var(--neutralDark);
+            color: var(--neutralLight);
             margin-bottom: 1.5rem;
 
             span {
@@ -210,12 +211,12 @@
                     }
 
                     path {
-                        fill: var(--neutralDark);
+                        fill: var(--neutralLight);
                         transform-origin: center;
                     }
 
                     circle {
-                        stroke: var(--neutralDark);
+                        stroke: var(--neutralLight);
                     }
                 }
 

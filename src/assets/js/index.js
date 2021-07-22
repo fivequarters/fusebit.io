@@ -17,59 +17,6 @@ if (homepage) {
         opacity: 1,
     };
 
-    const sectionHero = document.querySelector('.hero');
-    if (sectionHero) {
-        const heroHeight = sectionHero.getBoundingClientRect().height;
-
-        new ScrollMagic.Scene({
-            triggerElement: sectionHero,
-            triggerHook: screenRes.isBigRes ? 0.2 : 0.5,
-            offset: heroHeight / 1.8,
-            duration: heroHeight * 2,
-        })
-            .setTween(['.hero__images'], {
-                left: '120%',
-                opacity: 0,
-            })
-            .addTo(scrollMagicController);
-
-        new ScrollMagic.Scene({
-            triggerElement: sectionHero,
-            triggerHook: screenRes.isBigRes ? 0.185 : 0.5,
-            offset: heroHeight / 2,
-            duration: heroHeight,
-        })
-            .setTween('.hero__title', {
-                left: -400,
-                opacity: 0,
-            })
-            .addTo(scrollMagicController);
-
-        new ScrollMagic.Scene({
-            triggerElement: sectionHero,
-            triggerHook: screenRes.isBigRes ? 0.2 : 0.5,
-            offset: heroHeight / 2,
-            duration: heroHeight,
-        })
-            .setTween('.hero__text', {
-                left: -200,
-                opacity: 0,
-            })
-            .addTo(scrollMagicController);
-
-        new ScrollMagic.Scene({
-            triggerElement: sectionHero,
-            triggerHook: screenRes.isBigRes ? 0.2 : 0.5,
-            offset: heroHeight / 2,
-            duration: heroHeight,
-        })
-            .setTween('.hero__cta', {
-                left: -100,
-                opacity: 0,
-            })
-            .addTo(scrollMagicController);
-    }
-
     const sectionSupport = document.querySelector('.support');
     if (sectionSupport) {
         const supportHeight = sectionSupport.getBoundingClientRect().height;
@@ -161,7 +108,7 @@ if (homepage) {
             triggerElement: sectionSupport,
             triggerHook: 1,
             offset: 100,
-            duration: 400,
+            duration: 270,
         })
             .setTween('.support__title', initialPosition)
             .addTo(scrollMagicController);
@@ -170,7 +117,7 @@ if (homepage) {
             triggerElement: sectionSupport,
             triggerHook: 1,
             offset: 100,
-            duration: supportHeight / 1.5,
+            duration: 300,
         })
             .setTween('.support__text', initialPosition)
             .addTo(scrollMagicController);
@@ -251,10 +198,11 @@ if (homepage) {
         new ScrollMagic.Scene({
             triggerElement: '.features',
             triggerHook: 1,
-            offset: 400,
+            offset: 100,
             duration: 300,
         })
             .setTween('.features__title--1', initialPosition)
+            //.addIndicators()
             .addTo(scrollMagicController);
 
         // Marketplace

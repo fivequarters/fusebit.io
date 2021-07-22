@@ -205,26 +205,30 @@
     &::before {
         content: '';
         position: absolute;
-        bottom: 0;
-        left: 0;
+        bottom: 0rem;
+        right: 0;
         width: 100%;
-        min-width: 1920px;
-        height: 250px;
-        background: #ffffff;
-        background: -webkit-linear-gradient(
-            to left top,
-            var(--neutralLight) 49.7%,
-            transparentize(#ffffff, 1) 50%
-        );
-        background: linear-gradient(
-            to left top,
-            var(--neutralLight) 49.7%,
-            transparentize(#ffffff, 1) 50%
-        );
+        height: 307px;
+        background: url(./images/homepage/integrate/integrate--1920.png) right
+            bottom no-repeat;
+        background-size: 100%;
         z-index: 1;
 
-        @media only screen and (max-width: 700px) {
-            //height: 400px;
+        @media only screen and (min-height: 1079px) {
+            background: url(./images/homepage/integrate/integrate--4500.png)
+                right bottom no-repeat;
+            background-size: 100%;
+        }
+
+        @media only screen and (min-height: 3000px) {
+            height: 390px;
+            bottom: -5rem;
+        }
+
+        @media only screen and (max-width: 1500px) {
+            background: url(./images/homepage/integrate/integrate--1360.png)
+                right bottom no-repeat;
+            background-size: 100%;
         }
     }
 

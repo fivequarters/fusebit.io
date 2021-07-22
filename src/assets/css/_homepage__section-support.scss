@@ -4,7 +4,7 @@
     min-height: 50vh;
     display: flex;
     justify-content: center;
-    padding: 8rem 0;
+    padding: 4rem 0 0rem;
     overflow: hidden;
 
     &__container {
@@ -256,9 +256,5 @@
 
     @media only screen and (min-height: 1439px) {
         min-height: auto;
-    }
-
-    @media only screen and (max-width: 1000px) {
-        padding: 6rem 0 6rem 0;
     }
 }
