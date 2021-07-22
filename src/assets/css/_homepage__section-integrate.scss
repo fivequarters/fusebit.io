@@ -230,6 +230,12 @@
                 right bottom no-repeat;
             background-size: 100%;
         }
+
+        @media only screen and (max-width: 1000px) {
+            background: url(./images/homepage/integrate/integrate--mobile.png)
+                right bottom no-repeat;
+            background-size: 100%;
+        }
     }
 
     @media only screen and (max-width: 700px) {
