@@ -8,6 +8,10 @@
     color: #ffffff;
     overflow: hidden;
 
+    background: url(./images/homepage/weprovide/weprovide--1920.png) center
+        center no-repeat;
+    background-size: 100%;
+
     &__container {
         position: relative;
         width: 90%;
@@ -252,151 +256,25 @@
         }
     }
 
-    &__bg {
-        pointer-events: none;
+    @media only screen and (min-height: 1079px) {
+        background: url(./images/homepage/weprovide/weprovide--4500.png) center
+            center no-repeat;
+        background-size: cover;
+    }
 
-        &--01 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 800px;
-            height: 800px;
-            background: url(./images/colors/bg01.png) left center no-repeat;
-            opacity: 0.6;
-            z-index: 0;
+    @media only screen and (max-width: 1500px) {
+        background: url(./images/homepage/weprovide/weprovide--1360.png) center
+            center no-repeat;
+        background-size: 100%;
+    }
 
-            @media only screen and (max-width: 1000px) {
-                opacity: 0.3;
-            }
-        }
-        &--02 {
-            position: absolute;
-            top: 10%;
-            left: 0;
-            width: 800px;
-            height: 100%;
-            background: url(./images/colors/bg02.png) left center no-repeat;
-            z-index: 2;
-        }
-        &--03 {
-            position: absolute;
-            top: 10%;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url(./images/colors/bg03.png) right bottom no-repeat;
-            z-index: 2;
-        }
-        &--04 {
-            position: absolute;
-            top: 0;
-            left: 100%;
-            transform: translate(-100%, 0);
-            width: 100%;
-            height: 50%;
-            background: url(./images/colors/bg04.png) right center no-repeat;
-            z-index: 2;
+    @media only screen and (max-width: 1300px) {
+        background-size: cover;
+    }
 
-            @media only screen and (max-width: 1000px) {
-                transform: translate(-85%, 0%);
-                opacity: 0.3;
-                background-size: contain;
-            }
-        }
-        &--05 {
-            position: absolute;
-            top: 0;
-            left: 100%;
-            transform: translate(-100%, 0);
-            width: 100%;
-            height: 50%;
-            background: url(./images/colors/bg05.png) right center no-repeat;
-            z-index: 2;
-            @media only screen and (max-width: 1000px) {
-                transform: translate(-85%, 0%);
-                opacity: 0.3;
-                background-size: contain;
-            }
-        }
-        &--06 {
-            position: absolute;
-            top: 0;
-            left: 100%;
-            transform: translate(-100%, 0);
-            width: 100%;
-            height: 50%;
-            background: url(./images/colors/bg06.png) right center no-repeat;
-            z-index: 2;
-            @media only screen and (max-width: 1000px) {
-                transform: translate(-85%, 0%);
-                opacity: 0.3;
-                background-size: contain;
-            }
-        }
-        &--07 {
-            position: absolute;
-            top: 0;
-            left: 100%;
-            transform: translate(-100%, 0);
-            width: 100%;
-            height: 70%;
-            background: url(./images/colors/bg07.png) right center no-repeat;
-            z-index: 2;
-            @media only screen and (max-width: 1000px) {
-                transform: translate(-85%, 0%);
-                opacity: 0.3;
-                background-size: contain;
-            }
-        }
-        &--08 {
-            position: absolute;
-            top: 0;
-            left: 100%;
-            transform: translate(-100%, 0);
-            width: 100%;
-            height: 70%;
-            background: url(./images/colors/bg08.png) right center no-repeat;
-            z-index: 2;
-            @media only screen and (max-width: 1000px) {
-                transform: translate(-85%, 0%);
-                opacity: 0.2;
-                background-size: contain;
-            }
-        }
-        &--09 {
-            position: absolute;
-            top: 0;
-            left: 100%;
-            transform: translate(-70%, 0);
-            width: 100%;
-            height: 70%;
-            opacity: 0.6;
-            background: url(./images/colors/bg09.png) right center no-repeat;
-            z-index: 2;
-        }
-        &--10 {
-            position: absolute;
-            top: 0;
-            left: 100%;
-            transform: translate(-100%, 0);
-            width: 100%;
-            height: 100%;
-            background: url(./images/colors/bg10.png) right center no-repeat;
-            z-index: 2;
-        }
-        &--00 {
-            position: absolute;
-            top: 0;
-            left: 100%;
-            transform: translate(-100%, 0);
-            width: 100%;
-            height: 100%;
-            background: url(./images/weprovide__bg.png) right center no-repeat;
-            z-index: 3;
-
-            @media only screen and (max-width: 700px) {
-                background-size: contain;
-            }
-        }
+    @media only screen and (max-width: 500px) {
+        background: url(./images/homepage/weprovide/weprovide--mobile.png)
+            center center no-repeat;
+        background-size: cover;
     }
 }
