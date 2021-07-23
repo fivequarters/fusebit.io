@@ -6,6 +6,10 @@ const screenRes = {
     isTablet: window.matchMedia('screen and (max-width: 1000px)').matches,
     isDesktop: window.matchMedia('screen and (min-width: 1001px)').matches,
     isBigRes: window.matchMedia('screen and (min-height: 1439px)').matches,
+    isCustom: function (size) {
+        return window.matchMedia('screen and (max-width: ' + size + 'px)')
+            .matches;
+    },
 };
 
 const scrollMagicController = new ScrollMagic.Controller();
@@ -315,13 +319,20 @@ if (homepage) {
             return false;
         }
 
+        let scDuration = 0;
+        if (screenRes.isMobile) {
+            scDuration = integrationsHeight * 1.5;
+        } else if (screenRes.isCustom(1400)) {
+            scDuration = integrationsHeight;
+        } else {
+            scDuration = integrationsHeight * 1.5;
+        }
+
         new ScrollMagic.Scene({
             triggerElement: '.integrations',
-            triggerHook: 0.5,
+            triggerHook: 0.7,
             offset: screenRes.isMobile ? 100 : integrationsHeight / 3,
-            duration: screenRes.isMobile
-                ? integrationsHeight * 2
-                : integrationsHeight * 1.5,
+            duration: scDuration,
         })
             .setTween(integrationsDot, {
                 motionPath: {
@@ -338,6 +349,7 @@ if (homepage) {
                 const dotRect = integrationsDot.getBoundingClientRect();
                 const dotMiddle = dotRect.top + dotRect.height / 2;
 
+                let counter = 0;
                 for (let i = 0; i < integrationsItems.length; i++) {
                     const item = integrationsItems[i];
 
@@ -345,8 +357,14 @@ if (homepage) {
 
                     if (isDotIntersecting(dotMiddle, item)) {
                         item.classList.add(activeClass);
-                    } else if (screenRes.isDesktop) {
+                        integrationsDot.style.opacity = 0;
+                    } else {
                         item.classList.remove(activeClass);
+                        counter++;
+                    }
+
+                    if (counter === 3) {
+                        integrationsDot.style.opacity = 1;
                     }
                 }
             })
@@ -355,8 +373,8 @@ if (homepage) {
         new ScrollMagic.Scene({
             triggerElement: sectionIntegrations,
             triggerHook: 1,
-            offset: 0,
-            duration: integrationsHeight / 2,
+            offset: -100,
+            duration: 300,
         })
             .setTween('.integrations__title', initialPosition)
             .addTo(scrollMagicController);
@@ -364,28 +382,13 @@ if (homepage) {
         new ScrollMagic.Scene({
             triggerElement: sectionIntegrations,
             triggerHook: 1,
-            offset: 0,
-            duration: integrationsHeight / 2,
+            offset: -80,
+            duration: 280,
         })
             .setTween('.integrations__text', {
                 left: 0,
                 opacity: 1,
             })
-            .addTo(scrollMagicController);
-
-        new ScrollMagic.Scene({
-            triggerElement: sectionIntegrations,
-            triggerHook: 1,
-            offset: integrationsHeight / 4,
-            duration: screenRes.isMobile
-                ? 400
-                : integrationsHeight - integrationsHeight / 3,
-        })
-            .setTween('.integrations__item--image', {
-                right: screenRes.isMobile ? -50 : -100,
-                opacity: 1,
-            })
-            //.addIndicators()
             .addTo(scrollMagicController);
     }
 
@@ -441,19 +444,19 @@ if (homepage) {
                         '.weprovide__item--icon'
                     );
 
-                    if (isDotIntersecting(dotMiddle, itemIcon)) {
-                        item.classList.add('weprovide__item--active');
+                    if (isDotIntersecting(dotMiddle, item)) {
+                        e.scrollDirection === 'FORWARD'
+                            ? item.classList.add('weprovide__item--active')
+                            : item.classList.remove('weprovide__item--active');
                         weprovideDot.style.opacity = 0;
                     } else if (
                         !isDotIntersecting(dotMiddle, itemIcon) &&
                         item.classList.contains('weprovide__item--active')
                     ) {
-                        item.classList.remove('weprovide__item--active');
                         weprovideDot.style.opacity = 0;
                     }
                 }
             })
-            //.addIndicators({ name: 'WEPROVIDE' })
             .addTo(scrollMagicController);
 
         new ScrollMagic.Scene({
@@ -523,7 +526,7 @@ if (homepage) {
             triggerElement: sectionPrefooter,
             triggerHook: 1,
             offset: 0,
-            duration: prefooterHeight / 1,
+            duration: prefooterHeight / 1.5,
         })
             .setTween('.prefooter__cta', {
                 left: 0,
