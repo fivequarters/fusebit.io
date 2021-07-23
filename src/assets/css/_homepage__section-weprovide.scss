@@ -148,8 +148,8 @@
 
     &__text {
         width: 100%;
-        max-width: 460px;
-        @include font-size(20);
+        max-width: 520px;
+        @include font-size(18);
         line-height: 32px;
         color: var(--neutralDark);
         font-weight: 300;
