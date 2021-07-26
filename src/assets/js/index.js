@@ -360,7 +360,7 @@ if (homepage) {
         } else if (screenRes.isCustom(1400)) {
             scDuration = integrationsHeight;
         } else {
-            scDuration = integrationsHeight * 1.5;
+            scDuration = integrationsHeight * 2;
         }
 
         new ScrollMagic.Scene({
@@ -390,19 +390,24 @@ if (homepage) {
 
                     const activeClass = 'integrations__item-active';
 
-                    if (isDotIntersecting(dotMiddle, item)) {
+                    if (screenRes.isMobile) {
                         item.classList.add(activeClass);
-                        integrationsDot.style.opacity = 0;
                     } else {
-                        item.classList.remove(activeClass);
-                        counter++;
-                    }
+                        if (isDotIntersecting(dotMiddle, item)) {
+                            item.classList.add(activeClass);
+                            integrationsDot.style.opacity = 0;
+                        } else {
+                            item.classList.remove(activeClass);
+                            counter++;
+                        }
 
-                    if (counter === 3) {
-                        integrationsDot.style.opacity = 1;
+                        if (counter === 3) {
+                            integrationsDot.style.opacity = 1;
+                        }
                     }
                 }
             })
+            .addIndicators({ name: 'integrations' })
             .addTo(scrollMagicController);
 
         new ScrollMagic.Scene({
@@ -500,7 +505,7 @@ if (homepage) {
                     }
                 }
             })
-            //.addIndicators()
+            .addIndicators({ name: 'provide' })
             .addTo(scrollMagicController);
 
         new ScrollMagic.Scene({
