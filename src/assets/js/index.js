@@ -407,7 +407,6 @@ if (homepage) {
                     }
                 }
             })
-            .addIndicators({ name: 'integrations' })
             .addTo(scrollMagicController);
 
         new ScrollMagic.Scene({
@@ -505,7 +504,6 @@ if (homepage) {
                     }
                 }
             })
-            .addIndicators({ name: 'provide' })
             .addTo(scrollMagicController);
 
         new ScrollMagic.Scene({
