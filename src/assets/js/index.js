@@ -500,7 +500,7 @@ if (homepage) {
                     }
                 }
             })
-            .addIndicators()
+            //.addIndicators()
             .addTo(scrollMagicController);
 
         new ScrollMagic.Scene({
