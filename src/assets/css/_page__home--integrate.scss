@@ -60,6 +60,7 @@
         border-radius: 10rem;
         margin: 0 auto;
         overflow: hidden;
+        transition: all 0.3s;
 
         &--text,
         &--icon {
@@ -90,11 +91,11 @@
         }
 
         &:hover {
+            border-radius: 0.5rem;
+            background: var(--orangeDark);
+
             .integrate__cta--text {
                 margin-right: 2rem;
-            }
-            &::before {
-                left: calc(100% - 64px);
             }
         }
 
