@@ -48,7 +48,7 @@
         &--badge {
             background: var(--yellow);
             margin-right: 1rem;
-            padding: 0.4rem 0.5rem;
+            padding: 0.5rem;
             color: var(--dark);
             border-radius: 0.3rem;
             text-transform: uppercase;
@@ -62,6 +62,7 @@
         }
 
         & > span:not(&--badge) {
+            padding: 0.2rem 0;
             background: -webkit-linear-gradient(
                 left,
                 var(--yellow) -70%,
