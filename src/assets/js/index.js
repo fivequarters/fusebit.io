@@ -171,18 +171,24 @@ if (homepage) {
         }
 
         function isIntersecting(obj1, obj2) {
-            if (obj1 >= obj2.rect.top && obj1 <= obj2.rect.bottom) {
-                obj2.item.classList.add('features__list--item-active');
+            const padding = 16;
+
+            if (
+                obj1 >= obj2.rect.top - padding &&
+                obj1 <= obj2.rect.bottom + padding
+            ) {
+                return true;
             } else {
-                obj2.item.classList.remove('features__list--item-active');
+                return false;
             }
         }
 
-        new ScrollMagic.Scene({
+        const featuresSceneDuration = featuresHeight * 1.7;
+        const featuresScene = new ScrollMagic.Scene({
             triggerElement: '.features',
-            offset: -55,
+            offset: -400,
             duration: screenRes.isDesktop
-                ? featuresHeight * 1.1
+                ? featuresSceneDuration
                 : featuresHeight * 1.2,
             triggerHook: 0.25,
         })
@@ -191,12 +197,42 @@ if (homepage) {
                 const dotRect = featuresDot.getBoundingClientRect();
                 const dotMiddle = dotRect.top + dotRect.height / 2;
 
+                let counter = 0;
                 for (let i = 1; i <= 6; i++) {
                     const item = setElement('#f' + i);
 
-                    isIntersecting(dotMiddle, item);
+                    if (isIntersecting(dotMiddle, item)) {
+                        item.item.classList.add('features__list--item-active');
+                        featuresDot.style.opacity = 0;
+                    } else {
+                        item.item.classList.remove(
+                            'features__list--item-active'
+                        );
+                        counter++;
+                    }
+                }
+
+                if (counter === 6) {
+                    featuresDot.style.opacity = 1;
+                }
+
+                if (screenRes.isDesktop) {
+                    if (
+                        e.progress > 0.2393 &&
+                        featuresScene.duration() !== 2000 &&
+                        e.scrollDirection === 'FORWARD'
+                    ) {
+                        featuresScene.duration(2000);
+                    } else if (
+                        e.progress < 0.4345 &&
+                        featuresScene.duration() === 2000 &&
+                        e.scrollDirection === 'REVERSE'
+                    ) {
+                        featuresScene.duration(featuresSceneDuration);
+                    }
                 }
             })
+            .addIndicators()
             .addTo(scrollMagicController);
 
         new ScrollMagic.Scene({
@@ -454,6 +490,10 @@ if (homepage) {
                         item.classList.contains('weprovide__item--active')
                     ) {
                         weprovideDot.style.opacity = 0;
+                    }
+
+                    if (e.progress < 0.224 && e.scrollDirection === 'REVERSE') {
+                        item.classList.remove('weprovide__item--active');
                     }
                 }
             })
