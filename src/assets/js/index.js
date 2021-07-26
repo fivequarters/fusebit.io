@@ -479,23 +479,28 @@ if (homepage) {
                         '.weprovide__item--icon'
                     );
 
-                    if (isDotIntersecting(dotMiddle, item)) {
+                    if (isDotIntersecting(dotMiddle, itemIcon)) {
                         e.scrollDirection === 'FORWARD'
                             ? item.classList.add('weprovide__item--active')
                             : item.classList.remove('weprovide__item--active');
-                        weprovideDot.style.opacity = 0;
+                        weprovideDot.style.zIndex = -1;
                     } else if (
                         !isDotIntersecting(dotMiddle, itemIcon) &&
                         item.classList.contains('weprovide__item--active')
                     ) {
-                        weprovideDot.style.opacity = 0;
+                        weprovideDot.style.zIndex = -1;
                     }
 
                     if (e.progress < 0.224 && e.scrollDirection === 'REVERSE') {
                         item.classList.remove('weprovide__item--active');
                     }
+
+                    if (e.progress > 0.8 && e.scrollDirection === 'FORWARD') {
+                        item.classList.add('weprovide__item--active');
+                    }
                 }
             })
+            .addIndicators()
             .addTo(scrollMagicController);
 
         new ScrollMagic.Scene({
