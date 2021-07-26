@@ -304,7 +304,7 @@ if (homepage) {
             .addTo(scrollMagicController);
 
         // Orbital
-        function initOrbitalBall(obj, path, startEnd, duration) {
+        /* function initOrbitalBall(obj, path, startEnd, duration) {
             // Paths 1 - 2 - 3 - 4
 
             gsap.timeline({
@@ -329,7 +329,7 @@ if (homepage) {
         initOrbitalBall('#orbit__ball--6', 3, 0.9, 18);
         initOrbitalBall('#orbit__ball--7', 4, 0.3, 21);
         initOrbitalBall('#orbit__ball--8', 4, 0.6, 21);
-        initOrbitalBall('#orbit__ball--9', 4, 0.8, 21);
+        initOrbitalBall('#orbit__ball--9', 4, 0.8, 21); */
     }
 
     const sectionIntegrations = document.querySelector('.integrations');
