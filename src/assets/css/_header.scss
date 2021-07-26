@@ -329,6 +329,12 @@
         transform: translateY(-105%);
     }
 
+    &.header--compact.header__menuMobile--open {
+        &::before {
+            opacity: 0;
+        }
+    }
+
     @media only screen and (max-width: 1000px) {
         &__link--active,
         &__menu,
