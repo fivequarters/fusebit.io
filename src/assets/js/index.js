@@ -232,7 +232,6 @@ if (homepage) {
                     }
                 }
             })
-            .addIndicators()
             .addTo(scrollMagicController);
 
         new ScrollMagic.Scene({
