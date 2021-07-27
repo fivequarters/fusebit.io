@@ -286,21 +286,21 @@ if (homepage) {
         new ScrollMagic.Scene({
             triggerElement: sectionIntegrate,
             triggerHook: 1,
-            offset: 0,
+            offset: -100,
             duration: 400,
         })
             .setTween('.integrate__title', initialPosition)
-            //.addIndicators()
+            //.addIndicators({ name: 'title' })
             .addTo(scrollMagicController);
 
         new ScrollMagic.Scene({
             triggerElement: sectionIntegrate,
             triggerHook: 1,
-            offset: 100,
+            offset: 0,
             duration: 500,
         })
             .setTween('.integrate__cta', initialPosition)
-            //.addIndicators()
+            //.addIndicators({ name: 'cta' })
             .addTo(scrollMagicController);
 
         // Orbital
@@ -413,21 +413,23 @@ if (homepage) {
             triggerElement: sectionIntegrations,
             triggerHook: 1,
             offset: -100,
-            duration: 300,
+            duration: 200,
         })
             .setTween('.integrations__title', initialPosition)
+            //.addIndicators({ name: 'title' })
             .addTo(scrollMagicController);
 
         new ScrollMagic.Scene({
             triggerElement: sectionIntegrations,
             triggerHook: 1,
             offset: -80,
-            duration: 280,
+            duration: 220,
         })
             .setTween('.integrations__text', {
                 left: 0,
                 opacity: 1,
             })
+            //.addIndicators({ name: 'txt' })
             .addTo(scrollMagicController);
     }
 
@@ -509,8 +511,8 @@ if (homepage) {
         new ScrollMagic.Scene({
             triggerElement: sectionWeprovide,
             triggerHook: 1,
-            offset: 0,
-            duration: 400,
+            offset: -100,
+            duration: 300,
         })
             .setTween('.weprovide__title', initialPosition)
             .addTo(scrollMagicController);
@@ -524,7 +526,7 @@ if (homepage) {
         new ScrollMagic.Scene({
             triggerElement: sectionTestimonials,
             triggerHook: 1,
-            offset: 0,
+            offset: -150,
             duration: testimonialsHeight / 2,
         })
             .setTween('.testimonials__title', initialPosition)
@@ -533,7 +535,7 @@ if (homepage) {
         new ScrollMagic.Scene({
             triggerElement: sectionTestimonials,
             triggerHook: 1,
-            offset: 0,
+            offset: -150,
             duration: testimonialsHeight / 1.5,
         })
             .setTween('.testimonials__text', initialPosition)
@@ -548,8 +550,8 @@ if (homepage) {
         new ScrollMagic.Scene({
             triggerElement: sectionPrefooter,
             triggerHook: 1,
-            offset: 0,
-            duration: prefooterHeight / 2,
+            offset: -100,
+            duration: 300,
         })
             .setTween('.prefooter__title', {
                 left: 0,
@@ -560,8 +562,8 @@ if (homepage) {
         new ScrollMagic.Scene({
             triggerElement: sectionPrefooter,
             triggerHook: 1,
-            offset: 0,
-            duration: prefooterHeight / 1.5,
+            offset: -100,
+            duration: 300,
         })
             .setTween('.prefooter__text', {
                 left: 0,
