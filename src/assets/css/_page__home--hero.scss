@@ -71,6 +71,12 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+
+            &::selection {
+                background-clip: unset;
+                -webkit-background-clip: unset;
+                -webkit-text-fill-color: #ffffff;
+            }
         }
 
         @media only screen and (max-width: 1400px) {
