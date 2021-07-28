@@ -348,20 +348,17 @@ if (homepage) {
             return false;
         }
 
-        let scDuration = 0;
-        if (screenRes.isMobile) {
-            scDuration = integrationsHeight * 1.5;
-        } else if (screenRes.isCustom(1400)) {
-            scDuration = integrationsHeight;
-        } else {
-            scDuration = integrationsHeight * 2;
-        }
-
-        new Scene({
+        const dotDuration = setSceneDuration({
+            desktop: integrationsHeight * 2,
+            tablet: integrationsHeight * 1.5,
+            mobile: integrationsHeight * 1.5,
+            bigres: integrationsHeight * 2,
+        });
+        const integrationsScene = new Scene({
             triggerElement: '.integrations',
             triggerHook: 0.7,
             offset: screenRes.isMobile ? 100 : integrationsHeight / 3,
-            duration: scDuration,
+            duration: dotDuration,
         })
             .setTween(integrationsDot, {
                 motionPath: {
@@ -400,7 +397,23 @@ if (homepage) {
                         }
                     }
                 }
+
+                console.log(e.progress);
+                if (
+                    e.progress > 0.71 &&
+                    e.scrollDirection === 'FORWARD' &&
+                    integrationsScene.duration() !== 2000
+                ) {
+                    integrationsScene.duration(2000);
+                } else if (
+                    e.progress < 1 &&
+                    e.scrollDirection === 'REVERSE' &&
+                    integrationsScene.duration() === 2000
+                ) {
+                    integrationsScene.duration(dotDuration);
+                }
             })
+            //.addIndicators({ name: 'inte' })
             .addTo(scrollMagicController);
 
         new Scene({
@@ -450,7 +463,7 @@ if (homepage) {
         new Scene({
             triggerElement: '.weprovide',
             triggerHook: 0.5,
-            offset: screenRes.isMobile ? 0 : weprovideHeight / 5.7,
+            offset: screenRes.isMobile ? 100 : weprovideHeight / 5.7,
             duration: screenRes.isMobile
                 ? 300
                 : weprovideHeight - weprovideHeight / 2,
@@ -500,6 +513,7 @@ if (homepage) {
                     }
                 }
             })
+            // .addIndicators({ name: 'weprovide' })
             .addTo(scrollMagicController);
 
         new Scene({
