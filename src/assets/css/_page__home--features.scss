@@ -2,12 +2,12 @@
     position: relative;
     display: flex;
     justify-content: center;
-    background: var(--dark);
     padding: 15rem 0 14rem;
     overflow: hidden;
 
     background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--1920.png)
-        center top no-repeat;
+            center top no-repeat,
+        #0f091d;
     background-size: 100%;
 
     &__container {
