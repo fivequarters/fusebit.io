@@ -13,6 +13,19 @@ const screenRes = {
 };
 
 const scrollMagicController = new ScrollMagic.Controller();
+const Scene = ScrollMagic.Scene;
+
+function setSceneDuration(durationPerSizesObj) {
+    if (screenRes.isMobile) {
+        return durationPerSizesObj.mobile;
+    } else if (screenRes.isTablet) {
+        return durationPerSizesObj.tablet;
+    } else if (screenRes.isBigRes) {
+        return durationPerSizesObj.bigres;
+    } else if (screenRes.isDesktop) {
+        return durationPerSizesObj.desktop;
+    }
+}
 
 const homepage = document.querySelector('.homepage');
 if (homepage) {
@@ -25,99 +38,44 @@ if (homepage) {
     if (sectionSupport) {
         const supportHeight = sectionSupport.getBoundingClientRect().height;
         const supportDot = sectionSupport.querySelector('.support__path--dot');
-        const allCards = sectionSupport.querySelectorAll('.card');
-        const supportBase = new gsap.timeline();
 
-        if (window.matchMedia('(min-width: 1175px)').matches) {
-            function ballpath(
-                target,
-                targetPath,
-                cardPos,
-                offset,
-                duration,
-                indicatorName
-            ) {
-                function handleActiveCard(progress, val, currCard, debug) {
-                    if (debug) console.log(progress);
+        const dotDuration = setSceneDuration({
+            desktop: supportHeight * 2,
+            tablet: supportHeight * 2.2,
+            mobile: supportHeight * 1.4,
+            bigres: supportHeight * 2,
+        });
 
-                    if (progress == val) {
-                        allCards[currCard].classList.add('card--active');
-                    } else {
-                        allCards[currCard].classList.remove('card--active');
-                    }
-                }
-
-                const gsapTimeline = new gsap.timeline();
-
-                const options = (id, isReverse) => ({
-                    duration: 0.5,
-                    motionPath: {
-                        path: `.support__path--${id}--path`,
-                        align: `.support__path--${id}--path`,
-                        alignOrigin: [0.5, 0.5],
-                        start: isReverse ? 1 : 0,
-                        end: isReverse ? 0 : 1,
-                    },
-                });
-                gsapTimeline.to(target, options(targetPath, false));
-
-                // Path 1
-                new ScrollMagic.Scene({
-                    triggerElement: '.support',
-                    duration: duration,
-                    offset: offset,
-                    triggerHook: 0.75,
-                })
-                    .setTween(gsapTimeline)
-                    .on('progress', (e) => {
-                        if (targetPath !== 'base') {
-                            handleActiveCard(e.progress, 1, cardPos, false);
-                        }
-                    })
-                    //.addIndicators({ name: indicatorName })
-                    .addTo(scrollMagicController);
-            }
-            ballpath(
-                '#support__dot--card0',
-                'base',
-                3,
-                300,
-                screenRes.isDesktop
-                    ? supportHeight * 1.82
-                    : supportHeight * 1.7,
-                'SUPPORT'
-            );
-        } else {
-            supportBase.to(supportDot, {
-                duration: 0.5,
+        new Scene({
+            triggerElement: sectionSupport,
+            triggerHook: 0.5,
+            offset: 0,
+            duration: dotDuration,
+        })
+            .setTween(supportDot, {
                 motionPath: {
-                    path: `.support__path--base--path`,
-                    align: `.support__path--base--path`,
+                    path: screenRes.isDesktop
+                        ? '.support__path--base--path'
+                        : '.support__path--base--path--mobile',
+                    align: screenRes.isDesktop
+                        ? '.support__path--base--path'
+                        : '.support__path--base--path--mobile',
                     alignOrigin: [0.5, 0.5],
                 },
-            });
-
-            new ScrollMagic.Scene({
-                triggerElement: '.support',
-                offset: 0,
-                duration: document.querySelector('.support__path--base')
-                    .clientHeight,
-                triggerHook: 0,
             })
-                .setTween(supportBase)
-                .addTo(scrollMagicController);
-        }
+            .on('progress', (e) => {})
+            .addTo(scrollMagicController);
 
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: sectionSupport,
             triggerHook: 1,
-            offset: 100,
+            offset: -100,
             duration: 270,
         })
             .setTween('.support__title', initialPosition)
             .addTo(scrollMagicController);
 
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: sectionSupport,
             triggerHook: 1,
             offset: 100,
@@ -126,17 +84,19 @@ if (homepage) {
             .setTween('.support__text', initialPosition)
             .addTo(scrollMagicController);
 
-        new ScrollMagic.Scene({
-            triggerElement: sectionSupport,
-            triggerHook: 0.85,
-            offset: 0,
-            duration: 400,
-        })
-            .setTween('.support__image', {
-                left: 0,
-                opacity: 1,
+        if (screenRes.isDesktop) {
+            new Scene({
+                triggerElement: sectionSupport,
+                triggerHook: 0.85,
+                offset: 0,
+                duration: 400,
             })
-            .addTo(scrollMagicController);
+                .setTween('.support__image', {
+                    left: 0,
+                    opacity: 1,
+                })
+                .addTo(scrollMagicController);
+        }
     }
 
     const sectionFeatures = document.querySelector('.features');
@@ -183,13 +143,17 @@ if (homepage) {
             }
         }
 
-        const featuresSceneDuration = featuresHeight * 1.7;
-        const featuresScene = new ScrollMagic.Scene({
+        const dotDuration = setSceneDuration({
+            desktop: featuresHeight * 1.7,
+            tablet: featuresHeight * 2.2,
+            mobile: featuresHeight * 2,
+            bigres: featuresHeight * 1.7,
+        });
+
+        const featuresScene = new Scene({
             triggerElement: '.features',
             offset: -400,
-            duration: screenRes.isDesktop
-                ? featuresSceneDuration
-                : featuresHeight * 1.2,
+            duration: dotDuration,
             triggerHook: 0.25,
         })
             .setTween(featuresBase)
@@ -228,13 +192,27 @@ if (homepage) {
                         featuresScene.duration() === 2000 &&
                         e.scrollDirection === 'REVERSE'
                     ) {
-                        featuresScene.duration(featuresSceneDuration);
+                        featuresScene.duration(dotDuration);
+                    }
+                } else if (screenRes.isMobile) {
+                    if (
+                        e.progress > 0.4 &&
+                        e.scrollDirection === 'FORWARD' &&
+                        featuresScene.duration() !== dotDuration - 1000
+                    ) {
+                        featuresScene.duration(dotDuration - 1000);
+                    } else if (
+                        e.progress < 0.55 &&
+                        e.scrollDirection === 'REVERSE' &&
+                        featuresScene.duration() === dotDuration - 1000
+                    ) {
+                        featuresScene.duration(dotDuration);
                     }
                 }
             })
             .addTo(scrollMagicController);
 
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: '.features',
             triggerHook: 1,
             offset: 100,
@@ -245,7 +223,7 @@ if (homepage) {
             .addTo(scrollMagicController);
 
         // Marketplace
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: '.features',
             triggerHook: 1,
             offset: 200,
@@ -257,17 +235,23 @@ if (homepage) {
             })
             .addTo(scrollMagicController);
 
-        new ScrollMagic.Scene({
+        const title2Duration = setSceneDuration({
+            desktop: 500,
+            tablet: featuresHeight * 2.2,
+            mobile: 200,
+            bigres: 500,
+        });
+        new Scene({
             triggerElement: '.features',
             triggerHook: 1,
             offset: featuresHeight / 2,
-            duration: 500,
+            duration: title2Duration,
         })
             .setTween('.features__title--2', initialPosition)
             .addTo(scrollMagicController);
 
         // graph
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: '.features',
             triggerHook: 1,
             offset: featuresHeight / 1.8,
@@ -283,24 +267,34 @@ if (homepage) {
 
     const sectionIntegrate = document.querySelector('.integrate');
     if (sectionIntegrate) {
-        new ScrollMagic.Scene({
+        const titleDuration = setSceneDuration({
+            desktop: 300,
+            tablet: 250,
+            mobile: 200,
+            bigres: 300,
+        });
+        new Scene({
             triggerElement: sectionIntegrate,
             triggerHook: 1,
             offset: -100,
-            duration: 400,
+            duration: titleDuration,
         })
             .setTween('.integrate__title', initialPosition)
-            //.addIndicators({ name: 'title' })
             .addTo(scrollMagicController);
 
-        new ScrollMagic.Scene({
+        const ctaDuration = setSceneDuration({
+            desktop: 300,
+            tablet: 250,
+            mobile: 200,
+            bigres: 300,
+        });
+        new Scene({
             triggerElement: sectionIntegrate,
             triggerHook: 1,
             offset: 0,
-            duration: 500,
+            duration: ctaDuration,
         })
             .setTween('.integrate__cta', initialPosition)
-            //.addIndicators({ name: 'cta' })
             .addTo(scrollMagicController);
 
         // Orbital
@@ -363,7 +357,7 @@ if (homepage) {
             scDuration = integrationsHeight * 2;
         }
 
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: '.integrations',
             triggerHook: 0.7,
             offset: screenRes.isMobile ? 100 : integrationsHeight / 3,
@@ -409,7 +403,7 @@ if (homepage) {
             })
             .addTo(scrollMagicController);
 
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: sectionIntegrations,
             triggerHook: 1,
             offset: -100,
@@ -419,7 +413,7 @@ if (homepage) {
             //.addIndicators({ name: 'title' })
             .addTo(scrollMagicController);
 
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: sectionIntegrations,
             triggerHook: 1,
             offset: -80,
@@ -453,7 +447,7 @@ if (homepage) {
             return false;
         }
 
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: '.weprovide',
             triggerHook: 0.5,
             offset: screenRes.isMobile ? 0 : weprovideHeight / 5.7,
@@ -508,7 +502,7 @@ if (homepage) {
             })
             .addTo(scrollMagicController);
 
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: sectionWeprovide,
             triggerHook: 1,
             offset: -100,
@@ -523,7 +517,7 @@ if (homepage) {
         const testimonialsHeight =
             sectionTestimonials.getBoundingClientRect().height;
 
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: sectionTestimonials,
             triggerHook: 1,
             offset: -150,
@@ -532,7 +526,7 @@ if (homepage) {
             .setTween('.testimonials__title', initialPosition)
             .addTo(scrollMagicController);
 
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: sectionTestimonials,
             triggerHook: 1,
             offset: -150,
@@ -547,7 +541,7 @@ if (homepage) {
         const prefooterHeight = sectionPrefooter.getBoundingClientRect().height;
         const prefooterDot = document.querySelector('.prefooter__path--dot');
 
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: sectionPrefooter,
             triggerHook: 1,
             offset: -100,
@@ -559,7 +553,7 @@ if (homepage) {
             })
             .addTo(scrollMagicController);
 
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: sectionPrefooter,
             triggerHook: 1,
             offset: -100,
@@ -571,7 +565,7 @@ if (homepage) {
             })
             .addTo(scrollMagicController);
 
-        new ScrollMagic.Scene({
+        new Scene({
             triggerElement: sectionPrefooter,
             triggerHook: 1,
             offset: 0,
