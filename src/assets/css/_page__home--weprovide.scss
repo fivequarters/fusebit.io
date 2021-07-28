@@ -3,13 +3,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--dark);
-    background-size: cover;
     color: #ffffff;
     overflow: hidden;
 
     background: url(./images/homepage/weprovide/weprovide--1920.png) center
-        center no-repeat;
+            center no-repeat,
+        #0f091d;
     background-size: 100%;
 
     &__container {
