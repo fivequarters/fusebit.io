@@ -193,6 +193,10 @@
                 transition: all 0.4s;
                 margin-left: 1rem;
                 pointer-events: none;
+
+                @media only screen and (max-width: 500px) {
+                    display: none;
+                }
             }
         }
 
