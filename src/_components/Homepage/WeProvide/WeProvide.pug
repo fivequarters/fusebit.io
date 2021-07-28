@@ -18,7 +18,7 @@ mixin emptyIcon
 
 mixin pathMobile
     svg(class="weprovide__path--mobile" width="843" height="530" fill="none" xmlns="http://www.w3.org/2000/svg")
-        path.weprovide__path--mobile--path(d="M1 0v410c0 19.33 15.67 35 35 35h807" stroke="#D7E5FF" stroke-width="2")
+        path.weprovide__path--mobile--path(opacity=".2" d="M1 0v410c0 19.33 15.67 35 35 35h807" stroke="#D7E5FF" stroke-width="2")
 
 
 
@@ -45,7 +45,7 @@ section.weprovide
             ul.weprovide__dataList.swiper-container
                 .swiper-wrapper.swiper-wrapper--disable
                     .swiper-slide
-                        li.weprovide__item.weprovide__item--active
+                        li.weprovide__item
                             .weprovide__item--icon 
                                 +checkIcon
                                 +emptyIcon

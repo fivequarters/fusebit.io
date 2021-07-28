@@ -3,7 +3,7 @@ mixin pathDot
 
 mixin path 
     svg(class="integrations__path" width="28" height="2100" fill="none")
-        path.integrations__path--desktop--path(d="M14 8.004v923" stroke="#D7E5FF" stroke-width="2")
+        path.integrations__path--desktop--path(d="M14 8.004v1100" stroke="#D7E5FF" stroke-width="2")
         path.integrations__path--mobile--path(d="M14 8.004v2000" stroke="#D7E5FF" stroke-width="2")
         g(opacity=".9")
             circle(cx="1" cy="8.004" r="1" fill="#D7E5FF")
@@ -24,7 +24,8 @@ section.integrations
 
         .integrations__wrapper.integrations__wrapper--content
             ul.integrations__dataList
-                li.integrations__item.integrations__item-active(data-image="0") 
+                //.integrations__item-active
+                li.integrations__item(data-image="0") 
                     .integrations__item--content 
                         h5.integrations__item--title 
                             | We provide an extensible code-first model 
@@ -41,7 +42,7 @@ section.integrations
 
 
                     .integrations__item--image
-                        img(src="../../assets/images/integrations__img-00.png", alt="We provide an extensible code-first model")
+                        img(src="../../assets/images/homepage/enjoyFreedom/integrations--step1.png", alt="We provide an extensible code-first model")
 
                 li.integrations__item(data-image="1")
                     .integrations__item--content 
@@ -64,7 +65,7 @@ section.integrations
 
                     
                     .integrations__item--image
-                        img(src="../../assets/images/integrations__img-01.png", alt="The package's powerful ecosystem" class="")
+                        img(src="../../assets/images/homepage/enjoyFreedom/integrations--step2.png", alt="The package's powerful ecosystem" class="")
 
                 li.integrations__item(data-image="2") 
                     .integrations__item--content 
@@ -88,7 +89,7 @@ section.integrations
 
 
                     .integrations__item--image
-                        img(src="../../assets/images/integrations__img-02.png", alt="First-class support for versioning" class="") 
+                        img(src="../../assets/images/homepage/enjoyFreedom/integrations--step3.png", alt="First-class support for versioning" class="") 
                 
             
             script.

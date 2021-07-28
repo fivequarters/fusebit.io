@@ -1,0 +1,247 @@
+.hero {
+    position: relative;
+    background: url(./images/homepage/hero/hero--1920.png) left top no-repeat;
+    background-size: 100%;
+    color: var(--neutral);
+    overflow: hidden;
+
+    &__container {
+        width: 90%;
+        max-width: var(--container);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0 auto;
+        padding: 11.375rem 0 6.5rem;
+
+        @media only screen and (max-width: 800px) {
+            padding: 8rem 0;
+        }
+
+        @media only screen and (max-width: 500px) {
+            padding: 5rem 0 8rem;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        max-width: 544px;
+
+        @media only screen and (max-width: 1400px) {
+            max-width: 500px;
+        }
+
+        @media only screen and (max-width: 800px) {
+            max-width: 100%;
+        }
+    }
+
+    &__subtitle {
+        font-weight: 700;
+        @include font-size(16);
+        margin-bottom: 1.5rem;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        &--badge {
+            background: var(--yellow);
+            margin-right: 1rem;
+            padding: 0.5rem;
+            color: var(--dark);
+            border-radius: 0.3rem;
+            text-transform: uppercase;
+            font-family: var(--poppins);
+            @include font-size(10);
+            transition: all 0.2s;
+
+            @media only screen and (max-width: 500px) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        & > span:not(&--badge) {
+            padding: 0.2rem 0;
+            background: -webkit-linear-gradient(
+                left,
+                var(--yellow) -70%,
+                var(--neutralLight)
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            &::selection {
+                background-clip: unset;
+                -webkit-background-clip: unset;
+                -webkit-text-fill-color: #ffffff;
+            }
+        }
+
+        @media only screen and (max-width: 1400px) {
+            @include font-size(16);
+            margin-bottom: 1.5rem;
+
+            &--badge {
+                @include font-size(12);
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            @include font-size(14);
+
+            &--badge {
+                @include font-size(10);
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__title {
+        position: relative;
+        font-family: var(--sora);
+        font-weight: 700;
+        @include font-size(56);
+        line-height: 110%;
+        color: var(--neutralLight);
+        margin-bottom: 2rem;
+
+        @media only screen and (max-width: 1400px) {
+            @include font-size(52);
+            line-height: 62px;
+            margin-bottom: 1.5rem;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            @include font-size(39);
+            line-height: 56px;
+        }
+
+        @media only screen and (max-width: 700px) {
+            @include font-size(52);
+            line-height: 60px;
+        }
+    }
+
+    &__text {
+        position: relative;
+        width: 95%;
+        @include font-size(18);
+        font-weight: 300;
+        line-height: 29px;
+        margin-bottom: 3rem;
+
+        @media only screen and (max-width: 1400px) {
+            width: 400px;
+            @include font-size(16);
+            line-height: 24px;
+            margin-bottom: 2rem;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            width: 350px;
+            @include font-size(14);
+        }
+
+        @media only screen and (max-width: 800px) {
+            width: 100%;
+        }
+    }
+
+    &__cta {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: 64px;
+        background: var(--orange);
+        @include font-size(18);
+        line-height: 27px;
+        color: var(--neutralLight);
+        border-radius: 2rem;
+        z-index: 5;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+
+        svg {
+            position: relative;
+            margin-left: 0.8rem;
+            width: 6px;
+            transition: all 0.2s ease-in-out;
+            path {
+                stroke: white;
+            }
+        }
+
+        &:hover {
+            border-radius: 0.8rem;
+            background: var(--orangeDark);
+            svg {
+                transform: translateX(0.5rem) scale(1.2);
+            }
+        }
+
+        &:active {
+            transition: none;
+            background: var(--yellow);
+        }
+    }
+
+    &__images {
+        width: 100%;
+        position: relative;
+        opacity: 0;
+        padding-top: 50%;
+
+        img {
+            position: absolute;
+            top: -6.5rem;
+            left: 1rem;
+            transform-origin: left top;
+            transform: scale(1);
+        }
+
+        @media only screen and (max-width: 800px) {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 1900px) and (min-height: 1079px) {
+        background: url(./images/homepage/hero/hero--4500.png) -26% top no-repeat;
+    }
+
+    @media only screen and (min-height: 2000px) {
+        background: url(./images/homepage/hero/hero--4500.png) -175% top no-repeat;
+    }
+
+    @media only screen and (min-height: 3000px) {
+        background: url(./images/homepage/hero/hero--4500.png) 185% top
+            no-repeat;
+    }
+
+    @media only screen and (max-width: 1500px) {
+        background: url(./images/homepage/hero/hero--1360.png) left -4rem no-repeat;
+        background-size: 1440px;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        background: url(./images/homepage/hero/hero--1360.png) -4rem top no-repeat;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        background: url(./images/homepage/hero/hero--1360.png) -4rem bottom no-repeat;
+    }
+
+    @media only screen and (max-width: 500px) {
+        background: url(./images/homepage/hero/hero--mobile.png) left bottom
+            no-repeat;
+        background-size: 100%;
+    }
+}

@@ -64,7 +64,7 @@ section.features
 
             .features__images.features__images--marketplace
                 //include ./Marketplace/Marketplace
-                img(src="../../../assets/images/features__bg/step1.png", alt="Leave boilerplate integration code to us" data-step='1')
+                img(src="../../../assets/images/homepage/leaveBoilerplate/step1.png", alt="Leave boilerplate integration code to us" data-step='1')
                 script.
                     const imgMarketplace = document.querySelector('.features__images--marketplace > img');
 
@@ -145,8 +145,4 @@ section.features
         +path1
         +path1--mobile
 
-    .features__bg
-        - for(let i = 0; i < 5; i++)
-            - let bgNo = ('0' + i).slice(-2);
-            div(class='features__bg--' + bgNo)
 
