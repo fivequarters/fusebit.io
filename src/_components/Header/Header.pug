@@ -1,3 +1,20 @@
+-
+    const headerLinks = [
+        {
+            text: 'Integrations',
+            link: '#integrations'
+        },
+        {
+            text: 'Docs',
+            link: '#docs'
+        },
+        {
+            text: 'Blog',
+            link: '#blog'
+        }
+
+    ]
+
 header.header 
     .header__container 
         .header__logo 
@@ -6,12 +23,9 @@ header.header
 
         .header__menu 
             ul 
-                li
-                    a(href="#") Integrations
-                li
-                    a(href="#") Docs
-                li
-                    a(href="#") Blog
+                each link in headerLinks
+                    li
+                        a(href=link.link)=link.text
 
         .header__links 
             ul 
@@ -27,7 +41,21 @@ header.header
             span.bottom
 
     .header__menuMobile
-        h5 Menu Mobile
+
+        .menuMobile__links
+            ul 
+                each link in headerLinks
+                    li
+                        a(href=link.link)=link.text
+
+                li 
+                    a.header__links--signUp(href="#") Sign up
+
+        .menuMobile__social 
+            include ../SocialMedia/SocialMedia
+
+
+        
         
 
     script.
