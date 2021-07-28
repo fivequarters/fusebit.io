@@ -398,7 +398,6 @@ if (homepage) {
                     }
                 }
 
-                console.log(e.progress);
                 if (
                     e.progress > 0.71 &&
                     e.scrollDirection === 'FORWARD' &&
