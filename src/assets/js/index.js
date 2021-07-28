@@ -582,7 +582,7 @@ if (homepage) {
             triggerElement: sectionPrefooter,
             triggerHook: 1,
             offset: 0,
-            duration: prefooterHeight / 1.5,
+            duration: 200,
         })
             .setTween('.prefooter__cta', {
                 left: 0,
