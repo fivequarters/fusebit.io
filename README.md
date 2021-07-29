@@ -35,6 +35,31 @@ yarn serve:prod
 
 Browse to [http://localhost:5000](http://localhost:5000).
 
+## Deploy in S3
+
+1) Build the application
+
+```sh
+npm run prod
+```
+
+or
+
+```sh
+yarn prod
+```
+
+2) Upload `dist` folder content into the bucket
+
+```sh
+aws s3 sync ./dist s3://${bucket_name} --profile ${profile} --cache-control max-age=31536000
+```
+
+3) Refresh cloudfront (optional)
+```sh
+aws cloudfront create-invalidation --profile ${profile} --distribution-id ${cloudfront_id} --paths '/*'
+```
+
 ## Technologies used
 
 * [Eleventy](https://www.11ty.dev/)
