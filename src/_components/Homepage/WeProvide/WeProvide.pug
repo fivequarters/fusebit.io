@@ -18,7 +18,8 @@ mixin emptyIcon
 
 mixin pathMobile
     svg(class="weprovide__path--mobile" width="843" height="530" fill="none" xmlns="http://www.w3.org/2000/svg")
-        path.weprovide__path--mobile--path(d="M1 0v410c0 19.33 15.67 35 35 35h807" stroke="#D7E5FF" stroke-width="2")
+        path.weprovide__path--mobile--path(opacity=".2" d="M1 0v410c0 19.33 15.67 35 35 35h800" stroke="#D7E5FF" stroke-width="2")
+        //path.weprovide__path--mobile--path(opacity=".2" d="M1 0v410c0 19.33 15.67 35 35 35h40" stroke="#D7E5FF" stroke-width="2")
 
 
 
@@ -45,7 +46,7 @@ section.weprovide
             ul.weprovide__dataList.swiper-container
                 .swiper-wrapper.swiper-wrapper--disable
                     .swiper-slide
-                        li.weprovide__item.weprovide__item--active
+                        li.weprovide__item
                             .weprovide__item--icon 
                                 +checkIcon
                                 +emptyIcon
@@ -142,25 +143,16 @@ section.weprovide
             const pathMobile = document.querySelector('.weprovide__path--mobile');
             const titleIcon = document.querySelector('.weprovide__title--icon');
 
-            switch(slideIndex) {
-                case 0:
-                    pathMobile.classList.remove(
-                        'weprovide__path--mobile--scrolled-1',
-                        'weprovide__path--mobile--scrolled-2'
-                    );
-                    titleIcon.classList.remove('weprovide__title--icon--scrolled');
-                    break;
+            const pathPathMobile = document.querySelector('.weprovide__path--mobile--path');
+            const pathMobileStatus = {
+                default: 'M1 0v410c0 19.33 15.67 35 35 35h800',
+                trimed: 'M1 0v410c0 19.33 15.67 35 35 35h40'
+            }
 
-                case 3:
-                    pathMobile.classList.add('weprovide__path--mobile--scrolled-2');
-                    pathMobile.classList.remove('weprovide__path--mobile--scrolled-1');
-                    break;
-
-                default:
-                    pathMobile.classList.add('weprovide__path--mobile--scrolled-1');
-                    pathMobile.classList.remove('weprovide__path--mobile--scrolled-2');
-                    titleIcon.classList.add('weprovide__title--icon--scrolled');
-                    
+            if(slideIndex === 3) {
+                pathPathMobile.setAttribute('d', pathMobileStatus.trimed)
+            } else {
+                pathPathMobile.setAttribute('d', pathMobileStatus.default)
             }
 
             currentSlide.children[0].classList.add('weprovide__item--active');
