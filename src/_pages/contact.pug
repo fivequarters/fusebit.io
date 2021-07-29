@@ -1,0 +1,40 @@
+extends ../_layouts/default.pug
+
+block seo_variables
+    - var title = 'Fusebit | Contact'
+    - var og_title = 'Fusebit: a powerful integration platform built for developers'
+    - var og_description = 'With Fusebit, quickly integrate your application to other SaaS applications using flexible API building blocks. Fusebit provides connectors to popular APIs and hosts your integrations at scale.'
+    - var og_image = 'https://cdn.fusebit.io/twitter/twitter-orange.png'
+
+block page_variable
+    - var pageClass = 'contact__page'
+
+block content
+
+    section.static__page
+
+        .static__container
+
+            .static__wrapper 
+                .static__head 
+                    h1 Get In Touch
+
+                .static__content 
+
+                    .contact__data
+                        p We love hearing feedback from customers - that's you! Please use your preferred method to reach out.
+                        p Even better, we would love for you to be part of our community. We are on Slack and Discord 24/7, happy to talk integrations.
+                        p We are looking forward to hearing from you!
+
+                    .contact__links 
+                        ul 
+                            li 
+                                a(href="https://fusebitio.slack.com/") Fusebit Community Slack <br />
+                                | Request invitation
+                                a(href="https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg") here
+
+                            li 
+                                a(href="https://discord.gg/gphkyNZbHv") Discord Community 
+
+                            li 
+                                a(href="mailto:contact@fusebit.io") contact@fusebit.io
