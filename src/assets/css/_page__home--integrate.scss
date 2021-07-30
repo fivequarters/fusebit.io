@@ -5,6 +5,8 @@
     width: 100%;
     max-height: 700px;
     overflow: hidden;
+    background: #ffffff;
+    z-index: 1;
 
     &__container {
         position: relative;
