@@ -132,11 +132,19 @@ if (homepage) {
         document.querySelector('.integrations').offsetTop + 25 + 'px';
     path2.style.opacity = 1;
 
+    const gsapPath = screenRes.isMobile
+        ? '.path2__mobile--path'
+        : screenRes.isTablet
+        ? '.path2__tablet--path'
+        : screenRes.isDesktop
+        ? '.path2__desktop--path'
+        : '';
+
     gsap.to(path2Dot, {
         scrollTrigger: {
             trigger: path2,
             start: 'top 25%',
-            end: 'bottom 100%',
+            end: `bottom ${screenRes.isMobile ? '65%' : '100%'}`,
             scrub: 0,
             //markers: true,
             pint: true,
@@ -151,11 +159,31 @@ if (homepage) {
                 let counter = 0;
                 for (let i = 0; i < integrationsItems.length; i++) {
                     const item = integrationsItems[i];
+                    const itemIcon = item.querySelector(
+                        '.integrations__item--icon'
+                    );
 
                     const activeClass = 'integrations__item-active';
 
                     if (screenRes.isMobile) {
                         item.classList.add(activeClass);
+
+                        if (
+                            isDotIntersecting(dotMiddle, itemIcon, true, false)
+                        ) {
+                            item.classList.add(
+                                'integrations__item-active--icon'
+                            );
+                            path2Dot.style.opacity = 0;
+                        } else {
+                            item.classList.remove(
+                                'integrations__item-active--icon'
+                            );
+                            counter++;
+                        }
+                        if (counter === integrationsItems.length) {
+                            path2Dot.style.opacity = 1;
+                        }
                     } else {
                         if (isDotIntersecting(dotMiddle, item, true, false)) {
                             item.classList.add(activeClass);
@@ -164,7 +192,6 @@ if (homepage) {
                             item.classList.remove(activeClass);
                             counter++;
                         }
-
                         if (counter === integrationsItems.length) {
                             path2Dot.style.opacity = 1;
                         }
@@ -241,32 +268,58 @@ if (homepage) {
                     }
                 }
 
-                if (screenRes.isTablet) {
-                    if (progress > 0.48) {
-                        for (let i = 0; i < weprovideItems.length; i++) {
-                            const item = weprovideItems[i];
-                            //item.classList.
+                if (screenRes.mobile === false && screenRes.isTablet) {
+                    for (let i = 0; i < weprovideItems.length; i++) {
+                        const item = weprovideItems[i];
+
+                        if (progress > 0.44) {
+                            item.classList.add('weprovide__item--active');
+                            path2Dot.style.opacity = 0;
+                        } else {
+                            item.classList.remove('weprovide__item--active');
+                            path2Dot.style.opacity = 1;
                         }
                     }
                 }
 
-                console.log({ progress, direction, isActive });
+                if (screenRes.isMobile) {
+                    if (
+                        isDotIntersecting(
+                            dotMiddle,
+                            weProvideTitleIcon,
+                            true,
+                            false
+                        )
+                    ) {
+                        weProvideTitleIcon.classList.add(
+                            'weprovide__title--icon--active'
+                        );
+                    } else {
+                        weProvideTitleIcon.classList.remove(
+                            'weprovide__title--icon--active'
+                        );
+                    }
+
+                    if (progress > 0.65) {
+                        weprovideItems[0].classList.add(
+                            'weprovide__item--active'
+                        );
+                        path2Dot.style.opacity = 0;
+                    } else {
+                        weprovideItems[0].classList.remove(
+                            'weprovide__item--active'
+                        );
+                        path2Dot.style.opacity = 1;
+                    }
+                }
             },
         },
         duration: 200,
         ease: 'in',
         immediateRender: true,
         motionPath: {
-            path: screenRes.isDesktop
-                ? '.path2__desktop--path'
-                : screenRes.isTablet
-                ? '.path2__tablet--path'
-                : '.path2__mobile--path',
-            align: screenRes.isDesktop
-                ? '.path2__desktop--path'
-                : screenRes.isTablet
-                ? '.path2__tablet--path'
-                : '.path2__mobile--path',
+            path: gsapPath,
+            align: gsapPath,
             alignOrigin: [0.5, 0.5],
         },
     });
