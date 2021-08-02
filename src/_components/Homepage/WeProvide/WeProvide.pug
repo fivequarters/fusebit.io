@@ -38,6 +38,7 @@ section.weprovide
                     i _
                 .weprovide__title--icon
                     +emptyIcon
+                    +checkIcon
 
             p.weprovide__text 
                 | We know how valuable developers' time is. This is why we worked hard to develop a tool that would be easy to use.
@@ -93,9 +94,9 @@ section.weprovide
 
                 div.weprovide__pagination.swiper-pagination
 
-        +pathDesktop 
-        +pathMobile
-        +pathDot
+        //+pathDesktop 
+        //+pathMobile
+        //+pathDot
 
     .weprovide__bg 
         - for(let i = 0; i < 12; i++)
@@ -140,7 +141,7 @@ section.weprovide
             const slideIndex = weprovideSwiper.realIndex;
             const currentSlide = weprovideSwiper.slides[slideIndex]
 
-            const pathMobile = document.querySelector('.weprovide__path--mobile');
+            /*const pathMobile = document.querySelector('.weprovide__path--mobile');
             const titleIcon = document.querySelector('.weprovide__title--icon');
 
             const pathPathMobile = document.querySelector('.weprovide__path--mobile--path');
@@ -155,7 +156,7 @@ section.weprovide
                 pathPathMobile.setAttribute('d', pathMobileStatus.default)
             }
 
-            currentSlide.children[0].classList.add('weprovide__item--active');
+            currentSlide.children[0].classList.add('weprovide__item--active');*/
         }
         function toggleSwiperWrapperStatus() {
             const swiperWrapper = document.querySelector('.weprovide__dataList .swiper-wrapper');

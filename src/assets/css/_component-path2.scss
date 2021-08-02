@@ -1,4 +1,4 @@
-.path1 {
+.path2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -15,36 +15,38 @@
         margin: 0 auto;
 
         @media only screen and (max-width: 1200px) {
-            margin: 0 0 0 1.6rem;
+            margin: 0 0 0 0.8rem;
         }
     }
 
     &__svg {
-        position: relative;
-        left: -0.9rem;
-        opacity: 0.6;
-
-        path {
-            stroke: #d7e5ff;
-        }
-
+        &--tablet,
         &--mobile {
             display: none;
         }
+    }
 
-        @media only screen and (max-width: 1175px) {
-            .section1--path-1,
-            .section1--path-2,
-            .section1--path-3 {
-                display: none;
-            }
-        }
+    .pathdot {
+        transform: translate(90%, 3px);
+    }
 
-        @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1000px) {
+        &__svg {
             &--desktop {
                 display: none;
             }
+            &--tablet {
+                display: block;
+            }
+        }
+    }
 
+    @media only screen and (max-width: 700px) {
+        &__svg {
+            &--tablet,
+            &--desktop {
+                display: none;
+            }
             &--mobile {
                 display: block;
             }

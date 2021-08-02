@@ -127,6 +127,22 @@
             background: var(--dark);
             transform: rotate(-90deg);
 
+            .checkicon {
+                display: none;
+            }
+
+            &--active {
+                background: var(--yellow);
+
+                .checkicon {
+                    display: block;
+                    transform: rotate(90deg);
+                }
+                .emptyicon {
+                    display: none;
+                }
+            }
+
             @media only screen and (max-width: 1000px) {
                 left: -3.3rem;
             }

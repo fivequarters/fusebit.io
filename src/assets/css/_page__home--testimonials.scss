@@ -6,6 +6,7 @@
     color: var(--dark);
     background: linear-gradient(to top, var(--neutralLight) 50%, #ffffff 120%);
     padding: 4rem 0 14rem;
+    z-index: 1;
 
     &__container {
         position: relative;
