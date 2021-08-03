@@ -8,17 +8,21 @@ footer.footer
     .footer__container 
         .footer__wrapper.footer__wrapper--head
             .footer__logo 
-                a(href="#logo") 
+                a(href="/") 
                     include ../Logo/Logo
 
             ul.footer__links 
                 li.footer__links--title  Company
 
-                +footerLink('about-us.html', 'About Us')
-                +footerLink('careers.html', 'Careers', 20)
-                +footerLink('#blog', 'Blog')
-                +footerLink('#docs', 'Docs')
-                +footerLink('#legal', 'Legal')
+                +footerLink('about-us', 'About Us')
+                +footerLink('careers', 'Careers', 4)
+                //+footerLink('#blog', 'Blog')
+                //+footerLink('#docs', 'Docs')
+                +footerLink('contact', 'Get In Touch')
+                +footerLink('legal', 'Legal')
+                +footerLink('privacy', 'Privacy Policy')
+                +footerLink('support', 'Support')
+                +footerLink('terms', 'Terms of Use')
 
             ul.footer__links 
                 li.footer__links--title  Integration
