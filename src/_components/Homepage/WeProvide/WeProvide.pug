@@ -16,19 +16,6 @@ mixin emptyIcon
             circle(cx="8.998" cy="1" r="1" transform="rotate(-90 8.998 1)" fill="#D7E5FF")
             circle(cx="8.998" cy="14" r="7" transform="rotate(-90 8.998 14)" stroke="#D7E5FF" stroke-width="2")
 
-mixin pathMobile
-    svg(class="weprovide__path--mobile" width="843" height="530" fill="none" xmlns="http://www.w3.org/2000/svg")
-        path.weprovide__path--mobile--path(opacity=".2" d="M1 0v410c0 19.33 15.67 35 35 35h800" stroke="#D7E5FF" stroke-width="2")
-        //path.weprovide__path--mobile--path(opacity=".2" d="M1 0v410c0 19.33 15.67 35 35 35h40" stroke="#D7E5FF" stroke-width="2")
-
-
-
-mixin pathDesktop 
-    svg(class="weprovide__path--desktop" width="907" height="992" fill="none")
-        path(opacity=".2" fill-rule="evenodd" clip-rule="evenodd" d="M0 0v724h2V0H0z" fill="#D7E5FF")
-        path.weprovide__path--desktop--path(opacity=".2" d="M1 0v19c0 13.8071 11.1929 25 25 25h14c13.8071 0 25 11.1929 25 25v307c0 19.33 15.67 35 35 35h810" stroke="#D7E5FF" stroke-width="2")
-
-
 section.weprovide 
     .weprovide__container
         .weprovide__wrapper.weprovide__wrapper--head
@@ -93,10 +80,6 @@ section.weprovide
                                 li Need text 2
 
                 div.weprovide__pagination.swiper-pagination
-
-        //+pathDesktop 
-        //+pathMobile
-        //+pathDot
 
     .weprovide__bg 
         - for(let i = 0; i < 12; i++)
