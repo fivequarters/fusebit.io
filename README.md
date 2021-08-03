@@ -49,10 +49,10 @@ or
 yarn prod
 ```
 
-2) Upload `dist` folder content into the bucket
+2) Upload `build` folder content into the bucket
 
 ```sh
-aws s3 sync ./dist s3://${bucket_name} --profile ${profile} --cache-control max-age=31536000
+aws s3 sync ./build s3://${bucket_name} --profile ${profile} --cache-control max-age=31536000
 ```
 
 3) Refresh cloudfront (optional)

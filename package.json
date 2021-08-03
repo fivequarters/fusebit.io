@@ -4,12 +4,12 @@
   "description": "Fusebit marketing site",
   "main": ".eleventy.js",
   "scripts": {
-    "build:assets": "webpack --config build/webpack.config.prod.js",
+    "build:assets": "webpack --config config/webpack.config.prod.js",
     "build:site": "ELEVENTY_ENV=production npx eleventy",
     "del:assets": "rimraf ./src/compiled-assets",
     "del:dist": "rimraf ./dist",
     "dev": "npm run dev:assets & npm run dev:site",
-    "dev:assets": "webpack --config build/webpack.config.dev.js",
+    "dev:assets": "webpack --config config/webpack.config.dev.js",
     "dev:site": "ELEVENTY_ENV=development npx eleventy --serve",
     "prod": "npm-run-all del:dist del:assets build:assets build:site",
     "serve:prod": "serve ./dist/"
