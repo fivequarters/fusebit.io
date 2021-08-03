@@ -34,6 +34,90 @@ if (homepage) {
         opacity: 1,
     };
 
+    const path1 = document.querySelector('.path1');
+    const path1Dot = document.querySelector('.path1__dot');
+    path1.style.top = document.querySelector('.support').offsetTop + 65 + 'px';
+    path1.style.opacity = 1;
+
+    function alignPathToTopSection(path, section) {
+        path.style.top = document.querySelector(section).offsetTop + 65 + 'px';
+    }
+
+    window.addEventListener('resize', () =>
+        alignPathToTopSection(path1, '.support')
+    );
+
+    const section1IndicatorsArr = document.querySelectorAll(
+        '.features [class*="indicator"]'
+    );
+
+    function isDotIntersecting(
+        dot,
+        target,
+        topBottom = true,
+        leftRight = false
+    ) {
+        const padding = 16;
+
+        if (
+            (topBottom &&
+                dot >= target.getBoundingClientRect().top - padding &&
+                dot <= target.getBoundingClientRect().bottom + padding) ||
+            (leftRight &&
+                dot >= target.getBoundingClientRect().left - padding &&
+                dot <= target.getBoundingClientRect().right + padding)
+        ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    gsap.to(path1Dot, {
+        scrollTrigger: {
+            trigger: path1,
+            start: 'top 5%',
+            end: 'bottom 5%',
+            scrub: 0,
+            //markers: true,
+            pint: true,
+            onUpdate: ({ progress }) => {
+                const dotRect = path1Dot.getBoundingClientRect();
+                const dotMiddle = dotRect.top + dotRect.height / 2;
+
+                let counter = 0;
+                for (let i = 0; i < section1IndicatorsArr.length; i++) {
+                    const item = section1IndicatorsArr[i];
+                    const itemParent = item.parentNode;
+
+                    //.features__list--item-active
+
+                    if (isDotIntersecting(dotMiddle, item, true, false)) {
+                        itemParent.classList.add('features__list--item-active');
+                        path1Dot.style.opacity = 0;
+                    } else {
+                        itemParent.classList.remove(
+                            'features__list--item-active'
+                        );
+                        counter++;
+                    }
+                }
+
+                if (counter === section1IndicatorsArr.length) {
+                    path1Dot.style.opacity = 1;
+                }
+            },
+        },
+        duration: 1,
+        ease: 'in',
+        immediateRender: true,
+        motionPath: {
+            path: screenRes.isDesktop ? '.desktop--path' : '.mobile--path',
+            align: screenRes.isDesktop ? '.desktop--path' : '.mobile--path',
+            alignOrigin: [0.5, 0.5],
+        },
+    });
+
     const sectionSupport = document.querySelector('.support');
     if (sectionSupport) {
         const supportHeight = sectionSupport.getBoundingClientRect().height;
@@ -45,26 +129,6 @@ if (homepage) {
             mobile: supportHeight * 1.4,
             bigres: supportHeight * 2,
         });
-
-        new Scene({
-            triggerElement: sectionSupport,
-            triggerHook: 0.5,
-            offset: 0,
-            duration: dotDuration,
-        })
-            .setTween(supportDot, {
-                motionPath: {
-                    path: screenRes.isDesktop
-                        ? '.support__path--base--path'
-                        : '.support__path--base--path--mobile',
-                    align: screenRes.isDesktop
-                        ? '.support__path--base--path'
-                        : '.support__path--base--path--mobile',
-                    alignOrigin: [0.5, 0.5],
-                },
-            })
-            .on('progress', (e) => {})
-            .addTo(scrollMagicController);
 
         new Scene({
             triggerElement: sectionSupport,
@@ -120,97 +184,12 @@ if (homepage) {
             },
         });
 
-        function setElement(obj, target) {
-            const item = sectionFeatures.querySelector(obj);
-            const itemRect = item.getBoundingClientRect();
-
-            return {
-                item: item,
-                rect: itemRect,
-            };
-        }
-
-        function isIntersecting(obj1, obj2) {
-            const padding = 16;
-
-            if (
-                obj1 >= obj2.rect.top - padding &&
-                obj1 <= obj2.rect.bottom + padding
-            ) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
         const dotDuration = setSceneDuration({
             desktop: featuresHeight * 1.7,
             tablet: featuresHeight * 2.2,
             mobile: featuresHeight * 2,
             bigres: featuresHeight * 1.7,
         });
-
-        const featuresScene = new Scene({
-            triggerElement: '.features',
-            offset: -400,
-            duration: dotDuration,
-            triggerHook: 0.25,
-        })
-            .setTween(featuresBase)
-            .on('progress', (e) => {
-                const dotRect = featuresDot.getBoundingClientRect();
-                const dotMiddle = dotRect.top + dotRect.height / 2;
-
-                let counter = 0;
-                for (let i = 1; i <= 6; i++) {
-                    const item = setElement('#f' + i);
-
-                    if (isIntersecting(dotMiddle, item)) {
-                        item.item.classList.add('features__list--item-active');
-                        featuresDot.style.opacity = 0;
-                    } else {
-                        item.item.classList.remove(
-                            'features__list--item-active'
-                        );
-                        counter++;
-                    }
-                }
-
-                if (counter === 6) {
-                    featuresDot.style.opacity = 1;
-                }
-
-                if (screenRes.isDesktop) {
-                    if (
-                        e.progress > 0.2393 &&
-                        featuresScene.duration() !== 2000 &&
-                        e.scrollDirection === 'FORWARD'
-                    ) {
-                        featuresScene.duration(2000);
-                    } else if (
-                        e.progress < 0.4345 &&
-                        featuresScene.duration() === 2000 &&
-                        e.scrollDirection === 'REVERSE'
-                    ) {
-                        featuresScene.duration(dotDuration);
-                    }
-                } else if (screenRes.isMobile) {
-                    if (
-                        e.progress > 0.4 &&
-                        e.scrollDirection === 'FORWARD' &&
-                        featuresScene.duration() !== dotDuration - 1000
-                    ) {
-                        featuresScene.duration(dotDuration - 1000);
-                    } else if (
-                        e.progress < 0.55 &&
-                        e.scrollDirection === 'REVERSE' &&
-                        featuresScene.duration() === dotDuration - 1000
-                    ) {
-                        featuresScene.duration(dotDuration);
-                    }
-                }
-            })
-            .addTo(scrollMagicController);
 
         new Scene({
             triggerElement: '.features',

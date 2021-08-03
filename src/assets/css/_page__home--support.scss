@@ -39,6 +39,7 @@
             border-radius: 1rem;
             background: var(--yellow);
             z-index: 99;
+            opacity: 0;
 
             @media only screen and (max-width: 1000px) {
                 transform: translate(90%, 3px);
@@ -53,6 +54,7 @@
             z-index: 0;
             transition: all 0.25s;
             pointer-events: none;
+            opacity: 0;
         }
 
         &--base {
