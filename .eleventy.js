@@ -17,6 +17,12 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ 'src/assets/meta': '/' });
 
     eleventyConfig.setBrowserSyncConfig({
+        server: {
+            baseDir: './dist',
+            serveStaticOptions: {
+                extensions: ['html'],
+            },
+        },
         callbacks: {
             ready: function (err, bs) {
                 bs.addMiddleware('*', (req, res) => {
