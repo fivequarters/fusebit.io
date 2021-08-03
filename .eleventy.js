@@ -15,6 +15,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('src/assets/images');
     eleventyConfig.addPassthroughCopy('src/assets/vendor');
     eleventyConfig.addPassthroughCopy({ 'src/assets/meta': '/' });
+    eleventyConfig.addPassthroughCopy({ 'public': '/' });
 
     eleventyConfig.setBrowserSyncConfig({
         server: {
@@ -60,7 +61,7 @@ module.exports = function (eleventyConfig) {
             includes: '_components',
             input: 'src',
             layouts: '_layouts',
-            output: 'dist',
+            output: 'build',
         },
         templateFormats: ['pug', 'md'],
         htmlTemplateEngine: 'pug',
