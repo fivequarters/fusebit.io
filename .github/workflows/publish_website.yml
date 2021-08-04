@@ -52,7 +52,7 @@ jobs:
       - name: Checkout Docs
         uses: actions/checkout@v2
         with:
-          name: fivequarters/docs
+          repository: fivequarters/docs
           path: docs
           token: ${{ secrets.DOCS_REPO_ACCESS_KEY }}
 
