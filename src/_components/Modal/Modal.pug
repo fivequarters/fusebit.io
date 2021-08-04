@@ -17,15 +17,18 @@
         div(class="pipedriveWebForms" data-pd-webforms=waitlistFormURL)
             script(src="https://webforms.pipedrive.com/f/loader")
 
+.modal__overlay
     script.
         window.addEventListener('load', () => {
 
             function checkContactHashInUrl() {
                 if(window.location.hash.indexOf('#contact') >-1) {
                     const modal = document.querySelector('#modal__signUp')
+                    const overlay = document.querySelector('.modal__overlay');
                     modal.style.display = 'block';
+                    overlay.style.display = 'block';
                 }
-            } 
+            }
 
             checkContactHashInUrl();
 
@@ -35,8 +38,10 @@
             modalCloseBtns.forEach(btnClose => {
                 btnClose.addEventListener('click', () => {
                     const modal = btnClose.parentNode;
+                    const overlay = document.querySelector('.modal__overlay');
 
                     modal.style.display = 'none';
+                    overlay.style.display = 'none';
                 })
             })
         })
