@@ -10,6 +10,11 @@
 
     script.
         window.addEventListener('load', () => {
+            if(window.location.hash.indexOf('#contact') >-1) {
+                const modal = document.querySelector('#modal__signUp')
+                modal.style.display = 'block';
+            }
+
             const modalCloseBtns = document.querySelectorAll('.modal__btn--close')
             modalCloseBtns.forEach(btnClose => {
                 btnClose.addEventListener('click', () => {
