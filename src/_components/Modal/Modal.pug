@@ -10,12 +10,18 @@
 
     script.
         window.addEventListener('load', () => {
-            window.addEventListener('hashchange', () => {
+
+            function checkContactHashInUrl() {
+                console.log(window.location.hash);
                 if(window.location.hash.indexOf('#contact') >-1) {
                     const modal = document.querySelector('#modal__signUp')
                     modal.style.display = 'block';
                 }
-            })
+            } 
+
+            checkContactHashInUrl();
+
+            window.addEventListener('hashchange', checkContactHashInUrl)
 
             const modalCloseBtns = document.querySelectorAll('.modal__btn--close')
             modalCloseBtns.forEach(btnClose => {
