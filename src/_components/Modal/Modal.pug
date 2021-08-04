@@ -12,7 +12,6 @@
         window.addEventListener('load', () => {
 
             function checkContactHashInUrl() {
-                console.log(window.location.hash);
                 if(window.location.hash.indexOf('#contact') >-1) {
                     const modal = document.querySelector('#modal__signUp')
                     modal.style.display = 'block';
