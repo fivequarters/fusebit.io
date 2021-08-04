@@ -44,10 +44,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Checkout
+      - name: Checkout Website
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
+      - name: Checkout Docs
+        uses: actions/checkout@v2
+        with:
+          repository: fivequarters/docs
+          path: docs
+          token: ${{ secrets.DOCS_REPO_ACCESS_KEY }}
 
       - name: Setup Environments and Profiles
         env:
