@@ -17,6 +17,3 @@ aws --profile=${AWS_PROFILE} s3 sync --acl public-read --cache-control max-age=3
 aws --profile=${AWS_PROFILE} s3 cp --acl public-read --cache-control max-age=0 \
   build/index.html	\
   s3://${S3_BUCKET}/index.html
-
-aws cloudfront create-invalidation --profile=${AWS_PROFILE} --distribution-id ${CLOUDFRONT_ID} --paths '/*'
-
