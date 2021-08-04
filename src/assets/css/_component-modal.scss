@@ -8,7 +8,7 @@
     padding: 2rem 2rem;
     border-radius: 1rem;
     background: #fff;
-    z-index: 10;
+    z-index: 200;
     overflow: hidden;
     @include box-shadow(0px, 10px, 20px, rgba(0, 0, 0, 0.1));
     animation: showModal 0.4s forwards ease-in-out;
@@ -81,6 +81,10 @@
                 background: var(--yellow);
             }
         }
+    }
+
+    @media only screen and (max-width: 500px) {
+        max-height: 350px;
     }
 }
 
