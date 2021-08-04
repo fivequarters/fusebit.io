@@ -13,8 +13,6 @@ set -e
 export GEM_HOME=${HOME}/.gem
 export PATH=${PATH}:${HOME}/.gem/bin
 
-echoerr Getting docs repository...
-git clone git@github.com:fivequarters/docs.git
 cd docs
 
 echoerr Building docs...
