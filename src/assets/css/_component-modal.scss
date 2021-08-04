@@ -12,7 +12,6 @@
     overflow: hidden;
     @include box-shadow(0px, 10px, 20px, rgba(0, 0, 0, 0.1));
     animation: showModal 0.4s forwards ease-in-out;
-    display: none;
 
     &__btn--close {
         position: absolute;
@@ -83,6 +82,20 @@
         }
     }
 
+    .modal__loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.3);
+        text-align: center;
+        width: 100px;
+        animation: fadeOutModalAnimation 0.5s 2.5s forwards;
+
+        circle {
+            fill: var(--orange);
+        }
+    }
+
     @media only screen and (max-width: 500px) {
         max-height: 350px;
     }
@@ -91,5 +104,10 @@
 @keyframes showModal {
     to {
         transform: translate(-50%, 0%);
+    }
+}
+@keyframes fadeOutModalAnimation {
+    to {
+        opacity: 0;
     }
 }
