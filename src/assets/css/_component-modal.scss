@@ -1,14 +1,14 @@
 .modal {
     position: fixed;
-    bottom: 2rem;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 120%);
+    transform: translate(-50%, -250%);
     width: calc(90% - 4rem);
     max-width: 600px;
     padding: 2rem 2rem;
     border-radius: 1rem;
     background: #fff;
-    z-index: 200;
+    z-index: 400;
     overflow: hidden;
     @include box-shadow(0px, 10px, 20px, rgba(0, 0, 0, 0.1));
     animation: showModal 0.4s forwards ease-in-out;
@@ -104,7 +104,7 @@
 
 @keyframes showModal {
     to {
-        transform: translate(-50%, 0%);
+        transform: translate(-50%, -50%);
     }
 }
 @keyframes fadeOutModalAnimation {
