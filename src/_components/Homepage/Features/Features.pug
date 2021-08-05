@@ -39,7 +39,7 @@ section.features
                     li.features__list--item#f1
                         span 
                             include ./Icons/security
-                        
+
                         | Robust multi-tenant runtime keeps your <br /> customer data secure
 
                         +indicator
@@ -47,7 +47,7 @@ section.features
                     li.features__list--item#f2
                         span 
                             include ./Icons/padlock
-               
+
                         | Third-party auth token storage + automatic <br/> renewal 
 
                         +indicator
@@ -56,46 +56,26 @@ section.features
                         span 
                             include ./Icons/coding
 
-                        
+
                         | Embeddable white-label configuration and lifecycle management components
 
                         +indicator
-                            
+
 
             .features__images.features__images--marketplace
                 //include ./Marketplace/Marketplace
-                img(src="../../../assets/images/homepage/leaveBoilerplate/step1.png", alt="Leave boilerplate integration code to us" data-step='1')
+                img(src="../../../assets/images/homepage/leaveBoilerplate/step1.png" alt="Leave boilerplate integration code to us" data-step='1')
+                img(src="../../../assets/images/homepage/leaveBoilerplate/step2.png" alt="Leave boilerplate integration code to us" data-step='2' style="display: none;")
+                img(src="../../../assets/images/homepage/leaveBoilerplate/step3.png" alt="Leave boilerplate integration code to us" data-step='3' style="display: none;")
+                img(src="../../../assets/images/homepage/leaveBoilerplate/step4.png" alt="Leave boilerplate integration code to us" data-step='4' style="display: none;")
                 script.
-                    const imgMarketplace = document.querySelector('.features__images--marketplace > img');
-
-                    function marketplaceAnimation(obj) {
-                        let newSrc = obj.src.slice(0, -9);
-
-                        switch( obj.dataset.step ) {
-                            case '1':
-                                obj.src = newSrc + 'step2.png';
-                                obj.dataset.step = 2;
-                                break;
-
-                            case '2':
-                                obj.src = newSrc + 'step3.png';
-                                obj.dataset.step = 3;
-                                break;
-
-                            case '3':
-                                obj.src = newSrc + 'step4.png';
-                                obj.dataset.step = 4;
-                                break;
-
-                            default:
-                                obj.src = newSrc + 'step1.png';
-                                obj.dataset.step = 1;
-                                break;
-                        }
-                    }
-
+                    let currentImgMarketplaceIndex = 1;
                     setInterval(() => {
-                        marketplaceAnimation(imgMarketplace);
+                        const all = document.querySelectorAll('.features__images--marketplace > img')
+                        all.forEach(i => i.style.display = 'none');
+                        currentImgMarketplaceIndex++;
+                        if (currentImgMarketplaceIndex === 5) currentImgMarketplaceIndex = 1;
+                        all[currentImgMarketplaceIndex - 1].style.display = 'block';
                     }, 2000)
 
         .features__wrapper
@@ -115,7 +95,7 @@ section.features
                     li.features__list--item#f4
                         span 
                             include ./Icons/settings
-                        
+
                         | Automated health checks ensure integrations stay up with minimal upkeep
 
                         +indicator
@@ -124,7 +104,7 @@ section.features
                     li.features__list--item#f5
                         span 
                             include ./Icons/speedometer
-                        
+
                         | Throttling, and monitoring capabilities ensure system reliability even as usage scales
 
                         +indicator
@@ -136,10 +116,10 @@ section.features
                         | Alerting
 
                         +indicator
-                            
+
 
             .features__images.features__images--graph
-                img(src="../../../assets/images/features__bg/graph1.png", alt="Don't spend time worrying about infrastructure" data-graph='1')
+                img(src="../../../assets/images/features__bg/graph1.png" alt="Don't spend time worrying about infrastructure" data-graph='1')
 
         +pathDot
         +path1
