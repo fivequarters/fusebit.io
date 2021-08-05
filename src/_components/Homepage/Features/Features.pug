@@ -67,13 +67,14 @@ section.features
                 img(src="../../../assets/images/homepage/leaveBoilerplate/step1.png" alt="Leave boilerplate integration code to us" data-step='1')
                 img(src="../../../assets/images/homepage/leaveBoilerplate/step2.png" alt="Leave boilerplate integration code to us" data-step='2' style="display: none;")
                 img(src="../../../assets/images/homepage/leaveBoilerplate/step3.png" alt="Leave boilerplate integration code to us" data-step='3' style="display: none;")
+                img(src="../../../assets/images/homepage/leaveBoilerplate/step4.png" alt="Leave boilerplate integration code to us" data-step='4' style="display: none;")
                 script.
                     let currentImgMarketplaceIndex = 1;
                     setInterval(() => {
                         const all = document.querySelectorAll('.features__images--marketplace > img')
                         all.forEach(i => i.style.display = 'none');
                         currentImgMarketplaceIndex++;
-                        if (currentImgMarketplaceIndex === 4) currentImgMarketplaceIndex = 1;
+                        if (currentImgMarketplaceIndex === 5) currentImgMarketplaceIndex = 1;
                         all[currentImgMarketplaceIndex - 1].style.display = 'block';
                     }, 2000)
 
