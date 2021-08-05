@@ -82,7 +82,7 @@ header.header
             });
 
             const header = document.querySelector('.header');
-            const headerSignUp = header.querySelector('.header__links--signUp');
+            const headerSignUp = header.querySelectorAll('.header__links--signUp');
             const menuMobileBtn = document.querySelector('.header__menuMobile--btn');
 
             menuMobileBtn.addEventListener('click', () => {
@@ -90,10 +90,15 @@ header.header
                 document.querySelector('html').classList.toggle('hidden');
             });
 
-            headerSignUp.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                let modal = document.querySelector('#modal__signUp')
-                modal.style.display = 'block';
+            headerSignUp.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    const modal = document.querySelector('#modal__signUp')
+                    const overlay = document.querySelector('.modal__overlay');
+
+                    modal.style.display = 'block';
+                    overlay.style.display = 'block';
+                })
             })
         });

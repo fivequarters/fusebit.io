@@ -1,14 +1,14 @@
 .modal {
     position: fixed;
-    bottom: 2rem;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 120%);
+    transform: translate(-50%, -250%);
     width: calc(90% - 4rem);
     max-width: 600px;
     padding: 2rem 2rem;
     border-radius: 1rem;
     background: #fff;
-    z-index: 10;
+    z-index: 400;
     overflow: hidden;
     @include box-shadow(0px, 10px, 20px, rgba(0, 0, 0, 0.1));
     animation: showModal 0.4s forwards ease-in-out;
@@ -82,10 +82,45 @@
             }
         }
     }
+
+    .modal__loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.3);
+        text-align: center;
+        width: 100px;
+        animation: fadeOutModalAnimation 0.5s 2.5s forwards;
+
+        circle {
+            fill: var(--orange);
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--purple);
+        opacity: 0.5;
+        z-index: 300;
+        display: none;
+    }
+
+    @media only screen and (max-width: 500px) {
+        max-height: 350px;
+    }
 }
 
 @keyframes showModal {
     to {
-        transform: translate(-50%, 0%);
+        transform: translate(-50%, -50%);
+    }
+}
+@keyframes fadeOutModalAnimation {
+    to {
+        opacity: 0;
     }
 }

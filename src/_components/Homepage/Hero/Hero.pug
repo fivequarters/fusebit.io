@@ -15,7 +15,7 @@ section.hero
 
 
         .hero__images.fadeInRight
-            img(src="../assets/images/homepage/hero/hero--illustration.png", alt="Img 1")
+            img(src="../assets/images/homepage/hero/hero--illustration.svg" alt="Integration platform for developers")
 
 
     script.
@@ -24,7 +24,10 @@ section.hero
             heroSignUp.addEventListener('click', (e) => {
                 e.preventDefault();
                 
-                let modal = document.querySelector('#modal__signUp')
+                const modal = document.querySelector('#modal__signUp')
+                const overlay = document.querySelector('.modal__overlay');
+
                 modal.style.display = 'block';
+                overlay.style.display = 'block';
             })
         })

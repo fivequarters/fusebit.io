@@ -160,6 +160,12 @@
         }
     }
 
+    &__social {
+        @media only screen and (max-width: 500px) {
+            width: 100%;
+        }
+    }
+
     &__bg {
         &--01 {
             position: absolute;
