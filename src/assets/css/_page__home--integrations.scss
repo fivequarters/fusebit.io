@@ -266,6 +266,10 @@
             @media only screen and (max-width: 700px) {
                 left: -2.7rem;
             }
+
+            @media only screen and (max-width: 500px) {
+                left: -2.5rem;
+            }
         }
 
         &-active {
@@ -284,6 +288,9 @@
             .integrations__item--icon {
                 background: var(--yellow);
                 z-index: 100;
+                @media only screen and (max-width: 500px) {
+                    background: var(--neutralLight);
+                }
             }
 
             .integrations__item--image {
@@ -310,6 +317,14 @@
                 }
             }
 
+            &--icon {
+                .integrations__item--icon {
+                    @media only screen and (max-width: 500px) {
+                        background: var(--yellow);
+                    }
+                }
+            }
+
             @media only screen and (max-width: 700px) {
                 margin-bottom: 0rem;
             }
@@ -329,6 +344,16 @@
                     20px,
                     transparentize(#6f6f86, 0.92)
                 );
+            }
+        }
+
+        &:nth-child(3) {
+            @media only screen and (max-width: 500px) {
+                .integrations__item--image {
+                    img {
+                        left: 6%;
+                    }
+                }
             }
         }
 

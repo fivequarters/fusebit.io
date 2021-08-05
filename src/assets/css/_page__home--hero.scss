@@ -181,7 +181,6 @@
         }
 
         &:hover {
-            border-radius: 0.8rem;
             background: var(--orangeDark);
             svg {
                 transform: translateX(0.5rem) scale(1.2);
@@ -240,7 +239,7 @@
     }
 
     @media only screen and (max-width: 500px) {
-        background: url(./images/homepage/hero/hero--mobile.png) left bottom
+        background: url(./images/homepage/hero/hero--mobile.png) center bottom
             no-repeat;
         background-size: 100%;
     }

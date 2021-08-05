@@ -34,6 +34,7 @@ if (homepage) {
         opacity: 1,
     };
 
+    // start path 1
     const path1 = document.querySelector('.path1');
     const path1Dot = document.querySelector('.path1__dot');
     path1.style.top = document.querySelector('.support').offsetTop + 65 + 'px';
@@ -112,12 +113,218 @@ if (homepage) {
         ease: 'in',
         immediateRender: true,
         motionPath: {
-            path: screenRes.isDesktop ? '.desktop--path' : '.mobile--path',
-            align: screenRes.isDesktop ? '.desktop--path' : '.mobile--path',
+            path: screenRes.isDesktop
+                ? '.path1__desktop--path'
+                : '.path1__mobile--path',
+            align: screenRes.isDesktop
+                ? '.path1__desktop--path'
+                : '.path1__mobile--path',
             alignOrigin: [0.5, 0.5],
         },
     });
 
+    // end path 1
+
+    // start path2
+    const path2 = document.querySelector('.path2');
+    const path2Dot = document.querySelector('.path2__dot');
+    path2.style.top =
+        document.querySelector('.integrations').offsetTop + 25 + 'px';
+    path2.style.opacity = 1;
+
+    const gsapPath = screenRes.isMobile
+        ? '.path2__mobile--path'
+        : screenRes.isTablet
+        ? '.path2__tablet--path'
+        : screenRes.isDesktop
+        ? '.path2__desktop--path'
+        : '';
+
+    gsap.to(path2Dot, {
+        scrollTrigger: {
+            trigger: path2,
+            start: 'top 25%',
+            end: `bottom ${screenRes.isMobile ? '65%' : '100%'}`,
+            scrub: 0,
+            //markers: true,
+            pint: true,
+            onUpdate: ({ progress, direction, isActive }) => {
+                const dotRect = path2Dot.getBoundingClientRect();
+                const dotMiddle = dotRect.top + dotRect.height / 2;
+
+                const integrationsItems = document.querySelectorAll(
+                    '.integrations .integrations__item'
+                );
+
+                let counter = 0;
+                for (let i = 0; i < integrationsItems.length; i++) {
+                    const item = integrationsItems[i];
+                    const itemIcon = item.querySelector(
+                        '.integrations__item--icon'
+                    );
+
+                    const activeClass = 'integrations__item-active';
+
+                    if (screenRes.isMobile) {
+                        item.classList.add(activeClass);
+
+                        if (
+                            isDotIntersecting(dotMiddle, itemIcon, true, false)
+                        ) {
+                            item.classList.add(
+                                'integrations__item-active--icon'
+                            );
+                            path2Dot.style.opacity = 0;
+                        } else {
+                            item.classList.remove(
+                                'integrations__item-active--icon'
+                            );
+                            counter++;
+                        }
+                        if (counter === integrationsItems.length) {
+                            path2Dot.style.opacity = 1;
+                        }
+                    } else {
+                        if (isDotIntersecting(dotMiddle, item, true, false)) {
+                            item.classList.add(activeClass);
+                            path2Dot.style.opacity = 0;
+                        } else {
+                            item.classList.remove(activeClass);
+                            counter++;
+                        }
+                        if (counter === integrationsItems.length) {
+                            path2Dot.style.opacity = 1;
+                        }
+                    }
+                }
+
+                const weProvideTitleIcon = document.querySelector(
+                    '.weprovide .weprovide__title--icon'
+                );
+                const weprovideItems = document.querySelectorAll(
+                    '.weprovide .weprovide__item'
+                );
+
+                if (screenRes.isDesktop) {
+                    if (
+                        isDotIntersecting(
+                            dotMiddle,
+                            weProvideTitleIcon,
+                            true,
+                            false
+                        )
+                    ) {
+                        weProvideTitleIcon.classList.add(
+                            'weprovide__title--icon--active'
+                        );
+                    } else {
+                        weProvideTitleIcon.classList.remove(
+                            'weprovide__title--icon--active'
+                        );
+                    }
+
+                    function handleActiveClass(
+                        obj,
+                        progress,
+                        minProgress,
+                        direction
+                    ) {
+                        if (direction === 1 && progress > minProgress) {
+                            obj.classList.add('weprovide__item--active');
+                        } else if (direction === -1 && progress < minProgress) {
+                            obj.classList.remove('weprovide__item--active');
+                        }
+                    }
+
+                    handleActiveClass(
+                        weprovideItems[0],
+                        progress,
+                        0.39,
+                        direction
+                    );
+                    handleActiveClass(
+                        weprovideItems[1],
+                        progress,
+                        0.42,
+                        direction
+                    );
+                    handleActiveClass(
+                        weprovideItems[2],
+                        progress,
+                        0.45,
+                        direction
+                    );
+                    handleActiveClass(
+                        weprovideItems[3],
+                        progress,
+                        0.48,
+                        direction
+                    );
+
+                    if (progress > 0.39) {
+                        path2Dot.style.opacity = 0;
+                    } else {
+                        path2Dot.style.opacity = 1;
+                    }
+                }
+
+                if (screenRes.mobile === false && screenRes.isTablet) {
+                    for (let i = 0; i < weprovideItems.length; i++) {
+                        const item = weprovideItems[i];
+
+                        if (progress > 0.44) {
+                            item.classList.add('weprovide__item--active');
+                            path2Dot.style.opacity = 0;
+                        } else {
+                            item.classList.remove('weprovide__item--active');
+                            path2Dot.style.opacity = 1;
+                        }
+                    }
+                }
+
+                if (screenRes.isMobile) {
+                    if (
+                        isDotIntersecting(
+                            dotMiddle,
+                            weProvideTitleIcon,
+                            true,
+                            false
+                        )
+                    ) {
+                        weProvideTitleIcon.classList.add(
+                            'weprovide__title--icon--active'
+                        );
+                    } else {
+                        weProvideTitleIcon.classList.remove(
+                            'weprovide__title--icon--active'
+                        );
+                    }
+
+                    if (progress > 0.65) {
+                        weprovideItems[0].classList.add(
+                            'weprovide__item--active'
+                        );
+                        path2Dot.style.opacity = 0;
+                    } else {
+                        weprovideItems[0].classList.remove(
+                            'weprovide__item--active'
+                        );
+                        path2Dot.style.opacity = 1;
+                    }
+                }
+            },
+        },
+        duration: 200,
+        ease: 'in',
+        immediateRender: true,
+        motionPath: {
+            path: gsapPath,
+            align: gsapPath,
+            alignOrigin: [0.5, 0.5],
+        },
+    });
+
+    //end path 2
     const sectionSupport = document.querySelector('.support');
     if (sectionSupport) {
         const supportHeight = sectionSupport.getBoundingClientRect().height;
@@ -327,7 +534,7 @@ if (homepage) {
             return false;
         }
 
-        const dotDuration = setSceneDuration({
+        /* const dotDuration = setSceneDuration({
             desktop: integrationsHeight * 2,
             tablet: integrationsHeight * 1.5,
             mobile: integrationsHeight * 1.5,
@@ -392,7 +599,7 @@ if (homepage) {
                 }
             })
             //.addIndicators({ name: 'inte' })
-            .addTo(scrollMagicController);
+            .addTo(scrollMagicController); */
 
         new Scene({
             triggerElement: sectionIntegrations,
@@ -438,7 +645,7 @@ if (homepage) {
             return false;
         }
 
-        new Scene({
+        /* new Scene({
             triggerElement: '.weprovide',
             triggerHook: 0.5,
             offset: screenRes.isMobile ? 100 : weprovideHeight / 5.7,
@@ -492,7 +699,7 @@ if (homepage) {
                 }
             })
             // .addIndicators({ name: 'weprovide' })
-            .addTo(scrollMagicController);
+            .addTo(scrollMagicController); */
 
         new Scene({
             triggerElement: sectionWeprovide,
