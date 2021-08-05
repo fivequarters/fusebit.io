@@ -17,7 +17,7 @@ or
 yarn dev
 ```
 
-Browse to [http://localhost:8080/](http://localhost:8080/index/).
+Browse to [http://localhost:8080/index/](http://localhost:8080/index/).
 
 ## Running and serving a prod build
 
