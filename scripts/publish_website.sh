@@ -11,6 +11,10 @@ AWS_PROFILE=${AWS_PROFILE:=default}
 set -e
 
 aws --profile=${AWS_PROFILE} s3 sync --acl public-read --cache-control max-age=300 \
+  ./blog_dist \
+  s3://${S3_BUCKET}
+
+aws --profile=${AWS_PROFILE} s3 sync --acl public-read --cache-control max-age=300 \
   ./build \
   s3://${S3_BUCKET}
 
