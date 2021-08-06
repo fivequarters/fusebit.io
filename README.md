@@ -17,7 +17,7 @@ or
 yarn dev
 ```
 
-Browse to [http://localhost:8080](http://localhost:8080).
+Browse to [http://localhost:8080/index/](http://localhost:8080/index/).
 
 ## Running and serving a prod build
 
@@ -98,4 +98,4 @@ Configuration and build files
 
 Files in `assets` will be handled by webpack, Eleventy will transform all of the directories with a leading `_`, and will copy across any `images`.
 
-Eleventy’s output will be to a `dist` directory at the root level.
+Eleventy’s output will be to a `build` directory at the root level.
