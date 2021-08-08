@@ -1,178 +1,114 @@
 .hero {
     position: relative;
-    width: 100%;
-    padding: 13rem 0 8rem;
 
     &__container {
-        position: relative;
-        width: 90%;
         max-width: var(--container);
-        margin: 0 auto;
-        z-index: 10;
+        margin: 207px auto 0;
+        margin-top: 207px;
+        width: 90%;
+
+        &::before {
+            @include angle-edge(
+                $angle: 6.5,
+                $angle-position-y: 'top',
+                $angle-position-x: 'left'
+            );
+            position: absolute;
+            content: '';
+            background-color: var(--neutralLight);
+            z-index: -1;
+            top: 20px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
     }
 
-    &__wrapper {
-        &1st {
-            margin-bottom: 4.25rem;
-
-            @media only screen and (max-width: 1024px) {
-                margin-bottom: 5rem;
-            }
-
-            @media only screen and (max-width: 500px) {
-                margin-bottom: 4rem;
-            }
+    .el1 {
+        & > img {
+            position: absolute;
+            right: 0;
+            top: -47px;
+            transform: rotateY(6.5deg);
+            z-index: -1;
         }
+    }
+
+    .el2 {
+        & > img {
+            position: absolute;
+            right: 0;
+            top: 15px;
+            transform: rotateY(6.5deg);
+            z-index: -1;
+        }
+    }
+
+    &__container2 {
+        padding-bottom: 123px;
+        position: relative;
     }
 
     &__title {
-        width: 100%;
-        max-width: 725px;
-        @include font-size(56);
+        font-family: var(--sora);
         font-weight: 700;
-        line-height: 61.6px;
+        @include font-size(56);
+        max-width: 725px;
+        margin-bottom: 68px;
 
-        & > span {
-            font-family: var(--sora);
+        > span {
             color: var(--orange);
-        }
-
-        i {
-            transition: none;
-            animation: caret 0.6s infinite;
-        }
-
-        @media only screen and (max-width: 1024px) {
-        }
-
-        @media only screen and (max-width: 500px) {
-            width: 85%;
-            @include font-size(38);
-            line-height: 41.8px;
         }
     }
 
     &__content {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        margin-right: -10px;
+    }
 
-        > p {
-            width: 576px;
-            @include font-size(18);
-            line-height: 28.8px;
-            color: var(--neutralDark);
+    &__main-text {
+        @include font-size(18);
+        font-family: var(--sora);
+        font-weight: 300;
+        max-width: 576px;
+        line-height: 160%;
+        color: var(--dark);
+        margin-right: 10px;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+    }
+
+    &__item {
+        @include font-size(16);
+        display: flex;
+        color: var(--dark);
+        line-height: 160%;
+
+        &:not(:last-child) {
+            margin-bottom: 48px;
+        }
+
+        & > p {
+            max-width: 394px;
+            min-width: 264px;
             font-weight: 300;
-            margin-right: 1rem;
 
-            @media only screen and (max-width: 1024px) {
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 2.125rem;
+            & span {
+                font-weight: 600;
             }
-
-            @media only screen and (max-width: 500px) {
-                @include font-size(16);
-            }
-        }
-
-        &--items {
-            p {
-                position: relative;
-                width: 418px;
-                @include font-size(16);
-                line-height: 25.6px;
-                color: var(--dark);
-                padding-left: 1.5rem;
-
-                strong {
-                    font-weight: 700;
-                }
-
-                &:nth-child(1) {
-                    margin-bottom: 3rem;
-                }
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 2px;
-                    height: 100%;
-                    background: var(--orange);
-                }
-
-                @media only screen and (max-width: 1024px) {
-                    width: calc(100% - 1.5rem);
-                }
-
-                @media only screen and (max-width: 500px) {
-                    @include font-size(14);
-                }
-            }
-        }
-
-        @media only screen and (max-width: 1024px) {
-            flex-direction: column;
         }
     }
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 150px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        background: url(./images/about/hero/hero__bg.svg) right top no-repeat,
-            var(--neutralLight);
-        background-size: 1920px;
-
-        @media only screen and (min-height: 1079px) {
-            top: 200px;
-            background: url(./images/about/hero/hero__bg--2000.svg) right top
-                    no-repeat,
-                var(--neutralLight);
-            background-size: 100%;
-        }
-
-        @media only screen and (min-height: 2100px) {
-            top: 250px;
-            background: url(./images/about/hero/hero__bg--4500.svg) right top
-                    no-repeat,
-                var(--neutralLight);
-        }
-
-        @media only screen and (min-height: 3100px) {
-            top: 230px;
-            background-size: 100%;
-        }
-
-        @media only screen and (max-width: 1024px) {
-            background-size: 1024px;
-            top: 250px;
-        }
-
-        @media only screen and (max-width: 1024px) and (min-height: 1300px) {
-            top: 200px;
-        }
-
-        @media only screen and (max-width: 500px) {
-            background: url(./images/about/hero/hero__bg--mobile.svg) right top
-                    no-repeat,
-                var(--neutralLight);
-            background-size: 100%;
-            top: 260px;
-        }
-    }
-
-    @media only screen and (max-width: 1024px) {
-        padding: 8rem 0 5rem;
-    }
-
-    @media only screen and (max-width: 500px) {
-        padding: 5rem 0;
+    &__item-border {
+        flex-shrink: 0;
+        height: 90%;
+        width: 2px;
+        background-color: var(--orange);
+        margin: auto 24px auto 0;
     }
 }
