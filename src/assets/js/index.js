@@ -806,4 +806,9 @@ if (homepage) {
             },
         });
     }
+    x;
 }
+
+window.addEventListener('load', () => {
+    blink('#underscore');
+});

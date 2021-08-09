@@ -1,0 +1,37 @@
+mixin card(src, title, subtitle) 
+    .founders__founder-img-container
+        img(src=src alt=title)
+    h4.card-title
+        | #{title}
+    span.card-subtitle
+        | #{subtitle}
+    .social-media-container
+        a.social-media(href="#" target="_blank")
+            img(src="../../../assets/images/about/teams/linkedin.svg" alt="Linkedin")
+        a.social-media(href="#" target="_blank")
+            img(src="../../../assets/images/about/teams/twitter.svg" alt="Twitter")
+
+
+section.founders
+    .founders__container
+        .founders__info
+            .founders__content
+                +title('Fusebit ', 'founders', false, true)
+                +text('Prior to co-founding Fusebit, our founders worked together for years on cloud technologies, platforms, and products across Microsoft and Auth0, where we mastered the art and science of building developer products.', 'founders__text')
+            .founders__card
+                .founders__card-img-container.founders__card-f5
+                    img(src="../../../assets/images/about/founders/f5.svg")
+                .founders__card-img-container.founders__card-auth0
+                    img(src="../../../assets/images/about/founders/auth0.svg")
+                .founders__card-img-container.founders__card-microsoft
+                    img(src="../../../assets/images/about/founders/microsoft.svg")
+                span Cloud & developer expertise
+        .founders__path-container
+            img(src="../../../assets/images/ellipse.svg").founders__ellipse
+            img(src="../../../assets/images/about/founders/path.svg").founders__path
+            .founders__founder.founders__founder-1
+                +card('../../../assets/images/about/founders/founder-1.svg', 'Tomasz Janczuk', 'Co-founder & CEO')
+            .founders__founder.founders__founder-2
+                +card('../../../assets/images/about/founders/founder-2.svg', 'Yavor Georgiev', 'Co-founder & CPO')
+            .founders__founder.founders__founder-3
+                +card('../../../assets/images/about/founders/founder-3.svg', 'Benn Bollay', 'Co-founder & CTO')

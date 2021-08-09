@@ -1,20 +1,25 @@
 section.hero 
-    .hero__container 
-        .hero__wrapper.hero__wrapper1st 
-            .hero__title 
-                | The first integration platform 
-                span designed for developer joy
-                    i _
-
-        .hero__wrapper.hero__wrapper2nd 
-            .hero__content 
+    .hero__container.angled-section
+        .hero__short-mark
+            img(src="../../../assets/images/short_mark.svg" alt="Short Mark")
+        .hero__long-mark
+            img(src="../../../assets/images/Long_mark.svg" alt="Long Mark")
+        .hero__title 
+            | The first integration platform 
+            span designed for developer joy
+                i#underscore _
+        .hero__content 
+            .hero__main-text
                 p In today’s world, there’s a SaaS for everything, and making sure your product integrates seamlessly with all the key players in your segment is critical to growth and retention. Unfortunately, developers spend too much time today writing integration code from scratch, configuring solutions meant for IT or non-technical users, and paying the ongoing maintenance and scalability tax. 
-                
-                .hero__content--items 
-                    p  
-                        strong We eliminate the need to develop many disparate APIs 
-                        | while maintaining the flexibility and familiarity of a code-first platform.
 
+            .hero__items
+                .hero__item
+                    .hero__item-border
                     p  
-                        strong Fusebit lets developers quickly add integrations 
+                        span We eliminate the need to develop many disparate APIs 
+                        | while maintaining the flexibility and familiarity of a code-first platform.
+                .hero__item
+                    .hero__item-border
+                    p  
+                        span Fusebit lets developers quickly add integrations 
                         | to their applications using powerful API building blocks

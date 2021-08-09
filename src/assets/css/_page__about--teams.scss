@@ -1,0 +1,126 @@
+.teams {
+    background: url(./images/teams_bg.svg);
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+
+    &__container {
+        display: flex;
+        padding: 195px 0 185px 0;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: var(--container);
+        width: 90%;
+    }
+
+    &__info {
+        z-index: 2;
+    }
+
+    &__title {
+        @include font-size(48);
+        font-family: var(--sora);
+        font-weight: 700;
+        color: var(--neutralLight);
+        max-width: 576px;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+
+        & > span {
+            display: block;
+            color: var(--orange);
+        }
+    }
+
+    &__text {
+        @include font-size(18);
+        font-weight: 300;
+        line-height: 160%;
+        max-width: 549px;
+        margin-top: 32px;
+        color: var(--white);
+    }
+
+    &__cta {
+        margin-top: 40px;
+        color: var(--white);
+        width: 224px;
+    }
+
+    &__presentation {
+        position: relative;
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__map {
+        mix-blend-mode: overlay;
+        transform: rotate(-8.32deg);
+        position: absolute;
+        right: -170px;
+        top: -113px;
+    }
+
+    &__card {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-right: 230px;
+        width: 232px;
+        height: 255px;
+        padding: 32px 0 28px;
+        border-radius: 16px;
+        background-color: var(--white);
+        box-sizing: border-box;
+        position: relative;
+        right: -170px;
+    }
+
+    &__dot {
+        z-index: 1;
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    &__dot--bg {
+        width: 16px;
+        height: 16px;
+    }
+
+    &__dot--sm {
+        width: 6px;
+        height: 6px;
+    }
+
+    &__dot--orange {
+        background-color: var(--orange);
+    }
+
+    &__dot--lavender {
+        background-color: var(--lavender);
+    }
+
+    &__dot--bright-yellow {
+        background-color: var(--brightYellow);
+    }
+
+    &__dot--light-blue {
+        background-color: var(--lightBlue);
+    }
+
+    &__card-img-container {
+        width: 80px;
+        height: 80px;
+        background-color: var(--lightBlue);
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 16px;
+
+        & > img {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+}
