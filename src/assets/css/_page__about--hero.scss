@@ -2,36 +2,15 @@
     position: relative;
 
     &__container {
-        max-width: var(--container);
         margin: 207px auto 0;
-        width: 90%;
         padding-bottom: 207px;
-
-        &::before {
-            @include angle-edge(
-                $angle: 6.5,
-                $angle-position-y: 'top',
-                $angle-position-x: 'left'
-            );
-            position: absolute;
-            content: '';
-            background-color: var(--neutralLight);
-            z-index: -1;
-            top: 20px;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
     }
 
     &__short-mark {
-        & > img {
-            position: absolute;
-            right: 0;
-            top: -47px;
-            transform: rotateY(6.5deg);
-            z-index: -1;
-        }
+        position: absolute;
+        right: 0;
+        top: -47px;
+        z-index: -1;
     }
 
     &__long-mark {
@@ -39,7 +18,6 @@
             position: absolute;
             right: 0;
             top: 15px;
-            transform: rotateY(6.5deg);
             z-index: -1;
         }
     }

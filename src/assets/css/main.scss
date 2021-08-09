@@ -28,6 +28,7 @@
     @import '_page__about--hero';
     @import '_page__about--teams';
     @import '_page__about--founders';
+    @import '_page__about--investors';
 }
 
 // Components
@@ -39,3 +40,5 @@
 @import 'component-card';
 @import 'component-title';
 @import 'component-text';
+@import 'component-angled-section';
+@import 'component-cta';

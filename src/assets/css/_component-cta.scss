@@ -1,0 +1,38 @@
+.cta {
+    @include font-size(18);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 64px;
+    background: var(--orange);
+    line-height: 27px;
+    color: var(--neutralLight);
+    border-radius: 2rem;
+    z-index: 5;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+
+    svg {
+        position: relative;
+        margin-left: 0.8rem;
+        width: 6px;
+        transition: all 0.2s ease-in-out;
+        path {
+            stroke: var(--white);
+        }
+    }
+
+    &:hover {
+        background: var(--orangeDark);
+        svg {
+            transform: translateX(0.5rem) scale(1.2);
+        }
+    }
+
+    &:active {
+        transition: none;
+        background: var(--yellow);
+    }
+}
