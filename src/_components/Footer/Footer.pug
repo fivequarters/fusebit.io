@@ -8,7 +8,7 @@ footer.footer
     .footer__container 
         .footer__wrapper.footer__wrapper--head
             .footer__logo 
-                a(href="/") 
+                a(href="/" onclick="sendEvent('Navigation', 'Clicked logo footer nav', '/');") 
                     include ../Logo/Logo
 
             ul.footer__links 

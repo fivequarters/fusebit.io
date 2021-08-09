@@ -2,15 +2,18 @@
     const headerLinks = [
         {
             text: 'Integrations',
-            link: '#integrations'
+            link: '#integrations',
+            onClick: "sendEvent('Navigation', 'Clicked integrations header nav', '/integrations');"
         },
         {
             text: 'Docs',
-            link: '#docs'
+            link: 'docs',
+            onClick: "sendEvent('Navigation', 'Clicked docs header nav', '/docs');"
         },
         {
             text: 'Blog',
-            link: '#blog'
+            link: '#blog',
+            onClick: "sendEvent('Navigation', 'Clicked blog header nav', '/blog');"
         }
 
     ]
@@ -18,21 +21,21 @@
 header.header 
     .header__container 
         .header__logo 
-            a(href="/") 
+            a(href="/" onclick="sendEvent('Navigation', 'Clicked logo header nav', '/');") 
                 include ../Logo/Logo
 
         .header__menu 
             ul 
                 each link in headerLinks
                     li
-                        a(href=link.link)=link.text
+                        a(href=link.link onclick=link.onClick)=link.text
 
         .header__links 
             ul 
                 li 
-                    a.header__links--signIn(href="#") Login
+                    a.header__links--signIn(href="#" onclick="sendEvent('Navigation', 'Clicked login header nav', '/login');") Login
                 li 
-                    a.header__links--signUp(href="#") Sign up
+                    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button', '/contact');") Sign up
 
         .header__menuMobile--btn 
             span.top 
@@ -46,17 +49,14 @@ header.header
             ul 
                 each link in headerLinks
                     li
-                        a(href=link.link)=link.text
+                        a(href=link.link onclick=link.onClick)=link.text
 
                 li 
-                    a.header__links--signUp(href="#") Sign up
+                    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button', '/contact');") Sign up
 
         .menuMobile__social 
             include ../SocialMedia/SocialMedia
 
-
-        
-        
 
     script.
         function toggleClasses(target, addClass, removeClass) {
@@ -93,7 +93,7 @@ header.header
             headerSignUp.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    
+
                     const modal = document.querySelector('#modal__signUp')
                     const overlay = document.querySelector('.modal__overlay');
 

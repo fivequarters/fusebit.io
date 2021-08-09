@@ -806,7 +806,6 @@ if (homepage) {
             },
         });
     }
-    x;
 }
 
 window.addEventListener('load', () => {
