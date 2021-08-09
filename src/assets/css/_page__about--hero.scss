@@ -24,7 +24,7 @@
         }
     }
 
-    .el1 {
+    &__short-mark {
         & > img {
             position: absolute;
             right: 0;
@@ -34,7 +34,7 @@
         }
     }
 
-    .el2 {
+    &__long-mark {
         & > img {
             position: absolute;
             right: 0;

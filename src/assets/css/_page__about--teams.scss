@@ -6,14 +6,15 @@
 
     &__container {
         display: flex;
-        padding: 195px 0 185px 121px;
+        padding: 195px 0 185px 0;
         justify-content: space-between;
-        margin-right: -50px;
+        margin: 0 auto;
+        max-width: var(--container);
+        width: 90%;
     }
 
     &__info {
         z-index: 2;
-        margin-right: 50px;
     }
 
     &__title {
@@ -52,14 +53,13 @@
         flex: 1;
         display: flex;
         justify-content: flex-end;
-        margin-right: 50px;
     }
 
     &__map {
         mix-blend-mode: overlay;
         transform: rotate(-8.32deg);
         position: absolute;
-        right: 0;
+        right: -170px;
         top: -113px;
     }
 
@@ -75,6 +75,7 @@
         background-color: var(--white);
         box-sizing: border-box;
         position: relative;
+        right: -170px;
     }
 
     &__dot {
