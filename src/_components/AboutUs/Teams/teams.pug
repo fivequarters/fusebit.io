@@ -3,8 +3,8 @@ section.teams
         .teams__info
             h2.teams__title
                 | Teams from 
-                span around the world 
-                    i _
+                span around the world
+                    i#underscore _
             p.teams__text At Fusebit, we believe in fair hiring around the world. Any professional, no matter where they live, can work for and benefit from our company.
             //- TODO: use a mixing!!!!
             a.teams__cta 
@@ -38,4 +38,7 @@ section.teams
                     .teams__social-media
                         img(src="../../../assets/images/about/teams/twitter.svg" alt="Twitter")
 
-
+script.
+    window.addEventListener('load', () => {
+        blink('.teams__dot', 0.8, 0.5)
+    })
