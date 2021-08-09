@@ -28,11 +28,12 @@
     }
 
     &__title {
+        @include font-size(56);
         font-family: var(--sora);
         font-weight: 700;
-        @include font-size(56);
         max-width: 725px;
         margin-bottom: 68px;
+        line-height: 110%;
 
         > span {
             color: var(--orange);
