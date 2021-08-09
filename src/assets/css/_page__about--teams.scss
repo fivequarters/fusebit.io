@@ -103,7 +103,7 @@
     }
 
     &__dot--bright-yellow {
-        background-color: var(--bright-yellow);
+        background-color: var(--brightYellow);
     }
 
     &__dot--light-blue {
@@ -123,38 +123,5 @@
             position: absolute;
             bottom: 0;
         }
-    }
-
-    &__card-title {
-        @include font-size(18);
-        font-weight: bold;
-        line-height: 23px;
-        color: var(--dark);
-        margin-bottom: 8px;
-    }
-
-    &__card-subtitle {
-        @include font-size(16);
-        font-weight: 300;
-        line-height: 20px;
-        color: var(--dark);
-        margin-bottom: 16px;
-        opacity: 0.5;
-    }
-
-    &__social-media-container {
-        display: flex;
-        margin-right: -16px;
-    }
-
-    &__social-media {
-        width: 28px;
-        height: 28px;
-        background: var(--dark);
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 16px;
     }
 }
