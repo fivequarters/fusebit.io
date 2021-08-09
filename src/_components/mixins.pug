@@ -1,0 +1,7 @@
+mixin title(main, sub, black, invert)
+    h2.title(class=black ? 'title--black' : 'title--white' class=invert && 'title--invert')= main
+        span= sub 
+            i#underscore _
+
+mixin text(text, extraClass)
+    p.text(class= extraClass && extraClass)= text
