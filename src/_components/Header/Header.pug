@@ -3,17 +3,17 @@
         {
             text: 'Integrations',
             link: '#integrations',
-            onClick: "sendEvent('Navigation', 'Clicked integrations header nav', '/#integrations');"
+            onClick: "sendEvent('Navigation', 'Clicked integrations header nav', '/integrations');"
         },
         {
             text: 'Docs',
-            link: '#docs',
-            onClick: "sendEvent('Navigation', 'Clicked docs header nav', '/#docs');"
+            link: 'docs',
+            onClick: "sendEvent('Navigation', 'Clicked docs header nav', '/docs');"
         },
         {
             text: 'Blog',
             link: '#blog',
-            onClick: "sendEvent('Navigation', 'Clicked blog header nav', '/#blog');"
+            onClick: "sendEvent('Navigation', 'Clicked blog header nav', '/blog');"
         }
 
     ]
@@ -33,9 +33,9 @@ header.header
         .header__links 
             ul 
                 li 
-                    a.header__links--signIn(href="#") Login
+                    a.header__links--signIn(href="#" onclick="sendEvent('Navigation', 'Clicked login header nav', '/login');") Login
                 li 
-                    a.header__links--signUp(href="#") Sign up
+                    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button', '/contact');") Sign up
 
         .header__menuMobile--btn 
             span.top 
@@ -52,7 +52,7 @@ header.header
                         a(href=link.link onclick=link.onClick)=link.text
 
                 li 
-                    a.header__links--signUp(href="#") Sign up
+                    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button', '/contact');") Sign up
 
         .menuMobile__social 
             include ../SocialMedia/SocialMedia
