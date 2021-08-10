@@ -1,16 +1,12 @@
 -
     const headerLinks = [
         {
-            text: 'Integrations',
-            link: '#integrations'
+            text: 'About us',
+            link: '/about'
         },
         {
-            text: 'Docs',
-            link: '#docs'
-        },
-        {
-            text: 'Blog',
-            link: '#blog'
+            text: 'Careers',
+            link: '/careers'
         }
 
     ]
@@ -28,11 +24,9 @@ header.header
                         a(href=link.link)=link.text
 
         .header__links 
-            ul 
+            ul  
                 li 
-                    a.header__links--signIn(href="#") Login
-                li 
-                    a.header__links--signUp(href="#") Sign up
+                    a.header__links--signUp(href="#") Join waitlist
 
         .header__menuMobile--btn 
             span.top 
@@ -49,7 +43,7 @@ header.header
                         a(href=link.link)=link.text
 
                 li 
-                    a.header__links--signUp(href="#") Sign up
+                    a.header__links--signUp(href="#") Join waitlist
 
         .menuMobile__social 
             include ../SocialMedia/SocialMedia

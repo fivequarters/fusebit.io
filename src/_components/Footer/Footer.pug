@@ -12,27 +12,22 @@ footer.footer
                     include ../Logo/Logo
 
             ul.footer__links 
-                li.footer__links--title  Company
+                li.footer__links--title  
 
                 +footerLink('about', 'About Us')
-                +footerLink('careers', 'Careers', 4)
+                +footerLink('careers', 'Careers', 2)
+                +footerLink('contact', 'Contact')
                 //+footerLink('#blog', 'Blog')
                 //+footerLink('#docs', 'Docs')
-                +footerLink('contact', 'Get In Touch')
+                
+
+            ul.footer__links 
+                li.footer__links--title  
+
                 +footerLink('legal', 'Legal')
                 +footerLink('privacy', 'Privacy Policy')
                 +footerLink('support', 'Support')
                 +footerLink('terms', 'Terms of Use')
-
-            ul.footer__links 
-                li.footer__links--title  Integration
-
-                +footerLink('#slack', 'Slack')
-                +footerLink('#jira', 'Jira')
-                +footerLink('#mailchimp', 'Mailchimp')
-                +footerLink('#slack', 'Slack')
-                +footerLink('#jira', 'Jira')
-                +footerLink('#mailchimp', 'Mailchimp')
 
             .footer__social 
                 include ../SocialMedia/SocialMedia
