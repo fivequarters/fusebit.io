@@ -11,7 +11,6 @@
             onClick: "sendEvent('Navigation', 'Clicked careers header nav');"
         }
     ]
-
 header.header 
     .header__container 
         .header__logo 
@@ -25,15 +24,15 @@ header.header
                         a(href=link.link onclick=link.onClick)=link.text
 
         .header__links 
-    ul  
-        li 
-            a.header__links--signUp(href="#" onclick="sendEvent('Navigation', 'Clicked login header nav');") Join waitlist
+            ul  
+                li 
+                    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
 
-    .header__menuMobile--btn 
-        span.top 
-        span.center1
-        span.center2
-        span.bottom
+        .header__menuMobile--btn 
+            span.top 
+            span.center1
+            span.center2
+            span.bottom
 
     .header__menuMobile
 
@@ -44,10 +43,13 @@ header.header
                         a(href=link.link onclick=link.onClick)=link.text
 
                 li 
-    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
+                    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
 
-    .menuMobile__social 
-        include ../SocialMedia/SocialMedia
+        .menuMobile__social 
+            include ../SocialMedia/SocialMedia
+
+
+
 
 
     script.
