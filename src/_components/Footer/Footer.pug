@@ -1,6 +1,6 @@
-mixin footerLink(link, linkText, badge, onClick)
+mixin footerLink(link, linkText, badge)
     li.footer__link 
-        a(href=link onclick= onClick)= linkText
+        a(href=link)= linkText
         if(badge)
             .footer__link--badge
                 span= badge
@@ -8,28 +8,28 @@ footer.footer
     .footer__container 
         .footer__wrapper.footer__wrapper--head
             .footer__logo 
-                a(href="/" onclick="sendEvent('Navigation', 'Clicked logo footer nav');") 
+                a(href="/") 
                     include ../Logo/Logo
 
             ul.footer__links 
                 li.footer__links--title  
 
-    +footerLink('about', 'About Us', 0, "sendEvent('Navigation', 'Clicked about footer nav');")
-    +footerLink('careers', 'Careers', 2, "sendEvent('Navigation', 'Clicked careers footer nav');")
-    +footerLink('contact', 'Get In Touch', 0, "sendEvent('Navigation', 'Clicked contact footer nav');")
-    //+footerLink('#blog', 'Blog')
-    //+footerLink('#docs', 'Docs')
+                +footerLink('about', 'About Us')
+                +footerLink('careers', 'Careers', 2)
+                +footerLink('contact', 'Contact')
+                //+footerLink('#blog', 'Blog')
+                //+footerLink('#docs', 'Docs')
 
+            ul.footer__links 
+                li.footer__links--title  
 
-        ul.footer__links 
-            li.footer__links--title  
-            +footerLink('legal', 'Legal', 0, "sendEvent('Navigation', 'Clicked legal footer nav');")
-            +footerLink('privacy', 'Privacy Policy', 0, "sendEvent('Navigation', 'Clicked privacy footer nav');")
-            +footerLink('support', 'Support', 0, "sendEvent('Navigation', 'Clicked support footer nav');")
-            +footerLink('terms', 'Terms of Use', 0, "sendEvent('Navigation', 'Clicked terms footer nav');")
+                +footerLink('legal', 'Legal')
+                +footerLink('privacy', 'Privacy Policy')
+                +footerLink('support', 'Support')
+                +footerLink('terms', 'Terms of Use')
 
-    .footer__social 
-        include ../SocialMedia/SocialMedia
+            .footer__social 
+                include ../SocialMedia/SocialMedia
 
         .footer__wrapper.footer__wrapper--content 
             p Copyright 2019-2021 Fusebit
