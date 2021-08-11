@@ -2,10 +2,12 @@
     position: relative;
     color: var(--neutral);
     overflow: hidden;
-    background-image: url(./images/homepage/hero/hero--4500.png);
-    background-position: calc(50vw - 983px) bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
+    // background-image: url(./images/homepage/hero/hero--4500.png);
+    // background-position: calc(50vw - 983px) bottom;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    background: url(./images/homepage/hero/hero--1920.png) left top no-repeat;
+    background-size: 100%;
 
     &__container {
         width: 90%;
@@ -214,8 +216,40 @@
         }
     }
 
-    @media only screen and (max-width: 800px) {
-        background-image: url(./images/homepage/hero/hero--mobile.png);
-        background-position: 25% bottom;
+    // @media only screen and (max-width: 800px) {
+    //     background-image: url(./images/homepage/hero/hero--mobile.png);
+    //     background-position: 25% bottom;
+    // }
+
+    @media only screen and (min-width: 1900px) and (min-height: 1079px) {
+        background: url(./images/homepage/hero/hero--4500.png) -26% top no-repeat;
+    }
+
+    @media only screen and (min-height: 2000px) {
+        background: url(./images/homepage/hero/hero--4500.png) -175% top no-repeat;
+    }
+
+    @media only screen and (min-height: 3000px) {
+        background: url(./images/homepage/hero/hero--4500.png) 185% top
+            no-repeat;
+    }
+
+    @media only screen and (max-width: 1500px) {
+        background: url(./images/homepage/hero/hero--1360.png) left -4rem no-repeat;
+        background-size: 1440px;
+    }
+
+    @media only screen and (max-width: 1200px) {
+        background: url(./images/homepage/hero/hero--1360.png) -4rem top no-repeat;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        background: url(./images/homepage/hero/hero--1360.png) -4rem bottom no-repeat;
+    }
+
+    @media only screen and (max-width: 500px) {
+        background: url(./images/homepage/hero/hero--mobile.png) center bottom
+            no-repeat;
+        background-size: 100%;
     }
 }
