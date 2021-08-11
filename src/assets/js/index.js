@@ -37,8 +37,18 @@ if (homepage) {
     // start path 1
     const path1 = document.querySelector('.path1');
     const path1Dot = document.querySelector('.path1__dot');
-    path1.style.top = document.querySelector('.support').offsetTop + 65 + 'px';
     path1.style.opacity = 1;
+
+    const configPath1 = () => {
+        path1.style.top =
+            document.querySelector('.support').offsetTop + 65 + 'px';
+    };
+
+    configPath1();
+
+    window.addEventListener('load', () => {
+        configPath1();
+    });
 
     function alignPathToTopSection(path, section) {
         path.style.top = document.querySelector(section).offsetTop + 65 + 'px';
@@ -128,9 +138,18 @@ if (homepage) {
     // start path2
     const path2 = document.querySelector('.path2');
     const path2Dot = document.querySelector('.path2__dot');
-    path2.style.top =
-        document.querySelector('.integrations').offsetTop + 25 + 'px';
     path2.style.opacity = 1;
+
+    const configPath2 = () => {
+        path2.style.top =
+            document.querySelector('.integrations').offsetTop + 25 + 'px';
+    };
+
+    configPath2();
+
+    window.addEventListener('load', () => {
+        configPath2();
+    });
 
     const gsapPath = screenRes.isMobile
         ? '.path2__mobile--path'
