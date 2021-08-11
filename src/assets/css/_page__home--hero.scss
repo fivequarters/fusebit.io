@@ -214,11 +214,6 @@
         }
     }
 
-    @media only screen and (max-width: 1400px) {
-        background-image: url(./images/homepage/hero/hero--1360.png);
-        background-position: calc(50vw - 700px) bottom;
-    }
-
     @media only screen and (max-width: 800px) {
         background-image: url(./images/homepage/hero/hero--mobile.png);
         background-position: 25% bottom;
