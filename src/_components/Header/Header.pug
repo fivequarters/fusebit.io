@@ -2,11 +2,13 @@
     const headerLinks = [
         {
             text: 'About us',
-            link: '/about'
+            link: '/about',
+            onClick: "sendEvent('Navigation', 'Clicked about header nav');"
         },
         {
             text: 'Careers',
-            link: '/careers'
+            link: '/careers',
+            onClick: "sendEvent('Navigation', 'Clicked careers header nav');"
         }
     ]
 header.header 
@@ -24,7 +26,7 @@ header.header
         .header__links 
             ul  
                 li 
-                    a.header__links--signUp(href="#") Join waitlist
+                    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
 
         .header__menuMobile--btn 
             span.top 
@@ -41,7 +43,7 @@ header.header
                         a(href=link.link)=link.text
 
                 li 
-                    a.header__links--signUp(href="#") Join waitlist
+                    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
 
         .menuMobile__social 
             include ../SocialMedia/SocialMedia
