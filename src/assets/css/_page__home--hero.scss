@@ -1,7 +1,9 @@
 .hero {
     position: relative;
-    background: url(./images/homepage/hero/hero--1920.png) left top no-repeat;
-    background-size: 100%;
+    background-image: url(./images/homepage/hero/hero--4500.png);
+    background-position: left bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: var(--neutral);
     overflow: hidden;
 
@@ -212,35 +214,23 @@
         }
     }
 
-    @media only screen and (min-width: 1900px) and (min-height: 1079px) {
-        background: url(./images/homepage/hero/hero--4500.png) -26% top no-repeat;
-    }
-
-    @media only screen and (min-height: 2000px) {
-        background: url(./images/homepage/hero/hero--4500.png) -175% top no-repeat;
-    }
-
-    @media only screen and (min-height: 3000px) {
-        background: url(./images/homepage/hero/hero--4500.png) 185% top
-            no-repeat;
-    }
-
-    @media only screen and (max-width: 1500px) {
-        background: url(./images/homepage/hero/hero--1360.png) left -4rem no-repeat;
-        background-size: 1440px;
+    @media only screen and (max-width: 1400px) {
+        background-image: url(./images/homepage/hero/hero--1360.png);
+        background-position: left top;
     }
 
     @media only screen and (max-width: 1200px) {
-        background: url(./images/homepage/hero/hero--1360.png) -4rem top no-repeat;
+        background-image: url(./images/homepage/hero/hero--1360.png);
+        background-position: left bottom;
     }
 
-    @media only screen and (max-width: 1000px) {
-        background: url(./images/homepage/hero/hero--1360.png) -4rem bottom no-repeat;
+    @media only screen and (max-width: 992px) {
+        background-image: url(./images/homepage/hero/hero--1360.png);
+        background-position: 10% bottom;
     }
 
-    @media only screen and (max-width: 500px) {
-        background: url(./images/homepage/hero/hero--mobile.png) center bottom
-            no-repeat;
-        background-size: 100%;
+    @media only screen and (max-width: 768px) {
+        background-image: url(./images/homepage/hero/hero--mobile.png);
+        background-position: 25% bottom;
     }
 }
