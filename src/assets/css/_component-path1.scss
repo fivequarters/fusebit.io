@@ -1,0 +1,53 @@
+.path1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+
+    &__container {
+        position: relative;
+        width: 90%;
+        max-width: var(--container);
+        z-index: 9;
+        margin: 0 auto;
+
+        @media only screen and (max-width: 1200px) {
+            margin: 0 0 0 1.6rem;
+        }
+    }
+
+    &__svg {
+        position: relative;
+        left: -0.9rem;
+        opacity: 0.6;
+
+        path {
+            stroke: #d7e5ff;
+        }
+
+        &--mobile {
+            display: none;
+        }
+
+        @media only screen and (max-width: 1175px) {
+            .section1--path-1,
+            .section1--path-2,
+            .section1--path-3 {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            &--desktop {
+                display: none;
+            }
+
+            &--mobile {
+                display: block;
+            }
+        }
+    }
+}

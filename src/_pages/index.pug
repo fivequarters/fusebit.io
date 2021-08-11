@@ -1,5 +1,23 @@
 extends ../_layouts/default.pug
 
+block seo_variables
+    - var title = 'Fusebit | Homepage'
+    - var og_title = 'Fusebit: a powerful integration platform built for developers'
+    - var og_description = 'With Fusebit, quickly integrate your application to other SaaS applications using flexible API building blocks. Fusebit provides connectors to popular APIs and hosts your integrations at scale.'
+    - var og_image = 'https://cdn.fusebit.io/twitter/twitter-orange.png'
+
+block page_variable
+    - var pageClass = 'homepage'
+
 block content
-    section
-        h1 Hello World!
+    include ../_components/Homepage/Hero/Hero
+    include ../_components/Homepage/Support/Support
+    include ../_components/Homepage/Features/Features
+    include ../_components/Homepage/Integrate/Integrate
+    include ../_components/Homepage/Integrations/Integrations
+    include ../_components/Homepage/WeProvide/WeProvide
+    include ../_components/Homepage/Testimonials/Testimonials
+    include ../_components/Homepage/Prefooter/Prefooter
+    
+    include ../_components/Homepage/Path1/Path1
+    include ../_components/Homepage/Path2/Path2

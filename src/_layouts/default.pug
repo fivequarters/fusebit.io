@@ -1,5 +1,10 @@
+include ../_components/mixins.pug
+
+block seo_variables
+block page_variable
+
 doctype html
-html(lang='en')
+html(lang='en' class=(pageClass || ''))
   head
     meta(charset='utf-8')
     meta(content='ie=edge' http-equiv='x-ua-compatible')
@@ -7,10 +12,11 @@ html(lang='en')
     meta(name='fragment' content='!')
     meta(name='msapplication-TileColor' content='#2b5797')
     meta(name='theme-color' content='#ffffff')
-    meta(property='og:title' content='Fusebit: a powerful integration platform built for developers')
-    meta(property='og:description' content='With Fusebit, quickly integrate your application to other SaaS applications using flexible API building blocks. Fusebit provides connectors to popular APIs and hosts your integrations at scale.')
-    meta(property='twitter:title' content='Fusebit: a powerful integration platform built for developers')
-    meta(property='twitter:description' content='With Fusebit, quickly integrate your application to other SaaS applications using flexible API building blocks. Fusebit provides connectors to popular APIs and hosts your integrations at scale.')
+    title=(title || "Fusebit")
+    meta(property='og:title' content=(og_title || 'Fusebit: a powerful integration platform built for developers'))
+    meta(property='og:description' content=(og_description || 'With Fusebit, quickly integrate your application to other SaaS applications using flexible API building blocks. Fusebit provides connectors to popular APIs and hosts your integrations at scale.'))
+    meta(property='twitter:title' content=(og_title || 'Fusebit: a powerful integration platform built for developers'))
+    meta(property='twitter:description' content=(og_description || 'With Fusebit, quickly integrate your application to other SaaS applications using flexible API building blocks. Fusebit provides connectors to popular APIs and hosts your integrations at scale.'))
     meta(property='og:type' content='website')
     meta(property='og:site_name' content='Fusebit')
     meta(property='og:locale' content='en')
@@ -18,20 +24,60 @@ html(lang='en')
     meta(name='twitter:site' content='@fusebitio')
     meta(name='twitter:creator' content='@fusebitio')
     meta(name='twitter:card' content='summary_large_image')
-    meta(property='og:image' content='https://cdn.fusebit.io/twitter/twitter-orange.png')
-    meta(property='og:image:secure_url' content='https://cdn.fusebit.io/twitter/twitter-orange.png')
-    meta(name='twitter:image:src' content='https://cdn.fusebit.io/twitter/twitter-orange.png')
+    meta(property='og:image' content=(og_image || 'https://cdn.fusebit.io/twitter/twitter-orange.png'))
+    meta(property='og:image:secure_url' content=(og_image || 'https://cdn.fusebit.io/twitter/twitter-orange.png'))
+    meta(name='twitter:image:src' content=(og_image || 'https://cdn.fusebit.io/twitter/twitter-orange.png'))
     meta(name='twitter:image:width' content='1024')
     meta(name='twitter:image:height' content='512')
-    title Fusebit
     link(rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png')
     link(rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png')
     link(rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png')
     link(rel='manifest' href='/site.webmanifest')
     link(rel='mask-icon' href='/safari-pinned-tab.svg' color='#fb310a')
+
+    link(rel='stylesheet' href='/assets/vendor/swiper-bundle.min.css')
+    script(src='/assets/vendor/swiper-bundle.min.js')
+    script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-136792777-1')
+
+    link(rel='preconnect' href='https://fonts.gstatic.com')
+    link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Roboto&family=Sora:wght@300;400;700;800&display=swap" rel="stylesheet")
+
     link(rel='stylesheet' href='/assets/main.css?' + cacheBust.mainCss)
+
+    script.
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="WSACLqGgP5iDXr3iPDubC70ySHfWHWQk";analytics.SNIPPET_VERSION="4.13.2";
+      analytics.load("WSACLqGgP5iDXr3iPDubC70ySHfWHWQk");
+      analytics.page();
+      }}();
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-136792777-1');
+
   body
+
+    include ../_components/Modal/Modal
+    include ../_components/Header/Header
+
     main
       block content
+
+    include ../_components/Footer/Footer
+
+    script(src="/assets/vendor/gsap/gsap.min.js")
+    script(src="/assets/vendor/scrollmagic/ScrollMagic.min.js")
+
+    script(src="/assets/vendor/gsap/ScrollTrigger.min.js")
+    script(src="/assets/vendor/gsap/ScrollToPlugin.min.js")
+    script(src="/assets/vendor/gsap/MotionPathPlugin.min.js")
+
+    script(src="/assets/vendor/scrollmagic/plugins/animation.gsap.min.js")
+    script(src="/assets/vendor/scrollmagic/plugins/debug.addIndicators.min.js")
+
+    //- TODO: Review what's the best way to create helpers without putting them in vendor folder
+    script(src="/assets/vendor/helpers/blink.js")
+    script(src="/assets/vendor/helpers/sendEvent.js")
+
     //- script(src='/assets/vendor.js?' + cacheBust.vendorJs)
     script(src='/assets/main.js?' + cacheBust.mainJs)

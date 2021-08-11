@@ -1,0 +1,97 @@
+section.testimonials 
+    .testimonials__container
+        .testimonials__wrapper.testimonials__wrapper--head
+            h2.testimonials__title 
+                | Our customers
+                i _
+
+            p.testimonials__text 
+                | We believe customers are our best advocates. Here's what some of them have to say
+
+        .testimonials__wrapper.testimonials__wrapper--content 
+            .testimonials__cards.swiper-container
+                .swiper-wrapper
+                    .swiper-slide 
+                        .testimonials__card
+                            .testimonials__card--brand
+                                img(src="../../../assets/images/testimonials/testimonials__brand-1.png" alt="FactoryFour logo")
+
+                            p.testimonials__card--text
+                                | Fusebit has become an 
+                                strong indispensable part 
+                                | of all of our customers’ deployments. Without Fusebit, we would not be able to keep up with unique integration requirements of manufacturing’s fragmented software ecosystem.
+                
+                            .testimonials__card--user 
+                                .testimonials__card--user-image 
+                                    img(src="../../../assets/images/testimonials/testimonials__user-1.png" alt="Alex Mathews profile image")
+
+                                .testimonials__card--user-data
+                                    h4 Alex Mathews
+                                    p FactoryFour CEO
+
+                    .swiper-slide 
+                        .testimonials__card
+                            .testimonials__card--brand
+                                img(src="../../../assets/images/testimonials/testimonials__brand-2.png" alt="Hyperproof logo")
+
+                            p.testimonials__card--text
+                                | Our integration needs are very custom and complex. The Fusebit platform stood out from alternatives because of the 
+                                strong power, flexibility, and speed 
+                                | of bringing a new solution to production.
+
+                            .testimonials__card--user 
+                                .testimonials__card--user-image 
+                                    img(src="../../../assets/images/testimonials/testimonials__user-2.png" alt="Craig Unger profile image")
+
+                                .testimonials__card--user-data
+                                    h4 Craig Unger 
+                                    p Hyperproof CEO
+
+
+                .testimonials__pagination.swiper-pagination
+
+    script.
+
+        const testimonials = document.querySelector('.testimonials');
+        if(testimonials) {
+            const testimonialsSwiper = new Swiper('.testimonials__cards', {
+                loop: true,
+                slidesPerView: 1,
+                slidesPerColumnFill: 'row',
+                spaceBetween: 30,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                breakpoints: {
+                    700: {
+                        slidesPerView: 2,
+                    },
+                    1000: {
+                        slidesPerView: 2,
+                        loop: false,
+                    }
+                },
+                on: {
+                    init: () => {
+                        toggleSwiperWrapperStatus();
+
+                        window.addEventListener('resize', toggleSwiperWrapperStatus);
+                    },
+                    slideChange: () => {
+                        //handleScrolledSwiper();
+                    }
+                }
+            });
+
+            function esDesktop() {
+                return window.matchMedia('(min-width: 1200px)').matches;
+            }
+            function toggleSwiperWrapperStatus() {
+                const swiperWrapper = document.querySelector('.testimonials__cards .swiper-wrapper');
+                if(esDesktop()) {
+                    swiperWrapper.classList.add('swiper-wrapper--disable');
+                } else {
+                    swiperWrapper.classList.remove('swiper-wrapper--disable');
+                }
+            }
+        }

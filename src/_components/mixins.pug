@@ -1,0 +1,12 @@
+mixin title(main, sub, black, invert, className)
+    h2.title(class=black ? 'title--black' : 'title--white' class=invert && 'title--invert' class= className)= main
+        span= sub 
+            i#underscore _
+
+mixin text(text, className)
+    p.text(class= className)= text
+
+mixin cta(text, href, className)
+    a.cta(href= href class= className)= text
+        svg(viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")

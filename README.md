@@ -17,7 +17,7 @@ or
 yarn dev
 ```
 
-Browse to [http://localhost:8080](http://localhost:8080).
+Browse to [http://localhost:8080/index/](http://localhost:8080/index/).
 
 ## Running and serving a prod build
 
@@ -34,6 +34,31 @@ yarn serve:prod
 ```
 
 Browse to [http://localhost:5000](http://localhost:5000).
+
+## Deploy in S3
+
+1) Build the application
+
+```sh
+npm run prod
+```
+
+or
+
+```sh
+yarn prod
+```
+
+2) Upload `build` folder content into the bucket
+
+```sh
+aws s3 sync ./build s3://${bucket_name} --profile ${profile} --cache-control max-age=31536000
+```
+
+3) Refresh cloudfront (optional)
+```sh
+aws cloudfront create-invalidation --profile ${profile} --distribution-id ${cloudfront_id} --paths '/*'
+```
 
 ## Technologies used
 
@@ -73,4 +98,4 @@ Configuration and build files
 
 Files in `assets` will be handled by webpack, Eleventy will transform all of the directories with a leading `_`, and will copy across any `images`.
 
-Eleventy’s output will be to a `dist` directory at the root level.
+Eleventy’s output will be to a `build` directory at the root level.

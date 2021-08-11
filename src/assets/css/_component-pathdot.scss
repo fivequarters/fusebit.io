@@ -1,0 +1,20 @@
+.pathdot {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform-origin: center center;
+    transform: translate(-50%, 3px);
+    width: 10px;
+    height: 10px;
+    border-radius: 1rem;
+    background: var(--yellow);
+    z-index: 99;
+    @include box-shadow(0px, 0px, 20px, rgba(255, 145, 0, 1));
+    animation: pulseShadow 0.5s linear infinite alternate;
+
+    @keyframes pulseShadow {
+        to {
+            @include box-shadow(0px, 0px, 5px, rgba(255, 145, 0, 1));
+        }
+    }
+}

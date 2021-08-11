@@ -1,0 +1,60 @@
+.path2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    overflow-x: hidden;
+
+    &__container {
+        position: relative;
+        width: 90%;
+        max-width: var(--container);
+        z-index: 9;
+        margin: 0 auto;
+
+        @media only screen and (max-width: 1200px) {
+            margin: 0 0 0 0.8rem;
+        }
+    }
+
+    &__svg {
+        &--tablet,
+        &--mobile {
+            display: none;
+        }
+    }
+
+    path {
+        stroke: #c3d0e7;
+    }
+
+    .pathdot {
+        transform: translate(90%, 3px);
+    }
+
+    @media only screen and (max-width: 1000px) {
+        &__svg {
+            &--desktop {
+                display: none;
+            }
+            &--tablet {
+                display: block;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 700px) {
+        &__svg {
+            &--tablet,
+            &--desktop {
+                display: none;
+            }
+            &--mobile {
+                display: block;
+            }
+        }
+    }
+}

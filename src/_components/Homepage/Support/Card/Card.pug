@@ -1,0 +1,9 @@
+mixin card(data) 
+    .card(data-path=data.path)
+        .card__image 
+            img(src=data.img alt=data.highlight ? data.highlight : 'Image icon')
+
+        p.card__content 
+            if data.highlight
+                strong #{data.highlight} 
+            | #{data.text}

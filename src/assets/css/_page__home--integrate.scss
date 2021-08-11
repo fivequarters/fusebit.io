@@ -1,0 +1,284 @@
+.integrate {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-height: 700px;
+    overflow: hidden;
+    background: #ffffff;
+    z-index: 1;
+
+    &__container {
+        position: relative;
+        width: 90%;
+        max-width: var(--container);
+    }
+
+    &__content {
+        position: relative;
+        width: 100%;
+        max-width: 570px;
+        margin: 0 auto;
+        margin-top: 0rem;
+        z-index: 1;
+    }
+
+    &__title {
+        position: relative;
+        top: 300px;
+        //opacity: 0;
+        background: radial-gradient(
+            rgba(255, 255, 255, 1) 70%,
+            rgba(255, 255, 255, 0)
+        );
+        //background: radial-gradient(red 50%, blue);
+
+        @include titles;
+        margin-bottom: 56px;
+        text-align: center;
+
+        & > span {
+            font-family: var(--sora);
+            color: var(--orange);
+        }
+
+        @media only screen and (max-width: 700px) {
+            @include font-size(28);
+            line-height: 42px;
+            letter-spacing: -1%;
+        }
+    }
+
+    &__cta {
+        position: relative;
+        top: 200px;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 64px;
+        background: var(--orange);
+        border-radius: 10rem;
+        margin: 0 auto;
+        overflow: hidden;
+        transition: all 0.3s;
+
+        &--text,
+        &--icon {
+            position: relative;
+            z-index: 1;
+        }
+
+        &--text {
+            font-family: var(--poppins);
+            @include font-size(18);
+            font-weight: 500;
+            color: #ffffff;
+            margin-right: 0.5rem;
+            transition: all 0.4s ease-in-out;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -130%;
+            width: 120%;
+            height: 64px;
+            background: var(--yellow);
+            border-radius: 10rem;
+            transition: all 0.8s ease-in-out;
+            pointer-events: none;
+        }
+
+        &:hover {
+            background: var(--orangeDark);
+
+            .integrate__cta--text {
+                margin-right: 2rem;
+            }
+        }
+
+        &:active {
+            background: var(--yellow);
+        }
+    }
+
+    /* &__orbits {
+        position: relative;
+        text-align: center;
+        img {
+            position: relative;
+            bottom: 7rem;
+            width: 100%;
+            transform: scale(1);
+
+            @media only screen and (max-width: 1500px) {
+                width: 80%;
+                transform: scale(1.1);
+            }
+            @media only screen and (max-width: 700px) {
+                width: 100%;
+                transform: translate(0%, 50%) scale(1.5);
+            }
+        }
+
+        @media only screen and (max-width: 1500px) {
+            bottom: 3rem;
+        }
+
+        @media only screen and (max-width: 700px) {
+            bottom: 1rem;
+        }
+    } */
+
+    &__orbits {
+        position: relative;
+        text-align: center;
+
+        #integrate__orbits--static {
+            position: relative;
+            bottom: 12.5rem;
+            width: 100%;
+            transform: scale(0.9);
+
+            @media only screen and (min-height: 1079px) {
+                bottom: 10rem;
+                transform: scale(1.1);
+            }
+
+            @media only screen and (max-width: 1500px) {
+                bottom: 8.5rem;
+                transform: scale(1);
+            }
+
+            // iPad pro
+            @media only screen and (max-width: 1024px) and (max-height: 1366px) {
+                bottom: 0rem;
+                transform: scale(1);
+            }
+
+            @media only screen and (max-width: 700px) {
+                width: 100%;
+                transform: scale(1.5);
+            }
+        }
+
+        @media only screen and (max-width: 1500px) {
+            bottom: 3rem;
+        }
+
+        @media only screen and (max-width: 700px) {
+            bottom: 1rem;
+        }
+    }
+
+    &__orbital {
+        position: relative;
+        left: -2.3rem;
+        bottom: 15rem;
+        margin: 0 auto;
+
+        &ball {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            border-radius: 20rem;
+            background: #ffffff;
+            @include box-shadow(0px, 8px, 20px, rgba(0, 0, 0, 0.07));
+
+            &--sm {
+                left: 50px;
+                width: 70px;
+                height: 70px;
+                @media only screen and (max-width: 500px) {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+            &--md {
+                left: 250px;
+                width: 90px;
+                height: 90px;
+                @media only screen and (max-width: 500px) {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+            &--lg {
+                left: 450px;
+                width: 105px;
+                height: 105px;
+                @media only screen and (max-width: 500px) {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 30px;
+
+                @media only screen and (max-width: 500px) {
+                    width: 20px;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            left: -12rem;
+        }
+        @media only screen and (max-width: 500px) {
+            left: -26rem;
+            bottom: 20rem;
+            transform: scale(0.5);
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0rem;
+        right: 0;
+        width: 100%;
+        height: 307px;
+        background: url(./images/homepage/integrate/integrate--1920.png) right
+            bottom no-repeat;
+        background-size: 100%;
+        z-index: 1;
+
+        @media only screen and (min-height: 1079px) {
+            background: url(./images/homepage/integrate/integrate--4500.png)
+                right bottom no-repeat;
+            background-size: 100%;
+        }
+
+        @media only screen and (min-height: 3000px) {
+            height: 390px;
+            bottom: -5rem;
+        }
+
+        @media only screen and (max-width: 1500px) {
+            background: url(./images/homepage/integrate/integrate--1360.png)
+                right bottom no-repeat;
+            background-size: 100%;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            background: url(./images/homepage/integrate/integrate--mobile.png)
+                right bottom no-repeat;
+            background-size: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 700px) {
+        margin-top: 4rem;
+        max-height: 500px;
+    }
+}

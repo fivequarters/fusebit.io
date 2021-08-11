@@ -1,0 +1,33 @@
+.card-title {
+    @include font-size(18);
+    font-weight: bold;
+    line-height: 23px;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.card-subtitle {
+    @include font-size(16);
+    font-weight: 300;
+    line-height: 20px;
+    color: var(--dark);
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.social-media-container {
+    display: flex;
+    margin-right: -16px;
+}
+
+.social-media {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    background: var(--dark);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+}

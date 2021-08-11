@@ -1,0 +1,93 @@
+.hero {
+    position: relative;
+
+    &__container {
+        margin: 207px auto 0;
+        padding-bottom: 207px;
+    }
+
+    &__short-mark {
+        position: absolute;
+        right: 0;
+        top: -47px;
+        z-index: -1;
+    }
+
+    &__long-mark {
+        & > img {
+            position: absolute;
+            right: 0;
+            top: 15px;
+            z-index: -1;
+        }
+    }
+
+    &__container2 {
+        padding-bottom: 123px;
+        position: relative;
+    }
+
+    &__title {
+        @include font-size(56);
+        font-family: var(--sora);
+        font-weight: 700;
+        max-width: 725px;
+        margin-bottom: 68px;
+        line-height: 110%;
+
+        > span {
+            color: var(--orange);
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        margin-right: -10px;
+    }
+
+    &__main-text {
+        @include font-size(18);
+        font-family: var(--sora);
+        font-weight: 300;
+        max-width: 576px;
+        line-height: 160%;
+        color: var(--dark);
+        margin-right: 10px;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+    }
+
+    &__item {
+        @include font-size(16);
+        display: flex;
+        color: var(--dark);
+        line-height: 160%;
+
+        &:not(:last-child) {
+            margin-bottom: 48px;
+        }
+
+        & > p {
+            max-width: 394px;
+            min-width: 264px;
+            font-weight: 300;
+
+            & span {
+                font-weight: 600;
+            }
+        }
+    }
+
+    &__item-border {
+        flex-shrink: 0;
+        height: 90%;
+        width: 2px;
+        background-color: var(--orange);
+        margin: auto 24px auto 0;
+    }
+}

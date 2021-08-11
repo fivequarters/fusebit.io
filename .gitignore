@@ -104,6 +104,7 @@ dist
 .tern-port
 
 # MacOS Files && Eleventy temps
+/build/
 /dist/
 /src/compiled-assets/
 .DS_Store
