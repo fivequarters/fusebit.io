@@ -1,38 +1,40 @@
 -
     const headerLinks = [
         {
-            text: 'About us',
-            link: '/about'
+    text: 'About us',
+    link: '/about'
+    onClick: "sendEvent('Navigation', 'Clicked about header nav');"
         },
         {
             text: 'Careers',
             link: '/careers'
-        }
+            onClick: "sendEvent('Navigation', 'Clicked careers header nav');"
+    }
 
     ]
 
 header.header 
     .header__container 
         .header__logo 
-            a(href="/") 
+            a(href="/" onclick="sendEvent('Navigation', 'Clicked logo header nav');") 
                 include ../Logo/Logo
 
         .header__menu 
             ul 
                 each link in headerLinks
                     li
-                        a(href=link.link)=link.text
+                        a(href=link.link onclick=link.onClick)=link.text
 
         .header__links 
-            ul  
-                li 
-                    a.header__links--signUp(href="#") Join waitlist
+    ul  
+        li 
+            a.header__links--signUp(href="#" onclick="sendEvent('Navigation', 'Clicked login header nav');") Join waitlist
 
-        .header__menuMobile--btn 
-            span.top 
-            span.center1
-            span.center2
-            span.bottom
+    .header__menuMobile--btn 
+        span.top 
+        span.center1
+        span.center2
+        span.bottom
 
     .header__menuMobile
 
@@ -40,17 +42,14 @@ header.header
             ul 
                 each link in headerLinks
                     li
-                        a(href=link.link)=link.text
+                        a(href=link.link onclick=link.onClick)=link.text
 
                 li 
-                    a.header__links--signUp(href="#") Join waitlist
+    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
 
-        .menuMobile__social 
-            include ../SocialMedia/SocialMedia
+    .menuMobile__social 
+        include ../SocialMedia/SocialMedia
 
-
-        
-        
 
     script.
         function toggleClasses(target, addClass, removeClass) {
@@ -87,7 +86,7 @@ header.header
             headerSignUp.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    
+
                     const modal = document.querySelector('#modal__signUp')
                     const overlay = document.querySelector('.modal__overlay');
 

@@ -1,0 +1,6 @@
+.text {
+    @include font-size(18);
+    font-weight: 300;
+    line-height: 160%;
+    color: var(--dark);
+}

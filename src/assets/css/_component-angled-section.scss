@@ -1,0 +1,18 @@
+.angled-section {
+    max-width: var(--container);
+    width: 90%;
+    margin: 0 auto;
+
+    &::before {
+        @include angle();
+        position: absolute;
+        content: '';
+        background-color: var(--neutralLight);
+        z-index: -1;
+        top: 20px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+    }
+}
