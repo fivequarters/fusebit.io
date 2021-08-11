@@ -1,20 +1,15 @@
 -
     const headerLinks = [
         {
-            text: 'Integrations',
-            link: '#integrations',
-            onClick: "sendEvent('Navigation', 'Clicked integrations header nav');"
+    text: 'About us',
+    link: '/about'
+    onClick: "sendEvent('Navigation', 'Clicked about header nav');"
         },
         {
-            text: 'Docs',
-            link: 'docs',
-            onClick: "sendEvent('Navigation', 'Clicked docs header nav');"
-        },
-        {
-            text: 'Blog',
-            link: '#blog',
-            onClick: "sendEvent('Navigation', 'Clicked blog header nav');"
-        }
+            text: 'Careers',
+            link: '/careers'
+            onClick: "sendEvent('Navigation', 'Clicked careers header nav');"
+    }
 
     ]
 
@@ -31,17 +26,15 @@ header.header
                         a(href=link.link onclick=link.onClick)=link.text
 
         .header__links 
-            ul 
-                li 
-                    a.header__links--signIn(href="#" onclick="sendEvent('Navigation', 'Clicked login header nav');") Login
-                li 
-                    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button');") Sign up
+    ul  
+        li 
+            a.header__links--signUp(href="#" onclick="sendEvent('Navigation', 'Clicked login header nav');") Join waitlist
 
-        .header__menuMobile--btn 
-            span.top 
-            span.center1
-            span.center2
-            span.bottom
+    .header__menuMobile--btn 
+        span.top 
+        span.center1
+        span.center2
+        span.bottom
 
     .header__menuMobile
 
@@ -52,10 +45,10 @@ header.header
                         a(href=link.link onclick=link.onClick)=link.text
 
                 li 
-                    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button');") Sign up
+    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
 
-        .menuMobile__social 
-            include ../SocialMedia/SocialMedia
+    .menuMobile__social 
+        include ../SocialMedia/SocialMedia
 
 
     script.

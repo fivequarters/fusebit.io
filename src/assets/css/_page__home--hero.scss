@@ -140,7 +140,7 @@
         margin-bottom: 3rem;
 
         @media only screen and (max-width: 1400px) {
-            width: 400px;
+            width: 500px;
             @include font-size(16);
             line-height: 24px;
             margin-bottom: 2rem;
@@ -161,7 +161,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 160px;
+        width: 180px;
         height: 64px;
         background: var(--orange);
         @include font-size(18);
