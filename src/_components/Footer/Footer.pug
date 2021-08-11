@@ -8,21 +8,21 @@ footer.footer
     .footer__container 
         .footer__wrapper.footer__wrapper--head
             .footer__logo 
-                a(href="/" onclick="sendEvent('Navigation', 'Clicked logo footer nav', '/');") 
+                a(href="/" onclick="sendEvent('Navigation', 'Clicked logo footer nav');") 
                     include ../Logo/Logo
 
             ul.footer__links 
                 li.footer__links--title  Company
 
-                +footerLink('about', 'About Us', 0, "sendEvent('Navigation', 'Clicked about footer nav', '/');")
-                +footerLink('careers', 'Careers', 4, "sendEvent('Navigation', 'Clicked careers footer nav', '/');")
+                +footerLink('about', 'About Us', 0, "sendEvent('Navigation', 'Clicked about footer nav');")
+                +footerLink('careers', 'Careers', 4, "sendEvent('Navigation', 'Clicked careers footer nav');")
                 //+footerLink('#blog', 'Blog')
                 //+footerLink('#docs', 'Docs')
-                +footerLink('contact', 'Get In Touch', 0, "sendEvent('Navigation', 'Clicked contact footer nav', '/');")
-                +footerLink('legal', 'Legal', 0, "sendEvent('Navigation', 'Clicked legal footer nav', '/');")
-                +footerLink('privacy', 'Privacy Policy', 0, "sendEvent('Navigation', 'Clicked privacy footer nav', '/');")
-                +footerLink('support', 'Support', 0, 0, "sendEvent('Navigation', 'Clicked support footer nav', '/');")
-                +footerLink('terms', 'Terms of Use', 0, "sendEvent('Navigation', 'Clicked terms footer nav', '/');")
+                +footerLink('contact', 'Get In Touch', 0, "sendEvent('Navigation', 'Clicked contact footer nav');")
+                +footerLink('legal', 'Legal', 0, "sendEvent('Navigation', 'Clicked legal footer nav');")
+                +footerLink('privacy', 'Privacy Policy', 0, "sendEvent('Navigation', 'Clicked privacy footer nav');")
+                +footerLink('support', 'Support', 0, "sendEvent('Navigation', 'Clicked support footer nav');")
+                +footerLink('terms', 'Terms of Use', 0, "sendEvent('Navigation', 'Clicked terms footer nav');")
 
             ul.footer__links 
                 li.footer__links--title  Integration
