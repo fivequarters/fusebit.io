@@ -4,11 +4,11 @@ section.hero
             p.hero__subtitle
                 //span.hero__subtitle--badge Try it now
                 span Integration platform for developers
-            
+
             h1.hero__title Build awesome integrations for your application without the hassle
             p.hero__text
                 | Friends don’t let friends build integrations alone. Our code-first integration platform and SaaS connectors remove the headaches of dealing with different APIs and eliminate the operational burden when running at scale.
-            a.hero__cta(href="#hero-cta") 
+            a.hero__cta(href="#hero-cta" onclick="sendEvent('CTA', 'Clicked hero button');") 
                 | Join waitlist
                 svg(viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg")
                     path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
@@ -23,7 +23,7 @@ section.hero
             const heroSignUp = document.querySelector('.hero__cta');
             heroSignUp.addEventListener('click', (e) => {
                 e.preventDefault();
-                
+
                 const modal = document.querySelector('#modal__signUp')
                 const overlay = document.querySelector('.modal__overlay');
 

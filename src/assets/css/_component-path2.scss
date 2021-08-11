@@ -6,6 +6,7 @@
     pointer-events: none;
     z-index: 0;
     opacity: 0;
+    overflow-x: hidden;
 
     &__container {
         position: relative;

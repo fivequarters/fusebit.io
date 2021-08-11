@@ -60,3 +60,11 @@
         line-height: 38.4px;
     }
 }
+
+@mixin angle() {
+    @include angle-edge(
+        $angle: 6.5,
+        $angle-position-y: 'top',
+        $angle-position-x: 'left'
+    );
+}

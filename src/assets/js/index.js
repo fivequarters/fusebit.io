@@ -807,3 +807,7 @@ if (homepage) {
         });
     }
 }
+
+window.addEventListener('load', () => {
+    blink('#underscore');
+});

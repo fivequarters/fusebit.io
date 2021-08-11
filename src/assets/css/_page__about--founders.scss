@@ -1,0 +1,143 @@
+.founders {
+    max-width: var(--container);
+    width: 90%;
+    margin: 0 auto;
+    padding: 118px 0 59px;
+    position: relative;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 65px;
+        position: absolute;
+        top: 109px;
+        max-width: 1120px;
+        width: calc(100% - 30px);
+        box-sizing: border-box;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__text {
+        margin-top: 32px;
+        opacity: 0.6;
+        max-width: 576px;
+    }
+
+    &__card {
+        width: 245px;
+        height: 148px;
+        background: rgba($color: #d7e5ff, $alpha: 0.4);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        padding-left: 63px;
+        box-sizing: border-box;
+        position: relative;
+        margin-top: 29px;
+
+        & span {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 120%;
+            color: #03032d;
+            max-width: 178px;
+        }
+    }
+
+    &__card-img-container {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: drop-shadow(2px 4px 25px rgba(3, 3, 45, 0.11));
+    }
+
+    &__card-f5 {
+        width: 80px;
+        height: 80px;
+        background: var(--white);
+        border-radius: 100px;
+        top: -12px;
+        left: -23px;
+    }
+
+    &__card-microsoft {
+        width: 144px;
+        height: 48px;
+        background: var(--white);
+        border-radius: 34px;
+        bottom: -19px;
+        right: 23px;
+    }
+
+    &__card-auth0 {
+        width: 106px;
+        height: 48px;
+        background: var(--white);
+        border-radius: 34px;
+        top: -30px;
+        right: -30px;
+    }
+
+    &__path-container {
+        position: relative;
+    }
+
+    &__path {
+        width: 100%;
+    }
+
+    &__ellipse {
+        transform: translateX(-50%);
+    }
+
+    &__founder {
+        width: 24.5%;
+        border-radius: 16px;
+        height: 42%;
+        position: absolute;
+        bottom: 1%;
+        transform: translate(-50%, -56px);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__founder-1 {
+        left: 18%;
+    }
+
+    &__founder-2 {
+        left: 53%;
+    }
+
+    &__founder-3 {
+        left: 88%;
+    }
+
+    &__founder-img-container {
+        width: 112px;
+        height: 112px;
+        background-color: var(--lightYellow);
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 24px;
+        flex-shrink: 0;
+
+        & > img {
+            width: 100%;
+            position: absolute;
+            bottom: -5px;
+        }
+    }
+}

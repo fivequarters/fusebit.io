@@ -2,7 +2,7 @@ mixin orbitalBall(size, orbitID, logoImg)
     //sizes sm - md - lg
     div(class=`integrate__orbitalball integrate__orbitalball--${size}` id=orbitID)
         img(src=logoImg alt="Branding")
-    
+
 
 section.integrate 
     .integrate__container
@@ -12,15 +12,15 @@ section.integrate
                 | and power your integration story
                 i _
 
-            a.integrate__cta(href="#integrate-cta")
+            a.integrate__cta(href="#integrate-cta" onclick="sendEvent('CTA', 'Clicked dev stack button');")
                 span.integrate__cta--text Join waitlist
                 span.integrate__cta--icon
                     svg(width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg")
                         path(d="M1.36396 1.44268L7.72792 7.80664L1.36396 14.1706" stroke="white" stroke-width="2")
 
         .integrate__orbits
-            img#integrate__orbits--static(src="../../assets/images/integrate__orbit.svg", alt="")
-            
+            img#integrate__orbits--static(src="../../assets/images/integrate__orbit.svg" alt="")
+
             //include ./Orbital/orbital
             //+orbitalBall('sm', 'orbit__ball--2', '../../../assets/images/integrate/trello.png')
 

@@ -1,0 +1,28 @@
+.title {
+    @include font-size(48);
+    font-family: var(--sora);
+    font-weight: 700;
+    max-width: 576px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+
+    & > span {
+        color: var(--orange);
+    }
+}
+
+.title--black {
+    color: var(--dark);
+}
+
+.title--white {
+    color: var(--neutralLight);
+}
+
+.title--invert {
+    color: var(--orange);
+
+    & > span {
+        color: var(--dark);
+    }
+}

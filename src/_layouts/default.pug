@@ -1,3 +1,5 @@
+include ../_components/mixins.pug
+
 block seo_variables
 block page_variable
 
@@ -35,7 +37,7 @@ html(lang='en' class=(pageClass || ''))
 
     link(rel='stylesheet' href='/assets/vendor/swiper-bundle.min.css')
     script(src='/assets/vendor/swiper-bundle.min.js')
-    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-136792777-1')
+    script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-136792777-1')
 
     link(rel='preconnect' href='https://fonts.gstatic.com')
     link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Roboto&family=Sora:wght@300;400;700;800&display=swap" rel="stylesheet")
@@ -62,16 +64,20 @@ html(lang='en' class=(pageClass || ''))
       block content
 
     include ../_components/Footer/Footer
-    
+
     script(src="/assets/vendor/gsap/gsap.min.js")
     script(src="/assets/vendor/scrollmagic/ScrollMagic.min.js")
 
     script(src="/assets/vendor/gsap/ScrollTrigger.min.js")
     script(src="/assets/vendor/gsap/ScrollToPlugin.min.js")
     script(src="/assets/vendor/gsap/MotionPathPlugin.min.js")
-    
+
     script(src="/assets/vendor/scrollmagic/plugins/animation.gsap.min.js")
     script(src="/assets/vendor/scrollmagic/plugins/debug.addIndicators.min.js")
+
+    //- TODO: Review what's the best way to create helpers without putting them in vendor folder
+    script(src="/assets/vendor/helpers/blink.js")
+    script(src="/assets/vendor/helpers/sendEvent.js")
 
     //- script(src='/assets/vendor.js?' + cacheBust.vendorJs)
     script(src='/assets/main.js?' + cacheBust.mainJs)

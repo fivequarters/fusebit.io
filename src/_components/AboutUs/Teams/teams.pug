@@ -1,0 +1,41 @@
+section.teams 
+    .teams__container
+        .teams__info
+            h2.teams__title
+                | Teams from 
+                span around the world
+                    i#underscore _
+            p.teams__text At Fusebit, we believe in fair hiring around the world. Any professional, no matter where they live, can work for and benefit from our company.
+            +cta("We are hiring", "#", 'teams__cta')
+        .teams__presentation
+            img(src="../../../assets/images/about/teams/map.png" alt="Chris More" height="706" width="673").teams__map
+            .teams__card
+                //- TODO: add or substract the width/height of the dot to the position 
+                .teams__dot.teams__dot--bg.teams__dot--lavender(style="bottom: -50px; left: 26px")
+                .teams__dot.teams__dot--sm.teams__dot--light-blue(style="bottom: -22px; left: -1px")
+                .teams__dot.teams__dot--sm.teams__dot--light-blue(style="bottom: 65px; left: -45px")
+                .teams__dot.teams__dot--bg.teams__dot--orange(style="bottom: 134px; left: -125px")
+                .teams__dot.teams__dot--sm.teams__dot--light-blue(style="bottom: 184px; left: -29px")
+                .teams__dot.teams__dot--sm.teams__dot--light-blue(style="bottom: 178px; left: -99px")
+                .teams__dot.teams__dot--bg.teams__dot--bright-yellow(style="bottom: 225px; left: -68px")
+                .teams__dot.teams__dot--sm.teams__dot--light-blue(style="bottom: 248px; left: -125px")
+                .teams__dot.teams__dot--sm.teams__dot--light-blue(style="top: -25px; left: 25px")
+                .teams__dot.teams__dot--sm.teams__dot--light-blue(style="top: -51px; left: 36px")
+                .teams__dot.teams__dot--bg.teams__dot--bright-yellow(style="top: -41px; left: 64px")
+                .teams__dot.teams__dot--bg.teams__dot--orange(style="top: 25px; right: -68px")
+                .teams__dot.teams__dot--sm.teams__dot--light-blue(style="top: 102px; right: -123px")
+                .teams__dot.teams__dot--sm.teams__dot--light-blue(style="top: 131px; right: -156px")
+                .teams__card-img-container
+                    img(src="../../../assets/images/about/teams/engineer.png" alt="Map" height="70.82" width="73.71" ).teams__card-img
+                h4.card-title Chris More
+                span.card-subtitle Engineer
+                .social-media-container
+                    a.social-media(href="#" target="_blank")
+                        img(src="../../../assets/images/about/teams/linkedin.svg" alt="Linkedin")
+                    a.social-media(href="#" target="_blank")
+                        img(src="../../../assets/images/about/teams/twitter.svg" alt="Twitter")
+
+script.
+    window.addEventListener('load', () => {
+        blink('.teams__dot', 0.8, 0.5)
+    })
