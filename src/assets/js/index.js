@@ -829,4 +829,20 @@ if (homepage) {
 
 window.addEventListener('load', () => {
     blink('#underscore');
+
+    const signUpButtons = document.querySelectorAll('.sign-up-cta');
+
+    for (let i = 0; i < signUpButtons.length; i++) {
+        const signUpButton = signUpButtons[i];
+
+        signUpButton.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const modal = document.querySelector('#modal__signUp');
+            const overlay = document.querySelector('.modal__overlay');
+
+            modal.style.display = 'block';
+            overlay.style.display = 'block';
+        });
+    }
 });
