@@ -9,6 +9,18 @@
     border-radius: 4rem 4rem 0 0;
     overflow: hidden;
 
+    &__top-mark {
+        position: absolute;
+        top: -80%;
+        left: 50%;
+    }
+
+    &__bottom-mark {
+        position: absolute;
+        left: calc(50% - 500px);
+        bottom: 0;
+    }
+
     &__container {
         position: relative;
         width: 90%;
@@ -163,58 +175,6 @@
     &__social {
         @media only screen and (max-width: 500px) {
             width: 100%;
-        }
-    }
-
-    &__bg {
-        &--01 {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-
-            background: url(./images/footer__bg/bg01.png) right top no-repeat;
-        }
-
-        &--02 {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-
-            background: url(./images/footer__bg/bg02.png) right top no-repeat;
-        }
-
-        &--03 {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-
-            background: url(./images/footer__bg/bg03.png) right top no-repeat;
-        }
-
-        &--04 {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-
-            background: url(./images/footer__bg/bg04.png) right top no-repeat;
-        }
-
-        &--05 {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-
-            background: url(./images/footer__bg/bg05.png) 30% bottom no-repeat;
         }
     }
 
