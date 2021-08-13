@@ -61,10 +61,14 @@
     }
 }
 
-@mixin angle() {
-    @include angle-edge(
-        $angle: 6.5,
-        $angle-position-y: 'top',
-        $angle-position-x: 'left'
-    );
+@mixin angled-section($color: var(--white)) {
+    background-color: $color;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    transform-origin: 100% 0;
+    transform: skewY(-6deg);
+    overflow: hidden;
 }
