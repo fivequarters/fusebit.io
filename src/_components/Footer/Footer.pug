@@ -14,6 +14,7 @@ footer.footer
             ul.footer__links 
                 li.footer__links--title  
 
+                +footerLink('https://developer.fusebit.io', 'Developers', 0, "sendEvent('Navigation', 'Clicked developers footer nav');")
                 +footerLink('/about', 'About Us', 0, "sendEvent('Navigation', 'Clicked about footer nav');")
                 +footerLink('/careers', 'Careers', 2, "sendEvent('Navigation', 'Clicked careers footer nav');")
                 +footerLink('/contact', 'Contact', 0, "sendEvent('Navigation', 'Clicked contact footer nav');")
