@@ -25,6 +25,12 @@
 
     &__container {
         padding: 241px 0 120px;
+        @media screen and (min-width: 3000px) {
+            padding: 300px 0 120px;
+        }
+        @media screen and (min-width: 4000px) {
+            padding: 400px 0 120px;
+        }
     }
 
     &__short-mark {
