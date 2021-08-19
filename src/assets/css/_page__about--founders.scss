@@ -1,13 +1,36 @@
 .founders {
-    max-width: var(--container);
-    width: 90%;
-    margin: 0 auto;
-    padding: 118px 0 59px;
     position: relative;
 
-    &__container {
+    &__mark-big {
+        --mark-offset: 500px;
+
+        bottom: calc(var(--triangleHeight) + 48px);
+        right: calc(50% + var(--mark-offset));
+        width: calc(50% - var(--mark-offset));
+
+        @media only screen and (max-width: 1200px) {
+            --mark-offset: 100px;
+
+            bottom: calc(var(--triangleHeight) + 24px);
+        }
+    }
+
+    &__mark-small {
+        --mark-offset: 355px;
+
+        bottom: var(--triangleHeight);
+        right: calc(50% + var(--mark-offset));
+        width: calc(50% - var(--mark-offset));
+
+        @media only screen and (max-width: 1200px) {
+            --mark-offset: 50px;
+        }
+    }
+
+    &__layout {
         display: flex;
         flex-direction: column;
+        padding: 118px 0 calc(var(--triangleHeight) + 50px);
     }
 
     &__info {
@@ -15,7 +38,6 @@
         justify-content: space-between;
         padding-left: 65px;
         position: absolute;
-        top: 109px;
         max-width: 1120px;
         width: calc(100% - 30px);
         box-sizing: border-box;
