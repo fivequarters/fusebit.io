@@ -1,8 +1,19 @@
 .investors {
     position: relative;
 
-    &__container {
-        padding: 241px 0 120px;
+    &__mark {
+        --mark-offset: 450px;
+
+        left: calc(50% + var(--mark-offset));
+        width: calc(50% - var(--mark-offset));
+
+        @media only screen and (max-width: 1200px) {
+            --mark-offset: 100px;
+        }
+    }
+
+    &__layout {
+        padding-bottom: 120px;
     }
 
     &__short-mark {

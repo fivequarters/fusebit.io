@@ -12,8 +12,11 @@ mixin card(src, title, subtitle)
             img(src="../../../assets/images/about/teams/twitter.svg" alt="Twitter")
 
 
-section.founders
-    .founders__container
+section.section.founders
+    .background
+        .mark.mark--big.mark--dark-violet.mark--left.founders__mark-small
+        .mark.mark--small.mark--light-violet.mark--left.founders__mark-big
+    .layout.founders__layout
         .founders__info
             .founders__content
                 +title('Fusebit ', 'founders', false, true)
