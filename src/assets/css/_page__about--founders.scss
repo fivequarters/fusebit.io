@@ -1,10 +1,5 @@
 .founders {
-    padding: 118px 0 59px;
     position: relative;
-
-    &__angled-section {
-        @include angled-section();
-    }
 
     &__mark-left--big {
         position: absolute;
@@ -39,12 +34,10 @@
         border-bottom-right-radius: 0;
     }
 
-    &__container {
-        max-width: var(--container);
-        width: 90%;
-        margin: 0 auto;
+    &__layout {
         display: flex;
         flex-direction: column;
+        padding-top: 118px;
     }
 
     &__info {
@@ -52,7 +45,6 @@
         justify-content: space-between;
         padding-left: 65px;
         position: absolute;
-        top: 109px;
         max-width: 1120px;
         width: calc(100% - 30px);
         box-sizing: border-box;

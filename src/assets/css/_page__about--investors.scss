@@ -1,11 +1,6 @@
 .investors {
     position: relative;
 
-    &__angled-section {
-        @include angled-section();
-        background: var(--neutralLight);
-    }
-
     &__mark-right {
         position: absolute;
         width: 18vw;
@@ -23,14 +18,8 @@
         border-bottom-right-radius: 0;
     }
 
-    &__container {
-        padding: 241px 0 120px;
-        @media screen and (min-width: 3000px) {
-            padding: 300px 0 120px;
-        }
-        @media screen and (min-width: 4000px) {
-            padding: 400px 0 120px;
-        }
+    &__layout {
+        padding-bottom: 120px;
     }
 
     &__short-mark {

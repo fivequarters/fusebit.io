@@ -23,4 +23,13 @@
     --sora: 'Sora', sans-serif;
     --poppins: 'Poppins', sans-serif;
     --roboto: 'Roboto', serif;
+
+    // Angles
+    --angle: -6deg;
+    --angleSine: 0.104;
+    --angleCosine: 0.994;
+    --triangleBase: 100vw;
+    --triangleHeight: calc(
+        (var(--triangleBase) / var(--angleCosine)) * var(--angleSine)
+    );
 }
