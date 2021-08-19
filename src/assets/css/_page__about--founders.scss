@@ -2,42 +2,53 @@
     position: relative;
 
     &__mark-left--big {
+        --mark-offset: 355px;
+
         position: absolute;
-        background: linear-gradient(85.95deg, #020084 4.26%, #d2e4ff 86.68%);
-        mix-blend-mode: normal;
+        background: linear-gradient(85.95deg, #020084, #d2e4ff);
         opacity: 0.6;
-        left: 0;
         border-radius: 210px;
         height: 48px;
-        bottom: 0;
-        width: 20vw;
         transform: rotate(180deg);
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+        bottom: var(--triangleHeight);
+        right: calc(50% + var(--mark-offset));
+        width: calc(50% - var(--mark-offset));
+
+        @media only screen and (max-width: 1200px) {
+            --mark-offset: 50px;
+
+            height: 24px;
+        }
     }
 
     &__mark-left--small {
+        --mark-offset: 500px;
+
         position: absolute;
-        opacity: 0.6;
-        left: 0;
-        bottom: 48px;
-        width: 10vw;
         height: 24px;
-        background: linear-gradient(
-            85.9deg,
-            #d7e5ff 4.26%,
-            rgba(240, 242, 246, 0) 53.89%
-        );
+        background: linear-gradient(85.9deg, #d7e5ff, rgba(240, 242, 246, 0));
         border-radius: 210px;
         transform: rotate(180deg);
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+        bottom: calc(var(--triangleHeight) + 48px);
+        right: calc(50% + var(--mark-offset));
+        width: calc(50% - var(--mark-offset));
+
+        @media only screen and (max-width: 1200px) {
+            --mark-offset: 100px;
+
+            height: 16px;
+            bottom: calc(var(--triangleHeight) + 24px);
+        }
     }
 
     &__layout {
         display: flex;
         flex-direction: column;
-        padding-top: 118px;
+        padding: 118px 0 calc(var(--triangleHeight) + 50px);
     }
 
     &__info {

@@ -2,20 +2,23 @@
     position: relative;
 
     &__mark-right {
+        --mark-offset: 450px;
+
         position: absolute;
-        width: 18vw;
-        min-width: 242px;
         height: 24px;
-        top: 0;
-        left: calc(50% + 450px);
-        width: 100%;
+        left: calc(50% + var(--mark-offset));
+        width: calc(50% - var(--mark-offset));
         border-radius: 210px;
         background: linear-gradient(85.95deg, #020084 4.26%, #d2e4ff 86.68%);
-        mix-blend-mode: normal;
         opacity: 0.6;
-        border-radius: 210px;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+
+        @media only screen and (max-width: 1200px) {
+            --mark-offset: 100px;
+
+            height: 16px;
+        }
     }
 
     &__layout {
