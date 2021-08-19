@@ -1,38 +1,9 @@
 .founders {
     position: relative;
 
-    &__mark-left--big {
-        --mark-offset: 355px;
-
-        position: absolute;
-        background: linear-gradient(85.95deg, #020084, #d2e4ff);
-        opacity: 0.6;
-        border-radius: 210px;
-        height: 48px;
-        transform: rotate(180deg);
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        bottom: var(--triangleHeight);
-        right: calc(50% + var(--mark-offset));
-        width: calc(50% - var(--mark-offset));
-
-        @media only screen and (max-width: 1200px) {
-            --mark-offset: 50px;
-
-            height: 24px;
-        }
-    }
-
-    &__mark-left--small {
+    &__mark-big {
         --mark-offset: 500px;
 
-        position: absolute;
-        height: 24px;
-        background: linear-gradient(85.9deg, #d7e5ff, rgba(240, 242, 246, 0));
-        border-radius: 210px;
-        transform: rotate(180deg);
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
         bottom: calc(var(--triangleHeight) + 48px);
         right: calc(50% + var(--mark-offset));
         width: calc(50% - var(--mark-offset));
@@ -40,8 +11,19 @@
         @media only screen and (max-width: 1200px) {
             --mark-offset: 100px;
 
-            height: 16px;
             bottom: calc(var(--triangleHeight) + 24px);
+        }
+    }
+
+    &__mark-small {
+        --mark-offset: 355px;
+
+        bottom: var(--triangleHeight);
+        right: calc(50% + var(--mark-offset));
+        width: calc(50% - var(--mark-offset));
+
+        @media only screen and (max-width: 1200px) {
+            --mark-offset: 50px;
         }
     }
 

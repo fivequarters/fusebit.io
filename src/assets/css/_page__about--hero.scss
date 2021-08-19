@@ -1,8 +1,45 @@
 .hero {
-    position: relative;
+    &__background {
+        top: 30%;
 
-    &__container {
-        margin: 207px auto 0;
+        @media only screen and (min-width: 2500px) {
+            top: 25%;
+        }
+
+        @media only screen and (min-width: 3500px) {
+            top: 15%;
+        }
+    }
+
+    &__mark-small {
+        --mark-offset: 510px;
+
+        left: calc(50% + var(--mark-offset));
+        width: calc(50% - var(--mark-offset));
+        top: -24px;
+
+        @media only screen and (max-width: 1200px) {
+            --mark-offset: 100px;
+
+            top: -40px;
+        }
+    }
+
+    &__mark-big {
+        --mark-offset: 370px;
+
+        left: calc(50% + var(--mark-offset));
+        width: calc(50% - var(--mark-offset));
+
+        @media only screen and (max-width: 1200px) {
+            --mark-offset: 50px;
+
+            top: -24px;
+        }
+    }
+
+    &__layout {
+        margin: calc(207px - var(--triangleHeight)) auto 0;
         padding-bottom: 207px;
     }
 

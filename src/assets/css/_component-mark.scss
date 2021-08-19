@@ -1,0 +1,43 @@
+.mark {
+    position: absolute;
+    border-radius: 210px;
+    width: 25vw; // fallback
+}
+
+.mark--light-violet {
+    background: linear-gradient(85.9deg, #d7e5ff, rgba(240, 242, 246, 0));
+}
+
+.mark--dark-violet {
+    background: linear-gradient(85.95deg, #020084, #d2e4ff);
+    opacity: 0.6;
+}
+
+.mark--big {
+    height: 48px;
+
+    @media only screen and (max-width: 1200px) {
+        height: 24px;
+    }
+}
+
+.mark--small {
+    height: 24px;
+
+    @media only screen and (max-width: 1200px) {
+        height: 16px;
+    }
+}
+
+.mark--left {
+    left: 0;
+    transform: rotate(180deg);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.mark--right {
+    right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
