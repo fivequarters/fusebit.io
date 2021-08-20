@@ -41,8 +41,6 @@
         }
 
         @media only screen and (max-width: 700px) {
-            padding: 8rem 0 4rem;
-
             background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--mobile.png)
                 center bottom no-repeat;
             background-size: cover;
@@ -50,11 +48,11 @@
     }
 
     &__mark-right {
-        @include mark-offset(400px, 100px);
+        @include mark-offset(400px, 60px);
     }
 
     &__mark-left {
-        @include mark-offset(300px, 100px, true);
+        @include mark-offset(300px, 25px, true);
     }
 
     &__container {

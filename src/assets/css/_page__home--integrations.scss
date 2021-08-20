@@ -13,11 +13,17 @@
     }
 
     &__mark-big {
-        @include mark-offset(430px, 100px);
+        @include mark-offset(430px, 45px);
     }
 
     &__mark-small {
-        @include mark-offset(560px, 100px);
+        top: 48px;
+
+        @media screen and (max-width: 1200px) {
+            top: 24px;
+        }
+
+        @include mark-offset(560px, 105px);
     }
 
     &__wrapper {

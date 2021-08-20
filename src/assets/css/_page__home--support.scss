@@ -21,7 +21,7 @@
     }
 
     &__mark {
-        @include mark-offset(250px, 100px);
+        @include mark-offset(250px, 25px);
     }
 
     &__wrapper {
