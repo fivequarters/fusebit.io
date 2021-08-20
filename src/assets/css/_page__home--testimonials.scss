@@ -4,15 +4,12 @@
     justify-content: center;
     align-items: center;
     color: var(--dark);
-    background: linear-gradient(to top, var(--neutralLight) 50%, #ffffff 120%);
-    padding: 4rem 0 14rem;
-    z-index: 1;
 
     &__container {
         position: relative;
         width: 90%;
         max-width: var(--container);
-        padding: 2rem 0;
+        padding-top: 2rem !important;
     }
 
     &__wrapper {
