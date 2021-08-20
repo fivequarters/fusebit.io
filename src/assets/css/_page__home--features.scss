@@ -47,6 +47,10 @@
         }
     }
 
+    &__marks-container {
+        z-index: 1;
+    }
+
     &__mark-right {
         @include mark-offset(400px, 60px);
     }
@@ -154,7 +158,7 @@
         @media only screen and (max-width: 1000px) {
             width: 100%;
             max-width: 100%;
-            margin-bottom: 5rem;
+            // Review: margin-bottom: 5rem;
         }
     }
 
@@ -565,6 +569,7 @@
 
             &.features__list--2nd {
                 margin-top: 400px;
+                // Review: margin-top: 300px;
             }
         }
 
@@ -638,6 +643,7 @@
         @media only screen and (max-width: 500px) {
             &--graph {
                 top: 33%;
+                // Review: top: 42%;
             }
         }
     }
