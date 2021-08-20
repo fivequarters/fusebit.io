@@ -11,8 +11,9 @@ mixin path
             circle(cx="14" cy="8.004" r="7" stroke="#D7E5FF" stroke-width="2")
 
 
-section.integrations      
-    .integrations__container 
+section.integrations.section.section--no-margin
+    .background.background--neutralLight(style="z-index: 0")  
+    .integrations__container.layout.layout--no-padding-bottom
         .integrations__wrapper.integrations__wrapper--head
             h2.integrations__title 
                 span Enjoy the freedom
@@ -42,7 +43,7 @@ section.integrations
 
 
                     .integrations__item--image
-                        img(src="../../assets/images/homepage/enjoyFreedom/integrations--step1.png", alt="We provide an extensible code-first model")
+                        img(src="../../assets/images/homepage/enjoyFreedom/integrations--step1.png" alt="We provide an extensible code-first model")
 
                 li.integrations__item(data-image="1")
                     .integrations__item--content 
@@ -63,9 +64,9 @@ section.integrations
                                     clipPath(id="clip0")
                                         path(fill="#fff" d="M0 0h24v24H0z")
 
-                    
+
                     .integrations__item--image
-                        img(src="../../assets/images/homepage/enjoyFreedom/integrations--step2.png", alt="The package's powerful ecosystem" class="")
+                        img(src="../../assets/images/homepage/enjoyFreedom/integrations--step2.png" alt="The package's powerful ecosystem" class="")
 
                 li.integrations__item(data-image="2") 
                     .integrations__item--content 
@@ -89,9 +90,9 @@ section.integrations
 
 
                     .integrations__item--image
-                        img(src="../../assets/images/homepage/enjoyFreedom/integrations--step3.png", alt="First-class support for versioning" class="") 
-                
-            
+                        img(src="../../assets/images/homepage/enjoyFreedom/integrations--step3.png" alt="First-class support for versioning" class="") 
+
+
             script.
                 let integrationsSection = document.querySelector('.integrations');
                 if(integrationsSection) {

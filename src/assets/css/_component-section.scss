@@ -22,6 +22,14 @@
     background: var(--neutralLight);
 }
 
+.background--dark {
+    background: var(--dark);
+}
+
+.background--white {
+    background: var(--white);
+}
+
 .background--straight {
     transform: skewY(0);
 }
@@ -30,7 +38,7 @@
     max-width: var(--container);
     width: 90%;
     margin: 0 auto;
-    padding: var(--triangleHeight) 0;
+    padding: var(--paddingLayout) 0;
 }
 
 .layout--no-padding {
