@@ -24,6 +24,10 @@
         }
     }
 
+    &__background {
+        z-index: 1;
+    }
+
     &__text--mobile {
         display: none;
 
@@ -36,6 +40,7 @@
         position: relative;
         width: 90%;
         max-width: var(--container);
+        z-index: 2;
     }
 
     &__mark {

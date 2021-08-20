@@ -5,11 +5,16 @@
     padding: 1rem 0 8rem;
     overflow: hidden;
 
+    &__background {
+        z-index: 2;
+    }
+
     &__container {
         position: relative;
         width: 90%;
         max-width: calc(var(--container) - 3rem);
         padding-left: 3rem;
+        z-index: 3;
     }
 
     &__mark-big {
