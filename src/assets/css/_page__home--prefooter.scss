@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     color: var(--dark);
-    padding: 5rem 0 10rem;
+    padding-bottom: 10rem;
     overflow: hidden;
 
     &__container {
@@ -233,19 +233,7 @@
         }
     }
 
-    @media only screen and (max-width: 1024px) and (max-height: 1366px) {
-        padding-top: 8rem;
-    }
-
     @media only screen and (max-width: 1000px) {
-        padding: 5rem 0;
-    }
-
-    @media only screen and (max-width: 576px) {
-        padding: 40px 0;
-    }
-
-    @media only screen and (max-width: 500px) {
         padding-bottom: 0;
     }
 }

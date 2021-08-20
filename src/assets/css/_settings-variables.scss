@@ -44,4 +44,8 @@
         var(--triangleHeight) + var(--paddingBase) - var(--angleSine) *
             var(--gutterWidth)
     );
+
+    @media screen and (max-width: 1200px) {
+        --gutterWidth: 16px;
+    }
 }
