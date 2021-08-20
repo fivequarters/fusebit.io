@@ -12,6 +12,14 @@
         padding-left: 3rem;
     }
 
+    &__mark-big {
+        @include mark-offset(430px, 100px);
+    }
+
+    &__mark-small {
+        @include mark-offset(560px, 100px);
+    }
+
     &__wrapper {
         position: relative;
         width: calc(100% - 1.5rem);

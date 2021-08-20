@@ -38,6 +38,10 @@
         max-width: var(--container);
     }
 
+    &__mark {
+        @include mark-offset(480px, 100px, true);
+    }
+
     &__title {
         background: radial-gradient(
             rgba(255, 255, 255, 1) 70%,

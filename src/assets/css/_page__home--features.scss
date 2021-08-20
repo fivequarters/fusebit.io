@@ -49,6 +49,14 @@
         }
     }
 
+    &__mark-right {
+        @include mark-offset(400px, 100px);
+    }
+
+    &__mark-left {
+        @include mark-offset(300px, 100px, true);
+    }
+
     &__container {
         position: relative;
         width: 90%;

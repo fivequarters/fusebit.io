@@ -12,6 +12,10 @@
         padding-top: 2rem !important;
     }
 
+    &__mark {
+        @include mark-offset(200px, 100px);
+    }
+
     &__wrapper {
         position: relative;
         width: 100%;

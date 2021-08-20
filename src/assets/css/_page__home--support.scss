@@ -20,6 +20,10 @@
         }
     }
 
+    &__mark {
+        @include mark-offset(250px, 100px);
+    }
+
     &__wrapper {
         display: flex;
         justify-content: space-between;

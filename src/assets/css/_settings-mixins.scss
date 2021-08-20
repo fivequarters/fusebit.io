@@ -60,3 +60,19 @@
         line-height: 38.4px;
     }
 }
+
+@mixin mark-offset($desktop-offset, $mobile-offset, $isLeft: false) {
+    --mark-offset: #{$desktop-offset};
+
+    @if $isLeft {
+        right: calc(50% + var(--mark-offset));
+    } @else {
+        left: calc(50% + var(--mark-offset));
+    }
+
+    width: calc(50% - var(--mark-offset));
+
+    @media only screen and (max-width: 1200px) {
+        --mark-offset: #{$mobile-offset};
+    }
+}

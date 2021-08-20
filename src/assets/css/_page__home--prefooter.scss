@@ -18,6 +18,10 @@
         }
     }
 
+    &__mark {
+        @include mark-offset(450px, 100px);
+    }
+
     &__content {
         flex: 1;
         max-width: 664px;
