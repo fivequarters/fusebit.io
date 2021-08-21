@@ -10,10 +10,15 @@
         width: 90%;
         max-width: var(--container);
         padding-top: 6rem !important;
+        z-index: 3;
 
         @media screen and (max-width: 700px) {
             padding-top: 0rem !important;
         }
+    }
+
+    &__background {
+        z-index: 2;
     }
 
     &__mark {

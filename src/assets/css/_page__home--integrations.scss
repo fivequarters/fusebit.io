@@ -6,7 +6,7 @@
     overflow: hidden;
 
     &__background {
-        z-index: 2;
+        z-index: 1;
     }
 
     &__container {
@@ -14,7 +14,7 @@
         width: 90%;
         max-width: calc(var(--container) - 3rem);
         padding-left: 3rem;
-        z-index: 3;
+        z-index: 2;
     }
 
     &__mark-big {

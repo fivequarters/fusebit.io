@@ -12,10 +12,15 @@
         width: 90%;
         max-width: var(--container);
         display: flex;
+        z-index: 3;
 
         @media only screen and (max-width: 1000px) {
             flex-direction: column;
         }
+    }
+
+    &__background {
+        z-index: 2;
     }
 
     &__mark {
