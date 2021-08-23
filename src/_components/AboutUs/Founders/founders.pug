@@ -17,6 +17,22 @@ section.section.founders
         .mark.mark--big.mark--dark-violet.mark--left.founders__mark-small
         .mark.mark--small.mark--light-violet.mark--left.founders__mark-big
     .layout.founders__layout
+        .founders__people--mobile
+            svg(width='25' height='438' viewbox='0 0 25 438' fill='none' xmlns='http://www.w3.org/2000/svg' id="founders__first-path")
+                path(d='M25 437H17C8.16344 437 1 429.837 1 421V0' stroke='#D7E5FF' stroke-width='2')
+            svg(width='26' height='275' viewbox='0 0 26 275' fill='none' xmlns='http://www.w3.org/2000/svg' id="founders__second-path")
+                path(d='M0.5 1.5H9C17.8366 1.5 25 8.66344 25 17.5V258C25 266.837 17.8366 274 9 274H1' stroke='#D7E5FF' stroke-width='2')
+            svg(width='26' height='275' viewbox='0 0 26 275' fill='none' xmlns='http://www.w3.org/2000/svg' id="founders__third-path")
+                path(d='M25.5 1H17C8.16344 1 1 8.16344 1 17V257.5C1 266.337 8.16344 273.5 17 273.5H25' stroke='#D7E5FF' stroke-width='2')
+            .founders__card--container.founders__founder-1
+                .founders__founder
+                    +card('../../../assets/images/about/founders/founder-1.svg', 'Tomasz Janczuk', 'Co-founder & CEO')
+            .founders__card--container.founders__founder-2
+                .founders__founder
+                    +card('../../../assets/images/about/founders/founder-2.svg', 'Yavor Georgiev', 'Co-founder & CPO')
+            .founders__card--container.founders__founder-3
+                .founders__founder
+                    +card('../../../assets/images/about/founders/founder-3.svg', 'Benn Bollay', 'Co-founder & CTO')
         .founders__info
             .founders__content
                 +title('Fusebit ', 'founders', false, true)
@@ -29,12 +45,22 @@ section.section.founders
                 .founders__card-img-container.founders__card-microsoft
                     img(src="../../../assets/images/about/founders/microsoft.svg")
                 span Cloud & developer expertise
-        .founders__path-container
+        .founders__path-container.founders__people--desktop
             img(src="../../../assets/images/ellipse.svg").founders__ellipse
             img(src="../../../assets/images/about/founders/path.svg").founders__path
-            .founders__founder.founders__founder-1
+            .founders__founder.founders__founder--svg.founders__founder-1
                 +card('../../../assets/images/about/founders/founder-1.svg', 'Tomasz Janczuk', 'Co-founder & CEO')
-            .founders__founder.founders__founder-2
+            .founders__founder.founders__founder--svg.founders__founder-2
                 +card('../../../assets/images/about/founders/founder-2.svg', 'Yavor Georgiev', 'Co-founder & CPO')
-            .founders__founder.founders__founder-3
+            .founders__founder.founders__founder--svg.founders__founder-3
                 +card('../../../assets/images/about/founders/founder-3.svg', 'Benn Bollay', 'Co-founder & CTO')
+        //- .founders__people--mobile
+        //-     .founders__card--container.founders__founder-1
+        //-         .founders__founder
+        //-             +card('../../../assets/images/about/founders/founder-1.svg', 'Tomasz Janczuk', 'Co-founder & CEO')
+        //- .founders__card--container
+        //-     .founders__founder.founders__founder-2
+        //-         +card('../../../assets/images/about/founders/founder-2.svg', 'Yavor Georgiev', 'Co-founder & CPO')
+        //- .founders__card--container
+        //-     .founders__founder.founders__founder-3
+        //-         +card('../../../assets/images/about/founders/founder-3.svg', 'Benn Bollay', 'Co-founder & CTO')
