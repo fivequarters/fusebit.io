@@ -2,29 +2,18 @@
     position: relative;
 
     &__mark-big {
-        --mark-offset: 500px;
-
+        @include mark-offset(500px, 100px, true);
         bottom: calc(var(--triangleHeight) + 48px);
-        right: calc(50% + var(--mark-offset));
-        width: calc(50% - var(--mark-offset));
 
         @media only screen and (max-width: 1200px) {
-            --mark-offset: 100px;
-
             bottom: calc(var(--triangleHeight) + 24px);
         }
     }
 
     &__mark-small {
-        --mark-offset: 355px;
+        @include mark-offset(355px, 50px, true);
 
         bottom: var(--triangleHeight);
-        right: calc(50% + var(--mark-offset));
-        width: calc(50% - var(--mark-offset));
-
-        @media only screen and (max-width: 1200px) {
-            --mark-offset: 50px;
-        }
     }
 
     &__layout {

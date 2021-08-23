@@ -141,13 +141,23 @@ if (homepage) {
     path2.style.opacity = 1;
 
     const configPath2 = () => {
-        path2.style.top =
-            document.querySelector('.integrations').offsetTop + 25 + 'px';
+        const offset = document.querySelector('.integrations').offsetTop + 'px';
+
+        path2.style.setProperty(
+            'top',
+            'calc(var(--triangleHeight) + var(--paddingBase) - var(--angleSine) * var(--gutterWidth) + 25px + ' +
+                offset +
+                ')'
+        );
     };
 
     configPath2();
 
     window.addEventListener('load', () => {
+        configPath2();
+    });
+
+    window.addEventListener('resize', () => {
         configPath2();
     });
 

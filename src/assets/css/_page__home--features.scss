@@ -2,21 +2,79 @@
     position: relative;
     display: flex;
     justify-content: center;
-    padding: 15rem 0 14rem;
     overflow: hidden;
 
-    background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--1920.png)
-            center top no-repeat,
-        #0f091d;
-    background-size: 100%;
+    &__background {
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transform-origin: 100% 0;
+            transform: skewY(6deg);
+
+            background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--1920.png)
+                    center top no-repeat,
+                #0f091d;
+
+            @media only screen and (min-height: 1079px) {
+                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--4500.png)
+                    center top no-repeat;
+                background-size: cover;
+            }
+
+            @media only screen and (min-height: 3000px) {
+                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--4500.png)
+                        center center no-repeat,
+                    #0b1024;
+            }
+
+            @media only screen and (max-width: 1500px) {
+                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--1360.png)
+                    center top no-repeat;
+                background-size: 100%;
+            }
+
+            @media only screen and (max-width: 1300px) {
+                background-size: cover;
+            }
+
+            @media only screen and (max-width: 1000px) {
+                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--1360.png)
+                    center center no-repeat;
+                background-size: cover;
+            }
+
+            @media only screen and (max-width: 700px) {
+                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--mobile.png)
+                    center bottom no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+
+    &__marks-container {
+        z-index: 1;
+    }
+
+    &__mark-right {
+        @include mark-offset(400px, 60px);
+    }
+
+    &__mark-left {
+        @include mark-offset(300px, 25px, true);
+    }
 
     &__container {
         position: relative;
         width: 90%;
         max-width: calc(var(--container) - 4rem);
         padding-left: 4rem;
-        z-index: 9;
-        //border: 1px solid red;
+        z-index: 1;
 
         @media only screen and (max-width: 700px) {
             width: calc(90% - 2.5rem);
@@ -110,7 +168,6 @@
         @media only screen and (max-width: 1000px) {
             width: 100%;
             max-width: 100%;
-            margin-bottom: 5rem;
         }
     }
 
@@ -520,7 +577,13 @@
             }
 
             &.features__list--2nd {
-                margin-top: 400px;
+                margin-top: 350px;
+            }
+        }
+
+        @media only screen and (max-width: 350px) {
+            &.features__list--2nd {
+                margin-top: 300px;
             }
         }
 
@@ -534,7 +597,6 @@
     &__images {
         position: relative;
         width: 50%;
-        max-width: 460px;
 
         img {
             width: 100%;
@@ -542,19 +604,34 @@
 
         &--marketplace {
             left: 400px;
+            max-width: 600px;
 
             & > img {
                 width: 644px;
 
                 @media only screen and (max-width: 700px) {
-                    width: 120%;
+                    width: 100%;
+                    min-width: 300px;
                 }
+            }
+
+            @media only screen and (max-width: 500px) {
+                top: 35%;
+            }
+
+            @media only screen and (max-width: 450px) {
+                top: 37%;
+            }
+
+            @media only screen and (max-width: 350px) {
+                top: 42%;
             }
         }
 
         &--graph {
             left: -400px;
             opacity: 0;
+            max-width: 460px;
 
             & > img {
                 transform: scale(1.5);
@@ -564,15 +641,24 @@
                 }
 
                 @media only screen and (max-width: 700px) {
-                    transform: translateY(2rem) scale(1.5);
+                    transform: translateX(-15%);
                 }
+            }
+
+            @media only screen and (max-width: 1000px) {
+                max-width: 600px;
+                min-width: 375px;
+                width: 100%;
+            }
+
+            @media only screen and (max-width: 700px) {
+                max-width: 460px;
             }
         }
 
         @media only screen and (max-width: 1000px) {
             position: absolute;
             width: 100%;
-            max-width: 600px;
 
             &--graph {
                 top: 26%;
@@ -596,106 +682,11 @@
                 top: 33%;
             }
         }
-    }
 
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 230px;
-        z-index: 0;
-        //display: none;
-        //opacity: 0.5;
-
-        @media only screen and (min-width: 2000px) {
-            height: 360px;
+        @media only screen and (max-width: 350px) {
+            &--graph {
+                top: 39%;
+            }
         }
-    }
-
-    &::before {
-        top: -2px;
-        background: url(./images/features__bg--top.svg) right top no-repeat;
-        background-size: 100%;
-
-        @media only screen and (min-width: 1800px) {
-            top: -5px;
-            background: url(./images/features__bg--top--2000.svg) right top
-                no-repeat;
-            background-size: cover;
-        }
-
-        @media only screen and (min-width: 3000px) {
-            background: url(./images/features__bg--top--3000.svg) right top
-                no-repeat;
-            background-size: cover;
-            height: 400px;
-        }
-
-        @media only screen and (max-width: 1000px) {
-            background-size: 200%;
-        }
-    }
-    &::after {
-        bottom: -2px;
-        background: url(./images/features__bg--bottom.svg) left bottom no-repeat;
-        background-size: 100%;
-        z-index: 10;
-
-        @media only screen and (min-width: 1800px) {
-            bottom: -5px;
-            background: url(./images/features__bg--bottom--2000.svg) left bottom
-                no-repeat;
-            background-size: cover;
-        }
-
-        @media only screen and (min-width: 3000px) {
-            background: url(./images/features__bg--bottom--3000.svg) left bottom
-                no-repeat;
-            background-size: cover;
-            height: 400px;
-        }
-
-        @media only screen and (max-width: 1000px) {
-            background-size: 200%;
-        }
-    }
-
-    @media only screen and (min-height: 1079px) {
-        background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--4500.png)
-            center top no-repeat;
-        background-size: cover;
-    }
-
-    @media only screen and (min-height: 3000px) {
-        background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--4500.png)
-                center center no-repeat,
-            #0b1024;
-    }
-
-    @media only screen and (max-width: 1500px) {
-        background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--1360.png)
-            center top no-repeat;
-        background-size: 100%;
-    }
-
-    @media only screen and (max-width: 1300px) {
-        background-size: cover;
-    }
-
-    @media only screen and (max-width: 1000px) {
-        //padding: 300px 0;
-        background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--1360.png)
-            center center no-repeat;
-        background-size: cover;
-    }
-
-    @media only screen and (max-width: 700px) {
-        padding: 8rem 0 4rem;
-
-        background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--mobile.png)
-            center bottom no-repeat;
-        background-size: cover;
     }
 }

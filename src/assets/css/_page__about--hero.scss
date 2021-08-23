@@ -12,28 +12,18 @@
     }
 
     &__mark-small {
-        --mark-offset: 510px;
-
-        left: calc(50% + var(--mark-offset));
-        width: calc(50% - var(--mark-offset));
+        @include mark-offset(510px, 100px);
         top: -24px;
 
         @media only screen and (max-width: 1200px) {
-            --mark-offset: 100px;
-
             top: -40px;
         }
     }
 
     &__mark-big {
-        --mark-offset: 370px;
-
-        left: calc(50% + var(--mark-offset));
-        width: calc(50% - var(--mark-offset));
+        @include mark-offset(370px, 50px);
 
         @media only screen and (max-width: 1200px) {
-            --mark-offset: 50px;
-
             top: -24px;
         }
     }

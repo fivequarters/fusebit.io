@@ -10,8 +10,14 @@
     --green: #15d6cf;
     --purple: #441b49;
     --dark: #03032d;
+    --darker: linear-gradient(204.03deg, #07122e 16.62%, #16071e 81.74%);
     --neutral: #a1a1c0;
     --neutralLight: #f0f7ff;
+    --degradedNeutralLight: linear-gradient(
+        to top,
+        var(--neutralLight) 50%,
+        #ffffff 120%
+    );
     --neutralDark: #6f6f86;
     --gray1: #eef6ff;
     --gray2: #e6f0fe;
@@ -32,4 +38,14 @@
     --triangleHeight: calc(
         (var(--triangleBase) / var(--angleCosine)) * var(--angleSine)
     );
+    --gutterWidth: calc(50vw - var(--container) / 2);
+    --paddingBase: 55px;
+    --paddingLayout: calc(
+        var(--triangleHeight) + var(--paddingBase) - var(--angleSine) *
+            var(--gutterWidth)
+    );
+
+    @media screen and (max-width: 1200px) {
+        --gutterWidth: 16px;
+    }
 }
