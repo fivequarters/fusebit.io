@@ -2,14 +2,7 @@
     position: relative;
 
     &__mark {
-        --mark-offset: 450px;
-
-        left: calc(50% + var(--mark-offset));
-        width: calc(50% - var(--mark-offset));
-
-        @media only screen and (max-width: 1200px) {
-            --mark-offset: 100px;
-        }
+        @include mark-offset(450px, 100px);
     }
 
     &__layout {
