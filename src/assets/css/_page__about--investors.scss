@@ -7,6 +7,10 @@
 
     &__layout {
         padding-bottom: 120px;
+
+        @media (max-width: 992px) {
+            padding-bottom: 116px;
+        }
     }
 
     &__short-mark {
@@ -48,6 +52,10 @@
         & p {
             max-width: none;
             margin-top: 24px;
+
+            @media (max-width: 992px) {
+                margin-top: 32px;
+            }
         }
     }
 
@@ -55,7 +63,11 @@
         margin-top: 72px;
         display: flex;
         justify-content: space-between;
-        margin-right: -10px;
+        overflow: unset !important;
+
+        @media (max-width: 768px) {
+            margin-top: 42px;
+        }
     }
 
     &__card {
@@ -69,6 +81,11 @@
         min-height: 326px;
         justify-content: space-between;
         margin-right: 10px;
+
+        @media (max-width: 768px) {
+            padding: 32px 24px 24px;
+            margin: 0 auto;
+        }
     }
 
     &__card-text {
@@ -77,6 +94,11 @@
 
         & span {
             font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            @include font-size(14);
+            margin: 24px 0 32px;
         }
     }
 
@@ -95,6 +117,11 @@
         font-weight: 600;
         line-height: 20px;
         color: var(--dark);
+
+        @media (max-width: 768px) {
+            @include font-size(14);
+            margin-bottom: 4px;
+        }
     }
 
     &__card-position {
@@ -102,6 +129,10 @@
         line-height: 20px;
         color: rgba(3, 3, 45, 0.5);
         opacity: 0.6;
+
+        @media (max-width: 768px) {
+            @include font-size(14);
+        }
     }
 
     &__card-img-container {
