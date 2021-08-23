@@ -1,6 +1,11 @@
 .hero {
-    &__background {
+    &__background--desktop {
         top: 30%;
+        display: block;
+
+        @media only screen and (max-width: 992px) {
+            display: none;
+        }
 
         @media only screen and (min-width: 2500px) {
             top: 25%;
@@ -11,8 +16,18 @@
         }
     }
 
+    &__background--mobile {
+        display: none;
+        width: 110%;
+        margin-left: -5%;
+
+        @media only screen and (max-width: 992px) {
+            display: block;
+        }
+    }
+
     &__mark-small {
-        @include mark-offset(510px, 100px);
+        @include mark-offset(510px, 90px);
         top: -24px;
 
         @media only screen and (max-width: 1200px) {
@@ -21,7 +36,7 @@
     }
 
     &__mark-big {
-        @include mark-offset(370px, 50px);
+        @include mark-offset(370px, 40px);
 
         @media only screen and (max-width: 1200px) {
             top: -24px;
@@ -31,6 +46,12 @@
     &__layout {
         margin: calc(207px - var(--triangleHeight)) auto 0;
         padding-bottom: 207px;
+        display: block;
+
+        @media only screen and (max-width: 992px) {
+            padding: 0;
+            margin: 88px auto 0;
+        }
     }
 
     &__short-mark {
@@ -65,12 +86,32 @@
         > span {
             color: var(--orange);
         }
+
+        @media only screen and (max-width: 992px) {
+            max-width: 525px;
+            @include font-size(38);
+            margin-bottom: 8px;
+        }
     }
 
     &__content {
+        position: relative;
+        margin-right: -10px;
+    }
+
+    &__info-container {
         display: flex;
         justify-content: space-between;
-        margin-right: -10px;
+
+        @media only screen and (max-width: 992px) {
+            --paddingBase: 16px;
+            flex-direction: column;
+            padding: calc(
+                    var(--triangleHeight) + var(--paddingBase) -
+                        var(--angleSine) * var(--gutterWidth)
+                )
+                0 73px 0;
+        }
     }
 
     &__main-text {
@@ -81,6 +122,14 @@
         line-height: 160%;
         color: var(--dark);
         margin-right: 10px;
+        opacity: 0.6;
+
+        @media only screen and (max-width: 992px) {
+            max-width: none;
+            margin-bottom: 48px;
+            @include font-size(16);
+            opacity: 0.8;
+        }
     }
 
     &__items {
@@ -108,6 +157,10 @@
                 font-weight: 600;
             }
         }
+
+        @media only screen and (max-width: 992px) {
+            @include font-size(14);
+        }
     }
 
     &__item-border {
@@ -116,5 +169,10 @@
         width: 2px;
         background-color: var(--orange);
         margin: auto 24px auto 0;
+
+        @media only screen and (max-width: 992px) {
+            height: auto;
+            margin: 0 24px 0 0;
+        }
     }
 }
