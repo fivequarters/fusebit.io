@@ -9,6 +9,11 @@
     & > span {
         color: var(--orange);
     }
+
+    @media only screen and (max-width: 992px) {
+        @include font-size(38);
+        margin-bottom: 8px;
+    }
 }
 
 .title--black {
