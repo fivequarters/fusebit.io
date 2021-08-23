@@ -81,7 +81,7 @@ jobs:
 
       - name: Invalidate CloudFront
         env:
-          CLOUDFRONT_ID: E3H6N4PO77X1SD
+          CLOUDFRONT_ID: E25L57ELU5N7RT
         run: ./scripts/invalidate_cloudfront.sh
 
       - name: Notify slack success
