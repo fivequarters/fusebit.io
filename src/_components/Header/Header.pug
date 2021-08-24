@@ -1,13 +1,18 @@
 -
     const headerLinks = [
         {
-            text: 'About us',
-            link: '/about',
+            text: 'Developers',
+            link: 'https://developer.fusebit.io',
+            onClick: "sendEvent('Navigation', 'Clicked developers header nav');"
+        },
+        {
+            text: 'About Us',
+            link: '/about/',
             onClick: "sendEvent('Navigation', 'Clicked about header nav');"
         },
         {
             text: 'Careers',
-            link: '/careers',
+            link: '/careers/',
             onClick: "sendEvent('Navigation', 'Clicked careers header nav');"
         }
     ]
@@ -26,7 +31,7 @@ header.header
         .header__links 
             ul  
                 li 
-                    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
+                    a.header__links--signUp.sign-up-cta(onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
 
         .header__menuMobile--btn 
             span.top 
@@ -43,7 +48,7 @@ header.header
                         a(href=link.link onclick=link.onClick)=link.text
 
                 li 
-                    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
+                    a.header__links--signUp.sign-up-cta(onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
 
         .menuMobile__social 
             include ../SocialMedia/SocialMedia
@@ -76,23 +81,10 @@ header.header
             });
 
             const header = document.querySelector('.header');
-            const headerSignUp = header.querySelectorAll('.header__links--signUp');
             const menuMobileBtn = document.querySelector('.header__menuMobile--btn');
 
             menuMobileBtn.addEventListener('click', () => {
                 header.classList.toggle('header__menuMobile--open');
                 document.querySelector('html').classList.toggle('hidden');
             });
-
-            headerSignUp.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-
-                    const modal = document.querySelector('#modal__signUp')
-                    const overlay = document.querySelector('.modal__overlay');
-
-                    modal.style.display = 'block';
-                    overlay.style.display = 'block';
-                })
-            })
         });

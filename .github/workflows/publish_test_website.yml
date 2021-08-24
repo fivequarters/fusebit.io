@@ -1,7 +1,7 @@
 ###################################################################
 # Auto-created by the cicd-actions tool
 on: workflow_dispatch
-name: Publish to fusebit.io
+name: Publish to fivequarters.io
 jobs:
   deploy:
     name: Deploy
@@ -71,17 +71,17 @@ jobs:
 
       - name: Publish - website
         env:
-          S3_BUCKET: fusebit.io
+          S3_BUCKET: fivequarters.io
         run: ./scripts/publish_website.sh
 
       - name: Build and Publish - docs
         env:
-          S3_BUCKET: fusebit.io
+          S3_BUCKET: fivequarters.io
         run: ./scripts/publish_docs.sh
 
       - name: Invalidate CloudFront
         env:
-          CLOUDFRONT_ID: E25L57ELU5N7RT
+          CLOUDFRONT_ID: E3H6N4PO77X1SD
         run: ./scripts/invalidate_cloudfront.sh
 
       - name: Notify slack success
