@@ -1,0 +1,32 @@
+.hero {
+    position: relative;
+
+    &__layout {
+        padding-top: 216px;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        max-width: 376px;
+        margin-bottom: 54px;
+    }
+
+    &__cta {
+        width: 261px;
+    }
+
+    &__description {
+        margin-bottom: -41px;
+
+        & p {
+            margin-bottom: 41px;
+            max-width: 635px;
+            color: var(--white);
+            opacity: 0.8;
+        }
+    }
+}

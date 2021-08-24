@@ -1,0 +1,17 @@
+.description {
+    position: relative;
+
+    &__title {
+        max-width: 536px;
+    }
+
+    &__text {
+        max-width: 528px;
+        opacity: 0.6;
+    }
+
+    &__title-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}

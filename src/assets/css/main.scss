@@ -30,6 +30,12 @@
     @import '_page__about--investors';
 }
 
+.careers {
+    @import '_page__careers--hero';
+    @import '_page__careers--description';
+    @import '_page__careers--join';
+}
+
 // Components
 @import 'component-modal';
 @import 'component-social_media';
