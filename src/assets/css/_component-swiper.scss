@@ -1,0 +1,9 @@
+.swiper__pagination {
+    bottom: -32px !important;
+
+    .swiper-pagination-bullet {
+        background: var(--dark);
+        width: 4px;
+        height: 4px;
+    }
+}

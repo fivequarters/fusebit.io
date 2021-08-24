@@ -35,4 +35,9 @@
         transition: none;
         background: var(--yellow);
     }
+
+    @media (max-width: 992px) {
+        @include font-size(16);
+        height: 48px;
+    }
 }

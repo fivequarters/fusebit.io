@@ -3,4 +3,16 @@
     font-weight: 300;
     line-height: 160%;
     color: var(--dark);
+
+    @media only screen and (max-width: 992px) {
+        @include font-size(16);
+    }
+}
+
+.text--black {
+    color: var(--dark);
+}
+
+.text--white {
+    color: var(--white);
 }

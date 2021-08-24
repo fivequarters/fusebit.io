@@ -4,6 +4,13 @@
     position: relative;
     overflow: hidden;
 
+    @media (max-width: 576px) {
+        background: url(./images/teams__bg--mobile.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+
     &__container {
         display: flex;
         padding: 195px 0 185px 0;
@@ -11,40 +18,35 @@
         margin: 0 auto;
         max-width: var(--container);
         width: 90%;
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+            padding: 81px 0 61px 0;
+        }
     }
 
     &__info {
         z-index: 2;
     }
 
-    &__title {
-        @include font-size(48);
-        font-family: var(--sora);
-        font-weight: 700;
-        color: var(--neutralLight);
-        max-width: 576px;
-        line-height: 120%;
-        letter-spacing: -0.02em;
-
-        & > span {
-            display: block;
-            color: var(--orange);
-        }
-    }
-
     &__text {
-        @include font-size(18);
-        font-weight: 300;
-        line-height: 160%;
         max-width: 549px;
         margin-top: 32px;
-        color: var(--white);
+
+        @media (max-width: 992px) {
+            margin-top: 24px;
+        }
     }
 
     &__cta {
         margin-top: 40px;
         color: var(--white);
         width: 224px;
+
+        @media (max-width: 992px) {
+            margin: 32px 0 97px;
+            width: 176px;
+        }
     }
 
     &__presentation {
@@ -52,6 +54,10 @@
         flex: 1;
         display: flex;
         justify-content: flex-end;
+
+        @media (max-width: 992px) {
+            justify-content: center;
+        }
     }
 
     &__map {
@@ -60,6 +66,15 @@
         position: absolute;
         right: -170px;
         top: -113px;
+
+        @media (max-width: 992px) {
+            top: -65px;
+            right: unset;
+            max-width: 358px;
+            max-height: 375px;
+            left: calc(50% - 15px);
+            transform: translateX(-50%) rotate(-8.32deg);
+        }
     }
 
     &__card {
@@ -75,6 +90,30 @@
         box-sizing: border-box;
         position: relative;
         right: -170px;
+
+        @media (max-width: 992px) {
+            right: auto;
+            margin-right: unset;
+            width: 174px;
+            height: 203px;
+            padding: 24px 0;
+        }
+    }
+
+    &__dots--desktop {
+        display: block;
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+
+    &__dots--mobile {
+        display: none;
+
+        @media (max-width: 992px) {
+            display: block;
+        }
     }
 
     &__dot {
@@ -112,7 +151,10 @@
     &__card-img-container {
         width: 80px;
         height: 80px;
-        background-color: var(--lightBlue);
+        background: url(../../../assets/images/about/teams/engineer.png),
+            var(--lightBlue);
+        background-position: -4px center;
+        background-size: cover;
         border-radius: 50%;
         overflow: hidden;
         position: relative;
@@ -121,6 +163,11 @@
         & > img {
             position: absolute;
             bottom: 0;
+        }
+
+        @media (max-width: 992px) {
+            width: 56px;
+            height: 56px;
         }
     }
 }

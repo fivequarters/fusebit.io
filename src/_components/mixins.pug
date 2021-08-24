@@ -1,5 +1,5 @@
-mixin title(main, sub, black, invert, className)
-    h2.title(class=black ? 'title--black' : 'title--white' class=invert && 'title--invert' class= className)= main
+mixin title(main, sub, black, invert, className, isMain)
+    h2.title(class= black ? 'title--black' : 'title--white' class=invert && 'title--invert' class= isMain ? 'title--main' : 'title--secondary' class= className)= main
         span= sub 
             i#underscore _
 
