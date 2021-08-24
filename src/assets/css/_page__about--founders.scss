@@ -258,8 +258,19 @@
         transform: translateX(-50%);
     }
 
-    #founders__second-dot,
-    #founders__third-dot {
+    &__initial-dot {
+        top: -14px;
+        animation: none;
+        display: none;
+
+        @media (max-width: 992px) {
+            display: block;
+        }
+    }
+
+    .founders__first-dot,
+    .founders__second-dot,
+    .founders__third-dot {
         opacity: 0;
     }
 }

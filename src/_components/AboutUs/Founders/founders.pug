@@ -18,15 +18,17 @@ section.section.founders
         .mark.mark--small.mark--light-violet.mark--left.founders__mark-big
     .layout.founders__layout
         .founders__people--mobile
-            #founders__second-dot.pathdot
-            #founders__third-dot.pathdot
+            .founders__initial-dot.pathdot
+            .founders__first-dot.pathdot
+            .founders__second-dot.pathdot
+            .founders__third-dot.pathdot
             svg(width='28' height='16' viewbox='0 0 28 16' fill='none' xmlns='http://www.w3.org/2000/svg' class="founders__mobile-path-circle")
                 g(opacity='0.6')
                     circle(cx='1' cy='8' r='1' fill='#D7E5FF')
                     circle(cx='27' cy='8' r='1' fill='#D7E5FF')
                     circle(cx='14' cy='8' r='7' stroke='#D7E5FF' stroke-width='2')
             svg(width='25' height='438' viewbox='0 0 25 438' fill='none' xmlns='http://www.w3.org/2000/svg' class="founders__first-mobile-path")
-                path(d='M25 437 H17 C8.16344 437 1 429.837 1 421 V0' stroke='#D7E5FF' stroke-width='2' id="founders__first-mobile-path")
+                path(d='M1,0v421c0,8.8,7.2,16,16,16h8' stroke='#D7E5FF' stroke-width='2' id="founders__first-mobile-path")
             .founders__card--container.founders__first-founder
                 .founders__founder
                     +card('../../../assets/images/about/founders/founder-1.svg', 'Tomasz Janczuk', 'Co-founder & CEO')
@@ -64,7 +66,7 @@ section.section.founders
 
 script.
     window.addEventListener("load", () => {
-        const makeScrollTrigger = (el, path) => {
+        const makeScrollTrigger = (el, path, options) => {
             gsap.to(el, {
                 scrollTrigger: {
                     trigger: path,
@@ -72,7 +74,7 @@ script.
                     end: "bottom 25%",
                     scrub: 0,
                     //- markers: true,
-                    onToggle: ({ progress, direction, isActive }) => {
+                    onToggle: ({ isActive }) => {
                         const dot = document.querySelector(el);
 
                         if (isActive) {
@@ -80,17 +82,29 @@ script.
                         } else {
                             dot.style.opacity = "0";
                         }
-                    }
+                    },
+                    ...options
                 },
                 motionPath: {
                     path: path,
                     align: path,
-                    alignOrigin: [0.5, 0.5]
+                    alignOrigin: [0.5, 0.5],
                 }
             });
         };
 
-        makeScrollTrigger("#founders__second-dot", "#founders__second-mobile-path");
-        makeScrollTrigger("#founders__third-dot", "#founders__third-mobile-path");
+        makeScrollTrigger(".founders__first-dot", "#founders__first-mobile-path", {
+            onUpdate: ({ progress }) => {
+                const dot = document.querySelector(".founders__initial-dot");
+
+                if (progress > 0) {
+                    dot.style.opacity = "0";
+                } else {
+                    dot.style.opacity = "1";
+                }
+            }
+        });
+        makeScrollTrigger(".founders__second-dot", "#founders__second-mobile-path");
+        makeScrollTrigger(".founders__third-dot", "#founders__third-mobile-path");
     });
 
