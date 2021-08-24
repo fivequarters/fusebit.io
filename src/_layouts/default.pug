@@ -1,5 +1,10 @@
 include ../_components/mixins.pug
 
+- var title = 'Fusebit'
+- var og_title = 'Fusebit: a powerful integration platform built for developers'
+- var description = 'With Fusebit, quickly integrate your application to other SaaS applications using flexible API building blocks. Fusebit provides connectors to popular APIs and hosts your integrations at scale.'
+- var og_image = 'https://cdn.fusebit.io/twitter/twitter-orange.png'
+
 block seo_variables
 block page_variable
 
@@ -12,11 +17,12 @@ html(lang='en' class=(pageClass || ''))
     meta(name='fragment' content='!')
     meta(name='msapplication-TileColor' content='#2b5797')
     meta(name='theme-color' content='#ffffff')
-    title=(title || "Fusebit")
-    meta(property='og:title' content=(og_title || 'Fusebit: a powerful integration platform built for developers'))
-    meta(property='og:description' content=(og_description || 'With Fusebit, quickly integrate your application to other SaaS applications using flexible API building blocks. Fusebit provides connectors to popular APIs and hosts your integrations at scale.'))
-    meta(property='twitter:title' content=(og_title || 'Fusebit: a powerful integration platform built for developers'))
-    meta(property='twitter:description' content=(og_description || 'With Fusebit, quickly integrate your application to other SaaS applications using flexible API building blocks. Fusebit provides connectors to popular APIs and hosts your integrations at scale.'))
+    meta(name='description' content=(description))
+    title=(title)
+    meta(property='og:title' content=(og_title))
+    meta(property='og:description' content=(description))
+    meta(property='twitter:title' content=(og_title))
+    meta(property='twitter:description' content=(description))
     meta(property='og:type' content='website')
     meta(property='og:site_name' content='Fusebit')
     meta(property='og:locale' content='en')
@@ -24,9 +30,9 @@ html(lang='en' class=(pageClass || ''))
     meta(name='twitter:site' content='@fusebitio')
     meta(name='twitter:creator' content='@fusebitio')
     meta(name='twitter:card' content='summary_large_image')
-    meta(property='og:image' content=(og_image || 'https://cdn.fusebit.io/twitter/twitter-orange.png'))
-    meta(property='og:image:secure_url' content=(og_image || 'https://cdn.fusebit.io/twitter/twitter-orange.png'))
-    meta(name='twitter:image:src' content=(og_image || 'https://cdn.fusebit.io/twitter/twitter-orange.png'))
+    meta(property='og:image' content=(og_image))
+    meta(property='og:image:secure_url' content=(og_image))
+    meta(name='twitter:image:src' content=(og_image))
     meta(name='twitter:image:width' content='1024')
     meta(name='twitter:image:height' content='512')
     link(rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png')
