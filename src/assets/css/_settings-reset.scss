@@ -125,6 +125,10 @@ table {
     border-spacing: 0;
 }
 
+a {
+    cursor: pointer;
+}
+
 ::selection {
     background: var(--yellow);
     color: white;
