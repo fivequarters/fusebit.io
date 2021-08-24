@@ -153,7 +153,7 @@
         bottom: 1%;
     }
 
-    &__founder-1 {
+    &__first-founder {
         left: 18%;
 
         @media screen and (max-width: 992px) {
@@ -163,7 +163,7 @@
         }
     }
 
-    &__founder-2 {
+    &__second-founder {
         left: 53%;
 
         @media screen and (max-width: 992px) {
@@ -173,7 +173,7 @@
         }
     }
 
-    &__founder-3 {
+    &__third-founder {
         left: 88%;
 
         @media screen and (max-width: 992px) {
@@ -256,5 +256,10 @@
         position: absolute;
         top: -14px;
         transform: translateX(-50%);
+    }
+
+    #founders__second-dot,
+    #founders__third-dot {
+        opacity: 0;
     }
 }
