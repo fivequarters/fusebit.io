@@ -30,6 +30,10 @@
     @import '_page__about--investors';
 }
 
+.blog {
+    @import '_blog';
+}
+
 // Components
 @import 'component-modal';
 @import 'component-social_media';
