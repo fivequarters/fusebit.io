@@ -1,5 +1,5 @@
 ---
-layout: default.pug
+layout: blog.pug
 ---
 
 # Fusebit Raises Seed Round
