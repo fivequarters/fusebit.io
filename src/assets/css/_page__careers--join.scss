@@ -1,17 +1,67 @@
-.description {
+.join {
     position: relative;
 
+    &__layout {
+        padding-bottom: 127px;
+    }
+
+    &__mark {
+        @include mark-offset(330px, 100px);
+    }
+
+    &__info-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     &__title {
-        max-width: 536px;
+        max-width: 551px;
+        margin-bottom: 32px;
     }
 
     &__text {
-        max-width: 528px;
+        max-width: 672px;
         opacity: 0.6;
+        margin-bottom: 32px;
+        text-align: center;
     }
 
-    &__title-container {
-        display: flex;
-        justify-content: space-between;
+    &__cta {
+        width: 261px;
+    }
+
+    &__avatar {
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    &__avatar-1 {
+        position: absolute;
+        left: -168px;
+        top: 116px;
+    }
+
+    &__avatar-2 {
+        position: absolute;
+        top: 29px;
+        left: -92px;
+    }
+
+    &__avatar-3 {
+        position: absolute;
+        top: -64px;
+        right: -81px;
+    }
+
+    &__avatar-4 {
+        position: absolute;
+        top: 132px;
+        right: -120px;
     }
 }

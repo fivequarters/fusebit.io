@@ -1,6 +1,16 @@
 .hero {
     position: relative;
 
+    &__mark {
+        @include mark-offset(310px, 100px, true);
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: calc(50% - 680px);
+    }
+
     &__layout {
         padding-top: 216px;
     }
@@ -12,7 +22,8 @@
 
     &__title {
         max-width: 376px;
-        margin-bottom: 54px;
+        margin-bottom: 51px;
+        line-height: 110%;
     }
 
     &__cta {
