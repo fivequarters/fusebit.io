@@ -1,8 +1,7 @@
 ---
-layout: blog.pug
+layout: post.pug
+permalink: hola.html
 ---
-
-# Fusebit Raises Seed Round
 
 As part of Fusebit's journey towards helping SaaS companies build powerful custom integrations, we caught up with Scott Willeke, Director of Product at Smartsheet, to learn from an industry leader about his company's approach to this space. Scott was the force behind Smartsheet's Connectors product line of premium-priced integrations for Jira and Salesforce, which drove >$1M in ARR in their first year on the market, and >$2M in the second year.
 
