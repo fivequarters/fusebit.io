@@ -13,14 +13,11 @@ footer.footer
 
             ul.footer__links 
                 li.footer__links--title  Company
-
-                +footerLink('https://developer.fusebit.io', 'Developers', 0, "sendEvent('Navigation', 'Clicked developers footer nav');")
+   
                 +footerLink('/about/', 'About Us', 0, "sendEvent('Navigation', 'Clicked about footer nav');")
                 +footerLink('/careers/', 'Careers', 0, "sendEvent('Navigation', 'Clicked careers footer nav');")
                 +footerLink('/support/', 'Support', 0, "sendEvent('Navigation', 'Clicked support footer nav');")
                 +footerLink('/contact/', 'Contact', 0, "sendEvent('Navigation', 'Clicked contact footer nav');")
-                //+footerLink('#blog', 'Blog', 0, "sendEvent('Navigation', 'Clicked blog footer nav');")
-                //+footerLink('#docs', 'Docs', 0, "sendEvent('Navigation', 'Clicked docs footer nav');")
 
             ul.footer__links 
                 li.footer__links--title  Solutions
@@ -29,7 +26,10 @@ footer.footer
                 +footerLink('https://go.fusebit.io/fusebot/', 'Slash Commands', 0, "sendEvent('Navigation', 'Clicked fusebot footer nav');")
 
             ul.footer__links 
-                li.footer__links--title  
+                li.footer__links--title  Resources
+                
+                +footerLink('https://developer.fusebit.io', 'Developer Docs', 0, "sendEvent('Navigation', 'Clicked developers footer nav');")
+                //+footerLink('#blog', 'Blog', 0, "sendEvent('Navigation', 'Clicked blog footer nav');")
                 +footerLink('/legal/', 'Legal', 0, "sendEvent('Navigation', 'Clicked legal footer nav');")
                 +footerLink('/privacy/', 'Privacy Policy', 0, "sendEvent('Navigation', 'Clicked privacy footer nav');")
                 +footerLink('/terms/', 'Terms of Use', 0, "sendEvent('Navigation', 'Clicked terms footer nav');")
