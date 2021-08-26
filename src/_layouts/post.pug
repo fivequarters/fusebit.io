@@ -4,20 +4,23 @@ mixin tag(name, color)
     span(style=(`color: ${color}`))= name
 
 block content
-    .section
+    section.section
         .background.background--neutralLight
         .background.background--straight.background--neutralLight
         .layout.post__hero-layout
             .post__autor-container
                 .post__autor-avatar
-                span.post__autor-name Benn Bollay
-            h1 Fusebit Raises Seed Round
+                span.post__autor-name #{post_autor}
+            h1 #{post_title}
             .post__info
                 .post__tags
-                    +tag("Popular", '#00bcd4')
+                    +tag("Popular", '#FB310A')
                 .post__date
-                    span 21 June 2020
-    .section
+                    span #{post_date}
+    section.section.section--overflow
         .background.background--white
         .layout.post__content-layout
-            article.post__article!= content
+            .post__content
+                .post__hero-image
+                    img(src= post_image)
+                article.post__article!= content
