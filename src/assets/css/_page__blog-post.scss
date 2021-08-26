@@ -11,7 +11,7 @@
     }
 
     &__article {
-        padding-top: 84px;
+        padding: 84px 0;
         max-width: 736px;
         margin: 0 auto;
     }
@@ -32,6 +32,10 @@
 
     &__hero-image {
         position: relative;
+
+        & img {
+            margin-bottom: 0;
+        }
     }
 
     &__content {
