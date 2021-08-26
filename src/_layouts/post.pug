@@ -1,0 +1,23 @@
+extends default.pug
+
+mixin tag(name, color)
+    span(style=(`color: ${color}`))= name
+
+block content
+    .section
+        .background.background--neutralLight
+        .background.background--straight.background--neutralLight
+        .layout.post__hero-layout
+            .post__autor-container
+                .post__autor-avatar
+                span.post__autor-name Benn Bollay
+            h1 Fusebit Raises Seed Round
+            .post__info
+                .post__tags
+                    +tag("Popular", '#00bcd4')
+                .post__date
+                    span 21 June 2020
+    .section
+        .background.background--white
+        .layout.post__content-layout
+            article.post__article!= content

@@ -1,0 +1,32 @@
+.post {
+    &__hero-layout {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 335px;
+    }
+
+    &__content-layout {
+        padding-top: 128px;
+    }
+
+    &__article {
+        padding-top: 84px;
+        max-width: 736px;
+        margin: 0 auto;
+    }
+
+    &__autor-name {
+        font-family: var(--sora);
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23px;
+        color: var(--dark);
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+    }
+}

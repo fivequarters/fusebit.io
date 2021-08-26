@@ -31,7 +31,9 @@
 }
 
 .blog {
-    @import '_blog';
+    @import '_page__blog-base';
+    @import '_page__blog-post';
+    @import '_page__blog-list';
 }
 
 // Components
