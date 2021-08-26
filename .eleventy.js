@@ -1,5 +1,6 @@
 const htmlmin = require('html-minifier');
 const fs = require('fs');
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
@@ -16,6 +17,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('src/assets/vendor');
     eleventyConfig.addPassthroughCopy({ 'src/assets/meta': '/' });
     eleventyConfig.addPassthroughCopy({ public: '/' });
+    eleventyConfig.addPlugin(syntaxHighlight);
 
     eleventyConfig.setBrowserSyncConfig({
         server: {
