@@ -10,6 +10,31 @@
         grid-gap: 10px;
     }
 
+    &__pagination {
+        margin-top: 40px;
+
+        &-button {
+            display: block;
+            width: fit-content;
+            border: 1px solid rgba(3, 3, 45, 0.4);
+            border-radius: 200px;
+            padding: 8px 36px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 27px;
+        }
+
+        &-previous {
+            margin-right: auto;
+        }
+
+        &-next {
+            margin-left: auto;
+        }
+    }
+
     &__card {
         color: inherit;
         text-decoration: none;
