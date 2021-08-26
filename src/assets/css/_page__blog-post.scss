@@ -29,4 +29,12 @@
         align-items: center;
         column-gap: 40px;
     }
+
+    &__hero-image {
+        position: relative;
+    }
+
+    &__content {
+        margin-top: -280px;
+    }
 }
