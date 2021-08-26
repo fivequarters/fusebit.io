@@ -1,5 +1,8 @@
 extends default.pug
 
+block page_variable
+    - var pageClass = 'blog__page'
+
 mixin tag(name, color)
     span(style=(`color: ${color}`))= name
 
