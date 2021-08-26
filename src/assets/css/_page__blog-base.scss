@@ -90,16 +90,16 @@ img {
 
 code,
 pre {
-    font-size: 16px;
+    font-size: 16px !important;
     color: var(--white);
-    line-height: 19px;
-    background: var(--dark);
-    border-radius: 8px;
-    margin: 64px 0;
+    line-height: 19px !important;
+    background: var(--dark) !important;
+    border-radius: 8px !important;
+    margin: 64px 0 !important;
 }
 
 pre {
-    padding: 24px;
+    padding: 24px !important;
 }
 
 ol,
