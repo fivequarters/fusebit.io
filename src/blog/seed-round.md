@@ -9,7 +9,7 @@ post_excerpt: Four Rivers, a San Francisco-based firm specializing in investment
 tags: ['post']
 ---
 
-As part of Fusebit's journey towards helping SaaS companies build powerful custom integrations, we caught up with Scott Willeke, Director of Product at Smartsheet, to learn from an industry leader about his company's approach to this space. Scott was the force behind Smartsheet's Connectors product line of premium-priced integrations for Jira and Salesforce, which drove >$1M in ARR in their first year on the market, and >$2M in the second year.
+As part of Fusebit's journey towards helping SaaS companies build powerful custom integrations, we caught up with Scott Willeke, Director of Product at Smartsheet, to learn from an industry leader about his company's approach to this space. Scott was the force behind Smartsheet's Connectors product line of premium-priced integrations for Jira and Salesforce, which drove >$1M in ARR in their first year on the market, and >$2M in the second year.z
 
 ## What does Smartsheet do?
 
@@ -51,7 +51,7 @@ The technology underlying the Auth0 Rules got more sophisticated and led to the 
 3. Auth0 sales engineers were able to shorten the sales cycles and close more deals. Thanks to the quick time to market for customizations, the timeline of proof-of-concept delivery was substantially reduced.
 4. The Auth0 platform itself enjoyed dramatically increased retention rates.
 
-```
+```go
 func getCookie(name string, r interface{}) (*http.Cookie, error) {
 	rd := r.(*http.Request)
 	cookie, err := rd.Cookie(name)

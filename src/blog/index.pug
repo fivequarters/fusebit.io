@@ -11,10 +11,11 @@ section.section.section--no-margin
 .layout
     h1.list__title Our Blog
     .list__posts
-        each post in posts
+        each post in pagination.posts
             a.list__card(href= post.data.permalink)
                 .list__card-header
-                    .list__card-image(style="background-image: url('" + post.data.post_image + "')")
+                    .list__card-image-container
+                        .list__card-image(style="background-image: url('" + post.data.post_image + "')")
                 .list__card-content
                     .list__card-date= post.data.post_date
                     .list__card-title= post.data.post_title
