@@ -33,6 +33,7 @@
 
 .blog {
     @import '_page__blog-base';
+    @import 'component-post-card';
     @import '_page__blog-post';
     @import '_page__blog-list';
 }

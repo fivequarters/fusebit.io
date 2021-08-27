@@ -1,32 +1,22 @@
 ---
 layout: blog-list.pug
-pagination:
-    data: collections.post
-    size: 2
-    reverse: true
-    alias: posts
 ---
+
+include ../_components/mixins.pug
 
 section.section.section--no-margin
 .layout
     h1.list__title Our Blog
     .list__posts
-        each post in posts
-            a.list__card(href= post.data.permalink)
-                .list__card-header
-                    .list__card-image-container
-                        .list__card-image(style="background-image: url('" + post.data.post_image + "')")
-                .list__card-content
-                    .list__card-date= post.data.post_date
-                    .list__card-title= post.data.post_title
-                    .list__card-excerpt= post.data.post_excerpt
-    if pagination.href.previous || pagination.href.next
-        .list__pagination
-            if pagination.href.previous
-                a.list__pagination-button.list__pagination-previous(href= pagination.href.previous)
-                    .list__pagination-text
-                        | Previous
-            if pagination.href.next
-                a.list__pagination-button.list__pagination-next(href= pagination.href.next)
-                    .list__pagination-text
-                        | Next
+        each post in collections.post
+            +postCard(post.data.permalink, post.data.post_image, post.data.post_date, post.data.post_title, post.data.post_excerpt)
+    //- if pagination.href.previous || pagination.href.next
+    //-     .list__pagination
+    //-         if pagination.href.previous
+    //-             a.list__pagination-button.list__pagination-previous(href= pagination.href.previous)
+    //-                 .list__pagination-text
+    //-                     | Previous
+    //-         if pagination.href.next
+    //-             a.list__pagination-button.list__pagination-next(href= pagination.href.next)
+    //-                 .list__pagination-text
+    //-                     | Next

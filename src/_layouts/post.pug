@@ -20,10 +20,27 @@ block content
                     +tag("Popular", '#FB310A')
                 .post__date
                     span #{post_date}
-    section.section.section--overflow
+    section.section.section--overflow.section--no-margin
         .background.background--white
-        .layout.post__content-layout
+        .layout.post__content-layout.layout--no-padding-bottom
             .post__content
                 .post__hero-image
                     img(src= post_image)
                 article.post__article!= content
+            .post__navigation-container
+                - let prevPost = filters.getPreviousCollectionItem(collections.post, page) || null
+                - let nextPost = filters.getNextCollectionItem(collections.post, page) || null
+                hr
+                .post__navigation-buttons 
+                    if prevPost
+                        a.post__navigation-button.post__navigation-button--prev(href= prevPost.url) Previous
+                    
+                    if nextPost 
+                        a.post__navigation-button.post__navigation-button--next(href= nextPost.url) Next
+                hr
+    section.post__trending-container
+        .layout.post__trending-layout
+            h2 Most Recent
+            .post-card-container.post__trending-list
+                each post in collections.post.slice(0, 3)
+                    +postCard(post.data.permalink, post.data.post_image, post.data.post_date, post.data.post_title, post.data.post_excerpt)

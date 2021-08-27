@@ -58,6 +58,12 @@ module.exports = function (eleventyConfig) {
         });
     }
 
+    global.filters = eleventyConfig.javascriptFunctions; // magic happens here
+    eleventyConfig.setPugOptions({
+        // and here
+        globals: ['filters'],
+    });
+
     return {
         dir: {
             includes: '_components',
