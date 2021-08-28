@@ -4,6 +4,11 @@
         text-align: left;
     }
 
+
+    &__post--hidden {
+        display: none;
+    }
+
     &__posts {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(352px, 352px));
