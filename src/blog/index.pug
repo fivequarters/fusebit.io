@@ -8,15 +8,14 @@ section.section.section--no-margin
 .layout
     h1.list__title Our Blog
     .list__posts
-        each post in collections.post
-            +postCard(post.data.permalink, post.data.post_image, post.data.post_date, post.data.post_title, post.data.post_excerpt)
-    //- if pagination.href.previous || pagination.href.next
-    //-     .list__pagination
-    //-         if pagination.href.previous
-    //-             a.list__pagination-button.list__pagination-previous(href= pagination.href.previous)
-    //-                 .list__pagination-text
-    //-                     | Previous
-    //-         if pagination.href.next
-    //-             a.list__pagination-button.list__pagination-next(href= pagination.href.next)
-    //-                 .list__pagination-text
-    //-                     | Next
+        - let buildAmount = 1
+        each post, index in collections.post
+            +postCard(post.data.permalink, post.data.post_image, post.data.post_date, post.data.post_title, post.data.post_excerpt, index >= buildAmount ? 'list__post--hidden' : '')
+    button#more More
+    script. 
+        const runtimeAmount = 1
+        document.getElementById('more').addEventListener('click', function() {
+            [...document.querySelectorAll('.list__post--hidden')].slice(0, runtimeAmount).forEach(function(el) {
+                el.classList.remove('list__post--hidden')
+            })
+        })
