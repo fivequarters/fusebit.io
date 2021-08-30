@@ -11,7 +11,7 @@ section.section.section--no-margin
         - let buildAmount = 1
         each post, index in collections.post
             +postCard(post.data.permalink, post.data.post_image, post.data.post_date, post.data.post_title, post.data.post_excerpt, index >= buildAmount ? 'list__post--hidden' : '')
-    button#more More
+    button.list__pagination.list__pagination-button#more Load more
     script. 
         const runtimeAmount = 1
         document.getElementById('more').addEventListener('click', function() {
