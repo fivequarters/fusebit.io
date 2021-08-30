@@ -58,6 +58,8 @@ module.exports = function (eleventyConfig) {
         });
     }
 
+    eleventyConfig.addFilter("keys", obj => Object.keys(obj));
+
     global.filters = eleventyConfig.javascriptFunctions; // magic happens here
     eleventyConfig.setPugOptions({
         // and here
