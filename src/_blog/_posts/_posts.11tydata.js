@@ -10,7 +10,7 @@ module.exports = {
             const month = `${getMonth(date) + 1}`.padStart(2, '0');
 
             // eslint-disable-next-line no-undef
-            const slug = filters.slug(data.post_title || '');
+            const slug = data.post_slug ? data.post_slug : filters.slug(data.post_title || '');
 
             return `blog/${year}/${day}/${month}/${slug}.html`;
         },
