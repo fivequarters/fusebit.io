@@ -1,14 +1,16 @@
 /* eslint-disable object-curly-newline */
+const { getYear, getDate, getMonth } = require('date-fns');
+
 module.exports = {
     eleventyComputed: {
         permalink: (data) => {
-            // eslint-disable-next-line no-undef
-            const { getYear, getDay, getMonth, slug: createSlug } = filters;
+            const date = new Date(data.date.replace('-', '/'));
+            const year = getYear(date);
+            const day = `${getDate(date)}`.padStart(2, '0');
+            const month = `${getMonth(date) + 1}`.padStart(2, '0');
 
-            const year = getYear(data.post_date);
-            const day = getDay(data.post_date);
-            const month = getMonth(data.post_date);
-            const slug = createSlug(data.post_title || '');
+            // eslint-disable-next-line no-undef
+            const slug = filters.slug(data.post_title || '');
 
             return `blog/${year}/${day}/${month}/${slug}.html`;
         },
