@@ -21,7 +21,7 @@ block content
                     img(src='/assets/images/tag.svg' alt="Tag") 
                     div 
                         each t, index in postTags
-                            a.post__tag(href='/blog/tag/' + t) #{t}
+                            a.post__tag(href='/blog/tags/' + t) #{t}
                             if index + 1 === postTags.length - 1
                                 | #{' & '} 
                             else if index + 1 < postTags.length - 1
@@ -53,5 +53,5 @@ block content
         .layout.post__trending-layout
             h2 Most Recent
             .post-card-container.post__trending-list
-                each post in collections.post.slice(0, 3)
+                each post in [...collections.post].reverse().slice(0, 3)
                     +postCard(post.data.permalink, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)

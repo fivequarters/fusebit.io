@@ -2,7 +2,7 @@
 layout: post.pug
 post_title: Fusebit Raises Seed Round
 post_autor: Benn Bollay
-date: "2019-01-01"
+date: "2010-01-01"
 post_image: https://fusebit.io/twitter-blog-funding-announcement.png
 post_excerpt: Four Rivers, a San Francisco-based firm specializing in investments in the developer tools space, led the $3.3 million round...
 tags: ['post']
