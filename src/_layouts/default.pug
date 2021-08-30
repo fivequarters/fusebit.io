@@ -40,6 +40,8 @@ html(lang='en' class=(pageClass || ''))
     link(rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png')
     link(rel='manifest' href='/site.webmanifest')
     link(rel='mask-icon' href='/safari-pinned-tab.svg' color='#fb310a')
+    - const cleanUrl = page.url.replace('.html', '').replace(/\/$/, "")
+    link(rel="canonical" href= `${env.canonicalUrl}${cleanUrl}`)
 
     link(rel='stylesheet' href='/assets/vendor/swiper-bundle.min.css')
     script(src='/assets/vendor/swiper-bundle.min.js')
