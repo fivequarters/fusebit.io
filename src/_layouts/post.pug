@@ -10,6 +10,7 @@ block content
         .layout.post__hero-layout
             .post__info
                 .post__autor
+                    +avatar('32px', '#FFA600', '/assets/images/about/founders/founder-3.png')
                     span.post__autor-name #{post_autor}
                 .post__info-divider
                 span.post__date #{post_date}
@@ -18,7 +19,13 @@ block content
             if postTags.length > 0
                 .post__tags
                     img(src='/assets/images/tag.svg' alt="Tag") 
-                    span= postTags.join(', ') 
+                    div 
+                        each t, index in postTags
+                            a.post__tag(href='/blog/tag/' + t) #{t}
+                            if index + 1 === postTags.length - 1
+                                | #{' & '} 
+                            else if index + 1 < postTags.length - 1
+                                | #{', '}
     section.section.section--overflow.section--no-margin
         .background.background--white
         .layout.post__content-layout.layout--no-padding-bottom
