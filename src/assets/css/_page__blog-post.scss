@@ -17,6 +17,25 @@
         margin: 0 auto;
     }
 
+    &__date {
+        color: #9c9fb3;
+        font-size: 16px;
+        line-height: 1.1;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+    }
+
+    &__info-divider {
+        margin-left: 31px;
+        margin-right: 31px;
+        background-color: #d7e5ff;
+        width: 2px;
+        height: 32px;
+    }
+
     &__autor-name {
         font-family: var(--sora);
         font-weight: 600;
@@ -25,10 +44,15 @@
         color: var(--dark);
     }
 
-    &__info {
+    &__tags {
+        color: #f7806c;
         display: flex;
-        align-items: center;
-        column-gap: 40px;
+        justify-content: center;
+        text-transform: capitalize;
+
+        & img {
+            margin-right: 8px;
+        }
     }
 
     &__hero-image {
@@ -75,7 +99,7 @@
                 background-color: var(--orange);
                 position: absolute;
                 bottom: -8px;
-                transition: width 0.2s ease-in;
+                transition: width 0.1s ease-in;
             }
 
             &:hover {
