@@ -13,7 +13,7 @@ block content
                     +avatar('32px', '#FFA600', '/assets/images/about/founders/founder-3.png')
                     span.post__autor-name #{post_autor}
                 .post__info-divider
-                span.post__date #{post_date}
+                span.post__date= `${filters.format(new Date(date.replace('-', '/')), 'MM/dd/yyyy')}`
             h1 #{post_title}
             - const postTags = tags.filter(tag => tag !== 'post')
             if postTags.length > 0
@@ -54,4 +54,4 @@ block content
             h2 Most Recent
             .post-card-container.post__trending-list
                 each post in collections.post.slice(0, 3)
-                    +postCard(post.data.permalink, post.data.post_image, post.data.post_date, post.data.post_title, post.data.post_excerpt)
+                    +postCard(post.data.permalink, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
