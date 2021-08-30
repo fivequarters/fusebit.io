@@ -74,6 +74,11 @@ jobs:
           S3_BUCKET: fivequarters.io
         run: ./scripts/publish_website.sh
 
+      - name: Publish - robot.txt
+        env:
+          S3_BUCKET: fivequarters.io
+        run: ./scripts/publish_robots_disallow.sh
+
       - name: Build and Publish - docs
         env:
           S3_BUCKET: fivequarters.io
