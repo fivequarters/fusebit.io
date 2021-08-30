@@ -4,7 +4,6 @@
         text-align: left;
     }
 
-
     &__post--hidden {
         display: none;
     }
@@ -29,13 +28,6 @@
             font-weight: 500;
             font-size: 18px;
             line-height: 27px;
-        }
-
-        &-previous {
-            margin-right: auto;
-        }
-
-        &-next {
             margin-left: auto;
         }
     }
