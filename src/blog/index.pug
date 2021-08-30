@@ -1,17 +1,27 @@
 ---
 layout: blog-list.pug
+pagination:
+    data: collections
+    size: 1
+    alias: tag
+    filter: 
+        - all
+permalink: "| #{tag === 'post' ? 'blog/index.html' : `blog/tags/${tag}.html`}"
 ---
 
 include ../_components/mixins.pug
 
 section.section.section--no-margin
 .layout
-    h1.list__title Our Blog
+    h1.list__title Integration stories
+    .list__tags
+        each currentTag in filters.keys(collections).filter(c => c !== 'all')
+            a.list__tag(href=`${currentTag === 'post' ? '/blog' : `/blog/tags/${currentTag}`}` class= `${currentTag === tag ? 'list__tag--active' : ''}`)= `${currentTag === 'post' ? 'all' : currentTag}`
     .list__posts
         - let buildAmount = 1
-        each post, index in collections.post
+        each post, index in collections[tag]
             +postCard(post.data.permalink, post.data.post_image, post.data.post_date, post.data.post_title, post.data.post_excerpt, index >= buildAmount ? 'list__post--hidden' : '')
-    button.list__pagination.list__pagination-button#more Load more
+    button.list__pagination.list__pagination-button#more More
     script. 
         const runtimeAmount = 1
         document.getElementById('more').addEventListener('click', function() {
