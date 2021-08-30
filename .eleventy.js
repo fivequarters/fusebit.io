@@ -1,6 +1,7 @@
 const htmlmin = require('html-minifier');
 const fs = require('fs');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const { getDate, getMonth, getYear } = require('date-fns');
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
@@ -58,11 +59,13 @@ module.exports = function (eleventyConfig) {
         });
     }
 
-    eleventyConfig.addFilter("keys", obj => Object.keys(obj));
+    eleventyConfig.addFilter('keys', (obj) => Object.keys(obj));
+    eleventyConfig.addFilter('getDay', (date) => getDate(new Date(date)));
+    eleventyConfig.addFilter('getMonth', (date) => getMonth(new Date(date)));
+    eleventyConfig.addFilter('getYear', (date) => getYear(new Date(date)));
 
-    global.filters = eleventyConfig.javascriptFunctions; // magic happens here
+    global.filters = eleventyConfig.javascriptFunctions;
     eleventyConfig.setPugOptions({
-        // and here
         globals: ['filters'],
     });
 

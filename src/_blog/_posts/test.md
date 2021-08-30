@@ -2,8 +2,7 @@
 layout: post.pug
 post_title: Premium Integrations as a Differentiator
 post_autor: Yavor Georgiev
-post_date: 1 July 2020
-permalink: /blog/2020/03/10/test.html
+post_date: 1 July 2023
 post_image: /assets/images/blog/post__hero.png
 post_excerpt: As part of Fusebit's journey towards helping SaaS companies build powerful custom integrations, we caught up with Scott Willeke...
 tags: ['post', 'popular', 'testing', 'another']
