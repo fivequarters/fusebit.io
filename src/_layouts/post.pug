@@ -26,19 +26,24 @@ block content
             .post__content
                 .post__hero-image
                     img(src= post_image)
-                article.post__article!= content
+                article.article.post__article!= content
             .post__navigation-container
                 - let prevPost = filters.getPreviousCollectionItem(collections.post, page) || null
                 - let nextPost = filters.getNextCollectionItem(collections.post, page) || null
                 hr
                 .post__navigation-buttons 
                     if prevPost
-                        a.post__navigation-button.post__navigation-button--prev(href= prevPost.url) Previous
-                    
+                        a.post__navigation-button.post__navigation-button--left(href= prevPost.url) 
+                            img(src='/assets/images/arrow--left.svg' alt="Arrow")
+                            | Previous
+                            .post__navigation-button-underline
+
                     if nextPost 
-                        a.post__navigation-button.post__navigation-button--next(href= nextPost.url) Next
-                hr
-    section.post__trending-container
+                        a.post__navigation-button.post__navigation-button--right(href= nextPost.url)
+                            | Next
+                            img(src='/assets/images/arrow--left.svg' alt="Arrow")
+                            .post__navigation-button-underline
+    section
         .layout.post__trending-layout
             h2 Most Recent
             .post-card-container.post__trending-list
