@@ -3,23 +3,22 @@ extends default.pug
 block page_variable
     - var pageClass = 'blog__page'
 
-mixin tag(name, color)
-    span(style=(`color: ${color}`))= name
-
 block content
     section.section
         .background.background--neutralLight
         .background.background--straight.background--neutralLight
         .layout.post__hero-layout
-            .post__autor-container
-                .post__autor-avatar
-                span.post__autor-name #{post_autor}
-            h1 #{post_title}
             .post__info
+                .post__autor
+                    span.post__autor-name #{post_autor}
+                .post__info-divider
+                span.post__date #{post_date}
+            h1 #{post_title}
+            - const postTags = tags.filter(tag => tag !== 'post')
+            if postTags.length > 0
                 .post__tags
-                    +tag("Popular", '#FB310A')
-                .post__date
-                    span #{post_date}
+                    img(src='/assets/images/tag.svg' alt="Tag") 
+                    span= postTags.join(', ') 
     section.section.section--overflow.section--no-margin
         .background.background--white
         .layout.post__content-layout.layout--no-padding-bottom

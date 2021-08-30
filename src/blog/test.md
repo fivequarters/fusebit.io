@@ -6,7 +6,7 @@ post_date: 1 July 2020
 permalink: /blog/2020/03/10/test.html
 post_image: /assets/images/blog/post__hero.png
 post_excerpt: As part of Fusebit's journey towards helping SaaS companies build powerful custom integrations, we caught up with Scott Willeke...
-tags: ['post']
+tags: ['post', 'popular', 'testing']
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in lacinia dolor. Nulla ut mollis felis. Nunc ultricies varius laoreet. Morbi maximus tellus eu sollicitudin porttitor. Donec condimentum cursus facilisis. Phasellus porta nec ligula sagittis pretium. Nullam quis viverra elit, quis cursus purus. Vivamus malesuada rutrum eros, ac luctus enim bibendum id. Maecenas velit justo, efficitur a nulla vel, tempus aliquet dolor. Integer ex odio, ornare vel molestie nec, gravida a mi. Fusce eu lobortis erat. Nam sed augue sit amet justo aliquet tincidunt.
