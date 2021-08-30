@@ -3,11 +3,12 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        padding-bottom: 335px;
+        padding-top: 306px;
+        padding-bottom: calc(var(--paddingLayout) + 150px);
     }
 
     &__content-layout {
-        padding-top: 128px;
+        // padding-top: 128px;
     }
 
     &__article {
