@@ -36,7 +36,13 @@
         height: 32px;
     }
 
+    &__autor {
+        display: flex;
+        align-items: center;
+    }
+
     &__autor-name {
+        margin-left: 16px;
         font-family: var(--sora);
         font-weight: 600;
         font-size: 18px;
@@ -45,14 +51,19 @@
     }
 
     &__tags {
-        color: #f7806c;
         display: flex;
         justify-content: center;
-        text-transform: capitalize;
+        color: #f7806c;
 
         & img {
             margin-right: 8px;
         }
+    }
+
+    &__tag {
+        color: #f7806c;
+        text-transform: capitalize;
+        text-decoration: none;
     }
 
     &__hero-image {
