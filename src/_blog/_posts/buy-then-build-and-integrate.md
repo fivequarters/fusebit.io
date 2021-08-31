@@ -1,5 +1,4 @@
 ---
-layout: post.pug
 post_title: Twilio, Segment, Github, and Auth0 are Setting a New Trend
 post_author: Tomasz Janczuk
 post_author_avatar: https://fusebit.io/tomek.png
@@ -8,6 +7,7 @@ post_image: https://fusebit.io/blog-buy-build-main.jpg
 post_excerpt: It is 2019. A 250 person company uses an average of 123 SaaS applications...
 post_slug: buy-then-build-and-integrate
 tags: ['post']
+post_date_in_url: true
 ---
 
 It is 2019. A 250 person company uses an average of 123 SaaS applications, and replaces 39% of them every two years. As a SaaS vendor, how do you convert and retain your customers in this environment?

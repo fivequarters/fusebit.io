@@ -1,5 +1,4 @@
 ---
-layout: post.pug
 post_title: The Role of Integrations in Building a Unicorn
 post_author: Tomasz Janczuk
 post_author_avatar: https://fusebit.io/tomek.png
@@ -8,6 +7,7 @@ post_image: https://fusebit.io/blog-interview-with-auth0-main.png
 post_excerpt: We spoke with Eugenio Pace, the co-founder and CEO of [Auth0](https://auth0.com/), to get the scoop on his company's approach to integrations.
 post_slug: interview-with-eugenio-pace-auth0-ceo
 tags: ['post']
+post_date_in_url: true
 ---
 
 We spoke with Eugenio Pace, the co-founder and CEO of [Auth0](https://auth0.com/), to get the scoop on his company's approach to integrations. Eugenio started Auth0 with Matias Woloski in 2013 to make identity management simple for developers. The phenomenal growth of the company led to Auth0 reaching unicorn status in 2019. We asked Eugenio what role integrations have played during this journey.
