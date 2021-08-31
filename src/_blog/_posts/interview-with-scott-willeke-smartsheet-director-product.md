@@ -1,5 +1,4 @@
 ---
-layout: post.pug
 post_title: Premium Integrations as a Differentiator
 post_author: Yavor Georgiev
 post_author_avatar: https://fusebit.io/yavor.png

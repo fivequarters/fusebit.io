@@ -1,5 +1,4 @@
 ---
-layout: post.pug
 post_title: The Evolution of Hyper-Personalized Marketing
 post_author: Yavor Georgiev
 post_author_avatar: https://fusebit.io/yavor.png

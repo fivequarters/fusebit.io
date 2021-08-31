@@ -1,5 +1,4 @@
 ---
-layout: post.pug
 post_title: The Role of Integrations in Building a Unicorn
 post_author: Tomasz Janczuk
 post_author_avatar: https://fusebit.io/tomek.png

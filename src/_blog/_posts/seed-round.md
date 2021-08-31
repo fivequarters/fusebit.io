@@ -1,5 +1,4 @@
 ---
-layout: post.pug
 post_title: Fusebit Raises Seed Round
 post_author: Tomasz Janczuk
 post_author_avatar: https://fusebit.io/tomek.png

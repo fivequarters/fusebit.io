@@ -1,5 +1,4 @@
 ---
-layout: post.pug
 post_title: Scheduling Requests
 post_author: Randall Tombaugh
 post_author_avatar: https://fusebit.io/randall.png
