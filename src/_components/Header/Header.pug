@@ -1,13 +1,18 @@
 -
     const headerLinks = [
         {
-            text: 'About us',
-            link: '/about',
+            text: 'Developers',
+            link: 'https://developer.fusebit.io',
+            onClick: "sendEvent('Navigation', 'Clicked developers header nav');"
+        },
+        {
+            text: 'About Us',
+            link: '/about/',
             onClick: "sendEvent('Navigation', 'Clicked about header nav');"
         },
         {
             text: 'Careers',
-            link: '/careers',
+            link: '/careers/',
             onClick: "sendEvent('Navigation', 'Clicked careers header nav');"
         }
     ]
@@ -26,7 +31,7 @@ header.header
         .header__links 
             ul  
                 li 
-                    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
+                    a.header__links--signUp.sign-up-cta(onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
 
         .header__menuMobile--btn 
             span.top 
@@ -43,7 +48,7 @@ header.header
                         a(href=link.link onclick=link.onClick)=link.text
 
                 li 
-                    a.header__links--signUp(href="#" onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
+                    a.header__links--signUp.sign-up-cta(onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
 
         .menuMobile__social 
             include ../SocialMedia/SocialMedia
@@ -53,46 +58,43 @@ header.header
 
 
     script.
-        function toggleClasses(target, addClass, removeClass) {
-            target.classList.remove(removeClass);
-            target.classList.add(addClass);
-        }
+            window.addEventListener('load', () => {
+                let prevScroll = window.pageYOffset;
+                const isBlogSite = window.location.pathname.includes('blog');
 
-        window.addEventListener('load', () => {
-            let lastScroll = window.pageYOffset;
-
-            window.addEventListener('scroll', () => {
-                const currentScrollPos = window.pageYOffset;
-                const header = document.querySelector('.header');
-
-                if (currentScrollPos < 150) {
-                    header.classList.remove('header--compact');
-                } else if (lastScroll > currentScrollPos) {
-                    toggleClasses(header, 'header--compact', 'header--hidden');
-                } else {
-                    toggleClasses(header, 'header--hidden', 'header--compact');
+                if(isBlogSite) {
+                    const header = document.querySelector('.header');
+                    header.classList.add('header--compact');
                 }
-                lastScroll = currentScrollPos;
+
+                window.addEventListener('scroll', () => {
+                    const currentScroll = window.pageYOffset;
+                    const header = document.querySelector('.header');
+
+                    if (currentScroll < 150) {
+
+                        if(!isBlogSite) {
+                            header.classList.remove('header--compact');
+                        }
+
+                        return
+                    } 
+
+                    if (prevScroll > currentScroll) {
+                        header.classList.add('header--compact');
+                        header.classList.remove('header--hidden');
+                    } else {
+                        header.classList.add('header--hidden');
+                    }
+
+                    prevScroll = currentScroll;
+                });
+
+                const header = document.querySelector('.header');
+                const menuMobileBtn = document.querySelector('.header__menuMobile--btn');
+
+                menuMobileBtn.addEventListener('click', () => {
+                    header.classList.toggle('header__menuMobile--open');
+                    document.querySelector('html').classList.toggle('hidden');
+                });
             });
-
-            const header = document.querySelector('.header');
-            const headerSignUp = header.querySelectorAll('.header__links--signUp');
-            const menuMobileBtn = document.querySelector('.header__menuMobile--btn');
-
-            menuMobileBtn.addEventListener('click', () => {
-                header.classList.toggle('header__menuMobile--open');
-                document.querySelector('html').classList.toggle('hidden');
-            });
-
-            headerSignUp.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-
-                    const modal = document.querySelector('#modal__signUp')
-                    const overlay = document.querySelector('.modal__overlay');
-
-                    modal.style.display = 'block';
-                    overlay.style.display = 'block';
-                })
-            })
-        });

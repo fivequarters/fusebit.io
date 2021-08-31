@@ -1,7 +1,6 @@
 function sendEvent(category, action, label) {
-    const _label = label
-        ? label
-        : window.location.pathname.split('/').pop() || '';
+    // TODO: Access to proccess.env to check if the path has / or not at the end
+    const _label = label ? label : window.location.pathname.split('/')[1] || '';
 
     gtag('event', action, {
         event_category: category,
