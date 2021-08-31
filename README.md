@@ -104,27 +104,27 @@ Eleventy’s output will be to a `build` directory at the root level.
 Everytime you want to add a post to the blog you should create a markdown file (.md) inside `src/_blog/_posts` folder and set these variables in the front matter.
 ```
 ---
-post_title: string 
+post_title: string | The title of the post  
 
-post_author: string
+post_author: string | The author name of the post 
 
-post_author_avatar: string (e.g https://fusebit.io/tomek.png)
+post_author_avatar: string | The url of the author avatar image
 
-date: 'YYYY-MM-DD' | This prop will be used to order the collections of posts by date.
+date: string | The date of the post with the following format: 'YYYY-MM-DD'. This prop will be used to order the collections of posts by date.
 
-post_image: string (e.g https://fusebit.io/blog-buy-build-main.jpg) | The hero image of your post
+post_image: string | The url of the hero image of the post
 
-post_excerpt: string
+post_excerpt: string | The post excerpt that's going to be shown in the blog homepage (/blog)
 
-post_slug: string (e.g buy-then-build-and-integrate) | This prop will set the slug of the post, if omitted the slug will be generated from the title.
+post_slug: string | This prop will set the slug of the post, if omitted the slug will be generated from the title.
 
-post_date_in_url: boolean | You can define if you want a date path in your url or not. If omitted defaults to `false`.
+tags: string[] | The list of tags you want to set to an article, **'post' is always required when creating a blog post**.
 
-tags: string[] (e.g ['post', 'popular']) | The tags you want to set to an article, **'post' is always required when creating a blog post**.
+post_date_in_url: boolean | When setting this prop you can define if you want a date path in your url or not. If omitted defaults to `false`.
 ---
 ```
 
-Full example:
+### Full example:
 
 ```
 ---
