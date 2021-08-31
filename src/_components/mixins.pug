@@ -20,6 +20,3 @@ mixin postCard(href, img, date, title, excerpt, className)
             span.post-card-date= `${filters.format(new Date(date.replace('-', '/')), 'd MMMM yyyy')}`
             h6.post-card-title= title
             p.post-card-excerpt= excerpt
-
-mixin avatar(size, background, img, className)
-    .avatar(style=("width:" + size + ";height:" + size + ";background:" + background + ";background-image:url(" + img + ")") class= className)
