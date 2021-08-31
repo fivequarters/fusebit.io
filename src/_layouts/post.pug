@@ -9,9 +9,10 @@ block content
         .background.background--straight.background--neutralLight
         .layout.post__hero-layout
             .post__info
-                .post__autor
-                    +avatar('32px', '#FFA600', '/assets/images/about/founders/founder-3.png')
-                    span.post__autor-name #{post_autor}
+                .post__author
+                    if post_author_avatar
+                        img(src= post_author_avatar width="50" height="50")
+                    span.post__author-name #{post_author}
                 .post__info-divider
                 span.post__date= `${filters.format(new Date(date.replace('-', '/')), 'd MMMM yyyy')}`
             h1 #{post_title}
@@ -34,8 +35,8 @@ block content
                     img(src= post_image)
                 article.article.post__article!= content
             .post__navigation-container
-                - let prevPost = filters.getPreviousCollectionItem(collections.post, page) || null
-                - let nextPost = filters.getNextCollectionItem(collections.post, page) || null
+                - const prevPost = filters.getPreviousCollectionItem(collections.post, page) || null
+                - const nextPost = filters.getNextCollectionItem(collections.post, page) || null
                 hr
                 .post__navigation-buttons 
                     if prevPost
