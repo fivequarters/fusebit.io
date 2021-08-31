@@ -12,7 +12,7 @@ module.exports = {
             // eslint-disable-next-line no-undef
             const slug = data.post_slug ? data.post_slug : filters.slug(data.post_title || '');
 
-            return `blog/${year}/${day}/${month}/${slug}.html`;
+            return `blog/${year}/${month}/${day}/${slug}.html`;
         },
     },
 };
