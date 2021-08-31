@@ -19,7 +19,7 @@ section.section.section--no-margin
             a.list__tag(href=`${currentTag === 'post' ? '/blog' : `/blog/tags/${currentTag}`}` class= `${currentTag === tag ? 'list__tag--active' : ''}`)= `${currentTag === 'post' ? 'all' : currentTag}`
     .list__posts
         - let buildAmount = 6
-        each post, index in collections[tag]
+        each post, index in [...collections[tag]].reverse()
             +postCard(post.data.permalink, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt, index >= buildAmount ? 'list__post--hidden' : '')
     button.list__pagination.list__pagination-button#more More
 

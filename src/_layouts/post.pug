@@ -35,8 +35,8 @@ block content
                     img(src= post_image)
                 article.article.post__article!= content
             .post__navigation-container
-                - const prevPost = filters.getPreviousCollectionItem(collections.post, page) || null
-                - const nextPost = filters.getNextCollectionItem(collections.post, page) || null
+                - const prevPost = filters.getNextCollectionItem(collections.post, page) || null
+                - const nextPost = filters.getPreviousCollectionItem(collections.post, page) || null
                 hr
                 .post__navigation-buttons 
                     if prevPost
