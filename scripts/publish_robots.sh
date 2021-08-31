@@ -10,8 +10,6 @@ AWS_PROFILE=${AWS_PROFILE:=default}
 # -- Script --
 set -e
 
-echo "User-agent: * Disallow: /" > ./robots.txt
-
 aws --profile=${AWS_PROFILE} s3 cp --acl public-read --cache-control max-age=300 \
-  ./robots.txt \
+  ./robots/${ROBOTS_FILE} \
   s3://${S3_BUCKET}/robots.txt
