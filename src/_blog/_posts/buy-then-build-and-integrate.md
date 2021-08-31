@@ -7,6 +7,7 @@ post_image: https://fusebit.io/blog-buy-build-main.jpg
 post_excerpt: It is 2019. A 250 person company uses an average of 123 SaaS applications...
 post_slug: buy-then-build-and-integrate
 tags: ['post']
+post_date_in_url: true
 ---
 
 It is 2019. A 250 person company uses an average of 123 SaaS applications, and replaces 39% of them every two years. As a SaaS vendor, how do you convert and retain your customers in this environment?

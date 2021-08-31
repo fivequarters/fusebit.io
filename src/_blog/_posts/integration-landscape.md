@@ -7,6 +7,7 @@ post_image: https://fusebit.io/blog-integration-landscape-main.png
 post_excerpt: In the not-too-distant past, the only way for a SaaS company to provide integrations with other tools and services...
 post_slug: integration-landscape
 tags: ['post', 'popular']
+post_date_in_url: true
 ---
 
 In the not-too-distant past, the only way for a SaaS company to provide integrations with other tools and services was to dedicate a portion of their development team to building out the relevant know-how and infrastructure. Technical challenges aside, this work is frequently a distraction from building the core feature set of the SaaS product, and likely does not leverage the team's unique domain skills. Fortunately, the landscape has shifted over the last few years and SaaS developers now have a slew of options, in addition to building integrations in-house. Similar to how Stripe provides a managed service to handle payments, an *integration platform* enables the customer or SaaS provider to easily set up the necessary integrations. Just as Stripe lets developers avoid having to learn the details of payments processing, integration platforms abstract away the underlying (frequently tedious) authentication and data exchange protocols. [This article](https://blog.hubspot.com/marketing/ipaas-guide) provides a great primer on the space.

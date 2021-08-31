@@ -7,6 +7,7 @@ post_image: https://fusebit.io/blog-interview-with-zaius-main-1.png
 post_excerpt: We spoke with Tyler Mills, Product Manager at [Zaius](https://zaius.com/), to get the scoop on his company's approach to integrations...
 post_slug: interview-with-tyler-mills-zaius
 tags: ['post']
+post_date_in_url: true
 ---
 
 We spoke with Tyler Mills, Product Manager at [Zaius](https://zaius.com/), to get the scoop on his company's approach to integrations. We asked Tyler what role integrations have played during their journey.
