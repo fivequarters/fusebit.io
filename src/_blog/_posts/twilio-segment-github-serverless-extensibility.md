@@ -1,7 +1,8 @@
 ---
 layout: post.pug
 post_title: Twilio, Segment, Github, and Auth0 are Setting a New Trend
-post_autor: Tomasz Janczuk
+post_author: Tomasz Janczuk
+post_author_avatar: https://fusebit.io/tomek.png
 date: "2019-06-08"
 post_image: https://fusebit.io/blog-new-trend-main.png
 post_excerpt: Many businesses get ahead of the competition by focusing on the core of their...
