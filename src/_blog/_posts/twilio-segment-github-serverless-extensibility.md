@@ -16,7 +16,7 @@ Most people watch a movie to entertain themselves, not because they enjoy a trek
 
 Many businesses get ahead of the competition by focusing on the core of their product. They do it by reducing barriers in the customer’s experience. Twilio, Segment, Auth0, and Github have done exactly that by spearheading a new pattern of platform integration and customization that utilizes serverless technologies.
 
-## Platform Extensibility in the Serverless Era
+### Platform Extensibility in the Serverless Era
 
 Serverless technologies like AWS Lambda, Google Functions, or Azure Functions reduce the cost of running an application by shifting the operational burden from the application developer to the platform provider. Developers using serverless technologies spend more time writing code to solve business problems and less time maintaining, monitoring, scaling, and securing the infrastructure.
 
@@ -39,7 +39,7 @@ The SaaS platform itself benefits with an improved business dynamic:
 
 Let’s have a look at how Twilio, Segment, Github, and Auth0 embraced the serverless extensibility pattern in practice.
 
-## Twilio Functions
+### Twilio Functions
 
 Twilio has a longstanding reputation as a developer-friendly company. Their call-to-action on the landing page is Get your API key, after all. Twilio has always had a robust API story that includes events exposed as webhooks.
 
@@ -57,7 +57,7 @@ Twilio Functions address these problems by providing a scripting environment emb
 
 Twilio Functions utilize AWS Lambda as the underlying serverless compute infrastructure and inherit many of its characteristics, including a per-invocation pricing model.
 
-## Segment Hosted Functions
+### Segment Hosted Functions
 
 Segment is a platform for collection, unification, and redistribution of customer data to a wide range of marketing, data warehouse, and analytics tools. As with many marketing technology platforms, its strength relies heavily on the available integrations and their ease of use.
 
@@ -76,7 +76,7 @@ Segment hosted functions address these adoption concerns by providing an embedde
 
 Segment hosted functions run on AWS Lambda, similarly to Twilio Functions. Unlike Twilio Functions, however, they currently provide a curated Node.js environment that runs a dedicated programming model with a hand-selected set of NPM modules that enable simple data transformation and making HTTP calls.
 
-## Github Actions
+### Github Actions
 
 Github has long been the go-to solution for git-based source control for many developers and organizations. Source control usually exists in the broader context of devops processes, for example, continuous integration and deployment. Supporting those processes requires an extensive set of integrations to address the specific needs of an organization or project.
 
@@ -86,7 +86,7 @@ Github has long had a rich set of webhooks to support such integration scenarios
 
 Github takes a notably different approach to serverless extensibility compared to Twilio or Segment. Github’s core competency is in managing the lifecycle of code. Instead of providing an embedded scripting editor for actions like Twilio or Segment did, Github relies on its core platform to manage the lifecycle of actions’ code. Actions are represented as docker images, the definition of which is stored in a Github repository. Actions can be further combined into workflows and triggered by many of the same events exposed as Github webhooks today. Github provides the infrastructure for executing and monitoring these workflows, removing the operational burden for its users.
 
-## Auth0 Rules
+### Auth0 Rules
 
 **DISCLAIMER:** I worked at Auth0 between 2014-19 and focused on the serverless extensibility story from inception.
 
@@ -105,7 +105,7 @@ Over time, the technology underlying the Auth0 Rules got more sophisticated and 
 
 When Auth0 first enabled Auth0 Rules in 2014, the serverless trend had not yet taken off. None of the technologies available today (AWS Lambda, Google Functions, Azure Functions, etc.) were in the market. As a result, Auth0 invested in a proprietary technology stack called webtasks that enabled the company to execute customer-developed customizations with strong isolation guarantees and low latency the scenario required. To get an insight into the technical details of this project, please read [How to build your own serverless platform](https://tomasz.janczuk.org/2018/03/how-to-build-your-own-serverless-platform.html).
 
-## Is Your SaaS Left Behind?
+### Is Your SaaS Left Behind?
 
 Visionary companies like Twilio, Segment, Github, or Auth0 that invested in serverless extensibility within their platforms are better equipped to serve their customers than their competition. What are your options if you don’t want to be left behind?
 

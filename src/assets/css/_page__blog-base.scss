@@ -90,7 +90,11 @@ a {
         max-width: 100%;
     }
 
-    code,
+    code {
+        font-family: monospace;
+        font-size: 16px !important;
+    }
+
     pre {
         font-size: 16px !important;
         color: var(--white);
@@ -98,9 +102,6 @@ a {
         background: var(--dark) !important;
         border-radius: 8px !important;
         margin: 64px 0 !important;
-    }
-
-    pre {
         padding: 24px !important;
     }
 
