@@ -5,7 +5,7 @@ post_author: Yavor Georgiev
 post_author_avatar: https://fusebit.io/yavor.png
 date: '2019-09-06'
 post_image: https://fusebit.io/blog-interview-with-zaius-main-1.png
-post_excerpt: In the not-too-distant past, the only way for a SaaS company to provide integrations with other tools and services...
+post_excerpt: We spoke with Tyler Mills, Product Manager at [Zaius](https://zaius.com/), to get the scoop on his company's approach to integrations...
 post_slug: interview-with-tyler-mills-zaius
 tags: ['post']
 ---
