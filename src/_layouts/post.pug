@@ -1,0 +1,58 @@
+extends default.pug
+
+block page_variable
+    - var pageClass = 'blog__page'
+
+block content
+    section.section
+        .background.background--neutralLight
+        .background.background--straight.background--neutralLight
+        .layout.post__hero-layout
+            .post__info
+                .post__author
+                    if post_author_avatar
+                        img(src= post_author_avatar width="50" height="50")
+                    span.post__author-name #{post_author}
+                .post__info-divider
+                span.post__date= `${filters.format(new Date(date.replace('-', '/')), 'd MMMM yyyy')}`
+            h1 #{post_title}
+            - const postTags = tags.filter(tag => tag !== 'post')
+            if postTags.length > 0
+                .post__tags
+                    img(src='/assets/images/tag.svg' alt="Tag") 
+                    div 
+                        each t, index in postTags
+                            a.post__tag(href='/blog/tags/' + t) #{t}
+                            if index + 1 === postTags.length - 1
+                                | #{' & '} 
+                            else if index + 1 < postTags.length - 1
+                                | #{', '}
+    section.section.section--overflow.section--no-margin
+        .background.background--white
+        .layout.post__content-layout.layout--no-padding-bottom
+            .post__content
+                .post__hero-image
+                    img(src= post_image)
+                article.article.post__article!= content
+            .post__navigation-container
+                - const prevPost = filters.getNextCollectionItem(collections.post, page) || null
+                - const nextPost = filters.getPreviousCollectionItem(collections.post, page) || null
+                hr
+                .post__navigation-buttons 
+                    if prevPost
+                        a.post__navigation-button.post__navigation-button--left(href= prevPost.url) 
+                            img(src='/assets/images/arrow--left.svg' alt="Arrow")
+                            | Previous
+                            .post__navigation-button-underline
+
+                    if nextPost 
+                        a.post__navigation-button.post__navigation-button--right(href= nextPost.url)
+                            | Next
+                            img(src='/assets/images/arrow--left.svg' alt="Arrow")
+                            .post__navigation-button-underline
+    section
+        .layout.post__trending-layout
+            h2 Most Recent
+            .post-card-container.post__trending-list
+                each post in [...collections.post].reverse().slice(0, 3)
+                    +postCard(post.data.permalink, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)

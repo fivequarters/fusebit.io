@@ -1,0 +1,86 @@
+.post-card {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e7efff;
+    box-sizing: border-box;
+    border-radius: 16px;
+    min-height: 408px;
+    overflow: hidden;
+    transition: all 0.4s;
+
+    &-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(305px, 352px));
+        grid-gap: 10px;
+        justify-content: center;
+    }
+
+    &-image-container {
+        height: 192px;
+        max-height: 192px;
+        overflow: hidden;
+        border-radius: 16px;
+    }
+
+    &-image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.4s;
+    }
+
+    &-content {
+        padding: 24px 24px 32px 24px;
+    }
+
+    &-date {
+        display: block;
+        margin-bottom: 24px;
+        color: var(--dark);
+        opacity: 0.4;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    &-title {
+        font-size: 20px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+        transition: color 0.4s;
+        margin: 0;
+    }
+
+    &-excerpt {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:hover {
+        .post-card-image {
+            transform: scale(1.2);
+        }
+    }
+
+    &:hover {
+        border: 1px solid var(--dark);
+
+        .post-card-title {
+            color: var(--orange);
+        }
+    }
+
+    &:focus,
+    &:focus-visible {
+        border: 1px solid var(--blue);
+        outline: none;
+
+        .post-card-title {
+            color: var(--blue);
+        }
+    }
+}
