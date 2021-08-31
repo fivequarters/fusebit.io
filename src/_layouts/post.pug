@@ -13,7 +13,7 @@ block content
                     +avatar('32px', '#FFA600', '/assets/images/about/founders/founder-3.png')
                     span.post__autor-name #{post_autor}
                 .post__info-divider
-                span.post__date= `${filters.format(new Date(date.replace('-', '/')), 'MM/dd/yyyy')}`
+                span.post__date= `${filters.format(new Date(date.replace('-', '/')), 'd MMMM yyyy')}`
             h1 #{post_title}
             - const postTags = tags.filter(tag => tag !== 'post')
             if postTags.length > 0
