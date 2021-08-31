@@ -1,5 +1,4 @@
 ---
-layout: post.pug
 post_title: Premium Integrations as a Differentiator
 post_author: Yavor Georgiev
 post_author_avatar: https://fusebit.io/yavor.png
@@ -8,6 +7,7 @@ post_image: https://fusebit.io/blog-interview-with-smartsheet-main.png
 post_excerpt: As part of Fusebit's journey towards helping SaaS companies build powerful custom integrations, we caught up with Scott Willeke, Director of Product at Smartsheet...
 post_slug: interview-with-scott-willeke-smartsheet-director-product
 tags: ['post', 'popular', 'integrations']
+post_date_in_url: true
 ---
 
 As part of Fusebit's journey towards helping SaaS companies build powerful custom integrations, we caught up with Scott Willeke, Director of Product at Smartsheet, to learn from an industry leader about his company's approach to this space. Scott was the force behind Smartsheet's Connectors product line of premium-priced integrations for Jira and Salesforce, which drove >$1M in ARR in their first year on the market, and >$2M in the second year.
