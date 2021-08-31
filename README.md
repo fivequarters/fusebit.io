@@ -102,15 +102,24 @@ Eleventy’s output will be to a `build` directory at the root level.
 
 ## Blog
 Everytime you want to add a post to the blog you should create a markdown file (.md) inside `src/_blog/_posts` folder and set these variables in the front matter.
-
+```
 ---
 post_title: string  (e.g Twilio, Segment, Github, and Auth0 are Setting a New Trend)
+
 post_author: string (e.g Tomasz Janczuk)
+
 post_author_avatar: string (e.g https://fusebit.io/tomek.png)
+
 date: 'YYYY-MM-DD' (e.g '2019-07-04') | This prop will be used to order the collections of posts by date.
+
 post_image: string (e.g https://fusebit.io/blog-buy-build-main.jpg) | The hero image of your post
+
 post_excerpt: string (e.g It is 2019. A 250 person company uses an average of 123 SaaS applications...)
+
 post_slug: buy-then-build-and-integrate | This prop will set the slug of the post, if omitted the slug will be generated from the title.
+
 post_date_in_url: boolean | You can define if you want a date path in your url or not. If omitted defaults to `false`.
+
 tags: string[] (e.g ['post', 'popular']) | The tags you want to set to an article, **'post' is always required when creating a blog post**.
 ---
+```
