@@ -6,14 +6,18 @@ mixin title(main, sub, black, invert, className, isMain)
 mixin text(text, className)
     p.text(class= className)= text
 
+mixin ctaArrow
+    svg(viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
+
 mixin cta(text, href, className)
     a.cta(href= href class= className)= text
-        svg(viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg")
-            path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-
+        +ctaArrow
+    
 mixin avatar(size, background, img, className)
     .avatar(style=("width:" + size + ";height:" + size + ";background:" + background + ";background-image:url(" + img + ")") class= className)
-    
+
 mixin postCard(href, img, date, title, excerpt, className)
     a.post-card(href= `/${href.replace('.html', '')}` class= className)
         .post-card-header
