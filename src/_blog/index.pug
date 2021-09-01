@@ -6,7 +6,6 @@ pagination:
     alias: tag
     filter: 
         - all
-permalink: "| #{tag === 'post' ? 'blog/index.html' : `blog/tags/${tag}.html`}"
 ---
 
 include ../_components/mixins.pug
@@ -34,7 +33,7 @@ section.section.section--no-margin
                 el.classList.remove('list__post--hidden')
 
                 if(document.querySelectorAll('.list__post--hidden').length === 0) {
-                   document.getElementById('more').style.display = 'none'
+                    document.getElementById('more').style.display = 'none'
                 }
 
             })
