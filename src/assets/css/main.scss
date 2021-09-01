@@ -30,6 +30,12 @@
     @import '_page__about--investors';
 }
 
+.careers {
+    @import '_page__careers--hero';
+    @import '_page__careers--description';
+    @import '_page__careers--join';
+}
+
 .blog {
     @import '_page__blog-base';
     @import 'component-post-card';
@@ -50,3 +56,4 @@
 @import 'component-cta';
 @import 'component-mark';
 @import 'component-swiper';
+@import 'component-avatar';
