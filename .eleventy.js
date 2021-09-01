@@ -1,5 +1,7 @@
 const htmlmin = require('html-minifier');
 const fs = require('fs');
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const { format } = require('date-fns');
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
@@ -16,6 +18,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('src/assets/vendor');
     eleventyConfig.addPassthroughCopy({ 'src/assets/meta': '/' });
     eleventyConfig.addPassthroughCopy({ public: '/' });
+    eleventyConfig.addPlugin(syntaxHighlight);
 
     eleventyConfig.setBrowserSyncConfig({
         server: {
@@ -55,6 +58,14 @@ module.exports = function (eleventyConfig) {
             return content;
         });
     }
+
+    eleventyConfig.addFilter('keys', (obj) => Object.keys(obj));
+    eleventyConfig.addFilter('format', format);
+
+    global.filters = eleventyConfig.javascriptFunctions;
+    eleventyConfig.setPugOptions({
+        globals: ['filters'],
+    });
 
     return {
         dir: {

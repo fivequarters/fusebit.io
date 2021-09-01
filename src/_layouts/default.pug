@@ -50,8 +50,8 @@ html(lang='en' class=(pageClass || ''))
 
     link(rel='preconnect' href='https://fonts.gstatic.com')
     link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Roboto&family=Sora:wght@300;400;700;800&display=swap" rel="stylesheet")
-
     link(rel='stylesheet' href='/assets/main.css?' + cacheBust.mainCss)
+    link(href='https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css' rel='stylesheet')
 
     script.
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="WSACLqGgP5iDXr3iPDubC70ySHfWHWQk";analytics.SNIPPET_VERSION="4.13.2";
@@ -73,7 +73,6 @@ html(lang='en' class=(pageClass || ''))
       r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
       a.appendChild(r);
       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-
     script.
       (function(h,o,t,j,a,r){ h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)}; h._hjSettings={hjid:2564747,hjsv:6}; a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r); })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 
@@ -82,7 +81,7 @@ html(lang='en' class=(pageClass || ''))
     include ../_components/Modal/Modal
     include ../_components/Header/Header
 
-    main
+    main(class=(content ? 'blog' : ''))
       block content
 
     include ../_components/Footer/Footer

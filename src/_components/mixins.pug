@@ -10,3 +10,13 @@ mixin cta(text, href, className)
     a.cta(href= href class= className)= text
         svg(viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg")
             path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
+mixin postCard(href, img, date, title, excerpt, className)
+    a.post-card(href= `/${href.replace('.html', '')}` class= className)
+        .post-card-header
+            .post-card-image-container
+                .post-card-image(style="background-image: url('" + img + "')")
+        .post-card-content
+            span.post-card-date= `${filters.format(new Date(date.replace('-', '/')), 'd MMMM yyyy')}`
+            h6.post-card-title= title
+            p.post-card-excerpt= excerpt

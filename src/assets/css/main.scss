@@ -31,6 +31,13 @@
     @import '_page__about--investors';
 }
 
+.blog {
+    @import '_page__blog-base';
+    @import 'component-post-card';
+    @import '_page__blog-post';
+    @import '_page__blog-list';
+}
+
 // Components
 @import 'component-modal';
 @import 'component-social_media';
@@ -42,3 +49,4 @@
 @import 'component-text';
 @import 'component-angled-section';
 @import 'component-cta';
+@import 'component-section';
