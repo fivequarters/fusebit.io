@@ -20,7 +20,7 @@ section.section.section--no-margin
     .list__posts
         - let buildAmount = 6
         each post, index in [...collections[tag]].reverse()
-            +postCard(post.data.permalink, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt, index >= buildAmount ? 'list__post--hidden' : '')
+            +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt, index >= buildAmount ? 'list__post--hidden' : '')
     button.list__pagination.list__pagination-button#more More
 
     script. 

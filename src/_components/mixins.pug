@@ -12,7 +12,7 @@ mixin cta(text, href, className)
             path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
 mixin postCard(href, img, date, title, excerpt, className)
-    a.post-card(href= `/${href.replace('.html', '')}` class= className)
+    a.post-card(href= href class= className)
         .post-card-header
             .post-card-image-container
                 .post-card-image(style="background-image: url('" + img + "')")

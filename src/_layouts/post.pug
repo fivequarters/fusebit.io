@@ -56,4 +56,4 @@ block content
             h2 Most Recent
             .post-card-container.post__trending-list
                 each post in [...collections.post].reverse().slice(0, 3)
-                    +postCard(post.data.permalink, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
+                    +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
