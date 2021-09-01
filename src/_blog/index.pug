@@ -6,6 +6,7 @@ pagination:
     alias: tag
     filter: 
         - all
+permalink: "| #{tag === 'post' ? 'blog/index.html' : process.env.ELEVENTY_ENV === 'production' ? `blog/tags/${tag}/index.html` : `blog/tags/${tag}.html`}"
 ---
 
 include ../_components/mixins.pug
@@ -19,7 +20,7 @@ section.section.section--no-margin
     .list__posts
         - let buildAmount = 6
         each post, index in [...collections[tag]].reverse()
-            +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt, index >= buildAmount ? 'list__post--hidden' : '')
+            +postCard(post.data.permalink, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt, index >= buildAmount ? 'list__post--hidden' : '')
     button.list__pagination.list__pagination-button#more More
 
     script. 
@@ -33,7 +34,7 @@ section.section.section--no-margin
                 el.classList.remove('list__post--hidden')
 
                 if(document.querySelectorAll('.list__post--hidden').length === 0) {
-                    document.getElementById('more').style.display = 'none'
+                   document.getElementById('more').style.display = 'none'
                 }
 
             })
