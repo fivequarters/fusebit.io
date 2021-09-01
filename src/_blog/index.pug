@@ -32,7 +32,6 @@ section.section.section--no-margin
         document.getElementById('more').addEventListener('click', function() {
             [...document.querySelectorAll('.list__post--hidden')].slice(0, runtimeAmount).forEach(function(el) {
                 el.classList.remove('list__post--hidden')
-                console.log('asd')
 
                 if(document.querySelectorAll('.list__post--hidden').length === 0) {
                    document.getElementById('more').style.display = 'none'
