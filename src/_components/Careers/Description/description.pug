@@ -9,8 +9,13 @@ mixin item(img, highlightText, text)
 section.section
     .background.background--white
         .mark.mark--small.mark--dark-violet.mark--left.description__mark-top
-        .mark.mark--small.mark--dark-violet.mark--right.mark--bottom.description__mark-bottom
+        .mark.mark--small.mark--dark-violet.mark--right.mark--bottom.description__mark-bottom.description__mark-bottom-desktop
+        .mark.mark--big.mark--light-violet.mark--right.mark--bottom.description__mark-bottom.description__mark-bottom-mobile
     .layout.description__layout
+        .description__main-text-container
+            img(src="/assets/images/careers/description/sign.svg" alt="Sign").description__sign
+            p.text.description__main-text
+                +mainText
         .description__title-container
             +title('Great & excellent ', 'place to work', false, true, 'description__title')
             p.text.description__text

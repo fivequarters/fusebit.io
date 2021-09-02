@@ -2,7 +2,7 @@
     position: relative;
 
     &__mark {
-        @include mark-offset(310px, 100px, true);
+        @include mark-offset(310px, 10px, true);
     }
 
     &__bg {
@@ -13,31 +13,64 @@
 
     &__layout {
         padding-top: 216px;
+
+        @media (max-width: 992px) {
+            padding-top: var(--paddingLayout);
+        }
+
+        @media (max-width: 576px) {
+            padding-bottom: 120px;
+            width: 75%;
+        }
     }
 
     &__content {
         display: flex;
         justify-content: space-between;
+        margin-right: -15px;
     }
 
     &__title {
         max-width: 376px;
         margin-bottom: 51px;
         line-height: 110%;
+
+        @media (max-width: 576px) {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__title-container {
+        margin-right: 15px;
     }
 
     &__cta {
         width: 261px;
+
+        @media (max-width: 576px) {
+            width: 203px;
+        }
     }
 
     &__description {
         margin-bottom: -41px;
+        margin-right: 15px;
 
         & p {
             margin-bottom: 41px;
             max-width: 635px;
             color: var(--white);
             opacity: 0.8;
+
+            &:last-child {
+                @media (max-width: 992px) {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
         }
     }
 }

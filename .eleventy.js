@@ -30,7 +30,10 @@ module.exports = function (eleventyConfig) {
         callbacks: {
             ready: function (err, bs) {
                 bs.addMiddleware('*', (req, res) => {
-                    const content_404 = fs.readFileSync('build/404/index.html');
+                    const content_404 =
+                        process.env.ELEVENTY_ENV === 'production'
+                            ? fs.readFileSync('build/404/index.html')
+                            : fs.readFileSync('build/404.index.html');
                     res.writeHead(404, {
                         'Content-Type': 'text/html; charset=UTF-8',
                     });
