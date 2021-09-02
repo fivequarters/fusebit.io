@@ -38,4 +38,4 @@ This round of funding will fuel product development and the overall infrastructu
 
 > *Tomasz Janczuk, Fusebit CEO*
 
-Fusebit has embraced the remote working culture and hires based on talent, not location. If you’re interested in a highly rewarding work environment, please reach out to [contact@fusebit.io](contact@fusebit.io) to inquire about engineering roles and developer-focused marketing roles.
+Fusebit has embraced the remote working culture and hires based on talent, not location. If you’re interested in a highly rewarding work environment, please reach out to [contact@fusebit.io](mailto:contact@fusebit.io) to inquire about engineering roles and developer-focused marketing roles.
