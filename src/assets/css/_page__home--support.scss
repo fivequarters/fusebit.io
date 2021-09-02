@@ -21,9 +21,7 @@
     }
 
     &__mark {
-        bottom: calc(var(--triangleHeight) - 1px); // workaround for mark not beign at the top of the triangle
-
-        @include mark-offset(250px, 25px);
+        @include mark-offset(250px, 25px, false, true);
     }
 
     &__wrapper {

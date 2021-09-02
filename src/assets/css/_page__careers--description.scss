@@ -6,15 +6,11 @@
     }
 
     &__mark-bottom {
-        @include mark-offset(510px, 10px);
+        @include mark-offset(510px, 10px, false, true);
     }
 
     &__mark-bottom-mobile {
-        display: none;
-
-        @media (max-width: 576px) {
-            display: block;
-        }
+        @include showOnly('mobile');
     }
 
     &__mark-bottom-desktop {
@@ -98,16 +94,15 @@
 
     &__main-text {
         opacity: 0.6;
-        display: none;
         margin-bottom: 64px;
 
-        @media (max-width: 768px) {
-            display: block;
-        }
+        @include showOnly('tablet');
     }
 
     &__sign {
         margin-bottom: 25px;
+
+        @include showOnly('tablet');
     }
 
     &__content-container {
@@ -120,7 +115,9 @@
     }
 
     &__content {
-        padding-left: 20px;
+        @media (max-width: 576px) {
+            padding-left: 20px;
+        }
     }
 
     &__path {
@@ -130,6 +127,16 @@
         &-circle {
             position: absolute;
             left: -14px;
+
+            @include showOnly('mobile');
         }
+
+        @include showOnly('mobile');
+    }
+
+    &__dot {
+        opacity: 0;
+
+        @include showOnly('mobile');
     }
 }

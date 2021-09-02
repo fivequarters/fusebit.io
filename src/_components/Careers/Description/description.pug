@@ -44,7 +44,7 @@ section.section
                     start: "top 25%",
                     end: "bottom 25%",
                     scrub: 0,
-                    markers: true,
+                    // TODO: Move onUpdate to a helper function so it can be reused
                     onUpdate: ({ progress }) => {
                         const initialDot = document.querySelector(".description__initial-dot");
                         const motionDot = document.querySelector('.description__dot');
