@@ -14,7 +14,7 @@ mixin ctaArrow
 mixin cta(text, href, className)
     a.cta(href= href class= className)= text
         +ctaArrow
-    
+
 mixin avatar(size, background, img, className)
     .avatar(style=("width:" + size + ";height:" + size + ";background:" + background + ";background-image:url(" + img + ")") class= className)
 
@@ -27,3 +27,10 @@ mixin postCard(href, img, date, title, excerpt, className)
             span.post-card-date= `${filters.format(new Date(date.replace('-', '/')), 'd MMMM yyyy')}`
             h6.post-card-title= title
             p.post-card-excerpt= excerpt
+
+mixin pathCircle(className)
+    svg(width='28' height='16' viewbox='0 0 28 16' fill='none' xmlns='http://www.w3.org/2000/svg' class= className)
+        g(opacity='0.6')
+            circle(cx='1' cy='8' r='1' fill='#D7E5FF')
+            circle(cx='27' cy='8' r='1' fill='#D7E5FF')
+            circle(cx='14' cy='8' r='7' stroke='#D7E5FF' stroke-width='2')

@@ -59,8 +59,15 @@
     }
 
     &__item-text {
+        font-size: 16px;
+
         & span {
             font-weight: 700;
+        }
+
+        @media (max-width: 576px) {
+            font-size: 14px;
+            max-width: 256px;
         }
     }
 
@@ -101,5 +108,28 @@
 
     &__sign {
         margin-bottom: 25px;
+    }
+
+    &__content-container {
+        display: flex;
+        position: relative;
+
+        svg {
+            flex-shrink: 0;
+        }
+    }
+
+    &__content {
+        padding-left: 20px;
+    }
+
+    &__path {
+        position: absolute;
+        top: 25px;
+
+        &-circle {
+            position: absolute;
+            left: -14px;
+        }
     }
 }
