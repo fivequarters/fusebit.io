@@ -122,11 +122,12 @@
 
     &__path {
         position: absolute;
-        top: 25px;
+        top: 27px;
 
         &-circle {
             position: absolute;
             left: -14px;
+            top: 7px;
 
             @include showOnly('mobile');
         }
@@ -136,7 +137,14 @@
 
     &__dot {
         opacity: 0;
+    }
 
+    &__initial-dot {
+        top: 7px;
+    }
+
+    &__dot,
+    &__initial-dot {
         @include showOnly('mobile');
     }
 }

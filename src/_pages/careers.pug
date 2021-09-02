@@ -1,12 +1,12 @@
 extends ../_layouts/default.pug
 
 
-mixin careersCta(text, href, className)
+mixin careersCta(className)
     - const OPEN_POSITIONS = 4
-    a.cta(href= href class= className)
+    a.cta(href= 'https://angel.co/company/fusebitio/jobs' class= className)
         .cta-ellipse 
             span= OPEN_POSITIONS
-        | #{text}
+        | Open Positions
         +ctaArrow
 
 mixin mainText
