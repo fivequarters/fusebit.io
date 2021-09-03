@@ -61,7 +61,12 @@
     }
 }
 
-@mixin mark-offset($desktop-offset, $mobile-offset, $isLeft: false) {
+@mixin mark-offset(
+    $desktop-offset,
+    $mobile-offset,
+    $isLeft: false,
+    $fixBottom: false
+) {
     --mark-offset: #{$desktop-offset};
 
     @if $isLeft {
@@ -70,9 +75,29 @@
         left: calc(50% + var(--mark-offset));
     }
 
+    @if $fixBottom {
+        bottom: calc(var(--triangleHeight) - 1px);
+    }
+
     width: calc(50% - var(--mark-offset));
 
     @media only screen and (max-width: 1200px) {
         --mark-offset: #{$mobile-offset};
+    }
+}
+
+@mixin showOnly($viewport) {
+    display: none;
+
+    @if ($viewport == "tablet") {
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    @if ($viewport == "mobile") {
+        @media (max-width: 576px) {
+            display: block;
+        }
     }
 }

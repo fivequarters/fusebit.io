@@ -2,15 +2,29 @@
     position: relative;
 
     &__mark-top {
-        @include mark-offset(430px, 100px, true);
+        @include mark-offset(430px, 85px, true);
     }
 
     &__mark-bottom {
-        @include mark-offset(510px, 100px);
+        @include mark-offset(510px, 10px, false, true);
+    }
+
+    &__mark-bottom-mobile {
+        @include showOnly('mobile');
+    }
+
+    &__mark-bottom-desktop {
+        @media (max-width: 576px) {
+            display: none;
+        }
     }
 
     &__title {
         max-width: 536px;
+
+        @media (max-width: 992px) {
+            margin-bottom: 24px;
+        }
     }
 
     &__text {
@@ -22,15 +36,34 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 72px;
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+        }
+
+        @media (max-width: 576px) {
+            margin-bottom: 56px;
+        }
     }
 
     &__layout {
-        padding-top: calc(var(--paddingLayout) - -45px);
+        padding-top: calc(var(--paddingLayout) + 45px);
+
+        @media (max-width: 576px) {
+            padding-top: var(--paddingLayout);
+        }
     }
 
     &__item-text {
+        font-size: 16px;
+
         & span {
             font-weight: 700;
+        }
+
+        @media (max-width: 576px) {
+            font-size: 14px;
+            max-width: 256px;
         }
     }
 
@@ -53,5 +86,65 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
         grid-gap: 56px 32px;
+
+        @media (max-width: 576px) {
+            grid-gap: 32px;
+        }
+    }
+
+    &__main-text {
+        opacity: 0.6;
+        margin-bottom: 64px;
+
+        @include showOnly('tablet');
+    }
+
+    &__sign {
+        margin-bottom: 25px;
+
+        @include showOnly('tablet');
+    }
+
+    &__content-container {
+        display: flex;
+        position: relative;
+
+        svg {
+            flex-shrink: 0;
+        }
+    }
+
+    &__content {
+        @media (max-width: 576px) {
+            padding-left: 20px;
+        }
+    }
+
+    &__path {
+        position: absolute;
+        top: 27px;
+
+        &-circle {
+            position: absolute;
+            left: -14px;
+            top: 7px;
+
+            @include showOnly('mobile');
+        }
+
+        @include showOnly('mobile');
+    }
+
+    &__dot {
+        opacity: 0;
+    }
+
+    &__initial-dot {
+        top: 7px;
+    }
+
+    &__dot,
+    &__initial-dot {
+        @include showOnly('mobile');
     }
 }
