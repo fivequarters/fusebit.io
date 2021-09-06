@@ -121,7 +121,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter('keys', (obj) => Object.keys(obj));
     eleventyConfig.addFilter('format', format);
-    eleventyConfig.addFilter('image', getImageTag);
+    eleventyConfig.addFilter('getImageTag', getImageTag);
     eleventyConfig.addFilter('getImageUrl', getImageUrl);
 
     global.filters = eleventyConfig.javascriptFunctions;
