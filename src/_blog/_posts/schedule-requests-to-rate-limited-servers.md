@@ -1,7 +1,7 @@
 ---
 post_title: Scheduling Requests
 post_author: Randall Tombaugh
-post_author_avatar: https://fusebit.io/randall.png
+post_author_avatar: randall.png
 date: '2019-06-27'
 post_image: blog-scheduling-requests-main.jpg
 post_excerpt: Any modern 3rd party HTTP API that sees significant traffic will have some form of rate limiting implemented. The server might rate limit on the number of concurrent connections...

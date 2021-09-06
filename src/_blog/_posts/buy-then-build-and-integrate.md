@@ -1,7 +1,7 @@
 ---
 post_title: Twilio, Segment, Github, and Auth0 are Setting a New Trend
 post_author: Tomasz Janczuk
-post_author_avatar: https://fusebit.io/tomek.png
+post_author_avatar: tomek.png
 date: '2019-07-04'
 post_image: blog-buy-build-main.jpg
 post_excerpt: It is 2019. A 250 person company uses an average of 123 SaaS applications...
@@ -22,7 +22,7 @@ The number of SaaS applications in a company’s ecosystem is likely going to in
 
 Forrester identified this new software consumption model in its [Buy then Build: The New World of SaaS Development](https://www.forrester.com/report/Buy+Then+Build+The+New+World+Of+SaaS+Development/-/E-RES143875) report.
 
-![Build](https://fusebit.io/blog-buy-build-workers.jpg 'Build')
+![Build](blog-buy-build-workers.jpg 'Build')
 
 Forrester observes that SaaS is fundamentally changing the way companies are making software procurement decisions. Most companies realize that no single software solution is going to fit their specific requirements exactly and completely. They choose to buy a collage of solutions that each swork very well for specific aspects of their operations and assume they will need to build an integration layer between them to support their unique business processes end to end.
 

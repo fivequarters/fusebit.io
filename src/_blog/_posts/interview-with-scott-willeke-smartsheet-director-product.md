@@ -1,7 +1,7 @@
 ---
 post_title: Premium Integrations as a Differentiator
 post_author: Yavor Georgiev
-post_author_avatar: https://fusebit.io/yavor.png
+post_author_avatar: yavor.png
 date: '2020-03-10'
 post_image: blog-interview-with-smartsheet-main.png
 post_excerpt: As part of Fusebit's journey towards helping SaaS companies build powerful custom integrations, we caught up with Scott Willeke, Director of Product at Smartsheet...

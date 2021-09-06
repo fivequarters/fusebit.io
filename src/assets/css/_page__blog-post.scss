@@ -34,6 +34,11 @@
     &__author {
         display: flex;
         align-items: center;
+
+        img {
+            max-width: 50px;
+            max-height: 50px;
+        }
     }
 
     &__author-name {
@@ -69,8 +74,8 @@
             width: 100%;
             border-radius: 24px;
             height: auto;
-            max-height: 600px;
             object-fit: cover;
+            max-height: 600px;
         }
     }
 

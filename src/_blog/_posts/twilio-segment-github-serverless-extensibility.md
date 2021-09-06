@@ -1,7 +1,7 @@
 ---
 post_title: Twilio, Segment, Github, and Auth0 are Setting a New Trend
 post_author: Tomasz Janczuk
-post_author_avatar: https://fusebit.io/tomek.png
+post_author_avatar: tomek.png
 date: "2019-06-08"
 post_image: blog-new-trend-main.png
 post_excerpt: Most people buy cars to get from A to B, not because they like driving. That’s why Uber and Lyft are so successful...
@@ -45,7 +45,7 @@ Twilio has a longstanding reputation as a developer-friendly company. Their call
 
 It was no surprise then when Twilio became one of the first SaaS companies to embrace the serverless extensibility pattern by shipping [Twilio Functions](https://www.twilio.com/blog/2017/05/introducing-twilio-functions.html) in 2017:
 
-![Twilio](https://fusebit.io/blog-new-trend-twilio.png "Twilio")
+![Twilio](blog-new-trend-twilio.png "Twilio")
 
 In the announcement blog post, Carter Rabasa outlined the set of problems Twilio wanted to address with Twilio Functions:
 
@@ -63,7 +63,7 @@ Segment is a platform for collection, unification, and redistribution of custome
 
 Segment recently announced the introduction of [Segment hosted functions](https://segment.com/blog/partners-integrate-in-hours-not-weeks/) in their platform. The offering aims to remove the friction Segment partners currently face when introducing new integrations:
 
-![Segment](https://fusebit.io/blog-new-trend-segment.png "Segment")
+![Segment](blog-new-trend-segment.png "Segment")
 
 The announcement outlines the reasons for introducing hosted functions that echo those of Twilio:
 
@@ -82,7 +82,7 @@ Github has long been the go-to solution for git-based source control for many de
 
 Github has long had a rich set of webhooks to support such integration scenarios. In October 2018 Github announced [Github Actions](https://github.blog/2018-10-17-action-demos/) to further improve their integration story. Why? Because *“configuring the apps and services that make up your development cycle takes significant time and effort”*. As of this writing, Github Actions remain in public beta.
 
-![Github Actions](https://fusebit.io/blog-new-trend-github.png "Github Actions")
+![Github Actions](blog-new-trend-github.png "Github Actions")
 
 Github takes a notably different approach to serverless extensibility compared to Twilio or Segment. Github’s core competency is in managing the lifecycle of code. Instead of providing an embedded scripting editor for actions like Twilio or Segment did, Github relies on its core platform to manage the lifecycle of actions’ code. Actions are represented as docker images, the definition of which is stored in a Github repository. Actions can be further combined into workflows and triggered by many of the same events exposed as Github webhooks today. Github provides the infrastructure for executing and monitoring these workflows, removing the operational burden for its users.
 
@@ -92,7 +92,7 @@ Github takes a notably different approach to serverless extensibility compared t
 
 Auth0 offers a world-class identity and access management platform. Similar to Twilio, it always has had a strong developer focus - for the first two years the company’s tagline read “Identity made simple for developers”. Identity is a complex space, with most applications requiring a lot of customization and integration. In order to remove friction from the customization process, Auth0 decided to offer an embedded scripting solution almost from day one. The mechanism was called Auth0 Rules:
 
-![Auth0](https://fusebit.io/blog-new-trend-auth0.png "Auth0")
+![Auth0](blog-new-trend-auth0.png "Auth0")
 
 Over time, the technology underlying the Auth0 Rules got more sophisticated and led to the development of Auth0 Hooks and the Auth0 Extensions, which are different ways of exposing customization and integration capabilities within the Auth0 platform. The underlying reasons for their existence remained the same, however:
 
@@ -115,4 +115,4 @@ Did you know you can enable similar capabilities in your platform as these thoug
 
 > "Fusebit.io offers a managed serverless extensibility solution that can be embedded into your SaaS in days."
 
-[Fusebit](https://fusebit.io/) is the only embedded serverless extensibility solution for SaaS platforms available on the market today. Built by the same team that created the Auth0 serverless extensibility solution, Fusebit derives from years of experience to support the demands of industry-leading SaaS platforms. With Fusebit, any SaaS platform can start reaping the benefits of serverless extensibility in a fraction of the time it would take to develop a similar capability in-house and without incurring the ongoing cost and distraction of operating the in-house solution afterward.
+[Fusebit](https://fusebit.io) is the only embedded serverless extensibility solution for SaaS platforms available on the market today. Built by the same team that created the Auth0 serverless extensibility solution, Fusebit derives from years of experience to support the demands of industry-leading SaaS platforms. With Fusebit, any SaaS platform can start reaping the benefits of serverless extensibility in a fraction of the time it would take to develop a similar capability in-house and without incurring the ongoing cost and distraction of operating the in-house solution afterward.
