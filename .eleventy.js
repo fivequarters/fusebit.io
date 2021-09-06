@@ -2,6 +2,48 @@ const htmlmin = require('html-minifier');
 const fs = require('fs');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const { format } = require('date-fns');
+const Image = require('@11ty/eleventy-img');
+
+
+function getImageMeta(src) {
+    const options = {
+        widths: [300, 600, 900, 1200, null],
+        formats: ['webp', 'jpg'],
+        outputDir: './src/assets/images/11ty',
+        urlPath: '/assets/images/11ty',
+    };
+    
+    const url = `./src/assets/images/${src}`;
+    
+    Image(url, options);
+    
+    return Image.statsSync(url, options);
+}
+
+
+function getImageUrl(src, width, format = 'jpeg') {
+    const metadata = getImageMeta(src);
+
+    return metadata[format]?.find(image => image.width === width)?.url || '';
+
+}
+
+function imageShortcode(
+    src,
+    alt = '',
+    sizes = '(min-width: 768px) 50vw, 100vw'
+) {
+    const metadata = getImageMeta(src);
+
+    const imageAttributes = {
+        alt,
+        loading: 'lazy',
+        decoding: 'async',
+        sizes,
+    };
+
+    return Image.generateHTML(metadata, imageAttributes);
+}
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
@@ -61,6 +103,8 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter('keys', (obj) => Object.keys(obj));
     eleventyConfig.addFilter('format', format);
+    eleventyConfig.addFilter('image', imageShortcode);
+    eleventyConfig.addFilter('getImageUrl', getImageUrl);
 
     global.filters = eleventyConfig.javascriptFunctions;
     eleventyConfig.setPugOptions({

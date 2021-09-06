@@ -3,7 +3,7 @@ post_title: The Evolution of Hyper-Personalized Marketing
 post_author: Yavor Georgiev
 post_author_avatar: https://fusebit.io/yavor.png
 date: '2019-09-06'
-post_image: https://fusebit.io/blog-interview-with-zaius-main-1.png
+post_image: blog-interview-with-zaius-main-1.png
 post_excerpt: We spoke with Tyler Mills, Product Manager at [Zaius](https://zaius.com/), to get the scoop on his company's approach to integrations...
 post_slug: interview-with-tyler-mills-zaius
 tags: ['post']
