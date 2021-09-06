@@ -107,7 +107,6 @@ dist
 /build/
 /dist/
 /src/compiled-assets/
-/src/assets/images/11ty
 .DS_Store
 Thumbs.db
 yarn.lock
