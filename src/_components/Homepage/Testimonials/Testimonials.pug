@@ -14,7 +14,7 @@ section.testimonials
                     .swiper-slide 
                         .testimonials__card
                             .testimonials__card--brand
-                                img(src="../../../assets/images/testimonials/testimonials__brand-1.png" alt="FactoryFour logo")
+                                != filters.getImageTag(`testimonials/testimonials__brand-1.png`, 'FactoryFour logo')
 
                             p.testimonials__card--text
                                 | Fusebit has become an 
@@ -23,7 +23,7 @@ section.testimonials
                 
                             .testimonials__card--user 
                                 .testimonials__card--user-image 
-                                    img(src="../../../assets/images/testimonials/testimonials__user-1.png" alt="Alex Mathews profile image")
+                                    != filters.getImageTag(`testimonials/testimonials__user-1.png`, 'Alex Mathews profile image')
 
                                 .testimonials__card--user-data
                                     h4 Alex Mathews
@@ -32,7 +32,7 @@ section.testimonials
                     .swiper-slide 
                         .testimonials__card
                             .testimonials__card--brand
-                                img(src="../../../assets/images/testimonials/testimonials__brand-2.png" alt="Hyperproof logo")
+                                != filters.getImageTag(`testimonials/testimonials__brand-2.png`, 'Hyperproof logo')
 
                             p.testimonials__card--text
                                 | Our integration needs are very custom and complex. The Fusebit platform stood out from alternatives because of the 
@@ -41,7 +41,7 @@ section.testimonials
 
                             .testimonials__card--user 
                                 .testimonials__card--user-image 
-                                    img(src="../../../assets/images/testimonials/testimonials__user-2.png" alt="Craig Unger profile image")
+                                    != filters.getImageTag(`testimonials/testimonials__user-2.png`, 'Craig Unger profile image')
 
                                 .testimonials__card--user-data
                                     h4 Craig Unger 
