@@ -2,6 +2,43 @@ const htmlmin = require('html-minifier');
 const fs = require('fs');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const { format } = require('date-fns');
+const Image = require('@11ty/eleventy-img');
+const { parseHTML } = require('linkedom');
+
+function getImageMeta(src) {
+    const options = {
+        widths: [300, 600, 900, 1200, null],
+        formats: ['webp', 'jpg'],
+        outputDir: process.env.ELEVENTY_ENV === 'production' ? './build/assets/images/11ty' : './src/assets/images/11ty',
+        urlPath: '/assets/images/11ty',
+    };
+
+    const url = `./src/assets/images/${src}`;
+
+    Image(url, options);
+
+    return Image.statsSync(url, options);
+}
+
+function getImageUrl(src, width, format = 'jpeg') {
+    const metadata = getImageMeta(src);
+
+    return metadata[format]?.find((image) => image.width === width)?.url || '';
+}
+
+function getImageTag(src, alt = '', sizes, attrs = {}) {
+    const metadata = getImageMeta(src);
+
+    const imageAttributes = {
+        alt,
+        loading: 'lazy',
+        decoding: 'async',
+        sizes: sizes || '(min-width: 768px) 50vw, 100vw',
+        ...attrs,
+    };
+
+    return Image.generateHTML(metadata, imageAttributes);
+}
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
@@ -41,6 +78,29 @@ module.exports = function (eleventyConfig) {
         },
     });
 
+    eleventyConfig.addTransform(
+        'transform-blog-images',
+        function (content, outputPath) {
+            if (outputPath.endsWith('.html') && outputPath.includes('blog')) {
+                const { document } = parseHTML(content);
+
+                const images = [
+                    ...document.querySelectorAll('img:not(#hero-image)'),
+                ];
+
+                images
+                    .filter((i) => !i.src.includes('svg'))
+                    .forEach((i) => {
+                        i.outerHTML = getImageTag(`blog/${i.src}`, i.alt, null);
+                    });
+
+                return `<!DOCTYPE html>${document.documentElement.outerHTML}`;
+            }
+
+            return content;
+        }
+    );
+
     if (process.env.ELEVENTY_ENV === 'production') {
         eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
             if (outputPath.endsWith('.html')) {
@@ -61,6 +121,8 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter('keys', (obj) => Object.keys(obj));
     eleventyConfig.addFilter('format', format);
+    eleventyConfig.addFilter('getImageTag', getImageTag);
+    eleventyConfig.addFilter('getImageUrl', getImageUrl);
 
     global.filters = eleventyConfig.javascriptFunctions;
     eleventyConfig.setPugOptions({

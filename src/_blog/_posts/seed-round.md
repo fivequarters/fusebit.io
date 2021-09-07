@@ -1,9 +1,9 @@
 ---
 post_title: Fusebit Raises Seed Round
 post_author: Tomasz Janczuk
-post_author_avatar: https://fusebit.io/tomek.png
+post_author_avatar: tomek.png
 date: '2021-01-20'
-post_image: https://fusebit.io/twitter-blog-funding-announcement.png
+post_image: twitter-blog-funding-announcement.png
 post_excerpt: FSEATTLE, WA -- Fusebit (https://fusebit.io), a Seattle-based developer platform for product integrations, has today announced the close of $3.3 million in seed-round funding...
 post_slug: seed-round
 tags: ['post']
@@ -38,4 +38,4 @@ This round of funding will fuel product development and the overall infrastructu
 
 > *Tomasz Janczuk, Fusebit CEO*
 
-Fusebit has embraced the remote working culture and hires based on talent, not location. If you’re interested in a highly rewarding work environment, please reach out to [contact@fusebit.io](contact@fusebit.io) to inquire about engineering roles and developer-focused marketing roles.
+Fusebit has embraced the remote working culture and hires based on talent, not location. If you’re interested in a highly rewarding work environment, please reach out to [contact@fusebit.io](mailto:contact@fusebit.io) to inquire about engineering roles and developer-focused marketing roles.

@@ -2,6 +2,7 @@ extends default.pug
 
 block page_variable
     - var pageClass = 'blog__page'
+    - var title = post_title
 
 block content
     section.section
@@ -22,7 +23,7 @@ block content
                     img(src='/assets/images/tag.svg' alt="Tag") 
                     div 
                         each t, index in postTags
-                            a.post__tag(href='/blog/tags/' + t) #{t}
+                            a.post__tag(href= `/blog/tags/${t}/`) #{t}
                             if index + 1 === postTags.length - 1
                                 | #{' & '} 
                             else if index + 1 < postTags.length - 1
@@ -32,7 +33,7 @@ block content
         .layout.post__content-layout.layout--no-padding-bottom
             .post__content
                 .post__hero-image
-                    img(src= post_image)
+                    != filters.getImageTag(`blog/${post_image}`, 'Hero Image', null, { id:"hero-image" })
                 article.article.post__article!= content
             .post__navigation-container
                 - const prevPost = filters.getNextCollectionItem(collections.post, page) || null
@@ -55,4 +56,4 @@ block content
             h2 Most Recent
             .post-card-container.post__trending-list
                 each post in [...collections.post].reverse().slice(0, 3)
-                    +postCard(post.data.permalink, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
+                    +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)

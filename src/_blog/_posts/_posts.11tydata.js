@@ -14,10 +14,14 @@ module.exports = {
                 const day = `${getDate(date)}`.padStart(2, '0');
                 const month = `${getMonth(date) + 1}`.padStart(2, '0');
 
-                return `blog/${year}/${month}/${day}/${slug}.html`;
+                return process.env.ELEVENTY_ENV === 'production'
+                    ? `blog/${year}/${month}/${day}/${slug}/index.html`
+                    : `blog/${year}/${month}/${day}/${slug}.html`;
             }
 
-            return `blog/${slug}.html`;
+            return process.env.ELEVENTY_ENV === 'production'
+                ? `blog/${slug}/index.html`
+                : `blog/${slug}.html`;
         },
     },
 };
