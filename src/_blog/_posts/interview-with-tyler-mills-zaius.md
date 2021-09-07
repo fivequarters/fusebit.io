@@ -1,9 +1,9 @@
 ---
 post_title: The Evolution of Hyper-Personalized Marketing
 post_author: Yavor Georgiev
-post_author_avatar: https://fusebit.io/yavor.png
+post_author_avatar: yavor.png
 date: '2019-09-06'
-post_image: https://fusebit.io/blog-interview-with-zaius-main-1.png
+post_image: blog-interview-with-zaius-main-1.png
 post_excerpt: We spoke with Tyler Mills, Product Manager at [Zaius](https://zaius.com/), to get the scoop on his company's approach to integrations...
 post_slug: interview-with-tyler-mills-zaius
 tags: ['post']
@@ -32,7 +32,7 @@ Because many of our integrations are "one-click" and require limited setup, they
 
 Many of our integrations allow clients to import customer activity like orders, opening a ticket, visiting a website, opening a mobile app, as well as company data like Products or subscriptions.
 
-![Zaius Usage](https://fusebit.io/blog-interview-zaius-usage.png "Zaius Usage")
+![Zaius Usage](blog-interview-zaius-usage.png "Zaius Usage")
 
 This data provides the basis for powerful, targeted segments based on both behavior and attributes of customers. For example, you can create a segment sending a push message to all men, 25-34 years old, that abandoned their shopping cart during their session on web, as well as generating actionable insights backed by one-of-a-kind data science.
 
@@ -46,7 +46,7 @@ Closing the loop of data in and data out integrations produces millions of data 
 
 As of today, the majority of integrations are built by Zaius and Zaius contractors, but the goal is to open up the creation of these integrations to external developers as we build out the proper tooling for our partners.
 
-![Zaius Architecture](https://fusebit.io/blog-interview-zaius-architecture.png "Zaius Architecture")
+![Zaius Architecture](blog-interview-zaius-architecture.png "Zaius Architecture")
 
 Zaius integrations support a standard RESTful "push" interface using public APIs but also -- uniquely in the space -- hosted code execution of integration logic. This allows developers to create highly complex apps without worrying about the scalability of infrastructure or uptime by having Zaius host the app code and infrastructure.
 

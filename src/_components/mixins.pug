@@ -15,7 +15,8 @@ mixin postCard(href, img, date, title, excerpt, className)
     a.post-card(href= href class= className)
         .post-card-header
             .post-card-image-container
-                .post-card-image(style="background-image: url('" + img + "')")
+                - const imgSrc = filters.getImageUrl(`blog/${img}`, 900)
+                .post-card-image(style="background-image: url('" + imgSrc + "')")
         .post-card-content
             span.post-card-date= `${filters.format(new Date(date.replace('-', '/')), 'd MMMM yyyy')}`
             h6.post-card-title= title

@@ -33,7 +33,7 @@ block content
         .layout.post__content-layout.layout--no-padding-bottom
             .post__content
                 .post__hero-image
-                    img(src= post_image)
+                    != filters.getImageTag(`blog/${post_image}`, 'Hero Image', null, { id:"hero-image" })
                 article.article.post__article!= content
             .post__navigation-container
                 - const prevPost = filters.getNextCollectionItem(collections.post, page) || null

@@ -1,9 +1,9 @@
 ---
 post_title: Did You Make the Right Call with Building Your Integration Story?
 post_author: Yavor Georgiev
-post_author_avatar: https://fusebit.io/yavor.png
+post_author_avatar: yavor.png
 date: '2019-08-19'
-post_image: https://fusebit.io/blog-integration-landscape-main.png
+post_image: blog-integration-landscape-main.png
 post_excerpt: In the not-too-distant past, the only way for a SaaS company to provide integrations with other tools and services...
 post_slug: integration-landscape
 tags: ['post', 'popular']
