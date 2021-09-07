@@ -63,15 +63,15 @@ section.features
 
 
             .features__images.features__images--marketplace
-                //include ./Marketplace/Marketplace
-                img(src="../../../assets/images/homepage/leaveBoilerplate/step1.png" alt="Leave boilerplate integration code to us" data-step='1')
-                img(src="../../../assets/images/homepage/leaveBoilerplate/step2.png" alt="Leave boilerplate integration code to us" data-step='2' style="display: none;")
-                img(src="../../../assets/images/homepage/leaveBoilerplate/step3.png" alt="Leave boilerplate integration code to us" data-step='3' style="display: none;")
-                img(src="../../../assets/images/homepage/leaveBoilerplate/step4.png" alt="Leave boilerplate integration code to us" data-step='4' style="display: none;")
+                //include ./Marketplace/
+                != filters.getImageTag(`homepage/leaveBoilerplate/step1.png`, 'Leave boilerplate integration code to us', null, {'data-step': '1'})
+                != filters.getImageTag(`homepage/leaveBoilerplate/step2.png`, 'Leave boilerplate integration code to us', null, {style: 'display: none;', 'data-step': '2'})
+                != filters.getImageTag(`homepage/leaveBoilerplate/step3.png`, 'Leave boilerplate integration code to us', null, {style: 'display: none;', 'data-step': '3'})
+                != filters.getImageTag(`homepage/leaveBoilerplate/step4.png`, 'Leave boilerplate integration code to us', null, {style: 'display: none;', 'data-step': '4'})
                 script.
                     let currentImgMarketplaceIndex = 1;
                     setInterval(() => {
-                        const all = document.querySelectorAll('.features__images--marketplace > img')
+                        const all = document.querySelectorAll('.features__images--marketplace img')
                         all.forEach(i => i.style.display = 'none');
                         currentImgMarketplaceIndex++;
                         if (currentImgMarketplaceIndex === 5) currentImgMarketplaceIndex = 1;
@@ -119,7 +119,7 @@ section.features
 
 
             .features__images.features__images--graph
-                img(src="../../../assets/images/features__bg/graph1.png" alt="Don't spend time worrying about infrastructure" data-graph='1')
+                != filters.getImageTag(`features__bg/graph1.png`, 'Don\'t spend time worrying about infrastructure', null, {'data-graph': '1'})
 
         +pathDot
         +path1

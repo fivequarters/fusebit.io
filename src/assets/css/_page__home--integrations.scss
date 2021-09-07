@@ -220,7 +220,7 @@
             width: 50%;
             height: 100%;
             pointer-events: none;
-
+            
             img {
                 position: absolute;
                 top: 50%;
@@ -231,6 +231,8 @@
                 transition: all 0.2s;
                 display: block;
                 width: 100%;
+                height: auto;
+                max-width: 524px;
             }
 
             @media only screen and (width: 1024px) and (height: 1366px),

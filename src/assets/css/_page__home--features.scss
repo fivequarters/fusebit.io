@@ -543,8 +543,9 @@
         &--marketplace {
             left: 400px;
 
-            & > img {
+            & img {
                 width: 644px;
+                height: auto;
 
                 @media only screen and (max-width: 700px) {
                     width: 120%;
@@ -556,8 +557,9 @@
             left: -400px;
             opacity: 0;
 
-            & > img {
+            & img {
                 transform: scale(1.5);
+                height: auto;
 
                 @media only screen and (max-width: 1000px) {
                     transform: scale(1.2);
