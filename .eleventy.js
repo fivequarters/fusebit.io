@@ -89,7 +89,7 @@ module.exports = function (eleventyConfig) {
                 ];
 
                 images
-                    .filter((i) => !i.src.includes('svg'))
+                    .filter((i) => !i.src.includes('svg') && !i.src.includes('footer__bg'))
                     .forEach((i) => {
                         i.outerHTML = getImageTag(`blog/${i.src}`, i.alt, null);
                     });
