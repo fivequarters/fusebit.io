@@ -4,16 +4,33 @@
     justify-content: center;
     align-items: center;
     color: var(--dark);
-    padding: 5rem 0 10rem;
+    padding-bottom: 10rem;
     overflow: hidden;
 
     &__container {
         position: relative;
         width: 90%;
         max-width: var(--container);
+        display: flex;
+        z-index: 3;
+
+        @media only screen and (max-width: 1000px) {
+            flex-direction: column;
+        }
+    }
+
+    &__background {
+        z-index: 2;
+    }
+
+    &__mark {
+        @include mark-offset(450px, 90px);
     }
 
     &__content {
+        flex: 1;
+        max-width: 664px;
+
         @media only screen and (max-width: 1000px) {
             margin-bottom: 5rem;
         }
@@ -103,51 +120,72 @@
         }
     }
 
-    &__image {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-20%, -52%);
-        z-index: -1;
+    &__animation-container {
+        position: relative;
 
         img {
-            position: absolute;
-            top: 0;
-            right: 0;
             height: 100%;
             object-fit: contain;
             z-index: 10;
 
-            @media only screen and (max-width: 1000px) {
-                transform: translate(39%, 0%);
-            }
-
-            @media only screen and (max-width: 700px) {
-                transform: translate(97%, 0%);
+            @media only screen and (max-width: 576px) {
+                width: 320px;
             }
         }
 
-        .prefooter__path--dot {
-            z-index: 0;
+        @media only screen and (max-width: 576px) {
+            margin-bottom: 100px;
         }
+    }
 
-        @media only screen and (max-width: 1200px) {
-            transform: translate(-30%, -52%);
-        }
-
-        @media only screen and (max-width: 1024px) and (max-height: 1366px) {
-            transform: translate(-20%, -57%);
-        }
+    .prefooter__animation {
+        width: 100%;
+        position: absolute;
+        top: -83px;
 
         @media only screen and (max-width: 1000px) {
             position: relative;
-            transform: translate(-70%, -20%);
+            right: -105%;
+            transform: translateX(-100%);
+            width: fit-content;
         }
-        @media only screen and (max-width: 700px) {
-            position: relative;
+
+        @media only screen and (max-width: 576px) {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__dot-desktop-path {
+        position: absolute;
+        top: -3px;
+        left: 0;
+        transform: translateX(-35%);
+        z-index: -1;
+        display: block;
+
+        @media only screen and (max-width: 576px) {
+            display: none;
+        }
+    }
+
+    &__dot-mobile-path {
+        display: none;
+
+        @media only screen and (max-width: 576px) {
+            display: block;
+            position: absolute;
+            top: 8px;
             left: 0;
-            transform: translate(-80%, -20%) scale(0.7);
+            z-index: -1;
         }
+    }
+
+    &__mobile-path-circle {
+        position: absolute;
+        right: 67px;
+        top: 2px;
     }
 
     &__path {
@@ -193,18 +231,14 @@
             @media only screen and (max-width: 1000px) {
                 transform: translate(90%, 3px);
             }
+
+            @media only screen and (max-width: 576px) {
+                display: none;
+            }
         }
     }
 
-    @media only screen and (max-width: 1024px) and (max-height: 1366px) {
-        padding-top: 8rem;
-    }
-
     @media only screen and (max-width: 1000px) {
-        padding: 5rem 0;
-    }
-
-    @media only screen and (max-width: 500px) {
         padding-bottom: 0;
     }
 }

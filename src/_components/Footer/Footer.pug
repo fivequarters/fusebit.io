@@ -4,7 +4,9 @@ mixin footerLink(link, linkText, badge, onClick)
         if(badge)
             .footer__link--badge
                 span= badge
-footer.footer 
+footer.footer
+    img(class="footer__top-mark" src="../../assets/images/footer__bg/bg--top.png" alt="Footer Top Mark") 
+    img(class="footer__bottom-mark" src="../../assets/images/footer__bg/bg--bottom.png" alt="Footer Bottom Mark") 
     .footer__container 
         .footer__wrapper.footer__wrapper--head
             .footer__logo 
@@ -41,6 +43,3 @@ footer.footer
             p Copyright 2019-2021 Fusebit
 
     .footer__bg 
-        - for(let i = 1; i <= 5; i++)
-            - let bgNo = ('0' + i).slice(-2);
-            div(class='footer__bg--' + bgNo)

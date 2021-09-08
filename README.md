@@ -102,15 +102,40 @@ Eleventy’s output will be to a `build` directory at the root level.
 
 ## Blog
 Everytime you want to add a post to the blog you should create a markdown file (.md) inside `src/_blog/_posts` folder and set these variables in the front matter.
+```
+---
+post_title: string | The title of the post  
 
+post_author: string | The author name of the post 
+
+post_author_avatar: string | The url of the author avatar image
+
+date: string | The date of the post with the following format: 'YYYY-MM-DD'. This prop will be used to order the collections of posts by date.
+
+post_image: string | The url of the hero image of the post
+
+post_excerpt: string | The post excerpt that's going to be shown in the blog homepage (/blog)
+
+post_slug: string | This prop will set the slug of the post, if omitted the slug will be generated from the title.
+
+tags: string[] | The list of tags you want to set to an article, **'post' is always required when creating a blog post**.
+
+post_date_in_url: boolean | When setting this prop you can define if you want a date path in your url or not. If omitted defaults to `false`.
 ---
-post_title: string  (e.g Twilio, Segment, Github, and Auth0 are Setting a New Trend)
-post_author: string (e.g Tomasz Janczuk)
-post_author_avatar: string (e.g https://fusebit.io/tomek.png)
-date: 'YYYY-MM-DD' (e.g '2019-07-04') | This prop will be used to order the collections of posts by date.
-post_image: string (e.g https://fusebit.io/blog-buy-build-main.jpg) | The hero image of your post
-post_excerpt: string (e.g It is 2019. A 250 person company uses an average of 123 SaaS applications...)
-post_slug: buy-then-build-and-integrate | This prop will set the slug of the post, if omitted the slug will be generated from the title.
-post_date_in_url: boolean | You can define if you want a date path in your url or not. If omitted defaults to `false`.
-tags: string[] (e.g ['post', 'popular']) | The tags you want to set to an article, **'post' is always required when creating a blog post**.
+```
+
+### Full example:
+
+```
 ---
+post_title: The Role of Integrations in Building a Unicorn
+post_author: Tomasz Janczuk
+post_author_avatar: https://fusebit.io/tomek.png
+date: '2019-08-26'
+post_image: https://fusebit.io/blog-interview-with-auth0-main.png
+post_excerpt: We spoke with Eugenio Pace, the co-founder and CEO of [Auth0](https://auth0.com/), to get the scoop on his company's approach to integrations.
+post_slug: interview-with-eugenio-pace-auth0-ceo
+tags: ['post']
+post_date_in_url: true
+---
+```

@@ -2,12 +2,10 @@
     position: relative;
     color: var(--neutral);
     overflow: hidden;
-    // background-image: url(./images/homepage/hero/hero--4500.png);
-    // background-position: calc(50vw - 983px) bottom;
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    background: url(./images/homepage/hero/hero--1920.png) left top no-repeat;
-    background-size: 100%;
+    background-image: url(./images/homepage/hero/hero--desktop.png);
+    background-position: calc(50vw - 750px) bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     &__container {
         width: 90%;
@@ -31,8 +29,8 @@
         width: 100%;
         max-width: 544px;
 
-        @media only screen and (max-width: 1400px) {
-            max-width: 500px;
+        @media only screen and (max-width: 1000px) {
+            max-width: 475px;
         }
 
         @media only screen and (max-width: 800px) {
@@ -116,12 +114,6 @@
         color: var(--neutralLight);
         margin-bottom: 2rem;
 
-        @media only screen and (max-width: 1400px) {
-            @include font-size(52);
-            line-height: 62px;
-            margin-bottom: 1.5rem;
-        }
-
         @media only screen and (max-width: 1000px) {
             @include font-size(39);
             line-height: 56px;
@@ -140,13 +132,6 @@
         font-weight: 300;
         line-height: 29px;
         margin-bottom: 3rem;
-
-        @media only screen and (max-width: 1400px) {
-            width: 500px;
-            @include font-size(16);
-            line-height: 24px;
-            margin-bottom: 2rem;
-        }
 
         @media only screen and (max-width: 1000px) {
             width: 350px;
@@ -199,9 +184,9 @@
 
     &__images {
         width: 100%;
-        position: relative;
+        position: absolute;
         opacity: 0;
-        padding-top: 50%;
+        left: 51%;
 
         img {
             position: absolute;
@@ -223,40 +208,8 @@
         }
     }
 
-    // @media only screen and (max-width: 800px) {
-    //     background-image: url(./images/homepage/hero/hero--mobile.png);
-    //     background-position: 25% bottom;
-    // }
-
-    @media only screen and (min-width: 1900px) and (min-height: 1079px) {
-        background: url(./images/homepage/hero/hero--4500.png) -26% top no-repeat;
-    }
-
-    @media only screen and (min-height: 2000px) {
-        background: url(./images/homepage/hero/hero--4500.png) -175% top no-repeat;
-    }
-
-    @media only screen and (min-height: 3000px) {
-        background: url(./images/homepage/hero/hero--4500.png) 185% top
-            no-repeat;
-    }
-
-    @media only screen and (max-width: 1500px) {
-        background: url(./images/homepage/hero/hero--1360.png) left -4rem no-repeat;
-        background-size: 1440px;
-    }
-
-    @media only screen and (max-width: 1200px) {
-        background: url(./images/homepage/hero/hero--1360.png) -4rem top no-repeat;
-    }
-
-    @media only screen and (max-width: 1000px) {
-        background: url(./images/homepage/hero/hero--1360.png) -4rem bottom no-repeat;
-    }
-
-    @media only screen and (max-width: 500px) {
-        background: url(./images/homepage/hero/hero--mobile.png) center bottom
-            no-repeat;
-        background-size: cover;
+    @media only screen and (max-width: 800px) {
+        background-image: url(./images/homepage/hero/hero--mobile.png);
+        background-position: 25% bottom;
     }
 }

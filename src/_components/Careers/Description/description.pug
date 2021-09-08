@@ -1,0 +1,74 @@
+mixin item(img, highlightText, text)
+    .description__item
+        .description__item-img-container
+            img(src=img)
+        p.text.description__item-text
+            span= highlightText
+            = text
+
+section.section
+    .background.background--white
+        .mark.mark--small.mark--dark-violet.mark--left.description__mark-top
+        .mark.mark--small.mark--dark-violet.mark--right.mark--bottom.description__mark-bottom.description__mark-bottom-desktop
+        .mark.mark--big.mark--light-violet.mark--right.mark--bottom.description__mark-bottom.description__mark-bottom-mobile
+    .layout.description__layout
+        .description__main-text-container
+            img(src="/assets/images/careers/description/sign.svg" alt="Sign").description__sign
+            p.text.description__main-text
+                +mainText
+        .description__content-container
+            .description__dot.pathdot
+            .description__initial-dot.pathdot
+            +pathCircle('description__path-circle')
+            svg(width='2' height='1582' viewbox='0 0 2 1582' fill='none' xmlns='http://www.w3.org/2000/svg' class="description__path")
+                path(opacity='0.6' d='M 0 0 H 2 V 1582 L 0 1582' fill='#D7E5FF' id="description__path")
+            .description__content
+                .description__title-container
+                    +title('Great & excellent ', 'place to work', false, true, 'description__title')
+                    p.text.description__text
+                        | Fusebit was founded by early architects of Auth0 integration technology who helped shape the awardwinning culture. We aim to do the same at Fusebit.
+                .description__items-container
+                    +item("../../../assets/images/careers/description/remote.svg", "Remote first philosophy", ', with reimbursement of coworking space if desired.')
+                    +item("../../../assets/images/careers/description/offer.svg", 'We offer', ', our employees a competitive salary in the market.')
+                    +item("../../../assets/images/careers/description/stock.svg", 'Stock options reflecting', ' your early contributions in shaping the Company.')
+                    +item("../../../assets/images/careers/description/medical.svg", 'Everyone at our company', ' receives complex medical benefits.')
+                    +item("../../../assets/images/careers/description/love.svg", 'Every employee is given', ' generous parental and family leave.')
+                    +item("../../../assets/images/careers/description/vacation.svg", 'Vacation with a minimum of 3 weeks', ' per year (yes, you need to chill every now and then).')
+                    +item("../../../assets/images/careers/description/party.svg", 'Every year', ' , all of our employees come together for our annual company offsite.')
+
+    script.
+        window.addEventListener("load", () => {
+            gsap.to(".description__dot", {
+                scrollTrigger: {
+                    trigger: '#description__path',
+                    start: "top 25%",
+                    end: "bottom 25%",
+                    scrub: 0,
+                    // TODO: Move onUpdate to a helper function so it can be reused
+                    onUpdate: ({ progress }) => {
+                        const initialDot = document.querySelector(".description__initial-dot");
+                        const motionDot = document.querySelector('.description__dot');
+
+                        if (progress > 0) {
+                            initialDot.style.opacity = "0";
+
+                            if (progress === 1) {
+                                motionDot.style.opacity = "0";    
+                            } else {
+                                motionDot.style.opacity = "1";
+                            }
+
+                        } else {
+                            motionDot.style.opacity = "0";
+                            initialDot.style.opacity = "1";
+                        }
+                    },
+                },
+                motionPath: {
+                    path: '#description__path',
+                    align: '#description__path',
+                    alignOrigin: [0.60, 0.5],
+                }
+            });
+        });
+

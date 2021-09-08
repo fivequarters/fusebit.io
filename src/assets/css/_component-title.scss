@@ -1,5 +1,4 @@
 .title {
-    @include font-size(48);
     font-family: var(--sora);
     font-weight: 700;
     max-width: 576px;
@@ -8,6 +7,22 @@
 
     & > span {
         color: var(--orange);
+    }
+}
+
+.title--main {
+    @include font-size(56);
+
+    @media only screen and (max-width: 992px) {
+        @include font-size(38);
+    }
+}
+
+.title--secondary {
+    @include font-size(48);
+
+    @media only screen and (max-width: 992px) {
+        @include font-size(32);
     }
 }
 

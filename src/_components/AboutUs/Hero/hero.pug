@@ -1,25 +1,30 @@
-section.hero 
-    .hero__container.angled-section
-        .hero__short-mark
-            img(src="../../../assets/images/short_mark.svg" alt="Short Mark")
-        .hero__long-mark
-            img(src="../../../assets/images/long_mark.svg" alt="Long Mark")
-        h1.hero__title 
+mixin background(className) 
+    .background.background--neutralLight(class= className)
+        .mark.mark--small.mark--light-violet.mark--right.hero__mark-small
+        .mark.mark--big.mark--dark-violet.mark--right.hero__mark-big
+
+
+section.section.section--no-margin.hero 
+    +background("hero__background--desktop")
+    .layout.hero__layout
+        h1.hero__title
             | The first integration platform 
             span designed for developer joy
                 i#underscore _
-        .hero__content 
-            .hero__main-text
-                p In today’s world, there’s a SaaS for everything, and making sure your product integrates seamlessly with all the key players in your segment is critical to growth and retention. Unfortunately, developers spend too much time today writing integration code from scratch, configuring solutions meant for IT or non-technical users, and paying the ongoing maintenance and scalability tax. 
+        .hero__content
+            +background("hero__background--mobile")
+            .hero__info-container
+                .hero__main-text
+                    p In today’s world, there’s a SaaS for everything, and making sure your product integrates seamlessly with all the key players in your segment is critical to growth and retention. Unfortunately, developers spend too much time today writing integration code from scratch, configuring solutions meant for IT or non-technical users, and paying the ongoing maintenance and scalability tax. 
 
-            .hero__items
-                .hero__item
-                    .hero__item-border
-                    p  
-                        span We eliminate the need to develop many disparate APIs 
-                        | while maintaining the flexibility and familiarity of a code-first platform.
-                .hero__item
-                    .hero__item-border
-                    p  
-                        span Fusebit lets developers quickly add integrations 
-                        | to their applications using powerful API building blocks
+                .hero__items
+                    .hero__item
+                        .hero__item-border
+                        p  
+                            span We eliminate the need to develop many disparate APIs 
+                            | while maintaining the flexibility and familiarity of a code-first platform.
+                    .hero__item
+                        .hero__item-border
+                        p  
+                            span Fusebit lets developers quickly add integrations 
+                            | to their applications using powerful API building blocks

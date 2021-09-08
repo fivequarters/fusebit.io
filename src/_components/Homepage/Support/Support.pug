@@ -24,16 +24,18 @@ mixin pathCard2
 mixin pathCard3
     svg.support__path--card3(width="847" height="388" fill="none" xmlns="http://www.w3.org/2000/svg")
         path.support__path--card3--path(d="M13.9998 8v291.498c0 22.091 17.9086 40 40 40H805.5c22.091 0 40 17.909 40 40v8.5" stroke="#D7E5FF" stroke-width="2")
-        
 
 
 
-section.support
-    .support__container
+
+section.section.support
+    .background
+        .mark.mark--small.mark--dark-violet.mark--right.mark--bottom.support__mark
+    .support__container.layout.layout--no-padding-top
         .support__wrapper.support__wrapper--head
             .support__content 
                 h2.support__title
-                    | Spend 
+                    | Spend
                     span less time learning 
                     | and more time coding
                     i _
@@ -74,7 +76,7 @@ section.support
                             path: `path__03`
                         },
                     ];
-                
+
                 +card(cardsData[0])
                 +card(cardsData[1])
                 +card(cardsData[2])

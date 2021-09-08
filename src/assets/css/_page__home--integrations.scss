@@ -2,15 +2,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--neutralLight);
     padding: 1rem 0 8rem;
     overflow: hidden;
+
+    &__background {
+        z-index: 1;
+    }
 
     &__container {
         position: relative;
         width: 90%;
         max-width: calc(var(--container) - 3rem);
         padding-left: 3rem;
+        z-index: 2;
+    }
+
+    &__mark-big {
+        @include mark-offset(430px, 45px);
+    }
+
+    &__mark-small {
+        top: 48px;
+
+        @media screen and (max-width: 1200px) {
+            top: 24px;
+        }
+
+        @include mark-offset(560px, 105px);
     }
 
     &__wrapper {

@@ -1,37 +1,58 @@
-section.investors 
-    .investors__container.angled-section
-        .investors__short-mark
-            img(src="../../../assets/images/short_mark.svg" alt="Short Mark")
-        .investors__long-mark
-            img(src="../../../assets/images/long_mark.svg" alt="Long Mark")
-        .investors__medium-mark
-            img(src="../../../assets/images/medium_mark.svg" alt="Medium Mark")
+section.section.section--no-margin.investors 
+    .background.background--neutralLight
+        .mark.mark--small.mark--dark-violet.mark--right.investors__mark
+    .layout.investors__layout
         .investors__title-container
             +title('Investors ', 'about Fusebit', false, true)
             +text('Proudly backed by Four Rivers Group and Founders Co-op', 'founders__text')
-        .investors__content 
-            .investors__card
-                .investors__car-body
-                    .investors__card-logo
-                        img(src="../../../assets/images/about/investors/founders-co-op.svg" alt="Logo")
-                    p.text.investors__card-text We’ve had bad experiences with call centers. 
-                        span  Through Fusebit, I hired my own remote team 
-                        | that I have complete control over. I started with one rep to see how it worked and am continuing to grow my team.
-                .investors__card-footer
-                    .investors__card-img-container(style="background: url('../../../assets/images/about/investors/aviel.svg');")
-                    .investors__card-person
-                        span.investors__card-name Aviel Ginzburg
-                        span.investors__card-position General Partner
-            .investors__card
-                .investors__car-body
-                    .investors__card-logo
-                        img(src="../../../assets/images/about/investors/four-rivers-group.svg" alt="Logo")
-                    p.text.investors__card-text We’ve had bad experiences with call centers. 
-                        span  Through Fusebit, I hired my own remote team 
-                        | that I have complete control over. I started with one rep to see how it worked and am continuing to grow my team.
-                .investors__card-footer
-                    .investors__card-img-container(style="background: url('../../../assets/images/about/investors/farouk.svg');")
-                    .investors__card-person
-                        span.investors__card-name Farouk Ladha
-                        span.investors__card-position Managing Partner
+        .investors__content.swiper-container
+            .swiper-wrapper 
+                .swiper-slide 
+                    .investors__card
+                        .investors__car-body
+                            .investors__card-logo
+                                img(src="../../../assets/images/about/investors/founders-co-op.svg" alt="Logo")
+                            p.text.investors__card-text We’ve had bad experiences with call centers. 
+                                span  Through Fusebit, I hired my own remote team 
+                                | that I have complete control over. I started with one rep to see how it worked and am continuing to grow my team.
+                        .investors__card-footer
+                            .investors__card-img-container(style="background: url('../../../assets/images/about/investors/aviel.svg');")
+                            .investors__card-person
+                                span.investors__card-name Aviel Ginzburg
+                                span.investors__card-position General Partner
+                .swiper-slide 
+                    .investors__card
+                        .investors__car-body
+                            .investors__card-logo
+                                img(src="../../../assets/images/about/investors/four-rivers-group.svg" alt="Logo")
+                            p.text.investors__card-text We’ve had bad experiences with call centers. 
+                                span  Through Fusebit, I hired my own remote team 
+                                | that I have complete control over. I started with one rep to see how it worked and am continuing to grow my team.
+                        .investors__card-footer
+                            .investors__card-img-container(style="background: url('../../../assets/images/about/investors/farouk.svg');")
+                            .investors__card-person
+                                span.investors__card-name Farouk Ladha
+                                span.investors__card-position Managing Partner
+            .swiper-pagination.swiper__pagination
 
+script.
+    new Swiper('.investors__content', {
+        slidesPerView: 1,
+        spaceBetween: 22,
+        slidesPerColumnFill: 'row',
+        enabled: true,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        breakpoints: {
+            769: {
+                slidesPerView: 2,
+                enabled: false,
+            },
+            993: {
+                slidesPerView: 2,
+                enabled: false,
+                spaceBetween: 44,
+            },
+        }
+    });
