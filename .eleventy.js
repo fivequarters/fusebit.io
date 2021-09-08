@@ -5,9 +5,9 @@ const { format } = require('date-fns');
 const Image = require('@11ty/eleventy-img');
 const { parseHTML } = require('linkedom');
 
-function getImageMeta(src) {
+function getImageMeta(src, widths) {
     const options = {
-        widths: [300, 600, 900, 1200, null],
+        widths: widths || [300, 600, 900, 1200],
         formats: ['webp', 'jpg'],
         outputDir: process.env.ELEVENTY_ENV === 'production' ? './build/assets/images/11ty' : './src/assets/images/11ty',
         urlPath: '/assets/images/11ty',
@@ -20,14 +20,14 @@ function getImageMeta(src) {
     return Image.statsSync(url, options);
 }
 
-function getImageUrl(src, width, format = 'jpeg') {
-    const metadata = getImageMeta(src);
+function getImageUrl(src, width, format = 'jpeg', widths) {
+    const metadata = getImageMeta(src, widths);
 
     return metadata[format]?.find((image) => image.width === width)?.url || '';
 }
 
-function getImageTag(src, alt = '', sizes, attrs = {}) {
-    const metadata = getImageMeta(src);
+function getImageTag(src, alt = '', sizes, attrs = {}, widths) {
+    const metadata = getImageMeta(src, widths);
 
     const imageAttributes = {
         alt,

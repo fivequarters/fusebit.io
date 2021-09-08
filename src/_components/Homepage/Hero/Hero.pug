@@ -15,4 +15,4 @@ section.hero
 
 
         .hero__images.fadeInRight
-            img(src="../assets/images/homepage/hero/hero--illustration.svg" alt="Integration platform for developers")
+            != filters.getImageTag(`homepage/hero/hero--illustration.png`, 'Integration platform for developers', null, {}, [1700, 2550])
