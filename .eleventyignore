@@ -4,7 +4,5 @@
 .DS_Store
 Thumbs.db
 
-// Legacy pages
-
-src/_pages/legacy
-/src/newPages/*
+// New pages
+src/_pages/new
