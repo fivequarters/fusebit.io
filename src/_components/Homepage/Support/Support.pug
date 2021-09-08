@@ -41,7 +41,7 @@ section.support
                 p.support__text Fusebit supports popular SaaS APIs so you don’t have to become an integration expert. Our simple, uniform model covers all your integration needs in one place.
 
             .support__image 
-                img.support__image--img(src="../../../assets/images/support/support __brands.png", alt="")
+                != filters.getImageTag(`support/support __brands.png`, 'Brands', null, {class: 'support__image--img'})
                 
                 svg.support__image--frame(viewBox="-35 -10 680 360" fill="none" xmlns="http://www.w3.org/2000/svg")
                     path(opacity=".8" d="M162.37 16.5035l288.478 1.5004C538.535 18.46 609.249 89.9138 608.793 177.6c-.456 87.687-71.91 158.401-159.597 157.945l-288.478-1.5c-87.6861-.456-158.40044-71.91-157.94436-159.597C3.22972 86.7617 74.6835 16.0474 162.37 16.5035z" stroke="#D7E5FF" stroke-width="1.9002")
