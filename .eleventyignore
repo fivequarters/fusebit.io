@@ -7,3 +7,4 @@ Thumbs.db
 // Legacy pages
 
 src/_pages/legacy
+/src/newPages/*
