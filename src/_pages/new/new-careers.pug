@@ -1,0 +1,23 @@
+extends ../_layouts/default.pug
+
+mixin careersCta(className)
+    - const OPEN_POSITIONS = 4
+    a.cta(href= 'https://angel.co/company/fusebitio/jobs' class= className)
+        .cta-ellipse 
+            span= OPEN_POSITIONS
+        | Open Positions
+        +ctaArrow
+
+mixin mainText
+    | At Fusebit, we are singularly focused on creating a developer-centric platform for application integrations. You will be an early contributor in helping us shape how SaaS developers can easily integrate and maintain thousands of integrations with other applications. 
+
+block seo_variables
+    - var title = 'Fusebit | Careers'
+
+block page_variable
+    - var pageClass = 'careers'
+
+block content
+    include ../_components/Careers/Hero/hero
+    include ../_components/Careers/Description/description
+    include ../_components/Careers/Join/join

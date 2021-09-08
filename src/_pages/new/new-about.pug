@@ -1,0 +1,15 @@
+//- TODO: Find a way to to hide pages
+
+extends ../_layouts/default.pug
+
+block seo_variables
+    - var title = 'Fusebit | About Us'
+
+block page_variable
+    - var pageClass = 'aboutUs'
+
+block content
+    include ../_components/AboutUs/Hero/hero
+    include ../_components/AboutUs/Teams/teams
+    include ../_components/AboutUs/Founders/founders
+    include ../_components/AboutUs/Investors/investors
