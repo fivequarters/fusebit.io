@@ -74,6 +74,12 @@ jobs:
           S3_BUCKET: fusebit.io
         run: ./scripts/publish_website.sh
 
+      - name: Publish - robot.txt
+        env:
+          S3_BUCKET: fusebit.io
+          ROBOTS_FILE: fusebit.io.txt
+        run: ./scripts/publish_robots.sh
+
       - name: Build and Publish - docs
         env:
           S3_BUCKET: fusebit.io

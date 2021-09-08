@@ -88,6 +88,8 @@ a {
         display: block;
         margin: 64px auto;
         max-width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 
     code {

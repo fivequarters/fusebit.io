@@ -1,7 +1,7 @@
 include ../_components/mixins.pug
 
 - var title = 'Fusebit'
-- var description = 'With Fusebit, quickly integrate your application to other SaaS applications using flexible API building blocks. Fusebit provides connectors to popular APIs and hosts your integrations at scale.'
+- var description = 'With Fusebit, quickly integrate your app to other SaaS applications using flexible code blocks, popular API connectors, and hosts your integrations at scale.'
 - var og_image = 'https://cdn.fusebit.io/twitter/twitter-orange.png'
 - var og_title = ''
 
@@ -11,6 +11,8 @@ block page_variable
 doctype html
 html(lang='en' class=(pageClass || ''))
   head
+    - const cleanUrl = page.url.replace('.html', '')
+    - const path = cleanUrl === '/' ? '' : cleanUrl
     meta(charset='utf-8')
     meta(content='ie=edge' http-equiv='x-ua-compatible')
     meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
@@ -26,7 +28,7 @@ html(lang='en' class=(pageClass || ''))
     meta(property='og:type' content='website')
     meta(property='og:site_name' content='Fusebit')
     meta(property='og:locale' content='en')
-    meta(property='og:url' content='https://fusebit.io/')
+    meta(property='og:url' content= `${env.canonicalUrl}${path}`)
     meta(name='twitter:site' content='@fusebitio')
     meta(name='twitter:creator' content='@fusebitio')
     meta(name='twitter:card' content='summary_large_image')
@@ -40,6 +42,7 @@ html(lang='en' class=(pageClass || ''))
     link(rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png')
     link(rel='manifest' href='/site.webmanifest')
     link(rel='mask-icon' href='/safari-pinned-tab.svg' color='#fb310a')
+    link(rel="canonical" href= `${env.canonicalUrl}${path}`)
 
     link(rel='stylesheet' href='/assets/vendor/swiper-bundle.min.css')
     script(src='/assets/vendor/swiper-bundle.min.js')

@@ -6,21 +6,21 @@ pagination:
     alias: tag
     filter: 
         - all
-permalink: "| #{tag === 'post' ? 'blog/index.html' : `blog/tags/${tag}.html`}"
+permalink: "| #{tag === 'post' ? 'blog/index.html' : process.env.ELEVENTY_ENV === 'production' ? `blog/tags/${tag}/index.html` : `blog/tags/${tag}.html`}"
 ---
 
 include ../_components/mixins.pug
 
 section.section.section--no-margin
 .layout
-    h1.list__title Integration stories
+    h1.list__title Integration Stories
     .list__tags
         each currentTag in filters.keys(collections).filter(c => c !== 'all')
-            a.list__tag(href=`${currentTag === 'post' ? '/blog' : `/blog/tags/${currentTag}`}` class= `${currentTag === tag ? 'list__tag--active' : ''}`)= `${currentTag === 'post' ? 'all' : currentTag}`
+            a.list__tag(href=`${currentTag === 'post' ? '/blog/' : `/blog/tags/${currentTag}/`}` class= `${currentTag === tag ? 'list__tag--active' : ''}`)= `${currentTag === 'post' ? 'all' : currentTag}`
     .list__posts
         - let buildAmount = 6
         each post, index in [...collections[tag]].reverse()
-            +postCard(post.data.permalink, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt, index >= buildAmount ? 'list__post--hidden' : '')
+            +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt, index >= buildAmount ? 'list__post--hidden' : '')
     button.list__pagination.list__pagination-button#more More
 
     script. 
@@ -32,7 +32,6 @@ section.section.section--no-margin
         document.getElementById('more').addEventListener('click', function() {
             [...document.querySelectorAll('.list__post--hidden')].slice(0, runtimeAmount).forEach(function(el) {
                 el.classList.remove('list__post--hidden')
-                console.log('asd')
 
                 if(document.querySelectorAll('.list__post--hidden').length === 0) {
                    document.getElementById('more').style.display = 'none'

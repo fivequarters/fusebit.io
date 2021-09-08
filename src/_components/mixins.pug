@@ -34,3 +34,16 @@ mixin pathCircle(className)
             circle(cx='1' cy='8' r='1' fill='#D7E5FF')
             circle(cx='27' cy='8' r='1' fill='#D7E5FF')
             circle(cx='14' cy='8' r='7' stroke='#D7E5FF' stroke-width='2')
+        svg(viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
+mixin postCard(href, img, date, title, excerpt, className)
+    a.post-card(href= href class= className)
+        .post-card-header
+            .post-card-image-container
+                - const imgSrc = filters.getImageUrl(`blog/${img}`, 900)
+                .post-card-image(style="background-image: url('" + imgSrc + "')")
+        .post-card-content
+            span.post-card-date= `${filters.format(new Date(date.replace('-', '/')), 'd MMMM yyyy')}`
+            h6.post-card-title= title
+            p.post-card-excerpt= excerpt

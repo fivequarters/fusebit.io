@@ -1,9 +1,9 @@
 ---
 post_title: The Role of Integrations in Building a Unicorn
 post_author: Tomasz Janczuk
-post_author_avatar: https://fusebit.io/tomek.png
+post_author_avatar: tomek.png
 date: '2019-08-26'
-post_image: https://fusebit.io/blog-interview-with-auth0-main.png
+post_image: blog-interview-with-auth0-main.png
 post_excerpt: We spoke with Eugenio Pace, the co-founder and CEO of [Auth0](https://auth0.com/), to get the scoop on his company's approach to integrations.
 post_slug: interview-with-eugenio-pace-auth0-ceo
 tags: ['post']
@@ -36,13 +36,13 @@ It is multifaceted.
 
 Some very common, recurrent integration patterns are baked into the product and just need to be activated and configured. A good example of this is exporting logs to services like Splunk, SumoLogic, or Loggly. Another one is integration with source control services like Github, Bitbucket, or Visual Studio. We offer a gallery of pre-packaged integrations that our customers can activate and configure — no code required in this case.
 
-![Auth0 Extensions](https://fusebit.io/blog-interview-auth0-extensions.png 'Auth0 Extensions')
+![Auth0 Extensions](blog-interview-auth0-extensions.png 'Auth0 Extensions')
 
 For inbound integrations, we offer APIs that other systems can call into.
 
 In the more advanced cases, we offer the ability to write Node.js code that extends our core logic with custom behavior. A great example is a script that executes after a login transaction in which our customers can inject additional behavior (e.g. a multi-factor authentication challenge, a query for user entitlements, or user profile transformation logic).
 
-![Auth0 Rules](https://fusebit.io/blog-interview-auth0-rules.png 'Auth0 Rules')
+![Auth0 Rules](blog-interview-auth0-rules.png 'Auth0 Rules')
 
 ### Historically, was there a breakthrough improvement in your integration story that had the most impact?
 
