@@ -45,7 +45,7 @@ section.integrations.section.section--no-margin
 
 
                     .integrations__item--image
-                        img(src="../../assets/images/homepage/enjoyFreedom/integrations--step1.png" alt="We provide an extensible code-first model")
+                        != filters.getImageTag(`homepage/enjoyFreedom/integrations--step1.png`, 'We provide an extensible code-first model')
 
                 li.integrations__item(data-image="1")
                     .integrations__item--content 
@@ -68,7 +68,7 @@ section.integrations.section.section--no-margin
 
 
                     .integrations__item--image
-                        img(src="../../assets/images/homepage/enjoyFreedom/integrations--step2.png" alt="The package's powerful ecosystem" class="")
+                        != filters.getImageTag(`homepage/enjoyFreedom/integrations--step2.png`, 'The package\'s powerful ecosystem')
 
                 li.integrations__item(data-image="2") 
                     .integrations__item--content 
@@ -92,9 +92,8 @@ section.integrations.section.section--no-margin
 
 
                     .integrations__item--image
-                        img(src="../../assets/images/homepage/enjoyFreedom/integrations--step3.png" alt="First-class support for versioning" class="") 
-
-
+                        != filters.getImageTag(`homepage/enjoyFreedom/integrations--step3.png`, 'First-class support for versioning')
+            
             script.
                 let integrationsSection = document.querySelector('.integrations');
                 if(integrationsSection) {
