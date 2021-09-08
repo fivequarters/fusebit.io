@@ -7,7 +7,7 @@ const { parseHTML } = require('linkedom');
 
 function getImageMeta(src, widths) {
     const options = {
-        widths: widths || [300, 600, 900, 1200],
+        widths: widths || [300, 600, 900, 1200, null],
         formats: ['webp', 'jpg'],
         outputDir: process.env.ELEVENTY_ENV === 'production' ? './build/assets/images/11ty' : './src/assets/images/11ty',
         urlPath: '/assets/images/11ty',
