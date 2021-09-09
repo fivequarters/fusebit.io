@@ -3,8 +3,8 @@
 on:
   push:
     branches:
-      - main
-name: Publish to fivequarters.io
+      - develop
+name: Publish to develop.fivequarters.io
 jobs:
   deploy:
     name: Deploy
@@ -74,23 +74,23 @@ jobs:
 
       - name: Publish - website
         env:
-          S3_BUCKET: fivequarters.io
+          S3_BUCKET: develop.fivequarters.io
         run: ./scripts/publish_website.sh
 
       - name: Publish - robot.txt
         env:
-          S3_BUCKET: fivequarters.io
+          S3_BUCKET: develop.fivequarters.io
           ROBOTS_FILE: fivequarters.io.txt
         run: ./scripts/publish_robots.sh
 
       - name: Build and Publish - docs
         env:
-          S3_BUCKET: fivequarters.io
+          S3_BUCKET: develop.fivequarters.io
         run: ./scripts/publish_docs.sh
 
       - name: Invalidate CloudFront
         env:
-          CLOUDFRONT_ID: E3H6N4PO77X1SD
+          CLOUDFRONT_ID: E3CN1LNXFOO6IL
         run: ./scripts/invalidate_cloudfront.sh
 
       - name: Notify slack success
