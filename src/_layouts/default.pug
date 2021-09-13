@@ -77,7 +77,22 @@ html(lang='en' class=(pageClass || ''))
       (function(h,o,t,j,a,r){ h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)}; h._hjSettings={hjid:2564747,hjsv:6}; a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r); })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 
   body
-
+  
+    script(type="application/ld+json").
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://fusebit.io",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.google.com/search?q=site%3Afusebit.io+{search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+        
     include ../_components/Modal/Modal
     include ../_components/Header/Header
 
