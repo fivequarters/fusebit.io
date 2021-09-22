@@ -1,3 +1,21 @@
+mixin card(person)
+    .teams__card(data-person= person.name)
+        .teams__card-img-container(style=`background-image: url('/assets/images/about/teams/${person.img}')`)
+        h4.card-title= person.name
+        if person.job
+            span.card-subtitle= person.job
+        .social-media-container
+            if person.social.github
+                a.social-media(href= person.social.github target="_blank" style="background: transparent;")
+                    img(src="/assets/images/about/teams/github.svg" alt="Github")
+            if person.social.linkedin
+                a.social-media(href= person.social.linkedin target="_blank")
+                    img(src="/assets/images/about/teams/linkedin.svg" alt="Linkedin")
+            if person.social.twitter
+                a.social-media(href= person.social.twitter target="_blank")
+                    img(src="/assets/images/about/teams/twitter.svg" alt="Twitter")
+            
+
 section.teams 
     .teams__container
         .teams__info
@@ -5,40 +23,53 @@ section.teams
             p.text.text--white.teams__text At Fusebit, we believe in fair hiring around the world. Any professional, no matter where they live, can work for and benefit from our company.
             +cta("We are hiring", "#", 'teams__cta')
         .teams__presentation
-            img(src="../../../assets/images/about/teams/map.png" alt="Chris More" height="706" width="673").teams__map
-            .teams__card
-                //- TODO: add or substract the width/height of the dot to the position 
+            img(src="/assets/images/about/teams/map.png" alt="Map" height="706" width="673").teams__map
+            .teams__reference-card
                 .teams__dots--desktop 
-                    .teams__dot.teams__dot--bg.teams__dot--lavender(style="bottom: -50px; left: 26px")
-                    .teams__dot.teams__dot--sm.teams__dot--light-blue(style="bottom: -22px; left: -1px")
-                    .teams__dot.teams__dot--sm.teams__dot--light-blue(style="bottom: 65px; left: -45px")
-                    .teams__dot.teams__dot--bg.teams__dot--orange(style="bottom: 134px; left: -125px")
-                    .teams__dot.teams__dot--sm.teams__dot--light-blue(style="bottom: 184px; left: -29px")
-                    .teams__dot.teams__dot--sm.teams__dot--light-blue(style="bottom: 178px; left: -99px")
-                    .teams__dot.teams__dot--bg.teams__dot--bright-yellow(style="bottom: 225px; left: -68px")
-                    .teams__dot.teams__dot--sm.teams__dot--light-blue(style="bottom: 248px; left: -125px")
-                    .teams__dot.teams__dot--sm.teams__dot--light-blue(style="top: -25px; left: 25px")
-                    .teams__dot.teams__dot--sm.teams__dot--light-blue(style="top: -51px; left: 36px")
-                    .teams__dot.teams__dot--bg.teams__dot--bright-yellow(style="top: -41px; left: 64px")
-                    .teams__dot.teams__dot--bg.teams__dot--orange(style="top: 25px; right: -68px")
-                    .teams__dot.teams__dot--sm.teams__dot--light-blue(style="top: 102px; right: -123px")
-                    .teams__dot.teams__dot--sm.teams__dot--light-blue(style="top: 131px; right: -156px")
-                .teams__dots--mobile 
-                    .teams__dot.teams__dot--sm.teams__dot--lavender(style="bottom: 118px; left: -24px")
-                    .teams__dot.teams__dot--bg.teams__dot--orange(style="bottom: 140px; left: -56px")
-                    .teams__dot.teams__dot--bg.teams__dot--bright-yellow(style="bottom: 198px; left: -29px")
-                    .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: -17px; left: -48px")
-                    .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: -25px; left: 8px")
-                    .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: -45px; left: 14px")
-                    .teams__dot.teams__dot--bg.teams__dot--bright-yellow(style="top: -29px; left: 34px")
-                    .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: 45px; right: -30px")
-                    .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: 65px; right: -36px")
-                    .teams__dot.teams__dot--bg.teams__dot--orange(style="top: 99px; right: -32px")
-                .teams__card-img-container
-                h4.card-title Chris More
-                span.card-subtitle Engineer
-                .social-media-container
-                    a.social-media(href="#" target="_blank")
-                        img(src="../../../assets/images/about/teams/linkedin.svg" alt="Linkedin")
-                    a.social-media(href="#" target="_blank")
-                        img(src="../../../assets/images/about/teams/twitter.svg" alt="Twitter")
+                    for location in about.teams.locations
+                        .teams__dot(class= "teams__dot--sm teams__dot--lavender teams__dot--location" style= location)
+                    for person in about.teams.people
+                        .teams__dot(class= person.dot.classNames style= person.dot.coordinates data-person= person.name)
+                .teams__dots.teams__dots--mobile 
+                    //- .teams__dot.teams__dot--sm.teams__dot--lavender(style="bottom: 118px; left: -24px")
+                    //- .teams__dot.teams__dot--bg.teams__dot--orange(style="bottom: 140px; left: -56px")
+                    //- .teams__dot.teams__dot--bg.teams__dot--bright-yellow(style="bottom: 198px; left: -29px")
+                    //- .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: -17px; left: -48px")
+                    //- .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: -25px; left: 8px")
+                    //- .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: -45px; left: 14px")
+                    //- .teams__dot.teams__dot--bg.teams__dot--bright-yellow(style="top: -29px; left: 34px")
+                    //- .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: 45px; right: -30px")
+                    //- .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: 65px; right: -36px")
+                    //- .teams__dot.teams__dot--bg.teams__dot--orange(style="top: 99px; right: -32px")
+            for person in about.teams.people
+                +card(person) 
+    script. 
+
+        document.addEventListener('click', function(event) {
+            const activePerson = document.querySelector('.teams__card--active')
+            const isClickOutside = activePerson && !activePerson.contains(event.target)
+            const isClickOutsideDots = !event.target.classList.contains("teams__dot")
+
+            if (isClickOutside && isClickOutsideDots) {
+                activePerson.classList.remove('teams__card--active')
+            }
+        });
+
+        const dots = [...document.getElementsByClassName('teams__dot')]
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+
+                    const activePerson = document.querySelector('.teams__card--active')
+
+                    if (activePerson) {
+                        activePerson.classList.remove('teams__card--active')
+                    }
+
+                    const newActivePerson = document.querySelector('.teams__card[data-person="' + dot.dataset.person + '"]')
+
+                    newActivePerson.classList.add('teams__card--active')
+            })
+        });
+
+

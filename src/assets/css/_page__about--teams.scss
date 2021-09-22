@@ -54,10 +54,17 @@
         flex: 1;
         display: flex;
         justify-content: flex-end;
+        min-width: 480px;
 
         @media (max-width: 992px) {
+            min-width: auto;
             justify-content: center;
         }
+    }
+
+    &__card-container {
+        position: relative;
+        width: 100%;
     }
 
     &__map {
@@ -77,6 +84,23 @@
         }
     }
 
+    &__reference-card {
+        margin-right: 230px;
+        width: 232px;
+        height: 255px;
+        right: -170px;
+        position: absolute;
+
+        @media (max-width: 992px) {
+            right: auto;
+            position: relative;
+            margin-right: unset;
+            width: 174px;
+            height: 203px;
+            padding: 24px 0;
+        }
+    }
+
     &__card {
         display: flex;
         align-items: center;
@@ -88,8 +112,15 @@
         border-radius: 16px;
         background-color: var(--white);
         box-sizing: border-box;
-        position: relative;
+        position: absolute;
         right: -170px;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+
+        &--active {
+            opacity: 1;
+            z-index: 2;
+        }
 
         @media (max-width: 992px) {
             right: auto;
@@ -98,6 +129,11 @@
             height: 203px;
             padding: 24px 0;
         }
+    }
+
+    &__dots {
+        position: absolute;
+        right: 0;
     }
 
     &__dots--desktop {
@@ -120,6 +156,7 @@
         z-index: 1;
         position: absolute;
         border-radius: 50%;
+        cursor: pointer;
     }
 
     &__dot--bg {
@@ -148,11 +185,13 @@
         background-color: var(--lightBlue);
     }
 
+    &__dot--location {
+        cursor: default;
+    }
+
     &__card-img-container {
         width: 80px;
         height: 80px;
-        background: url(../../../assets/images/about/teams/engineer.png),
-            var(--lightBlue);
         background-position: -4px center;
         background-size: cover;
         border-radius: 50%;
