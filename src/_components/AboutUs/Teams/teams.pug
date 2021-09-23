@@ -1,6 +1,6 @@
 mixin card(person)
     .teams__card(data-person= person.name)
-        .teams__card-img-container(style=`background-image: url('/assets/images/about/teams/${person.img}')`)
+        .teams__card-img-container(style=`background-image: url('/assets/images/team/${person.img}')`)
         h4.card-title= person.name
         if person.job
             span.card-subtitle.teams__card-subtitle= person.job

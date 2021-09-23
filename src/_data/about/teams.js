@@ -56,7 +56,7 @@ module.exports = {
     people: [
         {
             name: 'Tomasz Janczuk',
-            img: 'fusebit.jpg',
+            img: 'tomek.png',
             job: 'Co-founder & CEO',
             social: {
                 github: 'https://github.com/tjanczuk',
@@ -73,7 +73,7 @@ module.exports = {
         },
         {
             name: 'Benn Bollay',
-            img: 'fusebit.jpg',
+            img: 'benn.png',
             job: 'Co-founder & CTO',
             social: {
                 github: 'https://github.com/bennbollay',
@@ -90,7 +90,7 @@ module.exports = {
         },
         {
             name: 'Yavor Georgiev',
-            img: 'fusebit.jpg',
+            img: 'yavor.png',
             job: 'Co-founder & CPO',
             social: {
                 github: 'https://github.com/yavorg',
@@ -141,7 +141,7 @@ module.exports = {
         },
         {
             name: 'Jacob Haller-Roby',
-            img: 'jake.jpg',
+            img: 'jake.png',
             job: 'Engineer',
             social: {
                 github: 'https://github.com/jscotroby',
