@@ -1,11 +1,35 @@
-const SEATTLE = 'left: -202px; top: 37px';
-const WALLA_WALLA = 'left: -170px; top: 49px';
-const PORTLAND = 'left: -202px; top: 73px';
-const AUSTIN = 'left: -134px; top: 128px';
-const SAN_FRANCISCO = 'left: -211px; top: 119px';
-const TORONTO = 'left: -18px; top: 50px';
-const MEDELLIN = 'left: -51px; bottom: -19px';
-const PORTO_ALEGRE = 'right: 169px; bottom: -212px';
+const SEATTLE = {
+    mobile: 'left: -274px; top: -18px',
+    desktop: 'left: -202px; top: 37px',
+};
+const WALLA_WALLA = {
+    mobile: 'left: -253px; top: -2px',
+    desktop: 'left: -170px; top: 49px',
+};
+const PORTLAND = {
+    mobile: 'left: -274px; top: 16px',
+    desktop: 'left: -202px; top: 73px',
+};
+const AUSTIN = {
+    mobile: 'left: -276px; top: 42px',
+    desktop: 'left: -134px; top: 128px',
+};
+const SAN_FRANCISCO = {
+    mobile: 'left: -240px; top: 40px',
+    desktop: 'left: -211px; top: 119px',
+};
+const TORONTO = {
+    mobile: 'left: -187px; top: -10px',
+    desktop: 'left: -18px; top: 50px',
+};
+const MEDELLIN = {
+    mobile: 'left: -195px; bottom: -118px',
+    desktop: 'left: -51px; bottom: -19px',
+};
+const PORTO_ALEGRE = {
+    mobile: 'left: -138px; bottom: -214px',
+    desktop: 'right: 169px; bottom: -212px',
+};
 
 const COLORS = {
     orange: 'teams__dot--orange',
@@ -40,7 +64,10 @@ module.exports = {
                 linkedin: 'https://www.linkedin.com/in/tjanczuk',
             },
             dot: {
-                coordinates: 'left: -202px; top: 13px',
+                coordinates: {
+                    mobile: 'left: -202px; top: 13px',
+                    desktop: 'left: -202px; top: 13px',
+                },
                 classNames: `${SIZES.bg} ${COLORS.orange}`,
             },
         },
@@ -54,7 +81,10 @@ module.exports = {
                 linkedin: 'https://www.linkedin.com/in/bennbollay',
             },
             dot: {
-                coordinates: 'left: -225px; top: 23px',
+                coordinates: {
+                    mobile: 'left: -225px; top: 23px',
+                    desktop: 'left: -225px; top: 23px',
+                },
                 classNames: `${SIZES.bg} ${COLORS.yellow}`,
             },
         },
@@ -68,7 +98,10 @@ module.exports = {
                 linkedin: 'http://linkedin.com/in/yavorg',
             },
             dot: {
-                coordinates: 'left: -225px; top: 45px',
+                coordinates: {
+                    mobile: 'left: -225px; top: 45px',
+                    desktop: 'left: -225px; top: 45px',
+                },
                 classNames: `${SIZES.bg} ${COLORS.blue}`,
             },
         },
@@ -82,7 +115,10 @@ module.exports = {
                 linkedin: 'https://www.linkedin.com/in/dukelow/',
             },
             dot: {
-                coordinates: 'left: -156px; top: 49px',
+                coordinates: {
+                    mobile: 'left: -156px; top: 49px',
+                    desktop: 'left: -156px; top: 49px',
+                },
                 classNames: `${SIZES.bg} ${COLORS.yellow}`,
             },
         },
@@ -96,7 +132,10 @@ module.exports = {
                 linkedin: 'https://www.linkedin.com/in/chrismore/',
             },
             dot: {
-                coordinates: 'left: -120px; top: 128px',
+                coordinates: {
+                    mobile: 'left: -120px; top: 128px',
+                    desktop: 'left: -120px; top: 128px',
+                },
                 classNames: `${SIZES.bg} ${COLORS.blue}`,
             },
         },
@@ -107,10 +146,14 @@ module.exports = {
             social: {
                 github: 'https://github.com/jscotroby',
                 twitter: '',
-                linkedin: 'https://www.linkedin.com/in/jacob-haller-roby-35118148/',
+                linkedin:
+                    'https://www.linkedin.com/in/jacob-haller-roby-35118148/',
             },
             dot: {
-                coordinates: 'left: -202px; top: 83px',
+                coordinates: {
+                    mobile: 'left: -202px; top: 83px',
+                    desktop: 'left: -202px; top: 83px',
+                },
                 classNames: `${SIZES.bg} ${COLORS.orange}`,
             },
         },
@@ -124,7 +167,10 @@ module.exports = {
                 linkedin: 'https://www.linkedin.com/in/rubenrestrepo',
             },
             dot: {
-                coordinates: 'left: -51px; bottom: -10px',
+                coordinates: {
+                    mobile: 'left: -51px; bottom: -10px',
+                    desktop: 'left: -51px; bottom: -10px',
+                },
                 classNames: `${SIZES.bg} ${COLORS.yellow}`,
             },
         },
@@ -138,7 +184,10 @@ module.exports = {
                 linkedin: 'https://www.linkedin.com/in/brunokrebs',
             },
             dot: {
-                coordinates: 'right: 189px; bottom: -212px',
+                coordinates: {
+                    mobile: 'right: 189px; bottom: -212px',
+                    desktop: 'right: 189px; bottom: -212px',
+                },
                 classNames: `${SIZES.bg} ${COLORS.orange}`,
             },
         },
@@ -152,7 +201,10 @@ module.exports = {
                 linkedin: 'https://www.linkedin.com/in/lizparody',
             },
             dot: {
-                coordinates: 'left: -51px; bottom: -40px',
+                coordinates: {
+                    mobile: 'left: -51px; bottom: -40px',
+                    desktop: 'left: -51px; bottom: -40px',
+                },
                 classNames: `${SIZES.bg} ${COLORS.orange}`,
             },
         },
@@ -166,7 +218,10 @@ module.exports = {
                 linkedin: 'https://twitter.com/Matthew49104261',
             },
             dot: {
-                coordinates: 'left: -211px; top: 135px',
+                coordinates: {
+                    mobile: 'left: -211px; top: 135px',
+                    desktop: 'left: -211px; top: 135px',
+                },
                 classNames: `${SIZES.bg} ${COLORS.blue}`,
             },
         },
@@ -180,7 +235,10 @@ module.exports = {
                 linkedin: 'https://www.linkedin.com/in/shehzad-akbar',
             },
             dot: {
-                coordinates: 'left: -45px; top: 50px',
+                coordinates: {
+                    mobile: 'left: -45px; top: 50px',
+                    desktop: 'left: -45px; top: 50px',
+                },
                 classNames: `${SIZES.bg} ${COLORS.yellow}`,
             },
         },
