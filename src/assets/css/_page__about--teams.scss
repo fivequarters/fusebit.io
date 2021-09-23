@@ -171,6 +171,10 @@
         position: absolute;
         border-radius: 50%;
         cursor: pointer;
+
+        @media (max-width: 992px) {
+            cursor: default;
+        }
     }
 
     &__dot--bg {
@@ -214,6 +218,7 @@
         margin-bottom: 16px;
         background-position: center;
         background-color: #d7e5ff;
+        flex-shrink: 0;
 
         & > img {
             position: absolute;
@@ -223,6 +228,18 @@
         @media (max-width: 992px) {
             width: 56px;
             height: 56px;
+        }
+    }
+
+    &__social-media-container {
+        @media (max-width: 992px) {
+            margin-top: auto;
+        }
+    }
+
+    &__card-subtitle {
+        @media (max-width: 992px) {
+            margin-bottom: 6px;
         }
     }
 }

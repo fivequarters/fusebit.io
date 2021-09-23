@@ -3,8 +3,8 @@ mixin card(person)
         .teams__card-img-container(style=`background-image: url('/assets/images/about/teams/${person.img}')`)
         h4.card-title= person.name
         if person.job
-            span.card-subtitle= person.job
-        .social-media-container
+            span.card-subtitle.teams__card-subtitle= person.job
+        .social-media-container.teams__social-media-container
             if person.social.github
                 a.social-media(href= person.social.github target="_blank")
                     img(src="/assets/images/about/teams/github.svg" alt="Github")
@@ -31,7 +31,7 @@ section.teams
         .teams__presentation
             img(src="/assets/images/about/teams/map.png" alt="Map" height="706" width="673").teams__map
             .teams__reference-card
-                .teams__dots--desktop 
+                .teams__dots--desktop
                     +dots('desktop')
                 .teams__dots.teams__dots--mobile
                     +dots('mobile')
