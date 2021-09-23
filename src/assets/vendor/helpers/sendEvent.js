@@ -9,7 +9,6 @@ function sendEvent(category, action, label) {
 }
 
 (() => {
-    console.log('adding tracklink to links');
     const links = document.getElementsByClassName('track-with-segment');
     links.forEach((link) => {
         const eventName = link.dataset.eventName;
@@ -19,7 +18,5 @@ function sendEvent(category, action, label) {
             objectLocation,
             domain: 'fusebit.io',
         });
-
-        console.log(`added for event name ${eventName} and object location ${objectLocation}`);
     });
 })();
