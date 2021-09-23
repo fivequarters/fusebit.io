@@ -65,7 +65,7 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -202px; top: 13px',
+                    mobile: 'left: -274px; top: -38px',
                     desktop: 'left: -202px; top: 13px',
                 },
                 classNames: `${SIZES.bg} ${COLORS.orange}`,
@@ -82,7 +82,7 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -225px; top: 23px',
+                    mobile: 'left: -293px; top: -30px',
                     desktop: 'left: -225px; top: 23px',
                 },
                 classNames: `${SIZES.bg} ${COLORS.yellow}`,
@@ -99,7 +99,7 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -225px; top: 45px',
+                    mobile: 'left: -291px; top: -11px',
                     desktop: 'left: -225px; top: 45px',
                 },
                 classNames: `${SIZES.bg} ${COLORS.blue}`,
@@ -116,7 +116,7 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -156px; top: 49px',
+                    mobile: 'left: -243px; top: -2px',
                     desktop: 'left: -156px; top: 49px',
                 },
                 classNames: `${SIZES.bg} ${COLORS.yellow}`,
@@ -133,7 +133,7 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -120px; top: 128px',
+                    mobile: 'left: -295px; top: 42px',
                     desktop: 'left: -120px; top: 128px',
                 },
                 classNames: `${SIZES.bg} ${COLORS.blue}`,
@@ -151,7 +151,7 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -202px; top: 83px',
+                    mobile: 'left: -265px; top: 16px',
                     desktop: 'left: -202px; top: 83px',
                 },
                 classNames: `${SIZES.bg} ${COLORS.orange}`,
@@ -168,7 +168,7 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -51px; bottom: -10px',
+                    mobile: 'left: -195px; bottom: -107px',
                     desktop: 'left: -51px; bottom: -10px',
                 },
                 classNames: `${SIZES.bg} ${COLORS.yellow}`,
@@ -185,7 +185,7 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'right: 189px; bottom: -212px',
+                    mobile: 'left: -157px; bottom: -214px',
                     desktop: 'right: 189px; bottom: -212px',
                 },
                 classNames: `${SIZES.bg} ${COLORS.orange}`,
@@ -202,7 +202,7 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -51px; bottom: -40px',
+                    mobile: 'left: -215px; bottom: -118px',
                     desktop: 'left: -51px; bottom: -40px',
                 },
                 classNames: `${SIZES.bg} ${COLORS.orange}`,
@@ -219,7 +219,7 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -211px; top: 135px',
+                    mobile: 'left: -240px; top: 50px',
                     desktop: 'left: -211px; top: 135px',
                 },
                 classNames: `${SIZES.bg} ${COLORS.blue}`,
@@ -236,7 +236,7 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -45px; top: 50px',
+                    mobile: 'left: -197px; top: 0',
                     desktop: 'left: -45px; top: 50px',
                 },
                 classNames: `${SIZES.bg} ${COLORS.yellow}`,

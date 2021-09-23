@@ -18,8 +18,8 @@ mixin card(person)
 mixin dots(device) 
     for location in about.teams.locations
         .teams__dot(class= "teams__dot--sm teams__dot--lavender teams__dot--location" style= location[device])
-    //- for person in about.teams.people
-    //-     .teams__dot(class= person.dot.classNames style= person.dot.coordinates[device] data-person= person.name)
+    for person in about.teams.people
+        .teams__dot(class= person.dot.classNames style= person.dot.coordinates[device] data-person= person.name)
 
 
 section.teams 
