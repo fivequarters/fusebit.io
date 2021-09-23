@@ -8,9 +8,18 @@ function sendEvent(category, action, label) {
     });
 }
 
-function notifySegment(event, objectLocation) {
-    analytics.track(event, {
-        objectLocation,
-        domain: 'fusebit.io',
+(() => {
+    console.log('adding tracklink to links');
+    const links = document.getElementsByClassName('track-with-segment');
+    links.forEach((link) => {
+        const eventName = link.dataset.eventName;
+        const objectLocation = link.dataset.objectLocation;
+
+        analytics.trackLink(link, eventName, {
+            objectLocation,
+            domain: 'fusebit.io',
+        });
+
+        console.log(`added for event name ${eventName} and object location ${objectLocation}`);
     });
-}
+})();

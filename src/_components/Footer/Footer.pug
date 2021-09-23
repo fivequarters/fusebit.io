@@ -1,6 +1,6 @@
-mixin footerLink(link, linkText, badge, onClick)
+mixin footerLink(link, linkText, badge, onClick, trackedWithSegment, eventName, objectLocation)
     li.footer__link 
-        a(href=link onclick= onClick)= linkText
+        a(href=link, onclick=onClick, data-object-location=objectLocation, data-event-name=eventName class=trackedWithSegment ? 'track-with-segment' : '')=linkText
         if(badge)
             .footer__link--badge
                 span= badge
@@ -24,13 +24,13 @@ footer.footer
             ul.footer__links 
                 li.footer__links--title  Solutions
 
-                +footerLink('https://go.fusebit.io/slack/', 'Slack Connector', 0, "notifySegment('Slack Connector Link Clicked', 'Footer'); sendEvent('Navigation', 'Clicked slack footer nav');")
-                +footerLink('https://go.fusebit.io/fusebot/', 'Slash Commands', 0, "notifySegment('Slash Commands Link Clicked', 'Footer'); sendEvent('Navigation', 'Clicked fusebot footer nav');")
+                +footerLink('https://go.fusebit.io/slack/', 'Slack Connector', 0, "sendEvent('Navigation', 'Clicked slack footer nav');", true, 'Slack Connector Link Clicked', 'Footer')
+                +footerLink('https://go.fusebit.io/fusebot/', 'Slash Commands', 0, "sendEvent('Navigation', 'Clicked fusebot footer nav');", true, 'Slash Commands Link Clicked', 'Footer')
 
             ul.footer__links 
                 li.footer__links--title  Resources
                 
-                +footerLink('https://developer.fusebit.io', 'Developer Docs', 0, "notifySegment('Developer Docs Link Clicked', 'Footer'); sendEvent('Navigation', 'Clicked developers footer nav');")
+                +footerLink('https://developer.fusebit.io', 'Developer Docs', 0, "sendEvent('Navigation', 'Clicked developers footer nav');", true, 'Developer Docs Link Clicked', 'Footer')
                 +footerLink('/blog/', 'Blog', 0, "sendEvent('Navigation', 'Clicked blog footer nav');")
                 +footerLink('/legal/', 'Legal', 0, "sendEvent('Navigation', 'Clicked legal footer nav');")
                 +footerLink('/privacy/', 'Privacy Policy', 0, "sendEvent('Navigation', 'Clicked privacy footer nav');")
