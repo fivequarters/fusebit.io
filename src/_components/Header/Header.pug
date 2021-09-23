@@ -3,7 +3,9 @@
         {
             text: 'Developer Docs',
             link: 'https://developer.fusebit.io',
-            onClick: "notifySegment('Developer Docs Link Clicked', 'Header'); sendEvent('Navigation', 'Clicked developers header nav');"
+            onClick: "sendEvent('Navigation', 'Clicked developers header nav');",
+            eventName: 'Developer Docs Link Clicked',
+            objectLocation: 'Header',
         },
         {
             text: 'Blog',
@@ -32,12 +34,12 @@ header.header
             ul 
                 each link in headerLinks
                     li
-                        a(href=link.link onclick=link.onClick)=link.text
+                        a(href=link.link onclick=link.onClick id=link.linkId class=link.eventName ? 'track-with-segment' : '' data-event-name=link.eventName data-object-location=link.objectLocation)=link.text
 
         .header__links 
             ul  
                 li 
-                    a.header__links--signUp.sign-up-cta(onclick="notifySegment('Sign Up Button Clicked', 'Header'); sendEvent('CTA', 'Clicked header button');") Join waitlist
+                    a.track-with-segment.header__links--signUp.sign-up-cta(onclick="sendEvent('CTA', 'Clicked header button');", data-event-name="Sign Up Button Clicked", data-object-location="Header") Join waitlist
 
         .header__menuMobile--btn 
             span.top 
@@ -51,10 +53,10 @@ header.header
             ul 
                 each link in headerLinks
                     li
-                        a(href=link.link onclick=link.onClick)=link.text
+                        a(href=link.link onclick=link.onClick id=link.linkId class=link.eventName ? 'track-with-segment' : '' data-event-name=link.eventName data-object-location=link.objectLocation)=link.text
 
                 li 
-                    a.header__links--signUp.sign-up-cta(onclick="notifySegment('Sign Up Button Clicked', 'Header'); sendEvent('CTA', 'Clicked header button');") Join waitlist
+                    a.track-with-segment.header__links--signUp.sign-up-cta(onclick="sendEvent('CTA', 'Clicked header button');", data-event-name="Sign Up Button Clicked", data-object-location="Header") Join waitlist
 
         .menuMobile__social 
             include ../SocialMedia/SocialMedia
