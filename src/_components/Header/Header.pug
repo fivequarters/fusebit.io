@@ -3,7 +3,7 @@
         {
             text: 'Developer Docs',
             link: 'https://developer.fusebit.io',
-            onClick: "sendEvent('Navigation', 'Clicked developers header nav');"
+            onClick: "notifySegment('Developer Docs Link Clicked', 'Header'); sendEvent('Navigation', 'Clicked developers header nav');"
         },
         {
             text: 'Blog',
@@ -37,7 +37,7 @@ header.header
         .header__links 
             ul  
                 li 
-                    a.header__links--signUp.sign-up-cta(onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
+                    a.header__links--signUp.sign-up-cta(onclick="notifySegment('Sign Up Button Clicked', 'Header'); sendEvent('CTA', 'Clicked header button');") Join waitlist
 
         .header__menuMobile--btn 
             span.top 
@@ -54,7 +54,7 @@ header.header
                         a(href=link.link onclick=link.onClick)=link.text
 
                 li 
-                    a.header__links--signUp.sign-up-cta(onclick="sendEvent('CTA', 'Clicked header button');") Join waitlist
+                    a.header__links--signUp.sign-up-cta(onclick="notifySegment('Sign Up Button Clicked', 'Header'); sendEvent('CTA', 'Clicked header button');") Join waitlist
 
         .menuMobile__social 
             include ../SocialMedia/SocialMedia

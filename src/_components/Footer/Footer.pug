@@ -24,13 +24,13 @@ footer.footer
             ul.footer__links 
                 li.footer__links--title  Solutions
 
-                +footerLink('https://go.fusebit.io/slack/', 'Slack Connector', 0, "sendEvent('Navigation', 'Clicked slack footer nav');")
-                +footerLink('https://go.fusebit.io/fusebot/', 'Slash Commands', 0, "sendEvent('Navigation', 'Clicked fusebot footer nav');")
+                +footerLink('https://go.fusebit.io/slack/', 'Slack Connector', 0, "notifySegment('Slack Connector Link Clicked', 'Footer'); sendEvent('Navigation', 'Clicked slack footer nav');")
+                +footerLink('https://go.fusebit.io/fusebot/', 'Slash Commands', 0, "notifySegment('Slash Commands Link Clicked', 'Footer'); sendEvent('Navigation', 'Clicked fusebot footer nav');")
 
             ul.footer__links 
                 li.footer__links--title  Resources
                 
-                +footerLink('https://developer.fusebit.io', 'Developer Docs', 0, "sendEvent('Navigation', 'Clicked developers footer nav');")
+                +footerLink('https://developer.fusebit.io', 'Developer Docs', 0, "notifySegment('Developer Docs Link Clicked', 'Footer'); sendEvent('Navigation', 'Clicked developers footer nav');")
                 +footerLink('/blog/', 'Blog', 0, "sendEvent('Navigation', 'Clicked blog footer nav');")
                 +footerLink('/legal/', 'Legal', 0, "sendEvent('Navigation', 'Clicked legal footer nav');")
                 +footerLink('/privacy/', 'Privacy Policy', 0, "sendEvent('Navigation', 'Clicked privacy footer nav');")
