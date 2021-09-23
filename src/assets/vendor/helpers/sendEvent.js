@@ -7,3 +7,10 @@ function sendEvent(category, action, label) {
         event_label: '/' + _label,
     });
 }
+
+function notifySegment(event, objectLocation) {
+    analytics.track(event, {
+        objectLocation,
+        domain: 'fusebit.io',
+    });
+}
