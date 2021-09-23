@@ -159,7 +159,7 @@ module.exports = {
         },
         {
             name: 'Ruben Restrepo',
-            img: 'ruben.jpg',
+            img: 'ruben.png',
             job: 'Engineer',
             social: {
                 github: 'https://github.com/degrammer',
@@ -176,7 +176,7 @@ module.exports = {
         },
         {
             name: 'Bruno Krebs',
-            img: 'bruno.jpg',
+            img: 'bruno.png',
             job: 'Engineer',
             social: {
                 github: 'https://github.com/brunokrebs',
@@ -210,7 +210,7 @@ module.exports = {
         },
         {
             name: 'Matthew Zhao',
-            img: 'fusebit.jpg',
+            img: 'matthew.jpg',
             job: 'Engineer',
             social: {
                 github: 'https://github.com/matthewzhaocc',
