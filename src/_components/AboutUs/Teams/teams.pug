@@ -15,6 +15,18 @@ mixin card(person)
                 a.social-media(href= person.social.twitter target="_blank")
                     img(src="/assets/images/about/teams/twitter.svg" alt="Twitter")
 
+mixin dots(device) 
+    if device == 'mobile'
+        for location in about.teams.locations
+            .teams__dot(class= "teams__dot--sm teams__dot--lavender teams__dot--location" style= location)
+        for person in about.teams.people
+            .teams__dot(class= person.dot.classNames style= person.dot.coordinates data-person= person.name)
+    else
+        for location in about.teams.locations
+            .teams__dot(class= "teams__dot--sm teams__dot--lavender teams__dot--location" style= location)
+        for person in about.teams.people
+            .teams__dot(class= person.dot.classNames style= person.dot.coordinates data-person= person.name)
+
 
 section.teams 
     .teams__container
@@ -26,24 +38,29 @@ section.teams
             img(src="/assets/images/about/teams/map.png" alt="Map" height="706" width="673").teams__map
             .teams__reference-card
                 .teams__dots--desktop 
-                    for location in about.teams.locations
-                        .teams__dot(class= "teams__dot--sm teams__dot--lavender teams__dot--location" style= location)
+                    +dots()
+                .teams__dots.teams__dots--mobile
+                    +dots('mobile')
+            .teams__desktop-cards
+                for person in about.teams.people
+                    +card(person)
+            .teams__mobile-swiper.swiper-container
+                .swiper-wrapper
                     for person in about.teams.people
-                        .teams__dot(class= person.dot.classNames style= person.dot.coordinates data-person= person.name)
-                .teams__dots.teams__dots--mobile 
-                    //- .teams__dot.teams__dot--sm.teams__dot--lavender(style="bottom: 118px; left: -24px")
-                    //- .teams__dot.teams__dot--bg.teams__dot--orange(style="bottom: 140px; left: -56px")
-                    //- .teams__dot.teams__dot--bg.teams__dot--bright-yellow(style="bottom: 198px; left: -29px")
-                    //- .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: -17px; left: -48px")
-                    //- .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: -25px; left: 8px")
-                    //- .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: -45px; left: 14px")
-                    //- .teams__dot.teams__dot--bg.teams__dot--bright-yellow(style="top: -29px; left: 34px")
-                    //- .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: 45px; right: -30px")
-                    //- .teams__dot.teams__dot--sm.teams__dot--lavender(style="top: 65px; right: -36px")
-                    //- .teams__dot.teams__dot--bg.teams__dot--orange(style="top: 99px; right: -32px")
-            for person in about.teams.people
-                +card(person) 
+                        .swiper-slide
+                            +card(person)
+                .swiper-pagination.swiper__pagination
     script. 
+        new Swiper('.teams__mobile-swiper', {
+            slidesPerView: 1,
+            slidesPerColumnFill: 'row',
+            spaceBetween: 22,
+            centeredSlides: true,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
 
         document.addEventListener('click', function(event) {
             const activePerson = document.querySelector('.teams__card--active')

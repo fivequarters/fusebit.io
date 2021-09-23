@@ -1,3 +1,20 @@
+@mixin card-base() {
+    margin-right: 230px;
+    width: 232px;
+    height: 255px;
+    right: -170px;
+    position: absolute;
+    box-sizing: border-box;
+
+    @media (max-width: 992px) {
+        right: auto;
+        margin-right: unset;
+        width: 174px;
+        height: 203px;
+        padding: 24px 0;
+    }
+}
+
 .teams {
     background: url(./images/teams_bg.svg);
     background-size: cover;
@@ -67,6 +84,14 @@
         width: 100%;
     }
 
+    &__desktop-cards {
+        display: block;
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+
     &__map {
         mix-blend-mode: overlay;
         transform: rotate(-8.32deg);
@@ -85,35 +110,17 @@
     }
 
     &__reference-card {
-        margin-right: 230px;
-        width: 232px;
-        height: 255px;
-        right: -170px;
-        position: absolute;
-
-        @media (max-width: 992px) {
-            right: auto;
-            position: relative;
-            margin-right: unset;
-            width: 174px;
-            height: 203px;
-            padding: 24px 0;
-        }
+        @include card-base;
     }
 
     &__card {
+        @include card-base;
         display: flex;
         align-items: center;
         flex-direction: column;
-        margin-right: 230px;
-        width: 232px;
-        height: 255px;
         padding: 32px 0 28px;
         border-radius: 16px;
         background-color: var(--white);
-        box-sizing: border-box;
-        position: absolute;
-        right: -170px;
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
 
@@ -123,11 +130,18 @@
         }
 
         @media (max-width: 992px) {
-            right: auto;
-            margin-right: unset;
-            width: 174px;
-            height: 203px;
-            padding: 24px 0;
+            position: static;
+            opacity: 1;
+        }
+    }
+
+    &__mobile-swiper {
+        max-width: 174px;
+        display: none;
+        position: relative;
+
+        @media screen and (max-width: 992px) {
+            display: block;
         }
     }
 
