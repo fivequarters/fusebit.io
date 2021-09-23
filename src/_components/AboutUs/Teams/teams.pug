@@ -6,7 +6,7 @@ mixin card(person)
             span.card-subtitle= person.job
         .social-media-container
             if person.social.github
-                a.social-media(href= person.social.github target="_blank" style="background: transparent;")
+                a.social-media(href= person.social.github target="_blank")
                     img(src="/assets/images/about/teams/github.svg" alt="Github")
             if person.social.linkedin
                 a.social-media(href= person.social.linkedin target="_blank")
@@ -14,7 +14,7 @@ mixin card(person)
             if person.social.twitter
                 a.social-media(href= person.social.twitter target="_blank")
                     img(src="/assets/images/about/teams/twitter.svg" alt="Twitter")
-            
+
 
 section.teams 
     .teams__container

@@ -74,7 +74,7 @@ module.exports = {
         },
         {
             name: 'Chris Dukelow',
-            img: 'duke.jpg',
+            img: 'duke.png',
             job: 'CFO',
             social: {
                 github: '',
@@ -88,7 +88,7 @@ module.exports = {
         },
         {
             name: 'Chris More',
-            img: 'chris.jpg',
+            img: 'chris.png',
             job: 'VP of Growth',
             social: {
                 github: 'https://github.com/chrismore',
