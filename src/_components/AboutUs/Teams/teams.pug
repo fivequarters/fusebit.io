@@ -44,13 +44,11 @@ section.teams
                             +card(person)
                 .swiper-pagination.swiper__pagination
     script. 
-        window.addEventListener("load", () => {
-            const cards = [...document.querySelectorAll('.teams__desktop-cards > div')]
+        const cards = [...document.querySelectorAll('.teams__desktop-cards > div')]
 
-            const random = Math.floor(Math.random() * cards.length)
+        const random = Math.floor(Math.random() * cards.length)
 
-            cards[random].classList.add('teams__card--active')
-        })
+        cards[random].classList.add('teams__card--active')
 
         new Swiper('.teams__mobile-swiper', {
             slidesPerView: 1,
