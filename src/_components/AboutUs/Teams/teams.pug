@@ -1,7 +1,7 @@
 - const getPosition = ({ top = 'auto', right = 'auto', bottom = 'auto', left = 'auto' }) => { return `top: ${top}px; right: ${right}px; bottom: ${bottom}px; left: ${left}px;`; };
 
-mixin card(person, isActive)
-    .teams__card(data-person= person.name class= isActive ? 'teams__card--active' : '')
+mixin card(person)
+    .teams__card(data-person= person.name)
         .teams__card-img-container(style=`background-image: url('/assets/images/team/${person.img}')`)
         h4.card-title= person.name
         if person.job
@@ -36,8 +36,7 @@ section.teams
                     +dots('mobile')
             .teams__desktop-cards
                 for person, i in about.teams.people
-                    - const isActive = i === 0;
-                    +card(person, isActive)
+                    +card(person)
             .teams__mobile-swiper.swiper-container
                 .swiper-wrapper
                     for person in about.teams.people
@@ -45,6 +44,14 @@ section.teams
                             +card(person)
                 .swiper-pagination.swiper__pagination
     script. 
+        window.addEventListener("load", () => {
+            const cards = [...document.querySelectorAll('.teams__desktop-cards > div')]
+
+            const random = Math.floor(Math.random() * cards.length)
+
+            cards[random].classList.add('teams__card--active')
+        })
+
         new Swiper('.teams__mobile-swiper', {
             slidesPerView: 1,
             slidesPerColumnFill: 'row',
@@ -57,7 +64,7 @@ section.teams
         });
 
         const teamsSection = document.querySelector('.teams');
-    
+
         teamsSection.addEventListener('click', function(event) {
             const activePerson = document.querySelector('.teams__card--active')
             const isClickOutside = activePerson && !activePerson.contains(event.target)
