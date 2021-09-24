@@ -210,12 +210,13 @@
     &__card-img-container {
         width: 80px;
         height: 80px;
-        background-position: -4px center;
-        background-size: cover;
+        background-size: contain;
         border-radius: 50%;
         overflow: hidden;
         position: relative;
         margin-bottom: 16px;
+        background-position: 0 2px;
+        background-repeat: no-repeat;
         background-position: center;
         background-color: #d7e5ff;
         flex-shrink: 0;
