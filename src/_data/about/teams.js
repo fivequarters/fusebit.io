@@ -1,34 +1,82 @@
 const SEATTLE = {
-    mobile: 'left: -274px; top: -18px',
-    desktop: 'left: -202px; top: 37px',
+    mobile: {
+        left: -254,
+        top: -28,
+    },
+    desktop: {
+        left: -177,
+        top: 37,
+    },
 };
 const WALLA_WALLA = {
-    mobile: 'left: -253px; top: -2px',
-    desktop: 'left: -170px; top: 49px',
+    mobile: {
+        left: -253,
+        top: -2,
+    },
+    desktop: {
+        left: -170,
+        top: 49,
+    },
 };
 const PORTLAND = {
-    mobile: 'left: -274px; top: 16px',
-    desktop: 'left: -202px; top: 73px',
+    mobile: {
+        left: -274,
+        top: 16,
+    },
+    desktop: {
+        left: -202,
+        top: 73,
+    },
 };
 const AUSTIN = {
-    mobile: 'left: -276px; top: 42px',
-    desktop: 'left: -134px; top: 128px',
+    mobile: {
+        left: -276,
+        top: 42,
+    },
+    desktop: {
+        left: -134,
+        top: 128,
+    },
 };
 const SAN_FRANCISCO = {
-    mobile: 'left: -240px; top: 40px',
-    desktop: 'left: -211px; top: 119px',
+    mobile: {
+        left: -240,
+        top: 40,
+    },
+    desktop: {
+        left: -211,
+        top: 119,
+    },
 };
 const TORONTO = {
-    mobile: 'left: -187px; top: -10px',
-    desktop: 'left: -18px; top: 50px',
+    mobile: {
+        left: -187,
+        top: -10,
+    },
+    desktop: {
+        left: -18,
+        top: 50,
+    },
 };
 const MEDELLIN = {
-    mobile: 'left: -195px; bottom: -118px',
-    desktop: 'left: -51px; bottom: -19px',
+    mobile: {
+        left: -195,
+        bottom: -118,
+    },
+    desktop: {
+        left: -51,
+        bottom: -19,
+    },
 };
 const PORTO_ALEGRE = {
-    mobile: 'left: -138px; bottom: -214px',
-    desktop: 'right: 169px; bottom: -212px',
+    mobile: {
+        left: -138,
+        bottom: -214,
+    },
+    desktop: {
+        right: 169,
+        bottom: -212,
+    },
 };
 
 const COLORS = {
@@ -53,6 +101,7 @@ module.exports = {
         MEDELLIN,
         PORTO_ALEGRE,
     ],
+
     people: [
         {
             name: 'Tomasz Janczuk',
@@ -65,8 +114,14 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -274px; top: -38px',
-                    desktop: 'left: -202px; top: 13px',
+                    mobile: {
+                        left: SEATTLE.mobile.left,
+                        top: SEATTLE.mobile.top - 20,
+                    },
+                    desktop: {
+                        left: SEATTLE.desktop.left,
+                        top: SEATTLE.desktop.top - 24,
+                    },
                 },
                 classNames: `${SIZES.bg} ${COLORS.orange}`,
             },
@@ -82,8 +137,14 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -293px; top: -30px',
-                    desktop: 'left: -225px; top: 23px',
+                    mobile: {
+                        left: SEATTLE.mobile.left - 19,
+                        top: SEATTLE.mobile.top - 12,
+                    },
+                    desktop: {
+                        left: SEATTLE.desktop.left - 23,
+                        top: SEATTLE.desktop.top - 14,
+                    },
                 },
                 classNames: `${SIZES.bg} ${COLORS.yellow}`,
             },
@@ -99,8 +160,14 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -291px; top: -11px',
-                    desktop: 'left: -225px; top: 45px',
+                    mobile: {
+                        left: SEATTLE.mobile.left - 17,
+                        top: SEATTLE.mobile.top + 7,
+                    },
+                    desktop: {
+                        left: SEATTLE.desktop.left - 23,
+                        top: SEATTLE.desktop.top + 8,
+                    },
                 },
                 classNames: `${SIZES.bg} ${COLORS.blue}`,
             },
@@ -116,8 +183,14 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -243px; top: -2px',
-                    desktop: 'left: -156px; top: 49px',
+                    mobile: {
+                        left: WALLA_WALLA.mobile.left + 10,
+                        top: WALLA_WALLA.mobile.top,
+                    },
+                    desktop: {
+                        left: WALLA_WALLA.desktop.left + 14,
+                        top: WALLA_WALLA.desktop.top,
+                    },
                 },
                 classNames: `${SIZES.bg} ${COLORS.yellow}`,
             },
@@ -133,8 +206,14 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -295px; top: 42px',
-                    desktop: 'left: -120px; top: 128px',
+                    mobile: {
+                        left: AUSTIN.mobile.left - 19,
+                        top: AUSTIN.mobile.top,
+                    },
+                    desktop: {
+                        left: AUSTIN.desktop.left + 14,
+                        top: AUSTIN.desktop.top - 5,
+                    },
                 },
                 classNames: `${SIZES.bg} ${COLORS.blue}`,
             },
@@ -151,8 +230,14 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -265px; top: 16px',
-                    desktop: 'left: -202px; top: 83px',
+                    mobile: {
+                        left: PORTLAND.mobile.left + 9,
+                        top: PORTLAND.mobile.top,
+                    },
+                    desktop: {
+                        left: PORTLAND.desktop.left + 14,
+                        top: PORTLAND.desktop.top + 10,
+                    },
                 },
                 classNames: `${SIZES.bg} ${COLORS.orange}`,
             },
@@ -168,8 +253,14 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -195px; bottom: -107px',
-                    desktop: 'left: -51px; bottom: -10px',
+                    mobile: {
+                        left: MEDELLIN.mobile.left,
+                        bottom: MEDELLIN.mobile.bottom + 11,
+                    },
+                    desktop: {
+                        left: MEDELLIN.desktop.left,
+                        bottom: MEDELLIN.desktop.bottom + 3,
+                    },
                 },
                 classNames: `${SIZES.bg} ${COLORS.yellow}`,
             },
@@ -185,8 +276,14 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -157px; bottom: -214px',
-                    desktop: 'right: 189px; bottom: -212px',
+                    mobile: {
+                        left: PORTO_ALEGRE.mobile.left,
+                        bottom: PORTO_ALEGRE.mobile.bottom,
+                    },
+                    desktop: {
+                        right: PORTO_ALEGRE.desktop.right,
+                        bottom: PORTO_ALEGRE.desktop.bottom,
+                    },
                 },
                 classNames: `${SIZES.bg} ${COLORS.orange}`,
             },
@@ -202,8 +299,14 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -215px; bottom: -118px',
-                    desktop: 'left: -51px; bottom: -40px',
+                    mobile: {
+                        left: MEDELLIN.mobile.left - 20,
+                        bottom: MEDELLIN.mobile.bottom,
+                    },
+                    desktop: {
+                        left: MEDELLIN.desktop.left,
+                        bottom: MEDELLIN.desktop.bottom - 21,
+                    },
                 },
                 classNames: `${SIZES.bg} ${COLORS.orange}`,
             },
@@ -219,8 +322,14 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -240px; top: 50px',
-                    desktop: 'left: -211px; top: 135px',
+                    mobile: {
+                        left: SAN_FRANCISCO.mobile.left,
+                        top: SAN_FRANCISCO.mobile.top + 10,
+                    },
+                    desktop: {
+                        left: SAN_FRANCISCO.desktop.left,
+                        top: SAN_FRANCISCO.desktop.top + 16,
+                    },
                 },
                 classNames: `${SIZES.bg} ${COLORS.blue}`,
             },
@@ -236,8 +345,14 @@ module.exports = {
             },
             dot: {
                 coordinates: {
-                    mobile: 'left: -197px; top: 0',
-                    desktop: 'left: -45px; top: 50px',
+                    mobile: {
+                        left: TORONTO.mobile.left - 10,
+                        top: TORONTO.mobile.top + 10,
+                    },
+                    desktop: {
+                        left: TORONTO.desktop.left - 27,
+                        top: TORONTO.desktop.top,
+                    },
                 },
                 classNames: `${SIZES.bg} ${COLORS.yellow}`,
             },
