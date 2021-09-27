@@ -101,7 +101,9 @@ Files in `assets` will be handled by webpack, Eleventy will transform all of the
 Eleventy’s output will be to a `build` directory at the root level.
 
 ## Blog
-Everytime you want to add a post to the blog you should create a markdown file (.md) inside `src/_blog/_posts` folder and set these variables in the front matter.
+Everytime you want to add a post to the blog you should create a markdown file (.md) inside `src/_blog/_posts` folder and set these variables in the front matter. 
+
+**All images should be added inside /src/assets/images/blog folder. When declaring the frontamatter (below section) only reference them by its name, without the full path.**
 ```
 ---
 post_title: string | The title of the post  
@@ -130,12 +132,30 @@ post_date_in_url: boolean | When setting this prop you can define if you want a 
 ---
 post_title: The Role of Integrations in Building a Unicorn
 post_author: Tomasz Janczuk
-post_author_avatar: https://fusebit.io/tomek.png
+post_author_avatar: tomek.png
 date: '2019-08-26'
-post_image: https://fusebit.io/blog-interview-with-auth0-main.png
+post_image: blog-interview-with-auth0-main.png
 post_excerpt: We spoke with Eugenio Pace, the co-founder and CEO of [Auth0](https://auth0.com/), to get the scoop on his company's approach to integrations.
 post_slug: interview-with-eugenio-pace-auth0-ceo
 tags: ['post']
 post_date_in_url: true
 ---
 ```
+
+### How to add images?
+
+```
+![Semantic description of image](image.png "Image Title")
+```
+
+### How to add videos?
+
+It'll depend if the video is located locally or externally. This would be an example of a video added externally, from Youtube. For more details you can [take a look here][https://about.gitlab.com/handbook/markdown-guide/#videos]
+
+```
+<figure class="video_container">
+  <iframe src="https://www.youtube.com/embed/enMumwvLAug" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+```
+
+You can click here for more [markdown details][https://about.gitlab.com/handbook/markdown-guide]
