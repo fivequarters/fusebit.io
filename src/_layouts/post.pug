@@ -3,6 +3,7 @@ extends default.pug
 block page_variable
     - var pageClass = 'blog__page'
     - var title = post_title
+    - var og_image = filters.getImageUrl(`blog/${post_image}`, 1200)
 
 block content
     section.section
