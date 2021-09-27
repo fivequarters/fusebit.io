@@ -150,7 +150,7 @@ post_date_in_url: true
 
 ### How to add videos?
 
-It'll depend if the video is located locally or externally. This would be an example of a video added externally, from Youtube. For more details you can [take a look here][https://about.gitlab.com/handbook/markdown-guide/#videos]
+It'll depend if the video is located locally or externally. This would be an example of a video added externally, from Youtube. For more details you can [take a look here](https://about.gitlab.com/handbook/markdown-guide/#videos)
 
 ```
 <figure class="video_container">
@@ -158,4 +158,4 @@ It'll depend if the video is located locally or externally. This would be an exa
 </figure>
 ```
 
-You can click here for more [markdown details][https://about.gitlab.com/handbook/markdown-guide]
+You can click here for more [markdown details](https://about.gitlab.com/handbook/markdown-guide)
