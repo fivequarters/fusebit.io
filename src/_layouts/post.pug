@@ -57,3 +57,8 @@ block content
             .post-card-container.post__trending-list
                 each post in [...collections.post].reverse().slice(0, 3)
                     +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
+
+block scripts
+    script.
+        analytics.page('Blog Post', { objectLocation: 'Blog Post', domain: 'fusebit.io' });
+
