@@ -1,9 +1,10 @@
 extends default.pug
 
 block page_variable
+    - const ogConfig = { hero: `https://fusebit.io${filters.getImageUrl(`blog/${post_image}`, 900)}`, site: og_image }
     - var pageClass = 'blog__page'
     - var title = post_title
-    - var og_image = `https://fusebit.io${filters.getImageUrl(`blog/${post_image}`, 1200)}`
+    - var og_image = typeof post_og_image !== "undefined" ? ogConfig[post_og_image] || post_og_image : ogConfig.hero 
 
 block content
     section.section
