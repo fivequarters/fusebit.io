@@ -7,7 +7,39 @@ block page_variable
     - var pageClass = 'aboutUs'
 
 block content
-    include ../_components/AboutUs/Hero/hero
-    include ../_components/AboutUs/Teams/teams
-    include ../_components/AboutUs/Founders/founders
-    include ../_components/AboutUs/Investors/investors
+    //include ../_components/AboutUs/Hero/hero
+
+    section.static__page
+
+        .static__container
+
+            .static__wrapper 
+                .static__head 
+                    h1 Who We Are
+
+                .static__content 
+                    .aboutus__head 
+                        .aboutus__head--text
+                            p Fusebit empowers SaaS businesses to deliver the integrations their customers want, without distracting engineering teams from core feature development. Our software platform is based on learnings from dozens of SaaS companies just like yours, and built on top of years of industry experience and proven technologies.
+                            p Fusebit democratizes integration development, removes friction, and shortens time-to-market across the developer spectrum.
+                            p Prior to co-founding Fusebit, the team worked together for years on cloud technologies, platforms, and products across Microsoft and Auth0. We are excited to contribute our collective experience to bringing Fusebit to market.
+
+                        ul.aboutus__head--items 
+                            li Built by pioneers in cloud, integrations, and serverless, with proven enterprise software record
+                            li Deep experience in delivering extensibility and integrations, from corporations to startup unicorns
+                            li Proudly backed by Four Rivers Group and Founders Co-op
+
+                    .aboutus__content 
+                        +teamMember('Tomasz Janczuk', 'Co-founder & CEO', '../assets/images/team/tomek-full-4.png', 'https://www.linkedin.com/in/tjanczuk', 'https://twitter.com/tjanczuk')
+                        +teamMember('Yavor Georgiev', 'Co-founder & CPO', '../assets/images/team/yavor-full-4.png', 'http://linkedin.com/in/yavorg', 'https://twitter.com/YavorGeorgiev')
+                        +teamMember('Benn Bollay', 'Co-founder & CTO', '../assets/images/team/benn-full.png', 'https://www.linkedin.com/in/bennbollay')
+                        +teamMember('Lindsey Thorne', 'Head of Talent', '../assets/images/team/lindsey-full.png', 'https://www.linkedin.com/in/lindseythorne/')
+                        +teamMember('Chris Dukelow', 'CFO', '../assets/images/team/duke-full.png', 'https://www.linkedin.com/in/dukelow/', 'https://twitter.com/chrisdukelow')
+                        +teamMember('Chris More', 'VP of Growth', '../assets/images/team/chris-full.png', 'https://www.linkedin.com/in/chrismore/', 'https://twitter.com/chrismore')
+                        +teamMember('Daria Goncharenko', 'UI/UX Project Manager', '../assets/images/team/daria-full.png', 'https://www.linkedin.com/in/daria-goncharenko/')
+                        +teamMember('Jacob Haller-Roby', 'Engineer', '../assets/images/team/jake-full.png', 'https://www.linkedin.com/in/jacob-haller-roby-35118148/')
+
+block scripts
+    script.
+        analytics.page('About Us', { objectLocation: 'About Us', domain: 'fusebit.io' });
+
