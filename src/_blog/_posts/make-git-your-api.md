@@ -1,5 +1,5 @@
 ---
-post_title: Make git your API
+post_title: Make Git Your API
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2021-10-06'
