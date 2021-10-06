@@ -1,13 +1,13 @@
 ---
-post_title: Fusetunel
+post_title: Fusetunnel: fast, scalable and free tunnel to share your localhost app
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
-date: "2019-06-08"
+date: "2021-10-06"
 post_image: blog-new-trend-main.png
-post_excerpt: Most people buy cars to get from A to B, not because they like driving. That’s why Uber and Lyft are so successful...
-post_slug: twilio-segment-github-serverless-extensibility
-tags: ['post', 'serverless']
-post_date_in_url: true
+post_excerpt: Fusetunnel is end-to-end encrypted, giving the user greater security, promoting data protection, and preventing unauthorized access...
+post_slug: fusetunnel-fast-scalable-and-free-tunnel
+tags: ['post']
+post_date_in_url: false
 ---
 
 There are many times where we want to share our localhost app with the world, either for testing purposes, to show progress, demo websites or run personal cloud services from your home. [Fusetunnel](https://github.com/fusebit/tunnel) helps you to do this easily! No need to mess with DNS or deploy to have others test out your changes.
