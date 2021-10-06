@@ -1,5 +1,5 @@
 ---
-post_title: Fusetunnel: A fast, scalable, and free tunnel
+post_title: Fusetunnel - A fast, scalable, and free tunnel
 post_author: Liz Parody
 post_author_avatar: tomek.png
 date: '2021-10-06'
