@@ -1,13 +1,13 @@
 ---
-post_title: Fusetunnel: fast, scalable, and free tunnel to share your localhost app
+post_title: Fusetunel
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
-date: "2021-10-06"
+date: "2019-06-08"
 post_image: blog-new-trend-main.png
-post_excerpt: Fusetunnel is **end-to-end encrypted**, giving the user greater security, promoting data protection, and preventing unauthorized access to data. And it's Free!
-post_slug: fusetunnel-fast-scalable-and-free-tunnel
-tags: ['post']
-post_date_in_url: false
+post_excerpt: Most people buy cars to get from A to B, not because they like driving. That’s why Uber and Lyft are so successful...
+post_slug: twilio-segment-github-serverless-extensibility
+tags: ['post', 'serverless']
+post_date_in_url: true
 ---
 
 There are many times where we want to share our localhost app with the world, either for testing purposes, to show progress, demo websites or run personal cloud services from your home. [Fusetunnel](https://github.com/fusebit/tunnel) helps you to do this easily! No need to mess with DNS or deploy to have others test out your changes.
@@ -32,7 +32,6 @@ To get the tunnel, first, you have to install it with the following command: `np
 Run `ft -p 3000` command and it will give you a public URL ready to share with the world! No more sharing localhost links by accident 😜.
 
 
-
 You can also run the quickstart command `npx ft --port 3000` instead.
 
 Open the URL, and voila! 
@@ -41,4 +40,3 @@ Now you have a fully encrypted tunnel to the internet.
 
 ## Before you go…
 If you want to build awesome integrations for your application without the hassle, visit [fusebit.io](https://fusebit.io/).  Our code-first integration platform and SaaS connectors remove the headaches of dealing with different APIs and eliminate the operational burden when running at scale.
-
