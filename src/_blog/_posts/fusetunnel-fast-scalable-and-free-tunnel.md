@@ -26,7 +26,6 @@ Compared to ngrok (alternative paid product), Fusetunnel doesn't have rate limit
 
 Let's say that you have this simple hello world Node.js app:
 
-![]()
 ![Simple Node.js Hello World](blog-fusetunnel-hello-world.png "Simple Node.js Hello World")
 
 To get the tunnel, first, you have to install it with the following command: `npm i -g @fusebit/tunnel`.
