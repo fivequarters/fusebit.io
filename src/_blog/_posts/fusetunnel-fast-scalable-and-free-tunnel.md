@@ -1,10 +1,10 @@
 ---
-post_title: Fusetunnel a fast, scalable and free tunnel to share your localhost app
+post_title: Fusetunnel: A fast, scalable, and free tunnel
 post_author: Liz Parody
 post_author_avatar: tomek.png
 date: '2021-10-06'
 post_image: blog-fusetunnel-main.png
-post_excerpt: Fusetunnel is end-to-end encrypted, giving the user greater security, promoting data protection, and preventing unauthorized access...
+post_excerpt: Fusetunnel is end-to-end encrypted, giving a developer greater security for sharing your localhost app.
 post_slug: fusetunnel-fast-scalable-and-free-tunnel
 tags: ['post']
 post_date_in_url: false
@@ -28,9 +28,15 @@ Let's say that you have this simple hello world Node.js app:
 
 ![Simple Node.js Hello World](blog-fusetunnel-hello-world.png "Simple Node.js Hello World")
 
-To get the tunnel, first, you have to install it with the following command: `npm i -g @fusebit/tunnel`.
+To get the tunnel, first, you have to install it with the following command:
 
-Run `ft -p 3000` command and it will give you a public URL ready to share with the world! No more sharing localhost links by accident 😜.
+`npm i -g @fusebit/tunnel`
+
+Then run:
+
+`ft -p 3000` 
+
+This will give you a public URL ready to share with the world! No more sharing localhost links by accident 😜.
 
 ![Run the command ft -p <backend-service-port>](blog-fusetunnel-ft-command.png "command to get your public URL")
 
