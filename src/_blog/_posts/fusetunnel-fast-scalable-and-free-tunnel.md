@@ -37,6 +37,7 @@ Run `ft -p 3000` command and it will give you a public URL ready to share with t
 You can also run the quickstart command `npx ft --port 3000` instead.
 
 Open the URL, and voila!
+
 ![Public URL](blog-fusetunnel-url.png "public localhost URL ready to share and test")
 
 Now you have a fully encrypted tunnel to the internet.
