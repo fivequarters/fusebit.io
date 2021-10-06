@@ -1,9 +1,9 @@
 ---
 post_title: Fusetunnel a fast, scalable and free tunnel to share your localhost app
-post_author: Tomasz Janczuk
+post_author: Liz Parody
 post_author_avatar: tomek.png
 date: '2021-10-06'
-post_image: blog-new-trend-main.png
+post_image: blog-fusetunnel-main.png
 post_excerpt: Fusetunnel is end-to-end encrypted, giving the user greater security, promoting data protection, and preventing unauthorized access...
 post_slug: fusetunnel-fast-scalable-and-free-tunnel
 tags: ['post']
@@ -26,15 +26,19 @@ Compared to ngrok (alternative paid product), Fusetunnel doesn't have rate limit
 
 Let's say that you have this simple hello world Node.js app:
 
+![]()
+![Simple Node.js Hello World](blog-fusetunnel-hello-world.png "Simple Node.js Hello World")
 
 To get the tunnel, first, you have to install it with the following command: `npm i -g @fusebit/tunnel`.
 
 Run `ft -p 3000` command and it will give you a public URL ready to share with the world! No more sharing localhost links by accident 😜.
 
+![Run the command ft -p <backend-service-port>](blog-fusetunnel-ft-command.png "command to get your public URL")
 
 You can also run the quickstart command `npx ft --port 3000` instead.
 
-Open the URL, and voila! 
+Open the URL, and voila!
+![Public URL](blog-fusetunnel-url.png "public localhost URL ready to share and test")
 
 Now you have a fully encrypted tunnel to the internet.
 
