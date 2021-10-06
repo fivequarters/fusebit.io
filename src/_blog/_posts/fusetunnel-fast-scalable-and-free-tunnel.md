@@ -1,8 +1,8 @@
 ---
-post_title: Fusetunnel: fast, scalable and free tunnel to share your localhost app
+post_title: Fusetunnel a fast, scalable and free tunnel to share your localhost app
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
-date: "2021-10-06"
+date: '2021-10-06'
 post_image: blog-new-trend-main.png
 post_excerpt: Fusetunnel is end-to-end encrypted, giving the user greater security, promoting data protection, and preventing unauthorized access...
 post_slug: fusetunnel-fast-scalable-and-free-tunnel
