@@ -3,10 +3,10 @@ post_title: Make git your API
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2021-10-06'
-post_image: blog-buy-build-main.jpg
+post_image: blog-make-git-your-api-main.png
 post_excerpt: When designing HTTP APIs for your application, it sometimes makes sense to embrace git as a part of the protocol.
 post_slug: make-git-your-api
-tags: ['serverless']
+tags: ['post']
 post_date_in_url: false
 ---
 
@@ -32,7 +32,7 @@ Integration with a third-party git provider (GitHub)
 
 The typical design for integrating with a third-party git provider like GitHub assumes your users use it as their primary source control system. You then ask your users to authorize your application to access their GitHub repository, and register a webhook so that your application is notified when they deploy new code: 
 
-[insert image]
+![Diagram: Integration with a third-party git provider](blog-make-git-your-api-5-way.png "Integration with a third-party git provider")
 
 Pros:
 * Embrace an existing git platform that your users’ processes are based on.
@@ -47,7 +47,7 @@ Cons:
 
 In this approach, you are providing a git server implementation as part of your own API surface.  While your users may still use GitHub or another git provider in their daily operations, your system is the source of truth for the purpose of your service:
 
-[insert image]
+![Diagram: Support git protocol as part of your own API surface](blog-make-git-your-api-2-way.png "Support git protocol as part of your own API surface")
 
 Pros:
 * Your system is the source of truth and does not depend on any third-party for your SLA.
