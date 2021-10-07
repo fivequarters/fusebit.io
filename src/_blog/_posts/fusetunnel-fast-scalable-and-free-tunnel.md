@@ -6,7 +6,7 @@ date: '2021-10-06'
 post_image: blog-fusetunnel-main.png
 post_excerpt: Fusetunnel is end-to-end encrypted, giving a developer greater security for sharing your localhost app.
 post_slug: fusetunnel-fast-scalable-and-free-tunnel
-tags: ['notag']
+tags: ['post','deverloper tools']
 post_date_in_url: false
 ---
 
