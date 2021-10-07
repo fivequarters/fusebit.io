@@ -6,7 +6,7 @@ date: '2021-10-06'
 post_image: blog-make-git-your-api-main.png
 post_excerpt: When designing HTTP APIs for your application, it sometimes makes sense to embrace git as a part of the protocol.
 post_slug: make-git-your-api
-tags: ['notag']
+tags: ['post','deverloper tools']
 post_date_in_url: false
 ---
 
