@@ -9,7 +9,10 @@ function getImageMeta(src, widths) {
     const options = {
         widths: widths || [300, 600, 900, 1200, null],
         formats: ['png', 'webp', 'jpg'],
-        outputDir: process.env.ELEVENTY_ENV === 'production' ? './build/assets/images/11ty' : './src/assets/images/11ty',
+        outputDir:
+            process.env.ELEVENTY_ENV === 'production'
+                ? './build/assets/images/11ty'
+                : './src/assets/images/11ty',
         urlPath: '/assets/images/11ty',
     };
 
@@ -78,6 +81,10 @@ module.exports = function (eleventyConfig) {
         },
     });
 
+    eleventyConfig.on('afterBuild', () => {
+        fs.copyFileSync(`./src/_data/site.json`, `./build/site.json`);
+    });
+
     eleventyConfig.addTransform(
         'transform-blog-images',
         function (content, outputPath) {
@@ -89,7 +96,11 @@ module.exports = function (eleventyConfig) {
                 ];
 
                 images
-                    .filter((i) => !i.src.includes('svg') && !i.src.includes('footer__bg'))
+                    .filter(
+                        (i) =>
+                            !i.src.includes('svg') &&
+                            !i.src.includes('footer__bg')
+                    )
                     .forEach((i) => {
                         i.outerHTML = getImageTag(`blog/${i.src}`, i.alt, null);
                     });
