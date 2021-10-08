@@ -8,6 +8,7 @@ post_excerpt: Fusetunnel is end-to-end encrypted, giving a developer greater sec
 post_slug: fusetunnel-fast-scalable-and-free-tunnel
 tags: ['post','deverloper tools']
 post_date_in_url: false
+post_og_image: https://fusebit.io/assets/images/blog/blog-fusetunnel-social-card.png
 ---
 
 There are many times where we want to share our localhost app with the world, either for testing purposes, to show progress, demo websites or run personal cloud services from your home. [Fusetunnel](https://github.com/fusebit/tunnel) helps you to do this easily! No need to mess with DNS or deploy to have others test out your changes.
