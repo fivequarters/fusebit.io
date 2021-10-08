@@ -6,7 +6,7 @@ date: '2021-10-07'
 post_image: blog-fusetunnel-main.png
 post_excerpt: Fusetunnel is end-to-end encrypted, giving a developer greater security for sharing your localhost app.
 post_slug: fusetunnel-fast-scalable-and-free-tunnel
-tags: ['post','deverloper tools']
+tags: ['post','developer tools']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-fusetunnel-social-card.png
 ---
