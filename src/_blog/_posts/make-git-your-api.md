@@ -6,7 +6,7 @@ date: '2021-10-06'
 post_image: blog-make-git-your-api-main.png
 post_excerpt: When designing HTTP APIs for your application, it sometimes makes sense to embrace git as a part of the protocol.
 post_slug: make-git-your-api
-tags: ['post','deverloper tools']
+tags: ['post','developer tools']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-make-git-your-api-social-card.png
 ---
