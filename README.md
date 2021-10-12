@@ -162,3 +162,4 @@ It'll depend if the video is located locally or externally. This would be an exa
 ```
 
 You can click here for more [markdown details](https://about.gitlab.com/handbook/markdown-guide)
+
