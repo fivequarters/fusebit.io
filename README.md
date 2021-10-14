@@ -37,7 +37,7 @@ Browse to [http://localhost:5000](http://localhost:5000).
 
 ## Deploy in S3
 
-1. Build the application
+1) Build the application
 
 ```sh
 npm run prod
@@ -49,27 +49,26 @@ or
 yarn prod
 ```
 
-2. Upload `build` folder content into the bucket
+2) Upload `build` folder content into the bucket
 
 ```sh
 aws s3 sync ./build s3://${bucket_name} --profile ${profile} --cache-control max-age=31536000
 ```
 
-3. Refresh cloudfront (optional)
-
+3) Refresh cloudfront (optional)
 ```sh
 aws cloudfront create-invalidation --profile ${profile} --distribution-id ${cloudfront_id} --paths '/*'
 ```
 
 ## Technologies used
 
-- [Eleventy](https://www.11ty.dev/)
-- [PUG](https://pugjs.org/) as the templating language
-- [Sass](https://sass-lang.com/) for writing CSS
-- [Babel](https://babeljs.io/) for transpiling and polyfilling JavaScript
-- [Autoprefixer](https://github.com/postcss/autoprefixer) for vendor prefixing CSS
-- [Webpack](https://webpack.js.org/) for compiling the Sass and JavaScript assets
-- [ESLint](https://eslint.org/) and [Airbnb's base configuration](https://www.npmjs.com/package/eslint-config-airbnb-base) for linting
+* [Eleventy](https://www.11ty.dev/)
+* [PUG](https://pugjs.org/) as the templating language
+* [Sass](https://sass-lang.com/) for writing CSS
+* [Babel](https://babeljs.io/) for transpiling and polyfilling JavaScript
+* [Autoprefixer](https://github.com/postcss/autoprefixer) for vendor prefixing CSS
+* [Webpack](https://webpack.js.org/) for compiling the Sass and JavaScript assets
+* [ESLint](https://eslint.org/) and [Airbnb's base configuration](https://www.npmjs.com/package/eslint-config-airbnb-base) for linting
 
 ## Project structure
 
@@ -102,16 +101,14 @@ Files in `assets` will be handled by webpack, Eleventy will transform all of the
 Eleventy’s output will be to a `build` directory at the root level.
 
 ## Blog
-
-Everytime you want to add a post to the blog you should create a markdown file (.md) inside `src/_blog/_posts` folder and set these variables in the front matter.
+Everytime you want to add a post to the blog you should create a markdown file (.md) inside `src/_blog/_posts` folder and set these variables in the front matter. 
 
 **All images should be added inside /src/assets/images/blog folder. When declaring the frontamatter (below section) only reference them by its name, without the full path.**
-
 ```
 ---
-post_title: string | The title of the post
+post_title: string | The title of the post  
 
-post_author: string | The author name of the post
+post_author: string | The author name of the post 
 
 post_author_avatar: string | The url of the author avatar image
 
@@ -175,5 +172,3 @@ And this is how you can do it with a video located locally (poster is not requir
   </video>
 </figure>
 ```
-
-You can click here for more [markdown details](https://about.gitlab.com/handbook/markdown-guide)
