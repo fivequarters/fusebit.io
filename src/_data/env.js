@@ -1,3 +1,3 @@
 module.exports = {
-    canonicalUrl: 'https://fusebit.io',
+    canonicalUrl: process.env.BASE_URL,
 };
