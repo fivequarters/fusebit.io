@@ -11,3 +11,7 @@ block content
     include ../_components/AboutUs/Teams/teams
     include ../_components/AboutUs/Founders/founders
     include ../_components/AboutUs/Investors/investors
+
+block scripts
+    script.
+        analytics.page('About Us', { objectLocation: 'About Us', domain: 'fusebit.io' });
