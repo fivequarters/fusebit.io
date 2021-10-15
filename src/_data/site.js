@@ -1,6 +1,8 @@
+const dotenv = require('dotenv');
+
+dotenv.config();
+
 module.exports = {
     url: 'https://fusebit.io',
-    site: {
-        intercomAppId: process.env.INTERCOM_APP_ID,
-    },
+    intercomAppId: process.env.INTERCOM_APP_ID,
 };

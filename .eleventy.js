@@ -83,7 +83,14 @@ module.exports = function (eleventyConfig) {
     });
 
     eleventyConfig.on('afterBuild', () => {
-        fs.copyFileSync(`./src/_data/site.js`, `./build/site.js`);
+        const data = require('./src/_data/site.js');
+
+        fs.writeFile(`./build/site.json`, JSON.stringify(data),
+        function (err) {
+            if (err) {
+                throw err;
+            } 
+          });
     });
 
     eleventyConfig.addTransform(
