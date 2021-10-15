@@ -70,6 +70,8 @@ jobs:
         run: aws s3 ls
 
       - name: Build
+        env: 
+          INTERCOM_APP_ID: v9ncq3ml
         run: ./scripts/build_tree.sh
 
       - name: Publish - website
