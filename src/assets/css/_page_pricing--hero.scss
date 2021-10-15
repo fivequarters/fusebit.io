@@ -1,0 +1,108 @@
+.hero {
+    &__background--desktop {
+        top: 22.5%;
+        display: block;
+
+        @media only screen and (max-width: 992px) {
+            display: none;
+        }
+
+        @media only screen and (min-width: 2500px) {
+            top: 25%;
+        }
+
+        @media only screen and (min-width: 3500px) {
+            top: 15%;
+        }
+    }
+
+    &__background--mobile {
+        display: none;
+        width: 110%;
+        margin-left: -5%;
+
+        @media only screen and (max-width: 992px) {
+            display: block;
+        }
+    }
+
+    &__mark-small {
+        @include mark-offset(510px, 90px);
+        top: -24px;
+
+        @media only screen and (max-width: 1200px) {
+            top: -40px;
+        }
+    }
+
+    &__mark-big {
+        @include mark-offset(370px, 40px);
+
+        @media only screen and (max-width: 1200px) {
+            top: -24px;
+        }
+    }
+
+    &__layout {
+        margin: calc(207px - var(--triangleHeight)) auto 0;
+        padding-bottom: 207px;
+        display: block;
+
+        @media only screen and (max-width: 992px) {
+            padding: 0;
+            margin: 88px auto 0;
+        }
+    }
+
+    &__short-mark {
+        position: absolute;
+        right: 0;
+        top: -47px;
+        z-index: -1;
+    }
+
+    &__long-mark {
+        & > img {
+            position: absolute;
+            right: 0;
+            top: 15px;
+            z-index: -1;
+        }
+    }
+
+    &__title {
+        @include font-size(56);
+        font-family: var(--sora);
+        font-weight: 700;
+        max-width: 725px;
+        margin-bottom: 192px;
+        line-height: 110%;
+
+        > span {
+            color: var(--orange);
+        }
+
+        @media only screen and (max-width: 992px) {
+            max-width: 525px;
+            @include font-size(38);
+            margin-bottom: 8px;
+        }
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    &__cards-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__card {
+        position: relative;
+        height: 544px;
+        width: 352px;
+        background-color: white;
+        border-radius: 16px;
+    }
+}

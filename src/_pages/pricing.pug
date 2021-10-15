@@ -1,0 +1,14 @@
+extends ../_layouts/default.pug
+
+block seo_variables
+    - var title = 'Pricing - Fusebit'
+
+block page_variable
+    - var pageClass = 'pricing'
+
+block content
+    include ../_components/Pricing/Hero/hero
+
+block scripts
+    script.
+        analytics.page('Pricing', { objectLocation: 'Pricing', domain: 'fusebit.io' });
