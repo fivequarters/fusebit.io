@@ -16,6 +16,7 @@ function getImageMeta(src, widths) {
         urlPath: '/assets/images/11ty',
     };
 
+    
     const url = `./src/assets/images/${src}`;
 
     Image(url, options);
