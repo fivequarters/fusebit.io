@@ -6,8 +6,9 @@ date: '2021-10-06'
 post_image: blog-make-git-your-api-main.png
 post_excerpt: When designing HTTP APIs for your application, it sometimes makes sense to embrace git as a part of the protocol.
 post_slug: make-git-your-api
-tags: ['notag']
+tags: ['post','developer tools']
 post_date_in_url: false
+post_og_image: https://fusebit.io/assets/images/blog/blog-make-git-your-api-social-card.png
 ---
 
 When designing HTTP APIs for your application, it sometimes makes sense to embrace git as a part of the protocol. This post describes your options and introduces [fusebit/cloud-git](https://github.com/fusebit/cloud-git), a pure JavaScript git server implementation for Node.js that lets you easily add git endpoints to your Express app. 
