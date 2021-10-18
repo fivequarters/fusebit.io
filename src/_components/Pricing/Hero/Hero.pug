@@ -1,29 +1,76 @@
+-
+    const cardOne = {
+        className: "hero__card-highlight--professional", 
+        title: "Professional", 
+        price: "Free Forever", 
+        features: ["3 connectors"], 
+        link: { 
+            href: "http://manage.fusebit.io/quickstart?key=slack", 
+            text: "Login",
+            onclick: "sendEvent('Price Tier', 'Clicked Price Tier 1');"
+        }, 
+        description: "Up to 5,000 executions of the integration logic per month across all connectors",
+    }
+
+    const cardTwo = {
+        className: "hero__card-highlight--business", 
+        title: "Business", 
+        price: "$199/mo", 
+        features: ["10 connectors"], 
+        link: { 
+            href: "/", 
+            text: "Login", 
+            onclick: "sendEvent('Price Tier', 'Clicked Price Tier 2');"
+        }, 
+        description: "Up to 100,000 executions of the integration logic per month across all connectors",
+    }
+
+    const cardThree = {
+        className: "hero__card-highlight--enterprise", 
+        title: "Enterprise", 
+        price: "Custom pricing", 
+        features: [
+            "Custom limits", 
+            "Dedicated deployment", 
+            "Private Cloud", 
+            "Self-managed deployment", 
+            "Data locality", 
+            "Business support", 
+            "SLA"
+        ], 
+        link: { 
+            href: "https://auth0.com/contact-us?place=header&type=button&text=contact%20sales", 
+            text: "Contact", 
+            onclick: "sendEvent('Price Tier', 'Clicked Price Tier 3');"
+        },
+    }
+
+    const cards = [cardOne, cardTwo, cardThree];
+
 mixin background(className) 
     .background.background--neutralLight(class= className)
         .mark.mark--small.mark--light-violet.mark--right.hero__mark-small
         .mark.mark--big.mark--dark-violet.mark--right.hero__mark-big
 
-mixin card(className, title, price, features, link, description)
+mixin card(props)
     .hero__card-wrapper
         .hero__card
-            .hero__card-highlight(class= className)
-            h2.hero__card-title #{title}
-            h4.hero__card-price #{price}
+            .hero__card-highlight(class= props.className)
+            h2.hero__card-title #{props.title}
+            h4.hero__card-price #{props.price}
             .hero__card-separator
-            each feature in features
+            each feature in props.features
                 p.hero__card-feature #{feature}
-            a(href=link.href).hero__card-link #{link.text}
+            a(href=props.link.href, onclick=props.link.onclick, data-event-name="Price Tier Button Clicked", data-object-location="Price Tier").hero__card-link #{props.link.text}
         .hero__card-description--wraper
-            p.hero__card-description #{description}
+            p.hero__card-description #{props.description}
 
 section.section.section--no-margin.hero 
     +background("hero__background--desktop")
     .layout.hero__layout
-        h1.hero__title
-            | Self-service pricing
+        h1.hero__title Self-service pricing
         .hero__content
             +background("hero__background--mobile")
             .hero__cards-container
-                +card("hero__card-highlight--professional", "Professional", "Free Forever", ["3 connectors"], { href: "http://manage.fusebit.io/quickstart?key=slack", text: "Login" }, "Up to 5,000 executions of the integration logic per month across all connectors")
-                +card("hero__card-highlight--business", "Business", "$199/mo", ["10 connectors"], { href: "/", text: "Login" }, "Up to 100,000 executions of the integration logic per month across all connectors")
-                +card("hero__card-highlight--enterprise", "Enterprise", "Custom pricing", ["Custom limits", "Dedicated deployment", "Private Cloud", "Self-managed deployment", "Data locality", "Business support", "SLA"], { href: "https://auth0.com/contact-us?place=header&type=button&text=contact%20sales", text: "Contact" })
+                each card in cards 
+                    +card(card)
