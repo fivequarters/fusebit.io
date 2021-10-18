@@ -62,8 +62,9 @@ mixin card(props)
             each feature in props.features
                 p.hero__card-feature #{feature}
             a(href=props.link.href, onclick=props.link.onclick, data-event-name="Price Tier Button Clicked", data-object-location="Price Tier").hero__card-link #{props.link.text}
-        .hero__card-description--wraper
-            p.hero__card-description #{props.description}
+        if props.description
+            .hero__card-description--wraper
+                p.hero__card-description #{props.description}
 
 section.section.section--no-margin.hero 
     +background("hero__background--desktop")
