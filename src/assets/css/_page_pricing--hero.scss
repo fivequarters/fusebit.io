@@ -1,6 +1,6 @@
 .hero {
     &__background--desktop {
-        top: 22.5%;
+        top: 21.5%;
         display: block;
 
         @media only screen and (max-width: 992px) {
@@ -99,10 +99,126 @@
     }
 
     &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         position: relative;
-        height: 544px;
+        height: 424px;
         width: 352px;
+        padding: 56px 0;
+        margin-bottom: 32px;
         background-color: white;
         border-radius: 16px;
+        box-shadow: 14px 14px 74px rgba(52, 72, 123, 0.1);
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-highlight {
+            position: absolute;
+            left: 50%;
+            top: -3px;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 6px;
+            border-radius: 8px;
+
+            &--professional {
+                background-color: var(--green);
+            }
+
+            &--business {
+                background-color: var(--yellow);
+            }
+
+            &--enterprise {
+                background-color: var(--orange);
+            }
+        }
+
+        &-blur {
+            position: absolute;
+            bottom: -14px;
+            right: -14px;
+            height: 520px;
+            width: 320px;
+            background-color: #34487b;
+            opacity: 0.1;
+            filter: blur(74px);
+        }
+
+        &-title {
+            @include font-size(24);
+            line-height: 160%;
+            font-family: var(--sora);
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        &-price {
+            @include font-size(18);
+            font-family: var(--sora);
+            font-weight: 600;
+            color: var(--orange);
+        }
+
+        &-separator {
+            width: 50px;
+            height: 1px;
+            background-color: var(--neutral);
+            margin: 28px 0;
+        }
+
+        &-feature {
+            position: relative;
+            @include font-size(14);
+            line-height: 120%;
+            font-family: var(--sora);
+            color: var(--dark);
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+
+        &-link,
+        &-link:visited,
+        &-link:link {
+            @include font-size(14);
+            line-height: 150%;
+            font-family: var(--poppins);
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            position: relative;
+            width: 85px;
+            padding: 8px 16px;
+            border-radius: 90px;
+            background-color: var(--orange);
+            margin-top: auto;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                background-color: var(--orangeDark);
+            }
+        }
+
+        &-description--wrapper {
+            width: 352px;
+        }
+
+        &-description {
+            @include font-size(11);
+            line-height: 145%;
+            font-weight: 300;
+            color: var(--dark);
+            text-align: center;
+            margin: 0 auto;
+            width: 252px;
+        }
     }
 }

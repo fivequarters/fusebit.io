@@ -3,6 +3,18 @@ mixin background(className)
         .mark.mark--small.mark--light-violet.mark--right.hero__mark-small
         .mark.mark--big.mark--dark-violet.mark--right.hero__mark-big
 
+mixin card(className, title, price, features, link, description)
+    .hero__card-wrapper
+        .hero__card
+            .hero__card-highlight(class= className)
+            h2.hero__card-title #{title}
+            h4.hero__card-price #{price}
+            .hero__card-separator
+            each feature in features
+                p.hero__card-feature #{feature}
+            a(href=link.href).hero__card-link #{link.text}
+        .hero__card-description--wraper
+            p.hero__card-description #{description}
 
 section.section.section--no-margin.hero 
     +background("hero__background--desktop")
@@ -12,6 +24,6 @@ section.section.section--no-margin.hero
         .hero__content
             +background("hero__background--mobile")
             .hero__cards-container
-                .hero__card
-                    
-                    
+                +card("hero__card-highlight--professional", "Professional", "Free Forever", ["3 connectors"], {href: "/", text: "Login"}, "Up to 5,000 executions of the integration logic per month across all connectors")
+                +card("hero__card-highlight--business", "Business", "$199/mo", ["10 connectors"], {href: "/", text: "Login"}, "Up to 100,000 executions of the integration logic per month across all connectors")
+                +card("hero__card-highlight--enterprise", "Enterprise", "Custom pricing", ["Custom limits", "Dedicated deployment", "Private Cloud", "Self-managed deployment", "Data locality", "Business support", "SLA"], {href: "/", text: "Contact"})
