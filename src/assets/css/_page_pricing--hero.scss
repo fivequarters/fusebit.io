@@ -23,6 +23,7 @@
 
         @media only screen and (max-width: 992px) {
             display: block;
+            padding: 32px 0;
         }
     }
 
@@ -85,7 +86,7 @@
         @media only screen and (max-width: 992px) {
             max-width: 525px;
             @include font-size(38);
-            margin-bottom: 8px;
+            margin-bottom: 50px;
         }
     }
 
@@ -96,6 +97,13 @@
     &__cards-container {
         display: flex;
         justify-content: space-between;
+
+        @media only screen and (max-width: 992px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 32px;
+        }
     }
 
     &__card {
@@ -110,6 +118,14 @@
         background-color: white;
         border-radius: 16px;
         box-shadow: 14px 14px 74px rgba(52, 72, 123, 0.1);
+
+        @media only screen and (max-width: 1185px) {
+            width: 300px;
+        }
+
+        @media only screen and (max-width: 992px) {
+            margin: 32px 0;
+        }
 
         &-wrapper {
             display: flex;
