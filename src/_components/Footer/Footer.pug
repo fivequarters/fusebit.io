@@ -14,26 +14,27 @@ footer.footer
                     include ../Logo/Logo
 
             ul.footer__links 
-                li.footer__links--title  Company
-   
-                +footerLink('/about/', 'About Us', 0, "sendEvent('Navigation', 'Clicked about footer nav');")
-                +footerLink('/careers/', 'Careers', 0, "sendEvent('Navigation', 'Clicked careers footer nav');")
-                +footerLink('/support/', 'Support', 0, "sendEvent('Navigation', 'Clicked support footer nav');")
-                +footerLink('/contact/', 'Contact', 0, "sendEvent('Navigation', 'Clicked contact footer nav');")
-
-            ul.footer__links 
-                li.footer__links--title  Solutions
+                li.footer__links--title  Integrations
 
                 +footerLink('https://go.fusebit.io/slack/', 'Slack Connector', 0, "sendEvent('Navigation', 'Clicked slack footer nav');", true, 'Slack Connector Link Clicked', 'Footer')
                 +footerLink('https://go.fusebit.io/hubspot/', 'HubSpot Connector', 0, "sendEvent('Navigation', 'Clicked hubspot footer nav');", true, 'HubSpot Connector Link Clicked', 'Footer')
                 +footerLink('https://go.fusebit.io/salesforce/', 'Salesforce Connector', 0, "sendEvent('Navigation', 'Clicked salesforce footer nav');", true, 'Salesforce Connector Link Clicked', 'Footer')
-                +footerLink('https://go.fusebit.io/fusebot/', 'Custom Slash Commands', 0, "sendEvent('Navigation', 'Clicked fusebot footer nav');", true, 'Slash Commands Link Clicked', 'Footer')
+                +footerLink('https://go.fusebit.io/fusebot/', 'Slash Command Bot', 0, "sendEvent('Navigation', 'Clicked fusebot footer nav');", true, 'Slash Commands Link Clicked', 'Footer')
 
             ul.footer__links 
-                li.footer__links--title  Resources
+                li.footer__links--title  Developers
                 
-                +footerLink('https://developer.fusebit.io', 'Developer Docs', 0, "sendEvent('Navigation', 'Clicked developers footer nav');", true, 'Developer Docs Link Clicked', 'Footer')
-                +footerLink('/blog/', 'Blog', 0, "sendEvent('Navigation', 'Clicked blog footer nav');")
+                +footerLink('https://developer.fusebit.io/docs', 'Documentation', 0, "sendEvent('Navigation', 'Clicked developer docs footer nav');", true, 'Developer Docs Link Clicked', 'Footer')
+                +footerLink('https://developer.fusebit.io/reference', 'API Reference', 0, "sendEvent('Navigation', 'Clicked developer API reference footer nav');", true, 'Developer API Reference Link Clicked', 'Footer')
+                +footerLink('/blog/', 'Integration Stories', 0, "sendEvent('Navigation', 'Clicked blog footer nav');")
+                
+            ul.footer__links 
+                li.footer__links--title  Company
+   
+                +footerLink('/about/', 'About Us', 0, "sendEvent('Navigation', 'Clicked about footer nav');")
+                +footerLink('/support/', 'Support', 0, "sendEvent('Navigation', 'Clicked support footer nav');")
+                +footerLink('/careers/', 'Careers', 0, "sendEvent('Navigation', 'Clicked careers footer nav');")
+                +footerLink('/contact/', 'Contact', 0, "sendEvent('Navigation', 'Clicked contact footer nav');")
                 +footerLink('/legal/', 'Legal', 0, "sendEvent('Navigation', 'Clicked legal footer nav');")
                 +footerLink('/privacy/', 'Privacy Policy', 0, "sendEvent('Navigation', 'Clicked privacy footer nav');")
                 +footerLink('/terms/', 'Terms of Use', 0, "sendEvent('Navigation', 'Clicked terms footer nav');")
