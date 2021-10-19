@@ -2,7 +2,7 @@ include ../_components/mixins.pug
 
 - var title = 'Fusebit'
 - var description = 'With Fusebit, quickly integrate your app to other SaaS applications using flexible code blocks, popular API connectors, and hosts your integrations at scale.'
-- var og_image = 'https://fusebit.io/assets/images/social-thumbnail.png'
+- var og_image = `${site.url}/assets/images/social-thumbnail.png`
 - var og_title = ''
 
 block seo_variables
@@ -28,7 +28,7 @@ html(lang='en' class=(pageClass || ''))
     meta(property='og:type' content='website')
     meta(property='og:site_name' content='Fusebit')
     meta(property='og:locale' content='en')
-    meta(property='og:url' content= `${env.canonicalUrl}${path}`)
+    meta(property='og:url' content= `${site.canonicalUrl}${path}`)
     meta(name='twitter:site' content='@fusebitio')
     meta(name='twitter:creator' content='@fusebitio')
     meta(name='twitter:card' content='summary_large_image')
@@ -42,7 +42,7 @@ html(lang='en' class=(pageClass || ''))
     link(rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png')
     link(rel='manifest' href='/site.webmanifest')
     link(rel='mask-icon' href='/safari-pinned-tab.svg' color='#fb310a')
-    link(rel="canonical" href= `${env.canonicalUrl}${path}`)
+    link(rel="canonical" href= `${site.canonicalUrl}${path}`)
 
     link(rel='stylesheet' href='/assets/vendor/swiper-bundle.min.css')
     script(src='/assets/vendor/swiper-bundle.min.js')
