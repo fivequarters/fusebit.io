@@ -1,16 +1,17 @@
 ---
-post_title: Make git your API
+post_title: Make Git Your API
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2021-10-06'
 post_image: blog-make-git-your-api-main.png
 post_excerpt: When designing HTTP APIs for your application, it sometimes makes sense to embrace git as a part of the protocol.
 post_slug: make-git-your-api
-tags: ['post']
+tags: ['post','developer tools']
 post_date_in_url: false
+post_og_image: https://fusebit.io/assets/images/blog/blog-make-git-your-api-social-card.png
 ---
 
-When designing HTTP APIs for your application, it sometimes makes sense to embrace git as a part of the protocol. This post describes your options and introduces [https://github.com/fusebit/cloud-git](fusebit/cloud-git), a pure JavaScript git server implementation for Node.js that lets you easily add git endpoints to your Express app. 
+When designing HTTP APIs for your application, it sometimes makes sense to embrace git as a part of the protocol. This post describes your options and introduces [fusebit/cloud-git](https://github.com/fusebit/cloud-git), a pure JavaScript git server implementation for Node.js that lets you easily add git endpoints to your Express app. 
 
 ## Consider using git as part of your APIs
 
@@ -61,11 +62,11 @@ Cons:
 
 ## How to support git as part of your APIs?
 
-If you choose to add first-class git support to your own APIs, the [https://github.com/fusebit/cloud-git](fusebit/cloud-git) project may come in handy. It provides a lightweight, pure JavaScript implementation of the git protocol that enables you to add git endpoints to your Node.js application. 
+If you choose to add first-class git support to your own APIs, the [fusebit/cloud-git](https://github.com/fusebit/cloud-git) project may come in handy. It provides a lightweight, pure JavaScript implementation of the git protocol that enables you to add git endpoints to your Node.js application. 
 
 The cloud-git project was envisioned with cloud-first applications in mind. If you are working on an app to be distributed in the SaaS format, you are likely hosted in one of the major cloud providers. The cloud-git project does the heavy lifting by implementing the smart git protocol for you while giving you the flexibility to choose your cloud-native storage solution for the data. It may be AWS S3, Azure Blob Storage, Google Cloud Storage, or any other storage solution you are using in your application.
 
-The documentation at [https://github.com/fusebit/cloud-git](fusebit/cloud-git) provides all you need, but here is the overview of using cloud-git to expose a git repository as an endpoint in your Express application: 
+The documentation at [fusebit/cloud-git](https://github.com/fusebit/cloud-git) provides all you need, but here is the overview of using cloud-git to expose a git repository as an endpoint in your Express application: 
 
 In your server.js:
 
@@ -92,8 +93,8 @@ git remote add origin http://yourapplication.com/git
 git push origin master
 ```
 
-The cloud-git project addresses other requirements common in building multi-tenant cloud-first applications, including authentication and support for multi-tenancy (multiple repositories). Check out the [https://github.com/fusebit/cloud-git](fusebit/cloud-git) repo for details. 
+The cloud-git project addresses other requirements common in building multi-tenant cloud-first applications, including authentication and support for multi-tenancy (multiple repositories). Check out the [fusebit/cloud-git](https://github.com/fusebit/cloud-git) repo for details. 
 
 ## Integration with third party git provider (e.g. GitHub)
 
-If you choose to integrate with a third party git provider like GitHub instead of adding git support to your APIs directly using a project like fusebit/git-cloud, [httsp://fusebit.io](Fusebit) may help. Fusebit provides a developer-friendly integration platform. We are a company created by developers for developers.  We'd like to [https://twitter.com/fusebitio](hear from you) if you need to add integrations to your app, including GitHub. Or get a friendly click. 
+If you choose to integrate with a third party git provider like GitHub instead of adding git support to your APIs directly using a project like fusebit/git-cloud, [Fusebit](httsp://fusebit.io) may help. Fusebit provides a developer-friendly integration platform. We are a company created by developers for developers.  We'd like to [hear from you](https://twitter.com/fusebitio) if you need to add integrations to your app, including GitHub. Or get a friendly click. 

@@ -74,7 +74,7 @@ dl {
 }
 
 p {
-    margin: 12px 0;
+    margin: 24px 0;
 }
 
 a {
@@ -86,7 +86,7 @@ a {
 .article {
     img {
         display: block;
-        margin: 64px auto;
+        margin: 35px auto;
         max-width: 100%;
         height: auto;
         object-fit: cover;
@@ -97,13 +97,19 @@ a {
         font-size: 16px !important;
     }
 
+    p {
+        code {
+            background: #eff1f3;
+        }
+    }
+
     pre {
         font-size: 16px !important;
         color: var(--white);
         line-height: 19px !important;
         background: var(--dark) !important;
         border-radius: 8px !important;
-        margin: 64px 0 !important;
+        margin: 30px 0 !important;
         padding: 24px !important;
     }
 
