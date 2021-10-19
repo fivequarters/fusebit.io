@@ -9,10 +9,14 @@ function getImageMeta(src, widths) {
     const options = {
         widths: widths || [300, 600, 900, 1200, null],
         formats: ['png', 'webp', 'jpg'],
-        outputDir: process.env.ELEVENTY_ENV === 'production' ? './build/assets/images/11ty' : './src/assets/images/11ty',
+        outputDir:
+            process.env.ELEVENTY_ENV === 'production'
+                ? './build/assets/images/11ty'
+                : './src/assets/images/11ty',
         urlPath: '/assets/images/11ty',
     };
 
+    
     const url = `./src/assets/images/${src}`;
 
     Image(url, options);
@@ -78,6 +82,17 @@ module.exports = function (eleventyConfig) {
         },
     });
 
+    eleventyConfig.on('afterBuild', () => {
+        const data = require('./src/_data/site.js');
+
+        fs.writeFile(`./build/site.json`, JSON.stringify(data),
+        function (err) {
+            if (err) {
+                throw err;
+            } 
+          });
+    });
+
     eleventyConfig.addTransform(
         'transform-blog-images',
         function (content, outputPath) {
@@ -89,7 +104,11 @@ module.exports = function (eleventyConfig) {
                 ];
 
                 images
-                    .filter((i) => !i.src.includes('svg') && !i.src.includes('footer__bg'))
+                    .filter(
+                        (i) =>
+                            !i.src.includes('svg') &&
+                            !i.src.includes('footer__bg')
+                    )
                     .forEach((i) => {
                         i.outerHTML = getImageTag(`blog/${i.src}`, i.alt, null);
                     });
