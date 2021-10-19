@@ -1,10 +1,11 @@
 extends ../_layouts/default.pug
 
 mixin careersCta(className)
-    - const OPEN_POSITIONS = 4
+    - const OPEN_POSITIONS = 0
     a.cta(href= 'https://angel.co/company/fusebitio/jobs' class= className)
-        .cta-ellipse 
-            span= OPEN_POSITIONS
+        if OPEN_POSITIONS > 0
+            .cta-ellipse 
+                span= OPEN_POSITIONS
         | Open Positions
         +ctaArrow
 
