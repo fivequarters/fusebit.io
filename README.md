@@ -156,9 +156,19 @@ post_og_image: https://cdn.fusebit.io/twitter/twitter-orange.png
 It'll depend if the video is located locally or externally. This would be an example of a video added externally, from Youtube. For more details you can [take a look here](https://about.gitlab.com/handbook/markdown-guide/#videos)
 
 ```
-<figure class="video_container">
+<figure class="post__video">
   <iframe src="https://www.youtube.com/embed/enMumwvLAug" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
 ```
 
-You can click here for more [markdown details](https://about.gitlab.com/handbook/markdown-guide)
+And this is how you can do it with a video located locally (poster is not required).
+
+```
+<figure class="post__video" poster="path/to/poster_image.png">
+  <video controls="true" allowfullscreen="true">
+    <source src="path/to/video.mp4" type="video/mp4">
+    <source src="path/to/video.ogg" type="video/ogg">
+    <source src="path/to/video.webm" type="video/webm">
+  </video>
+</figure>
+```

@@ -14,7 +14,6 @@ const cacheBust = () => {
             process.env.ELEVENTY_ENV === 'production'
                 ? md5File.sync(path, (_err, hash) => hash)
                 : now;
-
         acc[key] = bust;
 
         return acc;
