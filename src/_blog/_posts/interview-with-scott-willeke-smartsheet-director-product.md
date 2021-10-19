@@ -6,7 +6,7 @@ date: '2020-03-10'
 post_image: blog-interview-with-smartsheet-main.png
 post_excerpt: As part of Fusebit's journey towards helping SaaS companies build powerful custom integrations, we caught up with Scott Willeke, Director of Product at Smartsheet...
 post_slug: interview-with-scott-willeke-smartsheet-director-product
-tags: ['post', 'popular', 'integrations']
+tags: ['post', 'integrations']
 post_date_in_url: true
 ---
 
