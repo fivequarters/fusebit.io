@@ -99,5 +99,5 @@ Finally, Janet decided not to own the integration end-to-end but instead work wi
 
 Fusebit was built for developers by developers to build awesome integrations that allow you to customize, have deeply embedded and highly specialized integrations, and be used at scale with multiple tenants. Our code-first integration platform and SaaS connectors eliminate the headaches of dealing with different APIs, auth implementation, and the operational burden when running at scale.
 
-# Learn more about code integrations…
-Build awesome integrations for your application without the hassle, sign up to [Fusebit now](https://fusebit.io/).
+# Learn more about code integrations
+Do you want to build awesome code-first integrations for your application without the hassle? Sign up for [Fusebit](https://fusebit.io/) now and try building your first integration for free.
