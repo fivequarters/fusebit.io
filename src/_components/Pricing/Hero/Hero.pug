@@ -28,20 +28,20 @@ section.section.section--no-margin.hero
                     +card(card)
 
 script.
-    const freeCardAnker = document.getElementById('price-tier-1');
-    const businessCardAnker = document.getElementById("price-tier-2");
-    const enterpriseCardAnker = document.getElementById("price-tier-3");
+    const freeCardButton = document.getElementById('price-tier-1');
+    const businessCardButton = document.getElementById("price-tier-2");
+    const enterpriseCardButton = document.getElementById("price-tier-3");
 
-    freeCardAnker.addEventListener("click", () => {
+    freeCardButton.addEventListener("click", () => {
         sendEvent("Price Tier", "Clicked Price Tier 1")
     })
 
-    businessCardAnker.addEventListener("click", () => {
+    businessCardButton.addEventListener("click", () => {
         sendEvent("Price Tier", "Clicked Price Tier 2")
         openModal("#modal__pricing")
     })
 
-    enterpriseCardAnker.addEventListener("click", () => {
+    enterpriseCardButton.addEventListener("click", () => {
         sendEvent("Price Tier", "Clicked Price Tier 3")
         openModal("#modal__pricing")
     })
