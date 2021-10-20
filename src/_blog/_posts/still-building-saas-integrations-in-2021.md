@@ -45,7 +45,7 @@ But, if you answered yes to either of them, keep reading…
 
 ## Build your own integration 
 
-This approach consists of having your engineering team build an integration with an external messaging platform, for example, building an integration between Budgetly and Slack.
+This approach consists of having your engineering team build an integration with an external messaging platform, for example, building an integration between Budgetly and [Slack](https://go.fusebit.io/slack/).
 
 Building your own integration could be useful when you need bespoke software integrations for on-premise applications where security is crucial. And, if you prefer to have the code, data, and security system in-house to avoid and detect vulnerabilities faster and have all the control of your code. 
 
@@ -74,7 +74,7 @@ Managing data across platforms can be a slow process, complex, and challenging t
 There are two types of integration tools you can get, no-code integration and code integration:
 
 **1. No-code integration**
-These types of integration are great for non-developers who want to integrate two platforms, such as Slack and Salesforce.
+These types of integration are great for non-developers who want to integrate two platforms, such as [Slack](https://go.fusebit.io/slack/) and [Salesforce](https://go.fusebit.io/salesforce/).
 
 Zapier and Tray.io are integration tools that will allow you to do this easily. This approach is useful, especially when you don't need specialized integrations and have just a few users.
 
