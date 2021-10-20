@@ -3,7 +3,7 @@ post_title: Still building SaaS integrations in 2021?
 post_author: Liz Parody
 post_author_avatar: liz.png
 date: '2021-10-19'
-post_image: blog-integrations-2021.png
+post_image: blog-integrations-2021.jpeg
 post_excerpt: Are you looking for an integration platform for your SaaS application that supports multi-tenancy (your users or customers)? 
 post_slug: still-building-saas-integrations-in-2021
 tags: ['post']
