@@ -1,44 +1,28 @@
 extends ../_layouts/default.pug
 
+mixin careersCta(className)
+    - const OPEN_POSITIONS = 0
+    a.cta(href= 'https://angel.co/company/fusebitio/jobs' class= className)
+        if OPEN_POSITIONS > 0
+            .cta-ellipse 
+                span= OPEN_POSITIONS
+        | Open Positions
+        +ctaArrow
+
+mixin mainText
+    | At Fusebit, we are singularly focused on creating a developer-centric platform for application integrations. You will be an early contributor in helping us shape how SaaS developers can easily integrate and maintain thousands of integrations with other applications. 
+
 block seo_variables
     - var title = 'Careers - Fusebit'
 
 block page_variable
-    - var pageClass = 'careers__page'
+    - var pageClass = 'careers'
 
 block content
-
-    section.static__page
-
-        .static__container
-
-            .static__wrapper 
-                .static__head 
-                    h1 Careers at Fusebit
-
-                .static__content 
-                    p At Fusebit, we are singularly focused on creating a developer-centric platform for application integrations. You will be an early contributor in helping us shape how SaaS developers can easily integrate and maintain thousands of integrations with other applications. Everything we do is centered on creating developer joy. It is a hard problem to solve that requires smart, creative people who love developer products.
-
-                    a#careers__btn--openpositions(href="https://angel.co/company/fusebitio/jobs" target="_blank") Open positions
-
-                    h2 A great place to work
-                    p Fusebit was founded by early architects of Auth0 integration technology and who helped shape the award-winning culture. We aim to do the same at Fusebit.
-                    ul 
-                        li Remote first philosophy, with reimbursement of coworking space if desired.
-                        li Competitive pay
-                        li Stock options reflecting your early contributions in shaping the Company
-                        li Comprehensive health benefits
-                        li Generous parental and family leave
-                        li Unlimited vacation with a minimum of 3 weeks per year (yes, you need to chill every now and then)
-                        li Annual company offsite
-
-                    h2 Balance
-                    p There’s life at work and there’s life outside of work. We want everyone to have time with family, travel, give time back to the community, and have the financial resources and support they need.
-                    
-                    h2 Diversity
-                    p A world where anyone can belong anywhere starts with a workplace where you feel welcome and can contribute your best work. Fusebit is proud to be an Equal Employment Opportunity employer. All individuals seeking employment at Fusebit are considered without regard to race, color, religion, national origin, age, sex, marital status, ancestry, physical or mental disability, veteran status, gender identity, sexual orientation, or any other legally protected characteristic.
+    include ../_components/Careers/Hero/hero
+    include ../_components/Careers/Description/description
+    include ../_components/Careers/Join/join
 
 block scripts
     script.
         analytics.page('Careers Index', { objectLocation: 'Careers Index', domain: 'fusebit.io' });
-

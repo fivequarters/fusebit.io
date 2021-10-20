@@ -1,3 +1,20 @@
+@mixin card-base() {
+    margin-right: 230px;
+    width: 232px;
+    height: 255px;
+    right: -170px;
+    position: absolute;
+    box-sizing: border-box;
+
+    @media (max-width: 992px) {
+        right: auto;
+        margin-right: unset;
+        width: 174px;
+        height: 203px;
+        padding: 24px 0;
+    }
+}
+
 .teams {
     background: url(./images/teams_bg.svg);
     background-size: cover;
@@ -54,9 +71,24 @@
         flex: 1;
         display: flex;
         justify-content: flex-end;
+        min-width: 520px;
 
         @media (max-width: 992px) {
+            min-width: auto;
             justify-content: center;
+        }
+    }
+
+    &__card-container {
+        position: relative;
+        width: 100%;
+    }
+
+    &__desktop-cards {
+        display: block;
+
+        @media (max-width: 992px) {
+            display: none;
         }
     }
 
@@ -77,27 +109,45 @@
         }
     }
 
+    &__reference-card {
+        @include card-base;
+    }
+
     &__card {
+        @include card-base;
         display: flex;
         align-items: center;
         flex-direction: column;
-        margin-right: 230px;
-        width: 232px;
-        height: 255px;
         padding: 32px 0 28px;
         border-radius: 16px;
         background-color: var(--white);
-        box-sizing: border-box;
-        position: relative;
-        right: -170px;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+
+        &--active {
+            opacity: 1;
+            z-index: 2;
+        }
 
         @media (max-width: 992px) {
-            right: auto;
-            margin-right: unset;
-            width: 174px;
-            height: 203px;
-            padding: 24px 0;
+            position: static;
+            opacity: 1;
         }
+    }
+
+    &__mobile-swiper {
+        max-width: 174px;
+        display: none;
+        position: relative;
+
+        @media screen and (max-width: 992px) {
+            display: block;
+        }
+    }
+
+    &__dots {
+        position: absolute;
+        right: 0;
     }
 
     &__dots--desktop {
@@ -120,6 +170,11 @@
         z-index: 1;
         position: absolute;
         border-radius: 50%;
+        cursor: pointer;
+
+        @media (max-width: 992px) {
+            cursor: default;
+        }
     }
 
     &__dot--bg {
@@ -148,17 +203,23 @@
         background-color: var(--lightBlue);
     }
 
+    &__dot--location {
+        cursor: default;
+    }
+
     &__card-img-container {
         width: 80px;
         height: 80px;
-        background: url(../../../assets/images/about/teams/engineer.png),
-            var(--lightBlue);
-        background-position: -4px center;
-        background-size: cover;
+        background-size: contain;
         border-radius: 50%;
         overflow: hidden;
         position: relative;
         margin-bottom: 16px;
+        background-position: 0 2px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #d7e5ff;
+        flex-shrink: 0;
 
         & > img {
             position: absolute;
@@ -168,6 +229,18 @@
         @media (max-width: 992px) {
             width: 56px;
             height: 56px;
+        }
+    }
+
+    &__social-media-container {
+        @media (max-width: 992px) {
+            margin-top: auto;
+        }
+    }
+
+    &__card-subtitle {
+        @media (max-width: 992px) {
+            margin-bottom: 6px;
         }
     }
 }
