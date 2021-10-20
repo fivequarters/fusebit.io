@@ -1,51 +1,51 @@
 -
     const cardOne = {
-        className: "hero__card-highlight--professional", 
-        title: "Professional", 
-        price: "Free Forever", 
-        features: ["3 connectors"], 
-        link: { 
-            href: "http://manage.fusebit.io/quickstart?key=slack", 
-            text: "Login",
-            onclick: "sendEvent('Price Tier', 'Clicked Price Tier 1');"
-        }, 
-        description: "Up to 5,000 executions of the integration logic per month across all connectors",
-    }
+        className: 'hero__card-highlight--professional',
+        title: 'Professional',
+        price: 'Free Forever',
+        features: ['3 connectors'],
+        link: {
+            id: 'price-tier-1',
+            href: 'http://manage.fusebit.io/quickstart?key=slack',
+            text: 'Login',
+        },
+        description:
+            'Up to 5,000 executions of the integration logic per month across all connectors',
+    };
 
     const cardTwo = {
-        className: "hero__card-highlight--business", 
-        title: "Business", 
-        price: "$199/mo", 
-        features: ["10 connectors"], 
-        link: { 
-            href: "/", 
-            text: "Login", 
-            onclick: "sendEvent('Price Tier', 'Clicked Price Tier 2');"
-        }, 
-        description: "Up to 100,000 executions of the integration logic per month across all connectors",
-    }
+        className: 'hero__card-highlight--business',
+        title: 'Business',
+        price: '$199/mo',
+        features: ['10 connectors'],
+        link: {
+            id: 'price-tier-2',
+            text: 'Contact',
+        },
+        description:
+            'Up to 100,000 executions of the integration logic per month across all connectors',
+    };
 
     const cardThree = {
-        className: "hero__card-highlight--enterprise", 
-        title: "Enterprise", 
-        price: "Custom pricing", 
+        className: 'hero__card-highlight--enterprise',
+        title: 'Enterprise',
+        price: 'Custom pricing',
         features: [
-            "Custom limits", 
-            "Dedicated deployment", 
-            "Private Cloud", 
-            "Self-managed deployment", 
-            "Data locality", 
-            "Business support", 
-            "SLA"
-        ], 
-        link: { 
-            href: "https://auth0.com/contact-us?place=header&type=button&text=contact%20sales", 
-            text: "Contact", 
-            onclick: "sendEvent('Price Tier', 'Clicked Price Tier 3');"
+            'Custom limits',
+            'Dedicated deployment',
+            'Private Cloud',
+            'Self-managed deployment',
+            'Data locality',
+            'Business support',
+            'SLA',
+        ],
+        link: {
+            id: 'price-tier-3',
+            text: 'Contact',
         },
-    }
+    };
 
-    const cards = [cardOne, cardTwo, cardThree];
+    const cards = [cardOne, cardTwo, cardThree]
 
 mixin background(className) 
     .background.background--neutralLight(class= className)
@@ -61,7 +61,7 @@ mixin card(props)
             .hero__card-separator
             each feature in props.features
                 p.hero__card-feature #{feature}
-            a(href=props.link.href, onclick=props.link.onclick, data-event-name="Price Tier Button Clicked", data-object-location="Price Tier").hero__card-link #{props.link.text}
+            a(id=props.link.id, href=props.link.href, data-event-name="Price Tier Button Clicked", data-object-location="Price Tier").hero__card-link #{props.link.text}
         if props.description
             .hero__card-description--wraper
                 p.hero__card-description #{props.description}
@@ -75,3 +75,20 @@ section.section.section--no-margin.hero
             .hero__cards-container
                 each card in cards 
                     +card(card)
+
+script.
+    const ankerBtns = document.querySelectorAll('.hero__card-link')
+
+    ankerBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            if (e.target.id == 'price-tier-1') {
+                sendEvent("Price Tier", "Clicked Price Tier 1")
+            } else if (e.target.id == 'price-tier-2') {
+                sendEvent("Price Tier", "Clicked Price Tier 2")
+                openModal("#modal__pricing")
+            } else if (e.target.id == 'price-tier-3') {
+                sendEvent("Price Tier", "Clicked Price Tier 3")
+                openModal("#modal__pricing")
+            }
+        })
+    })
