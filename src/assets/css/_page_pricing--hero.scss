@@ -60,7 +60,7 @@
     }
 
     &__title {
-        @include font-size(56);
+        font-size: 56px;
         font-family: var(--sora);
         font-weight: 700;
         max-width: 725px;
@@ -73,7 +73,7 @@
 
         @media only screen and (max-width: 992px) {
             max-width: 525px;
-            @include font-size(38);
+            font-size: 38px;
             margin-bottom: 50px;
         }
     }
@@ -160,7 +160,7 @@
         }
 
         &-title {
-            @include font-size(24);
+            font-size: 24px;
             line-height: 160%;
             font-family: var(--sora);
             font-weight: 700;
@@ -169,7 +169,7 @@
         }
 
         &-price {
-            @include font-size(18);
+            font-size: 18px;
             font-family: var(--sora);
             font-weight: 600;
             color: var(--orange);
@@ -184,7 +184,7 @@
 
         &-feature {
             position: relative;
-            @include font-size(14);
+            font-size: 14px;
             line-height: 120%;
             font-family: var(--sora);
             color: var(--dark);
@@ -197,7 +197,7 @@
         &-link,
         &-link:visited,
         &-link:link {
-            @include font-size(14);
+            font-size: 14px;
             font-family: var(--poppins);
             width: 120px;
             height: 40px;
@@ -209,7 +209,7 @@
         }
 
         &-description {
-            @include font-size(11);
+            font-size: 11px;
             line-height: 145%;
             font-weight: 300;
             color: var(--dark);
