@@ -1,5 +1,5 @@
 const freeCard = {
-    highlightColor: 'green',
+    highlightColor: 'var(--green)',
     title: 'Professional',
     price: 'Free Forever',
     features: ['3 connectors'],
@@ -13,7 +13,7 @@ const freeCard = {
 };
 
 const businessCard = {
-    highlightColor: 'yellow',
+    highlightColor: 'var(--yellow)',
     title: 'Business',
     price: '$199/mo',
     features: ['10 connectors'],
@@ -26,7 +26,7 @@ const businessCard = {
 };
 
 const enterpriseCard = {
-    highlightColor: 'red',
+    highlightColor: 'var(--orange)',
     title: 'Enterprise',
     price: 'Custom pricing',
     features: [

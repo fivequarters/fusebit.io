@@ -6,7 +6,7 @@ mixin background(className)
 mixin card(props)
     .hero__card-wrapper
         .hero__card
-            .hero__card-highlight(class= props.highlightColor)
+            .hero__card-highlight(style= `background-color: ${props.highlightColor}`)
             h2.hero__card-title #{props.title}
             h4.hero__card-price #{props.price}
             .hero__card-separator

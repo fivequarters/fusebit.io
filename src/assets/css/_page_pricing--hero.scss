@@ -134,18 +134,6 @@
             width: 100px;
             height: 6px;
             border-radius: 8px;
-
-            &.green {
-                background-color: var(--green);
-            }
-
-            &.yellow {
-                background-color: var(--yellow);
-            }
-
-            &.red {
-                background-color: var(--orange);
-            }
         }
 
         &-blur {
