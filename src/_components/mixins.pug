@@ -12,7 +12,7 @@ mixin ctaArrow
 
 
 mixin cta(text, href, className, id, trackWithSegment, name, location, disableArrow)
-    a.cta(id= id href= href class= trackWithSegment ? "track-with-segment" : "" class= className data-event-name= name || "" data-object-location= location || "")= text
+    a.cta(id= id href= href class=( trackWithSegment ? "track-with-segment" : false) class= className data-event-name= name || false data-object-location= location || false)= text
         if (!disableArrow) 
             +ctaArrow
 
