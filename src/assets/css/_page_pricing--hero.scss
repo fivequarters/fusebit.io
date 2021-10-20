@@ -7,12 +7,16 @@
             display: none;
         }
 
-        @media only screen and (min-width: 2500px) {
-            top: 25%;
+        @media only screen and (min-width: 2000px) {
+            top: 15%;
+        }
+
+        @media only screen and (min-width: 2900px) {
+            top: 10%;
         }
 
         @media only screen and (min-width: 3500px) {
-            top: 15%;
+            top: 5%;
         }
     }
 
@@ -204,27 +208,10 @@
         &-link:visited,
         &-link:link {
             @include font-size(14);
-            line-height: 150%;
             font-family: var(--poppins);
-            font-weight: bold;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            position: relative;
-            width: 85px;
-            padding: 8px 16px;
-            border-radius: 90px;
-            background-color: var(--orange);
+            width: 120px;
+            height: 40px;
             margin-top: auto;
-            transition: all 0.2s ease-in-out;
-
-            &:hover {
-                background-color: var(--orangeDark);
-            }
-
-            &:active {
-                background-color: var(--yellow);
-            }
         }
 
         &-description--wrapper {

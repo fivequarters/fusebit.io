@@ -11,9 +11,10 @@ mixin ctaArrow
         path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
 
-mixin cta(text, href, className)
-    a.cta(href= href class= className)= text
-        +ctaArrow
+mixin cta(text, href, className, id, name, location, disableArrow)
+    a.cta(id= id href= href class= className data-event-name= name data-object-location= location)= text
+        if (!disableArrow) 
+            +ctaArrow
 
 mixin avatar(size, background, img, className)
     .avatar(style=("width:" + size + ";height:" + size + ";background:" + background + ";background-image:url(" + img + ")") class= className)

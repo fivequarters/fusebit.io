@@ -19,7 +19,7 @@ const cardTwo = {
     features: ['10 connectors'],
     link: {
         id: 'price-tier-2',
-        text: 'Login',
+        text: 'Contact',
     },
     description:
         'Up to 100,000 executions of the integration logic per month across all connectors',
