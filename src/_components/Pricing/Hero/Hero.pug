@@ -12,7 +12,7 @@ mixin card(props)
             .hero__card-separator
             each feature in props.features
                 p.hero__card-feature #{feature}
-            +cta(props.link.text, props.link.href, "hero__card-link track-with-segment", props.link.id, "Price Tier Button Clicked", "Price Tier", true)
+            +cta(props.link.text, props.link.href, "hero__card-link", props.link.id, true, "Price Tier Button Clicked", "Price Tier", true)
         if props.description
             .hero__card-description--wraper
                 p.hero__card-description #{props.description}

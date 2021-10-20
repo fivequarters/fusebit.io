@@ -11,8 +11,8 @@ mixin ctaArrow
         path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
 
-mixin cta(text, href, className, id, name, location, disableArrow)
-    a.cta(id= id href= href class= className data-event-name= name data-object-location= location)= text
+mixin cta(text, href, className, id, trackWithSegment, name, location, disableArrow)
+    a.cta(id= id href= href class= trackWithSegment ? "track-with-segment" + " " + className : className data-event-name= name data-object-location= location)= text
         if (!disableArrow) 
             +ctaArrow
 
