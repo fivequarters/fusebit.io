@@ -1,5 +1,5 @@
+// This mixin is deprecated, DO NOT use it
 @mixin font-size($size) {
-    // This mixin is deprecated, DO NOT use it
     $base: 16;
     font-size: $size + px;
     font-size: ($size / $base) * 1rem;
