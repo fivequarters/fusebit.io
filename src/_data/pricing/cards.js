@@ -2,7 +2,7 @@ const cardOne = {
     className: 'hero__card-highlight--professional',
     title: 'Professional',
     price: 'Free Forever',
-    features: ['3 connectors'],
+    features: ['5 connectors'],
     link: {
         id: 'price-tier-1',
         href: 'http://manage.fusebit.io/quickstart?key=slack',
