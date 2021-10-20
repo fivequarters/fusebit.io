@@ -145,15 +145,15 @@
             height: 6px;
             border-radius: 8px;
 
-            &--professional {
+            &.green {
                 background-color: var(--green);
             }
 
-            &--business {
+            &.yellow {
                 background-color: var(--yellow);
             }
 
-            &--enterprise {
+            &.red {
                 background-color: var(--orange);
             }
         }

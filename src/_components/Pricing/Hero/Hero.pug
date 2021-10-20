@@ -6,7 +6,7 @@ mixin background(className)
 mixin card(props)
     .hero__card-wrapper
         .hero__card
-            .hero__card-highlight(class= props.className)
+            .hero__card-highlight(class= props.highlightColor)
             h2.hero__card-title #{props.title}
             h4.hero__card-price #{props.price}
             .hero__card-separator
@@ -28,18 +28,20 @@ section.section.section--no-margin.hero
                     +card(card)
 
 script.
-    const ankerBtns = document.querySelectorAll('.hero__card-link')
+    const freeCardAnker = document.getElementById('price-tier-1');
+    const businessCardAnker = document.getElementById("price-tier-2");
+    const enterpriseCardAnker = document.getElementById("price-tier-3");
 
-    ankerBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            if (e.target.id == 'price-tier-1') {
-                sendEvent("Price Tier", "Clicked Price Tier 1")
-            } else if (e.target.id == 'price-tier-2') {
-                sendEvent("Price Tier", "Clicked Price Tier 2")
-                openModal("#modal__pricing")
-            } else if (e.target.id == 'price-tier-3') {
-                sendEvent("Price Tier", "Clicked Price Tier 3")
-                openModal("#modal__pricing")
-            }
-        })
+    freeCardAnker.addEventListener("click", () => {
+        sendEvent("Price Tier", "Clicked Price Tier 1")
+    })
+
+    businessCardAnker.addEventListener("click", () => {
+        sendEvent("Price Tier", "Clicked Price Tier 2")
+        openModal("#modal__pricing")
+    })
+
+    businessCardAnker.addEventListener("click", () => {
+        sendEvent("Price Tier", "Clicked Price Tier 3")
+        openModal("#modal__pricing")
     })

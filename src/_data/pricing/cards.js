@@ -1,5 +1,5 @@
 const freeCard = {
-    className: 'hero__card-highlight--professional',
+    highlightColor: 'green',
     title: 'Professional',
     price: 'Free Forever',
     features: ['3 connectors'],
@@ -13,7 +13,7 @@ const freeCard = {
 };
 
 const businessCard = {
-    className: 'hero__card-highlight--business',
+    highlightColor: 'yellow',
     title: 'Business',
     price: '$199/mo',
     features: ['10 connectors'],
@@ -26,7 +26,7 @@ const businessCard = {
 };
 
 const enterpriseCard = {
-    className: 'hero__card-highlight--enterprise',
+    highlightColor: 'red',
     title: 'Enterprise',
     price: 'Custom pricing',
     features: [
