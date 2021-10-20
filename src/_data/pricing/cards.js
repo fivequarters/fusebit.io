@@ -1,4 +1,4 @@
-const cardOne = {
+const freeCard = {
     className: 'hero__card-highlight--professional',
     title: 'Professional',
     price: 'Free Forever',
@@ -12,7 +12,7 @@ const cardOne = {
         'Up to 5,000 executions of the integration logic per month across all connectors',
 };
 
-const cardTwo = {
+const businessCard = {
     className: 'hero__card-highlight--business',
     title: 'Business',
     price: '$199/mo',
@@ -25,7 +25,7 @@ const cardTwo = {
         'Up to 100,000 executions of the integration logic per month across all connectors',
 };
 
-const cardThree = {
+const enterpriseCard = {
     className: 'hero__card-highlight--enterprise',
     title: 'Enterprise',
     price: 'Custom pricing',
@@ -45,5 +45,5 @@ const cardThree = {
 };
 
 module.exports = {
-    cards: [cardOne, cardTwo, cardThree],
+    cards: [freeCard, businessCard, enterpriseCard],
 };
