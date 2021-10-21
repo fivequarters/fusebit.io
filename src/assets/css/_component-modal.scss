@@ -109,8 +109,17 @@
         display: none;
     }
 
+    &__content {
+        width: 100%;
+    }
+
     @media only screen and (max-width: 500px) {
-        max-height: 350px;
+        justify-content: center;
+        height: calc(100vh - 4rem);
+        width: calc(100vw - 1rem);
+        padding: 2rem 0.5rem;
+        border-radius: 0;
+        overflow-y: scroll;
     }
 }
 
@@ -122,5 +131,15 @@
 @keyframes fadeOutModalAnimation {
     to {
         opacity: 0;
+    }
+}
+
+.pipedriveWebForms {
+    overflow-y: scroll !important;
+}
+
+#modal__signUp.modal {
+    @media only screen and (max-width: 500px) {
+        align-items: center;
     }
 }
