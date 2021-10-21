@@ -1,3 +1,4 @@
+// This mixin is deprecated, DO NOT use it
 @mixin font-size($size) {
     $base: 16;
     font-size: $size + px;

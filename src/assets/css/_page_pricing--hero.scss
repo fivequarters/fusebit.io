@@ -1,0 +1,209 @@
+.hero {
+    &__background--desktop {
+        top: 21.5%;
+        display: block;
+
+        @media only screen and (max-width: 992px) {
+            display: none;
+        }
+
+        @media only screen and (min-width: 2000px) {
+            top: 15%;
+        }
+
+        @media only screen and (min-width: 2900px) {
+            top: 10%;
+        }
+
+        @media only screen and (min-width: 3500px) {
+            top: 5%;
+        }
+    }
+
+    &__background--mobile {
+        display: none;
+        width: 110%;
+        margin-left: -5%;
+
+        @media only screen and (max-width: 992px) {
+            display: block;
+            padding: 32px 0;
+        }
+    }
+
+    &__mark-small {
+        @include mark-offset(510px, 90px);
+        top: -24px;
+
+        @media only screen and (max-width: 1200px) {
+            top: -40px;
+        }
+    }
+
+    &__mark-big {
+        @include mark-offset(370px, 40px);
+
+        @media only screen and (max-width: 1200px) {
+            top: -24px;
+        }
+    }
+
+    &__layout {
+        margin: calc(207px - var(--triangleHeight)) auto 0;
+        padding-bottom: 207px;
+        display: block;
+
+        @media only screen and (max-width: 992px) {
+            padding: 0;
+            margin: 88px auto 0;
+        }
+    }
+
+    &__title {
+        font-size: 56px;
+        font-family: var(--sora);
+        font-weight: 700;
+        max-width: 725px;
+        margin-bottom: 192px;
+        line-height: 110%;
+
+        > span {
+            color: var(--orange);
+        }
+
+        @media only screen and (max-width: 992px) {
+            max-width: 525px;
+            font-size: 38px;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    &__cards-container {
+        display: flex;
+        justify-content: space-between;
+
+        @media only screen and (max-width: 992px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 32px;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        height: 424px;
+        width: 352px;
+        padding: 56px 0;
+        margin-bottom: 32px;
+        background-color: white;
+        border-radius: 16px;
+        box-shadow: 14px 14px 74px rgba(52, 72, 123, 0.1);
+
+        @media only screen and (max-width: 1185px) {
+            width: 300px;
+        }
+
+        @media only screen and (max-width: 992px) {
+            margin: 32px 0;
+        }
+
+        @media only screen and (max-width: 576px) {
+            width: 275px;
+            padding: 25px 0;
+            height: 410px;
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-highlight {
+            position: absolute;
+            left: 50%;
+            top: -3px;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 6px;
+            border-radius: 8px;
+        }
+
+        &-blur {
+            position: absolute;
+            bottom: -14px;
+            right: -14px;
+            height: 520px;
+            width: 320px;
+            background-color: #34487b;
+            opacity: 0.1;
+            filter: blur(74px);
+        }
+
+        &-title {
+            font-size: 24px;
+            line-height: 160%;
+            font-family: var(--sora);
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        &-price {
+            font-size: 18px;
+            font-family: var(--sora);
+            font-weight: 600;
+            color: var(--orange);
+        }
+
+        &-separator {
+            width: 50px;
+            height: 1px;
+            background-color: var(--neutral);
+            margin: 28px 0;
+        }
+
+        &-feature {
+            position: relative;
+            font-size: 14px;
+            line-height: 120%;
+            font-family: var(--sora);
+            color: var(--dark);
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+
+        &-link,
+        &-link:visited,
+        &-link:link {
+            font-size: 14px;
+            font-family: var(--poppins);
+            width: 120px;
+            height: 40px;
+            margin-top: auto;
+        }
+
+        &-description--wrapper {
+            width: 352px;
+        }
+
+        &-description {
+            font-size: 11px;
+            line-height: 145%;
+            font-weight: 300;
+            color: var(--dark);
+            text-align: center;
+            margin: 0 auto;
+            width: 252px;
+        }
+    }
+}

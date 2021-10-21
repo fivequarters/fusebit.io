@@ -1,3 +1,4 @@
+// This mixin is deprecated, DO NOT use it
 @mixin font-size($size) {
     $base: 16;
     font-size: $size + px;
@@ -89,13 +90,13 @@
 @mixin showOnly($viewport) {
     display: none;
 
-    @if ($viewport == "tablet") {
+    @if ($viewport == 'tablet') {
         @media (max-width: 768px) {
             display: block;
         }
     }
 
-    @if ($viewport == "mobile") {
+    @if ($viewport == 'mobile') {
         @media (max-width: 576px) {
             display: block;
         }

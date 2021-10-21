@@ -1,6 +1,7 @@
 - const waitlistFormURL = 'https://webforms.pipedrive.com/f/1CtCQj4oy9I6GCWQRz889XwSmeA6SV6VE9uMqwuG4aHfqNp57ArSqPRB6v6bsJIs3';
+- const pricingFormURL = "https://webforms.pipedrive.com/f/1CuwsqOYRklKR16su32fulSZPAcQFn3ZNFlJmYC0FDxWYfc1HX2Op7fyzeFv4PYPx";
 
-#modal__signUp.modal
+mixin modal(url)
     button.modal__btn--close
         span 
 
@@ -14,8 +15,15 @@
                 circle(fill="#fff" stroke="none" cx="54" cy="50" r="6")
                     animateTransform(  attributeName="transform"  dur="1s"  type="translate"  values="0 5 ; 0 -5; 0 5"  repeatCount="indefinite"  begin="0.3")
 
-        div(class="pipedriveWebForms" data-pd-webforms=waitlistFormURL)
+        div(class="pipedriveWebForms" data-pd-webforms=url)
             script(src="https://webforms.pipedrive.com/f/loader")
+
+
+#modal__signUp.modal
+    +modal(waitlistFormURL)
+
+#modal__pricing.modal
+    +modal(pricingFormURL)
 
 .modal__overlay
     script.

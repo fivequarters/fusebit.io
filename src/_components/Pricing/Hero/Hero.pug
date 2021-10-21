@@ -1,0 +1,47 @@
+mixin background(className) 
+    .background.background--neutralLight(class= className)
+        .mark.mark--small.mark--light-violet.mark--right.hero__mark-small
+        .mark.mark--big.mark--dark-violet.mark--right.hero__mark-big
+
+mixin card(props)
+    .hero__card-wrapper
+        .hero__card
+            .hero__card-highlight(style= `background-color: ${props.highlightColor}`)
+            h2.hero__card-title #{props.title}
+            h4.hero__card-price #{props.price}
+            .hero__card-separator
+            each feature in props.features
+                p.hero__card-feature #{feature}
+            +cta(props.link.text, props.link.href, "hero__card-link", props.link.id, true, "Price Tier Button Clicked", "Price Tier", true)
+        if props.description
+            .hero__card-description--wraper
+                p.hero__card-description #{props.description}
+
+section.section.section--no-margin.hero 
+    +background("hero__background--desktop")
+    .layout.hero__layout
+        h1.hero__title Self-service pricing
+        .hero__content
+            +background("hero__background--mobile")
+            .hero__cards-container
+                each card in pricing.cards.cards
+                    +card(card)
+
+script.
+    const freeCardButton = document.getElementById('price-tier-1');
+    const businessCardButton = document.getElementById("price-tier-2");
+    const enterpriseCardButton = document.getElementById("price-tier-3");
+
+    freeCardButton.addEventListener("click", () => {
+        sendEvent("Price Tier", "Clicked Price Tier 1")
+    })
+
+    businessCardButton.addEventListener("click", () => {
+        sendEvent("Price Tier", "Clicked Price Tier 2")
+        openModal("#modal__pricing")
+    })
+
+    enterpriseCardButton.addEventListener("click", () => {
+        sendEvent("Price Tier", "Clicked Price Tier 3")
+        openModal("#modal__pricing")
+    })

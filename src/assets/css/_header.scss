@@ -352,7 +352,8 @@
 .terms__page,
 .legal__page,
 .blog__page,
-.aboutUs {
+.aboutUs,
+.pricing {
     .header {
         &:not(&--compact) {
             .header__menu,

@@ -847,12 +847,7 @@ window.addEventListener('load', () => {
 
         signUpButton.addEventListener('click', (e) => {
             e.preventDefault();
-
-            const modal = document.querySelector('#modal__signUp');
-            const overlay = document.querySelector('.modal__overlay');
-
-            modal.style.display = 'block';
-            overlay.style.display = 'block';
+            openModal('#modal__signUp');
         });
     }
 });
