@@ -135,5 +135,7 @@
 }
 
 .pipedriveWebForms {
-    overflow-y: scroll !important;
+    @media (max-width: 500px) {
+        overflow-y: scroll !important;
+    }
 }
