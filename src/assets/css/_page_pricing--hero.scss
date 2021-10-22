@@ -49,23 +49,13 @@
     }
 
     &__layout {
-        margin: calc(130px - var(--triangleHeight)) auto 0;
+        padding-top: 150px;
         padding-bottom: 130px;
         display: block;
 
         @media only screen and (max-width: 992px) {
             padding: 0;
             margin: 88px auto 0;
-        }
-
-        @media only screen and (min-width: 2000px) {
-            margin: calc(200px - var(--triangleHeight)) auto 0;
-            padding-bottom: 200px;
-        }
-
-        @media only screen and (min-width: 3000px) {
-            margin: calc(230px - var(--triangleHeight)) auto 0;
-            padding-bottom: 230px;
         }
     }
 
