@@ -1,6 +1,6 @@
 .hero {
     &__background--desktop {
-        top: 21.5%;
+        top: 18%;
         display: block;
 
         @media only screen and (max-width: 992px) {
@@ -49,8 +49,7 @@
     }
 
     &__layout {
-        margin: calc(207px - var(--triangleHeight)) auto 0;
-        padding-bottom: 207px;
+        padding-bottom: 130px;
         display: block;
 
         @media only screen and (max-width: 992px) {

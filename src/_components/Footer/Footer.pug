@@ -31,6 +31,7 @@ footer.footer
             ul.footer__links 
                 li.footer__links--title  Company
    
+                +footerLink('/pricing/', 'Pricing', 0, "sendEvent('Navigation', 'Clicked pricing footer nav');")
                 +footerLink('/about/', 'About Us', 0, "sendEvent('Navigation', 'Clicked about footer nav');")
                 +footerLink('/support/', 'Support', 0, "sendEvent('Navigation', 'Clicked support footer nav');")
                 +footerLink('/careers/', 'Careers', 0, "sendEvent('Navigation', 'Clicked careers footer nav');")
