@@ -7,6 +7,7 @@ const freeCard = {
         id: 'price-tier-1',
         href: 'http://manage.fusebit.io/quickstart?key=slack',
         text: 'Login',
+        location: 'Price Tier 1',
     },
     description:
         'Up to 5,000 executions of the integration logic per month across all connectors',
@@ -20,6 +21,7 @@ const businessCard = {
     link: {
         id: 'price-tier-2',
         text: 'Contact',
+        location: 'Price Tier 2',
     },
     description:
         'Up to 100,000 executions of the integration logic per month across all connectors',
@@ -41,6 +43,7 @@ const enterpriseCard = {
     link: {
         id: 'price-tier-3',
         text: 'Contact',
+        location: 'Price Tier 3',
     },
 };
 
