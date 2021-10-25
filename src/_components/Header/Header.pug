@@ -83,8 +83,9 @@ header.header
                 window.addEventListener('scroll', () => {
                     const currentScroll = window.pageYOffset;
                     const header = document.querySelector('.header');
+                    const HIDE_NAVBAR_AT = window.innerWidth >= 1000 ? 70 : 30;
 
-                    if (currentScroll < 150) {
+                    if (currentScroll < HIDE_NAVBAR_AT) {
 
                         if(!isBlogSite) {
                             header.classList.remove('header--compact');
