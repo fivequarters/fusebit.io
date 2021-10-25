@@ -27,7 +27,7 @@
 
         @media only screen and (max-width: 992px) {
             display: block;
-            padding: 32px 0;
+            padding: 24px 0;
         }
     }
 
@@ -75,6 +75,10 @@
             font-size: 38px;
             margin-bottom: 50px;
         }
+
+        @media only screen and (max-width: 790px) {
+            max-width: 300px;
+        }
     }
 
     &__content {
@@ -111,7 +115,8 @@
         }
 
         @media only screen and (max-width: 992px) {
-            margin: 32px 0;
+            margin-bottom: 12px;
+            margin-top: 32px;
         }
 
         @media only screen and (max-width: 576px) {
@@ -133,17 +138,6 @@
             width: 100px;
             height: 6px;
             border-radius: 8px;
-        }
-
-        &-blur {
-            position: absolute;
-            bottom: -14px;
-            right: -14px;
-            height: 520px;
-            width: 320px;
-            background-color: #34487b;
-            opacity: 0.1;
-            filter: blur(74px);
         }
 
         &-title {
