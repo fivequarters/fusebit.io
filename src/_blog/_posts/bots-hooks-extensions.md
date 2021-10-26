@@ -3,7 +3,7 @@ post_title: Bots, Hooks, and Extensions
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2021-10-26'
-post_image: blog-bots-hooks-extensions-main.png
+post_image: blog-bots-hooks-extensions-main.jpg
 post_excerpt: Identify the set of technical challenges you will need to think about and solve to add a robust integration story to your app. 
 post_slug: bots-hooks-extensions
 tags: ['post','developer tools']
@@ -31,7 +31,7 @@ Integration capabilities come with different names, but they really revolve arou
 ### Outgoing integrations
 In an outgoing integration, your application generates an event that must trigger some action in an external system of your customer. For example, when a new order is created in your application, you need to send a notification to your customer’s Slack workspace or copy that order over to your customer’s Salesforce instance. 
 
-
+![Outgoing Integrations Graph](blog-bots-outbound.png "Outgoing Integrations Graph")
 
 A solution to this seemingly simple integration scenario can quickly snowball into a complex technical problem. Here are some aspects you will need to consider:
 
@@ -43,7 +43,7 @@ A solution to this seemingly simple integration scenario can quickly snowball in
 ### Incoming integrations
 With an incoming integration, your application may receive notifications of an event that occurred in an external system of your customer. For example, when a new order was created in the Salesforce instance of your customer, your app can be notified to create a shipping label. Or, one of your users typed a question in their Slack workspace that is sent to your application for processing. 
 
-
+![Incoming Integrations Graph](blog-bots-inbound.png "Inbound Integrations Graph")
 
 The incoming integration scenario has more nuances and technical challenges to address than the outgoing integration: 
 
@@ -57,7 +57,7 @@ The incoming integration scenario has more nuances and technical challenges to a
 ### Scheduled integrations
 Scheduled integrations perform an integration logic by calling out to your customer’s application and external system on a schedule, as opposed to being triggered by an event from one of the systems. For example, you may want to reconcile the status of orders in your application and the Salesforce instance of your customer, for every of your customers, at the same time each night. Or move operational logs from your application to Splunk. 
 
-
+![Scheduled Integrations Graph](blog-bots-scheduled.png "Scheduled Integrations Graph")
 
 A good way of thinking about this integration pattern is to combine two outgoing integrations, with your own application being one of the external systems. The set of technical challenges are generally similar to the outgoing integration pattern, with more emphasis on the throttling: 
 
