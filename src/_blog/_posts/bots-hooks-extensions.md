@@ -6,7 +6,7 @@ date: '2021-10-26'
 post_image: blog-bots-hooks-extensions-main.jpg
 post_excerpt: Identify the set of technical challenges you will need to think about and solve to add a robust integration story to your app. 
 post_slug: bots-hooks-extensions
-tags: ['post','developer tools']
+tags: ['post', 'integrations']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/bots-hooks-extensions-social-card.png
 ---
