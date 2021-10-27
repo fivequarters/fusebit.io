@@ -17,13 +17,13 @@ When you are building a modern application, it is only a matter of time before y
 
 Over 90% of SaaS product leaders say that having integration features embedded in their application increases acquisition and retention. 
 
-We live in a world where an average company with 500 people uses over 120 SaaS products. Very few of them make sense in isolation, they all support parts of a bigger business process, which is only possible if they are integrated. The newsletter signups from Pipedrive must flow as leads to Salesforce. Weekly sales numbers from Salesforce must be sent to Slack as a report, etc. 
+We live in a world where [an average mid-size company uses close to 140 SaaS products](https://www.blissfully.com/saas-trends/2020-annual-report/). Very few of them make sense in isolation, they all support parts of a bigger business process, which is only possible if they are integrated. The newsletter signups from Pipedrive must flow as leads to Salesforce. Weekly sales numbers from Salesforce must be sent to Slack as a report, etc. 
 
 Customers of SaaS products are increasingly comparing alternative solutions using integration capabilities as the key differentiator. In a crowded space, the integration features of your app can make a difference between closing or losing a deal. Integrations in your app are no longer a checkbox on your customer’s checklist. Showing a logo is not sufficient. Your integration story must have a quality and depth to it to win. 
 
-Integrations are also key to retaining your customers longer. On average, every SaaS application gets replaced in your customer’s ecosystem every two years. It is much easier for your customer to replace a disconnected or poorly connected application than to remove an application that has its integration tentacles deeply embedded in several other systems in the customer’s ecosystem.
+Integrations are also key to retaining your customers longer. [An average mid-size company changes 39% of their SaaS application stack every year](https://www.blissfully.com/saas-trends/2019-annual/). It is much easier for your customer to replace a disconnected or poorly connected application than to remove an application that has its integration tentacles deeply embedded in several other systems in the customer’s ecosystem.
 
-Making the right technical choices when deciding on the scope and approach to the integration story in your app is key. The rest of this post frames the space and provides an overview of the technical challenges you will need to address along the way. 
+Making the right technical choices when deciding on the scope and approach to the integration story in your app is key. The rest of this post frames the space and provides an overview of the technical challenges you will need to address along the way.  
 
 ## Bots, hooks, extensions - choosing the right integration pattern
 Integration capabilities come with different names, but they really revolve around a handful of integration patterns. One useful way of categorizing them is to look at the trigger of the integration behavior. Looking from the perspective of your app, there are outgoing, incoming, or scheduled integrations, or a combination thereof. We will look into each of these in turn. 
