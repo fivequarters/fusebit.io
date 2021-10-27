@@ -3,7 +3,7 @@ post_title: Koa in the Cloud
 post_author: Liz Parody
 post_author_avatar: liz.png
 date: '2021-10-27'
-post_image: blog-koa-main.png
+post_image: blog-koa-main.jpg
 post_excerpt: In this post you can learn how to run Koa on AWS Lambda and the differences with Express.
 post_slug: koa-in-the-cloud
 tags: ['post','serverless']
