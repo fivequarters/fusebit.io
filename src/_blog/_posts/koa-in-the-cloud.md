@@ -34,7 +34,7 @@ The most significant advantage of this architecture is that the provisioning of 
 
 The following code is a basic example of an Express application:
 
-```
+```javascript
 const express = require('express');
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -61,7 +61,7 @@ To convert this express app to make it ready to run on Lambda environment, you c
 `module.exports.handler = serverless(app);` to export the module and make it  ready to deploy on the Lambda environment
 
 Now your example app will look like this:
-```
+```javascript
 const serverless = require('serverless-http');
 const express = require('express');
 const app = express();
@@ -84,7 +84,7 @@ Finally, to deploy the application on AWS Lambda, you can install the [serverles
 
 Here is how the same express code looks like in Koa:
 
-```
+```javascript
 const Koa = require('koa');
 const Router = require('koa-router');
 
@@ -115,7 +115,7 @@ In other words, instead of using request `req` and response `res` you can use co
 A context is created per request and is referenced in middleware as the receiver, or the `ctx` identifier, as shown in the following snippet:
 
 
-```
+```javascript
 app.use(async ctx => {
   ctx; // is the Context
   ctx.request; // is a Koa Request
@@ -128,7 +128,7 @@ Many of the context's accessors and methods delegate to their `ctx.request` or `
 Now, to convert this example to make it ready to run in the Lambda environment, we can use the same package, [serverless framework](https://www.npmjs.com/package/serverless-http) that also supports Koa, allowing us to achieve the same result for lambda functions:
 
 
-```
+```javascript
 const Koa = require('koa');
 const Router = require('koa-router');
 const serverless = require('serverless-http');
