@@ -24,7 +24,7 @@ Two of the most popular frameworks are Express and Koa.
 Even though Express has been called the de facto standard server framework for Node.js and it's the most popular one with [18 million weekly downloads](https://www.npmjs.com/package/express), Koa is rapidly growing in popularity with [1.2 million weekly downloads](https://www.npmjs.com/package/koa) because it's lightweight, has great user experience and [superior performance](https://www.fastify.io/benchmarks/) (37K req/sec vs. 10K req/sec of Express).
 ![Benchmark Koa and Express](blog-performance-koa-express.png "Benchmark Koa and Express")
 
-## Why Use Serverless? 
+# Why Use Serverless? 
 Serverless is a cloud execution model that enables a more straightforward, cost-effective way to build and operate cloud-native applications. The application owner does not purchase, rent, manage, or provision the servers in this cloud architecture. Instead, the cloud provider manages the infrastructure side of things for the applications.
 
 Despite the name, serverless apps do not run without servers 😂. It means that businesses don't need to manage the server-side of the equation and operational concerns, and instead focus on development.
