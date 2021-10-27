@@ -3,12 +3,12 @@ post_title: Koa in the Cloud
 post_author: Liz Parody
 post_author_avatar: liz.png
 date: '2021-10-27'
-post_image: blog-fusetunnel-main.png
+post_image: blog-koa-main.png
 post_excerpt: In this post you can learn how to run Koa on AWS Lambda and the differences with Express.
 post_slug: koa-in-the-cloud
 tags: ['post','serverless']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/blog-fusetunnel-social-card.png
+post_og_image: https://fusebit.io/assets/images/blog/blog-koa-social-card.png
 ---
 
 # Express or Koa? 
@@ -22,7 +22,7 @@ Two of the most popular frameworks are Express and Koa.
 [Koa](https://koajs.com/) is a new web framework designed by the team behind Express, which aims to be a smaller, more expressive, and a more robust foundation for web applications and APIs. By leveraging async functions, Koa allows you to ditch callbacks and significantly improve the experience of error handling. Koa does not bundle any middleware within its core, and it provides an elegant suite of methods that make writing servers fast and enjoyable for developers.
 
 Even though Express has been called the de facto standard server framework for Node.js and it's the most popular one with [18 million weekly downloads](https://www.npmjs.com/package/express), Koa is rapidly growing in popularity with [1.2 million weekly downloads](https://www.npmjs.com/package/koa) because it's lightweight, has great user experience and [superior performance](https://www.fastify.io/benchmarks/) (37K req/sec vs. 10K req/sec of Express).
-![Benchmark Koa and Express](blog-fusetunnel-hello-world.png "Benchmark Koa and Express")
+![Benchmark Koa and Express](blog-performance-koa-express.png "Benchmark Koa and Express")
 
 ## Why Use Serverless? 
 Serverless is a cloud execution model that enables a more straightforward, cost-effective way to build and operate cloud-native applications. The application owner does not purchase, rent, manage, or provision the servers in this cloud architecture. Instead, the cloud provider manages the infrastructure side of things for the applications.
