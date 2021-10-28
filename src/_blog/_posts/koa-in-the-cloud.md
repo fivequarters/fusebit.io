@@ -51,8 +51,9 @@ app.listen(3000, () => console.log(`Listening on port: 3000`));
 ```
 
 The example above exposes two API's:
-GET /api/info returns information about the current API
-POST /api/v1/getback returns the request body whatever we sent
+
+- GET /api/info returns information about the current API
+- POST /api/v1/getback returns the request body whatever we sent
 
 To convert this express app to make it ready to run on Lambda environment, you can install [serverless-http](https://www.npmjs.com/package/serverless-http) and add two lines of code:
 
