@@ -1,4 +1,5 @@
 - const pricingFormURL = "https://webforms.pipedrive.com/f/1CuwsqOYRklKR16su32fulSZPAcQFn3ZNFlJmYC0FDxWYfc1HX2Op7fyzeFv4PYPx";
+- const contactFormURL = "https://webforms.pipedrive.com/f/1DXSlJKUoakcRqzRsyjA3APEHbKvHYazWYEe1HU0e6pfsGiR14Tx3wFDm1p46P21B";
 
 mixin modal(url)
     button.modal__btn--close
@@ -20,13 +21,16 @@ mixin modal(url)
 #modal__pricing.modal
     +modal(pricingFormURL)
 
+#modal__contact.modal
+    +modal(contactFormURL)
+
 .modal__overlay
     script.
         window.addEventListener('load', () => {
 
             function checkContactHashInUrl() {
-                if(window.location.hash.indexOf('#contact') >-1) {
-                    const modal = document.querySelector('#modal__signUp')
+                if (window.location.hash.indexOf('#contact') >-1) {
+                    const modal = document.querySelector('#modal__contact')
                     const overlay = document.querySelector('.modal__overlay');
                     modal.style.display = 'block';
                     overlay.style.display = 'block';
