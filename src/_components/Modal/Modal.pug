@@ -1,4 +1,3 @@
-- const waitlistFormURL = 'https://webforms.pipedrive.com/f/1CtCQj4oy9I6GCWQRz889XwSmeA6SV6VE9uMqwuG4aHfqNp57ArSqPRB6v6bsJIs3';
 - const pricingFormURL = "https://webforms.pipedrive.com/f/1CuwsqOYRklKR16su32fulSZPAcQFn3ZNFlJmYC0FDxWYfc1HX2Op7fyzeFv4PYPx";
 
 mixin modal(url)
@@ -17,10 +16,6 @@ mixin modal(url)
 
         div(class="pipedriveWebForms" data-pd-webforms=url)
             script(src="https://webforms.pipedrive.com/f/loader")
-
-
-#modal__signUp.modal
-    +modal(waitlistFormURL)
 
 #modal__pricing.modal
     +modal(pricingFormURL)
