@@ -44,9 +44,9 @@ header.header
         .header__links 
             ul  
                 li
-                    a.track-with-segment(href="https://account.fusebit.io/login" target="_blank" rel="noreferrer" onclick="sendEvent('CTA', 'Clicked header button');" data-event-name="Login Button Clicked" data-object-location="Header") Login
+                    a.track-with-segment(href=homepage.links.loginLink target="_blank" rel="noreferrer" onclick="sendEvent('CTA', 'Clicked header button');" data-event-name="Login Button Clicked" data-object-location="Header") Login
                 li 
-                    a.track-with-segment.header__links--signUp(href="https://account.fusebit.io/signup" target="_blank" rel="noreferrer" onclick="sendEvent('CTA', 'Clicked header button');", data-event-name="Sign Up Button Clicked", data-object-location="Header") Sign up
+                    a.track-with-segment.header__links--signUp(href=homepage.links.getStartedLink target="_blank" rel="noreferrer" onclick="sendEvent('CTA', 'Clicked header button');", data-event-name="Sign Up Button Clicked", data-object-location="Header") Sign up
 
         .header__menuMobile--btn 
             span.top 
@@ -62,9 +62,9 @@ header.header
                     li
                         a(href=link.link onclick=link.onClick id=link.linkId class=link.eventName ? 'track-with-segment' : '' data-event-name=link.eventName data-object-location=link.objectLocation)=link.text
                 li
-                    a.track-with-segment(href="https://account.fusebit.io/login" target="_blank" rel="noreferrer"  onclick="sendEvent('CTA', 'Clicked header button');" data-event-name="Login Button Clicked" data-object-location="Header") Login
+                    a.track-with-segment(href=homepage.links.loginLink target="_blank" rel="noreferrer"  onclick="sendEvent('CTA', 'Clicked header button');" data-event-name="Login Button Clicked" data-object-location="Header") Login
                 li 
-                    a.track-with-segment.header__links--signUp(href="https://account.fusebit.io/signup" target="_blank" rel="noreferrer" onclick="sendEvent('CTA', 'Clicked header button');", data-event-name="Sign Up Button Clicked", data-object-location="Header") Sign up
+                    a.track-with-segment.header__links--signUp(href=homepage.links.getStartedLink target="_blank" rel="noreferrer" onclick="sendEvent('CTA', 'Clicked header button');", data-event-name="Sign Up Button Clicked", data-object-location="Header") Sign up
 
         .menuMobile__social 
             include ../SocialMedia/SocialMedia
