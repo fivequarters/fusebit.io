@@ -41,8 +41,8 @@ section.prefooter.section.section--no-margin
             p.prefooter__text 
                 | Sign up now to get early access to the our developer-friendly integration platform. Less time learning and more coding is coming soon with Fusebit.
 
-            a.track-with-segment.prefooter__cta.sign-up-cta(onclick="sendEvent('CTA', 'Clicked supercharge button');" data-event-name="Sign Up Button Clicked" data-object-location="Home Page Supercharge")
-                span.prefooter__cta--text Join waitlist
+            a.track-with-segment.prefooter__cta(href=homepage.links.getStartedLink target="_blank" rel="noreferrer" onclick="sendEvent('CTA', 'Clicked supercharge button');" data-event-name="Sign Up Button Clicked" data-object-location="Home Page Supercharge")
+                span.prefooter__cta--text Get Started
                 span.prefooter__cta--icon
                     svg(width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg")
                         path(d="M1.36396 1.44268L7.72792 7.80664L1.36396 14.1706" stroke="white" stroke-width="2")
