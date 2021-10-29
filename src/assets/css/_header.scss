@@ -196,11 +196,13 @@
         background-size: cover;
         z-index: -2;
         padding: 7rem 1rem 0 2rem;
+        overflow: auto;
         transition: all 0.4s ease-in-out;
 
         .menuMobile {
             &__links {
                 text-align: right;
+                height: 87.5%;
 
                 a {
                     position: relative;
@@ -241,10 +243,13 @@
             }
 
             &__social {
-                position: absolute;
-                bottom: 5rem;
-                left: 50%;
-                transform: translateX(-50%);
+                position: relative;
+                margin: auto auto 3rem;
+                width: max-content;
+
+                @media only screen and (max-width: 350px) {
+                    margin: 7.5rem auto 1.5rem;
+                }
 
                 li {
                     border: 1px solid red;

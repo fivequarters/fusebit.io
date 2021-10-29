@@ -5,9 +5,12 @@ const freeCard = {
     features: ['3 connectors'],
     link: {
         id: 'price-tier-1',
-        href: 'http://manage.fusebit.io/quickstart?key=slack',
-        text: 'Login',
+        href: 'https://account.fusebit.io/signup',
+        text: 'Get Started for Free',
         location: 'Price Tier 1',
+        eventName: 'Sign Up Button Clicked',
+        target: '_blank',
+        rel: 'noreferrer',
     },
     description:
         'Up to 5,000 executions of the integration logic per month across all connectors',
