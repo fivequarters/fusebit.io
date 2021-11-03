@@ -9,7 +9,7 @@ mixin text
         | and power your integration story
         i _
 
-    a.track-with-segment.integrate__cta(href=homepage.links.getStartedLink target="_blank" rel="noreferrer" onclick="sendEvent('CTA', 'Clicked dev stack button');" data-event-name="Sign Up Button Clicked" data-object-location="Home Page Integration Story")
+    a.track-with-segment.integrate__cta(href=homepage.links.getStartedLink target="_blank" rel="noreferrer" data-event-name="Sign Up Button Clicked" data-object-location="Home Page Integration Story")
         span.integrate__cta--text Get Started
         span.integrate__cta--icon
             svg(width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg")

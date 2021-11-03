@@ -26,22 +26,3 @@ section.section.section--no-margin.hero
             .hero__cards-container
                 each card in pricing.cards.cards
                     +card(card)
-
-script.
-    const freeCardButton = document.getElementById('price-tier-1');
-    const businessCardButton = document.getElementById("price-tier-2");
-    const enterpriseCardButton = document.getElementById("price-tier-3");
-
-    freeCardButton.addEventListener("click", () => {
-        sendEvent("Price Tier", "Clicked Price Tier 1")
-    })
-
-    businessCardButton.addEventListener("click", () => {
-        sendEvent("Price Tier", "Clicked Price Tier 2")
-        openModal("#modal__pricing")
-    })
-
-    enterpriseCardButton.addEventListener("click", () => {
-        sendEvent("Price Tier", "Clicked Price Tier 3")
-        openModal("#modal__pricing")
-    })
