@@ -1,6 +1,6 @@
-mixin footerLink(link, linkText, badge, onClick, trackedWithSegment, eventName, objectLocation)
+mixin footerLink(link, linkText, badge, trackedWithSegment, eventName, objectLocation)
     li.footer__link 
-        a(href=link, onclick=onClick, data-object-location=objectLocation, data-event-name=eventName class=trackedWithSegment ? 'track-with-segment' : '')=linkText
+        a(href=link, data-object-location=objectLocation, data-event-name=eventName class=trackedWithSegment ? 'track-with-segment' : '')=linkText
         if(badge)
             .footer__link--badge
                 span= badge
@@ -16,29 +16,29 @@ footer.footer
             ul.footer__links 
                 li.footer__links--title  Integrations
 
-                +footerLink('https://go.fusebit.io/slack/', 'Slack', 0, "sendEvent('Navigation', 'Clicked slack footer nav');", true, 'Slack Connector Link Clicked', 'Footer')
-                +footerLink('https://go.fusebit.io/hubspot/', 'HubSpot', 0, "sendEvent('Navigation', 'Clicked hubspot footer nav');", true, 'HubSpot Connector Link Clicked', 'Footer')
-                +footerLink('https://go.fusebit.io/salesforce/', 'Salesforce', 0, "sendEvent('Navigation', 'Clicked salesforce footer nav');", true, 'Salesforce Connector Link Clicked', 'Footer')
-                +footerLink('https://go.fusebit.io/fusebot/', 'Slash Bot', 0, "sendEvent('Navigation', 'Clicked fusebot footer nav');", true, 'Slash Commands Link Clicked', 'Footer')
+                +footerLink('https://go.fusebit.io/slack/', 'Slack', 0, true, 'Slack Connector Link Clicked', 'Footer')
+                +footerLink('https://go.fusebit.io/hubspot/', 'HubSpot', 0, true, 'HubSpot Connector Link Clicked', 'Footer')
+                +footerLink('https://go.fusebit.io/salesforce/', 'Salesforce', 0, true, 'Salesforce Connector Link Clicked', 'Footer')
+                +footerLink('https://go.fusebit.io/fusebot/', 'Slash Bot', 0, true, 'Slash Commands Link Clicked', 'Footer')
 
             ul.footer__links 
                 li.footer__links--title  Developers
                 
-                +footerLink('https://developer.fusebit.io/docs', 'Documentation', 0, "sendEvent('Navigation', 'Clicked developer docs footer nav');", true, 'Developer Docs Link Clicked', 'Footer')
-                +footerLink('https://developer.fusebit.io/reference', 'API Reference', 0, "sendEvent('Navigation', 'Clicked developer API reference footer nav');", true, 'Developer API Reference Link Clicked', 'Footer')
-                +footerLink('/blog/', 'Integration Stories', 0, "sendEvent('Navigation', 'Clicked blog footer nav');")
+                +footerLink('https://developer.fusebit.io/docs', 'Documentation', 0, true, 'Developer Docs Link Clicked', 'Footer')
+                +footerLink('https://developer.fusebit.io/reference', 'API Reference', 0, true, 'Developer API Reference Link Clicked', 'Footer')
+                +footerLink('/blog/', 'Integration Stories', 0)
                 
             ul.footer__links 
                 li.footer__links--title  Company
    
-                +footerLink('/pricing/', 'Pricing', 0, "sendEvent('Navigation', 'Clicked pricing footer nav');")
-                +footerLink('/about/', 'About Us', 0, "sendEvent('Navigation', 'Clicked about footer nav');")
-                +footerLink('/support/', 'Support', 0, "sendEvent('Navigation', 'Clicked support footer nav');")
-                +footerLink('/careers/', 'Careers', 0, "sendEvent('Navigation', 'Clicked careers footer nav');")
-                +footerLink('/contact/', 'Contact', 0, "sendEvent('Navigation', 'Clicked contact footer nav');")
-                +footerLink('/legal/', 'Legal', 0, "sendEvent('Navigation', 'Clicked legal footer nav');")
-                +footerLink('/privacy/', 'Privacy Policy', 0, "sendEvent('Navigation', 'Clicked privacy footer nav');")
-                +footerLink('/terms/', 'Terms of Use', 0, "sendEvent('Navigation', 'Clicked terms footer nav');")
+                +footerLink('/pricing/', 'Pricing', 0)
+                +footerLink('/about/', 'About Us', 0)
+                +footerLink('/support/', 'Support', 0)
+                +footerLink('/careers/', 'Careers', 0)
+                +footerLink('/contact/', 'Contact', 0)
+                +footerLink('/legal/', 'Legal', 0)
+                +footerLink('/privacy/', 'Privacy Policy', 0)
+                +footerLink('/terms/', 'Terms of Use', 0)
 
             .footer__social 
                 include ../SocialMedia/SocialMedia
