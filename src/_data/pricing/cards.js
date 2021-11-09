@@ -29,7 +29,7 @@ const businessCard = {
     title: 'Team',
     price: '$199/mo',
     features: [
-        'All the features of <b>Developer</b>, plus',
+        'All the features of Developer, plus',
         '30 SaaS integrations',
         'Advanced integration analytics'
     ],
@@ -48,7 +48,7 @@ const enterpriseCard = {
     title: 'Enterprise',
     price: 'Custom pricing',
     features: [
-        'Everything in <b>Team</b>, plus',
+        'Everything in Team, plus',
         'Unlimited SaaS integrations',
         'Custom limits',
         'Dedicated deployment',
