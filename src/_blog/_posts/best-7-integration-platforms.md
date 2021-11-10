@@ -39,29 +39,37 @@ The integration platforms are not ranked in a specific order.
 
 [Fusebit](https://fusebit.io/) is a powerful integration tool that allows you to build integrations for your SaaS applications in minutes. It’s code-first and you can create connectors, code your logic, deploy your integration, and reduce integration engineering cost by 7x. Fusebit takes away the pain of developing against many disparate APIs while maintaining the flexibility and familiarity of a code-first platform.
 
-**Code-first solution:** Writing no code to create an integration sounds good on the surface, but usually, those integrations don't do exactly what your customers want. The Fusebit platform allows you to create flexible integrations that your customers will love, it's integration programming model has auth handling and multi-tenancy functionality built in so you don't have to worry about those pieces.
+**Code-first solution**
+
+Writing no code to create an integration sounds good on the surface, but usually, those integrations don't do exactly what your customers want. The Fusebit platform allows you to create flexible integrations that your customers will love, it's integration programming model has auth handling and multi-tenancy functionality built in so you don't have to worry about those pieces.
 
 Fusebit was built for developers by developers to create integrations that allow you to customize, have embedded and specialized integrations, and be used at scale with multiple tenants. If this is the type of integration that you need, Fusebit is the best option for you.
 
 **Flexibility and customization of the integration**
+
 Because of its code-first solution, Fusebit is highly flexible and allows you to create powerful integrations that fulfill all your customer's requirements. There are specific integrations that can only be achieved through code, Fusebit facilitates developers to create them.
 
-**Cloud / on-premise integration** 
+**Cloud / on-premise integration**
+
 Fusebit works on the cloud and it can be deployed to a customer's AWS cloud instance if required. Fusebit also offers private cloud, which gives businesses many of the benefits of a public cloud - including self-service, scalability, and elasticity - with the additional control and customization available from dedicated resources over a computing infrastructure hosted on-premises. Private cloud is also useful for data privacy and security.
 
 **Who should use it**
+
 Fusebit was built for developers.
 
 **Customer support, documentation, and training**
+
 You can find support on the chat in the webpage, in the [developer documentation](https://developer.fusebit.io/docs), in [slack, discord](https://fusebit.io/contact/) and contact@fusebit.io email.
 
 **Pricing**
+
 [There are 3 tiers](https://fusebit.io/pricing/): 
 Developer: Free forever and 10 connectors
 Team: $199/mo and 30 connectors
 Business: Custom pricing
 
 **Number of applications supported**
+
 Fusebit supports Slack, HubSpot, Salesforce, GitHub, Linear, Jira, Confluence, PagerDuty and they are building ten new connectors, including Discord, Google Calendar, Zoom, GitLab and others. Fusebit is an open model, meaning that you can create and add your own connector [in this repository](https://github.com/fusebit/).
 
 # Zapier
@@ -71,21 +79,27 @@ Fusebit supports Slack, HubSpot, Salesforce, GitHub, Linear, Jira, Confluence, P
 [Zapier](https://zapier.com/) allows you to have easy automation. Anyone can build workflows with a few clicks, and it lets you automatically move info between your web apps.
 
 **No-code integration**
+
 You don't have to write code to integrate applications. You can solve problems fast with templates. You can add multiple steps and workflow logic through their drag and drop interface.
 
 **Flexibility and customization of the integration**
+
 You can tweak a template or start from scratch. Tailor automated solutions to your team's needs by adding multiple steps and workflow logic. Zapier falls short when it comes to flexibility and customization since you can only work with what they already have. No-code solutions are generally more rigid than code solutions. 
 
 **Cloud / on-premise integration**
+
 Zapier works exclusively on the cloud.
 
 **Who should use it**
+
 Zapier is built for non-technical people, including marketers and managers.
 
 **Customer support, documentation, and training**
+
 You can receive support through the [help center](https://zapier.com/help), [hiring an expert](https://zapier.com/experts) or in their [community](https://community.zapier.com/). You can also read their [docs](https://platform.zapier.com/docs/zapier-intro) for more information.
 
 **Pricing**
+
 [There are 3 tiers](https://zapier.com/pricing): 
 Free: with 5 Zaps and 100 tasks/mo
 Starter: 29.99 USD/mo or 19.99 billed annually for 20 Zaps and 750 Tasks
@@ -116,9 +130,11 @@ Also, MuleSoft has a long implementation time, and [it can take between one and 
 You can run MuleSoft on-premise and on the cloud.
 
 **Who should use it**
+
 Mulesoft can be used by technical and non-technical people.
 
 **Customer support, documentation, and trainin**
+
 You can contact sales, help center and Newsroom [here](https://www.mulesoft.com/contact), and also you can read the [documentation](https://docs.mulesoft.com/general/) for more information.
 
 **Pricing**
@@ -152,12 +168,15 @@ Their drag-and-drop interface is user-friendly, but it doesn't allow the level o
 Works on the cloud, but you can have on-premise connectivity for a custom enterprise quote.
 
 **Who should use it**
+
 Since it is low-code and no-code, Tray.io can be used by technical and non-technical people.
 
 **Customer support, documentation, and training**
+
 You can get in contact with them [here](https://tray.io/lp/get/contact), use the chat and to learn more about the platform you can read the [developer docs](https://tray.io/documentation/). 
 
 **Pricing**
+
 [You can choose between 4 tiers](https://tray.io/products/platform/pricing):
 Standard: $695/mo 
 Standard Plus: $1,450/mo
@@ -179,15 +198,19 @@ Enterprise: Custom Pricing
 Celigo has an intuitive design and hundreds of pre-built connectors. It makes it possible for technical and non-technical users to build and maintain automation and integrations themselves. You can use templates or create your application from scratch.
 
 **Flexibility and customization of the integration**
+
 Since it provides code and no-code solutions, Celigo gives a lot of flexibility to their customers and the possibility of customization of their integration.
 
 **Cloud / on-premise integration**
+
 You can use Celigo on both on-premise and on the cloud.
 
 **Who should use it**
+
 Technical and non-technical people.
 
 **Customer support, documentation, and training**
+
 You can find here the [developer docs](https://docs.celigo.com/hc/en-us/categories/360002687531-Developers), get in contact with them through [this form](https://www.celigo.com/company/contact-us/), or use the chat in [their webpage](https://www.celigo.com/).
  
 **Pricing**
@@ -220,6 +243,7 @@ It offers a degree of flexibility and customization through its point-and-click 
 Jitterbit supports on-premise, cloud, and hybrid cloud deployment and both real-time and batch processing operations.
 
 **Who should use it**
+
 Jitterbit was built for non-technical people.
 
 **Support, documentation, and training**
@@ -234,25 +258,28 @@ Professional: 5 connections
 Enterprise: 8 or more connections 
 
 **Number of applications supported**
+
 +100
 
 # Dell Boomi
 
 ![Boomi](boomi.png "Boomi")
 
-#### No-code integration
+**No-code integration**
+
 [Dell Boomi](https://boomi.com/) is a cloud-native data integration platform that streamlines integration in complex hybrid cloud ecosystems and removes silos in organizations. The user-friendly interface is backed by intelligent recommendations to provide an end-to-end data integration experience. 
 
 Dell Boomi is developer-friendly and offers a graphical user interface. No-code and low-code integration is available.
 
-#### Flexibility and customization of the integration
+**Flexibility and customization of the integration**
+
 Is not as flexible a code-first solution, but it provides a comprehensive library of connectors, coupled with support for various integration patterns that enable you to build many integrations.
 
-#### Cloud / on-premise integration
+**Cloud / on-premise integration**
 
 You can integrate any combination of On-Premises, Cloud, and SaaS applications or data sources.
 
-### Pricing
+**Pricing**
 
 [There are 5 tiers](https://boomi.com/compare/):
 Base: including standard features and support
@@ -261,20 +288,22 @@ Pro Plus: Professional + includes services enablement
 Enterprise: Pro Plus + atom worker, parallel processing, and advanced security
 Enterprise Plus: Enterprise + message queuing, 15 standard connectors, and 2 enterprise connectors.
 
-### Who should use it
+**Who should use it**
+
 Boomi is mainly for non-technical people, but their low-code solution can be used by technical people as well.
 
-### Customer support, documentation, and training
+**Customer support, documentation, and training**
+
 You can get in touch with the [contact form](https://boomi.com/company/contact/), the [Boomi community](https://community.boomi.com/s/) and [help and documentation](https://help.boomi.com/) page.
 
-### Number of applications supported
+**Number of applications supported**
 
 Dell Boomi comes with 1,500 built-in endpoint connections to automate many common integrations and reduce your time on creating customized connections. Other features included in this platform include API management, data discovery, and data quality governance.
 
 Integrations Platforms Chart
 Finally, you can check the chart below where you can find where the platforms are located taking into account: developer-friendly, no-code solution, embedded and standalone:
 
-What do you think?
+#### What do you think?
 
 What is your favorite integration platform? [Tell us what you think](https://twitter.com/fusebitio) about the platforms here or let us know if we are missing one.
 
