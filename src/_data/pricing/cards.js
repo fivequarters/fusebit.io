@@ -9,7 +9,7 @@ const freeCard = {
         'Run, scale, secure, and monitor integrations in Fusebit Cloud Runtime',
         'Automate deployments using CLI',
         'Invite your team',
-        'Get community support'
+        'Community support'
     ],
     link: {
         id: 'price-tier-1',
@@ -31,7 +31,8 @@ const businessCard = {
     features: [
         'All the features of Developer, plus',
         '30 SaaS integrations',
-        'Advanced integration analytics'
+        'Advanced integration analytics',
+        'Email Support'
     ],
     link: {
         id: 'price-tier-2',
@@ -55,8 +56,7 @@ const enterpriseCard = {
         'Private Cloud',
         'Self-managed deployment',
         'Data locality',
-        'Business support',
-        'SLA',
+        'Dedicated support & SLA'
     ],
     link: {
         id: 'price-tier-3',
