@@ -32,7 +32,7 @@ const businessCard = {
         'All the features of Developer, plus',
         '30 SaaS integrations',
         'Advanced integration analytics',
-        'Email Support'
+        'Email support'
     ],
     link: {
         id: 'price-tier-2',
