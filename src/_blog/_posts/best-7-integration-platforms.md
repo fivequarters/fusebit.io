@@ -3,12 +3,12 @@ post_title: Best 7 Integration Platforms in 2021
 post_author: Liz Parody
 post_author_avatar: liz.png
 date: '2021-11-09'
-post_image: blog-bots-hooks-extensions-main.jpg
+post_image: blog-best-integration-platform-mail.jpeg
 post_excerpt: There are different integration solutions for different needs, and this blog post will explore 7 different integration platforms following 7 criteria. 
 post_slug: best-7-integration-platforms
 tags: ['post', 'integrations']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/bots-hooks-extensions-social-card.png
+post_og_image: https://fusebit.io/assets/images/blog/blog-best-integration-platforms-social-card.png
 ---
 
 An average mid-size company uses around 140 unique apps. A small business uses around 100, and a large enterprise uses around 290 [SaaS products across their business](https://www.blissfully.com/saas-trends/2020-annual-report/#). Just think about it, how many apps do you use per day? Well, companies use a lot more to keep their business running. 
@@ -21,20 +21,21 @@ Let's say you have a SaaS company that is focused on debt management solutions. 
 
 Integration platforms help you solve the problem of integrating apps so you can maintain your focus on your SaaS Company. Some of them are great if you want to connect two apps, others if you want a customizable integration and multiple tenants, and others for people that prefer no-code integration. There are different integration solutions for different needs, and this blog post will explore 7 different integration platforms following 7 criteria:
 
-Code / no-code integration
-Flexibility and customization of the integration
-Cloud (private or public) / on-premise integration 
-Who should use it
-Customer support, documentation, and training 
-Pricing
-Number of applications supported
+1. Code / no-code integration
+2. Flexibility and customization of the integration
+3. Cloud (private or public) / on-premise integration 
+4. Who should use it
+5. Customer support, documentation, and training 
+6. Pricing
+7. Number of applications supported
 
 The integration platforms are not ranked in a specific order.
 
-
+![Integration Platforms Comparison](integration-platform-comparison.png "Integration Platforms Comparison")
 
 # Fusebit
 
+![Fusebit](fusebit-landingpage.png "Fusebit")
 
 [Fusebit](https://fusebit.io/) is a powerful integration tool that allows you to build integrations for your SaaS applications in minutes. It’s code-first and you can create connectors, code your logic, deploy your integration, and reduce integration engineering cost by 7x. Fusebit takes away the pain of developing against many disparate APIs while maintaining the flexibility and familiarity of a code-first platform.
 
@@ -66,6 +67,7 @@ Fusebit supports Slack, HubSpot, Salesforce, GitHub, Linear, Jira, Confluence, P
 
 # Zapier
 
+![Zapier](zapier.png "Zapier")
 
 [Zapier](https://zapier.com/) allows you to have easy automation. Anyone can build workflows with a few clicks, and it lets you automatically move info between your web apps.
 
@@ -95,6 +97,8 @@ Professional: 49 USD/mo, unlimited zaps, and 2K task/mo
 + 3000, including Google Sheets, Slack, Mailchimp, Trello, Gmail, and others.
 
 # MuleSoft
+
+![MuleSoft](mulesoft-schema.png "MuleSoft")
 
 [Mulesoft](https://www.mulesoft.com/) is a developer-friendly platform to empower IT and business teams to create seamless digital experiences, products, and services with their platform for integration, APIs, and automation.
 
@@ -127,6 +131,9 @@ MuleSoft is one of the most expensive solutions on the market today. In fact, ma
 [+500 connectors](https://www.mulesoft.com/exchange/?type=connector).
 
 # Tray.io 
+
+![Tray.io](tray.io-integrations.png "Tray.io")
+
 With [Tray.io](https://tray.io/) you can quickly integrate your software applications using powerful automated workflows. Easily build and streamline processes using their visual workflow editor.
 
 Use their Connector Press to integrate with any web-based software. They connect you to the very deepest levels of what web services offer.
@@ -164,6 +171,7 @@ Enterprise: Custom Pricing
 
 # Celigo
 
+![Celigo](celigo.png "Celigo")
 
 ### Code / no-code integration
 
@@ -195,6 +203,7 @@ Enterprise: $72,000/yr with 20 endpoint apps and unlimited flows
 +100
 # Jitterbit
 
+![Jitterbit](jitterbit.jpeg "Jitterbit")
 
 [Jitterbit](https://www.jitterbit.com/) is an API integration platform designed to streamline the connection of cloud, on-premise, and SaaS applications. It also offers a way to add Artificial Intelligent technology into your applications and combine them in innovative ways to create new solutions. AI options include real-time language translation, a recommendation engine, and speech recognition.
 
@@ -226,7 +235,11 @@ Enterprise: 8 or more connections
 
 ### Number of applications supported
 +100
+
 # Dell Boomi
+
+![Boomi](boomi.png "Boomi")
+
 ### No-code integration
 [Dell Boomi](https://boomi.com/) is a cloud-native data integration platform that streamlines integration in complex hybrid cloud ecosystems and removes silos in organizations. The user-friendly interface is backed by intelligent recommendations to provide an end-to-end data integration experience. 
 
