@@ -840,14 +840,16 @@ if (homepage) {
 window.addEventListener('load', () => {
     blink('#underscore');
 
-    const signUpButtons = document.querySelectorAll('.sign-up-cta');
+    const signUpButtons = document.querySelectorAll('.hero__card-link');
 
     for (let i = 0; i < signUpButtons.length; i++) {
         const signUpButton = signUpButtons[i];
 
-        signUpButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal('#modal__signUp');
-        });
+        if (!signUpButton.href) {
+            signUpButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal('#modal__pricing');
+            });
+        }
     }
 });
