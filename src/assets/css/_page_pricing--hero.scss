@@ -102,26 +102,35 @@
         flex-direction: column;
         align-items: center;
         position: relative;
-        height: 424px;
-        width: 352px;
-        padding: 56px 0;
+        height: 454px;
+        width: 306px;
+        padding: 40px 24px;
         margin-bottom: 32px;
         background-color: white;
         border-radius: 16px;
         box-shadow: 14px 14px 74px rgba(52, 72, 123, 0.1);
 
         @media only screen and (max-width: 1185px) {
-            width: 300px;
+            width: 245px;
+            height: 470px;
         }
 
         @media only screen and (max-width: 992px) {
+            height: 454px;
+            width: 306px;
             margin: 32px 0 12px;
         }
 
         @media only screen and (max-width: 576px) {
             width: 275px;
-            padding: 25px 0;
-            height: 410px;
+            height: 470px;
+            padding: 24px;
+        }
+
+        @media only screen and (max-width: 350px) {
+            width: 240px;
+            height: 485px;
+            padding: 24px;
         }
 
         &-wrapper {
@@ -168,6 +177,7 @@
             line-height: 120%;
             font-family: var(--sora);
             color: var(--dark);
+            text-align: center;
 
             &:not(:last-child) {
                 margin-bottom: 16px;

@@ -1,8 +1,16 @@
 const freeCard = {
     highlightColor: 'var(--green)',
-    title: 'Professional',
+    title: 'Developer',
     price: 'Free Forever',
-    features: ['3 connectors'],
+    features: [
+        '10 SaaS integrations',
+        'Add integrations to your multi-tenant application',
+        'Accelerate integration development with Fusebit Framework, Node.js, and NPM',
+        'Run, scale, secure, and monitor integrations in Fusebit Cloud Runtime',
+        'Automate deployments using CLI',
+        'Invite your team',
+        'Community support'
+    ],
     link: {
         id: 'price-tier-1',
         href: 'https://account.fusebit.io/signup',
@@ -18,9 +26,14 @@ const freeCard = {
 
 const businessCard = {
     highlightColor: 'var(--yellow)',
-    title: 'Business',
+    title: 'Team',
     price: '$199/mo',
-    features: ['10 connectors'],
+    features: [
+        'All the features of Developer, plus',
+        '30 SaaS integrations',
+        'Advanced integration analytics',
+        'Email support'
+    ],
     link: {
         id: 'price-tier-2',
         text: 'Contact',
@@ -36,13 +49,14 @@ const enterpriseCard = {
     title: 'Enterprise',
     price: 'Custom pricing',
     features: [
+        'Everything in Team, plus',
+        'Unlimited SaaS integrations',
         'Custom limits',
         'Dedicated deployment',
         'Private Cloud',
         'Self-managed deployment',
         'Data locality',
-        'Business support',
-        'SLA',
+        'Dedicated support & SLA'
     ],
     link: {
         id: 'price-tier-3',
