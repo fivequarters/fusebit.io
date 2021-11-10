@@ -1,11 +1,11 @@
 ---
-post_title: Best 7 Integration Platforms in 2021
+post_title: 7 Best Integration Platforms in 2021
 post_author: Liz Parody
 post_author_avatar: liz.png
 date: '2021-11-09'
 post_image: blog-best-integration-platform-main.jpeg
 post_excerpt: There are different integration solutions for different needs, and this blog post will explore 7 different integration platforms following 7 criteria. 
-post_slug: best-7-integration-platforms
+post_slug: 7-best-integration-platforms
 tags: ['post', 'integrations']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-best-integration-platforms-social-card.png
