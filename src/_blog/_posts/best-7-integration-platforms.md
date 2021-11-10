@@ -3,7 +3,7 @@ post_title: Best 7 Integration Platforms in 2021
 post_author: Liz Parody
 post_author_avatar: liz.png
 date: '2021-11-09'
-post_image: blog-best-integration-platform-mail.jpeg
+post_image: blog-best-integration-platform-main.jpeg
 post_excerpt: There are different integration solutions for different needs, and this blog post will explore 7 different integration platforms following 7 criteria. 
 post_slug: best-7-integration-platforms
 tags: ['post', 'integrations']
@@ -203,7 +203,7 @@ Enterprise: $72,000/yr with 20 endpoint apps and unlimited flows
 +100
 # Jitterbit
 
-![Jitterbit](jitterbit.jpeg "Jitterbit")
+![Jitterbit](Jitterbit.jpeg "Jitterbit")
 
 [Jitterbit](https://www.jitterbit.com/) is an API integration platform designed to streamline the connection of cloud, on-premise, and SaaS applications. It also offers a way to add Artificial Intelligent technology into your applications and combine them in innovative ways to create new solutions. AI options include real-time language translation, a recommendation engine, and speech recognition.
 
