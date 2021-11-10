@@ -305,7 +305,7 @@ Finally, you can check the chart below where you can find where the platforms ar
 
 #### What do you think?
 
-What is your favorite integration platform? [Tell us what you think](https://twitter.com/fusebitio) about the platforms here or let us know if we are missing one.
+What is your favorite integration platform? [Tell us what you think](https://twitter.com/fusebitio) about the platforms here or let us know if we are missing one. You can also visit [Fusebit.io](https://fusebit.io/) for more information.
 
 
 
