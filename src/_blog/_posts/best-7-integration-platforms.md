@@ -35,7 +35,7 @@ The integration platforms are not ranked in a specific order.
 
 # Fusebit
 
-![Fusebit](fusebit-landingpage.png "Fusebit")
+![Fusebit](blog-fusebit.png "Fusebit")
 
 [Fusebit](https://fusebit.io/) is a powerful integration tool that allows you to build integrations for your SaaS applications in minutes. It’s code-first and you can create connectors, code your logic, deploy your integration, and reduce integration engineering cost by 7x. Fusebit takes away the pain of developing against many disparate APIs while maintaining the flexibility and familiarity of a code-first platform.
 
@@ -74,7 +74,7 @@ Fusebit supports Slack, HubSpot, Salesforce, GitHub, Linear, Jira, Confluence, P
 
 # Zapier
 
-![Zapier](zapier.png "Zapier")
+![Zapier](blog-zapier.png "Zapier")
 
 [Zapier](https://zapier.com/) allows you to have easy automation. Anyone can build workflows with a few clicks, and it lets you automatically move info between your web apps.
 
@@ -111,7 +111,7 @@ Professional: 49 USD/mo, unlimited zaps, and 2K task/mo
 
 # MuleSoft
 
-![MuleSoft](mulesoft-schema.png "MuleSoft")
+![MuleSoft](blog-mulesoft-schema.png "MuleSoft")
 
 [Mulesoft](https://www.mulesoft.com/) is a developer-friendly platform to empower IT and business teams to create seamless digital experiences, products, and services with their platform for integration, APIs, and automation.
 
@@ -147,7 +147,7 @@ MuleSoft is one of the most expensive solutions on the market today. In fact, ma
 
 # Tray.io 
 
-![Tray.io](tray.io-integrations.png "Tray.io")
+![Tray.io](blog-tray.io.png "Tray.io")
 
 With [Tray.io](https://tray.io/) you can quickly integrate your software applications using powerful automated workflows. Easily build and streamline processes using their visual workflow editor.
 
@@ -189,7 +189,7 @@ Enterprise: Custom Pricing
 
 # Celigo
 
-![Celigo](celigo.png "Celigo")
+![Celigo](blog-celigo.png "Celigo")
 
 **Code / no-code integration**
 
@@ -226,7 +226,7 @@ Enterprise: $72,000/yr with 20 endpoint apps and unlimited flows
 
 # Jitterbit
 
-![Jitterbit](Jitterbit.jpeg "Jitterbit")
+![Jitterbit](blog-jitterbit.jpeg "Jitterbit")
 
 [Jitterbit](https://www.jitterbit.com/) is an API integration platform designed to streamline the connection of cloud, on-premise, and SaaS applications. It also offers a way to add Artificial Intelligent technology into your applications and combine them in innovative ways to create new solutions. AI options include real-time language translation, a recommendation engine, and speech recognition.
 
@@ -263,7 +263,7 @@ Enterprise: 8 or more connections
 
 # Dell Boomi
 
-![Boomi](boomi.png "Boomi")
+![Boomi](blog-boomi.png "Boomi")
 
 **No-code integration**
 
