@@ -113,6 +113,16 @@
         width: 100%;
     }
 
+    &__header {
+        font-style: normal;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        font-family: inherit;
+        color: inherit;
+    }
+
     @media only screen and (max-width: 500px) {
         justify-content: center;
         height: calc(100vh - 4rem);

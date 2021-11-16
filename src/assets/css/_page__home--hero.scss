@@ -208,6 +208,13 @@
         }
     }
 
+    &__modal-content {
+        max-width: 480px;
+        margin: 0 auto;
+        font-family: Nunito, "Comic Sans", sans-serif;
+        color: rgb(31, 31, 31);
+    }
+
     @media only screen and (max-width: 800px) {
         background-image: url(./images/homepage/hero/hero--mobile.png);
         background-position: 25% bottom;

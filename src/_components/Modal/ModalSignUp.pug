@@ -1,0 +1,34 @@
+#modal__sign-up.modal
+    +modal()
+        .hero__modal-content
+            h2.modal__header What integration problem are you trying to solve?
+
+            .hero__actions
+    
+script.
+
+    window.addEventListener('load', () => {
+        const GET_STARTED_ACTIONS = ['I want to add integrations to my app for my users.', 'I want to connect my company’s SaaS tools together.', 'I want to automate something for my own project.'].sort()
+
+        const actionsEl = document.querySelector('.hero__actions');
+
+        const addButton = (text) => {
+            const button = document.createElement('button');
+            button.classList.add('hero__action');
+            button.innerText = text;
+            actionsEl.appendChild(button);
+        }
+
+        handleClickButtonsGroup('.get-started', () => {
+            actionsEl.innerHTML = '';
+
+            GET_STARTED_ACTIONS.sort(() => Math.random() - 0.5).forEach(action => {
+                addButton(action);
+            });
+
+            addButton("I am not sure yet. 🤷");
+
+            openModal('#modal__contact');
+        });
+
+    });

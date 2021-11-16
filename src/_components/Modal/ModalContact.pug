@@ -1,0 +1,20 @@
+- const contactFormURL = "https://webforms.pipedrive.com/f/1DXSlJKUoakcRqzRsyjA3APEHbKvHYazWYEe1HU0e6pfsGiR14Tx3wFDm1p46P21B";
+
+#modal__contact.modal
+    +modal(contactFormURL)
+
+script.
+    window.addEventListener('load', () => {
+        function checkContactHashInUrl() {
+            if (window.location.hash.indexOf('#contact') >-1) {
+                const modal = document.querySelector('#modal__contact')
+                const overlay = document.querySelector('.modal__overlay');
+                modal.style.display = 'block';
+                overlay.style.display = 'block';
+            }
+        }
+
+        checkContactHashInUrl();
+
+        window.addEventListener('hashchange', checkContactHashInUrl)
+    })
