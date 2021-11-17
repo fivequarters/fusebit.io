@@ -72,11 +72,13 @@ script.
             );
 
             createOption("I am not sure yet. 🤷");
-
-            openModal('#modal__sign-up');
         }
 
-        handleClickButtonsGroup('.get-started', renderOptions);
+        handleClickButtonsGroup('.get-started', () => {
+            renderOptions();
+
+            openModal('#modal__sign-up');
+        });
 
         renderOptions()
 
