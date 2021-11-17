@@ -1,0 +1,27 @@
+.modal-cta {
+    box-shadow: rgb(0 0 0 / 4%) 1px 1px 3px;
+    transition: border-radius 200ms ease 0s;
+    padding: 8px 12px;
+    margin: 32px 0 20px;
+    min-height: 48px;
+    border-radius: 24px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    background-color: #fb310a;
+    border: 0px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 200ms ease 0s;
+    box-sizing: border-box;
+    font-family: inherit;
+    pointer-events: none;
+
+    &:hover {
+        background-color: rgb(255, 85, 70);
+    }
+}

@@ -102,7 +102,7 @@
         flex-direction: column;
         align-items: center;
         position: relative;
-        height: 454px;
+        min-height: 454px;
         width: 306px;
         padding: 40px 24px;
         margin-bottom: 32px;
@@ -112,24 +112,24 @@
 
         @media only screen and (max-width: 1185px) {
             width: 245px;
-            height: 470px;
+            min-height: 470px;
         }
 
         @media only screen and (max-width: 992px) {
-            height: 454px;
+            min-height: 454px;
             width: 306px;
             margin: 32px 0 12px;
         }
 
         @media only screen and (max-width: 576px) {
             width: 275px;
-            height: 470px;
+            min-height: 470px;
             padding: 24px;
         }
 
         @media only screen and (max-width: 350px) {
             width: 240px;
-            height: 485px;
+            min-height: 485px;
             padding: 24px;
         }
 

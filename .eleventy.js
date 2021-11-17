@@ -16,7 +16,6 @@ function getImageMeta(src, widths) {
         urlPath: '/assets/images/11ty',
     };
 
-    
     const url = `./src/assets/images/${src}`;
 
     Image(url, options);
@@ -59,6 +58,11 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('src/assets/vendor');
     eleventyConfig.addPassthroughCopy({ 'src/assets/meta': '/' });
     eleventyConfig.addPassthroughCopy({ public: '/' });
+
+    eleventyConfig.addPassthroughCopy({
+        'node_modules/lodash.shuffle/index.js': 'assets/vendor/shuffle.js',
+    });
+
     eleventyConfig.addPlugin(syntaxHighlight);
 
     eleventyConfig.setBrowserSyncConfig({
@@ -85,12 +89,11 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.on('afterBuild', () => {
         const data = require('./src/_data/site.js');
 
-        fs.writeFile(`./build/site.json`, JSON.stringify(data),
-        function (err) {
+        fs.writeFile(`./build/site.json`, JSON.stringify(data), function (err) {
             if (err) {
                 throw err;
-            } 
-          });
+            }
+        });
     });
 
     eleventyConfig.addTransform(

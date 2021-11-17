@@ -13,12 +13,11 @@ const freeCard = {
     ],
     link: {
         id: 'price-tier-1',
-        href: 'https://account.fusebit.io/signup',
         text: 'Get Started for Free',
         location: 'Price Tier 1',
         eventName: 'Price Tier Button Clicked',
-        target: '_blank',
-        rel: 'noreferrer',
+        className: 'hero__card-link get-started',
+        href: '#signup',
     },
     description:
         'Up to 5,000 executions of the integration logic per month across all connectors',
@@ -39,6 +38,7 @@ const businessCard = {
         text: 'Contact',
         location: 'Price Tier 2',
         eventName: 'Price Tier Button Clicked',
+        onClick: "openModal('#modal__pricing')",
     },
     description:
         'Up to 100,000 executions of the integration logic per month across all connectors',
@@ -63,6 +63,7 @@ const enterpriseCard = {
         text: 'Contact',
         location: 'Price Tier 3',
         eventName: 'Price Tier Button Clicked',
+        onClick: "openModal('#modal__pricing')",
     },
 };
 

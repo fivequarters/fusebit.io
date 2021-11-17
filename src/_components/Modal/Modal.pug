@@ -1,64 +1,40 @@
-- const pricingFormURL = "https://webforms.pipedrive.com/f/1CuwsqOYRklKR16su32fulSZPAcQFn3ZNFlJmYC0FDxWYfc1HX2Op7fyzeFv4PYPx";
-- const contactFormURL = "https://webforms.pipedrive.com/f/1DXSlJKUoakcRqzRsyjA3APEHbKvHYazWYEe1HU0e6pfsGiR14Tx3wFDm1p46P21B";
+mixin modal(id, pipedriveUrl)
+    .modal(id=id)
+        button.modal__btn--close
+            span 
 
-mixin modal(url)
-    button.modal__btn--close
-        span 
+        .modal__content
+            if (pipedriveUrl)
+                .modal__loader
+                    svg(version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 100" enable-background="new 0 0 0 0" xml:space="preserve")
+                        circle(fill="#fff" stroke="none" cx="6" cy="50" r="6")
+                            animateTransform(  attributeName="transform" dur="1s" type="translate" values="0 15 ; 0 -15; 0 15" repeatCount="indefinite" begin="0.1")
+                        circle(fill="#fff" stroke="none" cx="30" cy="50" r="6")
+                            animateTransform(  attributeName="transform" dur="1s" type="translate" values="0 10 ; 0 -10; 0 10" repeatCount="indefinite" begin="0.2")
+                        circle(fill="#fff" stroke="none" cx="54" cy="50" r="6")
+                            animateTransform(  attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5" repeatCount="indefinite" begin="0.3")
 
-    .modal__content
-        .modal__loader
-            svg(version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 100" enable-background="new 0 0 0 0" xml:space="preserve")
-                circle(fill="#fff" stroke="none" cx="6" cy="50" r="6")
-                    animateTransform(  attributeName="transform"  dur="1s"  type="translate"  values="0 15 ; 0 -15; 0 15"  repeatCount="indefinite"  begin="0.1")
-                circle(fill="#fff" stroke="none" cx="30" cy="50" r="6")
-                    animateTransform(  attributeName="transform"  dur="1s"  type="translate"  values="0 10 ; 0 -10; 0 10"  repeatCount="indefinite"  begin="0.2")
-                circle(fill="#fff" stroke="none" cx="54" cy="50" r="6")
-                    animateTransform(  attributeName="transform"  dur="1s"  type="translate"  values="0 5 ; 0 -5; 0 5"  repeatCount="indefinite"  begin="0.3")
-
-        div(class="pipedriveWebForms" data-pd-webforms=url)
-            script(src="https://webforms.pipedrive.com/f/loader")
-
-#modal__pricing.modal
-    +modal(pricingFormURL)
-
-#modal__contact.modal
-    +modal(contactFormURL)
+            if (pipedriveUrl)
+                div(class="pipedriveWebForms" data-pd-webforms=pipedriveUrl)
+                    script(src="https://webforms.pipedrive.com/f/loader")
+            block
 
 .modal__overlay
-    script.
-        window.addEventListener('load', () => {
 
-            function checkContactHashInUrl() {
-                if (window.location.hash.indexOf('#contact') >-1) {
-                    const modal = document.querySelector('#modal__contact')
-                    const overlay = document.querySelector('.modal__overlay');
-                    modal.style.display = 'block';
-                    overlay.style.display = 'block';
-                }
-            }
+script.
 
-            checkContactHashInUrl();
+    window.addEventListener('load', () => {
+        const modalCloseBtns = document.querySelectorAll('.modal__btn--close')
 
-            window.addEventListener('hashchange', checkContactHashInUrl)
-
-            const modalCloseBtns = document.querySelectorAll('.modal__btn--close')
-            modalCloseBtns.forEach(btnClose => {
-                btnClose.addEventListener('click', () => {
-                    const modal = btnClose.parentNode;
-                    const overlay = document.querySelector('.modal__overlay');
-
-                    modal.style.display = 'none';
-                    overlay.style.display = 'none';
-                })
+        modalCloseBtns.forEach(btnClose => {
+            btnClose.addEventListener('click', () => {
+                closeModal()
             })
+        })
 
-            const overlay = document.querySelector('.modal__overlay');
-            overlay.addEventListener('click', () => {
-                const modals = document.querySelectorAll('.modal');
+        const overlay = document.querySelector('.modal__overlay');
 
-                modals.forEach(modal => {
-                    modal.style.display = 'none';
-                });
-                overlay.style.display = 'none';
-            })
-         })
+        overlay.addEventListener('click', () => {
+            closeModal()
+        })
+    });
