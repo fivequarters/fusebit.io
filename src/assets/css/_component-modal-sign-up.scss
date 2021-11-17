@@ -1,0 +1,56 @@
+.modal-sign-up {
+    &__content {
+        max-width: 480px;
+        margin: 0 auto;
+        font-family: sans-serif;
+        color: rgb(31, 31, 31);
+    }
+
+    &__answers {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__button-container {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        font-size: 0;
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+
+            &:checked ~ button {
+                background-color: #15d6cf;
+            }
+        }
+
+        button {
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #d7e5ff;
+            border-radius: 2rem;
+            cursor: pointer;
+            border: 0;
+            padding: 12px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: background-color 100ms ease 0s;
+        }
+
+        &:hover input ~ button {
+            background-color: #15d6cf;
+        }
+    }
+}

@@ -838,12 +838,5 @@ if (homepage) {
 }
 
 window.addEventListener('load', () => {
-    blink('#underscore');
-
-    handleClickButtonsGroup('.hero__card-link', (e) => {
-        if (!e.target.href) {
-            e.preventDefault();
-            openModal('#modal__pricing');
-        }
-    });
+    blink('#underscore');   
 });

@@ -1,34 +1,85 @@
-#modal__sign-up.modal
-    +modal()
-        .hero__modal-content
-            h2.modal__header What integration problem are you trying to solve?
++modal("modal__sign-up")
+    .modal-sign-up__content
+        h2.modal__header What integration problem are you trying to solve?
 
-            .hero__actions
-    
+        .modal-sign-up__answers
+
+        a.modal-sign-up__confirm-button.modal-cta(href=homepage.links.getStartedLink target="_blank" rel="noreferrer" onclick="trackUserAnswer()") Continue to Sign Up
+
 script.
 
+    const trackUserAnswer = () => {
+        const answer = document.querySelector('.modal-sign-up__answers input:checked').value;
+
+        analytics.track({
+            event: 'Answer Selected',
+            properties: {
+                objectLocation: "Get Started Form",
+                domain: 'fusebit.io',
+                GetStartedAnswer: answer
+            }
+        });
+
+        analytics.track({
+            event: 'Continue Button Clicked',
+            properties: {
+                objectLocation: "Get Started Form",
+                domain: 'fusebit.io',
+            }
+        });
+
+        closeModal();
+    }
+
     window.addEventListener('load', () => {
-        const GET_STARTED_ACTIONS = ['I want to add integrations to my app for my users.', 'I want to connect my company’s SaaS tools together.', 'I want to automate something for my own project.'].sort()
+        const GET_STARTED_ANSWERS = ['I want to add integrations to my app for my users.', 'I want to connect my company’s SaaS tools together.', 'I want to automate something for my own project.']
 
-        const actionsEl = document.querySelector('.hero__actions');
+        const answersEl = document.querySelector('.modal-sign-up__answers');
 
-        const addButton = (text) => {
-            const button = document.createElement('button');
-            button.classList.add('hero__action');
-            button.innerText = text;
-            actionsEl.appendChild(button);
-        }
+        const createOption = (text) => {
+            const buttonContainer = document.createElement('div');
+            buttonContainer.classList.add('modal-sign-up__button-container');
+            const input = document.createElement('input');
+            input.setAttribute('type', 'radio');
+            input.setAttribute('name', 'action');
+            input.setAttribute('value', text);
+            const signUpButton = document.querySelector('.modal-sign-up__confirm-button'); 
 
-        handleClickButtonsGroup('.get-started', () => {
-            actionsEl.innerHTML = '';
-
-            GET_STARTED_ACTIONS.sort(() => Math.random() - 0.5).forEach(action => {
-                addButton(action);
+            input.addEventListener('change', () => {
+                signUpButton.style.opacity = '1';
+                signUpButton.style.pointerEvents = 'all';
             });
 
-            addButton("I am not sure yet. 🤷");
+            const button = document.createElement('button');
+            button.innerText = text;
 
-            openModal('#modal__contact');
-        });
+            buttonContainer.appendChild(input);
+            buttonContainer.appendChild(button);
+
+            answersEl.appendChild(buttonContainer);
+        }
+
+        const renderOptions = () => {
+            const signUpButton = document.querySelector('.modal-sign-up__confirm-button'); 
+
+            answersEl.innerHTML = '';
+            signUpButton.style.pointerEvents = 'none';
+            signUpButton.style.opacity = '0';
+
+            shuffle(GET_STARTED_ANSWERS).forEach(action => {
+                createOption(action);
+                }
+            );
+
+            createOption("I am not sure yet. 🤷");
+
+            openModal('#modal__sign-up');
+        }
+
+        handleClickButtonsGroup('.get-started', renderOptions);
+
+        renderOptions()
+
+        openModalFromHash('#sign-up', '#modal__sign-up');
 
     });
