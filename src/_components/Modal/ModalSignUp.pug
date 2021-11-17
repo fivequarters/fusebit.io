@@ -12,19 +12,11 @@ script.
         const answer = document.querySelector('.modal-sign-up__answers input:checked').value;
 
         analytics.track({
-            event: 'Answer Selected',
-            properties: {
-                objectLocation: "Get Started Form",
-                domain: 'fusebit.io',
-                GetStartedAnswer: answer
-            }
-        });
-
-        analytics.track({
             event: 'Continue Button Clicked',
             properties: {
                 objectLocation: "Get Started Form",
                 domain: 'fusebit.io',
+                GetStartedAnswer: answer
             }
         });
 
