@@ -24,7 +24,11 @@ script.
     }
 
     window.addEventListener('load', () => {
-        const GET_STARTED_ANSWERS = [{text: 'I want to automate something for myself or my team.', value: 'Single-tenant'}, {text: 'I want users of my app to connect to other systems they use.', value: 'Multi-tenant'}];
+        const GET_STARTED_ANSWERS = [
+            {text: 'I want to automate something for myself or my team.', value: 'Single-tenant'},
+            {text: 'I want users of my app to connect to other systems they use.', value: 'Multi-tenant'},
+            {text: "I am not sure yet, let me explore!", value: 'Not sure'}
+        ];
 
         const answersEl = document.querySelector('.modal-sign-up__answers');
 
@@ -62,8 +66,6 @@ script.
                 createOption(action);
                 }
             );
-
-            createOption({text: "I am not sure yet, let me explore!", value: 'Not sure'});
         }
 
         handleClickButtonsGroup('.get-started', () => {
