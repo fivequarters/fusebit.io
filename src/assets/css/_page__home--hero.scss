@@ -109,7 +109,7 @@
         position: relative;
         font-family: var(--sora);
         font-weight: 700;
-        @include font-size(56);
+        @include font-size(64);
         line-height: 110%;
         color: var(--neutralLight);
         margin-bottom: 2rem;
@@ -127,7 +127,7 @@
 
     &__text {
         position: relative;
-        width: 95%;
+        width: 82%;
         @include font-size(18);
         font-weight: 300;
         line-height: 29px;
@@ -190,10 +190,10 @@
 
         img {
             position: absolute;
-            max-width: 850px;
+            max-width: 823px;
             height: auto;
             top: -6.5rem;
-            left: 1rem;
+            left: -3rem;
 
             // Cross browser fix to blurred hero image
             image-rendering: -moz-crisp-edges;
