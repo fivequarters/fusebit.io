@@ -65,7 +65,7 @@ html(lang='en' class=(pageClass || ''))
           const url = new URL(window.location);
           url.searchParams.set('utm_source', referrerHostname);
           url.searchParams.set('utm_medium', 'referral');
-          url.searchParams.set('utm_campaign', 'no-campaign-tag');
+          url.searchParams.set('utm_campaign', 'none');
           window.history.pushState({}, '', url);
         }
       }
