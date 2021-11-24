@@ -60,7 +60,6 @@ html(lang='en' class=(pageClass || ''))
     script.
       const searchParams = new URLSearchParams(window.location.search);
       if (!searchParams.get('utm_source') && document.referrer !== null) {
-          
           const url = new URL(window.location);
           url.searchParams.set('utm_source', new URL(document.referrer).hostname);
           url.searchParams.set('utm_medium', 'referral');
