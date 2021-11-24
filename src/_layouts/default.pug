@@ -58,6 +58,17 @@ html(lang='en' class=(pageClass || ''))
       }}();
 
     script.
+      const searchParams = new URLSearchParams(window.location.search);
+      if (!searchParams.get('utm_source') && document.referrer !== null) {
+          
+          const url = new URL(window.location);
+          url.searchParams.set('utm_source', new URL(document.referrer).hostname);
+          url.searchParams.set('utm_medium', 'referral');
+          url.searchParams.set('utm_campaign', 'no-campaign-tag');
+          window.history.pushState({}, '', url);
+      }
+
+    script.
       (function(h,o,t,j,a,r){
       h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
       h._hjSettings={hjid:2564747,hjsv:6};
