@@ -59,14 +59,14 @@ html(lang='en' class=(pageClass || ''))
 
     script.
       const searchParams = new URLSearchParams(window.location.search);
-      if (!searchParams.get('utm_source') && document.referrer !== null) {
+      if (!searchParams.get('utm_source') && document.referrer) {
         const referrerHostname = new URL(document.referrer).hostname;
         if (referrerHostname !== window.location.hostname) {
           const url = new URL(window.location);
           url.searchParams.set('utm_source', referrerHostname);
           url.searchParams.set('utm_medium', 'referral');
           url.searchParams.set('utm_campaign', 'none');
-          window.history.pushState({}, '', url);
+          window.history.replaceState({}, '', url);
         }
       }
 
