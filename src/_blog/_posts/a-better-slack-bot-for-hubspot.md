@@ -31,10 +31,10 @@ Let’s say that you would like to get immediate information about your customer
 
 Try it out yourself! 
 
-[Click here](https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/hubspot-slack-bot/api/service/start) to install the bot 
-You will need to authorize access to your HubSpot instance and Slack workspace
-Add the bot to a Slack channel, by clicking the drop-down next to the channel name, clicking **Integrations**, and then selecting **Add an App** and then finding “HubSpot Bot”
-Type the “lookup” command followed by the email address of a HubSpot contact, for example “lookup joe@example.com”.
+1. [Click here](https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/hubspot-slack-bot/api/service/start) to install the bot 
+2. You will need to authorize access to your HubSpot instance and Slack workspace
+3. Add the bot to a Slack channel, by clicking the drop-down next to the channel name, clicking **Integrations**, and then selecting **Add an App** and then finding “HubSpot Bot”
+4. Type the “lookup” command followed by the email address of a HubSpot contact, for example “lookup joe@example.com”.
 
 Once you have the example running, you may wish to customize it to your needs, including modifying HubSpot search or how the data is displayed. Read on to learn how. 
 
@@ -67,7 +67,7 @@ On the right column on the Portal, you will be able to see your HubSpot and Slac
 
 Now you are ready to modify the business logic of the Integration to perform the HubSpot lookup and send the results to Slack.
 
-## Add your Integration logic
+### Add your Integration logic
 You can edit the code of the Integration by hitting the Edit button in the middle.
 
 ![Edit Integration](blog-slack-bot-hubspot-edit.png "Edit Integration")
@@ -151,7 +151,7 @@ module.exports = integration;
 
 `hubspotClient` and `slackClient` in line 8 and 9 create pre-configured clients with credentials necessary to communicate with your HubSpot and Slack account. The `lookupAndPost` function in line 11 will look for the email you provided on slack and create a contact.
 
-## Test the Integration
+### Test the Integration
 We can invoke the `test` method of this integration right from inside the editor to see how this works, but we first need to configure a test request passing the HubSpot email to look up:
 
 ![Edit Integration](blog-slack-bot-hubspot-config.png "Edit Integration")
@@ -181,13 +181,15 @@ You should also see a message in Slack with the search result.
 ![Edit Integration](blog-slack-bot-hubspot-final.png "Edit Integration")
 
 Feel free to modify the `hubSpotClient.crm.contacts.searchApi.doSearch` (line 40) and  `slackClient.chat.postMessage` (line 51) calls in the `lookupAndPost` method to customize what your bot does. If you want to have custom properties, you can change it in the line 36 in `properties`.
-Enabling search from Slack
+
+### Enabling search from Slack
 So far we’ve tested this integration from inside Fusebit using the Run button. However we really want to be able to start the search from inside Slack by sending a “lookup” command. 
 
-In the Fusebit portal, select the Slack connector. You will need to create your own Slack application to be able to receive Slack events. [Follow our developer guide](https://developer.fusebit.io/docs/slack#receiving-events-from-slack-event-api-support) to see how.
-You will need to go to the integration Installs tab and delete any existing installs after you switch over to your own Slack application, and you will have to re-authenticate.
-When a message is received from Slack, the `integration.event.on` on line 21 is invoked to receive the data. In line 26 we have a regex which will extract the email from the information received from Slack ("lookup <mailto:contact@fusebit.io|contact@fusebit.io>"), if there is a result, it will look up that email and post it in the Slack channel. Modify this logic to change the command the bot responds to or to collect additional parameters.
-Don’t forget to make sure the bot is added to the Slack channel where you are sending commands, otherwise your events will not be received. 
-Before you go…
+1. In the Fusebit portal, select the Slack connector. You will need to create your own Slack application to be able to receive Slack events. [Follow our developer guide](https://developer.fusebit.io/docs/slack#receiving-events-from-slack-event-api-support) to see how.
+2. You will need to go to the integration Installs tab and delete any existing installs after you switch over to your own Slack application, and you will have to re-authenticate.
+3. When a message is received from Slack, the `integration.event.on` on line 21 is invoked to receive the data. In line 26 we have a regex which will extract the email from the information received from Slack ("lookup <mailto:contact@fusebit.io|contact@fusebit.io>"), if there is a result, it will look up that email and post it in the Slack channel. Modify this logic to change the command the bot responds to or to collect additional parameters.
+4. Don’t forget to make sure the bot is added to the Slack channel where you are sending commands, otherwise your events will not be received. 
+
+### Before you go…
 If you are looking to create flexible and powerful integrations using other platforms, check out [Fusebit](https://fusebit.io/), and follow us on [Twitter](https://twitter.com/fusebitio)!
 
