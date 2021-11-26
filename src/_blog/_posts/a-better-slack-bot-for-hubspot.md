@@ -187,7 +187,7 @@ So far we’ve tested this integration from inside Fusebit using the Run button.
 
 1. In the Fusebit portal, select the Slack connector. You will need to create your own Slack application to be able to receive Slack events. [Follow our developer guide](https://developer.fusebit.io/docs/slack#receiving-events-from-slack-event-api-support) to see how.
 2. You will need to go to the integration Installs tab and delete any existing installs after you switch over to your own Slack application, and you will have to re-authenticate.
-3. When a message is received from Slack, the `integration.event.on` on line 21 is invoked to receive the data. In line 26 we have a regex which will extract the email from the information received from Slack ("lookup %3Cmailto:contact@fusebit.io|contact@fusebit.io%3E"), if there is a result, it will look up that email and post it in the Slack channel. Modify this logic to change the command the bot responds to or to collect additional parameters.
+3. When a message is received from Slack, the `integration.event.on` on line 21 is invoked to receive the data. In line 26 we have a regex which will extract the email from the information received from Slack ("lookup \<mailto:contact@fusebit.io|contact@fusebit.io\>"), if there is a result, it will look up that email and post it in the Slack channel. Modify this logic to change the command the bot responds to or to collect additional parameters.
 4. Don’t forget to make sure the bot is added to the Slack channel where you are sending commands, otherwise your events will not be received. 
 
 ### Before you go…
