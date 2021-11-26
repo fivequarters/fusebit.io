@@ -1,5 +1,5 @@
 ---
-post_title: A better Slack bot for HubSpot
+post_title: A Better Slack Bot for HubSpot
 post_author: Liz Parody
 post_author_avatar: liz.png
 date: '2021-11-25'
@@ -40,9 +40,9 @@ Once you have the example running, you may wish to customize it to your needs, i
 
 # Connect to HubSpot
 
-First, you should [sign up to Fusebit for free](https://go.fusebit.io/hubspot/). 
+First, you should [sign up to Fusebit for free](https://fusebit.io/#signup). 
 
-In the [Fusebit Management Portal](https://manage.fusebit.io/), click “New Integration” button as you can see in the image below:
+In the [Fusebit Management Portal](https://manage.fusebit.io/?utm_source=fusebit.io&utm_medium=referral&utm_campaign=slack-hubspot-blog&utm_content=connect), click “New Integration” button as you can see in the image below:
 
 ![New Integration Slack](blog-slack-bot-hubpost-new-integration.png "New Integration Slack - HubSpot")
 
@@ -191,5 +191,5 @@ So far we’ve tested this integration from inside Fusebit using the Run button.
 4. Don’t forget to make sure the bot is added to the Slack channel where you are sending commands, otherwise your events will not be received. 
 
 ### Before you go…
-If you are looking to create flexible and powerful integrations using other platforms, check out [Fusebit](https://fusebit.io/), and follow us on [Twitter](https://twitter.com/fusebitio)!
+If you are looking to create flexible and powerful integrations using other SaaS platforms, check out [Fusebit](https://fusebit.io/), and follow us on [Twitter](https://twitter.com/fusebitio)!
 
