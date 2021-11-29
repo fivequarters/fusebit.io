@@ -44,7 +44,7 @@ First, [sign up to Fusebit for free](https://manage.fusebit.io/?key=e2e-hubspot-
 
 Click on the **HubSpot Slack Bot** integration. You can customize the Slack and HubSpot connector name. Click on “Create”.
 
-![HubSpot Slack Bot](blog-slack-bot-hubpost-create.png "New Integration Slack - HubSpot")
+![HubSpot Slack Bot](blog-slack-bot-hubspot-create.png "New Integration Slack - HubSpot")
 
 You can edit the code of the Integration by hitting the Edit button in the middle.
 
