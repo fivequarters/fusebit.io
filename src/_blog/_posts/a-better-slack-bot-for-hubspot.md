@@ -13,7 +13,7 @@ post_og_image: https://fusebit.io/assets/images/blog/blog-slack-bot-hubspot-soci
 
 Integrating [Slack](https://slack.com/) and [HubSpot](https://www.hubspot.com/) can be difficult for developers. 
 
-HubSpot has an [built-in bot for Slack](https://www.hubspot.com/slack) **But sometimes the built-in bot capabilities aren’t sufficient, or you want to create a HubSpot Slack bot for your specific task or workflow** 
+HubSpot has an [built-in bot for Slack](https://www.hubspot.com/slack) **, but sometimes the built-in bot capabilities aren't flexible enough for developers.**.
 
 In this blog post, you will learn how to code a Slack bot that responds to a specific command and returns the information you need from HubSpot, giving you full control of what data is fetched and how it is displayed. 
 
