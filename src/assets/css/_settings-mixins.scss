@@ -5,13 +5,18 @@
     font-size: ($size / $base) * 1rem;
 }
 
-@mixin blogButton($backgroundColor, $backgroundColorHover) {
-    font-size: 16px;
+@mixin blogButton(
+    $backgroundColor,
+    $backgroundColorHover,
+    $fontSize,
+    $padding
+) {
+    font-size: $fontSize;
     position: relative;
     display: inline-block;
     text-decoration: none;
     width: fit-content;
-    padding: 4px 16px;
+    padding: $padding;
     transform: translateY(-1.2px);
     margin: 0 2px;
     background: $backgroundColor;

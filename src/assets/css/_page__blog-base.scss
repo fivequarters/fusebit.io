@@ -83,8 +83,12 @@ a {
     text-decoration-line: underline;
 }
 
-a[title~='CTA'] {
-    @include blogButton(#ffa600, var(--orangeDark));
+a[title~='CTA_SMALL'] {
+    @include blogButton(#ffa600, #e99b0a, 16px, 2px 14px);
+}
+
+a[title~='CTA_LARGE'] {
+    @include blogButton(#ffa600, #e99b0a, 18px, 6px 24px);
 }
 
 * > a[type='text'] {

@@ -31,7 +31,7 @@ Let’s say that you would like to get immediate information about your customer
 
 Try it out yourself!
 
-1. [Install the bot](https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/hubspot-slack-bot/api/service/start 'Install the bot CTA') for free.
+1. [Install the bot](https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/hubspot-slack-bot/api/service/start 'Install the bot CTA_SMALL') for free.
 2. You will need to authorize access to your HubSpot instance and Slack workspace.
 3. Add the bot to a Slack channel, by clicking the drop-down next to the channel name, clicking **Integrations**, and then selecting **Add an App** and then finding “HubSpot Bot”.
 4. Type the “lookup” command followed by the email address of a HubSpot contact, for example “lookup joe@example.com”.
