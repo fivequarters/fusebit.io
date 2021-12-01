@@ -83,6 +83,15 @@ a {
     text-decoration-line: underline;
 }
 
+a[title~='CTA'] {
+    @include blogButton(var(--orange), var(--orangeDark));
+}
+
+* > a[type='text'] {
+    display: flex;
+    align-items: center;
+}
+
 .article {
     img {
         display: block;
