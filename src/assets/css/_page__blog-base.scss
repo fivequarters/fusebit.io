@@ -84,7 +84,7 @@ a {
 }
 
 a[title~='CTA'] {
-    @include blogButton(var(--orange), var(--orangeDark));
+    @include blogButton(#ffa600, var(--orangeDark));
 }
 
 * > a[type='text'] {
