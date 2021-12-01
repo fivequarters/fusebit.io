@@ -64,7 +64,7 @@ block scripts
     script.
         analytics.page('Blog Post', { objectLocation: 'Blog Post', domain: 'fusebit.io' });
 
-        function copySuccessAnimation(evt) {
+        function animateCopy(evt) {
             if (evt.target.classList.value.indexOf("copied") < 0) {
                 evt.target.innerHTML = "Copied!";
                 evt.target.classList.add("copied");
@@ -76,26 +76,18 @@ block scripts
         }
 
         function handleCopyClick(evt) {
-            // get the children of the parent element
             const { children } = evt.target.parentElement;
-            // grab the first element (we append the copy button on afterwards, so the first will be the code element)
-            // destructure the innerText from the code block
             const { innerText } = Array.from(children)[0];
-            // copy all of the code to the clipboard
             navigator.clipboard.writeText(innerText);
-            copySuccessAnimation(evt);
+            animateCopy(evt);
         }
     
-        // get the list of all highlight code blocks
         const highlights = document.querySelectorAll("pre");
 
         highlights.forEach(codeBlock => {
-            // create the copy button
             const copy = document.createElement("button");
             copy.innerHTML = "Copy";
-            // add the event listener to each click
             copy.addEventListener("click", handleCopyClick);
-            // append the copy button to each code block
             codeBlock.append(copy);
         });
 
