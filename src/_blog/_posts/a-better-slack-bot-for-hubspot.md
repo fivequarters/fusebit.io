@@ -11,25 +11,23 @@ post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-slack-bot-hubspot-social.png
 ---
 
-Integrating [Slack](https://slack.com/) and [HubSpot](https://www.hubspot.com/) can be challenging. HubSpot has an [built-in bot for Slack](https://www.hubspot.com/slack) that allows you to create a task from a Slack message and associate it with a contact, company or deal in HubSpot, it also allows you to receive notifications in Slack when there is new events or activities in HubSpot, and allows slash commands.
+Integrating [Slack](https://slack.com/) and [HubSpot](https://www.hubspot.com/) can be difficult for developers.
 
-**But sometimes the built-in bot capabilities aren’t sufficient, or you want to create a HubSpot Slack bot for your specific task or workflow, for example:**
+HubSpot has an [built-in bot for Slack](https://www.hubspot.com/slack) **, but sometimes the built-in bot capabilities aren't flexible enough for developers.**.
 
-- If you want to lookup HubSpot contacts and companies, _but_ customize the Slack response message to include more fields, including custom fields that are not supported by the built-in bot like location, job title, last activity date and more
-- Lookup a contact in multiple systems and provide a single view, for example, CRM data from HubSpot with activity data from Mixpanel
-- Create a HubSpot contact directly from Slack
-- Get HubSpot statistics printed to a Slack channel for your coworkers to see
-- Generate a weekly report in Slack of HubSpot leads
+In this blog post, you will learn how to code a Slack bot that responds to a specific command and returns the information you need from HubSpot, giving you full control of what data is fetched and how it is displayed.
 
-In these cases, you face a significant challenge: you need to figure out how to connect the two APIs, listen for notifications from Slack, execute actions in HubSpot, and send responses back to Slack. In addition, you need to figure out authentication and where to host your solution.
+**What could you do with this integration?**
 
-**That’s where Fusebit comes in handy and makes this task 10x easier**. In this blog post, you will learn how to create a Slack bot that responds to a specific command and returns the information you need from HubSpot, giving you full control of what data is fetched and how it is displayed.
+Let’s say that you would like to get information about your users by running just one command in Slack. For example, if you run “lookup user@email.com” on Slack and receive relevant information about that user from HubSpot.
 
-Let’s say that you would like to get immediate information about your customers or users by running just one command in Slack. For example, if you run “lookup user@email.com” on Slack and receive relevant information about that user from HubSpot. It could be basic data such as full name, email, company, date created, or more detailed information like marketing contact status, location, or annual company revenue.
+**Let’s see the integration in action!**
 
 ![Slack Bot in HubSpot](blog-slack-bot-hubspot-output.png 'Slack Bot in HubSpot')
 
-Try it out yourself!
+One item to note about the “lookup” keyword is that it can be placed anywhere on a slack message. If you are having a conversation with a team member, you can say for example “Hey @user2 can you please reach out to customer Acme, here's the contact info lookup acme@email.com”, the team member will receive the information needed from that user.
+
+**Try it out now!**
 
 1. [Install the bot](https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/hubspot-slack-bot/api/service/start 'Install the bot CTA_SMALL') for free.
 2. You will need to authorize access to your HubSpot instance and Slack workspace.
