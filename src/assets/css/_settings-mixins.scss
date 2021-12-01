@@ -6,13 +6,13 @@
 }
 
 @mixin blogButton($backgroundColor, $backgroundColorHover) {
-    font-size: 12px;
+    font-size: 16px;
     position: relative;
     display: inline-block;
     text-decoration: none;
     width: fit-content;
-    padding: 0 12px;
-    transform: translateY(-2.2px);
+    padding: 4px 16px;
+    transform: translateY(-1.2px);
     margin: 0 2px;
     background: $backgroundColor;
     line-height: 27px;
