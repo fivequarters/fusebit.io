@@ -100,6 +100,10 @@ a {
             font-family: 'Roboto Mono', monospace;
         }
 
+        span {
+            font-family: inherit;
+        }
+
         .highlight-line:before {
             user-select: none;
             border-right: 1px solid #404040;
