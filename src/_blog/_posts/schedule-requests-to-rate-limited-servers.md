@@ -16,7 +16,7 @@ Either way, if you have a system that makes requests to 3rd Party HTTP APIs in a
 
 Before looking into the possible solutions for mitigating server-side rate limiting, let’s set some context.
 
-### Who’s Getting Rate Limited?
+## Who’s Getting Rate Limited?
 
 On the server-side, load shedding is indiscriminate, that is, it doesn’t matter who is making the request, the server can’t handle it so it will refuse it.
 
@@ -28,7 +28,7 @@ More generally, any SaaS application that offers integrations with 3rd parties w
 
 Any solution we propose should be able to robustly handle the fact that _Customer A_ hit their rate limit quota. It should ensure that all of the HTTP calls to the 3rd party are ultimately successful for _Customer A_. And furthermore, the solution should guarantee that Customers B, C and D will not be negatively impacted by the fact that _Customer A_ was rate limited.
 
-### Retrying HTTP 429 Responses
+## Retrying HTTP 429 Responses
 
 The HTTP specification defines a `Retry-After` response header that can indicate when a client should try again. Some 3rd parties APIs do provide this response header with a 429 response, but many do not. The expectation is that the client will properly implement a backoff retry policy with reasonable delay times. However, even if a 3rd party API does provide a `Retry-After` value, it may not be using a very sophisticated algorithm to determine that `Retry-After` value. If the server is rate-limiting using a [token bucket algorithm](https://en.wikipedia.org/wiki/Token_bucket) it might very well simply return the amount of time before the next token will be available in the bucket. This makes a certain amount sense; the reason the server returned a 429 response is because it doesn’t want to allocate resources to handle the request, so it also wouldn’t want to allocate resources to determine a more accurate `Retry-After` value.
 
@@ -36,7 +36,7 @@ Either way, whether the server includes a `Retry-After` response header, or the 
 
 With all this in mind, let’s consider some possible solutions to scheduling requests against a rate-limited server.
 
-### Some Possible Solutions
+## Some Possible Solutions
 
 One aspect to consider is how much work the solution does to avoid receiving 429s from the server in the first place. We’ll call this the Active/Passive consideration.
 
@@ -59,7 +59,7 @@ A rate limiting solution might be either Active or Passive and either Naive or I
 
 Let’s look at each of these solutions in turn.
 
-### A Passive Naive Solution
+## A Passive Naive Solution
 
 First, let’s start with the *Passive Naive* solution, which is not really a solution at all. It only works well if the problem isn’t really a problem to begin with, that is, if the requests almost never hit any rate limits. If the system receives a 429 with only 0.0001% of requests, then a simple retry mechanism in code that doesn’t rely on any additional infrastructure is reasonable.
 
@@ -75,11 +75,11 @@ Now, the above scenario assumed the retried requests were all retried after the 
 
 This is not a hypothetical argument, but a real learning from Segment’s engineering team, who has built their entire business on queuing and sending requests to 3rd parties. See the section Architecture 2: queues per destination from their [blog post](https://segment.com/blog/introducing-centrifuge/) on how their queue architecture evolved over time.
 
-### A Passive Informed Solution
+## A Passive Informed Solution
 
 A *Passive Informed* solution is a big improvement over the Passive Naive solution. If we consider the 10K request burst scenario, that 11th request that results in the first 429 will essentially block the other 9989 requests from being sent. This means other requests in the system that don’t share the same `rate-limit-key` are not blocked. This alleviates the biggest problem with the Passive Naive solution. After the retry-after delay has elapsed, the 11th request is retried and will succeed, unblocking the other 9989 requests which are sent up until the 21 request results in a 429, and so forth. Overall, the system will send nearly 100 requests that result in 429s. This is, of course, much better than the 5 million 429s that we’d see with a *Passive Naivesolution*.
 
-### An Active Naive Solution
+## An Active Naive Solution
 
 Now, let’s consider an Active Naive solution. With the 10K request burst scenario, the first 10 requests would be sent to the server, but the 11th request would be delayed, because the system is actively monitoring the rate at which it is sending requests and it knows it has reached the rate limit. Other requests with different *rate-limit-keys* would then be sent until the delay for the 11th request of the burst had elapsed. The 11th through 20th requests in the burst would then be sent and the 21st request would again be throttled. This process would continue until all of the requests in the 10k burst had been sent and not a single request will have resulted in a 429 from the server. So clearly the Active Naive solution is the winner, right?
 
@@ -88,7 +88,7 @@ Not so fast.
 The above discussion of the Active Naive solution rests on a false assumption: that the rate limit monitoring of the system is accurate. That will not be the case if the server is receiving requests from others sources that are using the same *rate-limit-key*. If we reconsider the 10K burst scenario again, but with the server receiving 50% of the request limit quota from another source, then the 6th request of the 10K request burst will result in a 429. Because the solution is Naive, it will still send the 7th through 10th requests until the active monitoring informs the system to delay. But now 5 requests resulted in a 429 and ended up in the retry queue. This is actually a similar situation to the one we considered with the Passing Naive solution, and the system will end up retrying a number of requests many times. So while at first glance it might appear that Active Naive solution is better than the Passive Informed solution, it turns out it may not be, because theActive Naive solution’s efficiency will vary greatly depending on how much of the server’s rate limit quota is being consumed by other sources.
 
 
-### An Active Informed Solution
+## An Active Informed Solution
 
 By this point it should be clear that the *Active Informed* solution will be the most efficient of the four, assuming it is properly implemented to throttle a given request if either:
 
@@ -99,7 +99,7 @@ The active rate limit monitoring determined the request will result in a 429, or
 
 Again, not so fast.
 
-### Other Considerations
+## Other Considerations
 
 One thing we haven’t yet considered is the engineering costs of implementing these various solutions. The problem with any Active solution is that you need infrastructure to monitor the outgoing rate of requests. Whether this is done with a token bucket solution or some other algorithm, you will need to track state for every `rate-limit-key` in the system. If you have a large number of `rate-limit-keys`, then the amount of state you are tracking could grow quite large. The same Segment blog post as mentioned above indicates that Segment has as many as 88 thousand different `rate-limit-keys` in their system at any given time.
 

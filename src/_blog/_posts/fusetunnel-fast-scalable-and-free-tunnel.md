@@ -23,7 +23,7 @@ And it’s free!
 
 Compared to ngrok (alternative paid product), Fusetunnel doesn't have rate limiting, so you can send as much traffic as you want through it.
 
-## How does Fusetunnel work? 
+# How does Fusetunnel work? 
 
 Let's say that you have this simple hello world Node.js app:
 

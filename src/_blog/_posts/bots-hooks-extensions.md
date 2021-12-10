@@ -25,10 +25,10 @@ Integrations are also key to retaining your customers longer. [An average mid-si
 
 Making the right technical choices when deciding on the scope and approach to the integration story in your app is key. The rest of this post frames the space and provides an overview of the technical challenges you will need to address along the way.  
 
-## Bots, hooks, extensions - choosing the right integration pattern
+# Bots, hooks, extensions - choosing the right integration pattern
 Integration capabilities come with different names, but they really revolve around a handful of integration patterns. One useful way of categorizing them is to look at the trigger of the integration behavior. Looking from the perspective of your app, there are outgoing, incoming, or scheduled integrations, or a combination thereof. We will look into each of these in turn. 
 
-### Outgoing integrations
+## Outgoing integrations
 In an outgoing integration, your application generates an event that must trigger some action in an external system of your customer. For example, when a new order is created in your application, you need to send a notification to your customer’s Slack workspace or copy that order over to your customer’s Salesforce instance. 
 
 ![Outgoing Integrations Graph](blog-bots-outbound.png "Outgoing Integrations Graph")
@@ -40,7 +40,7 @@ A solution to this seemingly simple integration scenario can quickly snowball in
 - **Throttling:** As your app calls the external system, you will need to observe any throttling limits that the system enforces. You will need to understand the specific quotas and their scope (is it per-tenant, per IP, or something else). 
 - **Retries:** You need to decide how to behave when the call to the external system fails. Such failure can be the result of the system being down, undergoing regular maintenance, or your call rate has exceeded the limits. You need to handle HTTP 429 Retry-After responses properly. You need to consider how to behave in response to HTTP 5xx errors returned from the external system. 
 
-### Incoming integrations
+## Incoming integrations
 With an incoming integration, your application may receive notifications of an event that occurred in an external system of your customer. For example, when a new order was created in the Salesforce instance of your customer, your app can be notified to create a shipping label. Or, one of your users typed a question in their Slack workspace that is sent to your application for processing. 
 
 ![Incoming Integrations Graph](blog-bots-inbound.png "Inbound Integrations Graph")
@@ -54,7 +54,7 @@ The incoming integration scenario has more nuances and technical challenges to a
 - **Throttling:** Unlike in the case of an outgoing integration, this is about protecting your own systems against an inordinate amount of events or any spikes in traffic. You usually want to ensure the number of concurrent requests to your system does not exceed a particular threshold which your app can safely handle. You can rarely rely on a robust implementation or a dependable retry policy of the external system and so often need to resolve to use queues to smooth out traffic within your app. 
 - **Webhook health:** For a variety of reasons, the external system may choose to invalidate or remove your webhook registration. For example, this could happen if your system was down for several hours, a large number of attempted notifications did not make it, and the external system concluded your application was permanently down. When it happens, you will simply stop receiving notifications and will not know whether it is for lack of events or whether your registration is no longer valid. To prevent this, you need to implement proactive checks for the validity of your webhook registration. 
 
-### Scheduled integrations
+## Scheduled integrations
 Scheduled integrations perform an integration logic by calling out to your customer’s application and external system on a schedule, as opposed to being triggered by an event from one of the systems. For example, you may want to reconcile the status of orders in your application and the Salesforce instance of your customer, for every of your customers, at the same time each night. Or move operational logs from your application to Splunk. 
 
 ![Scheduled Integrations Graph](blog-bots-scheduled.png "Scheduled Integrations Graph")
@@ -65,5 +65,5 @@ A good way of thinking about this integration pattern is to combine two outgoing
 - **Identity mapping:** Like in the outgoing integration scenario, you need to understand the mapping between your tenants and the account and credentials to use in the external system. 
 - **Throttling and retries:** This is an interesting problem since in a scheduled integration, you want to perform a very large number of calls to both the external system and your application all at once. To not exceed the throttling limits of the external system and protect your own application against the surge, you need to consider a mechanism to “smooth out” the spike of work. This is often accomplished using queues with defined concurrency levels. 
 
-## About Fusebit
+### About Fusebit
 At [Fusebit](https://fusebit.io), we live and breathe integrations. Our developer-friendly integration platform acts as a broker between your application and the external systems. It solves all the problems described above so that your engineering team can focus on the integration logic specific to your app.

@@ -18,11 +18,11 @@ In the [2019 version of its enterprise integration platform report](https://www.
 
 From the perspective of a SaaS provider, whether you are considering an integration story, or you have already invested in one, here are some of the factors you should consider.
 
-### Business Risk
+## Business Risk
 
 Frequently integrations are the technical implementation of a strategy of building an ecosystem around your product or forging a new key partnership. As a decision maker, you can rarely be certain at the onset of these efforts, whether they will ultimately work out. At the same time, staffing an integration team and developing the required skillsets can be a multi-month project, frequently wrought with false starts and technical risk. In cases like these, where the payoff on your integration investment is uncertain, it's generally unwise to burn through expensive internal development resources. An integration platform player can be a great choice here, given the quick implementation timeframe and low cost compared to staffing up a team. This approach allows you to quickly test the potential of partnerships or ecosystem effects, with a relatively quick time to market, without unnecessarily straining your engineering budget.
 
-### Differentiation
+## Differentiation
 
 Another important consideration here is your product's strategic differentiation. Integrations are frequently a table-stakes feature that your customers expect, so your product can seamlessly fit into their existing workflows and tool chains. At the same time, integrations are rarely your team's core competency where you want to acquire deep expertise.
 
@@ -30,7 +30,7 @@ Another important consideration here is your product's strategic differentiation
 
 These dynamics usually favor a buy not build outcome. Unless integration is your bread-and-butter, and you have the budget and determination to build and evolve your integrations engineering team over a 3-5 year timeframe, you are likely better off leveraging an integration platform, at least in the short term.
 
-### User Experience
+## User Experience
 
 Most integration platform players exist as stand-alone tools and a user needs to create a separate account in order to set up an integration between two SaaS products. If your integration is for internal use, and your team is the customer (for example flowing marketing data from Typeform to Mailchimp), this may be acceptable. However if your customer is the end user of the integration (flowing data from your SaaS to Mailchmp), that can become problematic. The added friction of dealing with a third-party solution may discourage your customers from creating the integration in the first place, which reduces the stickiness of your own solution. In addition, introducing another company to the business relationship with your customer may present a challenge when closing sales and contention over your customer's spend. In the [words of Benoit Lheureux, VP at Gartner](https://searchcloudcomputing.techtarget.com/feature/Why-SaaS-application-integration-requires-new-strategies-tools):
 
@@ -38,7 +38,7 @@ Most integration platform players exist as stand-alone tools and a user needs to
 
 Fortunately, this doesn't mean that you need to abandon integration platforms altogether; many vendors provide **embedded white-label solutions** that become a seamless part of your own SaaS product, don't require a separate account, and are basically indistinguishable from your own code to your customers.
 
-### Integration Complexity and Versatility
+## Integration Complexity and Versatility
 
 Every SaaS product is unique, and frequently the specifics of the use-case determine the complexity of integrations. In some simple cases (send a Slack notification or email when something happens in the SaaS), the integrations can be fairly straightforward, but as the data exchange gets more complex, so do the integrations. Examples include mapping and transforming data between systems, getting data from multiple sources, communicating with custom or legacy APIs, customer-specific customizations, etc.
 
