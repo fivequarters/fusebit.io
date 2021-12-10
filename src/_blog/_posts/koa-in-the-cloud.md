@@ -11,7 +11,7 @@ post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-koa-social-card.png
 ---
 
-# Express or Koa? 
+## Express or Koa? 
 
 Most developers using Node.js are using frameworks to improve productivity, scalability, and speed of application development, facilitate quick prototyping, and automate processes with the help of libraries, templates, and reusable components.
 

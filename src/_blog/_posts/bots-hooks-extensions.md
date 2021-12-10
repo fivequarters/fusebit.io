@@ -25,7 +25,7 @@ Integrations are also key to retaining your customers longer. [An average mid-si
 
 Making the right technical choices when deciding on the scope and approach to the integration story in your app is key. The rest of this post frames the space and provides an overview of the technical challenges you will need to address along the way.  
 
-# Bots, hooks, extensions - choosing the right integration pattern
+## Bots, hooks, extensions - choosing the right integration pattern
 Integration capabilities come with different names, but they really revolve around a handful of integration patterns. One useful way of categorizing them is to look at the trigger of the integration behavior. Looking from the perspective of your app, there are outgoing, incoming, or scheduled integrations, or a combination thereof. We will look into each of these in turn. 
 
 ## Outgoing integrations

@@ -36,7 +36,7 @@ One item to note about the “lookup” keyword is that it can be placed anywher
 
 Once you have the example running, you may wish to customize it to your needs, including modifying HubSpot search or how the data is displayed. Read on to learn how. 
 
-# Create New Integration
+## Create New Integration
 
 First, [sign up to Fusebit for free](https://manage.fusebit.io/?key=e2e-hubspot-slack-bot). 
 
