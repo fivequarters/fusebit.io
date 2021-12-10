@@ -11,7 +11,7 @@ post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-koa-social-card.png
 ---
 
-# Express or Koa? 
+## Express or Koa? 
 
 Most developers using Node.js are using frameworks to improve productivity, scalability, and speed of application development, facilitate quick prototyping, and automate processes with the help of libraries, templates, and reusable components.
 
@@ -24,13 +24,15 @@ Two of the most popular frameworks are Express and Koa.
 Even though Express has been called the de facto standard server framework for Node.js and it's the most popular one with [18 million weekly downloads](https://www.npmjs.com/package/express), Koa is rapidly growing in popularity with [1.2 million weekly downloads](https://www.npmjs.com/package/koa) because it's lightweight, has great user experience and [superior performance](https://www.fastify.io/benchmarks/) (37K req/sec vs. 10K req/sec of Express).
 ![Benchmark Koa and Express](blog-performance-koa-express.png "Benchmark Koa and Express")
 
-# Why Use Serverless? 
+## Why Use Serverless? 
+
 Serverless is a cloud execution model that enables a more straightforward, cost-effective way to build and operate cloud-native applications. The application owner does not purchase, rent, manage, or provision the servers in this cloud architecture. Instead, the cloud provider manages the infrastructure side of things for the applications.
 
 Despite the name, serverless apps do not run without servers 😂. It means that businesses don't need to manage the server-side of the equation and operational concerns, and instead focus on development.
 
 The most significant advantage of this architecture is that the provisioning of servers is done dynamically to meet the real-time computing demand. That is, you pay only for what you use. The same could be said about running monolithic applications on VMs behind an Auto Scaling Group, which was available for years before serverless. The key change in serverless is also the change in the scope of the unit of deployment, from a monolithic app to a single function. 
-# Running Express on AWS Lambda
+
+## Running Express on AWS Lambda
 
 The following code is a basic example of an Express application:
 
@@ -81,7 +83,7 @@ module.exports.handler = serverless(app);
 ```
 Finally, to deploy the application on AWS Lambda, you can install the [serverless framework](https://www.npmjs.com/package/serverless) that allows you to do the heavy-lifting of deploying a serverless app, instead of manually using an API Gateway and AWS Lambda, because it can be a tedious job.
 
-# Running Koa on AWS Lambda
+## Running Koa on AWS Lambda
 
 Here is how the same express code looks like in Koa:
 
@@ -154,5 +156,5 @@ module.exports.handler = serverless(app);
 
 Now your Koa app will be ready to run in a serverless environment. 
 
-## Before you go…
+### Before you go…
 If you want to build awesome integrations for your application without the hassle, visit [fusebit.io](https://fusebit.io/). Fusebit is written using Node.js and Koa, and our code-first integration platform and SaaS connectors remove the headaches of dealing with different APIs and eliminate the operational burden when running at scale.

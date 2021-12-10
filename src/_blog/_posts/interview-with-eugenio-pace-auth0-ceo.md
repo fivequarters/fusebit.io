@@ -12,13 +12,13 @@ post_date_in_url: true
 
 We spoke with Eugenio Pace, the co-founder and CEO of [Auth0](https://auth0.com/), to get the scoop on his company's approach to integrations. Eugenio started Auth0 with Matias Woloski in 2013 to make identity management simple for developers. The phenomenal growth of the company led to Auth0 reaching unicorn status in 2019. We asked Eugenio what role integrations have played during this journey.
 
-### What does Auth0 do?
+## What does Auth0 do?
 
 Auth0 is a tech company that provides an authentication and authorization service for application builders: software developers and architects, product owners, security engineers. For anyone building an application that needs to identify legitimate users and decide what those users can do.
 
 We are a global company with 500 employees in five locations around the world, helping more than 7,000 customers.
 
-### What is the business value of integrations in your platform?
+## What is the business value of integrations in your platform?
 
 We seldom work with greenfield or "built from scratch" systems. Our customers almost always work with projects in which pre-existing systems are present, so we needed an easy way to embrace this reality.
 
@@ -26,11 +26,11 @@ We seldom work with greenfield or "built from scratch" systems. Our customers al
 
 We've decided to offer outstanding capabilities to make integrating Auth0 platform with external systems easy. Our scripting extensibility features allow any developer to quickly close the gap between our service and any other API they need to exchange data with. We call it the last mile connections.
 
-### What purpose do integrations serve in your product?
+## What purpose do integrations serve in your product?
 
 Most of the time, our customers integrate with legacy systems or exchange data with specialized APIs. Some examples are logging or entitlements services, event notifications, or 3rd party MFA providers.
 
-### What is your approach to implementing integrations?
+## What is your approach to implementing integrations?
 
 It is multifaceted.
 
@@ -44,7 +44,7 @@ In the more advanced cases, we offer the ability to write Node.js code that exte
 
 ![Auth0 Rules](blog-interview-auth0-rules.png 'Auth0 Rules')
 
-### Historically, was there a breakthrough improvement in your integration story that had the most impact?
+## Historically, was there a breakthrough improvement in your integration story that had the most impact?
 
 It was allowing customers to write their code and run it in a sandbox on our servers. As opposed to just exposing webhooks, this approach removed the need for hosting, deployment, management, etc. We have the equivalent of an "Excel Macro" that runs on our servers in a secure, scalable way.
 
@@ -52,11 +52,11 @@ It was allowing customers to write their code and run it in a sandbox on our ser
 
 Over time, as we learn more about what our customer and field teams are building, we add common patterns and solutions to the core product.
 
-### What challenges remain in your integration story today?
+## What challenges remain in your integration story today?
 
 One ongoing challenge is deciding what gets "in the box" and what remains as an "exercise for the reader." Another is perception. When a customer asks for a specific integration that is not in the gallery, and we deliver it using our code extensibility features, it is sometimes perceived as "not supported."
 
-### Any words of wisdom for a SaaS vendor implementing their integration story today?
+## Any words of wisdom for a SaaS vendor implementing their integration story today?
 
 As we did at [Auth0](https://auth0.com/), I believe that...
 
