@@ -8,7 +8,7 @@ post_excerpt: Create the flexible and customizable integrations between Linear a
 post_slug: customize-linear-slack-notifications
 tags: ['post', 'integrations']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/bots-linear-slack-social-card.png
+post_og_image: https://fusebit.io/assets/images/blog/blog-linear-slack-social-card.png
 ---
 
 If you are a software developer, you can build flexible and customizable integrations between Linear and Slack using Fusebit. These integrations can be as complex as summarizing the status and updates of all the Linear issues in your Slack workspace or as simple as sending a congratulations message in Slack when you complete a new issue in Linear.
