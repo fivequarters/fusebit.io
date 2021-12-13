@@ -5,7 +5,7 @@ post_author_avatar: liz.png
 date: '2021-12-13'
 post_image: blog-linear-and-slack-main.jpg
 post_excerpt: Create the flexible and customizable integrations between Linear and Slack using Fusebit.
-post_slug: 
+post_slug: customize-linear-slack-notifications
 tags: ['post', 'integrations']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/bots-linear-slack-social-card.png
