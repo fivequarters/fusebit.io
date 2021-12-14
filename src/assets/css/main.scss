@@ -44,6 +44,12 @@
     @import '_page__careers--join';
 }
 
+.integrations {
+    @import '_page__integrations--hero';
+    @import '_page__integrations--gallery';
+    @import '_page__integrations--footer';
+}
+
 .blog {
     @import '_page__blog-base';
     @import 'component-post-card';

@@ -1,0 +1,15 @@
+mixin item(img, highlightText, text)
+    .description__item
+        .description__item-img-container
+            img(src=img)
+        p.text.description__item-text
+            span= highlightText
+            = text
+
+section.section
+    .background.background--white
+        .mark.mark--small.mark--dark-violet.mark--left.description__mark-top
+        .mark.mark--small.mark--dark-violet.mark--right.mark--bottom.description__mark-bottom.description__mark-bottom-desktop
+        .mark.mark--big.mark--light-violet.mark--right.mark--bottom.description__mark-bottom.description__mark-bottom-mobile
+    .layout.description__layout
+        .description__main-text-container

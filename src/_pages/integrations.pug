@@ -1,0 +1,16 @@
+extends ../_layouts/default.pug
+
+block seo_variables
+    - var title = 'Integrations - Fusebit'
+
+block page_variable
+    - var pageClass = 'integrations'
+
+block content
+    include ../_components/Integrations/Hero/hero
+    include ../_components/Integrations/Gallery/gallery
+    include ../_components/Integrations/Footer/footer
+
+block scripts
+    script.
+        analytics.page('Integrations Index', { objectLocation: 'Integrations Index', domain: 'fusebit.io' });

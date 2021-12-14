@@ -1,0 +1,98 @@
+.join {
+    position: relative;
+    z-index: 0;
+
+    &__layout {
+        padding-bottom: 127px;
+
+        @media (max-width: 576px) {
+            padding-bottom: 83px;
+        }
+    }
+
+    &__mark {
+        @include mark-offset(330px, 85px);
+    }
+
+    &__mark-desktop {
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__mark-mobile {
+        display: none;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    &__info-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        max-width: 551px;
+        margin-bottom: 32px;
+
+        @media (max-width: 576px) {
+            text-align: center;
+        }
+    }
+
+    &__text {
+        max-width: 672px;
+        opacity: 0.6;
+        margin-bottom: 32px;
+        text-align: center;
+    }
+
+    &__cta {
+        width: 261px;
+
+        @media (max-width: 576px) {
+            width: 203px;
+        }
+    }
+
+    &__avatar {
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+
+    &__avatar-1 {
+        position: absolute;
+        left: -168px;
+        top: 116px;
+    }
+
+    &__avatar-2 {
+        position: absolute;
+        top: 29px;
+        left: -92px;
+    }
+
+    &__avatar-3 {
+        position: absolute;
+        top: -64px;
+        right: -81px;
+    }
+
+    &__avatar-4 {
+        position: absolute;
+        top: 132px;
+        right: -120px;
+    }
+}
