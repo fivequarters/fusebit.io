@@ -11,7 +11,7 @@ post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-linear-slack-social-card.png
 ---
 
-If you are a software developer, you can build flexible and customizable integrations between Linear and Slack using Fusebit. These integrations can be as complex as summarizing the status and updates of all the Linear issues in your Slack workspace or as simple as sending a congratulations message in Slack when you complete a new issue in Linear.
+As a software developer, you can build flexible and customizable integrations between Linear and Slack using Fusebit. These integrations can be as complex as summarizing the status and updates of all the Linear issues in your Slack workspace or as simple as sending a congratulations message in Slack when you complete a new issue in Linear.
 
 For example, receiving the following Slack message:
 
@@ -43,19 +43,17 @@ const { Integration } = require('@fusebit-int/framework');
 const integration = new Integration();
 
 const slackConnector = 'slack-connector';
-Const slackChannel = 'liz-linear-bot';
+const slackChannel = 'liz-linear-bot';
 
 integration.event.on('/:componentName/webhook/:eventtype', async (ctx) => {
   if (ctx.params.eventtype === 'Issue.update' && ctx.req.body.data.data.state.name === 'Done') {
     const slackClient = await integration.service.getSdk(ctx, 'slack-connector-1', ctx.req.body.installIds[0])
-    console.log(ctx.req.body.data)
     const result = await slackClient.chat.postMessage({
     text: `Congratulations, ${ctx.req.body.data.data.assignee.name} for completing ${ctx.req.body.data.data.title} issue!`,
     channel: slackChannel,
   });
 
   }
-  console.log(ctx.params.eventtype)
 });
 
 module.exports = integration;
