@@ -64,3 +64,44 @@ block scripts
     script.
         analytics.page('Blog Post', { objectLocation: 'Blog Post', domain: 'fusebit.io' });
 
+        function animateCopy(evt) {
+            if (evt.target.classList.value.indexOf("copied") < 0) {
+                evt.target.innerHTML = "Copied!";
+                evt.target.classList.add("copied");
+                setTimeout(function() { 
+                    evt.target.innerHTML = "Copy";
+                    evt.target.classList.remove("copied");
+                }, 2000);
+            }
+        }
+
+        function handleCopyClick(evt) {
+            const { children } = evt.target.parentElement;
+            const { innerText } = Array.from(children)[0];
+            navigator.clipboard.writeText(innerText);
+            animateCopy(evt);
+        }
+    
+        const highlights = document.querySelectorAll("pre");
+
+        highlights.forEach(codeBlock => {
+            const copy = document.createElement("button");
+            copy.innerHTML = "Copy";
+            copy.addEventListener("click", handleCopyClick);
+            codeBlock.append(copy);
+        });
+        
+        const links = document.querySelectorAll('a');
+        links.forEach((link) => {
+            const title = link.title;
+            if (title.indexOf("CTA") > 0) {
+                const buttonSize = title.indexOf("SMALL") > 0 ? "Small" : "Large";
+                
+                analytics.trackLink(link, "Blog Post Button Clicked", {
+                    objectLocation: "Blog",
+                    domain: 'fusebit.io',
+                    buttonSize,
+                });
+            }
+        });
+
