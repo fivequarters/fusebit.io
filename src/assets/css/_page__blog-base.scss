@@ -106,8 +106,31 @@ a[title~='CTA_LARGE'] {
     }
 
     code {
-        font-family: monospace;
+        font-family: 'Roboto Mono', monospace;
         font-size: 16px !important;
+
+        .token {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        span {
+            font-family: inherit;
+        }
+
+        .highlight-line:before {
+            user-select: none;
+            border-right: 1px solid #404040;
+            color: #858585;
+            content: counter(lineNumber);
+            counter-increment: lineNumber;
+            display: inline-block;
+            font-variant-numeric: tabular-nums;
+            font-family: 'Roboto Mono', monospace;
+            margin-right: 15px;
+            padding-right: 20px;
+            text-align: right;
+            width: 10px;
+        }
     }
 
     p {
@@ -124,6 +147,7 @@ a[title~='CTA_LARGE'] {
         border-radius: 8px !important;
         margin: 30px 0 !important;
         padding: 24px !important;
+        counter-reset: lineNumber;
     }
 
     ol,
