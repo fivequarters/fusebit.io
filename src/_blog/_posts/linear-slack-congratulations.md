@@ -19,6 +19,10 @@ For example, receiving the following Slack message:
 
 (If instead of Linear you use GitHub or GitLab, you can go to the last section).
 
+You can this integration clicking below:
+
+[Run the integration](https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/linear-slack-notification/api/service/start 'Install the integration CTA_LARGE')
+
 ## How does the integration work?
 
 First, [sign up or login](https://manage.fusebit.io/) to your Fusebit account and click on the “New integration” button.
@@ -47,7 +51,7 @@ const slackChannel = 'liz-linear-bot';
 
 integration.event.on('/:componentName/webhook/:eventtype', async (ctx) => {
   if (ctx.params.eventtype === 'Issue.update' && ctx.req.body.data.data.state.name === 'Done') {
-    const slackClient = await integration.service.getSdk(ctx, 'slack-connector-1', ctx.req.body.installIds[0])
+    const slackClient = await integration.service.getSdk(ctx, slackConnector, ctx.req.body.installIds[0])
     const result = await slackClient.chat.postMessage({
     text: `Congratulations, ${ctx.req.body.data.data.assignee.name} for completing ${ctx.req.body.data.data.title} issue!`,
     channel: slackChannel,
