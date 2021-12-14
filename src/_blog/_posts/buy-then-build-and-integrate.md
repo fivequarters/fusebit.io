@@ -12,7 +12,7 @@ post_date_in_url: true
 
 It is 2019. A 250 person company uses an average of 123 SaaS applications, and replaces 39% of them every two years. As a SaaS vendor, how do you convert and retain your customers in this environment?
 
-### How companies are using SaaS in 2019
+## How companies are using SaaS in 2019
 
 According to [Blissfully’s Annual SaaS Report](https://www.blissfully.com/saas-trends/2019-annual/), companies between 250-500 employees use an average of 123 SaaS applications. This number increases to 151 apps for companies over 500 employees, but even small businesses under 50 employees use on average 40 SaaS applications.
 
@@ -26,7 +26,7 @@ Forrester identified this new software consumption model in its [Buy then Build:
 
 Forrester observes that SaaS is fundamentally changing the way companies are making software procurement decisions. Most companies realize that no single software solution is going to fit their specific requirements exactly and completely. They choose to buy a collage of solutions that each swork very well for specific aspects of their operations and assume they will need to build an integration layer between them to support their unique business processes end to end.
 
-### SaaS turnover
+## SaaS turnover
 
 The same 250-500 employee company that uses 123 SaaS applications to support its business will replace a staggering 39% of them over a two year period, according to Blissfully. The number goes up to 46% for smaller companies.
 
@@ -34,7 +34,7 @@ The same 250-500 employee company that uses 123 SaaS applications to support its
 
 There are multiple reasons for this high turnover rate. Once companies embrace the _buy then build_ mindset, they are much more open to change and experimentation in order to better support their business processes. The cost structure of SaaS and the prevalence of freemium and trial offerings further reduce barriers to experimentation.
 
-### As a SaaS vendor, how do you survive?
+## As a SaaS vendor, how do you survive?
 
 How do you operate effectively in the environment where your platform is just one of many, and the turnover rate is very high? Offering the best-in-class solution for a specific problem is becoming table stakes and is no longer enough to ensure continued success.
 
@@ -44,7 +44,7 @@ Given the number of SaaS applications in an average company ecosystem and the ne
 
 Robust integration and customization mechanisms are also an effective strategy SaaS vendors can lean on to fight the high turnover rate in their customer’s portfolio. Once a SaaS platform is customized and integrated with the ecosystem, it becomes much less likely to be removed or replaced. Auth0, an identity platform provider, has seen retention rates 10x higher among customers who customized and integrated the solution compared to those who did not.
 
-### How easy is it to integrate your SaaS?
+## How easy is it to integrate your SaaS?
 
 Strong integration and customization story is central to your SaaS survival in the buy, build, and integrate era. You cannot afford to send your customers to other vendors to solve the integration problem.
 
