@@ -64,5 +64,17 @@ block scripts
     script.
         analytics.page('Blog Post', { objectLocation: 'Blog Post', domain: 'fusebit.io' });
 
-        
+        const links = document.querySelectorAll('a');
+        links.forEach((link) => {
+            const title = link.title;
+            if (title.indexOf("CTA") > 0) {
+                const buttonSize = title.indexOf("SMALL") > 0 ? "Small" : "Large";
+                
+                analytics.trackLink(link, "Blog Post Button Clicked", {
+                    objectLocation: "Blog",
+                    domain: 'fusebit.io',
+                    buttonSize,
+                });
+            }
+        });
 
