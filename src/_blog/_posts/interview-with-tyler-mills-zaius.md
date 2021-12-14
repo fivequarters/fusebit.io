@@ -12,7 +12,7 @@ post_date_in_url: true
 
 We spoke with Tyler Mills, Product Manager at [Zaius](https://zaius.com/), to get the scoop on his company's approach to integrations. We asked Tyler what role integrations have played during their journey.
 
-### What does Zaius do?
+## What does Zaius do?
 
 Zaius is a [B2C CRM](https://www.zaius.com/crm-platform) that collects and connects all customer, product, and web data to create a personal profile of each customer enabling hyper-personalized cross-channel marketing campaigns.
 
@@ -20,7 +20,7 @@ Zaius stitches together customer data using a proprietary user resolution proces
 
 The majority of Zaius clients are ecommerce companies selling products to consumers (B2C). As a result, they see immense value in a solution that connects to their existing ecommerce platform (e.g. Shopify, Magento), support platform (e.g. Zendesk), customer-focused add-ons (e.g. Loyalty Programs, Lead Capture Forms), and ad channels (e.g. Google, Facebook) so they can create highly targeted marketing based on the consolidated data set within Zaius.
 
-### What is the business value of integrations in your product?
+## What is the business value of integrations in your product?
 
 > Zaius integrations make it easier to close deals, reduce the time required to onboard, increase the stickiness of the product, and improve core functionality by enabling new use cases for marketers.
 
@@ -28,7 +28,7 @@ When we launched our first integrations, we saw an immediate increase in the rat
 
 Because many of our integrations are "one-click" and require limited setup, they reduce the amount of onboarding effort required by our Customer Success team. For clients with custom or proprietary implementations, integrations still provide immense value in reducing onboarding cost at the edge by integrating with their secondary solutions (e.g. surveys, support tickets). Additionally, even when clients span sectors (e.g. travel vs. clothing), and as a result have very unique data sets, Zaius' integrations enable extensibility of the data model for each brand ensuring any use case can be addressed.
 
-### What purpose do integrations serve in your product?
+## What purpose do integrations serve in your product?
 
 Many of our integrations allow clients to import customer activity like orders, opening a ticket, visiting a website, opening a mobile app, as well as company data like Products or subscriptions.
 
@@ -42,7 +42,7 @@ We believe it should be as simple to get data out of Zaius as it is to get data 
 
 Closing the loop of data in and data out integrations produces millions of data points that allow frequent and consistent improvement of our machine learning model. That allows Zaius users to be better at their job due to the fact that the data and channels are not siloed to a single team within their company or to a single set of services that they utilize outside of Zaius.
 
-### What is your approach to implementing integrations?
+## What is your approach to implementing integrations?
 
 As of today, the majority of integrations are built by Zaius and Zaius contractors, but the goal is to open up the creation of these integrations to external developers as we build out the proper tooling for our partners.
 
@@ -54,7 +54,7 @@ Zaius will automatically scale to manage short-running tasks like webhooks and l
 
 To ensure that marketers are provided a consistent user experience across apps, Zaius will auto-generate the setup forms for each app provided a simple form definition, ensuring that marketers can simply configure app settings in the Zaius UI without requiring an integration developer having to manage a complete front-end configuration form.
 
-### What challenges remain in your integration story today?
+## What challenges remain in your integration story today?
 
 > A big priority for us is ensuring that all integration experiences are consistent and do not require training.
 
@@ -62,7 +62,7 @@ It's much simpler to let all integrations simply "dump" data into Zaius as-is, b
 
 Another challenge is driving demand for developers to invest in integrations built on top of the Zaius platform. However, we strongly believe that investing in a developer-first mentality and providing a strong developer-centric featureset will provide confidence in enterprise businesses to invest in the Zaius platform, which will also drive partner demand to simplify the integration experience for mutual clients.
 
-### How do you see the role of integrations evolve going forward given the SaaS ecosystem trends?
+## How do you see the role of integrations evolve going forward given the SaaS ecosystem trends?
 
 The companies that invest in extensibility as a core aspect of their product are the most likely to be set up for long-term success. It's often simpler to defer to an integration's functionality than to build the functionality natively with your internal engineering resources.
 
@@ -70,6 +70,6 @@ The companies that invest in extensibility as a core aspect of their product are
 
 In the marketing industry there are nearly 10,000 martech solutions. Any product without extensibility that tries to build to the common use cases of a marketer risk becoming a "checklist" product of features without any depth to functionality as they become more and more limited by the constraints of their engineering team.
 
-### Any words of wisdom for a SaaS vendor implementing their integration story today?
+## Any words of wisdom for a SaaS vendor implementing their integration story today?
 
 Extensibility is becoming a requirement to success. Don't hesitate to make integrations and extensibility a priority. From small businesses to large enterprises, integrating with an existing ecosystem of tools provides new pipeline, strengthens retention, and reduces the risk of product teams on spreading themselves too thin trying to build to every single use case.

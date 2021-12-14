@@ -36,7 +36,7 @@ One item to note about the “lookup” keyword is that it can be placed anywher
 
 Once you have the example running, you may wish to customize it to your needs, including modifying HubSpot search or how the data is displayed. Read on to learn how.
 
-# Create New Integration
+## Create New Integration
 
 First, [sign up to Fusebit for free](https://manage.fusebit.io/?key=e2e-hubspot-slack-bot).
 
@@ -48,8 +48,7 @@ You can edit the code of the Integration by hitting the Edit button in the middl
 
 ![Edit Integration](blog-slack-bot-hubspot-edit.png 'Edit Integration')
 
-### Test the Integration
-
+## Test the Integration
 We can invoke the `test` method of this integration right from inside the editor to see how this works, but we first need to configure a test request passing the HubSpot email to look up:
 
 ![Configuration slack bot](blog-slack-bot-hubspot-config.png 'Configuration slack bot')
@@ -82,9 +81,8 @@ You should also see a message in Slack with the search result.
 
 Feel free to modify the `hubSpotClient.crm.contacts.searchApi.doSearch` (line 54) and `slackClient.chat.postMessage` (line 65) calls in the `lookupAndPost` method to customize what your bot does. If you want to have custom properties, you can change it in the line 40 in `properties`.
 
-### Enabling search from Slack
-
-So far we’ve tested this integration from inside Fusebit using the Run button. However we really want to be able to start the search from inside Slack by sending a “lookup” command.
+## Enabling search from Slack
+So far we’ve tested this integration from inside Fusebit using the Run button. However we really want to be able to start the search from inside Slack by sending a “lookup” command. 
 
 1. In the Fusebit portal, select the Slack connector. You will need to create your own Slack application to be able to receive Slack events. [Follow our developer guide](https://developer.fusebit.io/docs/slack#receiving-events-from-slack-event-api-support) to see how.
 2. You will need to go to the integration Installs tab and delete any existing installs after you switch over to your own Slack application, and you will have to re-authenticate.

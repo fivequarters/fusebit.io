@@ -13,7 +13,7 @@ post_og_image: 'site'
 
 Are you looking for an integration platform for your SaaS application that supports multi-tenancy (your users or customers)? 
 
-# New SaaS Development
+## New SaaS Development
 
 Developing a new SaaS product can take hundreds or even thousands of hours between designers, developers, managers, and other key stakeholders. Building rich, high-value integrations for your customers from scratch takes a lot of time and optionally requires many moving parts.
 
@@ -21,7 +21,7 @@ But the work isn't done once you're able to provide a critical service to the cu
 
 What's your approach to leveraging this tremendous growth engine for your company? This post will cover the options, their organizational impact and give you a framework for making that decision for your company. There are only a few approaches available with integrations, and the choices you make now could have ramifications years into the future.
 
-# What are my options with integrations?
+## What are my options with integrations?
 
 Let's say that you are building a budget SaaS app called 'Budgetly', and you realize that you need a way to send custom messages to your customers. Janet, Budgetly's CTO, is looking for a different integration approach. There are a few approaches available:
 
@@ -29,7 +29,7 @@ Let's say that you are building a budget SaaS app called 'Budgetly', and you rea
 2. Build your own integration 
 3. Get an integration tool
 
-## No integration - Build the feature
+### No integration - Build the feature
 
 For many companies, it makes sense to build features inside your application instead of creating an integration with an external tool. For example, if you need a customer chat widget inside Budgetly to provide fast support to your customers, it can take approximately between 2 to 4 weeks to build.
 
@@ -43,7 +43,7 @@ If you answered "no" to all of these questions, then build the feature! Your cus
 
 But, if you answered yes to either of them, keep reading…
 
-## Build your own integration 
+### Build your own integration 
 
 This approach consists of having your engineering team build an integration with an external messaging platform, for example, building an integration between Budgetly and [Slack](https://go.fusebit.io/slack/).
 
@@ -67,7 +67,7 @@ If you answered "yes" to all of these questions, then build your own integration
 
 But, if you answered "no" to either of them, keep reading…
 
-## Get an integration Partner
+### Get an integration Partner
 
 Managing data across platforms can be a slow process, complex, and challenging to scale. Having an integration platform to handle data mobility across applications can be a good approach for you, so you can focus on what really matters for your company and, ultimately, your customers.
 
@@ -93,11 +93,11 @@ If you answered “no”, to all the questions above, then a no-code integration
 
 Janet concluded that her main concern was to provide integrations to multiple tenants and that her integration needed to be used at scale in the future. The no-code integration solutions wouldn't allow her to accomplish this, so she kept reading... 
 
-## What is my solution with code integrations?
+### What is my solution with code integrations?
 
 Finally, Janet decided not to own the integration end-to-end but instead work with a partner to focus on their value-add to their customers.  
 
 Fusebit was built for developers by developers to build awesome integrations that allow you to customize, have deeply embedded and highly specialized integrations, and be used at scale with multiple tenants. Our code-first integration platform and SaaS connectors eliminate the headaches of dealing with different APIs, auth implementation, and the operational burden when running at scale.
 
-# Learn more about code integrations
+## Learn more about code integrations
 Do you want to build awesome code-first integrations for your application without the hassle? Sign up for [Fusebit](https://fusebit.io/) now and try building your first integration for free.
