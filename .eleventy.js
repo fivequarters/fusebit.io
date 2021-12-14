@@ -63,7 +63,9 @@ module.exports = function (eleventyConfig) {
         'node_modules/lodash.shuffle/index.js': 'assets/vendor/shuffle.js',
     });
 
-    eleventyConfig.addPlugin(syntaxHighlight);
+    eleventyConfig.addPlugin(syntaxHighlight, {
+        alwaysWrapLineHighlights: true,
+    });
 
     eleventyConfig.setBrowserSyncConfig({
         server: {
