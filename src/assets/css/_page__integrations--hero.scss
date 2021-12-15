@@ -60,24 +60,40 @@
         position: relative;
         margin-right: 100px;
 
-        &--line {
+        &-line {
             width: 2px;
             height: 90%;
             margin-right: 31px;
-            background-color: #4C4E6E;
+            background-color: #4c4e6e;
             position: absolute;
             left: 0;
             top: 5%;
         }
+    }
 
-        &--item {
-            display: flex;
-            flex-direction: column;
+    &__item {
+        display: flex;
+
+        p {
             margin-left: 31px;
+        }
 
-            &:not(:last-child) {
-                margin-bottom: 32px;
-            }
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }
+
+        &-icon-wrapper {
+            border-radius: 50%;
+            transform: translateX(calc(-50% + 1px));
+            position: absolute;
+            left: 0;
+            padding: 3px;
+            background: #04093F;
+        }
+
+        &-icon {
+            width: 10px;
+            height: 10px;
         }
     }
 }

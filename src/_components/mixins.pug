@@ -17,7 +17,9 @@ mixin cta(text, href, className, id, trackWithSegment, name, location, disableAr
             +ctaArrow
 
 mixin avatar(size, background, img, className)
-    .avatar(style=("width:" + size + ";height:" + size + ";background:" + background + ";background-image:url(" + img + ")") class= className)
+    - const _img = img ? ";background-image: url(" + img + ")" : ''
+    .avatar(style=("width:" + size + ";height:" + size + ";background:" + background + _img) class= className)
+        block
 
 mixin postCard(href, img, date, title, excerpt, className)
     a.post-card(href= `/${href.replace('.html', '')}` class= className)
