@@ -172,3 +172,25 @@ And this is how you can do it with a video located locally (poster is not requir
   </video>
 </figure>
 ```
+
+### How to add button links and normal links?
+
+For a normal link, just add it like so:
+
+```
+[Your Text](https://yourlink.com)
+```
+
+For a button link, there are two size options, small and large.
+
+To add a small button link, add a title with the word `CTA_SMALL`:
+
+```
+[Your Text](https://yourlink.com 'Install the integration CTA_SMALL')
+```
+
+To add a large button link, add a title with the word `CTA_LARGE`:
+
+```
+[Your Text](https://yourlink.com 'Install the integration CTA_LARGE')
+```
