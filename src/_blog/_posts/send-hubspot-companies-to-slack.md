@@ -3,7 +3,7 @@ post_title: Send HubSpot Companies to Slack!
 post_author: Liz Parody
 post_author_avatar: liz.png
 date: '2021-12-15'
-post_image: blog-hubspot-to-slack-social.png
+post_image: blog-hubspot-to-slack-main.png
 post_excerpt: There are hundreds of data integrations you can do between HubSpot and Slack. One of them is to send the number of HubSpot companies to a Slack channel.
 post_slug: send-hubpsot-companies-to-slack
 tags: ['post', 'integrations']
@@ -18,8 +18,12 @@ With just a few steps and lines of code, you can easily create it!
 1. Click [Install the integration](https://stage-manage.fusebit.io/make/slack-send-message+hubspot-crud-companies 'Install the integration CTA_SMALL') to get started
 2. Create an account or login to Fusebit
 3. You will be redirected to the Fusebit web editor with already most of the code you need. ![HubSpot Slack Snippet](blog-hubspot-to-slack-snippet.png "HubSpot Slack Snippet")
-4. Now, let’s fetch HubSpot companies, we can do this with one line of code: `const companies = await hubspotGetCompanies(ctx);` in line 16 (inside `integration.router.post`)
-5. Send the new message to Slack with `await slackSendMessage(ctx, `You have ${companies.length} companies in HubSpot`)` in line 19 (or any other message of your preference).
+4. Now, let’s fetch HubSpot companies, we can do this with one line of code: 
+`const companies = await hubspotGetCompanies(ctx);` 
+in line 16 (inside `integration.router.post`)
+5. Send the new message to Slack with 
+`await slackSendMessage(ctx, `You have ${companies.length} companies in HubSpot`)` 
+in line 19 (or any other message of your preference).
 6. In addition to sending the message directly within Slack you can also send it in the response body. Change what’s inside of the `ctx.body` to `companies: companies.length` and that’s it!
 
 **Run the Integration**
