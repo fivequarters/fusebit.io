@@ -19,10 +19,10 @@ With just a few steps and lines of code, you can easily create it!
 2. Create an account or login to Fusebit
 3. You will be redirected to the Fusebit web editor with already most of the code you need. ![HubSpot Slack Snippet](blog-hubspot-to-slack-snippet.png "HubSpot Slack Snippet")
 4. Now, let’s fetch HubSpot companies, we can do this with one line of code: 
-`const companies = await hubspotGetCompanies(ctx);` 
+`const companies = await hubspotGetCompanies(ctx);` <br>
 in line 16 (inside `integration.router.post`)
-5. Send the new message to Slack with 
-`await slackSendMessage(ctx, `You have ${companies.length} companies in HubSpot`)` 
+5. Send the new message to Slack with <br>
+`await slackSendMessage(ctx, `You have ${companies.length} companies in HubSpot`)` <br>
 in line 19 (or any other message of your preference).
 6. In addition to sending the message directly within Slack you can also send it in the response body. Change what’s inside of the `ctx.body` to `companies: companies.length` and that’s it!
 
