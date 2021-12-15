@@ -2,7 +2,7 @@
 post_title: Customize Linear’s Slack Notifications
 post_author: Liz Parody
 post_author_avatar: liz.png
-date: '2021-12-13'
+date: '2021-12-14'
 post_image: blog-linear-and-slack-main.png
 post_excerpt: Create the flexible and customizable integrations between Linear and Slack using Fusebit.
 post_slug: customize-linear-slack-notifications
