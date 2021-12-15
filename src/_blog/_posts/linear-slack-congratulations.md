@@ -19,7 +19,7 @@ For example, receiving the following Slack message:
 
 (If instead of Linear you use GitHub or GitLab, you can go to the last section).
 
-You can this integration clicking below:
+You can run this integration by clicking below:
 
 [Run the integration](https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/linear-slack-notification/api/service/start 'Install the integration CTA_LARGE')
 
@@ -63,33 +63,33 @@ integration.event.on('/:componentName/webhook/:eventtype', async (ctx) => {
 module.exports = integration;
 ```
 
-In line 5, you will see the “slack-connector” you created in the previous step, and in line 7, you will see the webhook that will listen to the status on Linear when it is "Done." The "slackClient.chat.postMessage" will post your congratulations "text" in a specific "channel" in your Slack account. The channel can be public or private.  
+In line 5, you will see the `slack-connector` you created in the previous step, and in line 7, you will see the webhook that will listen to the status on Linear when it is "Done." The `slackClient.chat.postMessage` will post your congratulations `text` in a specific `channel` in your Slack account. The channel can be public or private.  
 
-You will need to access Linear and Slack API. Click "Run" in the upper left corner and complete the login flow, where you will need to authorize both apps. 
+You will need to access Linear and Slack API. Click `Run` in the upper left corner and complete the login flow, where you will need to authorize both apps. 
 
 ![Linear and Slack authorization](blog-linear-slack-authorization.png "Linear and Slack authorization")
 
 ### Configure your Linear connector
 
-To see the **configuration of your Linear connector**, click on "linear-connector" in the Fusebit portal:
+To see the **configuration of your Linear connector**, click on `linear-connector` in the Fusebit portal:
 
 ![Linear and Slack, linear configuration](blog-linear-slack-linear-configuration.png "Linear and Slack, configuration")
 
-Here you can find "OAuth2 Redirect URL" and "Webhook URL." You will need those in the following steps. 
+Here you can find `OAuth2 Redirect URL` and `Webhook URL`. You will need those in the following steps. 
 
-Now, go to your Linear app. In the upper left corner, click "Workspace settings."
+Now, go to your Linear app. In the upper left corner, click `Workspace settings`.
 
 ![Linear and Slack workspace settings](blog-linear-slack-workspace.png "Linear and Slack workspace settings")
 
-Click on "API" and "Create new" to create a Linear app.
+Click on `API` and `Create new` to create a Linear app.
 
 ![Linear and Slack API](blog-linear-slack-linear-api.png "Linear and Slack API")
 
-Fill out the information. Here is where you paste the "Callback URLs" and the "Webhook URL" you copied in the steps above. Ensure you have checked the “issues” checkbox and enabled the public visibility of the application and the Webhooks.
+Fill out the information. Here is where you paste the `Callback URLs` and the `Webhook URL` you copied in the steps above. Ensure you have checked the `issues` checkbox and enabled the public visibility of the application and the Webhooks.
 
 ![Linear and Slack config](blog-linear-slack-config.png "Linear and Slack config")
 
-Finally, click on “Create” on Linear.
+Finally, click on `Create` on Linear.
 
 Now you will see the Client ID and the Client secret. Copy them.
 
@@ -102,6 +102,8 @@ In the **configuration of your Linear connector**, paste the Client ID and the C
 ## Run the Integration
 
 Finally, when you or somebody on your team completes a Linear issue, you will see a congratulations message on a Slack channel! You can go beyond and customize the Linear-Slack integration as you want, creating common Slack alerts, automated tasks, or the workflow of your preference.
+
+[Run the integration](https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/linear-slack-notification/api/service/start 'Install the integration CTA_LARGE')
 
 ### Looking for more integrations?
 
