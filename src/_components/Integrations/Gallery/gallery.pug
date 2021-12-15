@@ -1,15 +1,29 @@
-mixin item(img, highlightText, text)
-    .description__item
-        .description__item-img-container
-            img(src=img)
-        p.text.description__item-text
-            span= highlightText
-            = text
+mixin item(img, text)
+    .gallery__item-container
+        .gallery__item-container-logo
+            img(src="../../../assets/images/careers/join/member-1.png")
+        div
+            p.gallery__item-container-title= text
+            button.gallery__item-container-cta Try Integration
 
 section.section
     .background.background--white
-        .mark.mark--small.mark--dark-violet.mark--left.description__mark-top
-        .mark.mark--small.mark--dark-violet.mark--right.mark--bottom.description__mark-bottom.description__mark-bottom-desktop
-        .mark.mark--big.mark--light-violet.mark--right.mark--bottom.description__mark-bottom.description__mark-bottom-mobile
-    .layout.description__layout
-        .description__main-text-container
+        .mark.mark--small.mark--dark-violet.mark--left.gallery__mark-top
+        .mark.mark--small.mark--dark-violet.mark--right.mark--bottom.gallery__mark-bottom.gallery__mark-bottom-desktop
+        .mark.mark--big.mark--light-violet.mark--right.mark--bottom.gallery__mark-bottom.gallery__mark-bottom-mobile
+    .layout.gallery__layout
+        +title('Connector ', 'gallery', false, true, 'gallery__title')
+        .gallery__grid
+            +item('', 'Slack')
+            +item('', 'Slack')
+            +item('', 'Slack')
+            +item('', 'Slack')
+            +item('', 'Slack')
+            +item('', 'Slack')
+            +item('', 'Slack')
+            +item('', 'Slack')
+            +item('', 'Slack')
+            +item('', 'Slack')
+            +item('', 'Slack')
+            +item('', 'Slack')
+            +item('', 'Slack')

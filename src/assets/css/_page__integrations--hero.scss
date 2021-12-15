@@ -44,8 +44,9 @@
     }
 
     &__description {
-        line-height: 160%;;
+        line-height: 160%;
         display: flex;
+        justify-content: space-between;
 
         p {
             max-width: 544px;
@@ -56,13 +57,27 @@
 
     &__items-container {
         display: flex;
-        flex-direction: column;
         position: relative;
-    }
+        margin-right: 100px;
 
-    &__item {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 32px;
+        &--line {
+            width: 2px;
+            height: 90%;
+            margin-right: 31px;
+            background-color: #4C4E6E;
+            position: absolute;
+            left: 0;
+            top: 5%;
+        }
+
+        &--item {
+            display: flex;
+            flex-direction: column;
+            margin-left: 31px;
+
+            &:not(:last-child) {
+                margin-bottom: 32px;
+            }
+        }
     }
 }

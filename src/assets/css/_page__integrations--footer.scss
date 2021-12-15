@@ -1,4 +1,4 @@
-.join {
+.footer {
     position: relative;
     z-index: 0;
 
@@ -43,6 +43,10 @@
     &__title {
         max-width: 551px;
         margin-bottom: 32px;
+        font-size: 40px;
+        max-width: 454px;
+        text-align: center;
+        line-height: 110%;
 
         @media (max-width: 576px) {
             text-align: center;
@@ -57,11 +61,7 @@
     }
 
     &__cta {
-        width: 261px;
-
-        @media (max-width: 576px) {
-            width: 203px;
-        }
+        width: 199px;
     }
 
     &__avatar {
