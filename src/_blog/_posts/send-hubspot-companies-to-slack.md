@@ -28,7 +28,7 @@ in line 19 (or any other message of your preference).
 
 **Run the Integration**
 
-Click on `Run` and authorize your Slack account and HubSpot account.
+Click on `Run` and authorize your Slack account and HubSpot account. This is how the code will look like:
 
 ![HubSpot Slack Run Integration](blog-hubspot-to-slack-run.png "HubSpot Slack Run Integration")
 
