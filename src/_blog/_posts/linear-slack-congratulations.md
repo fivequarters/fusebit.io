@@ -19,7 +19,7 @@ For example, receiving the following Slack message:
 
 (If instead of Linear you use GitHub or GitLab, you can go to the last section).
 
-You can run this integration by clicking below:
+You or your engineering team can run this integration by clicking below:
 
 [Run the integration](https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/linear-slack-notification/api/service/start 'Install the integration CTA_LARGE')
 
