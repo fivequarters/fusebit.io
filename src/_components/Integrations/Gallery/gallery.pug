@@ -15,11 +15,12 @@ section.section
         .mark.mark--small.mark--dark-violet.mark--right.mark--bottom.gallery__mark-bottom.gallery__mark-bottom-desktop
         .mark.mark--big.mark--light-violet.mark--right.mark--bottom.gallery__mark-bottom.gallery__mark-bottom-mobile
     .layout.gallery__layout
-        +title('Connector ', 'gallery', false, true, 'gallery__title')
-        +dropdown(integrationsCategories.map(category => ({
-            id: category,
-            label: category
-        })), "categories")
+        .gallery__header
+            +title('Connector ', 'gallery', false, true, 'gallery__title')
+            +dropdown(integrationCategories.map(category => ({
+                id: category,
+                label: category
+            })), "categories")
         .gallery__grid
             - const buildAmount = 12
             each i, index in integrations
