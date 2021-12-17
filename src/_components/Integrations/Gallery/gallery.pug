@@ -1,13 +1,13 @@
-mixin item(img, text, outOfPlan, hidden)
+mixin item(img, name, outOfPlan, id, hidden)
     .gallery__item-container(class=hidden ? 'gallery__item-container--hidden' : '')
         .gallery__item-container-logo
             img(src=`data:image/svg+xml;utf8,${encodeURIComponent(img)}`)
         div
-            p.gallery__item-container-title= text
+            p.gallery__item-container-title= name
             if outOfPlan
-                button.gallery__item-container-cta.gallery__item-container-cta--disabled Coming soon
+                button.gallery__item-container-cta.gallery__item-container-cta--disabled(onclick=`window.Intercom('showNewMessage', "I'm interested in enabling ${name}")`) Coming soon
             else
-                button.gallery__item-container-cta Try Integration
+                a.gallery__item-container-cta(href= `${site.portalBaseUrl}?key=${id}`) Try Integration
 
 section.section
     .background.background--white
@@ -19,7 +19,7 @@ section.section
         .gallery__grid
             - const limit = 12
             each i, index in integrations
-                +item(i.logo, i.name, i.outOfPlan, index >= limit)
+                +item(i.logo, i.name, i.outOfPlan, i.id, index >= limit)
         button.gallery__pagination-button#more More
     script.
         window.addEventListener('load', () => {

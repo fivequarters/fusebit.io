@@ -74,6 +74,7 @@ jobs:
           INTERCOM_APP_ID: v9ncq3ml
           BASE_URL: https://fivequarters.io
           CANONICAL_URL: https://fusebit.io
+          PORTAL_BASE_URL: https://stage-manage.fusebit.io
         run: ./scripts/build_tree.sh
 
       - name: Publish - website
