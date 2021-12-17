@@ -146,7 +146,7 @@
 
     &__grid {
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
         margin-top: 75px;
         row-gap: 54px;
     }
@@ -190,7 +190,7 @@
 
         &-cta {
             min-height: 32px;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             box-sizing: border-box;
             border-radius: 200px;
