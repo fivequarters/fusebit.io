@@ -1,10 +1,13 @@
-mixin item(img, text)
-    .gallery__item-container
+mixin item(img, text, outOfPlan, hidden)
+    .gallery__item-container(class=hidden ? 'gallery__item-container--hidden' : '')
         .gallery__item-container-logo
-            img(src="../../../assets/images/integrations/footer/slack.svg")
+            img(src=`data:image/svg+xml;utf8,${encodeURIComponent(img)}`)
         div
             p.gallery__item-container-title= text
-            button.gallery__item-container-cta Try Integration
+            if outOfPlan
+                button.gallery__item-container-cta.gallery__item-container-cta--disabled Coming soon
+            else
+                button.gallery__item-container-cta Try Integration
 
 section.section
     .background.background--white
@@ -14,16 +17,11 @@ section.section
     .layout.gallery__layout
         +title('Connector ', 'gallery', false, true, 'gallery__title')
         .gallery__grid
-            +item('', 'Slack')
-            +item('', 'Slack')
-            +item('', 'Slack')
-            +item('', 'Slack')
-            +item('', 'Slack')
-            +item('', 'Slack')
-            +item('', 'Slack')
-            +item('', 'Slack')
-            +item('', 'Slack')
-            +item('', 'Slack')
-            +item('', 'Slack')
-            +item('', 'Slack')
-            +item('', 'Slack')
+            - const limit = 12
+            each i, index in integrations
+                +item(i.logo, i.name, i.outOfPlan, index >= limit)
+        button.gallery__pagination-button#more More
+    script.
+        window.addEventListener('load', () => {
+            handleShowMore(12, ".gallery__item-container--hidden", "more", "gallery__item-container--hidden")
+        })

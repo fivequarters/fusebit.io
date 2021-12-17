@@ -24,22 +24,9 @@ section.section.section--no-margin
     button.list__pagination.list__pagination-button#more More
 
     script. 
-        const runtimeAmount = 6
-        if(document.querySelectorAll('.list__post--hidden').length === 0) {
-            document.getElementById('more').style.display = 'none'
-        }
-
-        document.getElementById('more').addEventListener('click', function() {
-            [...document.querySelectorAll('.list__post--hidden')].slice(0, runtimeAmount).forEach(function(el) {
-                el.classList.remove('list__post--hidden')
-
-                if(document.querySelectorAll('.list__post--hidden').length === 0) {
-                   document.getElementById('more').style.display = 'none'
-                }
-
-            })
+        window.addEventListener('load', () => {
+            handleShowMore(6, ".list__post--hidden", "more", "list__post--hidden")
         })
-
 block scripts
     script.
         analytics.page('Blog Index', { objectLocation: 'Blog Index', domain: 'fusebit.io' });
