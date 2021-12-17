@@ -22,7 +22,7 @@ With just a few steps and lines of code, you can easily create it!
 `const companies = await hubspotGetCompanies(ctx);` <br>
 in line 16 (inside `integration.router.post`)
 5. Send the new message to Slack with <br>
-`await slackSendMessage(ctx, `You have ${companies.length} companies in HubSpot`)` <br>
+`await slackSendMessage(ctx, %60You have ${companies.length} companies in HubSpot%60)` <br>
 in line 19 (or any other message of your preference).
 6. In addition to sending the message directly within Slack you can also send it in the response body. Change what’s inside of the `ctx.body` to `companies: companies.length` and that’s it!
 
