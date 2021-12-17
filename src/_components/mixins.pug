@@ -50,3 +50,10 @@ mixin postCard(href, img, date, title, excerpt, className)
             span.post-card-date= `${filters.format(new Date(date.replace('-', '/')), 'd MMMM yyyy')}`
             h6.post-card-title= title
             p.post-card-excerpt= excerpt
+
+mixin dropdown(options, id)
+    .dropdown(id= id onchange= onChange)
+        span
+        .dropdown-menu
+            each option in options
+                span.dropdown-item(data-value= option.id data-label= option.label)= option.label
