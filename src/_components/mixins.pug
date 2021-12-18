@@ -10,9 +10,9 @@ mixin ctaArrow
     svg(viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg")
         path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
-
+//- TODO: Use an object to pass parameters to mixins, this is getting messy to use
 mixin cta(text, href, className, id, trackWithSegment, name, location, disableArrow, target, rel, onClick)
-    a.cta(id= id href= href target= target rel= rel class=( trackWithSegment ? "track-with-segment" : false) class= className data-event-name= name || false data-object-location= location || false onclick= onClick)= text
+    a.cta(id= id href= href  target= target rel= rel class=( trackWithSegment ? "track-with-segment" : false) class= className data-event-name= name || false data-object-location= location || false onclick= onClick)= text
         if (!disableArrow) 
             +ctaArrow
 
