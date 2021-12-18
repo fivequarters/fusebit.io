@@ -22,7 +22,7 @@
     }
 
     &-menu {
-        position: absolute;
+        // position: absolute;
         background: #ffffff;
         border: 1px solid #e6efff;
         box-sizing: border-box;
@@ -30,9 +30,10 @@
         padding: 16px;
         display: flex;
         flex-direction: column;
-        left: 0;
-        top: 47px;
-        right: 0;
+        z-index: 1;
+        // left: 0;
+        // top: 47px;
+        // right: 0;
     }
 
     &-item {
