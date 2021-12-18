@@ -80,6 +80,10 @@
         @media only screen and (max-width: 992px) {
             margin-right: 0;
         }
+
+        @media only screen and (max-width: 768px) {
+            transform: translateX(14px);
+        }
     }
 
     &__item {

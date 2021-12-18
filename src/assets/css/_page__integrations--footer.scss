@@ -57,18 +57,11 @@
         }
     }
 
-    &__text {
-        max-width: 672px;
-        opacity: 0.6;
-        margin-bottom: 32px;
-        text-align: center;
-    }
-
     &__cta {
         width: 199px;
     }
 
-    &__avatar {
+    &__app {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -78,25 +71,25 @@
         }
     }
 
-    &__avatar-1 {
+    &__app-1 {
         position: absolute;
         left: -62px;
         top: -102px;
-        }
+    }
 
-    &__avatar-2 {
+    &__app-2 {
         position: absolute;
         top: 29px;
         right: -170px;
     }
 
-    &__avatar-3 {
+    &__app-3 {
         position: absolute;
         top: 14px;
         left: -240px;
     }
 
-    &__avatar-4 {
+    &__app-4 {
         position: absolute;
         right: -64px;
         top: -95px;
