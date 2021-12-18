@@ -57,6 +57,8 @@ mixin dropdown(options, id, prelabel)
             if prelabel
                 span.dropdown-prelabel= prelabel 
             span.dropdown-value= options[0].label
+        .dropdown-arrow
+            img(src='/assets/images/arrow--left.svg' alt="Arrow")
         .dropdown-menu
             each option in options
                 span.dropdown-item(data-value= option.id data-label= option.label)= option.label

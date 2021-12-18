@@ -35,6 +35,7 @@
         font-weight: 400;
     }
     &-menu {
+        position: absolute;
         background: #ffffff;
         border: 1px solid #e6efff;
         box-sizing: border-box;
@@ -79,5 +80,16 @@
 
     &-item--selected {
         color: var(--orange);
+    }
+
+    &-arrow {
+        margin-left: 0;
+        transform: rotate(-90deg);
+        transition: transform 0.2s ease-in-out;
+        
+    }
+    
+    &-arrow--open {
+        transform: rotate(90deg);
     }
 }

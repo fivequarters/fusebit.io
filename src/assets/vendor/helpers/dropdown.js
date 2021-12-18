@@ -46,5 +46,8 @@ function Dropdown(id, onChange) {
     this.toggle = function () {
         this.open = !this.open;
         this.menu.classList.toggle('dropdown-menu--open');
+        this.root
+            .querySelector('.dropdown-arrow')
+            .classList.toggle('dropdown-arrow--open');
     };
 }
