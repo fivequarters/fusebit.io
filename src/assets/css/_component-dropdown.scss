@@ -6,7 +6,7 @@
     padding: 0 15px;
     cursor: pointer;
     position: relative;
-    width: 279px;
+    width: 315px;
     display: flex;
     align-items: center;
 
@@ -22,18 +22,32 @@
     }
 
     &-menu {
-        // position: absolute;
         background: #ffffff;
         border: 1px solid #e6efff;
         box-sizing: border-box;
         border-radius: 16px;
         padding: 16px;
-        display: flex;
         flex-direction: column;
         z-index: 1;
-        // left: 0;
-        // top: 47px;
-        // right: 0;
+        visibility: hidden;
+        pointer-events: none;
+        cursor: default;
+        left: 0;
+        right: 0;
+        width: 315px;
+        max-height: 250px;
+        overflow: auto;
+        display: flex;
+
+        &[data-popper-reference-hidden] {
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        &--open {
+            visibility: visible;
+            pointer-events: initial;
+        }
     }
 
     &-item {
@@ -53,3 +67,4 @@
         color: var(--orange);
     }
 }
+
