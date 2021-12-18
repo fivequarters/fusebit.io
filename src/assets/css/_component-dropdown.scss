@@ -6,21 +6,34 @@
     padding: 0 15px;
     cursor: pointer;
     position: relative;
-    width: 315px;
     display: flex;
     align-items: center;
+    width: 100%;
+    max-width: 315px;
+    white-space: nowrap;
 
     &:focus-within,
     &:hover {
         border: 1px solid #598eec;
     }
 
-    > span {
-        font-size: 16px;
-        line-height: 20px;
-        color: #686881;
+    p {
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 
+    &-value {
+        font-size: 16px;
+        line-height: 20px;
+        color: var(--black);
+        font-weight: 600;
+    }
+
+    &-prelabel {
+        color: #686881;
+        font-weight: 400;
+    }
     &-menu {
         background: #ffffff;
         border: 1px solid #e6efff;
@@ -34,7 +47,8 @@
         cursor: default;
         left: 0;
         right: 0;
-        width: 315px;
+        max-width: 315px;
+        width: 100%;
         max-height: 250px;
         overflow: auto;
         display: flex;
@@ -67,4 +81,3 @@
         color: var(--orange);
     }
 }
-

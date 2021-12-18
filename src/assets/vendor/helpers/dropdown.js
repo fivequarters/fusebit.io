@@ -21,40 +21,30 @@ function Dropdown(id, onChange) {
             this.toggle();
         });
 
-        this.root.querySelector('span').innerHTML = `Category: ${
-            this.root.querySelector('.dropdown-item').dataset.label
-        }`;
-
         for (let i = 0; i < this.items.length; i++) {
             this.items[i].addEventListener('click', (e) => {
                 e.stopPropagation();
                 this.root.querySelector(
-                    'span',
-                ).innerHTML = `Category: ${e.target.dataset.label}`;
+                    '.dropdown-value',
+                ).innerHTML = e.target.dataset.label;
                 this.toggle();
                 onChange?.(e.target.dataset.value);
             });
         }
 
-        window.Popper.createPopper(
-            this.root,
-            this.menu,
-            {
-                placement: 'bottom-start',
-                strategy: 'absolute',
-                modifiers: [
-                    {
-                        name: 'hide',
-                    },
-                ],
-            },
-        );
+        window.Popper.createPopper(this.root, this.menu, {
+            placement: 'bottom-start',
+            strategy: 'absolute',
+            modifiers: [
+                {
+                    name: 'hide',
+                },
+            ],
+        });
     };
 
     this.toggle = function () {
         this.open = !this.open;
         this.menu.classList.toggle('dropdown-menu--open');
     };
-
-    this.init();
 }

@@ -20,7 +20,7 @@ section.section
             +dropdown(integrationCategories.map(category => ({
                 id: category,
                 label: category
-            })), "categories")
+            })), "categories", "Category: ")
         .gallery__grid
             - const buildAmount = 12
             each i, index in integrations
@@ -28,6 +28,7 @@ section.section
         button.gallery__pagination-button#more More
     script.
         const runtimeAmount = 12
+
 
         window.addEventListener('load', () => {
             handleShowMore(runtimeAmount, ".gallery__item-container--hidden[data-catalog]", "more", "gallery__item-container--hidden");
@@ -43,4 +44,6 @@ section.section
 
                 handleShowMore(runtimeAmount, `.gallery__item-container--hidden[data-catalog${selector}]`, "more", "gallery__item-container--hidden", true);
             })
+
+            dropdown.init()
         })

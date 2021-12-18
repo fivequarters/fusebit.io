@@ -51,9 +51,12 @@ mixin postCard(href, img, date, title, excerpt, className)
             h6.post-card-title= title
             p.post-card-excerpt= excerpt
 
-mixin dropdown(options, id)
+mixin dropdown(options, id, prelabel)
     .dropdown(id= id onchange= onChange)
-        span
+        p
+            if prelabel
+                span.dropdown-prelabel= prelabel 
+            span.dropdown-value= options[0].label
         .dropdown-menu
             each option in options
                 span.dropdown-item(data-value= option.id data-label= option.label)= option.label
