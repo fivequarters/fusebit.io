@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 // eslint-disable-next-line func-names
 module.exports = async function () {
     const integrationsPromise = await fetch(
-        `${process.env.PORTAL_BASE_URL}feed/integrationsFeed.json`,
+        `${process.env.PORTAL_BASE_URL}/feed/integrationsFeed.json`,
     );
 
     const integrations = await integrationsPromise.json();
