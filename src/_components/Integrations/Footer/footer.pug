@@ -15,3 +15,17 @@ section.section.section--no-margin
                     img(src="../../../assets/images/integrations/footer/inbox.svg" height="32" width="32").footer__app-img
                 +avatar('64px', '#FFC058', null, 'footer__app footer__app-4')
                     img(src="../../../assets/images/integrations/footer/outbox.svg" height="32" width="32").footer__app-img
+    script.
+        window.addEventListener('load', () => {
+            const footerButton = document.querySelector('.footer__cta');
+
+            footerButton.addEventListener('click', (e) => {
+                analytics.track({
+                    event: "Let Us Know Button Clicked",
+                    properties: {
+                        objectLocation: "Integrations",
+                        domain: 'fusebit.io',
+                    }
+                });
+            })
+        })

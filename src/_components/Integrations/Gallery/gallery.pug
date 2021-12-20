@@ -5,9 +5,9 @@ mixin item(img, name, outOfPlan, id, catalog, hidden)
         div
             p.gallery__item-container-title= name
             if outOfPlan
-                button.gallery__item-container-cta.gallery__item-container-cta--disabled(onclick=`window.Intercom('showNewMessage', "I'm interested in enabling ${name}")`) Coming soon
+                button.gallery__item-container-cta.gallery__item-container-cta--disabled(onclick=`window.Intercom('showNewMessage', "I'm interested in enabling ${name}")` data-event-name="Try Integration Button Clicked" data-object-location="Integrations" data-integration= id, data-integration-type="Fake") Coming soon
             else
-                a.gallery__item-container-cta(href= `${site.portalBaseUrl}?key=${id}`) Try Integration
+                a.gallery__item-container-cta.track-with-segment(href= `${site.portalBaseUrl}?key=${id}` data-event-name="Try Integration Button Clicked" data-object-location="Integrations" data-integration= id, data-integration-type="Real") Try Integration
 
 section.section
     .background.background--white
@@ -46,4 +46,19 @@ section.section
             })
 
             dropdown.init()
+
+            const comingSoonButtons = document.querySelectorAll('.gallery__item-container-cta--disabled')
+
+            for (let i = 0; i < comingSoonButtons.length; i++) {
+                comingSoonButtons[i].addEventListener('click', (e) => {
+                    const { eventName, ...rest } = { ...e.target.dataset };
+                    analytics.track({
+                        event: eventName,
+                        properties: {
+                            domain: 'fusebit.io',
+                            ...rest
+                        }
+                    });
+                })
+            }
         })
