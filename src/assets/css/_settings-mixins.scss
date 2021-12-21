@@ -25,6 +25,8 @@
     border-radius: 2rem;
     z-index: 5;
     transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
 
     svg {
         position: relative;
@@ -50,7 +52,7 @@
 
     @media (max-width: 992px) {
         font-size: 16px;
-        height: 48px;
+        height: 28px;
     }
 }
 
