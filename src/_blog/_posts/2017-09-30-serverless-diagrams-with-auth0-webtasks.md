@@ -13,11 +13,11 @@ post_excerpt: Tomek on Software - shaken, not stirred
 
 A picture is worth a thousand words. And a good sequence diagram can cut the time necessary to explain the behavior of a system tenfold. How often do you need a quick and convenient way to create, modify, and share a sequence diagram with a simple URL?
 
-<img src="tomek_blog/2017-09-30/0.png" class="tj-img-diagram-100" alt="Sequence Diagram Webtask">
+<img src="tomek-blog/2017-09-30/0.png" class="tj-img-diagram-100" alt="Sequence Diagram Webtask">
 
 With [Auth0 Webtasks](https://webtask.io), you can create such diagrams with a convenient DSL using a web-based editor or a command line tool, and share them with a unique HTTP URL. 
 
-<img src="tomek_blog/2017-09-30/1.png" class="tj-img-diagram-100" alt="Sequence Diagram DSL">
+<img src="tomek-blog/2017-09-30/1.png" class="tj-img-diagram-100" alt="Sequence Diagram DSL">
 
 Many people know [Auth0 Webtasks](https://webtask.io) as the quickest way to set up an HTTP endpoint implemented in Node.js. However, the Webtasks technology supports a very powerful concept of [webtask compilers](https://webtask.io/docs/webtask-compilers). Webtask compilers allow you to define a custom programming model or DSL in which users can implement serverless endpoints. In the example above, a custom webtask compiler is used to enable authoring of webtasks in the syntax supported by [js-sequence-diagrams](https://bramp.github.io/js-sequence-diagrams/). 
 
@@ -58,7 +58,7 @@ The *wt-editor-linter* property disables default JavaScript linting rules, which
 
 The *wt create* command returns a URL of the webtask endpoint that serves the diagram. You can optionally add the `?theme=hand` URL query parameter to that URL to render the diagram in a hand-written style rather than the default, simple style: 
 
-<img src="tomek_blog/2017-09-30/3.png" class="tj-img-diagram-100" alt="Sequence Diagram Hand Style">
+<img src="tomek-blog/2017-09-30/3.png" class="tj-img-diagram-100" alt="Sequence Diagram Hand Style">
 
 You can launch the Webtask Editor to edit the code of the webtask in the js-sequence-diagram DSL with:
 
@@ -68,7 +68,7 @@ wt edit diagram
 
 This will open a browser and navigate to the Webtask Editor that allow you to modify the diagram definition: 
 
-<img src="tomek_blog/2017-09-30/1.png" class="tj-img-diagram-100" alt="Sequence Diagram DSL">
+<img src="tomek-blog/2017-09-30/1.png" class="tj-img-diagram-100" alt="Sequence Diagram DSL">
 
 ### What else can you do with webtask compilers?
 

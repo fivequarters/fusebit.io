@@ -25,7 +25,7 @@ and use [Auth0 Webtasks](https://webtask.io) to turn it into an HTTP endpoint:
 
 The endpoint can we used to execute parameterized T-SQL queries against a MySQL database with public crime records in Sacramento: 
 
-<img src="tomek_blog/2016-07-15/1.png" alt="T-SQL Auth0 Webtask">
+<img src="tomek-blog/2016-07-15/1.png" alt="T-SQL Auth0 Webtask">
 
 Intrigued? Read on.
 
@@ -41,7 +41,7 @@ In this post I will show how [Auth0 Webtasks](https://webtask.io) allow you to u
 
 Before we can use T-SQL we must have some exciting data to query in a MySQL database. For the sake of this exercise, I created a free MySQL database on [freemysqlhosting.net](https://www.freemysqlhosting.net/) and populated it with public crime records for Sacramento which I got in CSV format [here](https://support.spatialkey.com/spatialkey-sample-csv-data/).
 
-<img src="tomek_blog/2016-07-15/0.png" alt="Serverless crime in Sacramento">
+<img src="tomek-blog/2016-07-15/0.png" alt="Serverless crime in Sacramento">
 
 Bottom line is you need the hostname of the MySQL server, database name, and user name and password to connect to it. 
 
@@ -112,7 +112,7 @@ When the command runs, a URL is retuned that can be used to invoke the Node.js f
 
 The response will contain a JSON array with matching MySQL records:
 
-<img src="tomek_blog/2016-07-15/1.png" alt="T-SQL Auth0 Webtask">
+<img src="tomek-blog/2016-07-15/1.png" alt="T-SQL Auth0 Webtask">
 
 While the development experience of creating this HTTP endpoint is already streamlined compared to many more traditional ways of deploying web applications, there is still room for improvement. 
 
@@ -153,7 +153,7 @@ Webtask compilers introduce separation of concerns between the logic that enable
 
 Now with the reusable compiler in place, webtask development can focus on the business logic in T-SQL:
 
-<img src="tomek_blog/2016-07-15/2.png" alt="T-SQL Auth0 Webtask in Webtask Editor Widget">
+<img src="tomek-blog/2016-07-15/2.png" alt="T-SQL Auth0 Webtask in Webtask Editor Widget">
 
 ### What else can you do with webtask compilers
 
@@ -161,7 +161,7 @@ Webtask compilers can be used to enable webtask development in a variety of lang
 
 You can take it as far as supporting implementation of webtasks in C#, by using the [Edge.js](https://github.com/tjanczuk/edge) module to execute CLR code in-process with Node.js: 
 
-<img src="tomek_blog/2016-07-15/3.png" alt="C# Auth0 Webtask in Webtask Editor Widget using Edge.js">
+<img src="tomek-blog/2016-07-15/3.png" alt="C# Auth0 Webtask in Webtask Editor Widget using Edge.js">
 
 You can read more about using the webtask compilers [here](https://webtask.io/docs/model#webtask-compilers), and about implementing your own [here](https://webtask.io/docs/webtask-compilers). Enjoy!
 }
