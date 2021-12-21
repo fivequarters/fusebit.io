@@ -3,16 +3,17 @@ mixin background(className)
         .mark.mark--small.mark--light-violet.mark--right.hero__mark-small
         .mark.mark--big.mark--dark-violet.mark--right.hero__mark-big
 
-mixin card(props)
+mixin card(props, index)
     .hero__card-wrapper
         .hero__card
             .hero__card-highlight(style= `background-color: ${props.highlightColor}`)
             h2.hero__card-title #{props.title}
             h4.hero__card-price #{props.price}
             .hero__card-separator
-            each feature in props.features
+            each feature, i in props.features
                 p.hero__card-feature #{feature}
-            +cta(props.link.text, props.link.href, props.link.className || "hero__card-link", props.link.id, true, props.link.eventName || "Price Tier Button Clicked", props.link.location, true, props.link.target, props.link.rel, props.link.onClick)
+            - const link = index === 0 ? homepage.links.getStartedLink : props.link.href
+            +cta(props.link.text, link, props.link.className || "hero__card-link", props.link.id, true, props.link.eventName || "Price Tier Button Clicked", props.link.location, true, props.link.target, props.link.rel, props.link.onClick)
         if props.description
             .hero__card-description--wraper
                 p.hero__card-description #{props.description}
@@ -24,5 +25,5 @@ section.section.section--no-margin.hero
         .hero__content
             +background("hero__background--mobile")
             .hero__cards-container
-                each card in pricing.cards.cards
-                    +card(card)
+                each card, i in pricing.cards.cards
+                    +card(card, i)
