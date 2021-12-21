@@ -64,7 +64,7 @@ wt edit -p node8 whatnode
 
 In the editor, you have access to real-time logs, secret management, all NPM modules, and more - all using Node 8.
 
-<img src="/assets/images/blog/tomek_blog/2017-09-23/0.png" class="tj-img-diagram-100" alt="Auth0 Extend editor">
+<img src="tomek_blog/2017-09-23/0.png" class="tj-img-diagram-100" alt="Auth0 Extend editor">
 
 ### Serverless Framework, Auth0 Extend, and Webtasks
 

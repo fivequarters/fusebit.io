@@ -28,7 +28,7 @@ helloWorld('JavaScript', function (error, result) {
 });
 ```
 
-<img src="/assets/images/blog/tomek_blog/2015-12-23/0.png" class="tj-img-diagram-100" alt="Scripting CoreCLR from Node.js using Edge.js on Windows, OSX, and Linux">
+<img src="tomek_blog/2015-12-23/0.png" class="tj-img-diagram-100" alt="Scripting CoreCLR from Node.js using Edge.js on Windows, OSX, and Linux">
 
 Until now, Edge.js allowed scripting *desktop CLR* on Windows, and *Mono* on OSX and Linux. 
 
@@ -38,7 +38,7 @@ Today, thanks the fantastic effort of [Luke Stratman](http://careers.stackoverfl
 
 With this major release, Edge.js provides a uniform, cross-platform mechanism that supports in-process Node/CoreCLR interoperability and facilitates building hybrid, single process applications. 
 
-<img src="/assets/images/blog/tomek_blog/2015-12-23/2.jpg" class="tj-img-diagram-75" alt="Edge.js interoperabilty model between Node.js and CoreCLR">
+<img src="tomek_blog/2015-12-23/2.jpg" class="tj-img-diagram-75" alt="Edge.js interoperabilty model between Node.js and CoreCLR">
 
 Microsoft's CoreCLR project provides an open source implementation of the CLR technology that works uniformly on Linux, OSX, and Windows. Prior to CoreCLR, applications using Edge.js had to utilize desktop CLR on Windows and Mono on OSX or Linux, which complicated cross-platform development and introduced subtle (and some less subtle) behavioral differences. 
 
@@ -82,7 +82,7 @@ CoreCLR welcomes Node.js
 
 In addition to scripting CLR from Node.js, Edge.js also allows the opposite: scripting Node.js from CLR. This is currently only supported on Windows using desktop CLR, but support for CoreCLR is coming! Here is the complete picture of what you can do with Edge.js: 
 
-<img src="/assets/images/blog/tomek_blog/2015-12-23/1.png" class="tj-img-diagram-100" alt="Edge.js support matrix for scripting CLR, CoreCLR, Mono from Node.js and Node.js from CLR on Windows, OSX, and Linux">
+<img src="tomek_blog/2015-12-23/1.png" class="tj-img-diagram-100" alt="Edge.js support matrix for scripting CLR, CoreCLR, Mono from Node.js and Node.js from CLR on Windows, OSX, and Linux">
 
 Script away!
 

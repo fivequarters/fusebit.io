@@ -13,7 +13,7 @@ post_excerpt: Tomek on Software - shaken, not stirred
 
 [Net Promoter Score (NPS)](https://en.wikipedia.org/wiki/Net_Promoter) has been an established tool for measuring customer loyalty since 2003. It is based on asking your customers a single question: how likely are they to recommend your product to others? Research shows that the answer is correlated to the future success of the product. 
 
-<img src="/assets/images/blog/tomek_blog/2018-08-31/0.png" class="tj-img-diagram-100" alt="How likely are you to recommend Extend to your friend or colleauge?">
+<img src="tomek_blog/2018-08-31/0.png" class="tj-img-diagram-100" alt="How likely are you to recommend Extend to your friend or colleauge?">
 
 In this post I will show how you can create a free NPS widget, complete with UI, backend storage, and reporting using [Auth0 Webtasks](https://webtask.io), and embed this NPS widget with one line of HTML into your web application, single page app, or a blog post. 
 
@@ -46,7 +46,7 @@ Next, use an *iframe* to embed your NPS survey in your web site, single page app
 
 Next, sit back and watch as NPS survey results pour in when your customers visit your site and share their opinion:
 
-<img src="/assets/images/blog/tomek_blog/2018-08-31/1.png" class="tj-img-diagram-100" alt="How likely are you to recommend MyProduct to your friend or colleauge?">
+<img src="tomek_blog/2018-08-31/1.png" class="tj-img-diagram-100" alt="How likely are you to recommend MyProduct to your friend or colleauge?">
 
 Lastly, to view the results of your NPS survey, navigate to *{webtask_url}/stats*. You will get back a JSON document with the histogram of all answers as well the number of NPS promoters, detractors, passives, as well as the overall NPS score:
 

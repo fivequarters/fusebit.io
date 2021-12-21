@@ -13,7 +13,7 @@ post_excerpt: Tomek on Software - shaken, not stirred
 
 Twitter is great for marketing your product or personal brand, but it has one disadvantage: you must actually tweet. 
 
-<img src="/assets/images/blog/tomek_blog/2018-04-05/0.png" class="tj-img-diagram-100" alt="Twitter scheduler">
+<img src="tomek_blog/2018-04-05/0.png" class="tj-img-diagram-100" alt="Twitter scheduler">
 
 In the next 2 minutes I will show you how to create a simple yet flexible (and free) Twitter scheduler that allows you to set up your tweets along with a tweeting schedule ahead of time. You can then focus your attention and energy elsewhere, while [Auth0 Webtasks](webtask.io) dilligently follow your tweeting directions. 
 
@@ -74,7 +74,7 @@ wt edit buffer
 
 which will bring up the webtask editor allowing you to change the YAML. 
 
- <img src="/assets/images/blog/tomek_blog/2018-04-05/1.png" class="tj-img-diagram-100" alt="Webtask Editor">
+ <img src="tomek_blog/2018-04-05/1.png" class="tj-img-diagram-100" alt="Webtask Editor">
 
  Make any changes, save, and you are done!
 
@@ -103,13 +103,13 @@ which will bring up the webtask editor allowing you to change the YAML.
 
  You can easily check the status of your Twitter scheduler by navigating to your webtask's URL in the browser: 
 
-<img src="/assets/images/blog/tomek_blog/2018-04-05/2.png" class="tj-img-diagram-100" alt="Status">
+<img src="tomek_blog/2018-04-05/2.png" class="tj-img-diagram-100" alt="Status">
 
 The *schedule* element shows the JSON representation of your YAML tweeting schedule, or an error if the YAML could not be parsed. The *plan* element specifies the Tweets that would be sent if the CRON job were to run *now*. 
 
 The last part of the status specifies the 20 most recently sent tweets: 
 
-<img src="/assets/images/blog/tomek_blog/2018-04-05/3.png" class="tj-img-diagram-100" alt="Tweet History">
+<img src="tomek_blog/2018-04-05/3.png" class="tj-img-diagram-100" alt="Tweet History">
 
 For each tweet, the *result* element tells if the tweet was sent successfuly or not, and the unique tweet id in case you want to automate further processing. 
 

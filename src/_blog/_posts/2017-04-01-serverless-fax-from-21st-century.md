@@ -61,11 +61,11 @@ module.exports = function(ctx, req, res) {
 
 There are two ways to turn this function into an HTTP endpoint with [Auth0 Webtasks](https://webtask.io), both simple. You can use the [wt-cli](https://webtask.io/cli) command line tool, or the [Webtask Editor](https://webtask.io/make). We are going to do the latter. Just go to https://webtask.io/make, log in, paste the code of the function into the Webtask Editor window, and save: 
 
-<img src="/assets/images/blog/tomek_blog/2017-04-03/0.png" class="tj-img-diagram-100" alt="Create HTTP endpoints with Auth0 Webtask Editor">
+<img src="tomek_blog/2017-04-03/0.png" class="tj-img-diagram-100" alt="Create HTTP endpoints with Auth0 Webtask Editor">
 
 Voila! You have just created an HTTP endpoint (URL at the bottom of the webtask editor window) that accepts an HTTP GET request with a *title* and *body* query parameters and responds with a PDF document. You can test it in the browser: 
 
-<img src="/assets/images/blog/tomek_blog/2017-04-03/1.png" class="tj-img-diagram-100" alt="Back to the XXI century">
+<img src="tomek_blog/2017-04-03/1.png" class="tj-img-diagram-100" alt="Back to the XXI century">
 
 You can then use this URL as the *MediaUrl* parameter in a call to Twilio, e.g.:
 
@@ -120,7 +120,7 @@ module.exports = function(ctx, cb) {
 
 You will notice that *MediaUrl* is pointing to the URL of of the previosuly created webtask that turns title and body parameters into a PDF document. But you will also notice that the basic authentication credentials are sourced from mysterious *ctx.secrets.TWILIO_USER* and *ctx.secrets.TWILIO_TOKEN* properties. You can specify them to be securely stored alongside your webtask using the webtask editor: 
 
-<img src="/assets/images/blog/tomek_blog/2017-04-03/2.png" class="tj-img-diagram-100" alt="Storing secrets with Auth0 Webtasks">
+<img src="tomek_blog/2017-04-03/2.png" class="tj-img-diagram-100" alt="Storing secrets with Auth0 Webtasks">
 
 With this webtask created, anyone who has the URL can now send a fax using your Twilio keys: 
 
@@ -150,13 +150,13 @@ To do this, install [Slash Webtasks](https://webtask.io/slack) on your Slack tea
 
 Next, type the following code in the webtask editor, and save:
 
-<img src="/assets/images/blog/tomek_blog/2017-04-03/3.png" class="tj-img-diagram-100" alt="Faxing with Slash Webtask">
+<img src="tomek_blog/2017-04-03/3.png" class="tj-img-diagram-100" alt="Faxing with Slash Webtask">
 
 In the spirit of reusability, we are simply calling into the previously created, fax-sending webtask, after extracting the title and body parameters from the slash command parameters we receive from Slack. 
 
 And with that, we have finally opened a wormhole connecting the today with the days long past:
 
-<img src="/assets/images/blog/tomek_blog/2017-04-03/4.png" class="tj-img-diagram-100" alt="Slash fax it">
+<img src="tomek_blog/2017-04-03/4.png" class="tj-img-diagram-100" alt="Slash fax it">
 
 ### Conclusion
 

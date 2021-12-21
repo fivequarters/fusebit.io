@@ -15,7 +15,7 @@ post_excerpt: Tomek on Software - shaken, not stirred
 
 Someone recently asked me if there is a Slack channel for [Edge.js](https://github.com/tjanczuk/edge) where questions can be asked. I thought it was a great idea to create one as a modern equivalent of IRC (kids, remember IRC?...). I was quick to discover that while creating a new Slack team is easy and free, enabling everyone to participate is not. 
 
-<img src="/assets/images/blog/tomek_blog/2016-02-09/1.png" class="tj-img-diagram-75" alt="Slack signup page for Edge.js">
+<img src="tomek_blog/2016-02-09/1.png" class="tj-img-diagram-75" alt="Slack signup page for Edge.js">
 
 Individuals must be invited to a Slack team by e-mail. Out of the box, Slack does not provide any UI experience for requesting an invitation. People must be explicitly invited by the Slack team's admin either via Slack UI or HTTP APIs. Consequently a slew of solutions sprang up to help people create "self-signup" pages, where anyone can enter their e-mail address to have an invitation automatically sent to them. Most of these are either [complex to set up](https://levels.io/slack-typeform-auto-invite-sign-ups/), or require [explicit hosting](https://github.com/rauchg/slackin). 
 
@@ -23,7 +23,7 @@ Individuals must be invited to a Slack team by e-mail. Out of the box, Slack doe
 
 [Auth0 Webtasks](https://webtask.io) allow you to create lightweight UI web apps and microservices without worrying about hosting, yet giving your full flexibility of writing code in Node.js. You can use webtasks to create a Slack signup page for your public Slack team, [like I did for Edge.js](https://webtask.it.auth0.com/api/run/tjanczuk/edgejs-slack-invite): 
 
-<img src="/assets/images/blog/tomek_blog/2016-02-09/2.png" class="tj-img-diagram-100" alt="Slack signup page for Edge.js">
+<img src="tomek_blog/2016-02-09/2.png" class="tj-img-diagram-100" alt="Slack signup page for Edge.js">
 
 ### Creating your own Slack signup page is easy with webtasks
 
@@ -43,7 +43,7 @@ Optionally, you can also provide `--secret LOGO_URL={url_to_your_logo}` which wi
 
 Use the resulting URL as your Slack signup page and start building a public community around your OSS project!
 
-<img src="/assets/images/blog/tomek_blog/2016-02-09/3.png" class="tj-img-diagram-100" alt="Slack signup page for Edge.js">
+<img src="tomek_blog/2016-02-09/3.png" class="tj-img-diagram-100" alt="Slack signup page for Edge.js">
 
 If you are interested in what the webtask code is doing behind the scenes, or customize the UI or signup exprience, check out the [auth0/webtask-slack-signup](https://github.com/auth0/webtask-slack-signup) repo. Since you have the flexibility of writing any Node.js code, your customization options are unlimited. 
 
