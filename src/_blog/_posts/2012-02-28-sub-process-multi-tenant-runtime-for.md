@@ -46,7 +46,7 @@ The haiku-http project provides a node.js-based runtime for multiple application
 
 Haiku-http supports running JavaScript code that accepts an HTTP request and generates an HTTP response. Writing a haiku-http application is conceptually similar to implementing the body of the node.js HTTP request handler. For example, given the following node.js application:      
 
-{% highlight javascript linenos %}
+```
        require('http').createServer(function(req, res) {  
     res.writeHead(200)  
     res.end('Hello, world!')  
@@ -61,7 +61,7 @@ a corresponding haiku-http handler would be:
   
 
 
-{% highlight javascript linenos %}
+```
 res.writeHead(200)  
 res.end('Hello, world!')
   
@@ -176,7 +176,7 @@ If a regular node.js application throws an unhandled exception, the best practic
 
 So assuming the haiku-http handler as follows:
 
-{% highlight javascript linenos %}
+```
 res.writeHead(200)  
 throw new Error('An exception')  
 res.end('Hello, world!')
@@ -191,7 +191,7 @@ the haiku-http runtime will intercept the unhandled exception and proceed to gra
 
 The all-time favorite way of hanging node.js runtime is to perform a blocking operation like this:
 
-{% highlight javascript linenos %}
+```
 while(true)
   
 
@@ -204,7 +204,7 @@ This single line will effectively block the event loop in a single-threaded node
 
 Some handlers may be consuming more then their fair share of CPU and system resources. Node.js runtime or V8 do not currently provide a good way to measure CPU and memory consumption at the granularity of a single script. To provide a weak assurance of fairness, haiku-http supports a request timeout: if a handler takes longer than a preconfigured time to process the request (clock time, not CPU time), an HTTP 500 response will be returned to the client: 
 
-{% highlight javascript linenos %}
+```
 res.writeHead(200)  
 setTimeout(function() {  
    res.end('Hello, world')  
@@ -220,7 +220,7 @@ Note that this is a very inexact method, since a handler that is harmlessly wait
 
 Haiku handlers can continue executing after having sent the HTTP response, and there is no mechanism to prevent it from happening. Consider this code:
 
-{% highlight javascript linenos %}
+```
 res.writeHead(200)  
 res.end('Hello, world')  
 doMoreWork()
@@ -231,7 +231,7 @@ doMoreWork()
 
 Or an asynchronous equivalent:
 
-{% highlight javascript linenos %}
+```
 res.writeHead(200)  
 setTimeout(doMoreWork, 5000)  
 res.end('Hello, world')

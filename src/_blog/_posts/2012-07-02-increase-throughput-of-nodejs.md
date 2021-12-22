@@ -26,7 +26,7 @@ You can benefit from IIS output caching if the content served by your node.js ap
 
 For the simple, unscientific benchmark, I will use a “hello world” application in node.js:  
 
-{% highlight javascript linenos %}
+```
    require('http').createServer(function (req, res) {  
     res.writeHead(200, { 'Content-Type': 'text/plain' });  
     res.end('Hello, world!');  

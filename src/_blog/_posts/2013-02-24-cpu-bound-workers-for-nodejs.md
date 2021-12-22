@@ -41,7 +41,7 @@ Get started by importing the owin module:
 
 Then implement your CPU-bound workload in .NET as follows and save the result in Startup.cs file:
 
-{% highlight csharp linenos %}
+```
 namespace CalculateBudget  
 {  
     public class Startup : Owinjs.Worker  
@@ -81,7 +81,7 @@ csc /target:library /r:Owinjs.dll /out:CalculateBudget.dll Startup.cs
 
 Lastly, implement a node.js application which invokes the CPU-bound computation using the owin module, and save it to test.js file:
 
-{% highlight javascript linenos %}
+```
 var owin = require('owin')  
   
 console.log('Starting long running operation...');  

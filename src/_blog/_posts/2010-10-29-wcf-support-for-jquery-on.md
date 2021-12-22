@@ -58,7 +58,7 @@ The WCF Support for jQuery package also includes an item template that allows a 
 
 Let’s have a look at the WCF service to see what the programming experience is:
 
-{% highlight csharp linenos %}
+```
 [WebInvoke(UriTemplate = "", Method = "POST")]
 public JsonValue Post(JsonObject body)
 {
@@ -76,7 +76,7 @@ The method above is extending the WCF HTTP programming model available since .NE
 
 The default.html file shows how this method can be called from JavaScript, in this case using the Ajax call from the jQuery framework:
 
-{% highlight javascript linenos %}
+```
 var person = {
     Name: "John Doe",
     Age: 21
@@ -102,7 +102,7 @@ Name=John+Doe&Age=21
 
 The interesting aspect of WCF support for application/url-form-encoded is that JavaScript applications can use that format to serialize not only simple lists of key/value pairs traditionally associated with an HTML form submission, but also arbitrarily complex JavaScript objects. JsonValue supports deserialization of data from application/x-www-form-urlencoded format [following the jQuery’s $.param() serialization conventions](http://benalman.com/news/2009/12/jquery-14-param-demystified/). To see this format in action, let’s send a more complex object to the server by modifying the ‘person’ instance to:
 
-{% highlight javascript linenos %}
+```
 var person = {
     Name: "John Doe",
     Age: 21,
@@ -135,7 +135,7 @@ Name=John+Doe&Age=21&Children%5B0%5D%5BName%5D=Jessica&Children%5B0%5D%5BBestToy
 
 Although jQuery Ajax calls use application/x-www-form-urlencoded format by default, it is very easy to serialize the request payload in JSON format instead. Using Douglas Crockford’s [json2](http://json.org/json2.js) serializer (line 4), one can make a jQuery call like this:
 
-{% highlight javascript linenos %}
+```
 $.ajax({
     type: "POST",
     url: "./Service/",
@@ -163,7 +163,7 @@ A great feature of the JsonValue programming model in WCF is that regardless of 
 
 So how does one access the data the client sent from the WCF service? JsonValue offers dictionary-like programming model. For example, to determine the favorite toy of the second child of the person, one could write the following code:
 
-{% highlight csharp linenos %}
+```
 [WebInvoke(UriTemplate = "", Method = "POST")]
 public JsonValue Post(JsonObject body)
 {
@@ -195,7 +195,7 @@ JsonValue supports a few more interesting constructs that facilitate operating o
 
 First of all, there is support for dynamic properties, which is more than just a syntactic improvement over array indexers. The two lines below extract the same value from a JsonObject:
 
-{% highlight csharp linenos %}
+```
 JsonObject body;
 string favoriteToyOfSecondChild1 = (string)body["Children"][1]["BestToy"];
 string favoriteToyOfSecondChild2 = (string)body.AsDynamic().Children[1].BestToy;
@@ -211,7 +211,7 @@ Given that the data received from the client has not been validated against a sp
 
 The dynamic properties of JsonValue offer a much more convenient validation experience. One can “dot into” any level of a complex object without any exceptions being thrown, only to perform a test of the value’s existence and CLR type match at the very end, with a very [Fluent-like](http://en.wikipedia.org/wiki/Fluent_interface) experience.
 
-{% highlight csharp linenos %}
+```
 JsonObject body;
 string aValue;
 if (!body.AsDynamic().Children[7].BestToy.TryReadAs<string>(out aValue))
@@ -224,7 +224,7 @@ if (!body.AsDynamic().Children[7].BestToy.TryReadAs<string>(out aValue))
 
 You can imagine how this programming model is reducing the amount of code you need to write when navigating deep data hierarchies:
 
-{% highlight csharp linenos %}
+```
 body.AsDynamic().I.May.Exist.Or.Maybe.Not.TryReadAs<string>(out aValue)
 
 ```
@@ -234,7 +234,7 @@ body.AsDynamic().I.May.Exist.Or.Maybe.Not.TryReadAs<string>(out aValue)
 
 Here is another useful feature JsonValue offers: LINQ to JSON. Using the ‘person’ object introduced above, let’s assume you are writing a method that is supposed to return the favorite toys of those children of the person whose name begin with ‘J’ (does this sound like a test from your SQL class?). Here is the code you could write:
 
-{% highlight csharp linenos %}
+```
 JsonObject body;
 string[] favoriteToys =
     (from child in (JsonValue)body.AsDynamic().Children

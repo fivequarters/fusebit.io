@@ -33,7 +33,7 @@ which will create the node_modules folder with the downloaded express library. Y
 
 A simple express application we will host in IIS looks like this:
 
-{% highlight javascript linenos %}
+```
  var express = require('express');
 
  var app = express.createServer();
@@ -61,7 +61,7 @@ Two key aspects to call out that may be different from your bread & butter expre
 
 I talked about using the URL rewrite module for regular node.js applications before, and URL rewriting is perhaps even more relevant in case of URL-conscious express apps. The web.config below allows the express application saved in hello.js to receive HTTP requests directed at all URL paths subordinate to the ‘hello’ path component, as configured in lines 20-27:
 
-{% highlight xml linenos %}
+```
  <configuration>
    <system.webServer>
 

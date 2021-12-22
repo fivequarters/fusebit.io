@@ -46,7 +46,7 @@ npm install owin@0.4.0
 
 Then implement your [OWIN](http://owin.org/) handler in C# and save it to Startup.cs file:
 
-{% highlight csharp linenos %}
+```
 using System;  
 using System.Collections.Generic;  
 using System.IO;  
@@ -86,7 +86,7 @@ csc /target:library /out:OwinHelloWorld.dll Startup.cs
 
 Finally implement your express.js application and save it to server.js file. The application imports the owin module and uses it create and register an express.js request handler created around the the OwinHelloWorld.dll you just compiled: 
 
-{% highlight javascript linenos %}
+```
 var owin = require('owin')  
     , express = require('express');  
   

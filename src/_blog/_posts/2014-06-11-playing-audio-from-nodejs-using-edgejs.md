@@ -27,7 +27,7 @@ Alternatively, you can do it with two lines of C# code…
 … and then call into these two lines of C# code from Node.js using Edge.js: 
  
 
-{% highlight javascript linenos %}
+```
    var edge = require('edge');
 
 var play = edge.func(function() {/*
@@ -55,7 +55,7 @@ Coming back to playing audio. If you run the code above you will notice that the
 
 … so let’s fix it. We need to add two more C# lines to play our audio on a CLR thread pool thread and avoid blocking the V8 thread:
 
-{% highlight javascript linenos %}
+```
 var edge = require('edge');
 
 var play = edge.func(function() {/*
@@ -90,7 +90,7 @@ Now that we can play a simple WAV file asynchronously, how about adding some mor
 
 This calls for one of the more interesting features of Edge.js: the ability to marshal function proxies between V8 and CLR boundary. Moreover, functions exposed from CLR to Node.js can be implemented as a closure over some other CLR state, which opens interesting possibilities. For example, allowing an instance of System.Media.SoundPlayer to be controlled from Node.js:
 
-{% highlight javascript linenos %}
+```
 var edge = require('edge');
 
 var createPlayer = edge.func(function() {/*
@@ -116,7 +116,7 @@ We are using Edge.js to construct a *createPlayer* JavaScript function (line 3).
 
 This is how you can use the *createPlayer* function:
 
-{% highlight javascript linenos %}
+```
 console.log('Creating player');
 var player = createPlayer('dday.wav', true);
 

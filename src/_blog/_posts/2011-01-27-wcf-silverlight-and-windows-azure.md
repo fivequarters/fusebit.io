@@ -22,7 +22,7 @@ Compiling the samples requires Visual Studio 2010, WebSockets prototype binary d
 
 The prototype implementation of WebSockets protocol provides a server side programming model in WCF that represents a WebSocket connection to a server using the WebSocketService class:
 
-{% highlight csharp linenos %}
+```
 public abstract class WebSocketsService : IWebSockets, IDisposable
 {
     protected WebSocketsService() {}
@@ -47,7 +47,7 @@ After the connection is established, OnMessage method is invoked every time a We
 
 A typical application would derive from WebSocketService to implement application-specific logic of handing WebSocket connections. An example could be a ChatService. The application can start listening for incoming WebSocket connections using the WebSocketsHost class: 
 
-{% highlight csharp linenos %}
+```
 var sh = new WebSocketsHost<ChatService>(
     new Uri("ws://" + Environment.MachineName + ":4502/chat"));
 sh.AddWebSocketsEndpoint();
@@ -62,7 +62,7 @@ The prototype implementation of WebSockets in WCF does not support hosting of We
 
 The client side implementation of the WebSockets protocol proposal is done in Silverlight and offers a WebSocket class modeled after [the proposed W3C JavaScript API for WebSockets](http://www.w3.org/TR/websockets/):
 
-{% highlight csharp linenos %}
+```
 public class WebSocket : IDisposable
 {
     public WebSocket() {}
@@ -92,7 +92,7 @@ Given that the prototype implementation of WebSockets in Silverlight is built on
 
 The second client side component included in the WebSocket prototype is a jQuery plug-in that enables JavaScript browser applications to utilize the WebSocket functionality by creating a JavaScript WebSocket API that delegates to the Silverlight plug-in using HTML bridge functionality. The jQuery plug-in is implemented in the jquery.slws.js file included with the samples. It provides a $.slws.ready function that takes a delegate to be called only after the WebSocket functionality has been added to the environment (which requires the Silverlight application to be dynamically downloaded and injected into the current page):
 
-{% highlight javascript linenos %}
+```
 $.slws.ready(function () {
     var connection = new WebSocketDraft('ws://' + window.location.hostname + ':4502/chat');
     connectin.onopen(function () {

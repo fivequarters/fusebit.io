@@ -53,7 +53,7 @@ When you commit and push this change to the Git repository provided by Windows A
 
 Note that within package.json you can use an expression to describe more elaborate version constraints of your application, for example:
 
-{% highlight javascript linenos %}
+```
 {  
     "name": "hellojs",  
     "version": "0.1.0-pre",  
@@ -90,7 +90,7 @@ Node.js applications in Windows Azure Web Sites are running within [iisnode](htt
 
 If the iisnode.yml file deployed with the application already contains an explicit nodeProcessCommandLine setting, it takes precedence over the node.js version selection logic described above that uses package.json. This allows developers to configure their applications to use arbitrary node.js versions (including custom builds), as long as the node.exe executable to use is deployed as part of the application itself. It is recommended to place the specific node.exe executable to use in the “bin” folder to prevent IIS from serving it as a static file. Next, the nodeProcessCommandLine setting in iisnode.yml file must be configured to specify the fully qualified file name of that executable; in case of Windows Azure Web Sites it should take the following form (the highlighted segment must be replaced with the name of your application): 
 
-{% highlight yaml linenos %}
+```
 nodeProcessCommandLine: "C:\\DWASFiles\\Sites\\hellojs\\VirtualDirectory0\\site\\wwwroot\\bin\\node.exe"
 
 ```

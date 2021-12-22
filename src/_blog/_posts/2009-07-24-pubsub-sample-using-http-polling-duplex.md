@@ -45,9 +45,7 @@ A few implementation aspects of the service are worth calling out given their im
 
 In the broadcast scenario or a collaboration scenario that involves more than 2 participants, identical messages are often sent to several clients. Given that a substantial portion of the cost of sending a message is related to serializing its content, it is worthwhile to pre-serialize a message once and then send a copy of it multiple times. In order to accomplish this, the callback contract of a pub/sub service should take a Message as a parameter as opposed to typed parameters. This allows the message to be pre-serialized and converted to a MessageBuffer using TypedMessageConverter. Then, for every notification to be sent, the MessageBuffer can be used to create a clone of the Message without incurring the serialization cost. This is how the WCF service contract of the pub/sub service looks like:  
 
-{% highlight csharp linenos %}
-
-
+```
 [ServiceContract(CallbackContract = typeof(INotification))]        
 public interface IPubSub         
 {         
@@ -83,9 +81,7 @@ public class NotificationData
 
 When a notification is to be sent to multiple clients over the INotification service contract, the message is first pre-serialized using a TypedMessageConverter:  
 
-{% highlight csharp linenos %}
-
-
+```
 TypedMessageConverter messageConverter =    
     TypedMessageConverter.Create(         
         typeof(NotificationData),         
@@ -102,9 +98,7 @@ MessageBuffer notificationMessageBuffer =
 
 Then a copy of the message is sent to all clients, thus avoiding the serialization cost on every send:  
 
-{% highlight csharp linenos %}
-
-
+```
 foreach (INotification callbackChannel in clientsToNotify)        
 {         
     try         
@@ -123,9 +117,7 @@ Another aspect to emphasize in how the notifications are sent is related to the 
 
 Finally, the concurrency mode of the WCF service is set to ConcurrencyMode.Multiple, and instance mode to InstanceMode.Single. This requires explicit synchronization code to be added around access to critical resources (i.e. data structures related to subscriptions), but the extra effort pays off in reduced contention of concurrent requests to the service:  
 
-{% highlight csharp linenos %}
-
-
+```
 [ServiceBehavior(        
     ConcurrencyMode = ConcurrencyMode.Multiple,    
     InstanceContextMode = InstanceContextMode.Single)]         
@@ -143,8 +135,7 @@ There are several more performance considerations for setting up a pub/sub servi
 
 The key implementation aspect of the pub/sub service client in the sample is the use of the Add Service Reference feature of Visual Studio to automatically generate a proxy to such a service. This is a major usability improvement from Silverlight 2 to Silverlight 3. After the proxy has been added to the client project using the Add Service Reference feature of Visual Studio (or the slsvcutil.exe command line tool offering corresponding functionality), consuming asynchronous notifications from the sever is as easy as hooking up events on the generated proxy:  
 
-{% highlight csharp linenos %}
-   
+```
 
 PubSubClient client = new PubSubClient(        
     new PollingDuplexHttpBinding(),         

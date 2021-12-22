@@ -24,7 +24,7 @@ Here is the ‘Hello, world’ rite of passage:
 
 [http://haiku.cloudapp.net/?x-haiku-handler=https://raw.github.com/tjanczuk/haiku-http/master/samples/haikus/hello.js](http://haiku.cloudapp.net/?x-haiku-handler=https://raw.github.com/tjanczuk/haiku-http/master/samples/haikus/hello.js)  
 
-{% highlight javascript linenos %}
+```
    res.writeHead(200)  
 res.end('Hello, world!\n')
 
@@ -43,7 +43,7 @@ Peace:
     
 [http://haiku.cloudapp.net/?x-haiku-handler=https://raw.github.com/tjanczuk/haiku-http/master/samples/haikus/request.js&word=peace](http://haiku.cloudapp.net/?x-haiku-handler=https://raw.github.com/tjanczuk/haiku-http/master/samples/haikus/request.js&word=peace) 
 
-{% highlight javascript linenos %}
+```
 var query = require('url').parse(req.url, true).query  
 var word = query.word || 'the'  
 var request = require('request')  
@@ -76,7 +76,7 @@ Only documents for ‘app1.com’ host:
     
 [http://haiku.cloudapp.net/?x-haiku-handler=https://raw.github.com/tjanczuk/haiku-http/master/samples/haikus/mongo.js&host=app1.com](http://haiku.cloudapp.net/?x-haiku-handler=https://raw.github.com/tjanczuk/haiku-http/master/samples/haikus/mongo.js&host=app1.com)
 
-{% highlight javascript linenos %}
+```
 var query = require('url').parse(req.url, true).query  
 var mongoUrl = query['db'] || 'mongodb://arr:arr@staff.mongohq.com:10024/arr'  
 var filter = query['host'] ? { hosts: query['host'] } : {}  

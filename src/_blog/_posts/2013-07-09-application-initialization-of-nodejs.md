@@ -30,7 +30,7 @@ To enable application initialization for a Node.js app running in IIS, you must 
 
 You must make two changes in the *applicationHost.config* file. First, enable *autoStart* and set *startMode* to *AlwaysRunning* on the IIS application pool which runs your Node.js application, e.g:   
 
-{% highlight javascript linenos %}
+```
    <applicationPools>  
   <add name="DefaultAppPool" autoStart="true" startMode="AlwaysRunning" />  
 </applicationPools>
@@ -43,7 +43,7 @@ Setting these properties will ensure that whenever IIS starts on the machine, th
 
 In addition to ensuring that the IIS worker process (*w3wp.exe)* is always running, we must also ensure that the actual *node.exe* process process handling your application is started along with it. The *node.exe* process is normally created by the iisnode module running within the IIS worker process only when a first HTTP request targeting that Node.js application arrives. To force iisnode to create a *node.exe* process as soon as *w3wp.exe* itself is started, you must fake an HTTP request that targets your Node.js application using IIS 8’s *preload* feature. The feature simulates a new incoming HTTP request with a specific URL without actually generating any network traffic. To enable preload feature for your Node.js application, you must modify the application entry in *applicationHost.config* with *preloadEnabled* attribute set to *true*, e.g.:
 
-{% highlight javascript linenos %}
+```
 <site name="Default Web Site" id="1">  
     <application path="/autostart" preloadEnabled="true" applicationPool="DefaultAppPool">  
         <virtualDirectory path="/" physicalPath="C:\projects\autostart" />  
@@ -56,7 +56,7 @@ In addition to ensuring that the IIS worker process (*w3wp.exe)* is always runni
 
 The configuration above will cause IIS to generate a fake preload request targeting your Node.js application as soon as the *w3wp.exe* process has started. The URL of the request will by default be the root URL of the application, in the example above */autostart*. You must ensure that the configuration of your IIS application recognizes this request as targeting your Node.js application. The typical way to achieve this is to use the URL rewriting within the *web.config* of your application to rewrite all incoming traffic to the entry point of your Node.js application, for example *server.js*  file, e.g.:
 
-{% highlight javascript linenos %}
+```
 <configuration>  
   <system.webServer>  
     <handlers>  
@@ -78,7 +78,7 @@ The configuration above will cause IIS to generate a fake preload request target
 
 If, for whatever reason, you don’t want to use URL rewriting in your *web.config*, you can specify an alternative URL for IIS to use when issuing the preload request. This is accomplished with the *applicationInitialization* section of *web.config*: 
 
-{% highlight javascript linenos %}
+```
 <configuration>  
   <system.webServer>    
     <applicationInitialization skipManagedModules="true" >  

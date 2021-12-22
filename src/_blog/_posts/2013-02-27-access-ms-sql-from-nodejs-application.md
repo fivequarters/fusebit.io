@@ -40,7 +40,7 @@ First install the [owin](https://github.com/tjanczuk/owin) module with
 
 Then in your test.js:
 
-{% highlight javascript linenos %}
+```
 var owin = require('owin');  
   
 owin.sql("select * from Region", function (error, result) {  
@@ -95,7 +95,7 @@ The result of the query is a JavaScript array. The first element of the array is
 
 You can insert data into a SQL database with the following code:
 
-{% highlight javascript linenos %}
+```
 var owin = require('owin');  
   
 owin.sql("insert into Region values (5, 'Pacific Northwest')", function (error, result) {  
@@ -143,7 +143,7 @@ The statement has been terminated.
 
 Similarly to insert, you can execute SQL update command, followed by a select showing the state of the table:
 
-{% highlight javascript linenos %}
+```
 var owin = require('owin');  
   
 owin.sql("update Region set RegionDescription='Washington and Oregon' where RegionID=5", function (error, result) {  
@@ -180,7 +180,7 @@ C:\projects\owin>node test.js
 
 The delete SQL command removes rows from the table:
 
-{% highlight javascript linenos %}
+```
 var owin = require('owin');  
   
 owin.sql("delete Region where RegionID > 4", function (error, result) {  

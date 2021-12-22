@@ -32,7 +32,7 @@ To summarize, the deployment of the application requires 1,250 extra large (8 CP
 
 To support horizontal partitioning the system must have a routing logic in place that knows how to route all requests targeting a specific chat room to the Node.js process that keeps the chat room’s state. To build such routing system, individual chat rooms must be addressable, for example using HTTP URL path segments as follows:  
 
-{% highlight javascript linenos %}
+```
    http://megachat.com/{server_id}/{process_id}/{chatroom_id}
   
 
@@ -41,7 +41,7 @@ To support horizontal partitioning the system must have a routing logic in place
 
 or a combination of a DNS name and HTTP URL path segment:
 
-{% highlight javascript linenos %}
+```
 http://{server_id}.megachat.com/{process_id}/{chatroom_id}
   
 

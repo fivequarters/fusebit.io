@@ -20,7 +20,7 @@ Upon popular demand for YAML configuration (or rather lack of demand for angle b
 
 You can use iisnode.yml file to control several configuration options for iisnode. For a full and current list with a description see [here](https://github.com/tjanczuk/iisnode/blob/master/src/samples/configuration/iisnode.yml).  
 
-{% highlight yaml linenos %}
+```
    # The optional iisnode.yml file provides overrides of   
 # the iisnode configuration settings specified in web.config.  
   
@@ -67,7 +67,7 @@ Even if you use iisnode.yml file to configure your node.js application running i
 
 The good news is that in majority of situations you can use a boilerplate web.config below and never come back to it, relying solely on iisnode.yml for configuration of node.js applications running in IIS. 
 
-{% highlight xml linenos %}
+```
 <?xml version="1.0" encoding="utf-8"?>  
 <configuration>  
     <system.webServer>           

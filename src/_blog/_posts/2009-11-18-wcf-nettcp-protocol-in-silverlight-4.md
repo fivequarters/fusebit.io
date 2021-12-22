@@ -28,9 +28,7 @@ Practical use of the protocol is constrained to intranet environments where fire
 
 WCF net.tcp protocol in Silverlight 4 addresses the same duplex communication scenario as the HTTP polling duplex protocol from Silverlight 2 and 3, while providing a major performance improvement and maintaining the same, simple to use event based programming model:  
 
-{% highlight csharp linenos %}
-
-
+```
 DuplexServiceClient client = new DuplexServiceClient("NetTcpBinding_DuplexService");        
 client.ResponseReceived += new EventHandler<ResponseReceivedEventArgs>(client_ResponseReceived); 
 
@@ -110,9 +108,7 @@ Net.tcp protocol is well integrated with the Add Service Reference feature in Vi
 
 Proxy can be instantiated in code by referring to the named endpoint in Silverlight configuration:  
 
-{% highlight csharp linenos %}
-
-
+```
 DuplexServiceClient client = new DuplexServiceClient("NetTcpBinding_DuplexService");  
 
 ```

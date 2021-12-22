@@ -90,7 +90,7 @@ To effectively use the iisnode integrated debugging, it is important to understa
 
 While the basic debugging scenario in iisnode works out of the box, there are a few options one can configure in the web.config file of the web application to fine tune the experience. They are controlled with the following configuration options, shown below with their default values:   
 
-{% highlight xml linenos %}
+```
    <configuration>  
   <system.webServer>  
     <iisnode        

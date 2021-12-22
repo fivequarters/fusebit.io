@@ -43,7 +43,7 @@ Follow the installation instructions at the [iisnode](https://github.com/tjanczu
 The hello world sample consists of two files: hello.js and web.config.  
 This is the hello.js file from the helloworld sample:
 
-{% highlight javascript linenos %}
+```
 var http = require('http');
 
 http.createServer(function (req, res) {
@@ -56,7 +56,7 @@ You will notice that the only difference between this code and the hello world s
 
 The web.config file is required to instruct IIS that the hello.js file contains a node.js application. Otherwise IIS would consider this file to be client side JavaScript and serve it as static content. The web.config designates hello.js as a node.js application by scoping the registration of the handler in the iisnode module to that file only:
 
-{% highlight xml linenos %}
+```
 <configuration><system.webServer><handlers><add name="iisnode" path="hello.js" verb="*" modules="iisnode" /></handlers>  
  </system.webServer></configuration>
 
@@ -101,20 +101,20 @@ One of the more interesting benefits of hosting node.js applications in IIS usin
 
 Indicating which files within a web site are node.js applications and should be handled by the iisnode module is done by registring the iinode handler for those files in web.config. In the simplest form, one can register the iisnode module for a single \*.js file in a web site using the ‘path’ attribute of the ‘add’ element of the handler collection:
 
-{% highlight xml linenos %}
+```
 <configuration><system.webServer><handlers><add name="iisnode" path="hello.js" verb="*" modules="iisnode" /></handlers></system.webServer></configuration>
 
 ```
 Alternatively, one can decide that all files in a particular directory are supposed to be treated as node.js applications. A web.config using the <location> element can be used to achieve such configuration:
 
-{% highlight xml linenos %}
+```
 <configuration><location path="nodejsapps"><system.webServer><handlers><add name="iisnode" path="*.js" verb="*" modules="iisnode" /></handlers>  
  </system.webServer></location></configuration>
 
 ```
 One other approach one can employ is to differentiate node.js applications from client side JavaScript scripts by assigning a file name extension to node.js applications other than _.js, e.g. _.njs. This allows a global iisnode handler registration that may apply across all  sites on a given machine, since the \*.njs extension is unique:
 
-{% highlight xml linenos %}
+```
 <configuration><system.webServer><handlers><add name="iisnode" path="*.njs" verb="*" modules="iisnode" /></handlers>  
  </system.webServer></configuration>
 
@@ -133,7 +133,7 @@ You will want to use URL rewriting for majority of node.js web site applications
 
 It has been the aspiration for iisnode to not require extensive changes to existing, self-hosted node.js HTTP applications. To that end, most applications will only require a change in the specification of the listen address for the HTTP server, since that address is assigned by the IIS as opposed to left for the application to choose. The iisnode module will pass the listen address to the node.exe worker process in the PORT environment variable, and the application can read it from process.env.PORT:
 
-{% highlight javascript linenos %}
+```
 var http = require('http');
 
 http.createServer(function (req, res) {
@@ -148,7 +148,7 @@ If you access the endpoint created by the application above, you will notice the
 
 The iisnode module allows many of the configuration options to be adjusted using the iisnode.yml file or the system.webServer/iisnode section of web.config. Settings in the iisnode.yml file, if present, take precedence over settings in the web.config. Below is the list of options (most of which were described above) with their default values. For detailed and most current description of the options check out the [configuration sample](https://github.com/tjanczuk/iisnode/blob/master/src/samples/configuration).
 
-{% highlight yaml linenos %}
+```
 
 # The optional iisnode.yml file provides overrides of
 

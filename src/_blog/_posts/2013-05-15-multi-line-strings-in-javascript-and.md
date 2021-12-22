@@ -18,7 +18,7 @@ When writing Node.js or JavaScript applications, you sometimes need to embed mul
 
 JavaScript has no built-in way of representing multi-line strings. If you need to embed a longer non-JavaScript text in your application the natural options are limited to concatenating several one-line JavaScript strings or using external files. Unless, of course, you use a little known trick:  
 
-{% highlight javascript linenos %}
+```
    var html = (function () {/*  
   <!DOCTYPE html>  
   <html>  

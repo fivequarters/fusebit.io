@@ -26,9 +26,7 @@ One approach to provide easy access to WCF RIA service traces for debugging and 
 
 The feature can be enabled by referencing Microsoft.ServiceModel.DomainServices.Hosting.dll from the [WCF RIA Services Toolkit](http://www.microsoft.com/downloads/details.aspx?FamilyID=7b43bab5-a8ff-40ed-9c84-11abb9cda559&displaylang=en) in the web application (make sure to mark the library reference “copy local”) and adding the highlighted sections to the the web.config file (other pre-existing sections omitted for brevity):   
 
-{% highlight xml linenos %}
-
-
+```
 <configuration>       
   <system.diagnostics>         
     <sources>          
@@ -90,7 +88,7 @@ http://localhost/abc/MyCompany-MyProject-AuthenticationService.svc/traces?format
 
 Given that traces are collected in memory, a quota is provided to limit the maximum number of most recent traces that will be kept. By default 200 most recent traces are maintained, but the value can be modified using the “maxEntries” attribute in the configuration file:
 
-{% highlight xml linenos %}
+```
 <domainServices>    
  <endpoints>    
    <add     

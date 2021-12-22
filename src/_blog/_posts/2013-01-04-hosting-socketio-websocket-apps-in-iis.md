@@ -58,7 +58,7 @@ There are three aspects that must be configured in web.config: handler registrat
 
 First, you must inform IIS that the server-socket.io.js file is a node.js application and must be handled by iisnode. Without this, IIS would try to serve the file as a client side JavaScript using the static file handler: 
 
-{% highlight xml linenos %}
+```
 <handlers>  
    <add name="iisnode-socketio" path="server-socketio.js" verb="*" modules="iisnode" />  
 </handlers>
@@ -69,7 +69,7 @@ First, you must inform IIS that the server-socket.io.js file is a node.js applic
 
 Then, the URL rewrite module must be informed that all HTTP requests that start with the ‘socket.io’ segment constitute node.js traffic and should be redirected to the server-socketio.js as the entry point of the node.js application. Without this, IIS would attempt to map these requests to other handlers, and most likely respond with a failure code:
 
-{% highlight xml linenos %}
+```
 <rewrite>  
      <rules>  
           <rule name="LogFile" patternSyntax="ECMAScript">  
@@ -85,7 +85,7 @@ Then, the URL rewrite module must be informed that all HTTP requests that start 
 
 Lastly, the built-in WebSocket module that IIS 8 ships with must be turned off, since otherwise it would conflict with the WebSocket implementation provided by socket.io on top of the raw HTTP upgrade mechanism node.js and iisnode support:
 
-{% highlight xml linenos %}
+```
 <webSocket enabled="false" />
   
 
@@ -98,7 +98,7 @@ The complete web.config is at [https://github.com/tjanczuk/dante/blob/master/web
 
 The server code must configure socket.io to inform it that the node.js application owns just a subset of the URL space as a result of being hosted in IIS virtual directory. This means that socket.io traffic that the server normally listens to on the /socket.io path is going to arrive at /dante/socket.io:
 
-{% highlight javascript linenos %}
+```
 io.configure(function() {  
     io.set('transports', [ 'websocket' ]);  
     if (process.env.IISNODE_VERSION) {  
@@ -118,7 +118,7 @@ The full code of the server is at [https://github.com/tjanczuk/dante/blob/master
 
 The client code must contain configuration change corresponding to the server, otherwise socket.io client library would by default assume the socket.io traffic should be sent to the /socket.io path on the server:
 
-{% highlight javascript linenos %}
+```
 var address = window.location.protocol + '//' + window.location.host;  
 var details = {  
     resource: (window.location.pathname.split('/').slice(0, -1).join('/') + '/socket.io').substring(1)  

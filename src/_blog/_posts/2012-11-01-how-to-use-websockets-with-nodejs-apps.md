@@ -48,7 +48,7 @@ Lastly, navigate to [http://localhost/dante/server-faye.js](http://localhost/dan
 
 If you have a closer look at server.js, you will notice the application uses the [faye-websocket](https://github.com/faye/faye-websocket-node) module to establish a WebSocket server, just like a self-hosted node.js WebSocket application would:
 
-{% highlight javascript linenos %}
+```
 var WebSocket = require('faye-websocket')  
     , http = require('http');  
   
@@ -76,7 +76,7 @@ The iisnode module uses the functionality enabled in IIS 8 on Windows Server 201
 
 Using WebSockets in a node.js applications running in iisnode requires that – contrary to what one would expect – websockets are *disabled* in web.config:
 
-{% highlight xml linenos %}
+```
 <configuration>  
   <system.webServer>  
     <webSocket enabled="false" />  
