@@ -3,7 +3,7 @@ post_title: Import Contacts from HubSpot to Salesforce
 post_author: Liz Parody
 post_author_avatar: liz.png
 date: '2021-12-22'
-post_image: blog-hubspot-salesfoce-sync.png
+post_image: blog-hubspot-salesfoce-main.png
 post_excerpt: In this blog post, you will learn how to easily import contacts from HubSpot to Salesforce with a few clicks using Fusebit.
 post_slug: contacts-from-hubspot-to-salesforce
 tags: ['post', 'integrations']
@@ -20,13 +20,13 @@ In this blog post, you will learn how to easily import contacts from HubSpot to 
 ![Contact in Salesforce](blog-hubspot-salesfoce-salesforce-contacts.png 'Contact in Salesforce')
 
 ## Create HubSpot and Salesforce integration
-1. Sign up or log in to Fusebit
+1. [Sign up or log in to Fusebit](https://account.fusebit.io/signup)
 2. Click on “New Integration”. Choose HubSpot Contacts sync in the middle column, and change the integration name and the HubSpot Connector name (optional). Click on Create.
 ![create integration](blog-hubspot-salesfoce-fusebit.png 'create integration')
 3. In the right column “Connectors”, click on `Add new`, or `Link existing` and create a Salesforce connector.
 ![create integration](blog-hubspot-salesfoce-connectors.png 'create integration')
 
-As a Salesforce and HubSpot user, you can create powerful integrations between the two systems with the power of code.
+As a Salesforce and HubSpot user, you can create powerful integrations between the two systems with code.
 
 Click on “Edit” in the middle column, and replace the code with:
 
@@ -64,7 +64,7 @@ Keep in mind to change the constants `hubspotConnector`and `sfdcConnector` with 
 Now that you have both connectors and the integration logic let’s configure HubSpot and Salesforce.
 
 ## Configure HubSpot Developers
-1. Go to https://developers.hubspot.com/ 
+1. Go to [https://developers.hubspot.com/](https://developers.hubspot.com/)
 2. Log in or create an app developer account
 3. In the Apps tab, click on “Create App”
 4. On the `Basic info` on the left, click on `Auth` to find the Client ID and Client Secret, as you can see in the image below.
@@ -115,8 +115,8 @@ Click Run.
 3. In Salesforce CRM, refresh the page and make sure you are filtering by `All Contacts`, and you will see the newly created contact! 🎉  You can also import all your contact records of your company.
 ![integration user](blog-hubspot-salesfoce-result.png 'integration user')
 
-One Last Thing…
-If you have any questions, you can [contact us](). Keep in mind that you can create any HubSpot Salesforce integration using Fusebit, filter contact activity, get contact data, advanced setup and sync data between the two platforms.
+## One Last Thing…
+If you have any questions, you can [contact us](https://fusebit.io/contact/). Keep in mind that you can create any HubSpot Salesforce integration using Fusebit, filter contact activity, get contact data, advanced setup and sync data between the two platforms.
 
 If you want to use other platforms, create powerful bi-directional sync and improve your customer experience, for example sending new Salesforce leads to your marketing team in slack, check out [Fusebit](https://fusebit.io/), and follow us on [Twitter](https://twitter.com/fusebitio)!
 
