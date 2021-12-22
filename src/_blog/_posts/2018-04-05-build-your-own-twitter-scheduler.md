@@ -95,6 +95,7 @@ yaml
     media: https://tomasz.janczuk.org/assets/images/b_2.jpg
     schedule: 4/5/2018 12:00 PDT
 ```
+
  1. The top level object must contain the *tweets* array with elements representing individual tweets.  
  2. Each tweet must contain the *text* of the tweet, and a *schedule* at minimum. It may also contain the *media* to attach to the tweet. 
  3. The *schedule* is a single date or an array of dates that tweet will be sent on. You can use any format here that is accepted by Node's `new Date(...)` constructor, like the simple one shown above. It is a good idea to specify the time zone.  
@@ -119,11 +120,10 @@ For each tweet, the *result* element tells if the tweet was sent successfuly or 
 Instead of waiting for the CRON job to execute, you can force execution of your schedule. This is done by simply navigating to the webtask URL with a *?run* query string appended, e.g.: 
 
 ```
-
 https://{your_container}.sandbox.auth0-extend.com/{your_webtask}?run
 ```
 As a result, all the overdue tweets since the last execution (either by the CRON job or manually) will be sent. 
 
 ### Shameless plug
 
-If you enojoy the flexibility of Auth0 Webtasks, you may be interested in the commercial product we've built on top of this technology: [Extend](https://goextend.io?utm_source=blog&utm_medium=post&utm_campaign=blog-tomek&utm_content=2018-04-05-twitter-scheduler). Extend removes friction from the customization and integration of SaaS platforms by providing an embedded scripting experience, ["serverless wehbooks"](https://fusebit.io/blog/2018/03/serverless-webhooks-to-revolutionize-the-saas/). Check it out! }
+If you enojoy the flexibility of Auth0 Webtasks, you may be interested in the commercial product we've built on top of this technology: [Extend](https://goextend.io?utm_source=blog&utm_medium=post&utm_campaign=blog-tomek&utm_content=2018-04-05-twitter-scheduler). Extend removes friction from the customization and integration of SaaS platforms by providing an embedded scripting experience, ["serverless wehbooks"](https://fusebit.io/blog/2018/03/serverless-webhooks-to-revolutionize-the-saas/). Check it out!
