@@ -111,6 +111,8 @@ module.exports = function (eleventyConfig) {
                 images
                     .filter(
                         (i) =>
+                            !i.src.includes('arrow--') &&
+                            !i.src.includes('tag') &&
                             !i.src.includes('footer__bg') &&
                             !i.src.includes('http')
                     )
