@@ -36,12 +36,12 @@ You need Windows x64 with node.js 0.8.x x64 installed (the module had been devel
 
 Start by importing the express.js and owin modules from NPM:  
 
-{% highlight text linenos %}
+```
+
    npm install express  
 npm install owin@0.4.0
 
-{% endhighlight %}
-
+```
 
 
 Then implement your [OWIN](http://owin.org/) handler in C# and save it to Startup.cs file:
@@ -71,18 +71,17 @@ namespace OwinHelloWorld
     }  
 }
 
-{% endhighlight %}
-
+```
 
 
 Compile the Startup.cs file to OwinHelloWorld.dll (by convention the assembly name should match the namespace of the Startup class):
 
-{% highlight text linenos %}
+```
+
 csc /target:library /out:OwinHelloWorld.dll Startup.cs
   
 
-{% endhighlight %}
-
+```
 
 
 Finally implement your express.js application and save it to server.js file. The application imports the owin module and uses it create and register an express.js request handler created around the the OwinHelloWorld.dll you just compiled: 
@@ -101,20 +100,19 @@ app.all('/rocknroll', function (req, res) {
 app.listen(3000);
   
 
-{% endhighlight %}
-
+```
 
 
 Note that the OwinHelloWorld.dll must be in the current directory, or a full path to the DLL must be specified in the call to the owin() function. 
 
 Now run the node.js server:
 
-{% highlight text linenos %}
+```
+
 node server.js
   
 
-{% endhighlight %}
-
+```
 
 
 Finally, navigate to the http://localhost:3000/rocknroll URL. As expected, you get back the response from the JavaScript handler:

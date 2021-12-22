@@ -30,8 +30,7 @@ In *iisnode.yml*, you must enable debugging by setting the *debuggingEnabled* pr
    debuggingEnabled: true
   
 
-{% endhighlight %}
-
+```
 
 
 
@@ -59,8 +58,7 @@ In *web.config*, you must configure URL rewriting rules which allow *iisnode* to
 </configuration>
   
 
-{% endhighlight %}
-
+```
 
 
 ### Using the debugger
@@ -83,8 +81,7 @@ The iisnode debugger integration requires that part of the URL space of your Win
 debuggerPathSegment: 6534adw287dgx552
   
 
-{% endhighlight %}
-
+```
 
 
 When changing the debugger path segment, a corresponding change must be done in the URL rewrite rules in *web.config*. Once the path segment has been changed, you can navigate to the node-inspector debugger using the *http://yourapp.azurewebsites.net/server.js/6534adw287dgx552* URL. 

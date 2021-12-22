@@ -29,8 +29,7 @@ http.createServer(function (req, res) {
 }).listen(process.env.PORT);  
   
 
-{% endhighlight %}
-
+```
 
 
 along with the following web.config that registers the iisnode module as a handler of the hello.js file, therefore indicating it is a node.js application:
@@ -45,18 +44,17 @@ along with the following web.config that registers the iisnode module as a handl
 </configuration>
   
 
-{% endhighlight %}
-
+```
 
 
 When both hello.js and web.config above are saved in the ‘node’ virtual directory in IIS, one can navigate to the node.js application using the following URL:
 
-{% highlight text linenos %}
+```
+
 http://localhost/node/hello.js
   
 
-{% endhighlight %}
-
+```
 
 
 As expected, IIS will realize the hello.js file maps to the iisnode handler and invoke it, and as expected a few million CPU cycles later a ‘Hello, world’ is sent back to the client. 
@@ -99,21 +97,20 @@ Fixing this problem requires configuring the URL rewriting module to indicate th
    </system.webServer>
  </configuration>
 
-{% endhighlight %}
-
+```
 
 
 The configuration above will not only cause all URLs subordinate to hello.js to handled by hello.js node application; it also allows the hello.js file name to be completely removed from the URL path. With the configuration above the node.js service can now be accessed using any of the following URLs:
 
-{% highlight text linenos %}
+```
+
 http://localhost/node/hello/foo/bar/baz  
 http://localhost/node/hello/1/2/3  
 http://localhost/node/hello/f/b/b?param=bat  
 ...
   
 
-{% endhighlight %}
-
+```
 
 
 ### What request URL does the node.js application see?

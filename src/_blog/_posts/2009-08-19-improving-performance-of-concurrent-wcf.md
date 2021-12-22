@@ -46,8 +46,7 @@ void proxy_HelloCompleted(object sender, WcfPerf.TestService.HelloCompletedEvent
     }        
 }     
 
-{% endhighlight %}
-
+```
   
 
 In order to avoid synchronizing the invocations of event handlers for individual calls on a single UI thread, a worker thread can be used to initiate the web service calls. Newly created worker threads do not have a SynchronizationContext set, which means event handler code for every response from the server will execute on its own thread. This greatly reduces contention in the client application and reduces the average latency of a series of concurrent calls. Consider the code below which uses the worker thread approach:  
@@ -93,8 +92,7 @@ void proxy_HelloCompleted(object sender, WcfPerf.TestService.HelloCompletedEvent
     }        
 } 
 
-{% endhighlight %}
-
+```
   
 
 My ad-hoc measurements indicate the average latency of the worker thread approach is about 20% of the average latency of the UI thread approach. The downside of this approach is the more complex way of manipulating the UI controls on the page. The worker thread has to explicitly schedule the code that manipulates the UI to execute on the UI thread, as shown in the proxy_HelloCompleted implementation above.   }

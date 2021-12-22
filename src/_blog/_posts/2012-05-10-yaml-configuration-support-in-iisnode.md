@@ -52,8 +52,7 @@ flushResponse: false
 enableXFF: false  
 promoteServerVars: 
 
-{% endhighlight %}
-
+```
 
 
 The iisnode.yml configuration file is not a replacement of web.config: both can exist at the same time. However, if iisnode.yml is present, its settings override the values specified in the system.webServer\iisnode section of web.config. 
@@ -97,8 +96,7 @@ The good news is that in majority of situations you can use a boilerplate web.co
    </system.webServer>  
  </configuration>
 
-{% endhighlight %}
-
+```
 
 
 The web.config above has the following effect:

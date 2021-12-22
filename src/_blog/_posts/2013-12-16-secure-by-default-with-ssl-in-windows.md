@@ -40,8 +40,7 @@ An application deployed to Windows Azure Web Sites can detect presence of the *x
 }
   
 
-{% endhighlight %}
-
+```
 
 
 The middleware will detect HTTPS request and continue processing them. If an HTTP request arrives, it can be either redirected to a corresponding HTTPS endpoint, or flat out rejected with an HTTP 404 response, depending how the middleware is configured. As a rule of thumb, if the request contains sensitive information and it was received over plain HTTP, it should be rejected. Otherwise, it is OK to redirect it to a corresponding HTTPS endpoint. Here is how you can use this middleware in configuring endpoints of an Express application:
@@ -56,8 +55,7 @@ app.get('/account',
     authenticate(),  
     routes.account);
 
-{% endhighlight %}
-
+```
 
 
 You can see the redirection from HTTP to HTTPS in action when you navigate to [http://mobilechapters.com](http://mobilechapters.com). 

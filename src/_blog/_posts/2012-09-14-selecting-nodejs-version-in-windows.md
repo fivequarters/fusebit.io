@@ -20,7 +20,8 @@ The latest release of [Windows Azure Web Sites](http://www.windowsazure.com/en-u
 
 To choose a specific version of node.js to run your application with (say 0.6.20), specify that version in the “engines” section of the package.json file:   
 
-{% highlight text linenos %}
+```
+
    {  
     "name": "hellojs",  
     "version": "0.1.0-pre",  
@@ -30,8 +31,7 @@ To choose a specific version of node.js to run your application with (say 0.6.20
 }
   
 
-{% endhighlight %}
-
+```
 
 
 When you commit and push this change to the Git repository provided by Windows Azure Web Sites, the version of the node.js engine to use is determined based on your choice within package.json:
@@ -63,13 +63,13 @@ Note that within package.json you can use an expression to describe more elabora
 }
   
 
-{% endhighlight %}
-
+```
 
 
 In that case, Windows Azure Web Sites will choose the maximum version of node.js installed on the platform at the time of the deployment which satisfies the version constraint specified in package.json. Given the package.json above and node.js versions installed on Windows Azure Web Sites at the time of this writing, the selected node.js version would be 0.8.2:
 
-{% highlight text linenos %}
+```
+
 tjanczuk-air:hellojs tomek$ git push origin master 
 … 
 remote: Selecting nodejs version. 
@@ -77,8 +77,7 @@ remote: Node.js versions available on the platform are: 0.6.17, 0.6.20, 0.8.2.
 Selected node.js version 0.8.2. Use package.json file to choose a different version. 
 remote: Deployment successful.
 
-{% endhighlight %}
-
+```
 
 
 ### The default version of node.js
@@ -94,21 +93,20 @@ If the iisnode.yml file deployed with the application already contains an explic
 {% highlight yaml linenos %}
 nodeProcessCommandLine: "C:\\DWASFiles\\Sites\\hellojs\\VirtualDirectory0\\site\\wwwroot\\bin\\node.exe"
 
-{% endhighlight %}
-
+```
 
 
 When the application including node.exe and the iisnode.yml is deployed, the custom version of node.exe will be used to run it: 
 
-{% highlight text linenos %}
+```
+
 tjanczuk-air:hellojs tomek$ git push origin master 
 … 
 remote: Selecting nodejs version. 
 remote: The iisnode.yml file explicitly sets nodeProcessCommandLine. Automatic node.js version selection is turned off. 
 remote: Deployment successful.
 
-{% endhighlight %}
-
+```
 
 
 This mechanism of selecting a custom node.js version to run your application with had been described in more detail in [a post by Glenn Block](http://codebetter.com/glennblock/2012/06/29/getting-your-azure-web-site-to-use-node-v0-8-1-now/). 

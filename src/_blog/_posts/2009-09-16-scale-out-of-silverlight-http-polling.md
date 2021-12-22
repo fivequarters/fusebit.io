@@ -88,8 +88,7 @@ public class MakeConnection
     // …        
 } 
 
-{% endhighlight %}
-
+```
   
 
   
@@ -111,8 +110,7 @@ public interface IPubSub : IPollingDuplex
     void Publish(string topic, string content);        
 } 
 
-{% endhighlight %}
-
+```
   
 
   
@@ -128,8 +126,7 @@ IPollingDuplex.MakeConnect operation receives the MakeConnection message which c
 
 Message response = Message.CreateMessage(MessageVersion.Default, “uri:someaction”, somePayload); 
 
-{% endhighlight %}
-
+```
   
 
 (The message format and action must of course match what the client expects to receive given its service contract).   
@@ -143,8 +140,7 @@ MakeConnection poll;
 string sessionId;        
 response = poll.PrepareRespose(response, sessionId); 
 
-{% endhighlight %}
-
+```
   
 
 MakeConnect implementation should hold onto the request without responding for a specific time (e.g. 15 seconds) even if there are no notifications to be sent back to the particular client. If after that time there is still no notification scheduled to be sent for any of the sessions on the client, the implementation of MakeConnect should respond with an empty HTTP 200. This is made easy with a call to MakeConnection.CreateEmptyResponse():  
@@ -155,8 +151,7 @@ MakeConnect implementation should hold onto the request without responding for a
 MakeConnection poll;       
 Message response = poll.CreateEmptyResponse(); 
 
-{% endhighlight %}
-
+```
   
 
 ### Accessing session information from “application” service operations  
@@ -170,8 +165,7 @@ The way to get at the session information from an incoming application message i
 
 PollingDuplexSession incomingSession = OperationContext.Current.GetPollingDuplexSession(); 
 
-{% endhighlight %}
-
+```
   
 
 The PollingDuplexSession contains two identifiers that uniquely identify the client and the session on the client:  
@@ -185,8 +179,7 @@ public class PollingDuplexSession
     public string SessionId { get; set; }        
 } 
 
-{% endhighlight %}
-
+```
   
 
   
@@ -216,8 +209,7 @@ The simplex service can now be exposed directly over an HTTP binding as opposed 
   </services>        
 </system.serviceModel> 
 
-{% endhighlight %}
-
+```
   
 
 ### Scalable server side storage for messages to be sent to the client  

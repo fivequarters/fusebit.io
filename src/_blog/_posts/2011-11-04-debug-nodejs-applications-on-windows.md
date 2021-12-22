@@ -103,8 +103,7 @@ While the basic debugging scenario in iisnode works out of the box, there are a 
 </configuration>
   
 
-{% endhighlight %}
-
+```
 
 
 The **debuggerPortRange** is the range of TCP ports iisnode will use to set up communication between the node-inspector debugger and the debugee. iisnode only picks up those ports from this range that are not in use. iisnode uses round-robin logic to assign TCP ports from this range for consecutive debugging sessions. 

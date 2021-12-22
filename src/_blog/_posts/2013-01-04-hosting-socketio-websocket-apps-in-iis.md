@@ -24,14 +24,14 @@ You need Windows 8 or Windows 2012 machine with IIS 8 and [iisnode](https://gith
 
 Clone the Dante sample, install dependencies, and set up IIS virtual directory pointing to the code of the sample:  
 
-{% highlight text linenos %}
+```
+
    git clone https://github.com/tanczuk/dante.git  
 npm install  
 dante\setup.bat
   
 
-{% endhighlight %}
-
+```
 
 
 Then navigate to the socket.io sample at [http://localhost/dante/server-socketio.js](http://localhost/dante/server-socketio.js). You should see Dante’s Divine Comedy streamed to you over websockets from a socket.io application hosted in IIS 8 using iisnode, one stanza every 2 seconds:
@@ -64,8 +64,7 @@ First, you must inform IIS that the server-socket.io.js file is a node.js applic
 </handlers>
   
 
-{% endhighlight %}
-
+```
 
 
 Then, the URL rewrite module must be informed that all HTTP requests that start with the ‘socket.io’ segment constitute node.js traffic and should be redirected to the server-socketio.js as the entry point of the node.js application. Without this, IIS would attempt to map these requests to other handlers, and most likely respond with a failure code:
@@ -81,8 +80,7 @@ Then, the URL rewrite module must be informed that all HTTP requests that start 
 </rewrite> 
   
 
-{% endhighlight %}
-
+```
 
 
 Lastly, the built-in WebSocket module that IIS 8 ships with must be turned off, since otherwise it would conflict with the WebSocket implementation provided by socket.io on top of the raw HTTP upgrade mechanism node.js and iisnode support:
@@ -91,8 +89,7 @@ Lastly, the built-in WebSocket module that IIS 8 ships with must be turned off, 
 <webSocket enabled="false" />
   
 
-{% endhighlight %}
-
+```
 
 
 The complete web.config is at [https://github.com/tjanczuk/dante/blob/master/web.config](https://github.com/tjanczuk/dante/blob/master/web.config).
@@ -110,8 +107,7 @@ io.configure(function() {
 });
   
 
-{% endhighlight %}
-
+```
 
 
 Notice this configuration change in socket.io is only made when the application is hosted in IIS; the same code base of the sample can also be self-hosted, in which case the configuration is left unmodified. 
@@ -131,8 +127,7 @@ var details = {
 var client = io.connect(address, details); 
   
 
-{% endhighlight %}
-
+```
 
 
 Notice that this client code works correctly both when the server is self-hosted or hosted in a IIS virtual directory. This is because the socket.io configuration sets the URL paths relative to the pathname of the original request that rendered the HTML page. In the self-hosted case, the original page is rendered from [http://localhost:8888/](http://localhost:8888/), and consequently socket.io’s resource property is set to ‘socket.io’. In the IIS hosted case, the original request is rendered from [http://localhost/dante/server-socketio.js](http://localhost/dante/server-socketio.js), and as a result the socket.io resource property will be set to ‘dante/socket.io’. This allows the client code to be agnostic to how the server is hosted. 

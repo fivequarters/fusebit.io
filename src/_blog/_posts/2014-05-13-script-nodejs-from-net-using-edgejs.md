@@ -39,8 +39,7 @@ Now add a using directive for Edge.js:
 
 {% highlight javascript linenos %}
 using EdgeJs;
-{% endhighlight %}
-
+```
 
 
 
@@ -58,8 +57,7 @@ static void Main(string[] args)
 
     Console.WriteLine(func(".NET").Result);
 }
-{% endhighlight %}
-
+```
 
 
 Compile, run, and enjoy!

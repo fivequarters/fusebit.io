@@ -42,8 +42,7 @@ console.log('Starting playing');
 play('dday.wav');
 console.log('Done playing');
 
-{% endhighlight %}
-
+```
 
 
 So what happens here? We are using the System.Media.SoundPlayer class from .NET Framework to play a PCM WAV file (lines 5 & 6). We wrap this logic in a C# async lambda expression (line 4). Then we use the edge.func function of Edge.js to create a JavaScript proxy around this async lambda expression (line 3). Lastly, we call that JavaScript proxy function and pass it the file name of the WAV file to play (line 12). 
@@ -76,8 +75,7 @@ play('dday.wav', function (err) {
 });
 console.log('Started playing');
 
-{% endhighlight %}
-
+```
 
 
 Notice how we create a new CLR thread pool thread in line 5, and let that thread play our audio. This leaves the V8 thread free to process whatever other events need processing. Also notice that the *play* JavaScript proxy function can still detect when the audio has finished playing by supplying an async callback in line 14. Edge.js will invoke that async callback only after the C# async lambda expression completes, which happens when the audio playing on the CLR thread pool thread has finished playing and the thread terminates in line 8. The fact that the Node.js event loop remains unblocked is evidenced by the *Started playing* message from line 18 showing up before the *Done playing* message from line 16.
@@ -111,8 +109,7 @@ var createPlayer = edge.func(function() {/*
     }
 */});
 
-{% endhighlight %}
-
+```
 
 
 We are using Edge.js to construct a *createPlayer* JavaScript function (line 3). This function wraps a logic in C# which acts as a factory method. It first creates an instance of System.Media.SoundPlayer (line 5). Then it returns an anonymous object with two functions on it: *play* and *stop.* Both functions are implemented as closures over the instance of SoundPlayer created in line 5, starting and stopping the playback, respectively. 
@@ -135,8 +132,7 @@ setTimeout(function () {
     });
 }, 5000);
 
-{% endhighlight %}
-
+```
 
 
 

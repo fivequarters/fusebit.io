@@ -78,8 +78,7 @@ public class NotificationData
     public string Content { get; set; }         
 } 
 
-{% endhighlight %}
-
+```
   
 
 When a notification is to be sent to multiple clients over the INotification service contract, the message is first pre-serialized using a TypedMessageConverter:  
@@ -98,8 +97,7 @@ Message notificationMessage = messageConverter.ToMessage(
 MessageBuffer notificationMessageBuffer =         
     notificationMessage.CreateBufferedCopy(65536); 
 
-{% endhighlight %}
-
+```
   
 
 Then a copy of the message is sent to all clients, thus avoiding the serialization cost on every send:  
@@ -118,8 +116,7 @@ foreach (INotification callbackChannel in clientsToNotify)
     catch (CommunicationException) { }         
 } 
 
-{% endhighlight %}
-
+```
   
 
 Another aspect to emphasize in how the notifications are sent is related to the use of asynchronous API INotification.BeginNotify/EndNotify. Sending a large number of notifications is a high latency activity. Using asynchronous APIs to do so results in more efficient use of system resources compared to the use of synchronous APIs. Alternatively, synchronous APIs could be used if each of the notifications was scheduled to be sent on a separate worker thread from the thread pool. Measurements of both methods indicate the performance difference between them is negligible.   
@@ -137,8 +134,7 @@ public class PubSubService : IPubSub
     // …          
 } 
 
-{% endhighlight %}
-
+```
   
 
 There are several more performance considerations for setting up a pub/sub service based on the HTTP polling duplex protocol. I will cover them in an upcoming post dedicated to performance tuning of such scenario.   
@@ -157,8 +153,7 @@ this.client.NotifyReceived +=
     new EventHandler<NotifyReceivedEventArgs>(NotifyReceived);           
 this.client.SubscribeAsync("my topic");  
 
-{% endhighlight %}
-
+```
   
 
 Thanks to this feature, the entire pub/sub client application is around 100 lines of C# code.   }

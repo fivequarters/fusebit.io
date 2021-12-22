@@ -36,8 +36,7 @@ You must make two changes in the *applicationHost.config* file. First, enable *a
 </applicationPools>
   
 
-{% endhighlight %}
-
+```
 
 
 Setting these properties will ensure that whenever IIS starts on the machine, the *DefaultAppPool* will also be started, and that an IIS worker process *w3wp.exe* to handle this application pool will be created without waiting for an activating HTTP request. 
@@ -52,8 +51,7 @@ In addition to ensuring that the IIS worker process (*w3wp.exe)* is always runni
 </site>
   
 
-{% endhighlight %}
-
+```
 
 
 The configuration above will cause IIS to generate a fake preload request targeting your Node.js application as soon as the *w3wp.exe* process has started. The URL of the request will by default be the root URL of the application, in the example above */autostart*. You must ensure that the configuration of your IIS application recognizes this request as targeting your Node.js application. The typical way to achieve this is to use the URL rewriting within the *web.config* of your application to rewrite all incoming traffic to the entry point of your Node.js application, for example *server.js*  file, e.g.:
@@ -75,8 +73,7 @@ The configuration above will cause IIS to generate a fake preload request target
 </configuration>
   
 
-{% endhighlight %}
-
+```
 
 
 If, for whatever reason, you don’t want to use URL rewriting in your *web.config*, you can specify an alternative URL for IIS to use when issuing the preload request. This is accomplished with the *applicationInitialization* section of *web.config*: 
@@ -94,8 +91,7 @@ If, for whatever reason, you don’t want to use URL rewriting in your *web.conf
 </configuration>
   
 
-{% endhighlight %}
-
+```
 
 
 ### Nice and warm

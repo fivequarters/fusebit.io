@@ -68,8 +68,7 @@ public JsonValue Post(JsonObject body)
     return items[items.Count - 1];
 }
 
-{% endhighlight %}
-
+```
 
 
 The method above is extending the WCF HTTP programming model available since .NET Framework 3.5 SP1 with support for JsonValue as the method parameter and return value type. If JSON or application/x-www-form-urlencoded data arrives in the body of the POST request, it will be deserialized into the JsonObject instance passed to the Post method. The JsonValue instance the method returns will be serialized into JSON format on the HTTP response.   
@@ -86,20 +85,19 @@ $.post("./Service/", person, function (result) {
     //...
 });
 
-{% endhighlight %}
-
+```
 
 
 In line 1-4 a JavaScript object ‘person’ is created. Line 5 initiates a POST HTTP request to the WCF service identified with a relative ‘./Service/’ URL, and passes the ‘person’ instance to be sent to the service. By default, jQuery serializes the JavaScript object using the application/x-www-form-urlencoded format. The HTTP request looks like the one below, with line 4 containing the serialized ‘person’ instance:
 
-{% highlight text linenos %}
+```
+
 POST http://127.0.0.1:8326/Service/ HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
  
 Name=John+Doe&Age=21
 
-{% endhighlight %}
-
+```
 
 
 The interesting aspect of WCF support for application/url-form-encoded is that JavaScript applications can use that format to serialize not only simple lists of key/value pairs traditionally associated with an HTML form submission, but also arbitrarily complex JavaScript objects. JsonValue supports deserialization of data from application/x-www-form-urlencoded format [following the jQuery’s $.param() serialization conventions](http://benalman.com/news/2009/12/jquery-14-param-demystified/). To see this format in action, let’s send a more complex object to the server by modifying the ‘person’ instance to:
@@ -120,20 +118,19 @@ var person = {
     ]
 };
 
-{% endhighlight %}
-
+```
 
 
 The corresponding HTTP request with this data is shown below, with line 4 containing the complex ‘person’ structure serialized into an application/x-www-form-urlencoded format using the $.param() convention from jQuery:
 
-{% highlight text linenos %}
+```
+
 POST http://127.0.0.1:8326/Service/ HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
  
 Name=John+Doe&Age=21&Children%5B0%5D%5BName%5D=Jessica&Children%5B0%5D%5BBestToy%5D=Fish&Children%5B1%5D%5BName%5D=Jeff&Children%5B1%5D%5BBestToy%5D=Donkey
 
-{% endhighlight %}
-
+```
 
 
 Although jQuery Ajax calls use application/x-www-form-urlencoded format by default, it is very easy to serialize the request payload in JSON format instead. Using Douglas Crockford’s [json2](http://json.org/json2.js) serializer (line 4), one can make a jQuery call like this:
@@ -146,20 +143,19 @@ $.ajax({
     contentType: "application/json"
 });
 
-{% endhighlight %}
-
+```
 
 
 Which results in the following HTTP request:
 
-{% highlight text linenos %}
+```
+
 POST http://127.0.0.1:8326/Service/ HTTP/1.1
 Content-Type: application/json
  
 {"Name":"John Doe","Age":21,"Children":[{"Name":"Jessica","BestToy":"Fish"},{"Name":"Jeff","BestToy":"Donkey"}]}
 
-{% endhighlight %}
-
+```
 
 
 A great feature of the JsonValue programming model in WCF is that regardless of the client’s choice of JSON or application/x-www-form-urlencoded as the serialization format for the request, WCF will deserialize and normalize the data into an instance of JsonValue. Given that, the application code may stay decoupled from the protocol.   
@@ -175,20 +171,19 @@ public JsonValue Post(JsonObject body)
     return favoriteToyOfSecondChild;
 }
 
-{% endhighlight %}
-
+```
 
 
 If the return type of a WCF method is JsonValue, the response content type is always application/json. Note that in line 5 above we are actually returning a string instance, but an implicit cast exists between a number of primitive data types and JsonValue. In this case the specific HTTP response would look as follows:
 
-{% highlight text linenos %}
+```
+
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
  
 "Donkey"
 
-{% endhighlight %}
-
+```
 
 
 Surely enough, donkey is the favorite toy of John’s second child. 
@@ -205,8 +200,7 @@ JsonObject body;
 string favoriteToyOfSecondChild1 = (string)body["Children"][1]["BestToy"];
 string favoriteToyOfSecondChild2 = (string)body.AsDynamic().Children[1].BestToy;
 
-{% endhighlight %}
-
+```
 
 
 The notation in line 2 is closer to the code one would expect to write to navigate an object in JavaScript, and some people find it more natural than using indexers in line 1.   
@@ -225,8 +219,7 @@ if (!body.AsDynamic().Children[7].BestToy.TryReadAs<string>(out aValue))
     aValue = "None"; // assume a default value
 }
 
-{% endhighlight %}
-
+```
 
 
 You can imagine how this programming model is reducing the amount of code you need to write when navigating deep data hierarchies:
@@ -234,8 +227,7 @@ You can imagine how this programming model is reducing the amount of code you ne
 {% highlight csharp linenos %}
 body.AsDynamic().I.May.Exist.Or.Maybe.Not.TryReadAs<string>(out aValue)
 
-{% endhighlight %}
-
+```
 
 
 ### JsonValue 301: LINQ to JSON
@@ -249,8 +241,7 @@ string[] favoriteToys =
      where child.Value.AsDynamic().Name.ReadAs<string>(string.Empty).StartsWith("J")
      select child.Value.AsDynamic().BestToy.ReadAs<string>("No favorite toy")).ToArray();
 
-{% endhighlight %}
-
+```
 
 
 There are several interesting properties of the code above:

@@ -29,7 +29,8 @@ Individuals must be invited to a Slack team by e-mail. Out of the box, Slack doe
 
 To create Slack signup page with webtasks, you will need your Slack team's name (e.g. *edgejs*, the part before *.slack.com* in the URL) and the admin Slack token, which you can [obtain here](https://api.slack.com/web#authentication). Now follow these 3 simple steps to create your webtask-driven signup page: 
 
-```bash
+```
+bash
 npm install -g wt-cli
 wt init
 wt create https://raw.githubusercontent.com/auth0/webtask-slack-signup/master/slack-invite.js \
@@ -38,7 +39,6 @@ wt create https://raw.githubusercontent.com/auth0/webtask-slack-signup/master/sl
     --secret SLACK_ORG={your_slack_team} \
     --secret SLACK_TOKEN={your_slack_admin_token}
 ```
-
 Optionally, you can also provide `--secret LOGO_URL={url_to_your_logo}` which will display your custom logo on the Slack signup page. It should be square and not less than 100x100px. 
 
 Use the resulting URL as your Slack signup page and start building a public community around your OSS project!
@@ -55,7 +55,7 @@ It is, your Slack admin token is never made public. Read more about [security mo
 
 Anything you can code up in Node.js really. In practice webtasks are great for implementing microservices, microwebapps (which involve web UI like the signup page above), webhooks, as well as [extending SaaS plarforms with custom code](tomasz.janczuk.org/2015/07/extensibility-through-http-with-webtasks.html). The latter is the how we are using webtasks at [Auth0](https://auth0.com) to enable our customers to customize our platform with Node.js code. 
 
-For another specific example of webtask usage, check out my prior post on [accepting Stripe payments from Single Page Appliacations using Webtasks](https://tomasz.janczuk.org/2016/01/accept-stripe-payments-without-backend-using-webtasks.html). Or, even, better, you can just test it right here by buying me a coffee:
+For another specific example of webtask usage, check out my prior post on [accepting Stripe payments from Single Page Appliacations using Webtasks](https://fusebit.io/blog/2016/01/accept-stripe-payments-without-backend-using-webtasks/). Or, even, better, you can just test it right here by buying me a coffee:
 
 <form action="https://tjanczuk.sandbox.auth0-extend.com/coffee4tomek" method="POST" style="margin-bottom: 40px">
   <script

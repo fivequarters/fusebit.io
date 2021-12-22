@@ -53,8 +53,7 @@ Haiku-http supports running JavaScript code that accepts an HTTP request and gen
 }).listen(8000)
   
 
-{% endhighlight %}
-
+```
 
 a corresponding haiku-http handler would be:
 
@@ -70,8 +69,7 @@ In addition to the req and res globals, one can use a subset of node.js modules 
 
         
 
-{% endhighlight %}
-
+```
 
 
 #### Every HTTP request is individually sandboxed 
@@ -102,11 +100,11 @@ You can read more about the details of the programing model and the execution mo
 
 The gist of the idea is that you can issue any HTTP request to an HTTP/S endpoint exposed by the haiku-http service and provide the URL of the haiku handler that should handle that request using the x-haiku-handler URL query parameter, e.g.: 
 
-{% highlight text linenos %}
+```
+
 http://haiku.cloudapp.net/?x-haiku-handler=https://raw.github.com/gist/1848111
 
-{% endhighlight %}
-
+```
 
 
 The [http://haiku.cloudapp.net](http://haiku.cloudapp.net) is a sample deployment of the haiku-http service in [Windows Azure](https://www.windowsazure.com/en-us/). (The endpoint may be down when you try it, but you can easily set up your own anywhere node.js runs using [http-haiku project](https://github.com/tjanczuk/haiku-http).)
@@ -184,8 +182,7 @@ throw new Error('An exception')
 res.end('Hello, world!')
   
 
-{% endhighlight %}
-
+```
 
 
 the haiku-http runtime will intercept the unhandled exception and proceed to gracefully terminate the process. It will stop accepting new HTTP requests and wait for a configurable timeout for the currently active requests to drain. It will then kill the process. The master process in the cluster will detect process crash and will create a new worker process to replace it. 
@@ -198,8 +195,7 @@ The all-time favorite way of hanging node.js runtime is to perform a blocking op
 while(true)
   
 
-{% endhighlight %}
-
+```
 
 
 This single line will effectively block the event loop in a single-threaded node.js runtime and prevent the process from accepting new HTTP requests as well as doing any work on behalf of other HTTP requests active in that process at the time. There is currently no way in node.js to prevent it, but haiku-http implements a mechanism to detect runaway processes like this one. The haiku-http master process is periodically issuing a challenge to all child processes in the cluster using IPC mechanisms. If the child does not respond to the challenge within the preconfigured timeout, the master process assumes the child’s event loop is blocked and proceeds to terminate the child and replace it with a new instance. Note that in this case, unlike in the case of an unhandled exception, all HTTP requests active in the child process are abnormally terminated. 
@@ -215,8 +211,7 @@ setTimeout(function() {
 }, 10000)
   
 
-{% endhighlight %}
-
+```
 
 
 Note that this is a very inexact method, since a handler that is harmlessly waiting for external stimulus without consuming CPU or memory will also be considered in violation of the policy and terminated.
@@ -231,8 +226,7 @@ res.end('Hello, world')
 doMoreWork()
   
 
-{% endhighlight %}
-
+```
 
 
 Or an asynchronous equivalent:
@@ -243,8 +237,7 @@ setTimeout(doMoreWork, 5000)
 res.end('Hello, world')
   
 
-{% endhighlight %}
-
+```
 
 
 Since haiku-http cannot currently prevent such situations, it assumes they will happen and addresses them with auto-recycling of child processes. After a child process has handled a configurable number of HTTP requests, the process will recycle itself by first closing its listener to stop accepting new HTTP requests, than waiting for active requests to drain, and finally killing itself. The haiku-http master process will then create a new child process in its place. 

@@ -20,11 +20,11 @@ In my last two posts I introduced the [iisnode](https://github.com/tjanczuk/iisn
 
 Node.js modules, including express, are typically installed using [NPM](http://npmjs.org/). The bad news is that as of this writing NPM is not yet supported on Windows. The good news is that for simple cases one can use the [ryppi.py](https://github.com/japj/ryppi) script. Assuming you have [Python installed](http://www.activestate.com/activepython/downloads), you can call:  
 
-{% highlight text linenos %}
+```
+
    ryppi.py install express
 
-{% endhighlight %}
-
+```
 
 
 which will create the node_modules folder with the downloaded express library. You can check out the resulting layout [here](https://github.com/tjanczuk/iisnode/tree/master/src/samples/express). 
@@ -48,8 +48,7 @@ A simple express application we will host in IIS looks like this:
 
  app.listen(process.env.PORT);
 
-{% endhighlight %}
-
+```
 
 
 Two key aspects to call out that may be different from your bread & butter express app are:
@@ -105,8 +104,7 @@ I talked about using the URL rewrite module for regular node.js applications bef
    </system.webServer>
  </configuration>
 
-{% endhighlight %}
-
+```
 
 
 One other aspect worth pointing out is request filtering. Remember the express application relies on the express library installed in the node_modules directory? You probably don’t want the contents of this directory to be served by IIS in any shape or form, and you can express (sic!) that desire by adding it to hidden segments list (lines 32-38). 

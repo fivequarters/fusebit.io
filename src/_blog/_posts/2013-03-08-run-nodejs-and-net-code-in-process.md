@@ -51,8 +51,7 @@ namespace Owin.Sample
 }
   
 
-{% endhighlight %}
-
+```
 
 
 Compile it to Owin.Sample.dll with:
@@ -61,8 +60,7 @@ Compile it to Owin.Sample.dll with:
 csc /target:library /out:Owin.Sample.dll Startup.cs
   
 
-{% endhighlight %}
-
+```
 
 
 
@@ -73,8 +71,7 @@ Install owin:
 npm install owin
   
 
-{% endhighlight %}
-
+```
 
 
 
@@ -92,8 +89,7 @@ helloWorld('JavaScript', function (error, result) {
 });
   
 
-{% endhighlight %}
-
+```
 
 
 
@@ -105,8 +101,7 @@ C:\projects\barebones>node sample.js
 .NET welcomes JavaScript
   
 
-{% endhighlight %}
-
+```
 
 
 

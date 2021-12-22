@@ -38,8 +38,7 @@ public abstract class WebSocketsService : IWebSockets, IDisposable
     protected virtual void Dispose(bool disposing) {}
 }
 
-{% endhighlight %}
-
+```
 
 
 When a new WebSocket connection is made to the server, the OnOpen method is invoked. This gives the application an opportunity to inspect the HttpRequestUri as well as HttpRequestHeaders of the incoming HTTP Upgrade request to decide if it wants to accept or reject it (in which case OnOpen should throw an exception), as well as extract and store any information from the HTTP request. For example, the application could extract the resource name like a stock ticker from the URL, or an authentication token from an HTTP header. 
@@ -54,8 +53,7 @@ var sh = new WebSocketsHost<ChatService>(
 sh.AddWebSocketsEndpoint();
 sh.Open();
 
-{% endhighlight %}
-
+```
 
 
 The prototype implementation of WebSockets in WCF does not support hosting of WebSocket WCF services in IIS. It means the service must be hosted in a console application or a Windows Service. Another implication of this limitation is that deploying a WCF WebSocket service to Windows Azure requires a worker role as opposed to a web role. 
@@ -85,8 +83,7 @@ public class WebSocket : IDisposable
     protected virtual void Dispose(bool disposing) {}
 }
 
-{% endhighlight %}
-
+```
 
 
 The Open method establishes a WebSocket connection to a URL specified in the constructor or via the Url property. OnOpen event is raised when the WebSocket handshake has successfully completed. At the same time, the ReadyState property indicates the websocket is connected. At that point the application can start asynchronously sending messages to the server using the Send method. Messages received from the server are dispatched to the OnMessage event handler using the SynchronizationContext configured with the DispatchSynchronizationContext property. It provides a convenient mechanism to decide whether the incoming messages should be processed on the UI thread or a worker thread. 
@@ -107,8 +104,7 @@ $.slws.ready(function () {
     });
 }
 
-{% endhighlight %}
-
+```
 
 
 You can read more about this mechanism at [Mike Taulty’s blog](http://mtaulty.com/CommunityServer/blogs/mike_taultys_blog/archive/2010/07/27/silverlight-and-websockets.aspx).   }

@@ -71,8 +71,7 @@ The [pub/sub sample for HTTP polling duplex](http://tomasz.janczuk.org/2009/07/p
         </services>         
     </system.serviceModel> 
 
-{% endhighlight %}
-
+```
   
 
 This change will add a new net.tcp endpoint to the existing WCF pub\sub service. The net.tcp endpoint will exist side by side with an endpoint based on the HTTP polling duplex protocol, enabling clients to communicate with the service over either of the protocols. Metadata exchange endpoint will enable automatic generation of a client proxy for either of the protocols.   
@@ -93,11 +92,11 @@ If you are running Windows 2008 server, the same feature is available through Se
 
 To find out if net.tcp activation is enabled on your machine, go to the command line and run the following command:  
 
-{% highlight text linenos %}
+```
+
 sc query NetTcpActivator
 
-{% endhighlight %}
-
+```
     
 
 The output should indicate the local service is running.  
@@ -138,8 +137,7 @@ For example, to allow all Silverlight applications to open TCP connections on po
   </cross-domain-access>         
 </access-policy> 
 
-{% endhighlight %}
-
+```
   
 
 Open you web browser and navigate to http://localhost/clientaccesspolicy.xml to verify it will be accessible to Silverlight applications. The permit-all policy above allows unrestricted cross domain calls for both HTTP and TCP protocol over ports 4502-4530.   
@@ -185,8 +183,7 @@ One feature the WCF net.tcp proxy offers beyond what HTTP polling duplex support
     </system.serviceModel>         
 </configuration> 
 
-{% endhighlight %}
-
+```
   
 
 An instance of the proxy using net.tcp protocol can be created in code by referring to the named endpoint in the configuration file:  
@@ -196,8 +193,7 @@ An instance of the proxy using net.tcp protocol can be created in code by referr
 
 PubSubClient client = new PubSubClient("NetTcpBinding_IPubSub"); 
 
-{% endhighlight %}
-
+```
   
 
 The same proxy class can be used with HTTP polling duplex protocol, but the binding and address must be provided in code (we are working on providing configuration support for HTTP polling duplex before Silverlight 4 release):   
@@ -209,8 +205,7 @@ PubSubClient client = new PubSubClient(
     new PollingDuplexHttpBinding(),         
     new EndpointAddress(new Uri(App.Current.Host.Source + "/../../PubSubService.svc"))); 
 
-{% endhighlight %}
-
+```
   
 
 ### Running the pub/sub sample  

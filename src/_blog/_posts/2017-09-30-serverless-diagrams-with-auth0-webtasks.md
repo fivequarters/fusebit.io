@@ -25,14 +25,15 @@ Many people know [Auth0 Webtasks](https://webtask.io) as the quickest way to set
 
 We are going to create a sequence diagram using *wt-cli*, the command line tool for managing Auth0 Webtasks. First, install and initialize the tool:
 
-```bash
+```
+bash
 sudo npm i -g wt-cli
 wt init
 ```
-
 Then, create a file with the definition of the sequence diagram. It will be used as a source code of the webtask: 
 
-```bash
+```
+bash
 cat > diagram.txt <<EOF
 Caller->Auth0: First, you get an access token
 Note over Auth0: Authenticate and\nauthorize caller
@@ -41,15 +42,14 @@ Caller->API: Then, you call the API {access_token, data}
 API->Caller: {result}
 EOF
 ```
-
 Lastly, create a new webtask from this file using the [sequence diargam compiler](https://github.com/tjanczuk/wtc#sequence-diagram): 
 
-```bash
+```
+bash
 wt create diagram.txt --name diagram \
   --meta wt-compiler=https://raw.githubusercontent.com/tjanczuk/wtc/master/sequence_diagram_compiler.js \
   --meta wt-editor-linter=disabled
 ```
-
 The *wt-compiler* metadata property instructs Auth0 Webtask runtime to use the code from the specified URL to *transpile* the webtask script (js-sequence-diagram DSL in this case) into a JavaScript function in a form webtask runtime can execute. In this case the compiler will return a function that responds to HTTP GET requests with *text/html* response to show an HTML page that renders the diagram using [js-sequence-diagrams](https://bramp.github.io/js-sequence-diagrams/). You can see the source code of the compiler [here](https://github.com/tjanczuk/wtc/blob/master/sequence_diagram_compiler.js).
 
 The *wt-editor-linter* property disables default JavaScript linting rules, which do not apply to our custom DSL. 
@@ -62,10 +62,10 @@ The *wt create* command returns a URL of the webtask endpoint that serves the di
 
 You can launch the Webtask Editor to edit the code of the webtask in the js-sequence-diagram DSL with:
 
-```bash
+```
+bash
 wt edit diagram
 ```
-
 This will open a browser and navigate to the Webtask Editor that allow you to modify the diagram definition: 
 
 <img src="tomek-blog/2017-09-30/1.png" class="tj-img-diagram-100" alt="Sequence Diagram DSL">

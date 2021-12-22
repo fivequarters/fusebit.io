@@ -57,17 +57,16 @@ The feature can be enabled by referencing Microsoft.ServiceModel.DomainServices.
   </system.serviceModel>        
 </configuration>
 
-{% endhighlight %}
-
+```
   
 
 After the service is deployed, traces for all WCF services running in the application domain will be collected in memory and can be accessed from the web browser by navigating to a URL formed by appending “/traces” to the URL of any of the WCF RIA services running in the web application. For example, if the web application containing a WCF RIA service created using the Business Application project template is deployed in the “abc” virtual directory on localhost, and the project namespace is “MyCompany.MyProject”, then WCF traces can be accessed by navigating to:  
 
-{% highlight text linenos %}
+```
+
 http://localhost/abc/MyCompany-MyProject-AuthenticationService.svc/traces
 
-{% endhighlight %}
-
+```
   
 
 (The “MyCompany-MyProject-AuthenticationService.svc” can be replaced with a reference to any of the WCF RIA service endpoints in the web application).   
@@ -80,15 +79,13 @@ Note that Internet Explorer version 7 and greater provides a very usable interfa
 
 Other formats can be explicitly requested by specifying a URL parameter, for example:  
 
-{% highlight text linenos %}
-
+```
 
 http://localhost/abc/MyCompany-MyProject-AuthenticationService.svc/traces?format=atom
 http://localhost/abc/MyCompany-MyProject-AuthenticationService.svc/traces?format=xml
 http://localhost/abc/MyCompany-MyProject-AuthenticationService.svc/traces?format=html
 
-{% endhighlight %}
-
+```
   
 
 Given that traces are collected in memory, a quota is provided to limit the maximum number of most recent traces that will be kept. By default 200 most recent traces are maintained, but the value can be modified using the “maxEntries” attribute in the configuration file:
@@ -103,8 +100,7 @@ maxEntries="200"/>
  </endpoints>    
     </domainServices>
 
-{% endhighlight %}
-
+```
   
 
 Tracing information should only be exposed for access by web clients in controlled development or staging environments for the same reasons one should not propagate all ASP.NET exceptions back to the client in a production deployment.  }

@@ -32,8 +32,7 @@ npm install express
 
   
 
-{% endhighlight %}
-
+```
 
 
 Next author your Express application that uses the *azurecache* module to store Express session state in the Windows Azure Cache Service:
@@ -60,8 +59,7 @@ app.listen(process.env.PORT || 3000);
 
   
 
-{% endhighlight %}
-
+```
 
 
 Lastly set some environment variables and start your server:
@@ -73,8 +71,7 @@ node server.js
 
   
 
-{% endhighlight %}
-
+```
 
 
 Every time you visit *http://localhost:3000/inc* in the browser you will receive an ever increasing counter value. When you visit *http://localhost:3000/get* you will receive the current counter value. The value of the counter is stored as part of the Express session state in the Windows Azure Cache Service with a default TTL of one day. You can now scale out the application to several instances since the session state is externalized to the Windows Azure Cache Service. 
@@ -96,8 +93,7 @@ Deploying an Express application that uses the *azurecache* module to store sess
 }
   
 
-{% endhighlight %}
-
+```
 
 
 Once you deploy a Node.js application consisting of the *package.json* and *server.js* above to Windows Azure Web Sites, you still need to provide the credentials to Windows Azure Cache Service to it. Just as you were doing this using environment variables before, you can now set the application settings of your web site using the Windows Azure management portal: 
@@ -143,8 +139,7 @@ http.createServer(function (req, res) {
 }).listen(process.env.PORT || 3000);
   
 
-{% endhighlight %}
-
+```
 
 
 

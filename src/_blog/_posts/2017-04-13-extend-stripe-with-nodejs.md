@@ -39,14 +39,14 @@ Let's start by creating a Stripe webhook that receives the *charge.succeeded* ev
 
 Now let's install and use the [wt-cli](https://webtask.io/cli) command line tool to turn this code into an endpoint with Auth0 Webtasks: 
 
-```bash
+```
+bash
 sudo npm i -g wt-cli
 wt init
 
 wt create stripe-handler.js \
   --meta wt-compiler=https://raw.githubusercontent.com/tjanczuk/wtc/master/stripe_compiler.js
 ```
-
 The *wt create* command will return a URL which you can use directly as a Stripe webhook: 
 
 <img src="tomek-blog/2017-04-13/4.png" class="tj-img-diagram-100" alt="Stripe Auth0 Webhook">
@@ -57,10 +57,10 @@ From now on, whenever Stripe raises the *charge.succeeded* event, your webtask c
 
 While creating and editing webtasks with the *wt* command line tool is certainly cool and professional, even the coolest of us deserve basic creature comforts. In Auth0 Webtasks they come in the form of a first-class, web-based development experience using the Webtask Editor. You can pop into the browser to edit an existing webtask with:
 
-```bash
+```
+bash
 wt edit stripe-handler
 ```
-
 This brings up the webtask editor:
 
 <img src="tomek-blog/2017-04-13/5.png" class="tj-img-diagram-100" alt="Auth0 Webtask Editor">
@@ -83,11 +83,11 @@ You can find the full list of available Stripe events in the [starter Stripe web
 
 How is this magic possible? How do Auth0 Webtasks support a programming model that seems tailored to Stripe? The secret sauce is called a [webtask compiler](https://webtask.io/docs/webtask-compilers). Webtask compiler is a middleware that runs before the code of the webtask. One of the applications of such middleware is to support custom programming models by transpiling webtask code into one of the representations understood by the webtask platform. You have specified the webtask compiler for your Stripe webhook using the *--meta* parameter when you originally created it: 
 
-```bash
+```
+bash
 wt create stripe-handler.js \
   --meta wt-compiler=https://raw.githubusercontent.com/tjanczuk/wtc/master/stripe_compiler.js
 ```
-
 You can check the implementation of the Stripe compiler [here](https://github.com/tjanczuk/wtc/blob/master/stripe_compiler.js). There are also other examples of useful compilers at [tjanczuk/wtc](https://github.com/tjanczuk/wtc). 
 
 ### Authenticate your Stripe webhook
@@ -124,5 +124,5 @@ The client is based on the [stripe](https://www.npmjs.com/package/stripe) NPM mo
 
 ### Want more?
 
-If you are writing a mobile or HTML5 single-page application, you may also be interested in [how Auth0 Webtasks can help you integrate Stripe payments](https://tomasz.janczuk.org/2016/01/accept-stripe-payments-without-backend-using-webtasks.html) without the need for a first class backend. Check it out!
+If you are writing a mobile or HTML5 single-page application, you may also be interested in [how Auth0 Webtasks can help you integrate Stripe payments](https://fusebit.io/blog/2016/01/accept-stripe-payments-without-backend-using-webtasks/) without the need for a first class backend. Check it out!
 }

@@ -13,7 +13,8 @@ post_excerpt: Tomek on Software - shaken, not stirred
 
 The [Edge.js project](https://github.com/tjanczuk/edge) allows you to script CLR from Node.js in-process on Windows, OSX, and Linux.
 
-```javascript
+```
+javascript
 var edge = require('edge');
 
 var helloWorld = edge.func(function () {/*
@@ -27,7 +28,6 @@ helloWorld('JavaScript', function (error, result) {
     console.log(result);
 });
 ```
-
 <img src="tomek-blog/2015-12-23/0.png" class="tj-img-diagram-100" alt="Scripting CoreCLR from Node.js using Edge.js on Windows, OSX, and Linux">
 
 Until now, Edge.js allowed scripting *desktop CLR* on Windows, and *Mono* on OSX and Linux. 
@@ -49,17 +49,18 @@ You can find platform specific instructions for installing Edge.js with CoreCLR 
 By far the easiest way to experiment with scripting C# from Node.js via Edge.js is to use the `tjanczuk/edgejs:5.0.0` Docker image: 
 
 ```
+
 > docker run -it tjanczuk/edgejs:5.0.0
 > cd samples
 > node 101_hello_lambda.js
 .NET welcomes Node.js
 ```
-
 The docker image is based on Debian Jessie and comes with Node.js 4.2.3 x64, Mono 4.2.1 x64, CoreCLR 1.0.0 RC1 x64, and Edge.js pre-installed and ready to use. 
 
 In environments with both Mono and CoreCLR installed (like this Docker image), Edge.js will by default use Mono. You need to opt-in to using CoreCLR by setting the `EDGE_USE_CORECLR` environment variable: 
 
 ```
+
 > docker run -it tjanczuk/edgejs:5.0.0
 
 > cat > hello.js <<EOF
@@ -77,7 +78,6 @@ EOF
 > EDGE_USE_CORECLR=1 node hello.js
 CoreCLR welcomes Node.js
 ```
-
 ### You can also script Node.js from CLR
 
 In addition to scripting CLR from Node.js, Edge.js also allows the opposite: scripting Node.js from CLR. This is currently only supported on Windows using desktop CLR, but support for CoreCLR is coming! Here is the complete picture of what you can do with Edge.js: 

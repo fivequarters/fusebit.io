@@ -28,8 +28,7 @@ Here is the ‘Hello, world’ rite of passage:
    res.writeHead(200)  
 res.end('Hello, world!\n')
 
-{% endhighlight %}
-
+```
 
 
 ### War and peace
@@ -62,8 +61,7 @@ request('http://www.reuters.com', function (error, response, body) {
     }  
 })
 
-{% endhighlight %}
-
+```
 
 
 ### Fetch data from MongoDB
@@ -105,8 +103,7 @@ function notError(err) {
 }
   
 
-{% endhighlight %}
-
+```
 
 
 
