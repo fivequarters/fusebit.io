@@ -8,7 +8,7 @@ const { parseHTML } = require('linkedom');
 function getImageMeta(src, widths) {
     const options = {
         widths: widths || [300, 600, 900, 1200, null],
-        formats: ['png', 'webp', 'jpg'],
+        formats: ['png', 'webp', 'jpg', 'svg'],
         outputDir:
             process.env.ELEVENTY_ENV === 'production'
                 ? './build/assets/images/11ty'
@@ -111,7 +111,6 @@ module.exports = function (eleventyConfig) {
                 images
                     .filter(
                         (i) =>
-                            !i.src.includes('svg') &&
                             !i.src.includes('footer__bg') &&
                             !i.src.includes('http')
                     )
