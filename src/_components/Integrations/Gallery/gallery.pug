@@ -5,7 +5,7 @@ mixin item(img, name, outOfPlan, id, catalog, hidden)
         div
             p.gallery__item-container-title= name
             if outOfPlan
-                button.gallery__item-container-cta.gallery__item-container-cta--disabled(onclick=`window.Intercom('showNewMessage', "I'm interested in enabling ${name}")` data-event-name="Try Integration Button Clicked" data-object-location="Integrations" data-integration= id, data-integration-type="Fake") Coming soon
+                button.gallery__item-container-cta.gallery__item-container-cta--disabled(onclick=`window.Intercom('showNewMessage', "I'm interested in enabling ${name}")` data-event-name="Try Integration Button Clicked" data-object-location="Integrations" data-integration= id, data-integration-type="Fake") Try Integration
             else
                 a.gallery__item-container-cta.track-with-segment(href= `${site.portalBaseUrl}?key=${id}` data-event-name="Try Integration Button Clicked" data-object-location="Integrations" data-integration= id, data-integration-type="Real") Try Integration
 
@@ -16,7 +16,7 @@ section.section
         .mark.mark--big.mark--light-violet.mark--right.mark--bottom.gallery__mark-bottom.gallery__mark-bottom-mobile
     .layout.gallery__layout
         .gallery__header
-            +title('Connector ', 'gallery', false, true, 'gallery__title')
+            +title('Integration ', 'gallery', false, true, 'gallery__title')
             +dropdown(integrationCategories.map(category => ({
                 id: category,
                 label: category
