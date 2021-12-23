@@ -53,9 +53,13 @@
     &__item-container {
         display: flex;
         align-items: center;
+        opacity: 1;
+        position: static;
+        transition: all 0.5s ease-in; 
 
         &--hidden {
-            display: none;
+            opacity: 0;
+            position: absolute;
         }
 
         &-title {
