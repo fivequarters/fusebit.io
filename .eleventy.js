@@ -63,7 +63,9 @@ module.exports = function (eleventyConfig) {
         'node_modules/lodash.shuffle/index.js': 'assets/vendor/shuffle.js',
     });
 
-    eleventyConfig.addPlugin(syntaxHighlight);
+    eleventyConfig.addPlugin(syntaxHighlight, {
+        alwaysWrapLineHighlights: true,
+    });
 
     eleventyConfig.setBrowserSyncConfig({
         server: {
@@ -110,7 +112,8 @@ module.exports = function (eleventyConfig) {
                     .filter(
                         (i) =>
                             !i.src.includes('svg') &&
-                            !i.src.includes('footer__bg')
+                            !i.src.includes('footer__bg') &&
+                            !i.src.includes('http')
                     )
                     .forEach((i) => {
                         i.outerHTML = getImageTag(`blog/${i.src}`, i.alt, null);
