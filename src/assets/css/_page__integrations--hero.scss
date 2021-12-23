@@ -1,0 +1,120 @@
+.hero {
+    position: relative;
+
+    &__bg {
+        position: absolute;
+        top: -500px;
+        left: calc(50% - 1300px);
+    }
+
+    &__mark {
+        @include mark-offset(310px, 10px, true);
+    }
+
+    &__layout {
+        padding-top: 128px;
+
+        @media (max-width: 992px) {
+            padding-top: var(--paddingLayout);
+        }
+
+        @media (max-width: 576px) {
+            padding-bottom: 120px;
+            width: 75%;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-bottom: 32px;
+        line-height: 110%;
+
+        @media (max-width: 576px) {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__description {
+        margin-right: -25px;
+        line-height: 160%;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            color: var(--white);
+            opacity: 0.8;
+        }
+
+        > p {
+            max-width: 544px;
+            margin-right: 25px;
+
+            @media (max-width: 992px) {
+                max-width: 344px;
+            }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+
+    &__items-container {
+        display: flex;
+        position: relative;
+        margin-right: 75px;
+
+        &-line {
+            width: 2px;
+            height: 100%;
+            margin-right: 31px;
+            background-color: #4c4e6e;
+            position: absolute;
+            left: 0;
+        }
+
+        @media only screen and (max-width: 992px) {
+            margin-right: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            transform: translateX(14px);
+        }
+    }
+
+    &__item {
+        display: flex;
+        position: relative;
+
+        p {
+            margin-left: 31px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }
+
+        &-icon-wrapper {
+            border-radius: 50%;
+            transform: translate(calc(-50% + 1px), -10px);
+            position: absolute;
+            left: 0;
+            padding: 13px;
+            background: #04093f;
+            height: 17px;
+
+            &--last {
+                height: 100%;
+            }
+        }
+
+        &-icon {
+            width: 10px;
+            height: 10px;
+        }
+    }
+}

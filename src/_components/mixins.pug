@@ -10,14 +10,16 @@ mixin ctaArrow
     svg(viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg")
         path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
-
+//- TODO: Use an object to pass parameters to mixins, this is getting messy to use
 mixin cta(text, href, className, id, trackWithSegment, name, location, disableArrow, target, rel, onClick)
-    a.cta(id= id href= href target= target rel= rel class=( trackWithSegment ? "track-with-segment" : false) class= className data-event-name= name || false data-object-location= location || false onclick= onClick)= text
+    a.cta(id= id href= href  target= target rel= rel class=( trackWithSegment ? "track-with-segment" : false) class= className data-event-name= name || false data-object-location= location || false onclick= onClick)= text
         if (!disableArrow) 
             +ctaArrow
 
 mixin avatar(size, background, img, className)
-    .avatar(style=("width:" + size + ";height:" + size + ";background:" + background + ";background-image:url(" + img + ")") class= className)
+    - const _img = img ? ";background-image: url(" + img + ")" : ''
+    .avatar(style=("width:" + size + ";height:" + size + ";background:" + background + _img) class= className)
+        block
 
 mixin postCard(href, img, date, title, excerpt, className)
     a.post-card(href= `/${href.replace('.html', '')}` class= className)
@@ -48,3 +50,15 @@ mixin postCard(href, img, date, title, excerpt, className)
             span.post-card-date= `${filters.format(new Date(date.replace('-', '/')), 'd MMMM yyyy')}`
             h6.post-card-title= title
             p.post-card-excerpt= excerpt
+
+mixin dropdown(options, id, prelabel)
+    .dropdown(id= id onchange= onChange)
+        p
+            if prelabel
+                span.dropdown-prelabel= prelabel 
+            span.dropdown-value= options[0].label
+        .dropdown-arrow
+            img(src='/assets/images/arrow--left.svg' alt="Arrow")
+        .dropdown-menu
+            each option in options
+                span.dropdown-item(data-value= option.id data-label= option.label)= option.label

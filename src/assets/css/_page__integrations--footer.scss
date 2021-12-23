@@ -1,0 +1,97 @@
+.footer {
+    position: relative;
+    z-index: 0;
+
+    &__layout {
+        padding-bottom: 127px;
+
+        @media (max-width: 576px) {
+            padding-bottom: 83px;
+        }
+    }
+
+    &__mark {
+        @include mark-offset(330px, 85px);
+    }
+
+    &__mark-desktop {
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__mark-mobile {
+        display: none;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    &__info-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        max-width: 551px;
+        margin-bottom: 32px;
+        font-size: 40px;
+        max-width: 454px;
+        text-align: center;
+        line-height: 110%;
+
+        @media (max-width: 992px) {
+            font-size: 2rem;
+        }
+
+        @media (max-width: 576px) {
+            text-align: center;
+        }
+    }
+
+    &__cta {
+        width: 199px;
+    }
+
+    &__app {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+
+    &__app-1 {
+        position: absolute;
+        left: -62px;
+        top: -102px;
+    }
+
+    &__app-2 {
+        position: absolute;
+        top: 29px;
+        right: -170px;
+    }
+
+    &__app-3 {
+        position: absolute;
+        top: 14px;
+        left: -240px;
+    }
+
+    &__app-4 {
+        position: absolute;
+        right: -64px;
+        top: -95px;
+    }
+}

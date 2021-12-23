@@ -153,3 +153,19 @@
         }
     }
 }
+
+@mixin pagination-button() {
+    background-color: #fff;
+    display: block;
+    width: 144px;
+    border: 1px solid rgba(3, 3, 45, 0.4);
+    border-radius: 200px;
+    padding: 8px 36px;
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    margin: 48px auto 0;
+    font-family: var(--poppins);
+}
