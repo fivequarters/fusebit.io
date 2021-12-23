@@ -20,7 +20,7 @@ In this blog post, you will learn how to easily import contacts from HubSpot to 
 ![Contact in Salesforce](blog-hubspot-salesfoce-salesforce-contacts.png 'Contact in Salesforce')
 
 ## Create HubSpot and Salesforce integration
-1. [Sign up or log in to Fusebit](https://account.fusebit.io/signup)
+1. [Sign up or log in to Fusebit](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog-contacts-hubspot-salesforce)
 2. Click on “New Integration”. Choose HubSpot Contacts sync in the middle column, and change the integration name and the HubSpot Connector name (optional). Click on Create.
 ![create integration](blog-hubspot-salesfoce-fusebit.png 'create integration')
 3. In the right column “Connectors”, click on `Add new`, or `Link existing` and create a Salesforce connector.
