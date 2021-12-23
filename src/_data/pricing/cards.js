@@ -17,7 +17,6 @@ const freeCard = {
         location: 'Price Tier 1',
         eventName: 'Price Tier Button Clicked',
         className: 'hero__card-link get-started',
-        href: 'https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=CTAs',
     },
     description:
         'Up to 5,000 executions of the integration logic per month across all connectors',
