@@ -6,7 +6,7 @@ module.exports = async function () {
         `${process.env.PORTAL_BASE_URL}/feed/integrationsFeed.json`,
     );
 
-    const integrations = await integrationsPromise.json();
+    const integrations = (await integrationsPromise.json()).filter((i) => !i.private);
 
     return {
         permalink:
