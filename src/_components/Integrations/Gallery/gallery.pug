@@ -1,5 +1,5 @@
 mixin item(img, name, outOfPlan, id, catalog, hidden)
-    .gallery__item-container(class=hidden ? 'gallery__item-container--hidden' : '' data-catalog= catalog)
+    .gallery__item-container(class=hidden ? 'show-more-item--hidden show-more-item--filtered-out show-more-item--hidden-transition' : '' class="show-more-item" data-catalog= catalog)
         .gallery__item-container-logo
             img(src=`data:image/svg+xml;utf8,${encodeURIComponent(img)}`)
         div
@@ -31,18 +31,31 @@ section.section
 
 
         window.addEventListener('load', () => {
-            handleShowMore(runtimeAmount, ".gallery__item-container--hidden[data-catalog]", "more", "gallery__item-container--hidden");
+            handleShowMore({
+                amount: runtimeAmount,
+                elements: ".show-more-item--hidden[data-catalog]",
+                showMoreId: "more",
+            })
 
             const dropdown = new Dropdown("categories", (id) => {
-                document.querySelectorAll(".gallery__item-container").forEach((el) => {
-                    el.classList.add('gallery__item-container--hidden');
+                document.querySelectorAll(".gallery__item-container").forEach((el, i) => {
+                    el.classList.add('show-more-item--hidden', 'show-more-item--hidden-transition');
+
+                    if(!el.dataset.catalog.includes(id)) {
+                        el.classList.add('show-more-item--filtered-out');
+                    }
                 });
-                const button = document.querySelector("#more");
-                button.style.display = "block";
+
+                document.querySelector("#more").style.display = "none";
 
                 const selector = id === "All" ? "" : `*="${id}"`
 
-                handleShowMore(runtimeAmount, `.gallery__item-container--hidden[data-catalog${selector}]`, "more", "gallery__item-container--hidden", true);
+                handleShowMore({
+                    amount: runtimeAmount,
+                    elements: `.show-more-item--hidden[data-catalog${selector}]`,
+                    showMoreId: "more",
+                    force: true
+                })
             })
 
             dropdown.init()

@@ -25,7 +25,12 @@ section.section.section--no-margin
 
     script. 
         window.addEventListener('load', () => {
-            handleShowMore(6, ".list__post--hidden", "more", "list__post--hidden")
+            handleShowMore({
+                amount: 6,
+                elements: ".list__post--hidden",
+                showMoreId: "more",
+                hiddenClass: "list__post--hidden",
+            })
         })
 block scripts
     script.
