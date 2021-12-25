@@ -1,5 +1,5 @@
 function handleShowMore({
-    amount, elements, showMoreId, hiddenClass, force,
+    amount, elements, showMoreId, force,
 }) {
     const shouldShowMore = () => {
         if (document.querySelectorAll(elements).length > 0) {
@@ -12,9 +12,12 @@ function handleShowMore({
         [...document.querySelectorAll(elements)]
             .slice(0, amount)
             .forEach((el) => {
-                el.classList.remove('show-more-item--hidden', 'show-more-item--filtered-out');
+                el.classList.remove(
+                    'show-more-item--hidden',
+                    'show-more-item--hidden-out',
+                );
                 setTimeout(() => {
-                    el.classList.remove('show-more-item--hidden-transition');
+                    el.classList.remove('show-more-item--hidden-animation');
                 }, 0);
             });
         shouldShowMore();

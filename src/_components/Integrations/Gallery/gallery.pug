@@ -1,5 +1,5 @@
 mixin item(img, name, outOfPlan, id, catalog, hidden)
-    .gallery__item-container(class=hidden ? 'show-more-item--hidden show-more-item--filtered-out show-more-item--hidden-transition' : '' class="show-more-item" data-catalog= catalog)
+    .gallery__item-container(class=hidden ? 'show-more-item--hidden show-more-item--hidden-out show-more-item--hidden-animation' : '' class="show-more-item" data-catalog= catalog)
         .gallery__item-container-logo
             img(src=`data:image/svg+xml;utf8,${encodeURIComponent(img)}`)
         div
@@ -19,16 +19,19 @@ section.section
             })), "categories", "Category: ")
         .gallery__grid
             - const buildAmount = 12
+            - let showMoreButton = false
             each i, index in integrations
+                if index >= buildAmount
+                    - showMoreButton = true
                 +item(i.logo, i.name, i.outOfPlan, i.id, i.catalog, index >= buildAmount)
-        button.gallery__pagination-button#more More
+        if showMoreButton
+            button.gallery__pagination-button#more More
     .background.background--white
         .mark.mark--small.mark--dark-violet.mark--right.mark--bottom
         .mark.mark--small.mark--dark-violet.mark--left.gallery__mark-top
         .mark.mark--big.mark--light-violet.mark--right.mark--bottom.gallery__mark-bottom.gallery__mark-bottom-mobile
     script.
         const runtimeAmount = 12
-
 
         window.addEventListener('load', () => {
             handleShowMore({
@@ -39,10 +42,10 @@ section.section
 
             const dropdown = new Dropdown("categories", (id) => {
                 document.querySelectorAll(".gallery__item-container").forEach((el, i) => {
-                    el.classList.add('show-more-item--hidden', 'show-more-item--hidden-transition');
+                    el.classList.add('show-more-item--hidden', 'show-more-item--hidden-animation');
 
                     if(!el.dataset.catalog.includes(id)) {
-                        el.classList.add('show-more-item--filtered-out');
+                        el.classList.add('show-more-item--hidden-out');
                     }
                 });
 

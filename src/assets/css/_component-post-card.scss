@@ -8,7 +8,7 @@
     border-radius: 16px;
     min-height: 408px;
     overflow: hidden;
-    transition: all 0.4s;
+    transition: all 0.4s, opacity 0.5s ease-in;
 
     &-container {
         display: grid;

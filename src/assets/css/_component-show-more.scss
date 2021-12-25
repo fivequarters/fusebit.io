@@ -4,12 +4,12 @@
         position: static;
         transition: opacity 0.5s ease-in;
 
-        &--hidden-transition {
+        &--hidden-animation {
             opacity: 0;
             transition: none;
         }
 
-        &--filtered-out {
+        &--hidden-out {
             position: absolute;
             pointer-events: none;
         }
