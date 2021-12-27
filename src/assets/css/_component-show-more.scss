@@ -1,0 +1,17 @@
+.show-more {
+    &-item {
+        opacity: 1;
+        position: static;
+        transition: opacity 0.5s ease-in;
+
+        &--hidden-animation {
+            opacity: 0;
+            transition: none;
+        }
+
+        &--hidden-out {
+            position: absolute;
+            pointer-events: none;
+        }
+    }
+}
