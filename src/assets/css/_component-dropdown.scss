@@ -43,8 +43,6 @@
         padding: 16px;
         flex-direction: column;
         z-index: 1;
-        visibility: hidden;
-        pointer-events: none;
         cursor: default;
         left: 0;
         right: 0;
@@ -52,16 +50,21 @@
         width: 100%;
         max-height: 250px;
         overflow: auto;
+        visibility: hidden;
+        pointer-events: none;
+        overflow: hidden;
         display: flex;
 
         &[data-popper-reference-hidden] {
             visibility: hidden;
             pointer-events: none;
+            overflow: hidden;
         }
 
         &--open {
             visibility: visible;
             pointer-events: initial;
+            overflow: auto;
         }
     }
 
@@ -86,9 +89,8 @@
         margin-left: 0;
         transform: rotate(-90deg);
         transition: transform 0.2s ease-in-out;
-        
     }
-    
+
     &-arrow--open {
         transform: rotate(90deg);
     }

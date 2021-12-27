@@ -18,7 +18,7 @@ function handleShowMore({
                 );
                 setTimeout(() => {
                     el.classList.remove('show-more-item--hidden-animation');
-                }, 0);
+                }, 10);
             });
         shouldShowMore();
     };
