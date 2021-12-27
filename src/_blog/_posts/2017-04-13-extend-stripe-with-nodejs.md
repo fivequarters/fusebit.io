@@ -124,4 +124,4 @@ The client is based on the [stripe](https://www.npmjs.com/package/stripe) NPM mo
 
 ### Want more?
 
-If you are writing a mobile or HTML5 single-page application, you may also be interested in [how Auth0 Webtasks can help you integrate Stripe payments](https://fusebit.io/blog/2016/01/accept-stripe-payments-without-backend-using-webtasks/) without the need for a first class backend. Check it out!
+If you are writing a mobile or HTML5 single-page application, you may also be interested in [how Auth0 Webtasks can help you integrate Stripe payments](https://fusebit.io/blog/2016/01/29/accept-stripe-payments-without-backend-using-webtasks/) without the need for a first class backend. Check it out!

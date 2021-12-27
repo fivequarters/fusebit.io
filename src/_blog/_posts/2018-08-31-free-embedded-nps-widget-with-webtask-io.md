@@ -105,4 +105,4 @@ If you are interested in the technical details of the implementation, as well as
 
 ### Shameless plug
 
-If you enojoy the flexibility of Auth0 Webtasks, you may be interested in the commercial product we've built on top of this technology: [Extend](https://goextend.io/webtaskio). Extend removes friction from the customization and integration of SaaS platforms by providing an embedded scripting experience, ["serverless wehbooks"](https://fusebit.io/blog/2018/03/serverless-webhooks-to-revolutionize-the-saas/). Check it out! 
+If you enojoy the flexibility of Auth0 Webtasks, you may be interested in the commercial product we've built on top of this technology: [Extend](https://goextend.io/webtaskio). Extend removes friction from the customization and integration of SaaS platforms by providing an embedded scripting experience, ["serverless wehbooks"](https://fusebit.io/blog/2018/03/08/serverless-webhooks-to-revolutionize-the-saas/). Check it out! 
