@@ -55,7 +55,7 @@ It is, your Slack admin token is never made public. Read more about [security mo
 
 Anything you can code up in Node.js really. In practice webtasks are great for implementing microservices, microwebapps (which involve web UI like the signup page above), webhooks, as well as [extending SaaS plarforms with custom code](tomasz.janczuk.org/2015/07/extensibility-through-http-with-webtasks.html). The latter is the how we are using webtasks at [Auth0](https://auth0.com) to enable our customers to customize our platform with Node.js code. 
 
-For another specific example of webtask usage, check out my prior post on [accepting Stripe payments from Single Page Appliacations using Webtasks](https://fusebit.io/blog/2016/01/accept-stripe-payments-without-backend-using-webtasks/). Or, even, better, you can just test it right here by buying me a coffee:
+For another specific example of webtask usage, check out my prior post on [accepting Stripe payments from Single Page Appliacations using Webtasks](https://fusebit.io/blog/2016/01/29/accept-stripe-payments-without-backend-using-webtasks/). Or, even, better, you can just test it right here by buying me a coffee:
 
 <form action="https://tjanczuk.sandbox.auth0-extend.com/coffee4tomek" method="POST" style="margin-bottom: 40px">
   <script
