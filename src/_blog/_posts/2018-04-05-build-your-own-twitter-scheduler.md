@@ -15,7 +15,7 @@ Twitter is great for marketing your product or personal brand, but it has one di
 
 <img src="tomek-blog/2018-04-05/0.png" class="tj-img-diagram-100" alt="Twitter scheduler">
 
-In the next 2 minutes I will show you how to create a simple yet flexible (and free) Twitter scheduler that allows you to set up your tweets along with a tweeting schedule ahead of time. You can then focus your attention and energy elsewhere, while [Auth0 Webtasks](webtask.io) dilligently follow your tweeting directions. 
+In the next 2 minutes I will show you how to create a simple yet flexible (and free) Twitter scheduler that allows you to set up your tweets along with a tweeting schedule ahead of time. You can then focus your attention and energy elsewhere, while [Auth0 Webtasks](https://webtask.io) dilligently follow your tweeting directions. 
 
 ### Your own Twitter scheduler
 
