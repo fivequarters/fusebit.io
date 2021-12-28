@@ -17,7 +17,7 @@ In this post I will provide a blueprint for building your own serverless platfor
 
 The *serverless* (Function-as-a-Service) computation model is a powerful complement to the webhook-based extensibility of a SaaS platform. 
 
-> In the previous post I proposed that [Serverless webhooks will revolutionize the SaaS](http://localhost:4000/2018/03/serverless-webhooks-to-revolutionize-the-saas.html) by removing friction from customizing SaaS platforms and integrating external systems. 
+> In the previous post I proposed that [Serverless webhooks will revolutionize the SaaS](https://fusebit.io/blog/2018/03/08/serverless-webhooks-to-revolutionize-the-saas/) by removing friction from customizing SaaS platforms and integrating external systems. 
 
 Serverless webhooks benefit end users, sales teams, and ultimately make the SaaS platform more successful. 
 
