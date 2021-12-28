@@ -13,7 +13,7 @@ post_og_image: https://fusebit.io/assets/images/blog/blog-fusetunnel-social-card
 
 There are many times where we want to expose localhost apps with the world, either for testing purposes, to show progress, demo websites or run personal cloud services from your home. [Fusetunnel](https://github.com/fusebit/tunnel) helps you to do this easily! No need to mess with DNS or deploy to have others test out your changes.
 
-Fusetunnel is a Localtunnel alternative, great for working with browser testing tools like Browserling or external API callback services like Twilio, which require a public URL for callbacks.
+Fusetunnel, a Localtunnel alternative, is great for working with browser testing tools like Browserling or external API callback services like Twilio, which require a public URL for callbacks.
 
 Fusetunnel is Fusebit’s version of [localtunnel](https://github.com/localtunnel/localtunnel).
 
@@ -21,7 +21,7 @@ The main difference with localtunnel (and other tunnels) is that Fusetunnel is *
 
 And it’s free!
 
-Compared to ngrok, alternative paid product, Fusetunnel doesn't have rate limiting, so you can send as much traffic as you want through it.
+Compared to ngrok, an alternative paid product, Fusetunnel doesn't have rate limiting, so you can send as much traffic as you want through it.
 
 ## How does Fusetunnel work? 
 
