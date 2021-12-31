@@ -1,10 +1,10 @@
 ---
-post_title: Twilio, Segment, Github, and Auth0 are Setting a New Trend
+post_title: Buy, Build, and Integrate
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2019-07-04'
 post_image: blog-buy-build-main.jpg
-post_excerpt: It is 2019. A 250 person company uses an average of 123 SaaS applications...
+post_excerpt: Are you ready for the new way companies use your SaaS?
 post_slug: buy-then-build-and-integrate
 tags: ['post']
 post_date_in_url: true
