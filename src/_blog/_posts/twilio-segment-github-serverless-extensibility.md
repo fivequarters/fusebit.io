@@ -103,7 +103,7 @@ Over time, the technology underlying the Auth0 Rules got more sophisticated and 
 
 > "Customers who customized the system were 10x less likely to leave the platform"
 
-When Auth0 first enabled Auth0 Rules in 2014, the serverless trend had not yet taken off. None of the technologies available today (AWS Lambda, Google Functions, Azure Functions, etc.) were in the market. As a result, Auth0 invested in a proprietary technology stack called webtasks that enabled the company to execute customer-developed customizations with strong isolation guarantees and low latency the scenario required. To get an insight into the technical details of this project, please read [How to build your own serverless platform](https://tomasz.janczuk.org/2018/03/how-to-build-your-own-serverless-platform.html).
+When Auth0 first enabled Auth0 Rules in 2014, the serverless trend had not yet taken off. None of the technologies available today (AWS Lambda, Google Functions, Azure Functions, etc.) were in the market. As a result, Auth0 invested in a proprietary technology stack called webtasks that enabled the company to execute customer-developed customizations with strong isolation guarantees and low latency the scenario required. To get an insight into the technical details of this project, please read [How to build your own serverless platform](https://fusebit.io/blog/2018/03/25/how-to-build-your-own-serverless-platform/).
 
 ## Is Your SaaS Left Behind?
 

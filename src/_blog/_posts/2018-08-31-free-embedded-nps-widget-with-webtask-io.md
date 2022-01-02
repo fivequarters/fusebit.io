@@ -89,7 +89,7 @@ Now that you experienced creating your own, embeeded NPS widget, I need to ask y
 > <iframe src="https://wt-53f70144dc9d7c76455fa91f858d4cec-0.sandbox.auth0-extend.com/nps-blog?size=2em" style="border: 0; height: 4em; width: 22em;"></iframe>
 > 
 
-If you answered 9 or 10, you have a moral obligation to [tweet this blog post](https://twitter.com/intent/tweet?text=Embed%20a%20free%20NPS%20survey%20on%20your%20site%20and%20find%20out%20what%20customers%20think%20about%20you!&url=https://tomasz.janczuk.org/2018/08/free-embedded-nps-widget-with-webtask-io.html&via=tjanczuk&hashtags=nps,webtaskio,serverless,product) with a nice comment.
+If you answered 9 or 10, you have a moral obligation to [tweet this blog post](https://twitter.com/intent/tweet?text=Embed%20a%20free%20NPS%20survey%20on%20your%20site%20and%20find%20out%20what%20customers%20think%20about%20you!&url=https://fusebit.io/blog/2018/08/31/free-embedded-nps-widget-with-webtask-io/&via=tjanczuk&hashtags=nps,webtaskio,serverless,product) with a nice comment.
 
 To check the results of the survey above, click [here](https://wt-53f70144dc9d7c76455fa91f858d4cec-0.sandbox.auth0-extend.com/nps-blog/stats).
 

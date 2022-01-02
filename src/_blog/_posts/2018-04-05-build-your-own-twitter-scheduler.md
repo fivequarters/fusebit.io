@@ -32,8 +32,8 @@ Next, create your intial tweet schedule in YAML in the *buffer.yaml* file. You c
 bash
 cat > buffer.yaml <<EOF
 tweets:
-  - text: "Check out this free Twitter scheduler that uses @auth0_extend and @webtaskio: https://tomasz.janczuk.org/2018/04/build-your-own-twitter-scheduler.html\n\n#nodejs #serverless"
-    media: https://tomasz.janczuk.org/assets/images/b_1.jpg
+  - text: "Check out this free Twitter scheduler that uses @auth0_extend and @webtaskio: https://fusebit.io/blog/2018/08/31/free-embedded-nps-widget-with-webtask-io/\n\n#nodejs #serverless"
+    media: https://fusebit.io/assets/images/blog/blog-tomek.png
     schedule: 
       - 4/4/2018 09:00 PDT
 EOF
@@ -86,13 +86,12 @@ yaml
  tweets:
   - text: "I just installed a free Twitter scheduler that uses @auth0_extend and @webtaskio.\n\nCheck out https://github.com/tjanczuk/wtc#twitter-scheduler\n\n#nodejs #serverless"
     media: 
-      - https://tomasz.janczuk.org/assets/images/b_1.jpg
-      - https://tomasz.janczuk.org/assets/images/b_2.jpg
+      - https://fusebit.io/assets/images/blog/blog-tomek.png
     schedule: 
       - 4/8/2018 09:00 PDT
       - 4/8/2018 15:00 PDT
   - text: "You can do amazing things with webtask.io!\n\n#nodejs #serverless"
-    media: https://tomasz.janczuk.org/assets/images/b_2.jpg
+    media: https://fusebit.io/assets/images/blog/blog-tomek.png
     schedule: 4/5/2018 12:00 PDT
 ```
 
