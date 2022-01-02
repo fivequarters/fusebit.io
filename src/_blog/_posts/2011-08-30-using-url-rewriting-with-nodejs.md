@@ -1,7 +1,7 @@
 ---
 tags: ['post']
 post_og_image: 'site'
-date: '2011-08-29'  
+date: '2011-08-30'  
 post_title: Using URL rewriting with node.js applications hosted in IIS using iisnode
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
