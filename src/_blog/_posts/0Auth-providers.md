@@ -1,12 +1,12 @@
 ---
-post_title: Bots, Hooks, and Extensions
+post_title: How to Secure Your HTTP APIs
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
-date: '2021-10-26'
+date: '2022-01-06'
 post_image: blog-bots-hooks-extensions-main.jpg
-post_excerpt: Identify the set of technical challenges you will need to think about and solve to add a robust integration story to your app. 
-post_slug: bots-hooks-extensions
-tags: ['post', 'integrations']
+post_excerpt: This post will review a few  HTTP API access control approaches, from simple API keys to OAuth. 
+post_slug: secure-your-http-apis
+tags: ['post', 'developer tools']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/bots-hooks-extensions-social-card.png
 ---
