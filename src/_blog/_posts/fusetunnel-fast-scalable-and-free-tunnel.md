@@ -3,12 +3,12 @@ post_title: Fusetunnel - A Fast, Scalable, and Free Tunnel
 post_author: Liz Parody
 post_author_avatar: liz.png
 date: '2021-10-07'
-post_image: blog-fusetunnel-main.png
+post_image: blog-0Auth-providers-main.png
 post_excerpt: Fusetunnel is end-to-end encrypted, giving a developer greater security for sharing your localhost app.
 post_slug: fusetunnel-fast-scalable-and-free-tunnel
 tags: ['post','developer tools']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/blog-fusetunnel-social-card.png
+post_og_image: https://fusebit.io/assets/images/blog/blog-0Auth-providers-main.png
 ---
 
 There are many times where we want to expose localhost apps with the world, either for testing purposes, to show progress, demo websites or run personal cloud services from your home. [Fusetunnel](https://github.com/fusebit/tunnel) helps you to do this easily! No need to mess with DNS or deploy to have others test out your changes.
