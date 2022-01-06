@@ -3,12 +3,12 @@ post_title: How to Secure Your HTTP APIs
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2022-01-06'
-post_image: blog-bots-hooks-extensions-main.jpg
+post_image: blog-0Auth-providers-main.png
 post_excerpt: This post will review a few  HTTP API access control approaches, from simple API keys to OAuth. 
 post_slug: secure-your-http-apis
 tags: ['post', 'developer tools']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/bots-hooks-extensions-social-card.png
+post_og_image: https://fusebit.io/assets/images/blog/blog-0Auth-providers-main.png
 ---
 
 If you are building an application with HTTP APIs that serve sensitive data, one of the key considerations is security. You want to ensure that callers of your API are authorized to make those calls before they are granted access to sensitive information or perform sensitive operations. 
