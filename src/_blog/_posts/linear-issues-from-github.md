@@ -25,10 +25,11 @@ Brilliant, right? Well, let's get started below on setting up this integration.
 
 ## The GitHub-Linear integration
 
-1. Create your first connector (github) and second connector (linear) following [this instructions](https://developer.fusebit.io/docs/adding-multiple-connectors). It should look like the image below:
+1. Sign up or log in for a free [Fusebit account](https://manage.fusebit.io/signup)  
+2. Create your first connector (github) and second connector (linear) following [this instructions](https://developer.fusebit.io/docs/adding-multiple-connectors). It should look like the image below:
 ![GitHub Linear Integration](blog-linear-github-two-connectors.png "GitHub Linear Integration")
 
-2. **Modify the integration logic:** click `edit` in the middle column and you can paste the code below (for development purposes use this code as a reference, you can modify it with your preferred logic to integrate Linear and GitHub).
+3. **Modify the integration logic:** click `edit` in the middle column and you can paste the code below (for development purposes use this code as a reference, you can modify it with your preferred logic to integrate Linear and GitHub).
 
 ```javascript
 const { Integration } = require('@fusebit-int/framework');
