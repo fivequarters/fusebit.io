@@ -1,7 +1,7 @@
 ---
 post_title: Make your DevOps Team Happy with this PagerDuty + Discord Integration
 post_author: Shehzad Akbar
-post_author_avatar: shehzad.jpg
+post_author_avatar: shehzad.png
 date: '2021-12-23'
 post_image: blog-pagerduty-discord-main.png
 post_excerpt: Integrating Slack and HubSpot can be challenging. In this blog post you can learn how to create the exact integration that you want.
