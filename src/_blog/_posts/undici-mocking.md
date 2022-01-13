@@ -1,5 +1,5 @@
 ---
-post_title: Mocking with Undici like a pro
+post_title: Mocking With Undici Like a Pro
 post_author: Yavor Georgiev
 post_author_avatar: yavor.png
 date: '2022-01-13'
