@@ -17,11 +17,11 @@ So, we built out a PagerDuty integration for Discord users -- one that gets you 
 
 **Let’s see the integration in action!**
 
-![PagerDuty Discord Integration](blog-pagerduty-discord-gif.gif)
+![PagerDuty Discord Integration](https://fusebit.io/assets/images/blog/blog-pagerduty-discord-gif.gif)
 
 **Try it out now!**
 
-1. [Install the bot](https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/pagerduty-discord-bot/api/service/start) for free.
+1. [Install the bot](https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/pagerduty-discord-bot/api/service/start 'Install the bot CTA_SMALL') for free.
 2. You will need to authorize access to your Discord server and PagerDuty account.
 3. In the Discord server, type the “/pd create incident” command followed by the title and description of the incident you wish to create. You will be asked to identify the service you want to attach this incident to.
 4. Done! You created an incident in PagerDuty through this Discord bot
