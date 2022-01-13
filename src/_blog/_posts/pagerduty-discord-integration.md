@@ -42,7 +42,7 @@ If you have questions at any point, don’t hesitate to ask us directly from the
 
 ## Create New Integration
 
-First, [sign up to Fusebit for free](https://manage.fusebit.io/?key=e2e-pagerduty-discord-bot). 
+First, [sign up to Fusebit for free](https://manage.fusebit.io/signup?key=e2e-pagerduty-discord-bot). 
 
 Click on the **PagerDuty Discord Bot** integration.Click on “Create”.
 
