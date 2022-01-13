@@ -1,5 +1,5 @@
 ---
-post_title: PagerDuty Discord Integration
+post_title: Make your DevOps Team Happy with this PagerDuty + Discord Integration
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.jpg
 date: '2021-12-23'
@@ -17,7 +17,7 @@ So, we built out a PagerDuty integration for Discord users -- one that gets you 
 
 **Let’s see the integration in action!**
 
-![PagerDuty Discord Integration](blog-pagerduty-discord-gif.gif "PagerDuty Discord Integration")
+![PagerDuty Discord Integration](blog-pagerduty-discord-gif.gif)
 
 **Try it out now!**
 
