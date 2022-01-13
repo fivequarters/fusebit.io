@@ -116,6 +116,10 @@ module.exports = function (eleventyConfig) {
                             !i.src.includes('http')
                     )
                     .forEach((i) => {
+                        if(i.src.includes('gif')) {
+                            i.src = `/assets/images/blog/${i.src}`;
+                            return
+                        }
                         i.outerHTML = getImageTag(`blog/${i.src}`, i.alt, null);
                     });
 

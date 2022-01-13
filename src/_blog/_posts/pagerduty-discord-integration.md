@@ -17,7 +17,7 @@ So, we built out a PagerDuty integration for Discord users -- one that gets you 
 
 **Let’s see the integration in action!**
 
-![PagerDuty Discord Integration](https://fusebit.io/assets/images/blog/blog-pagerduty-discord-gif.gif)
+![PagerDuty Discord Integration](blog-pagerduty-discord-gif.gif)
 
 **Try it out now!**
 
