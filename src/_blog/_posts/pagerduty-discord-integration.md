@@ -3,12 +3,12 @@ post_title: PagerDuty Discord Integration
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.jpg
 date: '2021-12-23'
-post_image: blog-slack-bot-hubspot-main.png
+post_image: blog-pagerduty-discord-main.png
 post_excerpt: Integrating Slack and HubSpot can be challenging. In this blog post you can learn how to create the exact integration that you want.
 post_slug: pagerduty-discord-integration
 tags: ['post', 'integrations']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/blog-slack-bot-hubspot-social.png
+post_og_image: https://fusebit.io/assets/images/blog/blog-pagerduty-discord-main.png
 ---
 
 PagerDuty has incredible support for their Slack integration, but if your team collaborates mainly in Discord, then you’re sadly out of luck. 
