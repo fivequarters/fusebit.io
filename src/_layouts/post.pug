@@ -4,6 +4,7 @@ block page_variable
     - const ogConfig = { hero: `${site.url}${filters.getImageUrl(`blog/${post_image}`, 900)}`, site: og_image }
     - var pageClass = 'blog__page'
     - var title = post_title
+    - var slug = post_slug
     - var og_image = typeof post_og_image !== "undefined" ? ogConfig[post_og_image] || post_og_image : ogConfig.hero 
 
 block content
@@ -57,7 +58,7 @@ block content
         .layout.post__trending-layout
             h2 Most Recent
             .post-card-container.post__trending-list
-                each post in [...collections.post].reverse().slice(0, 3)
+                each post in [...collections.post].filter((post) => post.data.post_slug !== slug).reverse().slice(0, 3)
                     +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
 
 block scripts
