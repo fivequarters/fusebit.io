@@ -82,7 +82,7 @@ Many HTTP mocking frameworks, including [Nock](https://github.com/nock/nock), wo
 
 You will likely want to grab the latest version of the Undici module, but anything above version 4 will do, since that’s when the mocking support first shipped.
 
-The basic entrypoint into the mocking system is the [`MockAgent` class](https://undici.nodejs.org/#/docs/api/MockAgent), which has a [`get()` method](https://undici.nodejs.org/#/docs/api/MockAgent?id=mockagentgetorigin) returning a [`MockCilent`](https://undici.nodejs.org/#/docs/api/MockClient) or [`MockPool`](https://undici.nodejs.org/#/docs/api/MockPool) instance, depending on the number of connections specified in the `MockAgent` constructor (`new MockAgent({ connections: 1 })` results in `MockClient`). This behavior is analogous to the non-mocked counterparts of those classes.
+The basic entrypoint into the mocking system is the [`MockAgent` class](https://undici.nodejs.org/#/docs/api/MockAgent), which has a [`get()` method](https://undici.nodejs.org/#/docs/api/MockAgent?id=mockagentgetorigin) returning a [`MockClient`](https://undici.nodejs.org/#/docs/api/MockClient) or [`MockPool`](https://undici.nodejs.org/#/docs/api/MockPool) instance, depending on the number of connections specified in the `MockAgent` constructor (`new MockAgent({ connections: 1 })` results in `MockClient`). This behavior is analogous to the non-mocked counterparts of those classes.
 
 To use an instance of `MockAgent`, you pass it to the global static `setGlobalDispatcher()` method, which basically tells it which dispatcher to use: real or mocked.
 
