@@ -196,4 +196,3 @@ To check that the Webhook works correctly, in your GitHub app, click on the **Ad
 You can create slash commands with many applications, Asana, Git, Slack or GitHub Actions. 
 
 There are other features you can include with the slash command and your source code, like assigning an issue, doing git rebase, including dates and more. We are excited to see in which creative ways you can use slash commands in GitHub for yourself or your community.
-

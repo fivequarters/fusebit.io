@@ -151,6 +151,13 @@ post_og_image: https://cdn.fusebit.io/twitter/twitter-orange.png
 ![Semantic description of image](image.png "Image Title")
 ```
 
+And if you want the image to have a shadow add the `with-shadow` prefix to the
+semantic description of the image
+
+```
+![Semantic description of image with-shadow](image.png "Image Title")
+```
+
 ### How to add videos?
 
 It'll depend if the video is located locally or externally. This would be an example of a video added externally, from Youtube. For more details you can [take a look here](https://about.gitlab.com/handbook/markdown-guide/#videos)
