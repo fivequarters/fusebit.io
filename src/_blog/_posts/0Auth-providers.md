@@ -128,12 +128,12 @@ Authorization: Bearer {access-token}
 
 The store inventory application will validate the token by:
 
-Determining the set of trusted issuers based on the *storeId* in the request URL (“123” in the example above). 
-Using the *iss* claim from the yet unverified access token to determine the specific issuer the access token was allegedly created by, and making sure it is one of the issuers configured for the *storeId*. 
-Obtaining the public key of the issuer, either stored directly at bootstrap, or using the JWKS endpoint. 
-Validating the signature of the JWT token, as well as performing other validation steps as per JWT specification. 
-If successful, the application now has determined the identity of the caller, which is uniquely defined by the (*iss*, *sub*) pair of claims from the access token. 
-Knowing the identity, the store application can proceed to make an authorization decision using application-level mechanisms to determine if the caller is granted access or restricted access. 
+1. Determining the set of trusted issuers based on the *storeId* in the request URL (“123” in the example above). 
+2. Using the *iss* claim from the yet unverified access token to determine the specific issuer the access token was allegedly created by, and making sure it is one of the issuers configured for the *storeId*. 
+3. Obtaining the public key of the issuer, either stored directly at bootstrap, or using the JWKS endpoint. 
+4. Validating the signature of the JWT token, as well as performing other validation steps as per JWT specification. 
+5. If successful, the application now has determined the identity of the caller, which is uniquely defined by the (*iss*, *sub*) pair of claims from the access token. 
+6. Knowing the identity, the store application can proceed to make an authorization decision using application-level mechanisms to determine if the caller is granted access or restricted access. 
 
 ## Conclusion
 
