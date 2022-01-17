@@ -46,6 +46,7 @@ footer.footer
                 include ../SocialMedia/SocialMedia
 
         .footer__wrapper.footer__wrapper--content 
-            p Copyright 2019-2021 Fusebit
+            - const currentYear = new Date().getFullYear();
+            p Copyright 2019-#{currentYear} Fusebit
 
     .footer__bg 
