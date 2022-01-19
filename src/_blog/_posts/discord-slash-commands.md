@@ -55,7 +55,7 @@ This is the SDK client used to invoke the Discord endpoints. Because of Fusebit 
 
 ### Configure your Slash Command 
 
-Slash Commands are typically one level, but Discord enables developers to make more organized and complex groups of application commands that can be one level deep within a group. Learn more about this through the Discord Developer Portal [here](https://discord.com/developers/docs/interactions/application-commands#slash-commands.
+Slash Commands are typically one level, but Discord enables developers to make more organized and complex groups of application commands that can be one level deep within a group. Learn more about this through the Discord Developer Portal [here](https://discord.com/developers/docs/interactions/application-commands#slash-commands).
 
 In this blog post, we will walk through how to register a single Slash Command only and you can do that by using the `configureSlashCommand()` function. 
 
