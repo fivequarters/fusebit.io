@@ -26,9 +26,7 @@ There are two main steps:
 
 Before you get started, If you don’t already have one, you will need to set up your own Discord App and Bot. [Follow our developer guide](https://developer.fusebit.io/docs/discord#creating-your-own-discord-app) to see how to set one up and configure it for Fusebit.
 
-> For this integration to work, you will need to configure your own discord application and bot 
-> with the following scopes: `applications.commands`,`identify`, `incoming.webhook`, `bot` and 
-> set the bot permissions=2147486720
+**For this integration to work, you will need to configure your own discord application and bot with the following scopes: `applications.commands`,`identify`, `incoming.webhook`, `bot` and set the bot permissions=2147486720**
 
 Ok, now that you’ve set up your own Discord App and Bot  - let’s get started! 
 
@@ -140,8 +138,7 @@ Done! You should now have a good understanding of how to add your own Discord Sl
 
 With Fusebit, it is easy to build a Discord bot that integrates deeply with any of our available connectors. Here are a few blog posts showing how to build specific integrations with advanced configurations and options such as context menus, rich embedded messages and more!
 
-→ LINK TO PAGERDUTY
-→ LINK TO ___________
+[PagerDuty + Discord Integration](https://fusebit.io/blog/pagerduty-discord-integration/)
 
 ### Before you go…
 If you are looking to create flexible and powerful integrations using other platforms, check out [Fusebit](https://fusebit.io/), and follow us on [Twitter](https://twitter.com/fusebitio)!
