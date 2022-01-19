@@ -1,5 +1,5 @@
 ---
-post_title: Add Slash Commands to your Discord Bot!
+post_title: Add Slash Commands to Your Discord Bot!
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-01-19'
