@@ -7,7 +7,7 @@ const { parseHTML } = require('linkedom');
 
 function getImageMeta(src, widths) {
     const options = {
-        widths: widths || [300, 600, 900, 1200, null],
+        widths: widths || [100, 300, 600, 900, 1200, null],
         formats: ['png', 'webp', 'jpg', 'svg'],
         outputDir:
             process.env.ELEVENTY_ENV === 'production'
@@ -113,9 +113,9 @@ module.exports = function (eleventyConfig) {
                             !i.src.includes('http')
                     )
                     .forEach((i) => {
-                        if(i.src.includes('gif')) {
+                        if (i.src.includes('gif')) {
                             i.src = `/assets/images/blog/${i.src}`;
-                            return
+                            return;
                         }
                         i.outerHTML = getImageTag(`blog/${i.src}`, i.alt, null);
                     });
