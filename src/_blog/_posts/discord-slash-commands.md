@@ -17,7 +17,7 @@ Slash Commands are an extremely powerful way to provide rich interactivity for m
 
 ## What will I learn in this blog post?
 
-In this blog post, I'll walk you through how to configure, register and handle Slash Commands for your own Discord bot through Fusebit.  You can follow along and build your Slash Command directly using [this integration template](https://manage.fusebit.io/?key=discord-slash-commands). 
+In this blog post, I'll walk you through how to configure, register and handle Slash Commands for your own Discord bot through Fusebit.  You can follow along and build your Slash Command directly using [this integration template](https://manage.fusebit.io/?key=discord-slash-commands&utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=discord-slash-command). 
 
 There are two main steps:
 
