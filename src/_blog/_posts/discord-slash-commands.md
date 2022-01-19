@@ -17,7 +17,7 @@ Slash Commands are an extremely powerful way to provide rich interactivity for m
 
 ## What will I learn in this blog post?
 
-In this blog post, I'll walk you through how to configure, register and handle Slash Commands for your own Discord bot through Fusebit.  You can follow along and build your Slash Command directly using this integration template <https://manage.fusebit.io/?key=discord-slash-commands>. 
+In this blog post, I'll walk you through how to configure, register and handle Slash Commands for your own Discord bot through Fusebit.  You can follow along and build your Slash Command directly using [this integration template](https://manage.fusebit.io/?key=discord-slash-commands). 
 
 There are two main steps:
 
@@ -109,7 +109,9 @@ If you wish to register your Slash Command globally for all users of your Integr
 Nothing to do here! If you configured your app correctly through the developer docs, Fusebit will automatically listen for Slash Commands from servers where your app was authenticated against.
 
 Look for the <code>integration.event.on('/:componentName/webhook/:eventType')</code> endpoint in line 75 to follow this.
-Responding to Slash Commands
+
+**Responding to Slash Commands**
+
 Discord sends an Application ID & Message Token that can be used to track a series of interactions for the same message and send follow up messages to the Discord user.  
 
 ```javascript
