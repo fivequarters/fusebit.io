@@ -3,7 +3,7 @@ post_title: Add Slash Commands to your Discord Bot!
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-01-19'
-post_image: discord-slash-commands-main.png.png
+post_image: discord-slash-commands-main.png
 post_excerpt: Slash Commands are an extremely powerful way to provide rich interactivity for members of your Discord server, all you have to do is type “/” and you're ready to use your favorite bot.
 post_slug: discord-slash-commands
 tags: ['post', 'integrations']
