@@ -1,14 +1,17 @@
 extends ../_layouts/default.pug
 
 block seo_variables
-    - var title = 'About Us - Fusebit'
+    - var title = 'Make - Fusebit'
 
 block page_variable
     - var pageClass = 'make'
+    - var connectors = connectors
 
 block content
-    div.make asd
+    div.make
+        each connector in connectors
+            div #{connector.snippets[0].id}
 
 block scripts
     script.
-        analytics.page('About Us', { objectLocation: 'About Us', domain: 'fusebit.io' });
+        console.log(searchParams.get("query"));
