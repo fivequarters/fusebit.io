@@ -9,10 +9,7 @@ function getImageMeta(src, widths) {
     const options = {
         widths: widths || [100, 300, 600, 900, 1200, null],
         formats: ['png', 'webp', 'jpg', 'svg'],
-        outputDir:
-            process.env.ELEVENTY_ENV === 'production'
-                ? './build/assets/images/11ty'
-                : './src/assets/images/11ty',
+        outputDir: './build/assets/images/11ty',
         urlPath: '/assets/images/11ty',
     };
 
