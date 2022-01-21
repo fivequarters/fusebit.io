@@ -6,7 +6,7 @@ date: '2022-01-20'
 post_image: google-sheets-addon-banner.png
 post_excerpt: Import data from any API or data source to Google Sheets using Node.js, NPM, and Fusebit Connectors.
 post_slug: run-nodejs-from-google-sheets
-tags: ['post', 'developer tools', 'nodejs', 'google', 'sheets']
+tags: ['post', 'developer tools', 'integrations', 'addon']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/twitter-google-sheets-addon.png
 ---
@@ -28,8 +28,6 @@ All you need is code.
 To start, you can get data into Google Sheets from any Node.js code you write and using any NPM module you want. Which is to say, you can access any system and API out there, including those speaking protocols other than HTTP, like databases.
 
 In short, you can do everything.
-
-![Import data from any API or data source to Google Sheets](google-sheets-addon-walloflogos.jpeg 'Import data from any API or data source to Google Sheets')
 
 Get contacts from **Salesforce**? Check. Query data in **MongoDB**? Check. Import companies from **HubSpot**? Check. Import records from **MySQL**? Check. Download unpaid invoices from **QuickBooks**? Check. Get results of an analytics query in **PostgresSQL**? Check...
 
