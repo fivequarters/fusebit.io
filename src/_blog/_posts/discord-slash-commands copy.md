@@ -2,7 +2,7 @@
 post_title: Linear and Discord Slash Commands
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
-date: '2022-01-20'
+date: '2022-01-21'
 post_image: blog-linear-discord-main.png
 post_excerpt: Learn how to build an interactive Slash Command for a Discord bot that lets users create a new issue in Linear.
 post_slug: linear-discord-slash-commands
