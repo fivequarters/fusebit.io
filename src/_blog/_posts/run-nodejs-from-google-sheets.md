@@ -41,7 +41,7 @@ But wait, it is about to get better.
 
 Fusebit Connectors solve the problem of authorizing access to the target systems you need and let you cut right to writing code that matters.
 
-You don't need to worry about the idosyncracies of OAuth between API providers, refreshing your access tokens, or finding the best SDK to talk to a specific API. We've done this for you so you can focus on making the right API calls and manipulating your data.
+You don't need to worry about the idiosyncrasies of OAuth between API providers, refreshing your access tokens, or finding the best SDK to talk to a specific API. We've done this for you so you can focus on making the right API calls and manipulating your data.
 
 Say you want to import companies from HubSpot into Google Sheets. With Fusebit Connectors, this is the Node.js code you would write:
 
@@ -57,7 +57,7 @@ To get to a result like this in your Google Spreadsheet:
 
 ![Import data from HubSpot to Google Sheets](google-sheets-addon-hubspot.png 'Import data from HubSpot to Google Sheets')
 
-Short line of code for a develper, giant leap for the growth team.
+Short line of code for a developer, giant leap for the growth team.
 
 ## How do I get started?
 
