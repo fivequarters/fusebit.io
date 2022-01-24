@@ -2,7 +2,7 @@
 post_title: Run Node.js from Google Sheets
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
-date: '2022-01-20'
+date: '2022-01-24'
 post_image: google-sheets-addon-banner.png
 post_excerpt: Import data from any API or data source to Google Sheets using Node.js, NPM, and Fusebit Connectors.
 post_slug: run-nodejs-from-google-sheets
