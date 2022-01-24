@@ -1,4 +1,128 @@
 .make {
-    padding-top: 100px;
-    min-height: 100vh;
+    padding-top: 4rem;
+
+    &__invisible {
+        display: none;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__error {
+        h1 {
+            font-size: 32px;
+            margin-bottom: 32px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 16px;
+            & a {
+                margin-left: 5px;
+                color: var(--orange)
+            }
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f8fbff;
+        padding: 200px 0 88px 0;
+        margin: 152px 0 84px 0;
+        border-radius: 16px;
+        width: 991px;
+
+        @media only screen and (max-width: 880px) {
+            width: 100vw;
+        }
+    }
+
+    &__titleWrapper {
+        position: absolute;
+        top: -92px;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        width: 714px;
+        border-radius: 16px;
+        padding: 56px 16px;
+        transform: translateX(-50%);
+        box-shadow: 24px 24px 74px rgba(52, 72, 123, 0.07);
+
+        @media only screen and (max-width: 880px) {
+            width: calc(85%);
+        }
+
+        h1 {
+            font-size: 24px;
+            line-height: 26px;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 45px;
+            color: var(--black);
+        }
+
+        &--flex {
+            display: flex;
+            align-items: center;
+        }
+
+        &--image {
+            width: 100px;
+            height: 34px;
+            object-fit: contain;
+
+            &:not(:last-child) {
+                margin-right: 24px;
+            }
+        }
+    }
+
+    &__descriptionWrapper {
+        padding: 0 16px;
+
+        &--text {
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 400;
+            color: var(--black);
+            margin-bottom: 32px;
+        }
+
+        &--marginTop {
+            margin-top: 48px;
+        }
+
+        &--snippet {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+
+            &-feature {
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: 400;
+                color: var(--black);
+            }
+
+            &-img {
+                margin-right: 12px;
+            }
+        }
+    }
+
+    &__button {
+        margin: 48px auto 0;
+        height: 48px !important;
+    }
 }

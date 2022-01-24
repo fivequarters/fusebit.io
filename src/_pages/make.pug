@@ -5,12 +5,35 @@ block seo_variables
 
 block page_variable
     - var pageClass = 'make'
-    - var connectors = connectors
 
 block content
-    div.make
-        each connector in connectors
-            div #{connector.snippets[0].id}
+    section.make
+        .make__container
+            .make__error.make__invisible
+                h1 Oops!
+                p There was a problem. 
+                p 
+                 | But hey, you can still explore other integrations you can build with Fusebit
+                 a(href="/integrations/") here.
+            .make__wrapper
+                .make__titleWrapper
+                    h1 Let's create a integration!
+                    .make__titleWrapper--flex
+                        img.make__titleWrapper--image
+                .make__descriptionWrapper
+                    p.make__descriptionWrapper--text With just a few lines of code, you will be able to:
+                    div
+                        .make__descriptionWrapper--snippet 
+                            img.make__descriptionWrapper--snippet-img(src="../../../assets/images/check.svg")
+                            .make__descriptionWrapper--snippet-feature Sends a message to slack
+                        .make__descriptionWrapper--snippet 
+                            img.make__descriptionWrapper--snippet-img(src="../../../assets/images/check.svg")
+                            .make__descriptionWrapper--snippet-feature Receives a message from slack
+                    p.make__descriptionWrapper--text.make__descriptionWrapper--marginTop Log in or create a free Fusebit account to get started!
+                    +cta("Create", null, "make__button", "create", null, null, null, true)
+
+
+
 
 block scripts
     script.
