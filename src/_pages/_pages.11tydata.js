@@ -6,13 +6,7 @@ module.exports = async function () {
         `${process.env.PORTAL_BASE_URL}/feed/integrationsFeed.json`,
     );
 
-    const connectorsPromise = await fetch(
-        `${process.env.PORTAL_BASE_URL}/feed/connectorsFeed.json`,
-    );
-
     const integrations = (await integrationsPromise.json()).filter((i) => !i.private);
-
-    const connectors = (await connectorsPromise.json()).filter((i) => !i.private && i.snippets);
 
     return {
         permalink:
@@ -32,11 +26,5 @@ module.exports = async function () {
                 integrations.map((i) => i.tags.catalog.split(',')).flat(),
             ),
         ],
-        connectors: connectors.map((i) => ({
-            id: i.id,
-            logo: i.smallIcon,
-            name: i.name,
-            snippets: i.snippets,
-        })),
     };
 };

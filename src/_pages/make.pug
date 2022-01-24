@@ -15,3 +15,14 @@ block content
 block scripts
     script.
         console.log(searchParams.get("query"));
+
+        const func = async () => {
+            const connectorsPromise = await fetch(
+                `http://localhost:8080/feed/connectorsFeed.json`,
+            );
+            const connectors = (await connectorsPromise.json()).filter((i) => !i.private && i.snippets);
+            console.log(connectors);
+        }
+        func();
+
+        
