@@ -11,7 +11,7 @@ block content
         .make__container
             .make__error.make__invisible
                 h1 Oops!
-                p There was a problem. 
+                p#errorMessage There was a problem
                 p 
                  | But hey, you can still explore other integrations you can build with Fusebit
                  a(href="/integrations/") here.
@@ -37,15 +37,57 @@ block content
 
 block scripts
     script.
-        console.log(searchParams.get("query"));
+
+        const initData = (snippets, connectors, error) => {
+            if (error) {
+                const messageElement = document.getElementById("errorMessage");
+                messageElement.innerText = `There was a problem: ${error}`;
+                const errorWrapper = document.querySelector(".make__error");
+                const makeWrapper = document.querySelector(".make__wrapper");
+                makeWrapper.classList.add("make__invisible");
+                errorWrapper.classList.remove("make__invisible");
+            }
+        }
 
         const func = async () => {
+            let error;
+            const snippetArray = [];
+            const connectorMap = {};
+            const uniqueConnectors = [];
+
+            const snippets = searchParams.get("query").replace(" ", "+");
+            const snippetIds = snippets.split('+').map((s) => {
+                const segments = s.split('-');
+                const connectorId = segments.shift();
+                return { connectorId, snippetId: segments.join('-') };
+            });
+
             const connectorsPromise = await fetch(
                 `http://localhost:8080/feed/connectorsFeed.json`,
             );
             const connectors = (await connectorsPromise.json()).filter((i) => !i.private && i.snippets);
-            console.log(connectors);
+
+            for (let i = 0; i < snippetIds.length; i++) {
+                const connector = connectors.find((c) => c.id === snippetIds[i].connectorId);
+                if (!connector) {
+                    error = `The '${snippetIds[i].connectorId}' connector was not found.`;
+                    break;
+                }
+                const snippet = connector.snippets?.find((s) => s.id === snippetIds[i].snippetId);
+                if (!snippet) {
+                    error = `The '${snippetIds[i].snippetId}' snippet of the '${snippetIds[i].connectorId}' connector was not found.`;
+                    break;
+                }
+                if (!connectorMap[connector.id]) {
+                    connectorMap[connector.id] = true;
+                    uniqueConnectors.push(connector);
+                }
+                snippetArray.push({ connector, snippet });
+            }
+
+            initData("", "", "asd");
         }
+
         func();
 
         

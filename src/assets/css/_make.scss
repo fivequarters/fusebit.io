@@ -2,7 +2,7 @@
     padding-top: 4rem;
 
     &__invisible {
-        display: none;
+        display: none !important;
     }
 
     &__container {
@@ -12,6 +12,8 @@
     }
 
     &__error {
+        padding: 160px 0;
+
         h1 {
             font-size: 32px;
             margin-bottom: 32px;
