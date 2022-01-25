@@ -9,6 +9,8 @@ block page_variable
 block content
     section.make
         .make__container
+            .make__loader
+                img(src="../../../assets/images/spinner.svg").make__loader--spinner
             .make__error.make__invisible
                 h1 Oops!
                 p#errorMessage There was a problem
@@ -68,6 +70,12 @@ block scripts
                 const wrapper = document.querySelector(".make__wrapper");
                 wrapper.classList.remove("make__invisible");
             }
+            
+            const loader = document.querySelector(".make__loader");
+            loader.style.opacity = 0;
+            setTimeout(() => {
+                loader.classList.add("make__invisible");
+            }, 250);
         }
 
         const queryData = async () => {

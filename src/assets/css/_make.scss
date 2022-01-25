@@ -1,5 +1,7 @@
 .make {
+    position: relative;
     padding-top: 4rem;
+    min-height: 450px;
 
     &__invisible {
         display: none !important;
@@ -9,6 +11,32 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    &__loader {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100%;
+        background-color: white;
+        z-index: 10;
+        transition: all .25s linear;
+
+        @keyframes loading {
+            from {transform: rotate(0)}
+            to {transform: rotate(360deg)}
+        }
+
+        &--spinner {
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            animation: loading 1s linear infinite;
+        }
     }
 
     &__error {
