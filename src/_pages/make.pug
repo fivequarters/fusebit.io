@@ -27,12 +27,12 @@ block content
 
 block scripts
     script.
-
         const initData = (snippets, connectors, error) => {
             if (error) {
                 const messageElement = document.getElementById("errorMessage");
-                messageElement.innerText = `There was a problem: ${error}`;
                 const errorWrapper = document.querySelector(".make__error");
+
+                messageElement.innerText = `There was a problem: ${error}`;
                 errorWrapper.classList.remove("make__invisible");
             } else {
                 const titleElement = document.getElementById("title");
@@ -41,8 +41,10 @@ block scripts
                 const titleImages = document.querySelector(".make__titleWrapper--flex");
                 connectors.forEach((connector) => {
                     const image = document.createElement("img");
+
                     image.src = urlOrSvgToImage(connector.largeIcon);
-                    image.classList.add("make__titleWrapper--image");
+                    image.setAttribute("class", "make__titleWrapper--image");
+
                     titleImages.appendChild(image);
                 });
                 
@@ -68,7 +70,7 @@ block scripts
             }
         }
 
-        const func = async () => {
+        const queryData = async () => {
             let error;
             const snippetArray = [];
             const connectorMap = {};
@@ -104,9 +106,14 @@ block scripts
                 snippetArray.push({ connector, snippet });
             }
 
+            return { snippetArray, uniqueConnectors, error };
+        }
+
+        const loadData = async () => {
+            const { snippetArray, uniqueConnectors, error } = await queryData(); 
             initData(snippetArray, uniqueConnectors, error);
         }
 
-        func();
+        loadData();
 
         
