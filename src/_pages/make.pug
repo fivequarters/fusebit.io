@@ -44,7 +44,7 @@ block scripts
                 connectors.forEach((connector) => {
                     const image = document.createElement("img");
 
-                    image.src = urlOrSvgToImage(connector.largeIcon);
+                    image.src = `data:image/svg+xml;utf8,${encodeURIComponent(connector.largeIcon)}`;
                     image.setAttribute("class", "make__titleWrapper--image");
 
                     titleImages.appendChild(image);
