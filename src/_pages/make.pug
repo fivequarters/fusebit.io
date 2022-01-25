@@ -1,10 +1,10 @@
 extends ../_layouts/default.pug
 
 block seo_variables
-    - var title = 'Make - Fusebit'
+    - var title = 'Snippets - Fusebit'
 
 block page_variable
-    - var pageClass = 'make'
+    - var pageClass = 'snippets'
 
 block content
     section.make
@@ -25,7 +25,7 @@ block content
                     p.make__descriptionWrapper--text With just a few lines of code, you will be able to:
                     div#snippets
                     p.make__descriptionWrapper--text.make__descriptionWrapper--marginTop Log in or create a free Fusebit account to get started!
-                    +cta("Create", null, "make__button", "create", null, null, null, true)
+                    +cta("Create", null, "make__button", "create", true, "Create Button Clicked", "Snippets Page", true)
 
 block scripts
     script.
@@ -84,8 +84,8 @@ block scripts
             const connectorMap = {};
             const uniqueConnectors = [];
 
-            const snippets = searchParams.get("query").replace(" ", "+");
-            const snippetIds = snippets.split('+').map((s) => {
+            const snippets = searchParams.get("query");
+            const snippetIds = snippets.split(',').map((s) => {
                 const segments = s.split('-');
                 const connectorId = segments.shift();
                 return { connectorId, snippetId: segments.join('-') };
@@ -123,5 +123,12 @@ block scripts
         }
 
         loadData();
+
+        const createButton = document.getElementById("create");
+        createButton.addEventListener("click", () => {
+            const snippets = searchParams.get("query").replace(",", "+");
+            //- trackEvent('Go Button Clicked', 'Make Snippet', { snippets });
+            window.open(`https://stage-manage.fusebit.io/make-go/${snippets}`, "_blank");
+        });
 
         
