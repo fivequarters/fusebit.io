@@ -15,11 +15,10 @@ block content
                 p 
                  | But hey, you can still explore other integrations you can build with Fusebit
                  a(href="/integrations/") here.
-            .make__wrapper
+            .make__wrapper.make__invisible
                 .make__titleWrapper
-                    h1 Let's create a integration!
+                    h1#title Let's create a integration!
                     .make__titleWrapper--flex
-                        img.make__titleWrapper--image
                 .make__descriptionWrapper
                     p.make__descriptionWrapper--text With just a few lines of code, you will be able to:
                     div
@@ -43,9 +42,20 @@ block scripts
                 const messageElement = document.getElementById("errorMessage");
                 messageElement.innerText = `There was a problem: ${error}`;
                 const errorWrapper = document.querySelector(".make__error");
-                const makeWrapper = document.querySelector(".make__wrapper");
-                makeWrapper.classList.add("make__invisible");
                 errorWrapper.classList.remove("make__invisible");
+            } else {
+                const titleElement = document.getElementById("title");
+                titleElement.innerText = `Let's create a ${connectors.map((c) => c.name).join(' + ')} integration!`;
+                const titleImages = document.querySelector(".make__titleWrapper--flex");
+                connectors.forEach((connector) => {
+                    const image = document.createElement("img");
+                    image.src = urlOrSvgToImage(connector.largeIcon);
+                    image.classList.add("make__titleWrapper--image");
+                    titleImages.appendChild(image);
+                });
+
+                const wrapper = document.querySelector(".make__wrapper");
+                wrapper.classList.remove("make__invisible");
             }
         }
 
@@ -85,7 +95,7 @@ block scripts
                 snippetArray.push({ connector, snippet });
             }
 
-            initData("", "", "asd");
+            initData(snippetArray, uniqueConnectors, error);
         }
 
         func();
