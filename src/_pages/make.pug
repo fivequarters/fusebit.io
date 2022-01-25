@@ -78,7 +78,7 @@ block scripts
             }, 250);
         }
 
-        const queryData = async () => {
+        const queryData = async (site) => {
             let error;
             const snippetArray = [];
             const connectorMap = {};
@@ -92,7 +92,7 @@ block scripts
             });
 
             const connectorsPromise = await fetch(
-                `http://localhost:8080/feed/connectorsFeed.json`,
+                `${site.connectorsFeedUrl}/feed/connectorsFeed.json`,
             );
             const connectors = (await connectorsPromise.json()).filter((i) => !i.private && i.snippets);
 
@@ -117,18 +117,24 @@ block scripts
             return { snippetArray, uniqueConnectors, error };
         }
 
-        const loadData = async () => {
-            const { snippetArray, uniqueConnectors, error } = await queryData(); 
+        const loadData = async (site) => {
+            const { snippetArray, uniqueConnectors, error } = await queryData(site); 
             initData(snippetArray, uniqueConnectors, error);
         }
 
-        loadData();
+        window.addEventListener('load', async () => {
+            const res = await fetch('/site.json');
+            const site = await res.json();
+            loadData(site);
 
-        const createButton = document.getElementById("create");
-        createButton.addEventListener("click", () => {
-            const snippets = searchParams.get("query").replace(",", "+");
-            //- trackEvent('Go Button Clicked', 'Make Snippet', { snippets });
-            window.open(`https://stage-manage.fusebit.io/make-go/${snippets}`, "_blank");
+            const createButton = document.getElementById("create");
+            createButton.addEventListener("click", () => {
+                const snippets = searchParams.get("query").replace(",", "+");
+                //- trackEvent('Go Button Clicked', 'Make Snippet', { snippets });
+                window.open(`${site.portalBaseUrl}/make-go/${snippets}`, "_blank");
+            });
         });
+
+        
 
         
