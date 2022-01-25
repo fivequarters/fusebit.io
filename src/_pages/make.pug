@@ -21,18 +21,9 @@ block content
                     .make__titleWrapper--flex
                 .make__descriptionWrapper
                     p.make__descriptionWrapper--text With just a few lines of code, you will be able to:
-                    div
-                        .make__descriptionWrapper--snippet 
-                            img.make__descriptionWrapper--snippet-img(src="../../../assets/images/check.svg")
-                            .make__descriptionWrapper--snippet-feature Sends a message to slack
-                        .make__descriptionWrapper--snippet 
-                            img.make__descriptionWrapper--snippet-img(src="../../../assets/images/check.svg")
-                            .make__descriptionWrapper--snippet-feature Receives a message from slack
+                    div#snippets
                     p.make__descriptionWrapper--text.make__descriptionWrapper--marginTop Log in or create a free Fusebit account to get started!
                     +cta("Create", null, "make__button", "create", null, null, null, true)
-
-
-
 
 block scripts
     script.
@@ -46,12 +37,30 @@ block scripts
             } else {
                 const titleElement = document.getElementById("title");
                 titleElement.innerText = `Let's create a ${connectors.map((c) => c.name).join(' + ')} integration!`;
+
                 const titleImages = document.querySelector(".make__titleWrapper--flex");
                 connectors.forEach((connector) => {
                     const image = document.createElement("img");
                     image.src = urlOrSvgToImage(connector.largeIcon);
                     image.classList.add("make__titleWrapper--image");
                     titleImages.appendChild(image);
+                });
+                
+                const snippetsElement = document.getElementById("snippets");
+                snippets.forEach((s) => {
+                    const snippetWrapper = document.createElement("div");
+                    const snippetIcon = document.createElement("img");
+                    const snippetDescription = document.createElement("p");
+
+                    snippetWrapper.setAttribute("class", "make__descriptionWrapper--snippet");
+                    snippetIcon.setAttribute("src", "../../../assets/images/check.svg");
+                    snippetIcon.setAttribute("class", "make__descriptionWrapper--snippet-img");
+                    snippetDescription.setAttribute("class", "make__descriptionWrapper--snippet-feature");
+                    snippetDescription.innerText = s.snippet.description;
+
+                    snippetWrapper.appendChild(snippetIcon);
+                    snippetWrapper.appendChild(snippetDescription);
+                    snippetsElement.appendChild(snippetWrapper);
                 });
 
                 const wrapper = document.querySelector(".make__wrapper");
