@@ -52,12 +52,12 @@ pre {
 }
 
 strong {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 h1,
 h2 {
-    font-weight: bold;
+    font-weight: 700;
     line-height: 1.1;
 }
 
@@ -78,6 +78,10 @@ h1 {
     font-size: 56px;
     text-align: center;
     margin: 40px 0;
+
+    @media only screen and (max-width: 600px) {  
+        font-size: 48px;
+    }
 }
 
 h2 {
@@ -209,7 +213,7 @@ a[title~='CTA_LARGE'] {
     ul li::before {
         content: '\2022';
         color: red;
-        font-weight: bold;
+        font-weight: 700;
         display: inline-block;
         width: 1em;
         margin-left: -1em;

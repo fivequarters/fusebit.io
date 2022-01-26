@@ -95,6 +95,14 @@
 
     &__content {
         margin-top: -320px;
+
+        @media only screen and (max-width: 765px) {  
+            margin-top: -280px;
+        }
+
+        @media only screen and (max-width: 400px) {  
+            margin-top: -250px;
+        }
     }
 
     &__trending-layout {
