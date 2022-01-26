@@ -118,8 +118,13 @@ block scripts
         }
 
         const loadData = async (site) => {
-            const { snippetArray, uniqueConnectors, error } = await queryData(site); 
-            initData(snippetArray, uniqueConnectors, error);
+            if (!searchParams.get("query")) {
+                initData(null, null, "The query has not been found");
+            } else {
+                const { snippetArray, uniqueConnectors, error } = await queryData(site); 
+                initData(snippetArray, uniqueConnectors, error);
+            }
+            
         }
 
         window.addEventListener('load', async () => {
