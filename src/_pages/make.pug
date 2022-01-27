@@ -25,12 +25,10 @@ block content
                     p.make__descriptionWrapper--text With just a few lines of code, you will be able to:
                     div#snippets
                     p.make__descriptionWrapper--text.make__descriptionWrapper--marginTop Log in or create a free Fusebit account to get started!
-                    +cta("Create", null, "make__button", "create", true, "Create Button Clicked", "Snippets Page", true)
+                    +cta("Create", null, "make__button", "create", true, "Create Button Clicked", "Make", true)
 
 block scripts
     script.
-        analytics.page('Snippets', { objectLocation: 'Snippets', domain: 'fusebit.io' });
-        
         const initData = (snippets, connectors, error) => {
             if (error) {
                 const messageElement = document.getElementById("errorMessage");
@@ -122,7 +120,13 @@ block scripts
         const loadData = async (site) => {
             if (!searchParams.get("query")) {
                 initData(null, null, "The query has not been found");
+                analytics.page('Make Index', { objectLocation: 'Make', domain: 'fusebit.io' });
             } else {
+                const snippets = searchParams.get("query").split(',');
+                let analyticsSnippetData = snippets.map((snippet, index) => {
+                    return { [`snippet-${index + 1}`]: snippet };
+                });
+                analytics.page('Make Index', { objectLocation: 'Make', domain: 'fusebit.io', snippets: analyticsSnippetData });
                 const { snippetArray, uniqueConnectors, error } = await queryData(site); 
                 initData(snippetArray, uniqueConnectors, error);
             }
