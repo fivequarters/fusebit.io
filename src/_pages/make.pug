@@ -29,6 +29,8 @@ block content
 
 block scripts
     script.
+        analytics.page('Snippets', { objectLocation: 'Snippets', domain: 'fusebit.io' });
+        
         const initData = (snippets, connectors, error) => {
             if (error) {
                 const messageElement = document.getElementById("errorMessage");
