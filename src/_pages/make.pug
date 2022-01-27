@@ -94,7 +94,7 @@ block scripts
             });
 
             const connectorsPromise = await fetch(
-                `${site.connectorsFeedUrl}/feed/connectorsFeed.json`,
+                `${site.connectorsFeedUrl}`,
             );
             const connectors = (await connectorsPromise.json()).filter((i) => !i.private && i.snippets);
 
