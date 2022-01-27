@@ -84,8 +84,8 @@ block scripts
             const connectorMap = {};
             const uniqueConnectors = [];
 
-            const snippets = searchParams.get("query");
-            const snippetIds = snippets.split(',').map((s) => {
+            const snippets = searchParams.get("create");
+            const snippetIds = snippets.split(' ').map((s) => {
                 const segments = s.split('-');
                 const connectorId = segments.shift();
                 return { connectorId, snippetId: segments.join('-') };
@@ -118,15 +118,18 @@ block scripts
         }
 
         const loadData = async (site) => {
-            if (!searchParams.get("query")) {
-                initData(null, null, "The query has not been found");
+            if (!searchParams.get("create")) {
+                initData(null, null, `You must add a create param.`);
                 analytics.page('Make Index', { objectLocation: 'Make', domain: 'fusebit.io' });
             } else {
-                const snippets = searchParams.get("query").split(',');
-                let analyticsSnippetData = snippets.map((snippet, index) => {
-                    return { [`snippet-${index + 1}`]: snippet };
+                const snippets = searchParams.get("create").split(' ');
+                analytics.page('Make Index', { 
+                    objectLocation: 'Make', 
+                    domain: 'fusebit.io', 
+                    snippet1: snippets?.[0] ? snippets?.[0] : null,
+                    snippet2: snippets?.[1] ? snippets?.[1] : null,
+                    snippet3: snippets?.[2] ? snippets?.[2] : null,
                 });
-                analytics.page('Make Index', { objectLocation: 'Make', domain: 'fusebit.io', snippets: analyticsSnippetData });
                 const { snippetArray, uniqueConnectors, error } = await queryData(site); 
                 initData(snippetArray, uniqueConnectors, error);
             }
@@ -140,8 +143,14 @@ block scripts
 
             const createButton = document.getElementById("create");
             createButton.addEventListener("click", () => {
-                const snippets = searchParams.get("query").replace(",", "+");
-                //- trackEvent('Go Button Clicked', 'Make Snippet', { snippets });
+                const snippets = searchParams.get("create").replaceAll(" ", "+");
+                analytics.track({
+                    event: 'Create Button Clicked',
+                    properties: {
+                        objectLocation: "Make",
+                        domain: 'fusebit.io',
+                    }
+                });
                 window.open(`${site.portalBaseUrl}/make-go/${snippets}`, "_blank");
             });
         });
