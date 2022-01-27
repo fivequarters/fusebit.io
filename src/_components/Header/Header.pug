@@ -72,8 +72,9 @@ header.header
             window.addEventListener('load', () => {
                 let prevScroll = window.pageYOffset;
                 const isBlogSite = window.location.pathname.includes('blog');
+                const isMakeSite = window.location.pathname.includes('make');
 
-                if(isBlogSite) {
+                if(isBlogSite || isMakeSite) {
                     const header = document.querySelector('.header');
                     header.classList.add('header--compact');
                 }
@@ -85,7 +86,7 @@ header.header
 
                     if (currentScroll < HIDE_NAVBAR_AT) {
 
-                        if(!isBlogSite) {
+                        if(!isBlogSite && !isMakeSite) {
                             header.classList.remove('header--compact');
                         }
 

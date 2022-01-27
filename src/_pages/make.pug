@@ -1,0 +1,160 @@
+extends ../_layouts/default.pug
+
+block seo_variables
+    - var title = 'Snippets - Fusebit'
+
+block page_variable
+    - var pageClass = 'snippets'
+
+block content
+    section.make
+        .make__container
+            .make__loader
+                img(src="../../../assets/images/spinner.svg").make__loader--spinner
+            .make__error.make__invisible
+                h1 Oops!
+                p#errorMessage There was a problem
+                p 
+                 | But hey, you can still explore other integrations you can build with Fusebit
+                 a(href="/integrations/") here.
+            .make__wrapper.make__invisible
+                .make__titleWrapper
+                    h1#title Let's create a integration!
+                    .make__titleWrapper--flex
+                .make__descriptionWrapper
+                    p.make__descriptionWrapper--text With just a few lines of code, you will be able to:
+                    div#snippets
+                    p.make__descriptionWrapper--text.make__descriptionWrapper--marginTop Log in or create a free Fusebit account to get started!
+                    +cta("Create", null, "make__button", "create", true, "Create Button Clicked", "Make", true)
+
+block scripts
+    script.
+        const initData = (snippets, connectors, error) => {
+            if (error) {
+                const messageElement = document.getElementById("errorMessage");
+                const errorWrapper = document.querySelector(".make__error");
+
+                messageElement.innerText = `There was a problem: ${error}`;
+                errorWrapper.classList.remove("make__invisible");
+            } else {
+                const titleElement = document.getElementById("title");
+                titleElement.innerText = `Let's create a ${connectors.map((c) => c.name).join(' + ')} integration!`;
+
+                const titleImages = document.querySelector(".make__titleWrapper--flex");
+                connectors.forEach((connector) => {
+                    const image = document.createElement("img");
+
+                    image.src = `data:image/svg+xml;utf8,${encodeURIComponent(connector.largeIcon)}`;
+                    image.setAttribute("class", "make__titleWrapper--image");
+
+                    titleImages.appendChild(image);
+                });
+                
+                const snippetsElement = document.getElementById("snippets");
+                snippets.forEach((s) => {
+                    const snippetWrapper = document.createElement("div");
+                    const snippetIcon = document.createElement("img");
+                    const snippetDescription = document.createElement("p");
+
+                    snippetWrapper.setAttribute("class", "make__descriptionWrapper--snippet");
+                    snippetIcon.setAttribute("src", "../../../assets/images/check.svg");
+                    snippetIcon.setAttribute("class", "make__descriptionWrapper--snippet-img");
+                    snippetDescription.setAttribute("class", "make__descriptionWrapper--snippet-feature");
+                    snippetDescription.innerText = s.snippet.description;
+
+                    snippetWrapper.appendChild(snippetIcon);
+                    snippetWrapper.appendChild(snippetDescription);
+                    snippetsElement.appendChild(snippetWrapper);
+                });
+
+                const wrapper = document.querySelector(".make__wrapper");
+                wrapper.classList.remove("make__invisible");
+            }
+            
+            const loader = document.querySelector(".make__loader");
+            loader.style.opacity = 0;
+            setTimeout(() => {
+                loader.classList.add("make__invisible");
+            }, 250);
+        }
+
+        const queryData = async (site) => {
+            let error;
+            const snippetArray = [];
+            const connectorMap = {};
+            const uniqueConnectors = [];
+
+            const snippets = searchParams.get("create");
+            const snippetIds = snippets.split(' ').map((s) => {
+                const segments = s.split('-');
+                const connectorId = segments.shift();
+                return { connectorId, snippetId: segments.join('-') };
+            });
+
+            const connectorsPromise = await fetch(
+                `${site.connectorsFeedUrl}`,
+            );
+            const connectors = (await connectorsPromise.json()).filter((i) => !i.private && i.snippets);
+
+            for (let i = 0; i < snippetIds.length; i++) {
+                const connector = connectors.find((c) => c.id === snippetIds[i].connectorId);
+                if (!connector) {
+                    error = `The '${snippetIds[i].connectorId}' connector was not found.`;
+                    break;
+                }
+                const snippet = connector.snippets?.find((s) => s.id === snippetIds[i].snippetId);
+                if (!snippet) {
+                    error = `The '${snippetIds[i].snippetId}' snippet of the '${snippetIds[i].connectorId}' connector was not found.`;
+                    break;
+                }
+                if (!connectorMap[connector.id]) {
+                    connectorMap[connector.id] = true;
+                    uniqueConnectors.push(connector);
+                }
+                snippetArray.push({ connector, snippet });
+            }
+
+            return { snippetArray, uniqueConnectors, error };
+        }
+
+        const loadData = async (site) => {
+            if (!searchParams.get("create")) {
+                initData(null, null, `You must add a create param.`);
+                analytics.page('Make Index', { objectLocation: 'Make', domain: 'fusebit.io' });
+            } else {
+                const snippets = searchParams.get("create").split(' ');
+                analytics.page('Make Index', { 
+                    objectLocation: 'Make', 
+                    domain: 'fusebit.io', 
+                    snippet1: snippets?.[0] ? snippets?.[0] : null,
+                    snippet2: snippets?.[1] ? snippets?.[1] : null,
+                    snippet3: snippets?.[2] ? snippets?.[2] : null,
+                });
+                const { snippetArray, uniqueConnectors, error } = await queryData(site); 
+                initData(snippetArray, uniqueConnectors, error);
+            }
+            
+        }
+
+        window.addEventListener('load', async () => {
+            const res = await fetch('/site.json');
+            const site = await res.json();
+            loadData(site);
+
+            const createButton = document.getElementById("create");
+            createButton.addEventListener("click", () => {
+                const snippets = searchParams.get("create").replaceAll(" ", "+");
+                analytics.track({
+                    event: 'Create Button Clicked',
+                    properties: {
+                        objectLocation: "Make",
+                        domain: 'fusebit.io',
+                    }
+                });
+                window.open(`${site.portalBaseUrl}/make-go/${snippets}`, "_blank");
+            });
+        });
+
+        
+
+        
