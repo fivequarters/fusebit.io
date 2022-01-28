@@ -70,11 +70,12 @@ jobs:
         run: aws s3 ls
 
       - name: Build
-        env: 
+        env:
           INTERCOM_APP_ID: v9ncq3ml
           BASE_URL: https://develop.fivequarters.io
           CANONICAL_URL: https://fusebit.io
           PORTAL_BASE_URL: https://stage-manage.fusebit.io
+          CONNECTORS_FEED_URL: {{PORTAL_BASE_URL}}/feed/connectorsFeed.json
         run: ./scripts/build_tree.sh
 
       - name: Publish - website
