@@ -72,7 +72,6 @@ jobs:
           BASE_URL: https://fusebit.io
           CANONICAL_URL: https://fusebit.io
           PORTAL_BASE_URL: https://manage.fusebit.io
-          CONNECTORS_FEED_URL: {{PORTAL_BASE_URL}}/feed/connectorsFeed.json
         run: ./scripts/build_tree.sh
 
       - name: Publish - website

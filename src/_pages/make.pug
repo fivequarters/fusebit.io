@@ -91,15 +91,9 @@ block scripts
                 return { connectorId, snippetId: segments.join('-') };
             });
 
-            let connectorsPromise = await fetch(
+            const connectorsPromise = await fetch(
                 `${site.connectorsFeedUrl}`,
             );
-            
-            if (!connectorsPromise.ok) {
-                connectorsPromise = await fetch(
-                    `https://stage-manage.fusebit.io/feed/connectorsFeed.json`,
-                );
-            }
 
             const connectors = (await connectorsPromise.json()).filter((i) => !i.private && i.snippets);
 
