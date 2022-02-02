@@ -1,5 +1,5 @@
 ---
-post_title: 'fetch() In Node.js Core: What Is It and Why You Should Care'
+post_title: 'fetch() In Node.js Core: Why You Should Care'
 post_author: Yavor Georgiev
 post_author_avatar: yavor.png
 date: '2022-02-02'
