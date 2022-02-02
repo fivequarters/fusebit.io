@@ -4,7 +4,7 @@ post_author: Yavor Georgiev
 post_author_avatar: yavor.png
 date: '2022-02-02'
 post_image: blog-node-fetch.jpg
-post_excerpt: 'Node 17.5 will introduce support for the fetch() HTTP client, a new way to send requests to HTTP APIs'
+post_excerpt: 'Node 17.5 will introduce support for the fetch() HTTP client, a new way to send requests to HTTP APIs.'
 post_slug: node-fetch
 tags: ['post', 'developer tools']
 post_date_in_url: false
