@@ -8,7 +8,7 @@ post_excerpt: Simple yet flexible authorization model for your HTTP APIs, based 
 post_slug: authorize-your-http-apis
 tags: ['post', 'developer tools']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/blog-0Auth-providers-main.png
+post_og_image: https://fusebit.io/assets/images/blog/blog-authorize-your-http-apis-main.jpg
 ---
 
 Deciding how to *authorize* access to HTTP APIs is a critical step in securing your application. The question must be addressed early in the design cycle of your app, right after you decide how to [*authenticate*](https://fusebit.io/blog/secure-your-http-apis/) users. Authorization design requires modeling your resources, actions that can be performed on those resources, and the granularity of access control checks. 
