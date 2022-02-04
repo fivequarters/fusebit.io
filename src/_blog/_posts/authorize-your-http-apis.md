@@ -21,9 +21,9 @@ Authorization design is a step that should not be taken lightly.
 
 The authorization model must be designed early in the lifecycle of your application when the final shape of the app is often still vague. At the same time, versioning of the authorization model is more challenging than versioning of other aspects of the app. The authorization model is part of the public surface area of your app and affects many operational processes (like administration). As the authorization model decision is taken in ambiguous circumstances and is hard to change later, you should not skimp on this part of the application design. Mistakes and omissions are going to be expensive for you to fix. Future changes will be disruptive for your users. 
 
-Many HTTP APIs require developers to constantly refer to the API documentation to understand the permissions required for a particular call. That’s because the authorization model is often loosely coupled with the structure of the HTTP APIs. For example, applications that rely on OAuth often use *scopes* to describe the permissions required from the caller. Scopes typically govern broad classes of operations and APIs available in the system. For a developer looking at the API itself, it is not immediately clear what scopes are required to call it: 
+Many HTTP APIs require developers to constantly refer to the API documentation to understand the permissions required for a particular call. That’s because the authorization model is often loosely coupled with the structure of the HTTP APIs. For example, applications that rely on OAuth often use *scopes* to describe the permissions required from the caller. Scopes typically govern broad classes of operations and APIs available in the system. For a developer looking at the API itself, it is not immediately clear what scopes are required to call it:
 
-![Slack API Methods](blog-authorize-http-api-image-1.png "Slack API Methods")
+![Slack API Methods](blog-authorize.png "Slack API Methods")
 
 It is going to be frustrating for the developers using your API if they have to consult your documentation each time they need to make a call. 
 
@@ -42,7 +42,7 @@ The GET API above gets (the operation) the status of a specific cat from a speci
 
 An authorization model that is tightly coupled with the shape of the HTTP API has the following model: 
 
-![HTTP API Model](blog-authorize-http-api-image-2.png "HTTP API Model")
+![HTTP API Model](blog-authorize-2.png "HTTP API Model")
 
 The *identity* represents a recognized principal in your app - a user or an application that can be granted certain permissions in your system. When your app receives an HTTP API call, the identity of the caller is typically established in the process of *authentication*. You can read more about the approaches to the authentication process in the previous article [How to Secure Your HTTP APIs](https://fusebit.io/blog/secure-your-http-apis/).
 
@@ -63,7 +63,7 @@ Let’s fix it by adding two more rules to the authorization model above:
 
 Let’s explore the flexibility of this model. Consider the following examples: 
 
-![HTTP API Call Examples](blog-authorize-http-api-image-3.png "HTTP API Call Examples")
+![HTTP API Call Examples](blog-authorize-3.png "HTTP API Call Examples")
 
 Note that the access check logic relies on the prefix match on the permission resource and operation. This model works well in situations where resources in your application are organized in a strict hierarchy, and that hierarchy is also a convenient way to manage permissions in your app. In the example above, a specific cat is a resource that is subordinate to a specific veterinary clinic.
 
