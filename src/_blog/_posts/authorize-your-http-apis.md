@@ -3,7 +3,7 @@ post_title: Simple Authorization Model for HTTP APIs
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2022-02-04'
-post_image: blog-authorize-your-http-apis-main.png
+post_image: blog-authorize-your-http-apis-main.jpg
 post_excerpt: Simple yet flexible authorization model for your HTTP APIs, based on lessons learned at Fusebit.
 post_slug: authorize-your-http-apis
 tags: ['post', 'developer tools']
