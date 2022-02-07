@@ -67,7 +67,7 @@ jobs:
         run: aws s3 ls
 
       - name: Build
-        env: 
+        env:
           INTERCOM_APP_ID: v9ncq3ml
           BASE_URL: https://fusebit.io
           CANONICAL_URL: https://fusebit.io
