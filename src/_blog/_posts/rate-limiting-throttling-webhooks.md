@@ -39,7 +39,7 @@ Fixed Window is an algorithm that uses a window size of time in seconds for proc
 
 This produces very spiky traffic under load - at each 5-second interval, ten requests will be sent, and then the rest of the time, the network will be idle.
 
-![Fixed window algorithm](fixed-window-algorithm.png 'Fixed window algorithm')
+![Fixed window algorithm with-shadow](fixed-window-algorithm.png 'Fixed window algorithm')
 
 An advantage of this approach is that it ensures that more recent requests will be processed first without being starved by old requests. 
 
@@ -47,7 +47,7 @@ But there are problems with this technique. If you consume the request limit at 
 
 The following image is an example of the fixed window technique on the Twitter API. The endpoint has "15 minutes in length" per window. So, you can get 75 account/verify_credentials per user in 15 minutes. 
  
-![twitter rate limiting](twitter-rate-limiting.png 'twitter rate limiting')
+![twitter rate limiting with-shadow](twitter-rate-limiting.png 'twitter rate limiting')
 
 You have limits associated with your API developer key. The following is the error you will receive if you exceed a rate limit in Twitter, which is called the throttling exception. The server rejects your requests because it has been exceeded the limit of requests per time unit (75 requests in 15 min) 
 
@@ -59,7 +59,7 @@ We can assign a bucket with a specific amount of tokens to each client to limit 
 
 Pouring more events will mean pouring more water into the bucket.
 
-![Token Bucket algorithm](token-bucket-algorithm.png 'Token Bucket algorithm')
+![Token Bucket algorithm with-shadow](token-bucket-algorithm.png 'Token Bucket algorithm')
 
 Let's imagine the webhook will fill every request as a bucket fills with water. When reaching the limit capacity of 10, it will start getting throttled.
 
@@ -73,7 +73,7 @@ The sliding log algorithm calculates the request rate in real-time (instead of c
 
 The request rate is the sum of the log entries for that unique user. For every new request, it's necessary to access the logs and filter out entries older than 5 seconds - for a 5 second based rate limiter.
  
-![Sliding Log algorithm](sliding-log-algorithm.png 'Sliding Log algorithm')
+![Sliding Log algorithm with-shadow](sliding-log-algorithm.png 'Sliding Log algorithm')
 
 However, storing a great number of logs for each event can be expensive and calculating the number of events across multiple servers.
 
@@ -83,17 +83,17 @@ Rate limits and throttling helps to limit the number of events and queue them wh
 
 There are two approaches: the quick approach and the best approach.
 
-- **The Quick Approach**: retrying in a period of time without intervals between the retries, for example, retrying three times in a row when a webhook fails. This could be ineffective because a failed event can go to a retry queue and that was processed again and fail again and again until all attempts are exhausted, and it throws a DLQ (dead-letter queue), which means that all retries would fail without the opportunity to recover in time to receive the event. 
+**The Quick Approach**: retrying in a period of time without intervals between the retries, for example, retrying three times in a row when a webhook fails. This could be ineffective because a failed event can go to a retry queue and that was processed again and fail again and again until all attempts are exhausted, and it throws a DLQ (dead-letter queue), which means that all retries would fail without the opportunity to recover in time to receive the event. 
 
-	The problem with this approach is that the time window for the retries is really short since all retries are performed in a row. Short time windows for webhooks retries could be ineffective since it can demand more time to recover than time to reprocess the events.
+The problem with this approach is that the time window for the retries is really short since all retries are performed in a row. Short time windows for webhooks retries could be ineffective since it can demand more time to recover than time to reprocess the events.
  
-- **The Best Approach**: we can implement the exponential backoff retry strategy! A backoff algorithm ensures that when the webhook can't send events, it is not overwhelmed with subsequent events and retries. It will "backoff" from the webhook, distributing the failed message through different queues and introducing a waiting period between the retries to give the webhook a chance to recover. When a webhook event fails, you should retry the event in a period of time to eventually succeed while trying to minimize the calls made. If all the attempts to trigger the webhook fail, the failed message will go to the end of the queue. 
+**The Best Approach**: we can implement the exponential backoff retry strategy! A backoff algorithm ensures that when the webhook can't send events, it is not overwhelmed with subsequent events and retries. It will "backoff" from the webhook, distributing the failed message through different queues and introducing a waiting period between the retries to give the webhook a chance to recover. When a webhook event fails, you should retry the event in a period of time to eventually succeed while trying to minimize the calls made. If all the attempts to trigger the webhook fail, the failed message will go to the end of the queue. 
 
-  If the webhook is unavailable or overloaded, sending more requests will only worsen the problem, resulting in a waste of infrastructure resources. Temporarily backing off from adding more requests can smooth the traffic 🚙.
+If the webhook is unavailable or overloaded, sending more requests will only worsen the problem, resulting in a waste of infrastructure resources. Temporarily backing off from adding more requests can smooth the traffic 🚙.
 
 **With the backoff algorithm, it's possible to determine how much time to wait between the retries.**
 
-![Exponential Backoff strategy](backoff-strategy.png 'Exponential Backoff strategy')
+![Exponential Backoff strategy with-shadow](backoff-strategy.png 'Exponential Backoff strategy')
 
 So, the main problem to solve is the wait time. Sending events too soon puts more load on the server, while waiting too long introduces too much lag.
  
@@ -101,7 +101,7 @@ The *exponential* part of the algorithm is when the waiting time grows exponenti
  
 For example, if the first retry is 5ms, and the following retries are double the previous values, the waiting time is 5, 10, 20, 40, 80, 160, 320…
 
-![Exponential Backoff retry strategy](exponential-backoff-strategy.png 'Exponential Backoff retry strategy')
+![Exponential Backoff retry strategy with-shadow](exponential-backoff-strategy.png 'Exponential Backoff retry strategy')
 
 ## Rate Limiting Recommendations and Conclusions
 
@@ -125,23 +125,14 @@ If you are looking to create flexible and powerful developer-friendly SaaS integ
 
 References:
 
-[Rate-limiting strategies and techniques](https://cloud.google.com/architecture/rate-limiting-strategies-techniques#:~:text=large%20distributed%20systems.-,Preventing%20resource%20starvation,services%20by%20avoiding%20resource%20starvation) 
-
-[What is Rate Limiting / API Throttling?](https://www.youtube.com/watch?v=9CIjoWPwAhU) 
-
-[Webhooks: The Devil in the Details](https://techblog.commercetools.com/webhooks-the-devil-in-the-details-ca7f7982c24f)
-
-[Reviewing Throttling and Rate Limiting concepts](https://docs.mulesoft.com/api-manager/2.x/throttling-rate-limit-concept
- https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/)
-
-[How to implement an exponential backoff retry strategy in Javascript](https://advancedweb.hu/how-to-implement-an-exponential-backoff-retry-strategy-in-javascript/) 
-
-[Handling failed webhooks with Exponential Backoff](https://medium.com/gympass/handling-failed-webhooks-with-exponential-backoff-72d2e01017d7) 
-
-[Understanding Rate Limiting Algorithms](https://www.quinbay.com/blog/understanding-rate-limiting-algorithms) 
-
-[Rate Limiting](https://medium.com/swlh/rate-limiting-fdf15bfe84ab#:~:text=A%20sliding%20log%20algorithm%20tracks,a%20minute%20based%20rate%20limiter.&text=Sliding%20log%20algorithms%20don't,stampeding%20issues%20of%20Fixed%20Windows)
-
-[Fault Tolerance](https://avinetworks.com/glossary/fault-tolerance/#:~:text=Fault%20Tolerance%20simply%20means%20a,a%20network%2C%20or%20something%20else)
+- [Rate-limiting strategies and techniques](https://cloud.google.com/architecture/rate-limiting-strategies-techniques#:~:text=large%20distributed%20systems.-,Preventing%20resource%20starvation,services%20by%20avoiding%20resource%20starvation) 
+- [What is Rate Limiting / API Throttling?](https://www.youtube.com/watch?v=9CIjoWPwAhU) 
+- [Webhooks: The Devil in the Details](https://techblog.commercetools.com/webhooks-the-devil-in-the-details-ca7f7982c24f)
+- [Reviewing Throttling and Rate Limiting concepts](https://docs.mulesoft.com/api-manager/2.x/throttling-rate-limit-concept)
+- [How to implement an exponential backoff retry strategy in Javascript](https://advancedweb.hu/how-to-implement-an-exponential-backoff-retry-strategy-in-javascript/) 
+- [Handling failed webhooks with Exponential Backoff](https://medium.com/gympass/handling-failed-webhooks-with-exponential-backoff-72d2e01017d7) 
+- [Understanding Rate Limiting Algorithms](https://www.quinbay.com/blog/understanding-rate-limiting-algorithms) 
+- [Rate Limiting](https://medium.com/swlh/rate-limiting-fdf15bfe84ab#:~:text=A%20sliding%20log%20algorithm%20tracks,a%20minute%20based%20rate%20limiter.&text=Sliding%20log%20algorithms%20don't,stampeding%20issues%20of%20Fixed%20Windows)
+- [Fault Tolerance](https://avinetworks.com/glossary/fault-tolerance/#:~:text=Fault%20Tolerance%20simply%20means%20a,a%20network%2C%20or%20something%20else)
 
 
