@@ -128,7 +128,6 @@ References:
 - [Rate-limiting strategies and techniques](https://cloud.google.com/architecture/rate-limiting-strategies-techniques#:~:text=large%20distributed%20systems.-,Preventing%20resource%20starvation,services%20by%20avoiding%20resource%20starvation) 
 - [What is Rate Limiting / API Throttling?](https://www.youtube.com/watch?v=9CIjoWPwAhU) 
 - [Webhooks: The Devil in the Details](https://techblog.commercetools.com/webhooks-the-devil-in-the-details-ca7f7982c24f)
-- [Reviewing Throttling and Rate Limiting concepts](https://docs.mulesoft.com/api-manager/2.x/throttling-rate-limit-concept)
 - [How to implement an exponential backoff retry strategy in Javascript](https://advancedweb.hu/how-to-implement-an-exponential-backoff-retry-strategy-in-javascript/) 
 - [Handling failed webhooks with Exponential Backoff](https://medium.com/gympass/handling-failed-webhooks-with-exponential-backoff-72d2e01017d7) 
 - [Understanding Rate Limiting Algorithms](https://www.quinbay.com/blog/understanding-rate-limiting-algorithms) 
