@@ -1,10 +1,10 @@
 ---
-post_title: Webhook Rate limits and throttling
+post_title: Webhook Rate Limits and Throttling
 post_author: Liz Parody
 post_author_avatar: liz.png
 date: '2022-02-08'
 post_image: webhook-rate-limit-throttling.png
-post_excerpt: In this blog post you will learn the importance to rate limit in webhooks, rate limiting techniques, exponential backoff retry strategy and general rate limiting recommendations
+post_excerpt: In this blog post you will learn the importance to rate limit in webhooks, rate limiting techniques, exponential backoff retry strategy and general rate limiting recommendations.
 post_slug: webhook-rate-limits-and-throttling
 tags: ['post', 'developer tools']
 post_date_in_url: false
