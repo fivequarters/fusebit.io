@@ -11,11 +11,11 @@ post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-private-npn-card.jpg
 ---
 
-##Why private npm registries matter##
+## Why private npm registries matter
 
 Most developers really only write a fraction of the code that powers their applications. The rest of it is leveraged through public, freely available, and mostly open source libraries through tools such as npm and Yarn. 
 
-The npm package ecosystem itself has [over 1.3 million packages]((https://blog.npmjs.org/post/615388323067854848/so-long-and-thanks-for-all-the-packages.html) and powers thousands of applications on the internet. This availability of high-quality and well-maintained packages has been critical in helping companies and their developers move fast while focusing exclusively on the code related to the core business problem they are solving. 
+The npm package ecosystem itself has [over 1.3 million packages](https://blog.npmjs.org/post/615388323067854848/so-long-and-thanks-for-all-the-packages.html) and powers thousands of applications on the internet. This availability of high-quality and well-maintained packages has been critical in helping companies and their developers move fast while focusing exclusively on the code related to the core business problem they are solving. 
 
 There is also a certain amount of risk associated with relying directly on libraries that companies lack direct control over. Additionally, for teams with larger codebases and diversified product lines, they will write libraries for internal use that they don’t want exposed to the public.
 
@@ -31,7 +31,7 @@ With Verdaccio, you’re able to:
 
 It also comes with a sleek web interface to help manage your packages and has built-in authentication that provides the ability to allow and restrict access to packages and scoped packages as needed.
 
-##Getting Started with Verdaccio##
+## Getting Started with Verdaccio
 
 To get started, install it directly from npm with:
 
@@ -62,7 +62,7 @@ npm adduser --registry http://localhost:4873/
 ```
 This will also automatically log you into Verdaccio with the newly created user and use those credentials when you deploy your package as well. 
 
-##Deploying your Packages to the Registry##
+## Deploying your Packages to the Registry
 
 Next, you will want to publish your package to the registry. For the purposes of demonstration, we’ll walk you through setting this up with an example package called ‘verdaccio-fusebit’.
 
@@ -115,9 +115,9 @@ If you want to set this registry as your default so you don’t have to pass in 
 
 ```npm set registry http://localhost:4873/```
 
-##Deploying to the Cloud##
+## Deploying to the Cloud
 
-Verdaccio has support for [AWS](https://verdaccio.org/docs/amazon), [Kubernetes](https://verdaccio.org/docs/kubernetes), and [Docker](https://verdaccio.org/docs/docker) so you can easily deploy your registry to the cloud and scale quickly. To learn more about how to do this and integrate directly with your CI tools, go to [https://verdaccio.org](https://verdaccio.org).
+Verdaccio has support for [AWS](https://verdaccio.org/docs/amazon), [Kubernetes](https://verdaccio.org/docs/kubernetes), and [Docker](https://verdaccio.org/docs/docker) so you can easily deploy your registry to the cloud and scale quickly. To learn more about how to do this and integrate directly with your CI tools, go to [verdaccio.org](https://verdaccio.org).
 
-Follow [https://twitter.com/fusebitio](@fusebitio) on Twitter for more developer-focused content including developer tools, APIs, and integrations.
+Follow [@fusebitio](https://twitter.com/fusebitio) on Twitter for more developer-focused content including developer tools, APIs, and integrations.
 
