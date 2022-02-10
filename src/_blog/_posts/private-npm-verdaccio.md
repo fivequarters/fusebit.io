@@ -8,7 +8,7 @@ post_excerpt: Most developers really only write a fraction of the code that powe
 post_slug: private-npm-verdaccio
 tags: ['post', 'developer tools']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/blog-pagerduty-discord-main.png
+post_og_image: https://fusebit.io/assets/images/blog/blog-private-npn-card.jpg
 ---
 
 ##Why private npm registries matter##
