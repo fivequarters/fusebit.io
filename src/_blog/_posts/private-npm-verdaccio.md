@@ -35,15 +35,11 @@ It also comes with a sleek web interface to help manage your packages and has bu
 
 To get started, install it directly from npm with:
 
-```
-npm install -g verdaccio
-```
+```npm install -g verdaccio```
 
 Once installed, you can fire it up with the following CLI Command:
 
-```
-verdaccio
-```
+```verdaccio```
 
 The default installation uses port 4873, but you can change the port by using ```verdaccio --listen 5000```
 
@@ -57,9 +53,8 @@ The installation will create a default [configuration file](https://verdaccio.or
 
 Once set up, you will need to add a new user before you can publish. You will be asked to set up a new user with a login and password along with an email address. 
 
- ```
-npm adduser --registry http://localhost:4873/
-```
+```npm adduser --registry http://localhost:4873/```
+
 This will also automatically log you into Verdaccio with the newly created user and use those credentials when you deploy your package as well. 
 
 ## Deploying your Packages to the Registry
@@ -97,9 +92,7 @@ module.exports = helloWorld;
 
 Finally, you can publish to your registry by using:
 
-```
-npm publish --registry http://localhost:4873
-```
+```npm publish --registry http://localhost:4873```
 
 NOTE: Make sure that you bump your package number everytime you publish, otherwise it won’t let you publish.
 
