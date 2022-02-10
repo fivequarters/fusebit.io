@@ -41,7 +41,9 @@ Once installed, you can fire it up with the following CLI Command:
 
 ```verdaccio```
 
-The default installation uses port 4873, but you can change the port by using ```verdaccio --listen 5000```
+The default installation uses port 4873, but you can change the port by using:
+
+```verdaccio --listen 5000```
 
 The installation will create a default [configuration file](https://verdaccio.org/docs/configuration) that leverages a local database and basic authentication. However, you can modify this file to: 
 
@@ -61,7 +63,9 @@ This will also automatically log you into Verdaccio with the newly created user 
 
 Next, you will want to publish your package to the registry. For the purposes of demonstration, we’ll walk you through setting this up with an example package called ‘verdaccio-fusebit’.
 
-First, create a new directory called ‘verdacio-fusebit’ and initialize a new npm directory using ```npm init -f ``` 
+First, create a new directory called ‘verdacio-fusebit’ and initialize a new npm directory using:
+
+```npm init -f ``` 
 
 This will create the following json:
 
@@ -90,7 +94,7 @@ function helloWorld() {
 module.exports = helloWorld;
 ```
 
-Finally, you can publish to your registry by using:
+Finally, you can publish to your registry by running:
 
 ```npm publish --registry http://localhost:4873```
 
