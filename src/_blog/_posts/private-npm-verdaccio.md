@@ -3,12 +3,12 @@ post_title: Why Private Npm Registries Matter and How Verdaccio Makes It Easy
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-02-10'
-post_image: blog-private-npn-main.jpg
+post_image: blog-private-npm-main.jpg
 post_excerpt: Most developers really only write a fraction of the code that powers their applications, the rest of it comes from public registries like npm and yarn. While useful, you should consider setting up a private registry to protect against unforeseen circumstances and enhance collaboration across your team.
 post_slug: private-npm-verdaccio
 tags: ['post', 'developer tools']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/blog-private-npn-card.jpg
+post_og_image: https://fusebit.io/assets/images/blog/blog-private-npm-card.png
 ---
 
 ## Why private npm registries matter
