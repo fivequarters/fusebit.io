@@ -3,7 +3,7 @@ post_title: Run Every Node.js Version in AWS Lambda
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2022-02-15'
-post_image: twitter-everynode.png
+post_image: everynode-banner.png
 post_excerpt: Run any version of Node.js in AWS Lambda within hours after release using custom AWS Lambda runtimes from Fusebit
 post_slug: run-every-nodejs-version-in-lambda
 tags: ['post', 'developer tools']
