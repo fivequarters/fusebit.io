@@ -11,9 +11,9 @@ post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/twitter-everynode.png
 ---
 
-So you want to create an AWS Lambda function running the latest version of Node.js? Maybe you want to use the new [fetch()](https://fusebit.io/blog/node-fetch/) API? Use the latest V8? Or switch your async code from callbacks to promises?
+So you want to create an AWS Lambda function running the latest version of Node.js? Maybe you want to use the new [fetch()](https://fusebit.io/blog/node-fetch/) API? Or need that one feature of the latest V8? Or just deploy your next serverless app with the latest and greatest version?
 
-Whatever the reason, you have a small problem - AWS usually takes some time before adding support for new versions of Node.js. As of this writing, Node.js v18 is about to ship, and the latest version supported by AWS is v14.
+Whatever the reason, you have a small problem - Amazon Web Services usually takes some time before adding support for new versions of Node.js. As of this writing, Node.js v18 is about to ship, and the latest version supported by AWS is v14.
 
 Enter [fusebit/everynode](https://github.com/fusebit/everynode). Everynode allows you to:
 
@@ -64,7 +64,7 @@ aws lambda invoke --function-name hello17 response.json
 cat response.json
 ```
 
-And voila, welcome to Node.js v17.5.0 in AWS Lambda:
+And voila, welcome to Node.js v17.5.0 function successfully deployed to AWS Lambda:
 
 ```json
 { "message": "Hello from Node v17.5.0" }
@@ -74,7 +74,9 @@ Read more at [fusebit/everynode](https://github.com/fusebit/everynode) to discov
 
 ## How does it work?
 
-The [fusebit/everynode](https://github.com/fusebit/everynode) project provides pre-built [AWS Lambda layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) that contain [custom AWS Lambda runtimes](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-custom.html) for every Node.js version >=11 in all commercial AWS regions. The layers are built and hosted by [Fusebit](https://fusebit.io) for all developers to use.
+The [fusebit/everynode](https://github.com/fusebit/everynode) project provides pre-built [AWS Lambda layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) that contain [custom AWS Lambda runtimes](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-custom.html) for every Node.js version >=11 running on Amazon Linux 2 in all commercial AWS regions. The layers are built and hosted by [Fusebit](https://fusebit.io) for all developers to use.
+
+We constantly monitor for new Node.js releases and generally provide new AWS Lambda runtime layers in all AWS regions within six hours after release.
 
 ## What is Fusebit?
 
