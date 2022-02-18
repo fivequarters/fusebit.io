@@ -3,7 +3,7 @@ post_title: Blue Green Deployments on AWS
 post_author: Matthew Zhao
 post_author_avatar: matthew.png
 date: '2022-02-16'
-post_image: blue-green-deployments.jpg
+post_image: blue-green-deployments.png
 post_excerpt: Blue-Green deployments is a deployment strategy that avoids downtime during application deployments and can easily roll back if a deployment fails. 
 post_slug: blue-green-deployments-AWS
 tags: ['post', 'developer tools']
