@@ -24,9 +24,8 @@ Blue-Green deployments is a deployment strategy that avoids downtime during appl
 ## Sounds Awesome. How Do I Get Started?
  
 Let's define what components are necessary for a successful blue-green system.
- 
+
 - Fleets: Because Blue-Green is implemented by the use of completely isolated fleets of servers running the application, you need to set up at least one application fleet running a base version of the application to start.
- 
 - Loadbalancer: To manage application traffic, an ELB (Elastic Load Balancer) will be used to manage where all the traffic is forwarded to.
  
 Let's also define what the application is. We consider the application to be a simple monolithic stateless API with no external dependencies.
