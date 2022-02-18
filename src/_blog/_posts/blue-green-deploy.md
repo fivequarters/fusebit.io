@@ -193,4 +193,4 @@ Now wait 2 minutes, and all your customers will be served with the older stable 
  
 # Before you go...
  
-If you would like to improve your DevOps story, also check out our other blog about [integrating PagerDuty and discord](https://fusebit.io/blog/pagerduty-discord-integration/) and check out [fusebit](https://fusebit.io) to build code first integrations for connecting 3rd party SaaS companies. Last, don't forget to follow us on [twitter](https://twitter.com/fusebitio)!
+If you would like to improve your DevOps story, also check out our other blog about [integrating PagerDuty and discord](https://fusebit.io/blog/pagerduty-discord-integration/) and check out [Fusebit](https://fusebit.io) to build code first integrations for connecting 3rd party SaaS companies. Last, don't forget to follow us on [twitter](https://twitter.com/fusebitio)!
