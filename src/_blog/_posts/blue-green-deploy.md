@@ -9,11 +9,6 @@ post_slug: blue-green-deployments-AWS
 tags: ['post', 'developer tools']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blue-green-deployments-social.png
-posts_related: [
-  'webhook-rate-limits-and-throttling', 
-  'node-fetch', 
-  'run-nodejs-from-google-sheets'
-]
 ---
 
 # Blue-Green Deployments on AWS
