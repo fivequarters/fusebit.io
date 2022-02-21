@@ -4,7 +4,7 @@ post_author: Yavor Georgiev
 post_author_avatar: yavor.png
 date: '2022-02-02'
 post_image: blog-node-fetch.jpg
-post_excerpt: 'Node 17.5 will introduce support for the fetch() HTTP client, a new way to send requests to HTTP APIs.'
+post_excerpt: 'Node 17.5 introduces support for the fetch() HTTP client, a new way to send requests to HTTP APIs.'
 post_slug: node-fetch
 tags: ['post', 'developer tools']
 post_date_in_url: false
@@ -47,4 +47,4 @@ There are two main reasons you may want to consider trying out `fetch()` in Node
 
 ## How do you get it?
 
-You will be able to run `node --experimental-fetch` and then use the `fetch()` global without needing any additional modules when the feature ships. We will update this post and share via [@fusebito](https://twitter.com/fusebitio) when Node.js 17.5 ships or a nightly build is available, so follow us for updates.
+First, be sure to [update to Node 17.5](https://nodejs.org/dist/v17.5.0/) and run it using the `--experimental-fetch` flag. You can then use the `fetch()` global without needing any additional modules! We will update this post and share via [@fusebito](https://twitter.com/fusebitio) when this experimental feature graduates and becomes available without a flag.
