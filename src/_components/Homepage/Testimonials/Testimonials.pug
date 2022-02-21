@@ -50,6 +50,27 @@ section.testimonials.section
                                     h4 Craig Unger 
                                     p Hyperproof CEO
 
+                    .swiper-slide 
+                        .testimonials__card
+                            .testimonials__card--brand
+                                != filters.getImageTag(`testimonials/testimonials__crowd.dev.svg`, 'Crowd.dev logo')
+
+                            p.testimonials__card--text
+                                | After a no-code integrations provider failed us due to its rigidity, 
+                                strong Fusebit allowed us to ship complex integrations 
+                                | for our customers within a week! They addressed most of our pain-points of building integrations and allowed us to 
+                                | focus on customising our business logic, without worrying about maintenance. 
+                                
+                            .testimonials__card--user 
+                                .testimonials__card--user-image 
+                                    != filters.getImageTag(`testimonials/testimonials__joan.png`, 'Joan Reyero profile image')
+
+                                .testimonials__card--user-data
+                                    h4 Joan Reyero
+                                    p Crowd.dev CTO 
+
+
+
 
                 .testimonials__pagination.swiper-pagination
 
@@ -70,8 +91,8 @@ section.testimonials.section
                         slidesPerView: 2,
                     },
                     1000: {
-                        slidesPerView: 2,
-                        loop: false,
+                        slidesPerView: 3,
+                        loop: true,
                     }
                 },
                 on: {
