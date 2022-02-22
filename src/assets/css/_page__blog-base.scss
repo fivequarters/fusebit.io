@@ -79,7 +79,7 @@ h1 {
     text-align: center;
     margin: 40px 0;
 
-    @media only screen and (max-width: 600px) {  
+    @media only screen and (max-width: 600px) {
         font-size: 48px;
     }
 }
@@ -185,7 +185,11 @@ a[title~='CTA_LARGE'] {
 
     p {
         code {
-            background: #eff1f3;
+            padding: 2px 3px 1px;
+            border: 1px solid #e1e1e1;
+            border-radius: 3px;
+            background-color: rgba(246, 246, 246, 1);
+            color: #e01e5a;
         }
     }
 
@@ -220,14 +224,22 @@ a[title~='CTA_LARGE'] {
     }
 
     blockquote {
+        position: relative;
         margin: 56px 0;
-        text-align: center;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background-color: var(--orange);
+        }
 
         & p {
-            color: #f87b20;
-            font-size: 24px;
-            line-height: 1.8;
-            font-weight: 600;
+            padding: 7px 0px 7px 56px;
+            font-style: italic;
         }
     }
 
