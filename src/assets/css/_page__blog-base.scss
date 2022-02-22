@@ -185,7 +185,11 @@ a[title~='CTA_LARGE'] {
 
     p {
         code {
-            background: #eff1f3;
+            padding: 2px 3px 1px;
+            border: 1px solid #e1e1e1;
+            border-radius: 3px;
+            background-color: rgba(246, 246, 246, 1);
+            color: #e01e5a;
         }
     }
 
