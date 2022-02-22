@@ -55,11 +55,19 @@ block content
                             img(src='/assets/images/arrow--left.svg' alt="Arrow")
                             .post__navigation-button-underline
     section
-        .layout.post__trending-layout
-            h2 Most Recent
-            .post-card-container.post__trending-list
-                each post in [...collections.post].filter((post) => post.data.post_slug !== slug).reverse().slice(0, 3)
-                    +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
+        if posts_related
+            .layout.post__trending-layout
+                h2 Related Content
+                .post-card-container.post__trending-list
+                    each relatedPost in posts_related
+                        each post in [...collections.post].filter((post) => post.data.post_slug === relatedPost).slice(0, 3)
+                            +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
+        else 
+            .layout.post__trending-layout
+                h2 Most Recent
+                .post-card-container.post__trending-list
+                    each post in [...collections.post].filter((post) => post.data.post_slug !== slug).reverse().slice(0, 3)
+                        +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
 
 block scripts
     script.
