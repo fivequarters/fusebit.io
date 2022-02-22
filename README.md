@@ -125,6 +125,8 @@ tags: string[] | The list of tags you want to set to an article, **'post' is alw
 post_date_in_url: boolean | When setting this prop you can define if you want a date path in your url or not. If omitted defaults to `false`.
 
 post_og_image: string | Could be `hero`, `site` or a custom url. `hero` will set the hero image of the post. `site` will set the default og image of the marketing site. If this prop is omitted it'll default to `hero`.
+
+posts_related: string[] | A URL slugs list of the related posts. If ommited, the most recent posts will be displayed by default. It works with 1, 2 or a maximum of 3 values on the array.
 ---
 ```
 
