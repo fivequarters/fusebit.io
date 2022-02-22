@@ -98,6 +98,11 @@ block scripts
             copy.innerHTML = "Copy";
             copy.addEventListener("click", handleCopyClick);
             codeBlock.append(copy);
+            codeBlock.addEventListener("scroll", (e) => {
+                const scrollLeft = e.currentTarget.scrollLeft;
+                const copyButton = codeBlock.querySelector("button");
+                copyButton.style.transform = `translateX(${scrollLeft}px)`;
+            });
         });
         
         const links = document.querySelectorAll('a');
