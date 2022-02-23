@@ -96,4 +96,4 @@ We will update this post as the feature evolves and share via @fusebitio when th
 
 ## Everynode on AWS? 
 
-Hey! Did you know that Fusebit has a nifty tool that allows you to run any version of Node.js on AWS Lambda? [Read more about this here](https://fusebit.io/blog/run-every-nodejs-version-in-lambda/)!
+Hey! Did you know that Fusebit has a nifty tool that allows you to run any version of Node.js on AWS Lambda? [Read more about this here](https://fusebit.io/blog/run-every-nodejs-version-in-lambda/)! And follow us on [twitter](https://twitter.com/fusebitio)
