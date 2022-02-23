@@ -3,12 +3,12 @@ post_title: Node.js Adds Support for Direct Registry-less HTTPS Imports & Why Yo
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-02-23'
-post_image: blog-http-imports-main.png
+post_image: blog-http-imports-main.jpg
 post_excerpt: Node is planning to introduce support for HTTPS imports in NodeV18 - a feature that enables you to use urls to directly import modules over HTTPS into your project.
 post_slug: nodejs-http-imports
 tags: ['post', 'Developer Tools']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/blog-http-imports-main.png
+post_og_image: https://fusebit.io/assets/images/blog/blog-http-imports-main.jpg
 ---
 
 
