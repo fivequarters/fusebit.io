@@ -48,11 +48,9 @@ Aside from the obvious ability to fire up a Node.js app without having to pre-in
 * **Ability To Use The Same Module In Node And The Browser:** Right now, If you have a web application and want to run it in Node, you have to migrate all the non-node modules to packages and then write up an import map so that they can work with Node. \
  \
 With HTTPS Imports, you can keep the same modules and use them in any environment without having to re-package them for Node.
-
 * **Respond Quicker To Vulnerabilities in Real Time:** Right now, if there’s a vulnerability in any of the modules within your application, you have to patch a fix, re-install and re-deploy your application across all servers.  \
  \
 With HTTPS Imports, you can update the source file with the fix and your servers will be able to download the latest version immediately for use in your application.
-
 * **Dramatically Reduce Your Application Footprint:** Right now, the process to add a module to your codebase requires going through a manual installation process (using npm install) which imports the whole folder, including unnecessary files, into your application within the node_modules folder. \
  \
 With HTTPS Imports, you can specify the exact files you need and have them synced to a local cache upon usage, keeping your application footprint small.
