@@ -1,5 +1,5 @@
 ---
-post_title: Node.js Adds Support for Direct Registry-less HTTPS Imports & Why You Should Care
+post_title: Node.js Adds Support for Direct Registry-less HTTPS Imports
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-02-23'
