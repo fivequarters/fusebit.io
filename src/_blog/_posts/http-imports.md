@@ -4,14 +4,14 @@ post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-02-23'
 post_image: blog-http-imports-main.jpg
-post_excerpt: Node is planning to introduce support for HTTPS imports in NodeV18 - a feature that enables you to use urls to directly import modules over HTTPS into your project.
-post_slug: nodejs-http-imports
+post_excerpt: Node is planning to introduce support for HTTPS imports in Node 18 - a feature that enables you to use urls to directly import modules over HTTPS into your project.
+post_slug: nodejs-https-imports
 tags: ['post', 'Developer Tools']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-http-imports-main.jpg
 ---
 
-Node is planning to introduce support for [HTTPS imports](https://github.com/nodejs/node/pull/36328) in NodeV18 - a feature that enables you to use URLs to directly import modules over HTTPS into your project.
+Node is planning to introduce support for [HTTPS imports](https://github.com/nodejs/node/pull/36328) in Node 18 - a feature that enables you to use URLs to directly import modules over HTTPS into your project.
 
 Note: This is currently available in experimental mode and things can change drastically, you can follow the conversation [along here](https://github.com/nodejs/node/discussions/36430).
 
@@ -23,7 +23,9 @@ Importing modules into your project traditionally requires using a package manag
 
 With HTTPS Imports, you are now able to import modules directly into your code through the use of direct URLs like so:
 
-`import fusebitValueProp from "https://msakbar.github.io/fusebitValueProp.js"`
+```javascript
+import fusebitValueProp from "https://msakbar.github.io/fusebitValueProp.js"
+```
 
 
 ## How does it work? 
@@ -31,8 +33,8 @@ With HTTPS Imports, you are now able to import modules directly into your code t
 We looked through the code in the PR and ran through it to get a better sense of how it’s currently set up. Here are a few things we noticed:
 
 
-* There is no impact to how package.json works with your existing import setup, this is an additive functionality that sits on top as an extra way you can import external modules.
-* Imported modules must conform to [ESM standards](https://nodejs.org/api/esm.html) and return ‘application/javascript’ as the MIME type. Additionally, you must add “type”:”module” to your package.json file, or else it will fail to load.
+* There is no impact to how `package.json` works with your existing import setup, this is an additive functionality that sits on top as an extra way you can import external modules.
+* Imported modules must conform to [ESM standards](https://nodejs.org/api/esm.html) and return `application/javascript` as the MIME type. Additionally, you must add `“type”:”module”` to your `package.json` file, or else it will fail to load.
 * Modules, when loaded, are stored in memory but not on disk. This means that every time you restart your node application, it will download the files again. 
 * HTTP is limited to loopback addresses only meaning you can only use it for localhost, otherwise you must use HTTPS links.
 * `Authorization`, `Cookie`, and `Proxy-Authorization` headers are not sent to the server and, CORS policies/headers are not sent or enforced either. 
@@ -45,10 +47,12 @@ Aside from the obvious ability to fire up a Node.js app without having to pre-in
 
 * **Ability To Use The Same Module In Node And The Browser:** Right now, If you have a web application and want to run it in Node, you have to migrate all the non-node modules to packages and then write up an import map so that they can work with Node. \
  \
-With HTTPS Imports, you can keep the same modules and use them in any environment without having to re-package them for Node. 
+With HTTPS Imports, you can keep the same modules and use them in any environment without having to re-package them for Node.
+
 * **Respond Quicker To Vulnerabilities in Real Time:** Right now, if there’s a vulnerability in any of the modules within your application, you have to patch a fix, re-install and re-deploy your application across all servers.  \
  \
-With HTTPS Imports, you can update the source file with the fix and your servers will be able to download the latest version immediately for use in your application. 
+With HTTPS Imports, you can update the source file with the fix and your servers will be able to download the latest version immediately for use in your application.
+
 * **Dramatically Reduce Your Application Footprint:** Right now, the process to add a module to your codebase requires going through a manual installation process (using npm install) which imports the whole folder, including unnecessary files, into your application within the node_modules folder. \
  \
 With HTTPS Imports, you can specify the exact files you need and have them synced to a local cache upon usage, keeping your application footprint small.
@@ -73,17 +77,18 @@ You can run `node --experimental-network-imports` and then use import without ne
 
 Here’s a quick guide, with a sample URL, to get you going:
 
-* Get the latest nightly build: `NVM_NODEJS_ORG_MIRROR=[https://nodejs.org/download/nightly/](https://nodejs.org/download/nightly/) nvm i node`
+* Get the latest nightly build: `NVM_NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly/ nvm i node`
 * In your javascript, add the following import command to your file: 
 
 
-``` 
-import fusebitValueProp from "[https://msakbar.github.io/fusebitValueProp.js](https://msakbar.github.io/fusebitValueProp.js)" 
+```javascript
+import fusebitValueProp from "https://msakbar.github.io/fusebitValueProp.js" ;
+
 console.log(fusebitValueProp());  
 ```
 
 
-* Edit your package.json file to include: `”type”:”module”`
+* Edit your `package.json` file to include: `”type”:”module”`
 * Run node with the flag enabled: `node --experimental-network-imports fusebit-network-imports.js` 
 
 Now you can change the URL in your code, or the file without having to re-install your node app. You can simply restart your app and it will import the module again! 
