@@ -72,13 +72,13 @@ Read more about [configuring GitHub App permissions](https://docs.github.com/en/
 #### Features:
 
 - Act on behalf of the authorizing user limited to the user's accessible resources.
-- Use private endpoints (available only to the authenticated user), like getting/updating current authenticated user information. Read more about it on [GitHub's REST API Docs](https://docs.github.com/en/rest/reference/users)
+- Use private endpoints (available only to the authenticated user), like getting/updating current authenticated user information. Read more about it on [GitHub's REST API Docs](https://docs.github.com/en/rest/reference/users).
 
 The GitHub App, in order to act on behalf of a user, uses an OAuth flow (similar to a GitHub OAuth App flow). The user authorizes the application to request their identity and act on behalf of it.
 
 #### Available endpoints
 
-If you want to know what requests a GitHub App can perform acting on behalf of a user, you can read more about it on [GitHub](https://docs.github.com/en/developers/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps#user-to-server-requests)
+If you want to know what requests a GitHub App can perform acting on behalf of a user, you can read more about it on [GitHub](https://docs.github.com/en/developers/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps#user-to-server-requests).
 
 ### GitHub Apps authenticated as GitHub App
 
@@ -97,7 +97,7 @@ The specific Application level endpoints allows you to:
 
 #### Available endpoints
 
-If you want to know what requests a GitHub App can perform, you can read more about it on [GitHub's docs](https://docs.github.com/en/rest/reference/apps)
+If you want to know what requests a GitHub App can perform, you can read more about it on [GitHub's docs](https://docs.github.com/en/rest/reference/apps).
 
 ### GitHub Apps authenticated as GitHub App Installation
 
@@ -109,7 +109,7 @@ The most common model for a GitHub App is to act as a GitHub App Installation, y
 
 #### Available endpoints
 
-If you want to know what requests a GitHub App authenticated as an installation can perform, you can read more about it on [GitHub]( https://docs.github.com/en/rest/overview/endpoints-available-for-github-apps)
+If you want to know what requests a GitHub App authenticated as an installation can perform, you can read more about it on [GitHub]( https://docs.github.com/en/rest/overview/endpoints-available-for-github-apps).
 
 ### Real-world examples
 
@@ -142,7 +142,7 @@ There are some critical differences between an OAuth App and a GitHub App.
 - While the permissions of a GitHub App are granted via the application settings by an organization owner, repository admin, or user with **GitHub App manager permissions**, permissions for a GitHub OAuth App are defined by the scopes requested during the OAuth authorization flow.
 - Permissions are more granular with a GitHub App than a GitHub OAuth App. For example, if your application needs to interact with pull requests and issues, the requested permissions are broader for a GitHub OAuth app since the application requires the `repo` scope, granting access to all aspects of the repository, rather than a GitHub App’s granular permissions for only pull request or issues.
 
-You can read more about it on [GitHub](https://docs.github.com/en/developers/apps/getting-started-with-apps/differences-between-github-apps-and-oauth-apps)
+You can read more about it on [GitHub](https://docs.github.com/en/developers/apps/getting-started-with-apps/differences-between-github-apps-and-oauth-apps).
 
 ## Conclusion
 
@@ -150,4 +150,4 @@ GitHub [officially recommends](https://docs.github.com/en/developers/apps/gettin
 
 However, some endpoints are unsupported for a GitHub App. For a specific endpoint, read the endpoint notes section that says **Works with GitHub Apps** to check.
 
-If you want to deep dive about more differences between a GitHub OAuth App and GitHub App, [read the following docs from GitHub](https://docs.github.com/en/developers/apps/getting-started-with-apps/differences-between-github-apps-and-oauth-apps)
+If you want to deep dive about more differences between a GitHub OAuth App and GitHub App, [read the following docs from GitHub](https://docs.github.com/en/developers/apps/getting-started-with-apps/differences-between-github-apps-and-oauth-apps).
