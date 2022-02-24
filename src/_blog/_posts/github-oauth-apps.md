@@ -29,14 +29,13 @@ It only has access to the user's resources. Removing a user from a repository wi
 
 The GitHub OAuth permissions are authorized or denied from the OAuth consent screen.
 Permissions are known as scopes. A scope is a mechanism in the OAuth 2.0 protocol to limit an application's access to a user's account.
-[Click here]( https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps#available-scopes) to see the complete list of available scopes.
+View the [complete list of available scopes](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps#available-scopes).
 
 GitHub OAuth Apps implements the [authorization code grant type](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1) from the OAuth 2.0 protocol. In this redirection-based flow, the client (your application) and the user interact with GitHub to access authorization via a consent screen. Once authorized, your GitHub OAuth App can request additional permissions to the user if needed.
 
 Your application shouldn't assume the user authorizes all the requested permissions. When expected authorization is not allowed, your application should handle that case properly, e.g., show a warning message in your application explaining that access to read repository contents needs to be allowed to interact with a specific feature within your application.
 
-If you want to understand GitHub OAuth App’s authorization flow you can read about it [here](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps#web-application-flow).
-
+If you want to understand GitHub OAuth App’s authorization flow you can read about it on [GitHub's developer docs](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps#web-application-flow).
 
 ## GitHub Apps
 
@@ -66,22 +65,20 @@ Organization owners or users with admin permissions over a repository can instal
 
 Configuration of GitHub Apps permissions is at the application settings level. Adding new permissions requires explicit user approval before using from the GitHub App.
 
-Read more about configuring GitHub App permissions [here](https://docs.github.com/en/developers/apps/managing-github-apps/editing-a-github-apps-permissions)
-
+Read more about [configuring GitHub App permissions](https://docs.github.com/en/developers/apps/managing-github-apps/editing-a-github-apps-permissions).
 
 ### GitHub App acts on behalf of a user
 
 #### Features:
 
 - Act on behalf of the authorizing user limited to the user's accessible resources.
-- Use private endpoints (available only to the authenticated user), like getting/updating current authenticated user information. [read more about it here]( https://docs.github.com/en/rest/reference/users)
+- Use private endpoints (available only to the authenticated user), like getting/updating current authenticated user information. Read more about it on [GitHub's REST API Docs](https://docs.github.com/en/rest/reference/users)
 
 The GitHub App, in order to act on behalf of a user, uses an OAuth flow (similar to a GitHub OAuth App flow). The user authorizes the application to request their identity and act on behalf of it.
 
 #### Available endpoints
 
-
-If you want to know what requests a GitHub App can perform acting on behalf of a user, you can read more about it [here](https://docs.github.com/en/developers/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps#user-to-server-requests)
+If you want to know what requests a GitHub App can perform acting on behalf of a user, you can read more about it on [GitHub](https://docs.github.com/en/developers/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps#user-to-server-requests)
 
 ### GitHub Apps authenticated as GitHub App
 
@@ -100,7 +97,7 @@ The specific Application level endpoints allows you to:
 
 #### Available endpoints
 
-If you want to know what requests a GitHub App can perform, you can read more about it [here](https://docs.github.com/en/rest/reference/apps)
+If you want to know what requests a GitHub App can perform, you can read more about it on [GitHub's docs](https://docs.github.com/en/rest/reference/apps)
 
 ### GitHub Apps authenticated as GitHub App Installation
 
@@ -112,7 +109,7 @@ The most common model for a GitHub App is to act as a GitHub App Installation, y
 
 #### Available endpoints
 
-If you want to know what requests a GitHub App authenticated as an installation can perform, you can read more about it [here]( https://docs.github.com/en/rest/overview/endpoints-available-for-github-apps)
+If you want to know what requests a GitHub App authenticated as an installation can perform, you can read more about it on [GitHub]( https://docs.github.com/en/rest/overview/endpoints-available-for-github-apps)
 
 ### Real-world examples
 
@@ -126,12 +123,12 @@ There are many uses cases for a GitHub App. Check some ideas and real-world exam
 - You want to develop an online web application that allows users to design their static website and deploy its contents to GitHub pages.
 
 ### Snyk
-Add automated security checks to your repositories [read more](https://docs.snyk.io/features/integrations/git-repository-scm-integrations/github-integration)
+Add [automated security checks to your repositories](https://docs.snyk.io/features/integrations/git-repository-scm-integrations/github-integration).
 
 ![GitHub apps fail with-shadow](blog-github-oauth-fail.png 'GitHub apps fail')
 
 ### Slack
-Connect your GitHub with Slack [read more](https://slack.github.com/)
+Connect your [GitHub with Slack](https://slack.github.com/)
 
 ![GitHub apps slack with-shadow](blog-github-oauth-slack.png 'GitHub apps slack')
 
@@ -145,7 +142,7 @@ There are some critical differences between an OAuth App and a GitHub App.
 - While the permissions of a GitHub App are granted via the application settings by an organization owner, repository admin, or user with **GitHub App manager permissions**, permissions for a GitHub OAuth App are defined by the scopes requested during the OAuth authorization flow.
 - Permissions are more granular with a GitHub App than a GitHub OAuth App. For example, if your application needs to interact with pull requests and issues, the requested permissions are broader for a GitHub OAuth app since the application requires the `repo` scope, granting access to all aspects of the repository, rather than a GitHub App’s granular permissions for only pull request or issues.
 
-You can read more about it [here](https://docs.github.com/en/developers/apps/getting-started-with-apps/differences-between-github-apps-and-oauth-apps)
+You can read more about it on [GitHub](https://docs.github.com/en/developers/apps/getting-started-with-apps/differences-between-github-apps-and-oauth-apps)
 
 ## Conclusion
 
