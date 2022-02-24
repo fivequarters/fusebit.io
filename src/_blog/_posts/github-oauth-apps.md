@@ -55,14 +55,19 @@ A GitHub App allows you to interact with GitHub API using GitHub App own identit
 
 Permissions are configured at the application settings level. On installation, a user can decide if the application is available for specific repositories the user has access to, or an entire GitHub organization.
 
-With a GitHub App you can interact with the GitHub API in three different ways:
+With a GitHub App you can interact with the GitHub API in 3 different ways:
 - On user behalf (known as a user to server requests) - similar to a GitHub OAuth App
-- Authenticated as an installation
 - Authenticated as the application
+- Authenticated as an installation
 
 ### Who can install a GitHub App?
 
 Organization owners or users with admin permissions over a repository can install a GitHub app. For non-organization owners, you can still grant access to them via **GitHub App manager permissions**.
+
+Configuration of GitHub Apps permissions is at the application settings level. Adding new permissions requires explicit user approval before using from the GitHub App.
+
+Read more about configuring GitHub App permissions [here](https://docs.github.com/en/developers/apps/managing-github-apps/editing-a-github-apps-permissions)
+
 
 ### GitHub App acts on behalf of a user
 
@@ -73,16 +78,10 @@ Organization owners or users with admin permissions over a repository can instal
 
 The GitHub App, in order to act on behalf of a user, uses an OAuth flow (similar to a GitHub OAuth App flow). The user authorizes the application to request their identity and act on behalf of it.
 
-
-Configuration of GitHub Apps permissions is at the application settings level. Adding new permissions requires explicit user approval before using from the GitHub App.
-
-Read more about configuring GitHub App permissions [here](https://docs.github.com/en/developers/apps/managing-github-apps/editing-a-github-apps-permissions)
-
 #### Available endpoints
 
 
-If you want to know what requests a GitHub App can perform acting on behalf of a user, you can visit the following link:
-https://docs.github.com/en/developers/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps#user-to-server-requests
+If you want to know what requests a GitHub App can perform acting on behalf of a user, you can read more about it [here](https://docs.github.com/en/developers/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps#user-to-server-requests)
 
 ### GitHub Apps authenticated as GitHub App
 
@@ -101,8 +100,7 @@ The specific Application level endpoints allows you to:
 
 #### Available endpoints
 
-If you want to know what requests a GitHub App can perform, you can visit the following link:
-https://docs.github.com/en/rest/reference/apps
+If you want to know what requests a GitHub App can perform, you can read more about it [here](https://docs.github.com/en/rest/reference/apps)
 
 ### GitHub Apps authenticated as GitHub App Installation
 
@@ -114,7 +112,7 @@ The most common model for a GitHub App is to act as a GitHub App Installation, y
 
 #### Available endpoints
 
-If you want to know what requests a GitHub App can perform acting on behalf of a user, you can read more about it [here](https://docs.github.com/en/developers/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps#user-to-server-requests)
+If you want to know what requests a GitHub App authenticated as an installation can perform, you can read more about it [here]( https://docs.github.com/en/rest/overview/endpoints-available-for-github-apps)
 
 ### Real-world examples
 
@@ -149,13 +147,9 @@ There are some critical differences between an OAuth App and a GitHub App.
 
 You can read more about it [here](https://docs.github.com/en/developers/apps/getting-started-with-apps/differences-between-github-apps-and-oauth-apps)
 
-
-
 ## Conclusion
 
-
 GitHub [officially recommends](https://docs.github.com/en/developers/apps/getting-started-with-apps/migrating-oauth-apps-to-github-apps) using GitHub App for your new integration.
-
 
 However, some endpoints are unsupported for a GitHub App. For a specific endpoint, read the endpoint notes section that says **Works with GitHub Apps** to check.
 
