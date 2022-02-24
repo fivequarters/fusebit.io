@@ -3,12 +3,12 @@ post_title: GitHub OAuth Apps vs GitHub Apps
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-02-24'
-post_image: github-apps-main.png
+post_image: github-apps-main.jpg
 post_excerpt: GitHub Apps are the way to integrate with GitHub. It supports OAuth Apps and GitHub Apps. Understanding what app you should create is critical for your integration capabilities.
 post_slug: github-oauth-apps-vs-github-apps
 tags: ['post', 'developer tools']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/github-apps-main.png
+post_og_image: https://fusebit.io/assets/images/blog/github-apps-main.jpg
 ---
 
 GitHub Apps are the way to integrate with GitHub. GitHub supports two different types of integrations: GitHub OAuth Apps and GitHub Apps. Understanding what app you should create is critical for your integration capabilities.
