@@ -6,7 +6,7 @@ date: '2022-02-23'
 post_image: blog-http-imports-main.jpg
 post_excerpt: Node is planning to introduce support for HTTPS imports in Node 18 - a feature that enables you to use urls to directly import modules over HTTPS into your project.
 post_slug: nodejs-https-imports
-tags: ['post', 'Developer Tools']
+tags: ['post', 'developer tools']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-http-imports-main.jpg
 ---
