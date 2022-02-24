@@ -44,40 +44,31 @@ We looked through the code in the PR and ran through it to get a better sense of
 
 Aside from the obvious ability to fire up a Node.js app without having to pre-install anything, the changes planned with HTTPS Imports are aimed at improving developer quality of life in a few ways:
 
-
-* **Ability To Use The Same Module In Node And The Browser:** Right now, If you have a web application and want to run it in Node, you have to migrate all the non-node modules to packages and then write up an import map so that they can work with Node. \
- \
-With HTTPS Imports, you can keep the same modules and use them in any environment without having to re-package them for Node.
-* **Respond Quicker To Vulnerabilities in Real Time:** Right now, if there’s a vulnerability in any of the modules within your application, you have to patch a fix, re-install and re-deploy your application across all servers.  \
- \
-With HTTPS Imports, you can update the source file with the fix and your servers will be able to download the latest version immediately for use in your application.
-* **Dramatically Reduce Your Application Footprint:** Right now, the process to add a module to your codebase requires going through a manual installation process (using npm install) which imports the whole folder, including unnecessary files, into your application within the node_modules folder. \
- \
-With HTTPS Imports, you can specify the exact files you need and have them synced to a local cache upon usage, keeping your application footprint small.
+* **Ability To Use The Same Module In Node And The Browser:** Right now, If you have a web application and want to run it in Node, you have to migrate all the non-node modules to packages and then write up an import map so that they can work with Node.
+  * With HTTPS Imports, you can keep the same modules and use them in any environment without having to re-package them for Node.
+* **Respond Quicker To Vulnerabilities in Real Time:** Right now, if there’s a vulnerability in any of the modules within your application, you have to patch a fix, re-install and re-deploy your application across all servers.
+  * With HTTPS Imports, you can update the source file with the fix and your servers will be able to download the latest version immediately for use in your application.
+* **Dramatically Reduce Your Application Footprint:** Right now, the process to add a module to your codebase requires going through a manual installation process (using npm install) which imports the whole folder, including unnecessary files, into your application within the node_modules folder.
+  * With HTTPS Imports, you can specify the exact files you need and have them synced to a local cache upon usage, keeping your application footprint small.
 
 
 ## Things to consider…
 
 Using package managers and centralized entities like NPM to import modules provides a certain level of stability and security for your codebase. By allowing direct imports from remote servers, you bypass some of the implicit checks built into these centralized ecosystems and open up some vulnerabilities that need to be considered. 
 
-For instance, the server you’re pulling from might be unavailable due to an outage or jeopardized by a malicious attack, leaving your application exposed. There are some mitigations you can put in place to guard against this.
-
- For instance - you can leverage node’s [policies feature](https://nodejs.org/dist/latest/docs/api/policy.html#policies) to enforce  integrity checks on downloaded files. Note that this means that you would also lose the ability to automatically update a file from the server as the new file would have a new hash.
-
-Additionally, you can also consider implementing caching strategies and fallback mechanisms, however, this requires manual consideration and configuration for each source that you’re importing from. 
+For instance, the server you’re pulling from might be unavailable due to an outage or jeopardized by a malicious attack, leaving your application exposed. There are some mitigations you can put in place to guard against this:
+- You can leverage node’s [policies feature](https://nodejs.org/dist/latest/docs/api/policy.html#policies) to enforce  integrity checks on downloaded files. Note that this means that you would also lose the ability to automatically update a file from the server as the new file would have a new hash.
+- Additionally, you can also consider implementing caching strategies and fallback mechanisms, however, this requires manual consideration and configuration for each source that you’re importing from. 
 
 A good principle to follow would be to try and stick to reliable sources that you can trust so you can leverage the benefits of direct imports, and if you are unsure about the source - then implement stricter safeguards to prevent any issues with your application.
 
+Another thing to consider is that you may be tempted to try and use popular CDNs that host JavaScript ESM-compatible modules such as [https://esm.run](https://esm.run) or [https://unpkg.com](https://unpkg.com). After all, part of the promise of this feature is that the same modules can now work client-and server-side. However, as of Node 17.6, the current implenentation fails when accessing CDN-hosted modules, due to [an issue](https://github.com/nodejs/node/issues/42098) that is actively being worked on.
 
 ## How do I use it?
 
-You can run `node --experimental-network-imports` and then use import without needing any additional modules when the feature ships. This feature is currently available behind a flag on nightly builds available after February 10th. 
+You can run `node --experimental-network-imports` and then use import without needing any additional modules when the feature ships. This feature is currently available behind a flag in [Node 17.6](https://nodejs.org/dist/v17.6.0) and later versions.
 
 Here’s a quick guide, with a sample URL, to get you going:
-
-* Get the latest nightly build: `NVM_NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly/ nvm i node`
-* In your javascript, add the following import command to your file: 
-
 
 ```javascript
 import fusebitValueProp from "https://msakbar.github.io/fusebitValueProp.js" ;
@@ -85,13 +76,12 @@ import fusebitValueProp from "https://msakbar.github.io/fusebitValueProp.js" ;
 console.log(fusebitValueProp());  
 ```
 
-
 * Edit your `package.json` file to include: `”type”:”module”`
 * Run node with the flag enabled: `node --experimental-network-imports fusebit-network-imports.js` 
 
 Now you can change the URL in your code, or the file without having to re-install your node app. You can simply restart your app and it will import the module again! 
 
-We will update this post as the feature evolves and share via @fusebitio when this feature ships or a nightly build is available, so follow us for updates.
+We will update this post as the feature leaves the experimental stage, and also share via [@fusebito](https://twitter.com/fusebitio), so follow us for updates.
 
 
 ## Everynode on AWS? 
