@@ -114,8 +114,7 @@ The most common model for a GitHub App is to act as a GitHub App Installation, y
 
 #### Available endpoints
 
-If you want to know what requests a GitHub App authenticated as an installation can perform, you can visit the following link:
-https://docs.github.com/en/rest/overview/endpoints-available-for-github-apps
+If you want to know what requests a GitHub App can perform acting on behalf of a user, you can read more about it [here](https://docs.github.com/en/developers/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps#user-to-server-requests)
 
 ### Real-world examples
 
