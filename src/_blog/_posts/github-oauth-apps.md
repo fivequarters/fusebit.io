@@ -110,7 +110,7 @@ The most common model for a GitHub App is to act as a GitHub App Installation, y
 
 ​​Have you seen those comments added automatically by a GitHub Bot user from some popular integrations like this one from Vercel?
 
-![GitHub apps vercel](blog-github-oauth-vercel.png 'GitHub apps vercel')
+![GitHub apps vercel with-shadow](blog-github-oauth-vercel.png 'GitHub apps vercel')
 
 #### Available endpoints
 
@@ -131,17 +131,17 @@ There are many uses cases for a GitHub App. Check some ideas and real-world exam
 ### Snyk
 Add automated security checks to your repositories [read more](https://docs.snyk.io/features/integrations/git-repository-scm-integrations/github-integration)
 
-![GitHub apps vercel](blog-github-oauth-fail.png 'GitHub apps vercel')
+![GitHub apps fail with-shadow](blog-github-oauth-fail.png 'GitHub apps fail')
 
 ### Slack
 Connect your GitHub with Slack [read more](https://slack.github.com/)
 
-![GitHub apps vercel](blog-github-oauth-slack.png 'GitHub apps vercel')
+![GitHub apps slack with-shadow](blog-github-oauth-slack.png 'GitHub apps slack')
 
 ### CircleCI
 Automatically runs your build and test processes whenever you commit code, and then displays the build status in your GitHub branch [Read more](https://circleci.com/integrations/github/)
 
-![GitHub apps vercel](blog-github-oauth-checks.png 'GitHub apps vercel')
+![GitHub apps checks with-shadow](blog-github-oauth-checks.png 'GitHub apps checks')
 
 There are some critical differences between an OAuth App and a GitHub App.
 
