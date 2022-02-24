@@ -110,7 +110,7 @@ The most common model for a GitHub App is to act as a GitHub App Installation, y
 
 ​​Have you seen those comments added automatically by a GitHub Bot user from some popular integrations like this one from Vercel?
 
-![GitHub apps vercel with-shadow](blog-github-oauth-vercel.png 'GitHub apps vercel')
+![GitHub apps vercel](blog-github-oauth-vercel.png 'GitHub apps vercel')
 
 #### Available endpoints
 
