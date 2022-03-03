@@ -89,7 +89,7 @@ Because we’re using a cookie-based authentication mechanism, the bootstrap URL
 
 With the authorized JWT in hand, we’re able to determine an `accountId` and an `orgId`.  The `accountId` is the username of the active user, from the perspective of Grafana, and is populated by our account provisioning system into Grafana’s internal database.  For `orgId`, we used our globally unique Fusebit account id.  Because we’re able to validate the account id and user prior to this step, we don’t have to worry about keeping Grafana’s database up-to-date - as long as the initial accounts are created, subsequent account removal can be performed opportunistically.
 
-Together, the `accountId` and `orgId` are sufficient to fully authenticate a given request to the Grafana API.  These are supplied in the headers (change-able in `grafana.ini`) `X-WEBAUTH-USER` and `X-Grafana-Org-Id`.  See the [Authentication HTTP API](https://grafana.com/docs/grafana/latest/http_api/auth/) and [Proxy Authentication](https://grafana.com/docs/grafana/latest/auth/auth-proxy/) for more details.
+Together, the `accountId` and `orgId` are sufficient to fully authenticate a given request to the Grafana API.  These are supplied in the headers (change-able in `grafana.ini`) `X-WEBAUTH-USER` and `X-Grafana-Org-Id`.  See [Authentication HTTP API](https://grafana.com/docs/grafana/latest/http_api/auth/) and [Proxy Authentication](https://grafana.com/docs/grafana/latest/auth/auth-proxy/) for more details.
 
 ```javascript
     // Create a request with the right user/org to the Grafana API /login endpoint to get a session cookie
