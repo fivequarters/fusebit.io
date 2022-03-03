@@ -1,16 +1,17 @@
 ---
-post_title: Embed Grafana in your SaaS
+post_title: Embed Grafana for Your Customers in React
 post_author: Benn Bollay
 post_author_avatar: benn.png
 date: '2022-03-03'
-post_image: embed-grafana-in-your-saas.png
+post_image: blog-embed-grafana-in-react.png
 post_excerpt: Every infrastructure SaaS needs some kind of graphing, tracing, visualization, or logging tool to expose systemic behaviors to their customers.
-post_slug: grafana-in-your-SaaS
+post_slug: grafana-in-react
 tags: ['post', 'developer tools']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/embed-grafana-in-your-saas.png
+post_og_image: https://fusebit.io/assets/images/blog/blog-embed-grafana-in-react.png
 ---
 
+## Embed Grafana in your SaaS
 Every infrastructure SaaS needs some kind of graphing, tracing, visualization, or logging tool to expose systemic behaviors to their customers.  While there are a lot of closed source packages available, the Grafana dashboard by Grafana Labs hits that sweet spot by providing a wide set of capabilities and extensibility points, as well as a scalable and battle-tested architecture.
 
 Here at Fusebit, we took a solid look around to decide whether we wanted to spend substantial engineering effort to implement our own, or if there were any interesting solutions we could leverage to simplify our lives.  
