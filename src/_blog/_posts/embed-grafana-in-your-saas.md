@@ -4,7 +4,7 @@ post_author: Benn Bollay
 post_author_avatar: benn.png
 date: '2022-03-03'
 post_image: blog-embed-grafana-in-react.png
-post_excerpt: Every infrastructure SaaS needs some kind of graphing, tracing, visualization, or logging tool to expose systemic behaviors to their customers.
+post_excerpt: Let's dive deep into the code that integrated Grafana with Fusebit's ReactJS app, providing graphing, tracing, and visualization for their customers.
 post_slug: grafana-in-react
 tags: ['post', 'developer tools']
 post_date_in_url: false
