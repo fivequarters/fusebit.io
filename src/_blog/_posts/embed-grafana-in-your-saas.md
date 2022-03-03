@@ -64,12 +64,13 @@ Let’s take a look at each of these steps in more detail.
 In our React app, we created an iframe and set it to a `bootstrap` endpoint, supplying as a query parameter a JWT `accessToken` that was supported by our existing backend infrastructure.
 
 ```javascript
-  // Create a url to perform the authentication bootstrap between our JWT and Grafana’s cookie
+  // Create a url to perform the authentication bootstrap between our JWT and
+  // Grafana’s cookie
   const iframeUrl = new URL(`${baseUrl}grafana/bootstrap`);
 
   iframeUrl.search = new URLSearchParams({
     [FUSEBIT_QUERY_AUTHZ]: accessToken,
-    // … add additional parameters here, such as variables in dashboard rendering
+    // … add additional parameters here, like dashboard rendering variables
   }).toString();
 
   element.innerHTML = [
@@ -92,7 +93,8 @@ With the authorized JWT in hand, we’re able to determine an `accountId` and an
 Together, the `accountId` and `orgId` are sufficient to fully authenticate a given request to the Grafana API.  These are supplied in the headers (change-able in `grafana.ini`) `X-WEBAUTH-USER` and `X-Grafana-Org-Id`.  See [Authentication HTTP API](https://grafana.com/docs/grafana/latest/http_api/auth/) and [Proxy Authentication](https://grafana.com/docs/grafana/latest/auth/auth-proxy/) for more details.
 
 ```javascript
-    // Create a request with the right user/org to the Grafana API /login endpoint to get a session cookie
+    // Create a request with the right user/org to the Grafana API /login
+    // endpoint to get a session cookie
     response = await superagent
       .get(`${grafana.location}/login`)
       .set(‘X-WEBAUTH-USER’, accountId)
@@ -109,15 +111,18 @@ Let’s extract out the cookie (or you can use a cookie parsing library):
     // Extract out the cookie and expiration from the headers
     const sessionSetCookies = (response.headers['set-cookie'] as string[])
       .map(
-        (setCookie) => setCookie.match('grafana_session=(?<token>[a-f0-9]{32});.*Max-Age=(?<maxAge>[0-9]*);')?.groups
+        (setCookie) => setCookie.match(
+          'grafana_session=(?<token>[a-f0-9]{32});.*Max-Age=(?<maxAge>[0-9]*);'
+        )?.groups
       )
-      .filter((x: Record<string, string> | undefined) => x) as { token: string; maxAge: string }[];
+      .filter(x => x);
 
     if (sessionSetCookies.length !== 1) {
       return next(http_error(403, `Unable to login with account: ${accountId}`));
     }
 
-    // Return the session in a Set-Cookie header to the client, for subsequent requests
+    // Return the session in a Set-Cookie header to the client,
+    // for subsequent requests
     const sessionCookie = sessionSetCookies[0].token;
     const sessionMaxAge = Number(sessionSetCookies[0].maxAge);
 ```
@@ -141,11 +146,15 @@ With the cookie in hand, we’re ready to send the iframe on to the proxied Graf
 Finish off the bootstrap phase by redirecting the iframe to the endpoint, persisting any subordinate path elements or additional query parameters to the redirect itself.
 
 ```typescript
-    // Redirect the browser to the actual Grafana url, with a filtered set of query parameters
+    // Redirect the browser to the actual Grafana url, with
+    // a filtered set of query parameters
     const redirectUrl = new URL(`${API_PUBLIC_ENDPOINT}${grafana.mountPoint}/${req.params.subPath}`);
     Object.entries(req.query)
-      .filter(([key]) => key !== FUSEBIT_QUERY_AUTHZ && key !== FUSEBIT_QUERY_ACCOUNT)
-      .forEach(([key, value]) => redirectUrl.searchParams.set(key, value as string));
+      .filter(([key]) =>
+        key !== FUSEBIT_QUERY_AUTHZ &&
+        key !== FUSEBIT_QUERY_ACCOUNT
+      ).forEach(([key, value]) =>
+        redirectUrl.searchParams.set(key, value));
 
     return res.redirect(redirectUrl.toString());
 ```
@@ -183,7 +192,9 @@ router.use('*', async (req: express.Request, res: express.Response, next: expres
 
   // Attach any query parameters
   const grafanaUrl = new URL(`${grafana.location}${req.params[0]}`);
-  Object.entries(req.query).forEach(([key, value]) => grafanaUrl.searchParams.set(key, value as any));
+  Object.entries(req.query).forEach(
+    ([key, value]) => grafanaUrl.searchParams.set(key, value as any)
+  );
 
   // Only copy approved headers over
   Object.entries(req.headers).forEach(([key, value]) => {
@@ -202,7 +213,7 @@ router.use('*', async (req: express.Request, res: express.Response, next: expres
 
   // Proxy the request using the http library
   const connection = http.request(requestParams, (resp) => {
-    Object.entries(resp.headers).forEach(([key, value]) => res.setHeader(key, value as any));
+    Object.entries(resp.headers).forEach(([key, value]) => res.setHeader(key, value));
     resp.pipe(res);
   });
 
