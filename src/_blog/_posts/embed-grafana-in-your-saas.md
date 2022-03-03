@@ -56,8 +56,6 @@ After substantial consideration, we came up with the following architecture: wit
 
 ![Grafana+React Authentication Flow with-shadow](auth_flow.svg "Grafana+React Authentication Flow")
 
-participant Browser
-
 Let’s take a look at each of these steps in more detail.
 
 ### Establishing Authentication
