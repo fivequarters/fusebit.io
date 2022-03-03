@@ -1,174 +1,174 @@
 .post {
-    &__hero-layout {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        padding-bottom: calc(var(--paddingLayout) + 150px);
+  &__hero-layout {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: calc(var(--paddingLayout) + 150px);
+  }
+
+  &__article {
+    padding: 30px 0;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  &__date {
+    color: #9c9fb3;
+    font-size: 16px;
+    line-height: 1.1;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__info-divider {
+    margin-left: 31px;
+    margin-right: 31px;
+    background-color: #d7e5ff;
+    width: 2px;
+    height: 32px;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+
+    img {
+      max-width: 50px;
+      max-height: 50px;
+    }
+  }
+
+  &__author-name {
+    margin-left: 16px;
+    font-family: var(--sora);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    color: var(--dark);
+  }
+
+  &__tags {
+    display: flex;
+    justify-content: center;
+    color: #f7806c;
+
+    & img {
+      margin-right: 8px;
+    }
+  }
+
+  &__tag {
+    color: #f7806c;
+    text-transform: capitalize;
+    text-decoration: none;
+  }
+
+  &__hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    & img {
+      margin: 0 auto;
+      width: 100%;
+      border-radius: 24px;
+      height: auto;
+      object-fit: cover;
+      max-height: 400px;
+    }
+  }
+
+  &__video {
+    width: 100%;
+
+    & > iframe,
+    video {
+      width: 100%;
+      height: 400px;
+      border-radius: 8px;
+    }
+  }
+
+  &__content {
+    margin-top: -320px;
+
+    @media only screen and (max-width: 765px) {
+      margin-top: -280px;
     }
 
-    &__article {
-        padding: 30px 0;
-        max-width: 736px;
-        margin: 0 auto;
-        overflow: visible;
+    @media only screen and (max-width: 400px) {
+      margin-top: -250px;
     }
+  }
 
-    &__date {
-        color: #9c9fb3;
-        font-size: 16px;
-        line-height: 1.1;
+  &__trending-layout {
+    padding: 65px 0 58px 0;
+
+    & > h2 {
+      text-align: center;
     }
+  }
 
-    &__info {
-        display: flex;
-        align-items: center;
-    }
+  &__trending-list {
+    column-gap: 32px;
+  }
 
-    &__info-divider {
-        margin-left: 31px;
-        margin-right: 31px;
-        background-color: #d7e5ff;
-        width: 2px;
-        height: 32px;
-    }
+  &__navigation {
+    margin-top: 22px;
 
-    &__author {
-        display: flex;
-        align-items: center;
+    &-button {
+      display: flex;
+      text-decoration: none;
+      color: var(--dark);
+      font-size: 18px;
+      line-height: 27px;
+      align-items: center;
+      position: relative;
 
-        img {
-            max-width: 50px;
-            max-height: 50px;
+      &-underline {
+        width: 0;
+        height: 2px;
+        background-color: var(--orange);
+        position: absolute;
+        bottom: -8px;
+        transition: width 0.1s ease-in;
+      }
+
+      &:hover {
+        .post__navigation-button-underline {
+          width: 105%;
         }
-    }
+      }
 
-    &__author-name {
-        margin-left: 16px;
-        font-family: var(--sora);
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 23px;
-        color: var(--dark);
-    }
-
-    &__tags {
-        display: flex;
-        justify-content: center;
-        color: #f7806c;
+      &--left {
+        margin-right: auto;
 
         & img {
-            margin-right: 8px;
+          margin-right: 8px;
         }
-    }
+      }
 
-    &__tag {
-        color: #f7806c;
-        text-transform: capitalize;
-        text-decoration: none;
-    }
+      &--right {
+        margin-left: auto;
 
-    &__hero-image {
-        position: relative;
-        display: flex;
-        justify-content: center;
+        .post__navigation-button-underline {
+          left: -3px;
+        }
 
         & img {
-            margin: 0 auto;
-            width: 100%;
-            border-radius: 24px;
-            height: auto;
-            object-fit: cover;
-            max-height: 400px;
+          transform: rotate(180deg);
+          margin-left: 8px;
         }
+      }
     }
 
-    &__video {
-        width: 100%;
-
-        & > iframe,
-        video {
-            width: 100%;
-            height: 400px;
-            border-radius: 8px;
-        }
+    &-buttons {
+      margin-top: 22px;
+      display: flex;
     }
-
-    &__content {
-        margin-top: -320px;
-
-        @media only screen and (max-width: 765px) {  
-            margin-top: -280px;
-        }
-
-        @media only screen and (max-width: 400px) {  
-            margin-top: -250px;
-        }
-    }
-
-    &__trending-layout {
-        padding: 65px 0 58px 0;
-
-        & > h2 {
-            text-align: center;
-        }
-    }
-
-    &__trending-list {
-        column-gap: 32px;
-    }
-
-    &__navigation {
-        margin-top: 22px;
-
-        &-button {
-            display: flex;
-            text-decoration: none;
-            color: var(--dark);
-            font-size: 18px;
-            line-height: 27px;
-            align-items: center;
-            position: relative;
-
-            &-underline {
-                width: 0;
-                height: 2px;
-                background-color: var(--orange);
-                position: absolute;
-                bottom: -8px;
-                transition: width 0.1s ease-in;
-            }
-
-            &:hover {
-                .post__navigation-button-underline {
-                    width: 105%;
-                }
-            }
-
-            &--left {
-                margin-right: auto;
-
-                & img {
-                    margin-right: 8px;
-                }
-            }
-
-            &--right {
-                margin-left: auto;
-
-                .post__navigation-button-underline {
-                    left: -3px;
-                }
-
-                & img {
-                    transform: rotate(180deg);
-                    margin-left: 8px;
-                }
-            }
-        }
-
-        &-buttons {
-            margin-top: 22px;
-            display: flex;
-        }
-    }
+  }
 }
