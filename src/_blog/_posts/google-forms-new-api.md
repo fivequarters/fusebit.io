@@ -206,20 +206,20 @@ Google Forms API will open lots of possibilities. Once the API reaches GA this y
 
 Here are a few examples of what you will be able to do with the forms API:
 
-## Form questions
+### Form questions
 
 * Export Form questions and responses to third-party tools like [Airtable](https://www.airtable.com/)
 * Import Form questions in Advanced surveys tools like [Polly](https://www.polly.ai/)
 
-## Form Responses
+### Form Responses
 
 * Receive notifications for new form responses in a Slack channel.
 * Create rich infographics from quiz responses in a third-party tool like [Tableu](https://www.tableau.com/)
 * Integrate with better reporting tools to analyze responses like [Microsoft Power BI](https://powerbi.microsoft.com)
 
-## Form Management
+### Form Management
 
 * Create new forms dynamically from third-party tools, like an LMS (Learning Management System).
 * A Slack bot that allows you to list and edit forms questions.
 * Add questions, point values, correct answers
-* Import questions from a third-party system into Google Forms like [SurveyMonkey] (https://www.surveymonkey.com/)
+* Import questions from a third-party system into Google Forms like [SurveyMonkey](https://www.surveymonkey.com/)
