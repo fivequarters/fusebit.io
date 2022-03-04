@@ -223,3 +223,7 @@ Here are a few examples of what you will be able to do with the forms API:
 * A Slack bot that allows you to list and edit forms questions.
 * Add questions, point values, correct answers
 * Import questions from a third-party system into Google Forms like [SurveyMonkey](https://www.surveymonkey.com/)
+
+## Before you go...
+
+If you are a developer looking to create flexible and powerful integrations using other SaaS platforms or tools, check out [Fusebit](https://fusebit.io/) and follow us on [Twitter](https://twitter.com/fusebitio)!
