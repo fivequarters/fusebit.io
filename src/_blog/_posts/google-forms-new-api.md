@@ -41,7 +41,7 @@ Push notifications
 
 In this blog post, we will use the RESTful interface to interact with the API. We will update the content once the Node.js SDK is officially released. 
 
-If you want to receive a notification once Google Forms API reaches General Availability [sign up to Fusebit](https://fusebit.io/).
+If you want to receive a notification once Google Forms API reaches General Availability, [sign up to Fusebit for free](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=google-forms-new-api 'Install the bot CTA_SMALL').
 
 We will be using the popular Node.js Library `superagent` to perform the requests.
 
