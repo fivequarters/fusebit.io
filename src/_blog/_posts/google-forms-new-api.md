@@ -6,7 +6,7 @@ date: '2022-03-04'
 post_image: google-form-api-nodejs.png
 post_excerpt: Google Forms API is currently in open beta. Learn what you can do and how to do it using Node.js even before Google supports their Node.js SDK.
 post_slug: google-form-using-nodejs
-tags: ['post', 'Developer Tools']
+tags: ['post', 'developer tools']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/google-form-api-nodejs.png
 ---
