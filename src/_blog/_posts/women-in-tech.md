@@ -1,5 +1,5 @@
 ---
-post_title: 5 Women in Tech That Influence Your Everyday Life - and 5 Women you should follow today
+post_title: 5 Women in Tech That Influence Your Everyday Life - And 5 You Should Follow Today
 post_author: Liz Parody
 post_author_avatar: liz.png
 date: '2022-03-08'
@@ -75,3 +75,4 @@ Despite this huge gender gap in tech, it has been proven that [diverse team has 
 5. Susan Wojcicki, CEO of YouTube (@SusanWojcicki)[https://twitter.com/SusanWojcicki]
 
 Happy International Women’s Day! Let’s support #WomenInTech
+-[Liz Parody](https://twitter.com/lizparody23)
