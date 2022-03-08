@@ -3,12 +3,12 @@ post_title: 5 Women in Tech That Influence Your Everyday Life - and 5 Women you 
 post_author: Liz Parody
 post_author_avatar: liz.png
 date: '2022-03-08'
-post_image: blog-main-iwd.jpeg
+post_image: blog-iwd-main.png
 post_excerpt: Did you know that the inventor of scientific computing, the first compiler, the personal computer, and the technology behind WiFi, Bluetooth, GPS, were all women?
 post_slug: 5-women-in-tech
 tags: ['post']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/blog-main-iwd.jpeg
+post_og_image: https://fusebit.io/assets/images/blog/blog-iwd-main.png
 ---
 
 **March 8th, International Woman’s Day (IWD)** - In this blog post, we celebrate 5 women in tech that forever changed technology. Did you know that the inventor of scientific computing, the first compiler, the personal computer, and the technology behind WiFi, Bluetooth, GPS, were all women?
