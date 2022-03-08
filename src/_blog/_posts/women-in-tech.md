@@ -68,20 +68,15 @@ Despite this huge gender gap in tech, it has been proven that [diverse team has 
 
 ## 5 Women you should follow today
 
-1. Whitney Wolfe Herd, CEO of Bumble [@WhitWolfeHerd](https://twitter.com/WhitWolfeHerd)
-
+1. Whitney Wolfe Herd, CEO of Bumble [@WhitWolfeHerd](https://twitter.com/WhitWolfeHerd)  
 She recently became the world’s youngest self-made female billionaire when Bumble IPOed (a dating app where women make the first move and has zero tolerance for misogyny). "Feminism is not about girl power. It's about equal power".
-2. Diana Trujillo, Flight director of the Perseverance Rover robot in Mars [@FromCaliToMars](https://twitter.com/FromCaliToMars)
-
+2. Diana Trujillo, Flight director of the Perseverance Rover robot in Mars [@FromCaliToMars](https://twitter.com/FromCaliToMars)  
 Colombian aerospae engineer in charge of the robot that is helping us discover mars.
-3. Katie Moussouris, founder and CEO of Luta Security [@k8em0](https://twitter.com/k8em0)
-
+3. Katie Moussouris, founder and CEO of Luta Security [@k8em0](https://twitter.com/k8em0)  
 Entrepreneur building robust vulnerability disclosure and supply chain coordination programs with or without bug bounties.
-4. Reshma Saujani, Founder and CEO of Girls Who Code [@reshmasaujani](https://twitter.com/reshmasaujani)
-
+4. Reshma Saujani, Founder and CEO of Girls Who Code [@reshmasaujani](https://twitter.com/reshmasaujani)  
 An organization which aims to increase the number of women in computer science and close the gender employment difference in that field. Right now Girls Who Code have reached more than 300K girls globally.
-5. Susan Wojcicki, CEO of YouTube [@SusanWojcicki](https://twitter.com/SusanWojcicki)
-
+5. Susan Wojcicki, CEO of YouTube [@SusanWojcicki](https://twitter.com/SusanWojcicki)  
 She has been in the tech industry for over 20 years and she was involved in the founding of Google, and became Google's first marketing manager in 1999.
 
 Happy International Women’s Day! Let’s support #WomenInTech
