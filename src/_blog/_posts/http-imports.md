@@ -11,7 +11,7 @@ post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-http-imports-main.jpg
 ---
 
-Node is planning to introduce support for [HTTPS imports](https://github.com/nodejs/node/pull/36328) in Node 18 - a feature that enables you to use URLs to directly import modules (ECMAScript or CommonJS) over HTTPS into your project.
+Node is planning to introduce support for [HTTPS imports](https://github.com/nodejs/node/pull/36328) in Node 18 - a feature that enables you to use URLs to directly import modules over HTTPS into your project.
 
 Note: This is currently available in experimental mode and things can change drastically, you can follow the conversation [along here](https://github.com/nodejs/node/discussions/36430).
 
