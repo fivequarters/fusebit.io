@@ -152,6 +152,8 @@ Your subscriber application initiates requests to the Pub/Sub server to retrieve
 
 An example implementation using the [official Node.js package](https://www.npmjs.com/package/@google-cloud/pubsub) 
 
+
+
 ```javascript
 const { PubSub } = require('@google-cloud/pubsub');
 
@@ -210,7 +212,7 @@ Learn more about push messaging [here](https://cloud.google.com/pubsub/docs/push
 *Set the delivery type to push
 *Specify an endpoint URL
 
-![Google Forms push notification with-shadow](google-forms-nodejs.png 'Google Forms push notifications')
+![Google Forms push notification with-shadow](google-forms-nodejs.png 'Google Forms push notification')
 
 ### Creating a new push notification with authentication
 
@@ -241,7 +243,7 @@ async function validateToken(req) {
 
 The push notification will trigger a POST request to the configured endpoint URL, you can implement that endpoint in the Node.js framework of your choice, e.g [Express](https://expressjs.com/), [Fastify](https://www.fastify.io/), [NestJS](https://nestjs.com/) [Hapi](https://hapi.dev/).
 
-Let’s see an example implementation using express:
+Let’s see an example implementation using the following Express code:
 
 ```javascript
   const express = require('express');
@@ -280,6 +282,9 @@ Let’s see an example implementation using express:
     console.log(`Example app listening on port ${port} test`);
   });
 ```
+
+After you receive a push request, return an HTTP status code. To acknowledge the message, return one of the following status codes: 102,200,201,202,204.
+To send a negative acknowledgment for the message, return any other status code, like 403 in our previous example. If you send a negative acknowledgment or the acknowledgment deadline expires, Pub/Sub resends the message.
 
 
 ## Conclusion
