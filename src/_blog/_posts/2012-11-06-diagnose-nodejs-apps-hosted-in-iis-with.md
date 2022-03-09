@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2012-11-06'  
 post_title: Diagnose node.js apps hosted in IIS with iisnode-debug header
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: diagnose-nodejs-apps-hosted-in-iis-with
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 
