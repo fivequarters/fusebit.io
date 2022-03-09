@@ -290,4 +290,4 @@ To send a negative acknowledgment for the message, return any other status code,
 ## Conclusion
 
 Google forms watch API opens lots of possibilities as you can see in our use cases. We’re looking forward to seeing yours!
-If you want to receive a notification once Google Forms API reaches General Availability, [sign up to Fusebit for free](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=google-forms-push-notifications ‘Install the bot CTA_SMALL’)
+If you want to receive a notification once Google Forms API reaches General Availability, [sign up to Fusebit for free](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=google-forms-push-notifications 'Install the bot CTA_SMALL')
