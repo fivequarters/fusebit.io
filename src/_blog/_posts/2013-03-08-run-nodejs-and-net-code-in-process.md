@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2013-03-08'  
 post_title: Run node.js and .NET code in-process
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: run-nodejs-and-net-code-in-process
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 

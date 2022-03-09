@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2013-06-06'  
 post_title: Access SQL Azure from a Node.js app deployed to Windows Azure Web Sites
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: access-sql-azure-from-nodejs-app
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 

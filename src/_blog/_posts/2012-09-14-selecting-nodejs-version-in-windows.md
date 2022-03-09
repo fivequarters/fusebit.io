@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2012-09-14'  
 post_title: Selecting the node.js version in Windows Azure Web Sites
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: selecting-nodejs-version-in-windows
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 

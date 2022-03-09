@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2013-07-29'  
 post_title: Debug Node.js applications in Windows Azure Web Sites
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: debug-nodejs-applications-in-windows
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 

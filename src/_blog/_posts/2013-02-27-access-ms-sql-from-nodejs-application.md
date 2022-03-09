@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2013-02-27'  
 post_title: Access MS SQL from a node.js application using OWIN, in-process CLR
@@ -10,6 +10,7 @@ post_image: blog-tomek.png
 post_slug: access-ms-sql-from-nodejs-application
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 

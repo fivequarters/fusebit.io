@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2015-06-14'  
 post_title: Node.js hosting with batteries included
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: node-hosting-batteries-included
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 If you are writing a Node.js application today, you have over 160,000 npm modules at your disposal. You declare the ones your application depends on within *package.json*. When the app is deployed, the hosting environment installs these modules before starting the app. The process typically takes between few and few tens of seconds. Only then is your application ready to process requests. 

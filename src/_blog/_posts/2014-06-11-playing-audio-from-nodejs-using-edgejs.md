@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2014-06-11'  
 post_title: Playing audio from Node.js using Edge.js
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: playing-audio-from-nodejs-using-edgejs
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 
