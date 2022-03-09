@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2012-06-13'  
 post_title: Performance of hosting node.js applications in iisnode vs
@@ -10,6 +10,7 @@ post_image: blog-tomek.png
 post_slug: performance-of-hosting-nodejs
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 
