@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2013-05-25'  
 post_title: How to save $5 million running a Node.js application
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: how-to-save-5-million-running-nodejs
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 
