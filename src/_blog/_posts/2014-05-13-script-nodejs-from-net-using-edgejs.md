@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2014-05-13'  
 post_title: Script Node.js from .NET using Edge.js
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: script-nodejs-from-net-using-edgejs
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 
