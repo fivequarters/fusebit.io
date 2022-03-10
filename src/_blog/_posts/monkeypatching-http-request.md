@@ -11,13 +11,14 @@ post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-monkeypatching-http-request.png
 ---
 
-[Monkey patching](https://en.wikipedia.org/wiki/Monkey_patch) is a time-honored tradition in the system instrumentation space. Many a time a developer will need to add an annotation or capture an event for a system that doesn’t natively support it or provide any hooks, and will have to result to trickery to achieve their goals.
+[Monkey patching](https://en.wikipedia.org/wiki/Monkey_patch) is a time-honored tradition in the system instrumentation space. Many a time a developer will need to change a default behavior, add an annotation or capture an event for a system that doesn’t natively support it or provide any hooks, and will have to resort to trickery to achieve their goals.
 
-Happily, in today’s modern world of high level interpreted languages like Python and JavaScript, monkey patching is so much easier!
+Happily, in today’s modern world of high level interpreted dynamic programming languages like Python and JavaScript, monkey patching is so much easier!
 
 Let’s explore how we can monkey patch the Node.js [http](https://nodejs.org/api/http.html) library (and, by extrapolation, [https](https://nodejs.org/api/https.html) as well) to annotate every request made from the environment.
 
 Here at Fusebit, we use this to add [OpenTelemetry](https://opentelemetry.io/) tracing information to outbound requests, allowing us to correlate events extending across multiple parts of our infrastructure for each customer integration.
+
 ## Naive approach
 
 Let’s try the simplest approach.  First, let’s establish a simple testcase:
@@ -305,4 +306,4 @@ const errorToObj = (error) => ({
 
 Hopefully, you’ll find the above code and implementation details helpful!  Don’t hesitate to reach out if you have any questions, and we’ll be happy to help push through.  You can find me on the [Fusebit Discord](https://discord.gg/SN4rhhCH), our [community Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg), and at [benn@fusebit.io](mailto:benn@fusebit.io).
 
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup) or look at our [getting started guide](​​https://developer.fusebit.io/docs/getting-started)!
+[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
