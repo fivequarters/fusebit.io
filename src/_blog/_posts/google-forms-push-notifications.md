@@ -1,5 +1,5 @@
 ---
-post_title: Google Forms Webhooks with Node.js
+post_title: Google Forms push notifications with Node.js
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-03-09'
@@ -44,7 +44,7 @@ Before creating a new watch, ensure you have made a [Pub/Sub Topic](https://deve
 )
 
 When creating a new event, you need to provide the following information:
-  * Form Id: The Google Form unique identifier you want to receive notifications.
+  * **Form Id**: The Google Form unique identifier you want to receive notifications.
   * **Target**: It contains the topic name. It needs to be a fully qualified Pub/Sub topic name.
   * **eventType**: `SCHEMA` and `RESPONSE`
 
@@ -285,6 +285,22 @@ Let’s see an example implementation using the following Express code:
 
 After you receive a push request, return an HTTP status code. To acknowledge the message, return one of the following status codes: 102,200,201,202,204.
 To send a negative acknowledgment for the message, return any other status code, like 403 in our previous example. If you send a negative acknowledgment or the acknowledgment deadline expires, Pub/Sub resends the message.
+
+The push request contains a message as part of the body with the following information:
+
+```javascript
+{
+   attributes: {
+    eventType: 'RESPONSES',
+    formId: '1g8WglHbmOH-l30H-jMdzwdcdLoNYEcIkDnqPz7YN5Xo',
+    watchId: '4126a46c-caff-4ad1-bf29-a3a9cab6a412'
+  },
+  messageId: '4174496286900599',
+  message_id: '4174496286900599',
+  publishTime: '2022-03-09T23:53:05.995Z',
+  publish_time: '2022-03-09T23:53:05.995Z'
+}
+```
 
 
 ## Conclusion
