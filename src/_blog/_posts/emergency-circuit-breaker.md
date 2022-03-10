@@ -131,9 +131,9 @@ export default class ApplicationLayerStack extends cdk.Stack {
 ## Scenarios
  
 There are two scenarios that we can block with AWS WAF:
- 
+
 - Tenant-based blocking: We can block customers by their tenant ID within requests. At Fusebit, we use the `/account/acc-1234/subscription/sub-5678` schema within the URL to separate customer tenants. For example, an integration would live under `https://api.us-west-1.on.fusebit.io/account/acc-55555555/subscription/sub-44444444/integration/multi-tenant-int/`.  This allows us to block a tenant by excluding endpoints that contain a specific account or subscription ID.
- 
+
 - IP/Subnet-based blocking: We can also block customers by their request origin’s IP/subnet range.
  
 ## Blocking Based on Tenant ID
