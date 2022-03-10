@@ -13,10 +13,20 @@ block content
         .background.background--straight.background--neutralLight
         .layout.post__hero-layout
             .post__info
-                .post__author
-                    if post_author_avatar
-                        img(src= post_author_avatar width="50" height="50")
-                    span.post__author-name #{post_author}
+                each author, i in (post_authors || [])
+                    .post__author
+                        if author.avatar
+                            img(src= post_author_avatar width="50" height="50")
+                        span.post__author-name #{author.name}
+                    if i !== post_authors.length - 1
+                        .post__info-divider
+
+                if !(post_authors || []).length
+                    .post__author
+                        if post_author_avatar
+                            img(src= post_author_avatar width="50" height="50")
+                        span.post__author-name #{post_author}
+                        
                 .post__info-divider
                 span.post__date= `${filters.format(new Date(date.replace('-', '/')), 'd MMMM yyyy')}`
             h1 #{post_title}

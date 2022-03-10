@@ -112,6 +112,8 @@ post_author: string | The author name of the post
 
 post_author_avatar: string | The url of the author avatar image
 
+post_authors: array of objects | The list of authors for a post. Each object in the list can have the following keys: `name` **required** and `avatar` **optional**. i.e `[{ name: 'Randall Tombaugh', avatar: 'randall.png' }, { name: 'Yavor', avatar: 'yavor.png' }]`
+
 date: string | The date of the post with the following format: 'YYYY-MM-DD'. This prop will be used to order the collections of posts by date.
 
 post_image: string | The url of the hero image of the post
@@ -135,8 +137,9 @@ posts_related: string[] | A URL slugs list of the related posts. If ommited, the
 ```
 ---
 post_title: The Role of Integrations in Building a Unicorn
-post_author: Tomasz Janczuk
-post_author_avatar: tomek.png
+post_author: Tomasz Janczuk // **Deprecated** use `post_authors` instead 
+post_author_avatar: tomek.png // **Deprecated** use `post_authors` instead
+post_authors: [{ name: 'Randall Tombaugh', avatar: 'randall.png' }, { name: 'Yavor', avatar: 'yavor.png' }]
 date: '2019-08-26'
 post_image: blog-interview-with-auth0-main.png
 post_excerpt: We spoke with Eugenio Pace, the co-founder and CEO of [Auth0](https://auth0.com/), to get the scoop on his company's approach to integrations.
