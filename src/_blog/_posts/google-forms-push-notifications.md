@@ -1,8 +1,8 @@
 ---
-post_title: Google Forms push notifications with Node.js
+post_title: Google Forms Push Notifications with Node.js
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
-date: '2022-03-09'
+date: '2022-03-10'
 post_image: google-form-push-notifications.png
 post_excerpt: Learn how you can create and subscribe to form events using Node.js with push notifications.
 post_slug: google-form-webhooks-nodejs
