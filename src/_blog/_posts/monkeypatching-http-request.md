@@ -1,22 +1,22 @@
 ---
-post_title: Monkeypatching http.request for Fun and Profit
+post_title: Monkey Patching http.request for Fun and Profit
 post_author: Benn Bollay
 post_author_avatar: benn.png
 date: '2022-03-10'
 post_image: blog-monkeypatching-http-request.png
-post_excerpt: Let’s explore how we can monkeypatch the Node.js `http` library (and, by extrapolation, `https` as well) to annotate every request made from the environment.
-post_slug: monekypatching-http-request
+post_excerpt: Let’s explore how we can monkey patch the Node.js `http` library (and, by extrapolation, `https` as well) to annotate every request made from the environment.
+post_slug: moneky-patching-http-request
 tags: ['post', 'developer tools']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-monkeypatching-http-request.png
 ---
 
-## Monkeypatching http.request and http.get
-[Monkeypatching](https://en.wikipedia.org/wiki/Monkey_patch) is a time-honored tradition in the system instrumentation space. Many a time a developer will need to add an annotation or capture an event for a system that doesn’t natively support it or provide any hooks, and will have to result to trickery to achieve their goals.
+## Monkey Patching http.request and http.get
+[Monkey patching](https://en.wikipedia.org/wiki/Monkey_patch) is a time-honored tradition in the system instrumentation space. Many a time a developer will need to add an annotation or capture an event for a system that doesn’t natively support it or provide any hooks, and will have to result to trickery to achieve their goals.
 
-Happily, in today’s modern world of high level interpreted languages like Python and JavaScript, monkeypatching is so much easier!
+Happily, in today’s modern world of high level interpreted languages like Python and JavaScript, monkey patching is so much easier!
 
-Let’s explore how we can monkeypatch the Node.js `http` library (and, by extrapolation, `https` as well) to annotate every request made from the environment.
+Let’s explore how we can monkey patch the Node.js `http` library (and, by extrapolation, `https` as well) to annotate every request made from the environment.
 
 Here at Fusebit, we use this to add [OpenTelemetry](https://opentelemetry.io/) tracing information to outbound requests, allowing us to correlate events extending across multiple parts of our infrastructure for each customer integration.
 ## Naive approach
@@ -65,9 +65,9 @@ const simplePatch = () => {
 })();
 ```
 
-Here we see the simplest form of a monkeypatch: a simple module modification where we wrap the call to the `http.request` method, saving the “stock” version in `oldRequest`, and changing the hostname and port in the new one.  Then we call `oldRequest` at the end, but with the new parameters.
+Here we see the simplest form of a monkey patch: a simple module modification where we wrap the call to the `http.request` method, saving the “stock” version in `oldRequest`, and changing the hostname and port in the new one.  Then we call `oldRequest` at the end, but with the new parameters.
 
-*Note*: It’s important to always add your monkeypatching before there’s any chance that the code that sends a request runs!  Or, as some libraries do, has a chance to grab a reference to the “old” `.request` or `.get` methods.
+*Note*: It’s important to always add your monkey patching before there’s any chance that the code that sends a request runs!  Or, as some libraries do, has a chance to grab a reference to the “old” `.request` or `.get` methods.
 
 Now our test will work, because the request will hit the local server!
 
@@ -79,7 +79,7 @@ An optimistic interpretation of `http.get`, which is a shorthand call for `http.
 
 When we modified the `http` object, we were only modifying our local copy of it, created during the `require()` step at the top of the test file.  Once imported it is cached, so other modules in our executable will also make use of the patched version, but `http.get` directly calls the local method.  You can see the code [here](https://github.com/nodejs/node/blob/1e8b296c58b77d3b7b46d45c7ef3e44981c5c3e7/lib/http.js#L107) - it calls the `request()` method directly.
 
-That means that the monkeypatch we did for the `http.request` value won’t work!  So now we need to add another test case and monkeypatch for `http.get`:
+That means that the monkey patch we did for the `http.request` value won’t work!  So now we need to add another test case and monkey patch for `http.get`:
 
 ```javascript
 test('example http.get', () => {
@@ -106,7 +106,7 @@ That means that we need to normalize these down to something a little more gener
 
 You’ll also note that on several of the calls, there’s no `options` parameter - the values are implied via the string URL that is supplied.  But on the ones that do have an `options` parameter, we have to make sure that when we do make changes, we don’t accidentally modify the object that’s supplied.  The caller is not expecting the object to be changed, after all, and to violate that convention would be rude (and possibly introduce bugs!).
 
-So for the HTTP `options` object, we follow one simple rule: don’t modify the original.  That means we need to make a safe copy (which can be hard, depending on what the caller supplies!), preserving the parameters and only creating anew the ones that we need for our specific monkeypatch.
+So for the HTTP `options` object, we follow one simple rule: don’t modify the original.  That means we need to make a safe copy (which can be hard, depending on what the caller supplies!), preserving the parameters and only creating anew the ones that we need for our specific monkey patch.
 
 ## What about results and errors?
 
@@ -139,7 +139,7 @@ const wrapRequest = (oldFunction) => (...args) => {
 
 ## When do you run this code?
 
-Run your monkeypatches as early as possible, so that there’s no potential race conditions between events that you want to capture and your patch.  But keep in mind that this is a _global_ operation.  It will impact every usage of that module in the system, baring shenanigans with the module cache.
+Run your monkey patches as early as possible, so that there’s no potential race conditions between events that you want to capture and your patch.  But keep in mind that this is a _global_ operation.  It will impact every usage of that module in the system, baring shenanigans with the module cache.
 
 You’re not just racing your code that makes the calls, but you’re racing any other imports that may grab references to the `.request` or `.get` methods themselves.  Any reference to those old methods won’t be patched by your code.
 
@@ -181,7 +181,7 @@ const errorToObj = (error) => ({
   },
 });
 
-// Monkeypatch both http and https, modifying both the `get` and `request` methods in each to add
+// Monkey patch both http and https, modifying both the `get` and `request` methods in each to add
 // instrumentation and tracking to each outbound request.
 [
   [Http, 'http:'],
@@ -301,4 +301,4 @@ const errorToObj = (error) => ({
 
 Hopefully, you’ll find the above code and implementation details helpful!  Don’t hesitate to reach out if you have any questions, and we’ll be happy to help push through.  You can find me on the [Fusebit Discord](https://discord.gg/SN4rhhCH), our [community Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg), and at [benn@fusebit.io](mailto:benn@fusebit.io).
 
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkeypatching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup) or look at our [getting started guide](​​https://developer.fusebit.io/docs/getting-started)!
+[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup) or look at our [getting started guide](​​https://developer.fusebit.io/docs/getting-started)!
