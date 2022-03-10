@@ -125,12 +125,14 @@ const wrapRequest = (oldFunction) => (...args) => {
     })
     // Capture protocol errors
     .once('error', (error) => {
-      // Clear the span out after closing it, so it doesn’t get closed twice on stacked errors.
+      // Clear the span out after closing it, so it doesn’t get closed twice on
+      // stacked errors.
       span = closeSpan(span, error);
     })
     // Capture network errors
     .once('close', (res) => {
-      // Clear the span out after closing it, so it doesn’t get closed twice on stacked errors.
+      // Clear the span out after closing it, so it doesn’t get closed twice on
+      // stacked errors.
       span = closeSpan(span);
     });
 };
