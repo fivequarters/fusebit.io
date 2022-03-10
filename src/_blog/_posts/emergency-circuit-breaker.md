@@ -2,7 +2,7 @@
 post_title: Building an Emergency Circuit Breaker with AWS WAF
 post_author: Matthew Zhao
 post_author_avatar: matthew.png
-date: '2022-03-09'
+date: '2022-03-10'
 post_image: blog-aws-waf-main.png
 post_excerpt:  This blog will explore an easier way to deal with may requests by creating a big red button using AWS WAF (web application firewall)
 post_slug: emergency-circuit-breaker-aws-waf
