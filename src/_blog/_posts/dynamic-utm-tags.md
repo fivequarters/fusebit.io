@@ -13,11 +13,11 @@ post_og_image: https://fusebit.io/assets/images/blog/blog-dynamic-utm-main.png
 
 ## The Reporting Challenge
 
-UTM tags, or “Urchin tracking module”, are the standard way marketing and growth professionals measure the impact of acquisition campaigns and their associated links. Even though UTM tags are part of the Google Analytics ecosystem (thanks for a 2005 software acquisition), almost all software uses them to provide a standard signal to your marketing and product analytics solution.
+UTM tags, or “Urchin tracking module”, are the standard way marketing and growth professionals measure the impact of acquisition campaigns. Even though UTM tags are part of the Google Analytics ecosystem (thanks for a 2005 software acquisition), almost all software uses them.
 
-While UTMs are ubiquitous among analytics, they require constant effort to make sure as many external links as possible are tagged. In a perfect world, all links are tagged and you can create a single report comparing sources across paid, referral, and organic channels. The reality the only links that contain UTM tags are the ones that have been manually defined. This creates a challenge as at some point you will want to compare from various sources and many of those sources won’t have UTM parameters.
+While UTMs are ubiquitous among analytic platforms, they require constant effort to ensure external links are tagged. In a perfect world, all links and campaigns tagged and you can create a single report comparing sources across paid, referral, and organic channels. The reality the only links that contain UTM tags are the ones that have been manually defined and often those are only marketing campaigns. This creates a challenge when you want to create standard reports to compare the performance across all channels when many of those channels don't have UTM tags. 
 
-This article will provide a solution to that reporting challenge and allow you to create reports based off of UTM tag values regardless if you or your team has defined them.
+This article will provide a solution to that reporting challenge and allow you to create streamlined reports based off of UTM tags even when UTM are not present.
 
 ## Solving the Missing UTM Tag Problem
 
