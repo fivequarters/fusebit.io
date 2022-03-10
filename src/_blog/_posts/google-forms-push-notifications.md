@@ -3,12 +3,12 @@ post_title: Google Forms push notifications with Node.js
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-03-09'
-post_image: google-form-api-nodejs.png
+post_image: google-form-push-notifications.png
 post_excerpt: Learn how you can create and subscribe to form events using Node.js with push notifications.
 post_slug: google-form-webhooks-nodejs
 tags: ['post', 'developer tools']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/google-form-api-nodejs.png
+post_og_image: https://fusebit.io/assets/images/blog/google-form-push-notifications.png
 ---
 
 Google Forms API introduces a new [watch API](https://developers.google.com/forms/api/reference/rest/v1beta/forms.watches) to subscribe to changes in form settings or responses. We already covered the form API basics in another [blog post](https://fusebit.io/blog/google-form-using-nodejs/)
