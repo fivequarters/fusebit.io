@@ -2,7 +2,7 @@
 post_title: API Metering and Analytics for Early Stage Startups
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
-date: '2022-03-09'
+date: '2022-03-10'
 post_image: api-metering-analytics.png
 post_excerpt:  This post will help you set up a simple metering and reporting system for the HTTP APIs of your app using BigQuery and DataStudio
 tags: ['post','developer tools']
