@@ -4,11 +4,11 @@ post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2022-03-09'
 post_image: api-metering-analytics.png
-post_excerpt: This post will help you set up a simple metering system for your app in a day, solve questions, and more.
-post_slug: api-metering-analytics-for-startups
+post_excerpt:  This post will help you set up a simple metering and reporting system for the HTTP APIs of your app using BigQuery and DataStudio
 tags: ['post','developer tools']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/api-metering-analytics.png
+posts_related: ['secure-your-http-apis','authorize-your-http-apis','grafana-in-react']
 ---
 
 Who is using the HTTP APIs of your application? Which endpoints are called most? How much do you charge for API usage? How many errors were there last week? Where do the calls originate from? What share of calls comes from the management portal vs the CLI vs SDK? Which version? 
