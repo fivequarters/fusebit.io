@@ -11,12 +11,11 @@ post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-monkeypatching-http-request.png
 ---
 
-## Monkey Patching http.request and http.get
 [Monkey patching](https://en.wikipedia.org/wiki/Monkey_patch) is a time-honored tradition in the system instrumentation space. Many a time a developer will need to add an annotation or capture an event for a system that doesn’t natively support it or provide any hooks, and will have to result to trickery to achieve their goals.
 
 Happily, in today’s modern world of high level interpreted languages like Python and JavaScript, monkey patching is so much easier!
 
-Let’s explore how we can monkey patch the Node.js `http` library (and, by extrapolation, `https` as well) to annotate every request made from the environment.
+Let’s explore how we can monkey patch the Node.js [http](https://nodejs.org/api/http.html) library (and, by extrapolation, [https](https://nodejs.org/api/https.html) as well) to annotate every request made from the environment.
 
 Here at Fusebit, we use this to add [OpenTelemetry](https://opentelemetry.io/) tracing information to outbound requests, allowing us to correlate events extending across multiple parts of our infrastructure for each customer integration.
 ## Naive approach
@@ -41,7 +40,7 @@ http
   .end();
 ```
 
-Obviously this will fail because the `http.request` is asking for `example.com` instead of the local [HTTP serving tea pot](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418).  So we’re just going to have to change it on the fly!
+Obviously this will fail because the `http.request` is asking for `example.com` instead of the local [HTTP-serving tea pot](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418).  So we’re just going to have to change it on the fly!
 
 *Note*: while in these examples we are changing the `hostname`, it’s left as an exercise to the reader to modify the `header` field, or any other, as they prefer.
 
@@ -73,11 +72,11 @@ Now our test will work, because the request will hit the local server!
 
 However, our work is not remotely done.
 
-## What about `http.get`?
+## What about http.get?
 
 An optimistic interpretation of `http.get`, which is a shorthand call for `http.request({method: ‘GET’})`, is that it would directly call `http.request`.  And you’d be right!  Unfortunately, now we’re running into a JavaScript module scope issue.
 
-When we modified the `http` object, we were only modifying our local copy of it, created during the `require()` step at the top of the test file.  Once imported it is cached, so other modules in our executable will also make use of the patched version, but `http.get` directly calls the local method.  You can see the code [here](https://github.com/nodejs/node/blob/1e8b296c58b77d3b7b46d45c7ef3e44981c5c3e7/lib/http.js#L107) - it calls the `request()` method directly.
+When we modified the `http` object, we were only modifying our local copy of it, created during the `require()` step at the top of the test file.  Once imported it is cached, so other modules in our executable will also make use of the patched version, but `http.get` directly calls the local method.  You can see the code [here](https://github.com/nodejs/node/blob/1e8b296c58b77d3b7b46d45c7ef3e44981c5c3e7/lib/http.js#L107); it calls the `request()` method directly.
 
 That means that the monkey patch we did for the `http.request` value won’t work!  So now we need to add another test case and monkey patch for `http.get`:
 
@@ -102,7 +101,7 @@ It turns out that the http library offers four different call signatures:
 
 That means that we need to normalize these down to something a little more generic so we can consistently apply our updating logic to each one.
 
-### Respecting the HTTP `options`
+### Respecting the HTTP "options"
 
 You’ll also note that on several of the calls, there’s no `options` parameter - the values are implied via the string URL that is supplied.  But on the ones that do have an `options` parameter, we have to make sure that when we do make changes, we don’t accidentally modify the object that’s supplied.  The caller is not expecting the object to be changed, after all, and to violate that convention would be rude (and possibly introduce bugs!).
 
@@ -159,10 +158,12 @@ const cloneHttpOptions = (options) => {
   // Make a simple copy of all of the entries
   Object.keys(options).forEach((opt) => (result[opt] = options[opt]));
 
-  // Duplicate the existing entries that are objects that we know about and touch, to avoid contamination back
-  // to the caller.
+  // Duplicate the existing entries that are objects that we know about and touch, to
+  // avoid contamination back to the caller.
   cloneHttpOptionsObjects.forEach(
-    (opt) => (result[opt] = result[opt] ? JSON.parse(JSON.stringify(result[opt])) : result[opt])
+    (opt) => (result[opt] = result[opt]
+      ? JSON.parse(JSON.stringify(result[opt]))
+      : result[opt])
   );
 
   return result;
@@ -181,8 +182,8 @@ const errorToObj = (error) => ({
   },
 });
 
-// Monkey patch both http and https, modifying both the `get` and `request` methods in each to add
-// instrumentation and tracking to each outbound request.
+// Monkey patch both http and https, modifying both the `get` and `request` methods
+// in each to add instrumentation and tracking to each outbound request.
 [
   [Http, 'http:'],
   [Https, 'https:'],
@@ -225,12 +226,13 @@ const errorToObj = (error) => ({
     };
   };
 
-  // Figure out which of the various supported calling conventions are at play, clone (or create) the options
-// object, and return a new args array.
+  // Figure out which of the various supported calling conventions are at play, clone
+  // (or create) the options object, and return a new args array.
   const addTraceToArgs = (args) => {
     let options;
 
-    // There's three different call signatures to deal with here for http.get and http.request:
+    // There's three different call signatures to deal with here for http.get and
+    // http.request:
     if (typeof args[0] === 'object') {
       //   1. http.get({ ...options... }, (response) => {});
       options = args[0];
@@ -260,8 +262,8 @@ const errorToObj = (error) => ({
     span.statusCode = res.statusCode;
   };
 
-  // Note that the span has been closed, add a normalized error object if any, and return undefined
-  // to prevent closeSpan from being called again.
+  // Note that the span has been closed, add a normalized error object if any, and
+  // return undefined to prevent closeSpan from being called again.
   const closeSpan = (span, error) => {
     if (!span) {
       return undefined;
@@ -272,8 +274,8 @@ const errorToObj = (error) => ({
     return undefined;
   };
 
-  // Perform the actual wrap operation, adding instrumentation and tracing, and then calling the previous
-  // function to perform the actual work.
+  // Perform the actual wrap operation, adding instrumentation and tracing, and then
+  // calling the previous function to perform the actual work.
   const wrapRequest = (oldFunction) => (...args) => {
     args = addTraceToArgs(args);
     let span = createSpan(args);
