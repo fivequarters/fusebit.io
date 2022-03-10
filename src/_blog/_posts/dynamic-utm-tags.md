@@ -1,7 +1,7 @@
 ---
 post_title: Streamline Funnel Analytics with Dynamic UTM Tags
 post_author: Chris More
-post_author_avatar: cmore.png
+post_author_avatar: tomek.png
 date: '2022-03-11'
 post_image: blog-dynamic-utm-main.png
 post_excerpt: There is love-hate relationship with UTM parameters for both developers and marketers. Let’s explore a solution that will make everyone a bit more happy.
@@ -115,7 +115,7 @@ For example, in Google Analytics, traffic from Twitter.com gets automatically ta
 
 While these changes in the source and medium will slightly impact basic reporting in Google Analytics, this can be overcome by creating segments like the following:
 
-(insert segment image)
+![Google Analytics Organic Segment with-shadow](blog-dynamic-utm-segment.png "Google Analytics Organic Segment")
 
 The segment creates a cohort of visitors that match both the historical and new values created by the dynamic UTM parameters.
 
