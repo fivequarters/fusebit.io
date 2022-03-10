@@ -22,7 +22,7 @@ In this post, I’ll go through the details of the new feature (as it currently 
 
 Importing modules into your project traditionally requires using a package manager where you host your modules in a registry, and then before deploying your application, go through an installation process to import those modules into your code. 
 
-With HTTPS Imports, you are now able to import modules directly into your code through the use of direct URLs like so:
+With HTTPS Imports, you are now able to import modules directly into your code through the use of absolute URL paths like so:
 
 ```javascript
 import fusebitValueProp from "https://msakbar.github.io/fusebitValueProp.js"
@@ -34,8 +34,8 @@ import fusebitValueProp from "https://msakbar.github.io/fusebitValueProp.js"
 We looked through the code in the PR and ran through it to get a better sense of how it’s currently set up. Here are a few things we noticed:
 
 
-* There is no impact to how `package.json` works with your existing import setup, this is an additive functionality that sits on top as an extra way you can import external modules.
-* Imported modules must conform to [ESM standards](https://nodejs.org/api/esm.html) and return `application/javascript` as the MIME type. Additionally, you must add `“type”:”module”` to your `package.json` file, or else it will fail to load.
+* There is no impact to the default behavior for how `package.json` works with your existing import setup, this is an additive functionality that sits on top as an extra way you can import external modules. The only change is that you must add `“type”:”module”` to your `package.json` file, or else it will fail to load.
+* Imported modules must conform to [ES Module syntax](https://nodejs.org/api/esm.html) and return `application/javascript` as the MIME type. Files do not need to have .mjs extension and can also be .js as well.
 * Modules, when loaded, are stored in memory but not on disk. This means that every time you restart your node application, it will download the files again. 
 * HTTP is limited to loopback addresses only meaning you can only use it for localhost, otherwise you must use HTTPS links.
 * `Authorization`, `Cookie`, and `Proxy-Authorization` headers are not sent to the server and, CORS policies/headers are not sent or enforced either. 
@@ -69,7 +69,7 @@ Another thing to consider is that you may be tempted to try and use popular CDNs
 
 You can run `node --experimental-network-imports` and then use import without needing any additional modules when the feature ships. This feature is currently available behind a flag in [Node 17.6](https://nodejs.org/dist/v17.6.0) and later versions.
 
-Here’s a quick guide, with a sample URL, to get you going:
+Here’s a quick guide using a javascript file with an absolute path to a module, to get you going:
 
 ```javascript
 import fusebitValueProp from "https://msakbar.github.io/fusebitValueProp.js" ;
