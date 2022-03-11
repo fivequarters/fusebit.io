@@ -6,7 +6,7 @@ date: '2022-03-03'
 post_image: blog-embed-grafana-in-react.png
 post_excerpt: Let's dive deep into the code that integrated Grafana with Fusebit's ReactJS app, providing graphing, tracing, and visualization for their customers.
 post_slug: grafana-in-react
-tags: ['post', 'developer tools']
+tags: ['post', 'Developer Tools']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-embed-grafana-in-react.png
 ---
