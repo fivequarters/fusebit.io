@@ -69,11 +69,11 @@ const searchParams = new URLSearchParams(window.location.search);
 if (!searchParams.get('utm_source') && document.referrer) {
     const referrerHostname = new URL(document.referrer).hostname;
     if (referrerHostname !== window.location.hostname) {
-          const url = new URL(window.location);
-          url.searchParams.set('utm_source', referrerHostname);
-url.searchParams.set('utm_medium', 'referral');
-      url.searchParams.set('utm_campaign', 'none');
-      window.history.replaceState({}, '', url);
+        const url = new URL(window.location);
+        url.searchParams.set('utm_source', referrerHostname);
+        url.searchParams.set('utm_medium', 'referral');
+        url.searchParams.set('utm_campaign', 'none');
+        window.history.replaceState({}, '', url);
     }
   }
 </script>
@@ -101,11 +101,7 @@ Just double checking above that the hostname isn’t the current website or we w
 
 This is setting a variable of visitor’s currently web browser address.
 
-```
-url.searchParams.set('utm_source', referrerHostname);
-url.searchParams.set('utm_medium', 'referral');
-url.searchParams.set('utm_campaign', 'none');
-```
+``url.searchParams.set('utm_source', referrerHostname); url.searchParams.set('utm_medium', 'referral'); url.searchParams.set('utm_campaign', 'none');``
 
 Then all we do is set the UTM values to the referring hostname and the two static values we discussed previously.
 
