@@ -15,19 +15,25 @@ post_og_image: https://fusebit.io/assets/images/blog/blog-dynamic-utm-main.png
 
 UTM tags, or “Urchin tracking module”, are the standard way marketing and growth professionals measure the impact of acquisition campaigns. Even though UTM tags are part of the Google Analytics ecosystem (thanks for a 2005 software acquisition), almost all software uses them.
 
-While UTMs are ubiquitous among analytic platforms, they require constant effort to ensure external links are tagged. In a perfect world, all links and campaigns tagged and you can create a single report comparing sources across paid, referral, and organic channels. The reality the only links that contain UTM tags are the ones that have been manually defined and often those are only marketing campaigns. This creates a challenge when you want to create standard reports to compare the performance across all channels when many of those channels don't have UTM tags. 
+While UTMs are ubiquitous among analytic platforms, they require constant effort to ensure external links are tagged. In a perfect world, all links and campaigns are tagged. The reality is the few links contain UTM tags and those are often only marketing campaigns. This creates a challenge when you want to create standard reports to compare the performance across all channels. Some links have UTM tags and most do not. This is even more important when your analytics extend beyond the Google ecosystem.
 
-This article will provide a solution to that reporting challenge and allow you to create streamlined reports based off of UTM tags even when UTM are not present.
+Below is a screenshot of a Mixpanel report I created to look at the sources coming to fusebit.io. The issue is that the source analysis in Mixpanel assumes utm_source is set. What was frustrating was I knew I was getting traffic from other sources, but those sources were not using UTM and thus were not included in the report.
+
+![Mixpanel Source Report Before Dynamic UTMs with-shadow](blog-dynamic-utm-mixpanel-sources-after.png "Mixpanel Source Report Before Dynamic UTMs")
+
+This article will provide a solution to that reporting challenge and allow you to create streamlined reports based off of source of your website’s traffic.
 
 ## Solving the Missing UTM Tag Problem
 
-It is possible with JavaScript to dynamically add UTM tags when someone visits your website when they are missing. By dynamically adding the UTM tags, you can easily create a report comparing one source to another and be confident that both have UTM tags. 
+It is possible with JavaScript to dynamically add UTM tags when someone visits your website when they are missing. By dynamically adding the UTM tags, you can easily create a report comparing one source to another and be confident that both have UTM tags. Google Analytics does a good job on filling in the blanks, but other analytics tools rely heavily on populated UTM tags.
 
-As a recap, The most commonly used UTM tags are:
+As a recap, the most commonly used UTM tags are:
 
 * **utm_source** = The source parameter is usallly the domain or website the referring traffic came from
 * **utm_medium** = The medium is the category or type of referring traffic
 * **utm_campaign** = The campaign is usually a code used to uniquely identify a specific marketing campaign
+
+Now that we know it is possible to use technology to populate UTM tags, let’s see how this works in practice.
 
 ## Setting Up the Logic
 
@@ -35,7 +41,7 @@ When someone visits your website, it typically includes a HTTP referring header 
 
 The general idea of what are going to do here is use the HTTP referring header to determine the source and manually set the medium and campaign parameter values. We will only do this when there are no UTM parameters present in the URL.
 
-Let’s use this pseudocode logic to explain how this will all work.
+Let’s use this pseudocode below to explain how the logic will function.
 
 ```
 If (utm_source.exists == FALSE) {
@@ -47,15 +53,17 @@ If (utm_source.exists == FALSE) {
 
 What we are going to do is set the source to the referring hostname, the medium to simply “referral”, and the campaign to “none”. Setting the medium to “referral” will also align with Google Analytics and other analytics software that uses the same medium for non-campaign traffic from external websites.
 
-To illustrate how this would work, if there was a link on example.com without UTM parameters to fusebit.io/integrations/, we would dynamically set the UTM parameters to:
+To illustrate how this would work, if there was a link on example.com to fusebit.io/integrations/ that did not contain UTM tags, we could dynamically set the UTM parameters to:
 
 ``https://fusebit.io/integrations/?utm_source=example.com&utm_medium=referral&utm_campaign=none``
 
-Simple, right? Let’s dive into the code next.
+From the perspective of your analytics solutioin, it would look like the example.com link to fusebit.io actually had UTM parameters when it did not. 
+
+Got it? Let’s dive into the code.
 
 ## Show Me the Code
 
-Here is the JavaScript that will dynamically create UTM parameters and then I will explain how it all works.
+Here is the JavaScript that will dynamically create UTM parameters and then I will explain how it all works. This code will be in the <head> section of your website’s HTML above any analytics tags.
 
 ```
 <script>
@@ -73,11 +81,11 @@ url.searchParams.set('utm_medium', 'referral');
 </script>
 ```
 
-Let’s break it down.
+For those that aren’t natural node ninjas, let me break down how this code works.
 
 ``const searchParams = new URLSearchParams(window.location.search);``
 
-This code is simply getting the parameters from the URL.
+This above code is simply getting the parameters from the URL.
 
 ``if (!searchParams.get('utm_source') && document.referrer) {``
 
@@ -89,7 +97,7 @@ Then we set a variable using the hostname of the referring URL as the value.
 
 ``if (referrerHostname !== window.location.hostname) {``
 
-Just double checking that the hostname isn’t the current website or we would be adding UTM parameters as a visitor is browsing each page of the site, which isn’t necessary. 
+Just double checking that the hostname isn’t the current website or we would be adding UTM parameters as a visitor is browsing each page of the site, which isn’t necessary.
 
 ``const url = new URL(window.location);``
 
@@ -105,21 +113,25 @@ Then all we do is set the UTM values to the referring hostname and the two stati
 
 ``window.history.replaceState({}, '', url);``
 
-Then, finally, we replace the web browser’s currently address with the newly constructed URL with the dynamic UTM parameters. Voilà!
+Then, finally, we replace the web browser’s currently address with the newly constructed URL with the dynamic UTM parameters. Voilà! Any external link to your website will be automatically tagged with UTM parameters when none are present.
 
 ## Considerations
 
-While setting UTM parameters dynamically is great, there are a few items to keep in mind as this will impact reporting going forward. If you are comparing to historical analytics, the utm_source and utm_medium parameters will be slightly different.
+While setting UTM parameters dynamically is great, there are a few items to keep in mind as this will impact reporting going forward. If you are comparing to historical analytics, the utm_source and utm_medium parameters will be slightly different. 
 
-For example, in Google Analytics, traffic from Twitter.com gets automatically tagged as “social” as the medium. With the code above and no UTM parameters, the utm_medium value would change from “social” to “referral”.  Also, traffic from Google organic will change from “google / organic” to “www.google.com / referral”. 
+For example, in Google Analytics, traffic from Twitter.com gets automatically tagged as “social” as the medium. With the code above and no UTM parameters, the utm_medium value would change from “social” to “referral”.  Also, traffic from Google organic will change from “google / organic” to “www.google.com / referral”.
 
 While these changes in the source and medium will slightly impact basic reporting in Google Analytics, this can be overcome by creating segments like the following:
 
 ![Google Analytics Organic Segment with-shadow](blog-dynamic-utm-segment.png "Google Analytics Organic Segment")
 
-The segment creates a cohort of visitors that match both the historical and new values created by the dynamic UTM parameters.
+The GA segment above creates a cohort of visitors that match both the historical and new values created by the dynamic UTM parameters.
 
 While we have talked a lot about Google Analytics, the changes above have an even bigger impact in other analytics tools like Segment and Mixpanel that out-of-the-box don’t categorize source automatically and rely more heavily on UTM parameters.
+
+Below is a screenshot of a Mixpanel report I created to look at the distribution of traffic sources for fusebit.io. In Mixpanel, out-of-the-box source analysis requires utm_source to be populated. If you were using the code snippet above, you can view all of your sources regardless if they were tagged with UTM parameters.
+
+![Mixpanel Source Report After Dynamic UTMs with-shadow](blog-dynamic-utm-mixpanel-sources-after.png "Mixpanel Source Report After Dynamic UTMs")
 
 ## Before You Go
 
