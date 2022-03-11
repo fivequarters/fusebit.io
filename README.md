@@ -147,6 +147,7 @@ post_slug: interview-with-eugenio-pace-auth0-ceo
 tags: ['post']
 post_date_in_url: true
 post_og_image: https://cdn.fusebit.io/twitter/twitter-orange.png
+posts_related: ['nodejs-https-imports','run-every-nodejs-version-in-lambda','run-nodejs-from-google-sheets']
 ---
 ```
 
