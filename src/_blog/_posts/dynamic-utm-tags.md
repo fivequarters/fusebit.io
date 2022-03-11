@@ -17,11 +17,13 @@ UTM tags, or “Urchin tracking module”, are the standard way marketing and gr
 
 While UTMs are ubiquitous in analytics, they require constant effort to ensure external links are tagged. The reality is the few links contain UTM tags and those that do are often only marketing campaigns. This creates a challenge when you want to create standard reports to compare the performance across all channels. Some links have UTM tags and most do not. This is even more important when your analytics stack extends beyond the Google ecosystem.
 
-Below is a screenshot of a Mixpanel report I created to look at the sources coming to fusebit.io. The issue is that the source analysis in Mixpanel assumes utm_source is set. What was frustrating was I knew I was getting traffic from other sources, but those sources were not using UTM and thus were not included in the report.
+Below is a screenshot of a Mixpanel report I created to look at the sources coming to fusebit.io. The issue is that the source analysis in Mixpanel assumes utm_source is set. 
 
 ![Mixpanel Source Report Before Dynamic UTMs with-shadow](blog-dynamic-utm-mixpanel-sources-before.png "Mixpanel Source Report Before Dynamic UTMs")
 
-This article will provide a solution to that reporting challenge and allow you to create streamlined reports based off of source of your website’s traffic.
+What was frustrating about the report above was that I knew I was getting traffic from other sources, but those sources were not using UTM and thus were not included in the report. I created workarounds, but it was painful. The pain was relieved when I found a solution to the missing UTM tags.
+
+This article will provide a solution to that reporting challenge described above and allow you to create streamlined reports based off of source of your website’s traffic.
 
 ## Solving the Missing UTM Tag Problem
 
@@ -55,7 +57,7 @@ To illustrate how this would work, if there was a link on example.com to fusebit
 
 ``https://fusebit.io/integrations/?utm_source=example.com&utm_medium=referral&utm_campaign=none``
 
-From the perspective of your analytics solutioin, it would look like the example.com link to fusebit.io actually had UTM parameters when it did not. 
+From the perspective of your analytics solutioin, it would look like the example.com link to fusebit.io actually had UTM parameters when it did not.
 
 Got it? Let’s dive into the code.
 
@@ -111,7 +113,7 @@ Then, finally above, we replace the web browser’s currently address with the n
 
 ## Considerations
 
-While setting UTM parameters dynamically is great, there are a few items to keep in mind as this will impact reporting going forward. If you are comparing to historical analytics, the utm_source and utm_medium parameters will be slightly different. 
+While setting UTM parameters dynamically is great, there are a few items to keep in mind as this will impact reporting going forward. If you are comparing to historical analytics, the utm_source and utm_medium parameters will be slightly different.
 
 For example, in Google Analytics, traffic from Twitter.com gets automatically tagged as “social” as the medium. With the code above and no UTM parameters, the utm_medium value would change from “social” to “referral”.  Also, traffic from Google organic will change from “google / organic” to “www.google.com / referral”.
 
