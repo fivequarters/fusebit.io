@@ -4,7 +4,7 @@ post_author: Benn Bollay
 post_author_avatar: benn.png
 date: '2022-03-11'
 post_image: blog-building-saas-cli.jpg
-post_excerpt: Let's dive deep into the code that integrated Grafana with Fusebit's ReactJS app, providing graphing, tracing, and visualization for their customers.
+post_excerpt: If you decide to make a command line tool for your SaaS, great! Here’s a list of things _not_ to do!
 post_slug: building-saas-cli
 tags: ['post', 'Developer Tools']
 post_date_in_url: false
