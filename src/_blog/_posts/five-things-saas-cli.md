@@ -1,5 +1,5 @@
 ---
-post_title: Five Things not to do When Building your SaaS CLI
+post_title: Five Things Not to Do When Building Your SAAS CLI
 post_author: Benn Bollay
 post_author_avatar: benn.png
 date: '2022-03-11'
@@ -57,6 +57,7 @@ A fine approach, especially if your CLI is largely composed of many small comman
 ### d. Fully integrated
 
 Each of the different libraries mentioned above supports some kind of `Command` object that is used to specify the parameters, help text, etc. of the command in question.  In addition to deep-importing the implementation, you can also import the command objects themselves.  This allows you to perform a more integrated testing - supplying actual parameters and the like - that will more closely mirror user parameters.
+
 ## 3. Ignore semver/release notes
 
 It’s easy to look at a CLI and think that the version largely doesn’t matter because humans can quickly solve for small changes.  However, it’s safe to say that the version of a CLI matters just as much as any other library!  The most common user of a CLI in this modern era is not a human, surprisingly, but instead other tools.  Automation like CI/CD infrastructure, testing tooling, deployment artifacts, and others all expect a consistent set of rules and versions.
@@ -79,7 +80,8 @@ Think of the CLI as a butler or assistant - what tasks are your users going to h
 
 Write those out and plan your set of features accordingly.  Don’t expose HTTP calls directly, and don’t expect the user to pass JSON on the command line either (looking at you, AWS CLI!).  You have a filesystem and all of the support of the user - make use of those elements to make the hard things trivial, and the impossible things merely difficult.
 
-*Pro-tip*: Sometimes, it’s really nice to be able to specify resources - specifications, code, etc. - via a URL to an HTTP endpoint rather than requiring them to be on the filesystem!  Don’t feel like you have to engineer-in-advance of the feature, but keep an eye out for little things like that to simplify your customer's experience. 
+*Pro-tip*: Sometimes, it’s really nice to be able to specify resources - specifications, code, etc. - via a URL to an HTTP endpoint rather than requiring them to be on the filesystem!  Don’t feel like you have to engineer-in-advance of the feature, but keep an eye out for little things like that to simplify your customer's experience.
+
 ## (Bonus!) 6. Forget about authorization mechanisms and integrations
 
 It’s hard to remember that your customer still needs to authenticate the CLI, just like they authenticate the browser when using your dashboard!  There are a couple of models to be aware of:
