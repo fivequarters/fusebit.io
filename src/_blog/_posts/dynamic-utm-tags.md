@@ -37,7 +37,7 @@ As a recap, the most commonly used UTM tags are:
 
 * **utm_source** = The source parameter is usually the domain or website the referring traffic came from
 * **utm_medium** = The medium is the category or type of referring traffic
-* **utm_campaign** = The campaign name or campaign parameter is usually a code used to uniquely identify a specific marketing campaign
+* **utm_campaign** = The campaign name or campaign parameter is usually a code used for marketing attribution
 
 When someone visits your website, it typically includes an HTTP referring header that includes the full URL of where they came from before to landing on your website. We will use that header value in the logic used to populate the missing UTM tags.
 
