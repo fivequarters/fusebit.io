@@ -13,9 +13,9 @@ post_og_image: https://fusebit.io/assets/images/blog/blog-dynamic-utm-main.png
 
 ## The Reporting Challenge
 
-UTM tags, or "Urchin tracking module", are the standard way marketing and growth professionals measure the impact of campaigns. Even though UTM tags are part of the Google Analytics ecosystem (thanks for a 2005 acquisition), almost all analytics platforms use them.
+UTM tags, or "Urchin tracking module", are the standard way marketing and growth professionals measure the impact of campaigns. Even though UTM tracking tags are part of the Google Analytics ecosystem (thanks for a 2005 acquisition), almost all analytics platforms use them.
 
-While UTMs are ubiquitous in analytics, they require constant effort to ensure external links are tagged. The reality is the few links contain UTM tags, and those that do are often only marketing campaigns. This creates a challenge when you want to create standard reports to compare the performance across all channels. Some links have UTM tags and most do not. This is even more important when your analytics stack extends beyond the Google ecosystem.
+While UTMs are ubiquitous in analytics, they require constant effort to ensure external links are tagged. The reality is the few links contain UTM tags. Links that do have UTMs are often only digital marketing campaigns through manual tagging with the help of a campaign URL builder. This creates a challenge when you want to create standard reports to compare the performance across all marketing channels. Some links have UTM tags and most do not. This is even more important when your analytics stack extends beyond the Google ecosystem.
 
 Below is a screenshot of a Mixpanel report I created to look at the sources coming to fusebit.io. The issue is that the source analysis in Mixpanel assumes utm_source is set. 
 
@@ -37,7 +37,7 @@ As a recap, the most commonly used UTM tags are:
 
 * **utm_source** = The source parameter is usually the domain or website the referring traffic came from
 * **utm_medium** = The medium is the category or type of referring traffic
-* **utm_campaign** = The campaign is usually a code used to uniquely identify a specific marketing campaign
+* **utm_campaign** = The campaign name or campaign parameter is usually a code used to uniquely identify a specific marketing campaign
 
 When someone visits your website, it typically includes an HTTP referring header that includes the full URL of where they came from before to landing on your website. We will use that header value in the logic used to populate the missing UTM tags.
 
@@ -85,7 +85,7 @@ For those that aren’t natural code ninjas, let me break down how this code wor
 
 ``const searchParams = new URLSearchParams(window.location.search);``
 
-This above code is simply getting the URL parameters from the visitor’s browser address.
+The code above simply gets the URL parameters from the visitor’s browser address.
 
 ``if (!searchParams.get('utm_source') && document.referrer) {``
 
@@ -97,11 +97,11 @@ Then we set a variable using the hostname of the referring URL as the value.
 
 ``if (referrerHostname !== window.location.hostname) {``
 
-Just double checking above that the hostname isn’t the current website or we would be adding UTM parameters as a visitor is browsing each page of the site, which is overkill.
+Just double-check above that the hostname isn’t the current website, or we would be adding UTM parameters as a visitor is browsing each site page, which is overkill.
 
 ``const url = new URL(window.location);``
 
-This is setting a variable of visitor’s currently web browser address.
+This is setting a variable of visitor’s current web browser address.
 
 ``url.searchParams.set('utm_source', referrerHostname); url.searchParams.set('utm_medium', 'referral'); url.searchParams.set('utm_campaign', 'none');``
 
@@ -109,7 +109,7 @@ Then all we do is set the UTM values to the referring hostname and the two stati
 
 ``window.history.replaceState({}, '', url);``
 
-Then, finally above, we replace the web browser’s currently address with the newly constructed URL with the dynamic UTM parameters. 
+Then, finally above, we replace the web browser’s current address with the newly constructed URL with the dynamic UTM parameters. 
 
 **Voilà!** Any external link to your website will be automatically tagged with UTM parameters when none are present.
 
@@ -125,17 +125,16 @@ While these changes in the source and medium will slightly impact basic reportin
 
 The GA segment above creates a cohort of visitors that match both the historical and new values created by the dynamic UTM parameters.
 
-While we have talked a lot about Google Analytics, the changes above have an even bigger impact in other analytics tools like Segment and Mixpanel that out-of-the-box don’t categorize source automatically and rely more heavily on UTM parameters.
+While we have talked a lot about Google Analytics, the changes above have an even bigger impact on other analytics tools like Segment and Mixpanel that out-of-the-box doesn’t categorize sources automatically and rely more heavily on UTM parameters.
 
 Below is a screenshot of a Mixpanel report I created to look at the distribution of traffic sources for fusebit.io. In Mixpanel, out-of-the-box source analysis requires utm_source to be populated. If you were using the code snippet above, you can view all of your sources regardless if they were tagged with UTM parameters.
 
 ![Mixpanel Source Report After Dynamic UTMs with-shadow](blog-dynamic-utm-mixpanel-sources-after.png "Mixpanel Source Report After Dynamic UTMs")
 
-Boom! We now have a single report in Mixpanel that see all of the source traffic when in reality 90% of the inbound traffic never actually had the utm_source set.
+Boom! We now have a single report in Mixpanel that sees all of the source traffic when in reality 90% of the inbound traffic never actually had the utm_source set.
 
 ## Before You Go
 
 If you find this article and code helpful, feel free to modify the code further and let me know what improvements you have made. You can find me on [Twitter](https://twitter.com/chrismore) or [GitHub](github.com/chrismore) and feel free to reach out with questions. Follow [@fusebitio](https://twitter.com/fusebitio) on Twitter for more great developer and growth content.
 
 Finally, if you are building a product that will be integrated to other tools like Slack, GitHub, or Salesforce, check out [Fusebit](https://fusebit.io/) for low-code integration solutions. It is all free to try and made for developers.
-
