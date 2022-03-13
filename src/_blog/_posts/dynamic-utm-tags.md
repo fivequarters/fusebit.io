@@ -41,7 +41,7 @@ As a recap, the most commonly used UTM tags are:
 
 When someone visits your website, it typically includes an HTTP referring header (as seen below) that includes the full URL of where they came from before to landing on your website. We will use that header value in the logic used to populate the missing UTM tags.
 
-![HTTP Referer Header](blog-dynamic-utm-headers.png "HTTP Referer Header")
+![HTTP Referer Header with-shadow](blog-dynamic-utm-headers.png "HTTP Referer Header")
 
 Let’s use this pseudocode below to explain how the logic will function.
 
@@ -111,7 +111,7 @@ Then all we do is set the UTM values to the referring hostname and the two stati
 
 ``window.history.replaceState({}, '', url);``
 
-Then, finally above, we replace the web browser’s current address with the newly constructed URL with the dynamic UTM parameters.
+Finally, we replace the web browser’s current address with the newly constructed URL with the dynamic UTM parameters, which is [compatable on all moderns browsers](https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState).
 
 **Voilà!** Any external link to your website will be automatically tagged with UTM parameters when none are present.
 
@@ -137,6 +137,6 @@ Boom! We now have a single report in Mixpanel that shows all of the source traff
 
 ## Before You Go
 
-If you find this article and code helpful, feel free to modify the code further, and let me know what improvements you have made. You can find me on [Twitter @chrismore](https://twitter.com/chrismore) and feel free to reach out with questions or comments. Follow [@fusebitio](https://twitter.com/fusebitio) on Twitter for more great content and to be notified when we publish new features of the dynamic UTM code.
+If you find this article and code helpful, feel free to modify the code further, and let me know what improvements you have made. You can find me on Twitter [@chrismore](https://twitter.com/chrismore) and feel free to reach out with questions or comments. Follow [@fusebitio](https://twitter.com/fusebitio) for more great content and to be notified when we publish new features of the dynamic UTM code.
 
 Finally, if you are building a product that will be integrated to other tools like Slack, GitHub, or Salesforce, check out [Fusebit](https://fusebit.io/) for low-code integration solutions. It is all free to try and made for developers.
