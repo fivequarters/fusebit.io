@@ -4,7 +4,7 @@ post_author: Chris More
 post_author_avatar: cmore.png
 date: '2022-03-11'
 post_image: blog-dynamic-utm-main.png
-post_excerpt: There is love-hate relationship with UTM parameters for both developers and marketers. Let’s explore a solution that will make everyone a bit more happy.
+post_excerpt: There is love-hate relationship with UTM parameters for both developers and marketers. Let’s explore a solution that will improve both reporting and the collective smiles on your team.
 post_slug: dynamic-utm-tags
 tags: ['post', 'growth']
 post_date_in_url: false
