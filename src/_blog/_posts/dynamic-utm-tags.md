@@ -15,9 +15,9 @@ post_og_image: https://fusebit.io/assets/images/blog/blog-dynamic-utm-main.png
 
 UTM tags, or "Urchin tracking module", are the standard way marketing and growth professionals measure the impact of campaigns. Even though UTM tracking tags are part of the Google Analytics ecosystem (thanks for a 2005 acquisition), almost all analytics platforms use them.
 
-While UTMs are ubiquitous in analytics, they require constant effort to ensure external links are tagged. The reality is that only a  few links contain UTM tags. Links that do have UTMs are often only digital marketing campaigns, generated through manual tagging with the help of a campaign URL builder. This creates a challenge when you want to create standard reports to compare the performance across all marketing channels. This is even more important when your analytics stack extends beyond the Google ecosystem.
+While UTMs are ubiquitous in analytics, the best practice requires constant effort to ensure external links are tagged. The reality is that only a few links contain UTM tags. Links that do have UTMs are often only digital marketing campaigns, generated through manual tagging with the help of a campaign tracking URL builder. This creates a challenge when you want to create standard reports to compare the performance across all marketing channels. This is even more important when your analytics stack extends beyond the Google ecosystem.
 
-Below is a screenshot of a Mixpanel report I created to look at the sources coming to fusebit.io. The issue is that the source analysis in Mixpanel assumes utm_source is set. 
+Below is a screenshot of a Mixpanel report I created to look at the sources coming to fusebit.io. The issue is that the source analysis in Mixpanel assumes utm_source is set.
 
 ![Mixpanel Source Report Before Dynamic UTMs with-shadow](blog-dynamic-utm-mixpanel-sources-before.png "Mixpanel Source Report Before Dynamic UTMs")
 
@@ -111,7 +111,7 @@ Then all we do is set the UTM values to the referring hostname and the two stati
 
 ``window.history.replaceState({}, '', url);``
 
-Then, finally above, we replace the web browser’s current address with the newly constructed URL with the dynamic UTM parameters. 
+Then, finally above, we replace the web browser’s current address with the newly constructed URL with the dynamic UTM parameters.
 
 **Voilà!** Any external link to your website will be automatically tagged with UTM parameters when none are present.
 
@@ -125,7 +125,7 @@ While these changes in the source and medium will slightly impact basic reportin
 
 ![Google Analytics Organic Segment with-shadow](blog-dynamic-utm-segment.png "Google Analytics Organic Segment")
 
-The GA segment above creates a cohort of visitors that match both the historical and new values created by the dynamic UTM parameters. It is also possible to expand the functionality of this code and include an array of search engines and social media sites that could be categorized as “organic” and “social” respectively. A future follow-up blog post will explore potential advanced features. 
+The GA segment above creates a cohort of visitors that match both the historical and new values created by the dynamic UTM parameters. It is also possible to expand the functionality of this code and include an array of search engines and social media sites that could be categorized as “organic” and “social” respectively. A future follow-up blog post will explore potential advanced features.
 
 While we have talked a lot about Google Analytics, the changes above have an even bigger impact on other analytics tools like Segment and Mixpanel that out-of-the-box doesn’t categorize sources automatically and rely more heavily on UTM parameters.
 
