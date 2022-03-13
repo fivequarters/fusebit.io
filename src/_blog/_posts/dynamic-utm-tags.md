@@ -65,7 +65,7 @@ Got it? Let’s dive into the code.
 
 ## Show Me the Code
 
-Here is the JavaScript that will dynamically create UTM parameters, and then I will explain how it all works. This code will be in the <head> section of your website’s HTML above any analytics tags.
+Here is the JavaScript that will dynamically create UTM parameters, and then I will explain how it all works. This code will be in the ``<head>`` section of your website’s HTML above any analytics tags.
 
 ```
 <script>
