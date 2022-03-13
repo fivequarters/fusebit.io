@@ -137,6 +137,6 @@ Boom! We now have a single report in Mixpanel that shows all of the source traff
 
 ## Before You Go
 
-If you find this article and code helpful, feel free to modify the code further and let me know what improvements you have made. You can find me on [Twitter](https://twitter.com/chrismore) or [GitHub](https://github.com/chrismore) and feel free to reach out with questions. Follow [@fusebitio](https://twitter.com/fusebitio) on Twitter for more great content and to be notified when we publish new features of the dynamic UTM code.
+If you find this article and code helpful, feel free to modify the code further, and let me know what improvements you have made. You can find me on [Twitter @chrismore](https://twitter.com/chrismore) and feel free to reach out with questions or comments. Follow [@fusebitio](https://twitter.com/fusebitio) on Twitter for more great content and to be notified when we publish new features of the dynamic UTM code.
 
 Finally, if you are building a product that will be integrated to other tools like Slack, GitHub, or Salesforce, check out [Fusebit](https://fusebit.io/) for low-code integration solutions. It is all free to try and made for developers.
