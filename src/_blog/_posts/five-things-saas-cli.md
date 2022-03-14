@@ -1,5 +1,5 @@
 ---
-post_title: Five Things Not to Do When Building Your SAAS CLI
+post_title: Five Things Not to Do When Building Your SaaS CLI
 post_author: Benn Bollay
 post_author_avatar: benn.png
 date: '2022-03-11'
