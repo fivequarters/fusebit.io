@@ -115,7 +115,7 @@ Finally, we replace the web browser’s current address with the newly construct
 
 **Voilà!** Any external link to your website will be automatically tagged with UTM parameters when none are present.
 
-![Google Organic Results with-shadow](blog-dynamic-tagged-site.png "Google Organic Results")
+![Google Organic Results with-shadow](blog-dynamic-serp-results.png "Google Organic Results")
 
 ## Considerations
 
