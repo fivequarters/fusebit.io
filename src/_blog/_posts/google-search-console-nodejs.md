@@ -166,7 +166,7 @@ In the example above, we use `dimensionFilterGroupsfilters` to specify that we w
 
 Hopefully, you’ll find the above code and implementation details helpful. While using it, please note that Google’s API limits you to 2,000 queries a day and 600 queries per minute, which is probably something you’ll never cross.
 
-You can download the codebase and run it locally [here](https://github.com/fusebit/google-searchconsole-nodejs)
+You can download the codebase on [Fusebit's GitHub](https://github.com/fusebit/google-searchconsole-nodejs) and run it locally.
 
 Don’t hesitate to reach out if you have any questions, and we’ll be happy to help push you through. 
 
