@@ -5,7 +5,7 @@ post_author_avatar: benn.png
 date: '2022-03-10'
 post_image: blog-monkeypatching-http-request.png
 post_excerpt: Let’s explore how we can monkey patch the Node.js `http` library (and, by extrapolation, `https` as well) to annotate every request made from the environment.
-post_slug: moneky-patching-http-request
+post_slug: monkey-patching-http-request
 tags: ['post', 'developer tools']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-monkeypatching-http-request.png
