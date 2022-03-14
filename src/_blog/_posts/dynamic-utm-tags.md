@@ -117,7 +117,7 @@ Finally, we replace the web browser’s current address with the newly construct
 
 ![Google Organic Results with-shadow](blog-dynamic-serp-results.png "Google Organic Results")
 
-## Considerations
+## Conclusion and Considerations
 
 While setting UTM parameters dynamically is great, there are a few items to keep in mind as this will impact reporting going forward. If you are comparing analytics before you made this change, the utm_source and utm_medium parameters will be slightly different.
 
