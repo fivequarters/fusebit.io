@@ -59,8 +59,11 @@ section.section
                 itemToChange.classList.add("gallery__item-container-selected");
                 title.classList.add("gallery__item-container-title-selected");
                 integrationDescriptionWrapper.style.display = "block";
-                
-                itemToChange.scrollIntoView();
+
+                setTimeout(() => {
+                    // wait for the changes above to take effect
+                    itemToChange.scrollIntoView();
+                }, 500);
             }
 
             handleShowMore({
