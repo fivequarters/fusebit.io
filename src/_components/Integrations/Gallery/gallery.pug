@@ -1,9 +1,12 @@
 mixin item(img, name, outOfPlan, id, catalog, hidden)
-    .gallery__item-container(class=hidden ? 'show-more-item--hidden show-more-item--hidden-out show-more-item--hidden-animation' : '' class="show-more-item" data-catalog= catalog)
+    .gallery__item-container(class=hidden ? 'show-more-item--hidden show-more-item--hidden-out show-more-item--hidden-animation' : '' class="show-more-item" data-catalog= catalog id= id)
         .gallery__item-container-logo
             img(src=`data:image/svg+xml;utf8,${encodeURIComponent(img)}`)
         div
             p.gallery__item-container-title= name
+            .gallery__item-container-integration-wrapper
+                h4.gallery__item-container-integration-title Build a #{name} integration for your customers in minutes
+                p.gallery__item-container-integration-description The Fusebit platform lets you easily build powerful #{name} integrations that delight your customers at a fraction of the development time.
             if outOfPlan
                 button.gallery__item-container-cta(onclick=`window.Intercom('showNewMessage', "I'm interested in enabling ${name}")` data-event-name="Try Integration Button Clicked" data-object-location="Integrations" data-integration= id, data-integration-type="Fake") Try Integration
             else
@@ -17,6 +20,9 @@ section.section
                 id: category,
                 label: category
             })), "categories", "Category: ")
+        .gallery__grid.gallery__hidden
+            each i in integrations
+                +item(i.logo, i.name, i.outOfPlan, i.id, i.catalog, false)        
         .gallery__grid
             - const buildAmount = 12
             - let showMoreButton = false
@@ -33,7 +39,30 @@ section.section
     script.
         const runtimeAmount = 12
 
-        window.addEventListener('load', () => {
+        window.addEventListener('load', async () => {
+            const integration = new URLSearchParams(window.location.search).get("integration");
+
+            if (integration) {
+                const galleries = document.querySelectorAll(".gallery__grid");
+                const showMoreButton = document.getElementById("more");
+                const itemToChange = document.getElementById(integration);
+                const specificGallery = galleries[0];
+                const commonGallery = galleries[1];
+
+                showMoreButton.classList.add("gallery__hidden");
+                commonGallery.classList.add("gallery__hidden");
+                specificGallery.classList.remove("gallery__hidden");
+
+                const title = itemToChange.querySelector(".gallery__item-container-title");
+                const integrationDescriptionWrapper = itemToChange.querySelector(".gallery__item-container-integration-wrapper");
+                
+                itemToChange.classList.add("gallery__item-container-selected");
+                title.classList.add("gallery__item-container-title-selected");
+                integrationDescriptionWrapper.style.display = "block";
+                
+                itemToChange.scrollIntoView();
+            }
+
             handleShowMore({
                 amount: runtimeAmount,
                 elements: ".show-more-item--hidden[data-catalog]",

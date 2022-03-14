@@ -1,7 +1,6 @@
 .section {
     position: relative;
     margin-bottom: calc(var(--triangleHeight) * -1);
-    overflow: hidden;
 }
 
 .section--no-margin {
@@ -9,7 +8,7 @@
 }
 
 .section--overflow {
-    overflow: visible;
+    overflow: visible !important;
 }
 
 .background {
