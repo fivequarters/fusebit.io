@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2011-08-30'  
 post_title: Using URL rewriting with node.js applications hosted in IIS using iisnode
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: using-url-rewriting-with-nodejs
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 

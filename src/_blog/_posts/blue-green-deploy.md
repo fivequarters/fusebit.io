@@ -11,8 +11,6 @@ post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blue-green-deployments-social.png
 ---
 
-# Blue-Green Deployments on AWS
- 
 Fusebit runs a critical API that we call the function-API, which handles everything from customer integration executions to a custom NPM registry. To ensure minimal downtime, we implemented Blue-Green deployments for function-API.
  
 ## What Are Blue-Green Deployments?

@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2012-11-01'  
 post_title: How to use WebSockets with node.js apps hosted in iisnode
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: how-to-use-websockets-with-nodejs-apps
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 

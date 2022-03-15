@@ -6,9 +6,10 @@ date: '2022-02-15'
 post_image: everynode-banner.png
 post_excerpt: Run any version of Node.js in AWS Lambda within hours after release using custom AWS Lambda runtimes from Fusebit
 post_slug: run-every-nodejs-version-in-lambda
-tags: ['post', 'developer tools']
+tags: ['post', 'developer tools','node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/twitter-everynode.png
+posts_related: ['node-fetch','nodejs-https-imports','run-nodejs-from-google-sheets']
 ---
 
 So you want to create an AWS Lambda function running the latest version of Node.js? Maybe you want to use the new [fetch()](https://fusebit.io/blog/node-fetch/) API? Or need that one feature of the latest V8? Or just deploy your next serverless app with the latest and greatest version?

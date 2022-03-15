@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2013-02-23'  
 post_title: Hosting .NET code in node.js applications using OWIN
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: hosting-net-code-in-nodejs-applications
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 

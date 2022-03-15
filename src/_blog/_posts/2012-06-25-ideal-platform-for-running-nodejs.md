@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2012-06-25'  
 post_title: Ideal platform for running node.js applications
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: ideal-platform-for-running-nodejs
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 

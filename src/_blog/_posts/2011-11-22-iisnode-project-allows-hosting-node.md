@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2011-11-22'  
 post_title: iisnode v0.1.10 has shipped
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: iisnode-project-allows-hosting-node
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-tags: ['post']
+tags: ['post','node.js']
 post_og_image: 'site'
 date: '2011-11-04'  
 post_title: Debug node.js applications on Windows with iisnode integrated debugging
@@ -9,6 +9,7 @@ post_image: blog-tomek.png
 post_slug: debug-nodejs-applications-on-windows
 post_date_in_url: true
 post_excerpt: Tomek on Software - shaken, not stirred
+posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
 ---
 
 

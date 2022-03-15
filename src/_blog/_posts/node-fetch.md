@@ -6,9 +6,10 @@ date: '2022-02-02'
 post_image: blog-node-fetch.jpg
 post_excerpt: 'Node 17.5 introduces support for the fetch() HTTP client, a new way to send requests to HTTP APIs.'
 post_slug: node-fetch
-tags: ['post', 'developer tools']
+tags: ['post', 'developer tools','node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/twitter-node-fetch.png
+posts_related: ['nodejs-https-imports','run-every-nodejs-version-in-lambda','run-nodejs-from-google-sheets']
 ---
 
 Node.js v17.5 [introduces](https://github.com/nodejs/node/pull/41749) support for `fetch()` – a popular cross-platform HTTP client API that works in browsers and Web/Service Workers – as an experimental core feature.

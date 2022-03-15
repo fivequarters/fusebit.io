@@ -70,7 +70,25 @@ section.testimonials.section
                                     p Crowd.dev CTO 
 
 
+                    .swiper-slide 
+                        .testimonials__card
+                            .testimonials__card--brand
+                                != filters.getImageTag(`testimonials/testimonials__onramp.svg`, 'OnRamp logo')
 
+                            p.testimonials__card--text
+                                | Leveraging Fusebit enables our team to focus on innovative and impactful feature work 
+                                strong rather than spending time managing integration libraries,  connectivity, authentication code
+                                | . Fusebit 
+                                strong saves us time and allows us to stay focused on our mission
+                                |, creating OnRamp, the best-in-class customer onboarding solution.   
+                                
+                            .testimonials__card--user 
+                                .testimonials__card--user-image 
+                                    != filters.getImageTag(`testimonials/testimonials__sean.png`, 'Sean Boice profile image')
+
+                                .testimonials__card--user-data
+                                    h4 Sean Boice
+                                    p OnRamp Founding Engineer 
 
                 .testimonials__pagination.swiper-pagination
 
@@ -83,6 +101,9 @@ section.testimonials.section
                 slidesPerView: 1,
                 slidesPerColumnFill: 'row',
                 spaceBetween: 30,
+                autoplay: {
+                    delay: 2500,
+                },
                 pagination: {
                     el: '.swiper-pagination',
                 },
