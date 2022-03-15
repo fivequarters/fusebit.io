@@ -37,7 +37,7 @@ section.section
         .mark.mark--small.mark--dark-violet.mark--left.gallery__mark-top
         .mark.mark--big.mark--light-violet.mark--right.mark--bottom.gallery__mark-bottom.gallery__mark-bottom-mobile
     script.
-        const runtimeAmount = 12
+        let runtimeAmount = 12;
 
         window.addEventListener('load', async () => {
             const integration = new URLSearchParams(window.location.search).get("integration");
@@ -49,9 +49,9 @@ section.section
                 const specificGallery = galleries[0];
                 const commonGallery = galleries[1];
 
-                showMoreButton.classList.add("gallery__hidden");
-                commonGallery.classList.add("gallery__hidden");
+                commonGallery.remove();
                 specificGallery.classList.remove("gallery__hidden");
+                showMoreButton.classList.add("gallery__hidden");
 
                 const title = itemToChange.querySelector(".gallery__item-container-title");
                 const integrationDescriptionWrapper = itemToChange.querySelector(".gallery__item-container-integration-wrapper");
@@ -62,8 +62,13 @@ section.section
 
                 setTimeout(() => {
                     // wait for the changes above to take effect
+                    runtimeAmount = undefined; // to make the handleShowMore func slice to the last element of the items
                     itemToChange.scrollIntoView();
                 }, 500);
+            } else {
+                const galleries = document.querySelectorAll(".gallery__grid");
+                const specificGallery = galleries[0];
+                specificGallery.remove();
             }
 
             handleShowMore({
