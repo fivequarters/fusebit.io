@@ -23,7 +23,7 @@ Below is a screenshot of a Mixpanel report I created to look at the sources comi
 
 What was frustrating about the report above was that I knew I was getting traffic from other sources, but those sources were not using UTM and thus were not included in the report. I created workarounds, but it was painful. The pain was relieved when I found a solution to the missing UTM tags.
 
-This article will provide a solution to that reporting challenge described above and allow you to create streamlined reports based on your website’s traffic source.
+This article will provide a solution to that reporting challenge described above and allow you to create streamlined reports based on your website’s traffic source by adding automatic UTM tracking.
 
 ## Solving the Missing UTM Tag Problem
 
