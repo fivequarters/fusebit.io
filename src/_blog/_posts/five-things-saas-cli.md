@@ -6,7 +6,7 @@ date: '2022-03-11'
 post_image: blog-building-saas-cli.jpg
 post_excerpt: If you decide to make a command line tool for your SaaS, great! Here’s a list of things _not_ to do!
 post_slug: building-saas-cli
-tags: ['post', 'Developer Tools']
+tags: ['post', 'developer tools']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-building-saas-cli.jpg
 ---
