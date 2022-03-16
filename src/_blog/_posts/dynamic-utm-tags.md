@@ -4,7 +4,7 @@ post_author: Chris More
 post_author_avatar: cmore.png
 date: '2022-03-14'
 post_image: blog-dynamic-utm-main.png
-post_excerpt: There is love-hate relationship of UTM parameters with marketers. Let’s explore a technical solution for automatically adding UTM tracking codes to all of your inbound links.
+post_excerpt: There is love-hate relationship with UTM parameters for performance marketing. Let’s explore a technical solution for automatically adding UTM tracking codes to all of your inbound links.
 post_slug: dynamic-utm-tags
 tags: ['post', 'growth']
 post_date_in_url: false
