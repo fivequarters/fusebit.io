@@ -6,7 +6,7 @@ date: '2022-03-14'
 post_image: blog-google-search-console-nodejs.png
 post_excerpt: Google’s Search Console API is an extremely useful tool for webmasters who rely on traffic data and SEO optimizations as a critical part of informing their online strategy.
 post_slug: google-search-console-nodejs
-tags: ['post', 'Developer Tools','node.js','growth']
+tags: ['post', 'developer tools','node.js','growth']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-google-search-console-nodejs.png
 posts_related: ['node-fetch','run-nodejs-from-google-sheets','run-every-nodejs-version-in-lambda']
