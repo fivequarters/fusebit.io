@@ -1,10 +1,10 @@
 ---
-post_title: Streamline Funnel Analytics with Dynamic UTM Tags
+post_title: Streamline Funnel Analytics with Dynamic UTM Parameters
 post_author: Chris More
 post_author_avatar: cmore.png
 date: '2022-03-14'
 post_image: blog-dynamic-utm-main.png
-post_excerpt: There is love-hate relationship with UTM parameters for both developers and marketers. Let’s explore a solution that will improve both reporting and the collective smiles on your team.
+post_excerpt: There is love-hate relationship of UTM parameters with marketers. Let’s explore a technical solution for automatically adding UTM tracking codes to all of your inbound links.
 post_slug: dynamic-utm-tags
 tags: ['post', 'growth']
 post_date_in_url: false
@@ -13,7 +13,7 @@ post_og_image: https://fusebit.io/assets/images/blog/blog-dynamic-utm-main.png
 
 ## The Reporting Challenge
 
-UTM tags, or "Urchin tracking module", are the standard way marketing and growth professionals measure the impact of campaigns. Even though UTM tracking tags are part of the Google Analytics ecosystem (thanks for a 2005 acquisition), almost all analytics platforms use them.
+UTM Parameters, or "Urchin tracking module", are the standard way marketing and growth professionals measure the impact of campaigns. Even though UTM tracking tags are part of the Google Analytics ecosystem (thanks for a 2005 acquisition), almost all analytics platforms use them.
 
 While UTMs are ubiquitous in analytics, the best practice requires constant effort to ensure external links are tagged. The reality is that only a few links contain UTM tags. Links that do have UTMs are often only digital marketing campaigns, generated through manual tagging with the help of a campaign tracking URL builder. This creates a challenge when you want to create standard reports to compare the performance across all marketing channels. This is even more important when your analytics stack extends beyond the Google ecosystem.
 
@@ -25,7 +25,7 @@ What was frustrating about the report above was that I knew I was getting traffi
 
 This article will provide a solution to that reporting challenge described above and allow you to create streamlined reports based on your website’s traffic source by adding automatic UTM tracking.
 
-## Solving the Missing UTM Tag Problem
+## Solving the Missing UTM Parameter Problem
 
 It is possible with JavaScript to dynamically add UTM tags when someone visits your website from any external source. By adding the missing UTM tags, you can easily create a report comparing one source to another and be confident you are capturing all the traffic. Google Analytics does a good job of filling in missing sources, but other analytics tools rely heavily on populated UTM tags.
 
