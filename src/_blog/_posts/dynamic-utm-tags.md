@@ -9,6 +9,7 @@ post_slug: dynamic-utm-tags
 tags: ['post', 'growth']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-dynamic-utm-main.png
+posts_related: ['google-search-console-nodejs','api-metering-and-analytics-for-early-stage-startups']
 ---
 
 ## The Reporting Challenge
