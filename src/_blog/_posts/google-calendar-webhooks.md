@@ -12,8 +12,7 @@ post_og_image: https://fusebit.io/assets/images/blog/blog-google-webhooks-nodejs
 posts_related: ['run-nodejs-from-google-sheets', 'google-form-webhooks-nodejs']
 ---
 
-There is a high chance you have a meeting booked right now using Google Calendar, and that’s not a surprise - millions of people use it every day to organize their events.
-As a result of this popularity, there's hundreds of use cases we can think of, leveraging the Google Calendar API webhook infrastructure, to help make life a little easier for teams.
+There is a high chance you have a meeting booked right now using Google Calendar, and that's not a surprise - millions of people use it every day to organize their events. As a result of this popularity, we can think of hundreds of use cases leveraging the Google Calendar API webhook infrastructure to help make life easier for teams.
 
 ## Use cases
 
@@ -59,13 +58,13 @@ Once you have access to the console, follow these setup instructions:
 
 ![Google Calendar webhooks Node.js with-shadow](google-calendar-step5.png 'Google Calendar webhooks Node.js')
 
-8. Add Scopes: Click add or remove scopes, add the following scope manually: **https://www.googleapis.com/auth/calendar.events.readonly** then click update. You should see the added scope under the sensitive scopes section:
+8. Add Scopes: Click add or remove scopes, add the following scope manually: **https://www.googleapis.com/auth/calendar.events** then click update. You should see the added scope under the sensitive scopes section:
 
 ![Google Calendar webhooks Node.js with-shadow](google-calendar-step6.png 'Google Calendar webhooks Node.js')
 
 9. Click save and continue.
 
-10. Since your application is in Test mode, you need to add some test users. Only test users can access the app
+10. Since your application is in Test mode, you need to add some test users. Only test users can access the app.
 
 ![Google Calendar webhooks Node.js with-shadow](google-calendar-step7.png 'Google Calendar webhooks Node.js')
 
@@ -77,7 +76,7 @@ Once you have access to the console, follow these setup instructions:
 
 13. Set the application type to **Web Application**
 
-14. Set the allowed origins to localhost:3002; our code examples will run locally on port 3002. You can change it according to your needs.
+14. Set the allowed origins to `localhost:3002`; our code examples will run locally on port `3002`. You can change it according to your needs.
 
 15. Copy the Client Id and Client secret or download the JSON file with the credentials.
 
@@ -95,7 +94,7 @@ Since we’re using an OAuth application, let’s see how you can handle the dif
 
 ### Starting the authorization flow
 
-The first thing you need to do is to initiate an authorization flow against Google, to request authorization to your application and access to Google Calendar resources.
+The first thing you need to do is to initiate an authorization flow against Google to request authorization to your application and access to Google Calendar resources.
 We will be using the official [npm package Google client library](https://www.npmjs.com/package/googleapis)
 
 ```javascript
@@ -111,7 +110,7 @@ const oAuth2Client = new google.auth.OAuth2(clientId, secret, redirectUri);
 
 const authUrl = oAuth2Client.generateAuthUrl({
   access_type: 'offline',
-  scope,
+  scope: 'https://www.googleapis.com/auth/calendar.events',
   redirect_uri: redirectUri,
   state: oauthState,
   client_id: clientId,
@@ -122,11 +121,12 @@ console.log(`Authorize your application by navigating to ${authUrl}`);
 
 ### Handling the authorization callback
 
-A user navigates in their web browser to authorize your application using their Google credentials.
-Users need to approve access to their Google Calendar resources.
+A user authorizes your application to access their Google Calendar resources with their Google credentials.
+
 Your application needs to handle the authorization callback properly:
-Validate the state parameter. Used for preventing cross-site request forgery.
-Use the returned authorization code to get an access token.
+
+- Validate the state parameter. Used for preventing cross-site request forgery.
+- Use the returned authorization code to get an access token.
 
 In this example, we will be using [fastify](https://www.fastify.io/), but you can use other frameworks like [Express](https://expressjs.com/), [Hapi.js](https://hapi.dev/).
 
@@ -177,11 +177,12 @@ startHttpServer();
 ### Create a new watch event
 
 You can watch Calendar resources changes using [Google Calendar Push notifications](https://developers.google.com/calendar/api/guides/push) API. Take into account the following:
-You must provide a unique identifier for your watch event, representing a notification channel within your project. In this example, we will use a universally unique identifier (UUID)
-Provide a type property with a value of `web_hook`
-A Webhook address will be the URL that listens and responds to notifications. It must use HTTPS. If you want to run this code locally, you can run a Tunnel that allows you to expose your application securely. You can use [Fuse Tunnel](https://www.npmjs.com/package/@fusebit/tunnel) for that.
-A token (optional). You can provide a token used to validate incoming webhooks preventing notifications spoofing attacks to guarantee that it is a legit Webhook call from Google. You can also use this to route the webhook message to the proper destination, taking into account the max length of this property is 256 characters.
-You can specify an optional expiration property if you want the watcher to expire and stop sending notifications.
+
+- You must provide a unique identifier for your watch event, representing a notification channel within your project. In this example, we will use a universally unique identifier (`UUID`).
+- Provide a type property with a value of `web_hook`
+- A `Webhook address` will be the URL that listens and responds to notifications. It must use `HTTPS`. If you want to run this code locally, you can run a tunnel that allows you to expose your application securely. You can use [Fuse Tunnel](https://www.npmjs.com/package/@fusebit/tunnel) for that.
+- A `token` (optional). You can provide a token used to validate incoming webhooks preventing notifications spoofing attacks to guarantee that it is a legit Webhook call from Google. You can also use this to route the webhook message to the proper destination, taking into account the max length of this property is 256 characters.
+- Set an expiration property (optional) if you want the watcher to expire and stop sending notifications.
 
 Let’s see a code example:
 
@@ -212,7 +213,9 @@ const watchResponse = await calendar.events.watch({
 ### Handling webhook calls
 
 Now that you have registered a new watch event at the specified address let’s see how to handle the webhook and what you can do.
+
 One thing to consider is that the webhook event will not send specific information about updated events. You will need to use event filters to see the events changed during a particular timestamp; the webhook will be the baseline for defining such timestamp.
+
 After creating a new notification channel to watch a resource, the Google Calendar API sends a sync message to indicate that notifications are starting. You will usually acknowledge the webhook response when the resource state is in **sync**.
 
 ```javascript
@@ -250,7 +253,7 @@ server.post('/webhook', { logLevel: 'error' }, async (request, reply) => {
 
 ### Creating webhooks for specific events
 
-If you want to create a webhook for an existing event, you can do it too.Remember, it’s just an URL you configure in the address property, you just need to ensure your application is responding to that particular request.
+If you want to create a webhook for an existing event, you can do it too. Remember, it’s just an URL you configure in the address property. You just need to ensure your application responds to that particular request.
 
 Define a webhook that listen for any event created watcher:
 
@@ -308,4 +311,5 @@ for await (const event of eventsList) {
 ### Conclusion
 
 Google Calendar watch events allow you to integrate powerful features within your application; instead of constantly polling Google Calendar resources, you can configure multiple webhooks to handle different use cases.
-Handling authorization and secure token management can be a challenge at scale; all these moving parts explained in this blog post can be quickly done by using Fusebit. [Sign up here](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=google-calendar-webhooks ‘Install the bot CTA_SMALL’)
+
+Handling authorization and secure token management can be a challenge at scale; all these moving parts explained in this blog post can be quickly done by using Fusebit. [sign up to Fusebit for free](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=google-calendar-webhooks 'Install the bot CTA_SMALL')
