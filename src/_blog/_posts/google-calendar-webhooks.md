@@ -274,8 +274,6 @@ server.post('/webhook/event/:eventId', { logLevel: 'error' }, (request, reply) =
 });
 ```
 
-### Create the webhook for a specific event.
-
 The following example creates a watch event for the ten most recent events from the user's primary Calendar.
 
 ```javascript
