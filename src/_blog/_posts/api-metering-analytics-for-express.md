@@ -2,7 +2,7 @@
 post_title: API Metering for Express Apps Using BigQuery
 post_author: Tomasz Janczuk
 Post_author_avatar: tomek.png
-date: '2022-03-17'
+date: '2022-03-18'
 post_image: api-metering-analytics.png
 post_excerpt: This post introduces Express middleware that allows you to start sending HTTP API metering data from your app to BigQuery in under ten minutes.
 post_slug: api-metering-analytics-express
@@ -17,7 +17,7 @@ posts_related:
   ]
 ---
 
-22In the previous blog post, [API Metering and Analytics for Early Stage Startups](https://fusebit.io/blog/api-metering-and-analytics-for-early-stage-startups/), I wrote about a simple yet flexible HTTP metering and analytics solution that uses BigQuery and Data Studio. In this post, I will introduce the [@fusebit/apimeter](https://github.com/fusebit/apimeter) project which provides an Express middleware you can use to capture API metering information from your Node.js app in BigQuery. You can add it to your app in less than ten minutes to start deriving insights from your API usage.
+In the previous blog post, [API Metering and Analytics for Early Stage Startups](https://fusebit.io/blog/api-metering-and-analytics-for-early-stage-startups/), I wrote about a simple yet flexible HTTP metering and analytics solution that uses BigQuery and Data Studio. This post will introduce the [@fusebit/apimeter](https://github.com/fusebit/apimeter) project, which provides an Express middleware you can use to capture API metering information from your Node.js app in BigQuery. You can add it to your app in less than ten minutes to derive insights from your API usage.
 
 ## Enable API Metering in Your Express App
 
@@ -43,7 +43,7 @@ app.use(apimeter({
 }));
 ```
 
-See [@fusebit/apimeter](https://github.com/fusebit/apimeter) for an explanation of the various options you can pass to the middleware.
+See [@fusebit/apimeter](https://github.com/fusebit/apimeter) to explain the various options you can pass to the middleware.
 
 And that’s it! Once you run your app and HTTP API calls start coming in, metering data will be captured in the BigQuery table nearly instantaneously. You can run arbitrary SQL queries against it using the Google Cloud Console for BigQuery:
 
