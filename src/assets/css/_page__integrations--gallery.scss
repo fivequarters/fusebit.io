@@ -83,6 +83,12 @@
         }
 
         &-integration {
+            &-icon-wrapper{
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+
             &-wrapper {
                 display: none;
             }

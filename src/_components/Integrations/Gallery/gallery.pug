@@ -5,6 +5,10 @@ mixin item(img, name, outOfPlan, id, catalog, hidden, description)
         div
             p.gallery__item-container-title= name
             .gallery__item-container-integration-wrapper
+                .gallery__item-container-integration-icon-wrapper
+                    .gallery__item-container-logo
+                        img(src=`data:image/svg+xml;utf8,${encodeURIComponent(img)}`)
+                    p.gallery__item-container-title= name
                 h4.gallery__item-container-integration-title Build a #{name} integration for your customers in minutes
                 p.gallery__item-container-integration-description #{description}
             if outOfPlan
@@ -53,11 +57,14 @@ section.section
                 specificGallery.classList.remove("gallery__hidden");
                 showMoreButton.classList.add("gallery__hidden");
 
-                const title = itemToChange.querySelector(".gallery__item-container-title");
+                const titles = itemToChange.querySelectorAll(".gallery__item-container-title");
+                const firstLogo = itemToChange.querySelector(".gallery__item-container-logo");
                 const integrationDescriptionWrapper = itemToChange.querySelector(".gallery__item-container-integration-wrapper");
                 
                 itemToChange.classList.add("gallery__item-container-selected");
-                title.classList.add("gallery__item-container-title-selected");
+                firstLogo.remove();
+                titles[0].remove();
+                titles[1].classList.add("gallery__item-container-title-selected");
                 integrationDescriptionWrapper.style.display = "block";
 
                 setTimeout(() => {
