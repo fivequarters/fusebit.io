@@ -1,7 +1,7 @@
 ---
 post_title: API Metering for Express Apps Using BigQuery
 post_author: Tomasz Janczuk
-Post_author_avatar: tomek.png
+post_author_avatar: tomek.png
 date: '2022-03-18'
 post_image: api-metering-express.jpg
 post_excerpt: This post introduces Express middleware that allows you to start sending HTTP API metering data from your app to BigQuery in under ten minutes.
