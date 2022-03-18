@@ -10,7 +10,7 @@
         "del:build": "rimraf ./build",
         "dev": "npm run dev:assets & npm run dev:site",
         "dev:assets": "webpack --config config/webpack.config.dev.js",
-        "dev:site": "ELEVENTY_ENV=development npx eleventy --serve",
+        "dev:site": "ELEVENTY_ENV=development npx eleventy --serve --incremental",
         "prod": "npm-run-all del:build del:assets build:assets build:site",
         "serve:prod": "serve ./build/"
     },
