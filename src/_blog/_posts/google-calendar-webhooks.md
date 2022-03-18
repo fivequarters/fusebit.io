@@ -6,7 +6,7 @@ date: '2022-03-18'
 post_image: blog-google-webhooks-nodejs.jpg
 post_excerpt: Google’s Calendar API provides push notifications that let you watch for changes to resources. Learn how to create WebHooks to listen and respond to Calendar changes using Node.js.
 post_slug: google-calendar-webhooks
-tags: ['post', 'Developer Tools', 'node.js']
+tags: ['post', 'developer tools', 'node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-google-webhooks-nodejs.jpg
 posts_related: ['run-nodejs-from-google-sheets', 'google-form-webhooks-nodejs']
