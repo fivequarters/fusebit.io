@@ -3,12 +3,12 @@ post_title: API Metering for Express Apps Using BigQuery
 post_author: Tomasz Janczuk
 Post_author_avatar: tomek.png
 date: '2022-03-18'
-post_image: api-metering-analytics.png
+post_image: api-metering-express.jpg
 post_excerpt: This post introduces Express middleware that allows you to start sending HTTP API metering data from your app to BigQuery in under ten minutes.
 post_slug: api-metering-analytics-express
 tags: ['post', 'developer tools', 'node.js']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/api-metering-analytics.png
+post_og_image: https://fusebit.io/assets/images/blog/api-metering-express.jpg
 posts_related:
   [
     'api-metering-and-analytics-for-early-stage-startups',
