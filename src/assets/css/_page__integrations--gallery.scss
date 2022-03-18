@@ -69,7 +69,9 @@
             }
 
             &-selected {
-                color: var(--orange);
+                font-size: 30px;
+                line-height: 120%;
+                color: var(--dark);
             }
         }
 
@@ -83,7 +85,7 @@
         }
 
         &-integration {
-            &-icon-wrapper{
+            &-icon-wrapper {
                 display: flex;
                 align-items: center;
                 margin-bottom: 15px;
@@ -96,7 +98,7 @@
             &-title {
                 font-weight: 600;
                 margin-bottom: 8px;
-                color: var(--dark);
+                color: var(--orange);
                 line-height: 24px;
             }
 
