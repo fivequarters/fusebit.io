@@ -180,7 +180,7 @@ You can watch Calendar resources changes using [Google Calendar Push notificatio
 
 - You must provide a unique identifier for your watch event, representing a notification channel within your project. In this example, we will use a universally unique identifier (`UUID`).
 - Provide a type property with a value of `web_hook`
-- A `Webhook address` will be the URL that listens and responds to notifications. It must use `HTTPS`. If you want to run this code locally, you can run a tunnel that allows you to expose your application securely. You can use [Fuse Tunnel](https://www.npmjs.com/package/@fusebit/tunnel) for that.
+- A `Webhook address` will be the URL that listens and responds to notifications. It must use `HTTPS`. If you want to run this code locally, you can run a tunnel that allows you to expose your application securely. You can use [Fusetunnel](https://www.npmjs.com/package/@fusebit/tunnel) for that.
 - A `token` (optional). You can provide a token used to validate incoming webhooks preventing notifications spoofing attacks to guarantee that it is a legit Webhook call from Google. You can also use this to route the webhook message to the proper destination, taking into account the max length of this property is 256 characters.
 - Set an expiration property (optional) if you want the watcher to expire and stop sending notifications.
 
