@@ -6,9 +6,7 @@ mixin item(img, name, outOfPlan, id, catalog, hidden, description)
             p.gallery__item-container-title= name
             .gallery__item-container-integration-wrapper
                 h4.gallery__item-container-integration-title Build a #{name} integration for your customers in minutes
-                .gallery__item-container-integration-description #{description}
-                    //- - const markdown = filters.getHTMLFromMarkdown(description)
-                    //- #{markdown}
+                p.gallery__item-container-integration-description #{description}
             if outOfPlan
                 button.gallery__item-container-cta(onclick=`window.Intercom('showNewMessage', "I'm interested in enabling ${name}")` data-event-name="Try Integration Button Clicked" data-object-location="Integrations" data-integration= id, data-integration-type="Fake") Try Integration
             else
