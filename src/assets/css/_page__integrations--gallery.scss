@@ -69,19 +69,28 @@
             }
 
             &-selected {
-                color: var(--orange);
+                font-size: 30px;
+                line-height: 120%;
+                color: var(--dark);
             }
         }
 
         &-selected {
             align-items: flex-start;
+            flex-direction: column;
             border: 2px solid var(--neutral);
             border-radius: 40px;
-            padding: 30px 15px;
+            padding: 30px;
             margin-right: 15px;
         }
 
         &-integration {
+            &-icon-wrapper {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+
             &-wrapper {
                 display: none;
             }
@@ -89,7 +98,7 @@
             &-title {
                 font-weight: 600;
                 margin-bottom: 8px;
-                color: var(--dark);
+                color: var(--orange);
                 line-height: 24px;
             }
 
