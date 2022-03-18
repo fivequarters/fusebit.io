@@ -19,6 +19,7 @@ module.exports = async function () {
             name: i.name,
             outOfPlan: i.outOfPlan,
             catalog: i.tags.catalog,
+            description: i.description,
         })),
         integrationCategories: [
             'All',

@@ -1,4 +1,4 @@
-mixin item(img, name, outOfPlan, id, catalog, hidden)
+mixin item(img, name, outOfPlan, id, catalog, hidden, description)
     .gallery__item-container(class=hidden ? 'show-more-item--hidden show-more-item--hidden-out show-more-item--hidden-animation' : '' class="show-more-item" data-catalog= catalog id= id)
         .gallery__item-container-logo
             img(src=`data:image/svg+xml;utf8,${encodeURIComponent(img)}`)
@@ -6,7 +6,9 @@ mixin item(img, name, outOfPlan, id, catalog, hidden)
             p.gallery__item-container-title= name
             .gallery__item-container-integration-wrapper
                 h4.gallery__item-container-integration-title Build a #{name} integration for your customers in minutes
-                p.gallery__item-container-integration-description The Fusebit platform lets you easily build powerful #{name} integrations that delight your customers at a fraction of the development time.
+                .gallery__item-container-integration-description #{description}
+                    //- - const markdown = filters.getHTMLFromMarkdown(description)
+                    //- #{markdown}
             if outOfPlan
                 button.gallery__item-container-cta(onclick=`window.Intercom('showNewMessage', "I'm interested in enabling ${name}")` data-event-name="Try Integration Button Clicked" data-object-location="Integrations" data-integration= id, data-integration-type="Fake") Try Integration
             else
@@ -22,7 +24,7 @@ section.section
             })), "categories", "Category: ")
         .gallery__grid.gallery__hidden
             each i in integrations
-                +item(i.logo, i.name, i.outOfPlan, i.id, i.catalog, false)        
+                +item(i.logo, i.name, i.outOfPlan, i.id, i.catalog, false, i.description.split("[")[0])        
         .gallery__grid
             - const buildAmount = 12
             - let showMoreButton = false
