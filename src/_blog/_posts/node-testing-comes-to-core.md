@@ -39,9 +39,7 @@ A new module called `node:test`will be shipped as a core Node module. While the 
 const test = require('node:test');
 
 test('synchronous passing test', (t) => {
-
   // This test passes because it does not throw an exception.
-
   assert.strictEqual(1, 1);
 
 });
@@ -68,9 +66,7 @@ For instance, you would skip a test like so:
 ```javascript
 
 test('skip option with message', { skip: 'this is skipped' }, (t) => {
-
   // This code is never executed.
-
 });
 
 ```
@@ -80,17 +76,12 @@ Or, you can pass in separate subtests like so:
 ```javascript
 
 test('top level test', async (t) => {
-
   await t.test('subtest 1', (t) => {
-
     assert.strictEqual(1, 1);
-
   });
 
   await t.test('subtest 2', (t) => {
-
     assert.strictEqual(2, 2);
-
   });
 
 });
