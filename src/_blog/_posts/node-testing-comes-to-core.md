@@ -6,21 +6,21 @@ date: '2022-03-22'
 post_image: blog-node-testing.png
 post_excerpt: Node.js is adding a built-in testing module to Node core. It will come in the form of a new node test module that exposes an API for creating, and executing JavaScript tests. 
 post_slug: node-testing-comes-to-core
-tags: [‘nodejs',’testing’,’javascript’]
+tags: ['node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-node-testing.png 
 posts_related: ['nodejs-https-imports',node-fetch'','monkey-patching-http-request']
 ---
 
-Node.js is adding a built-in testing module to Node core. It will come in the form of a new `node:test` module that exposes an API for creating, and executing JavaScript tests. As the tests execute, the results will be output using standard (TAP)[https://testanything.org/] format.
+Node.js is adding a built-in testing module to Node core. It will come in the form of a new `node:test` module that exposes an API for creating, and executing JavaScript tests. As the tests execute, the results will be output using standard [TAP](https://testanything.org/) format.
 
-This is early in the development stage and things can change drastically, [follow the conversation]([https://github.com/nodejs/node/pull/42325](https://github.com/nodejs/node/pull/42325)) along in Github.
+This is early in the development stage and things can change drastically, [follow the conversation](https://github.com/nodejs/node/pull/42325) along in Github.
 
 In this post, I’ll go through the details of this new feature and I’ll also make sure to send out an update when the feature is officially released. Follow us on [Twitter](https://twitter.com/fusebitio) to be notified when!
 
 ## Why Built-in Testing? 
 
-Testing is a critical part of all non-trivial software development practices, and with Javascript being a dynamic language, it becomes even more important to make sure all your __units__ are covered. 
+Testing is a critical part of all non-trivial software development practices, and with Javascript being a dynamic language, it becomes even more important to make sure all your _units_ are covered. 
 
 Currently, Node.js doesn’t have anything out-of-box that supports unit testing and, as a result, third-party testing frameworks, such as [Mocha](https://mochajs.org/) or [Jest](https://jestjs.io/), have gained popularity over time. However, the use of external libraries adds complexity to your environment configurations and CI/CD workflows, as well as adding maintenance overhead.
 
@@ -32,9 +32,9 @@ By adding built-in testing as a part of Node.js core, the intention is to enable
 
 ## How Does It Work?
 
-A new module called `node:test`will be shipped as a core Node module. By running node using a `--test` flag, it will execute all identified tests and output to TAP format. 
+A new module called `node:test`will be shipped as a core Node module. While the current PR only supports executing individual test files, the plan is to eventaully allow you to use a `--test` flag to automatically execute all tests defined in a configuration. 
 
-```
+```javascript
 
 const test = require('node:test');
 
@@ -62,12 +62,10 @@ There are a few salient design considerations in this approach.
 
 The actual method is fairly minimalistic, `test([name][, options][, fn])`, and returns a Promise once the test completes.  
 
-For instance, you would skip a test like so: \
+For instance, you would skip a test like so: 
 
 
-```
-
-// The skip option is used, and a message is provided.
+```javascript
 
 test('skip option with message', { skip: 'this is skipped' }, (t) => {
 
@@ -79,7 +77,7 @@ test('skip option with message', { skip: 'this is skipped' }, (t) => {
 
 Or, you can pass in separate subtests like so:
 
-```
+```javascript
 
 test('top level test', async (t) => {
 
@@ -112,14 +110,10 @@ It’s fairly straightforward to understand, but here’s a quick outline of the
 
 ## When Can I Use It?
 
-[Colin](https://twitter.com/cjihrig), the architect behind this initiative, has indicated that he wants to make this available behind an experimental flag before Node 18 is pushed out. 
-
-This is currently scheduled for April 19th. If you’re feeling adventurous, check out the [pull request](https://github.com/nodejs/node/pull/42325). 
+[Colin](https://twitter.com/cjihrig), the architect behind this initiative, has indicated that he wants to make this available behind an experimental flag before Node 18 is pushed out. This is currently scheduled for April 19th. If you’re feeling adventurous, check out the [pull request](https://github.com/nodejs/node/pull/42325). 
 
 We’ll send out a note on our [Twitter](https://twitter.com/fusebitio) when it's released!
 
 ## Conclusion
-
-By now, you should be excited about what’s in store for Node.js! 
 
 If you have any questions, you can reach out to me directly through our [community Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg), on [Twitter](https://twitter.com/shehzadakbar) and at [shehzad@fusebit.io](mailto:shehzad@fusebit.io).
