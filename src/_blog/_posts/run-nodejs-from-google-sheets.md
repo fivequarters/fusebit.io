@@ -6,10 +6,15 @@ date: '2022-01-24'
 post_image: google-sheets-addon-banner.png
 post_excerpt: Import data from any API or data source to Google Sheets using Node.js, NPM, and Fusebit Connectors.
 post_slug: run-nodejs-from-google-sheets
-tags: ['post', 'developer tools', 'integrations', 'addon','node.js']
+tags: ['post', 'developer tools', 'integrations', 'addon', 'node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/twitter-google-sheets-addon.png
-posts_related: ['node-fetch','nodejs-https-imports','run-every-nodejs-version-in-lambda']
+posts_related:
+  [
+    'upload-google-spreadsheet-charts-to-slack',
+    'nodejs-https-imports',
+    'run-every-nodejs-version-in-lambda',
+  ]
 ---
 
 Google Sheets is a Swiss Army knife of data processing, but it is only as good as the data you can get into it. What can you do when a CSV export from your source-of-truth system is not available and the Ctrl-C and Ctrl-V keys on your keyboard have worn off? There is Apps Script, but it only goes so far. There are dedicated add-ons, but they are not always available for the systems you care about or do not do exactly what you need.
