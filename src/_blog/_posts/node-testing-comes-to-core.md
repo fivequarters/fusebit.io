@@ -1,7 +1,7 @@
 ---
 post_title: 'node:test is coming to Node, What is it? and why should you care?'
 post_author: Shehzad Akbar
-Post_author_avatar:
+Post_author_avatar: shehzad.png
 date: '2022-03-22'
 post_image: blog-node-testing.png
 post_excerpt: Node.js is adding a built-in testing module to Node core. It will come in the form of a new node test module that exposes an API for creating, and executing JavaScript tests. 
@@ -9,12 +9,12 @@ post_slug: node-testing-comes-to-core
 tags: ['node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-node-testing.png 
-posts_related: ['nodejs-https-imports',node-fetch'','monkey-patching-http-request']
+posts_related: ['nodejs-https-imports',node-fetch','monkey-patching-http-request']
 ---
 
 Node.js is adding a built-in testing module to Node core. It will come in the form of a new `node:test` module that exposes an API for creating, and executing JavaScript tests. As the tests execute, the results will be output using standard [TAP](https://testanything.org/) format.
 
-This is early in the development stage and things can change drastically, [follow the conversation](https://github.com/nodejs/node/pull/42325) along in Github.
+This is early in the development stage and things can change drastically, [follow the conversation](https://github.com/nodejs/node/pull/42325) along in Github. It's also available in [nightly builds](https://nodejs.org/download/nightly/) released after the 22nd of March, 2022.
 
 In this post, I’ll go through the details of this new feature and I’ll also make sure to send out an update when the feature is officially released. Follow us on [Twitter](https://twitter.com/fusebitio) to be notified when!
 
@@ -101,7 +101,9 @@ It’s fairly straightforward to understand, but here’s a quick outline of the
 
 ## When Can I Use It?
 
-[Colin](https://twitter.com/cjihrig), the architect behind this initiative, has indicated that he wants to make this available behind an experimental flag before Node 18 is pushed out. This is currently scheduled for April 19th. If you’re feeling adventurous, check out the [pull request](https://github.com/nodejs/node/pull/42325). 
+[Colin](https://twitter.com/cjihrig), the architect behind this initiative, has indicated that he wants to make this available behind an experimental flag before Node 18 is pushed out, which is currently scheduled for April 19th. 
+
+It's also available in [nightly builds](https://nodejs.org/download/nightly/) released after the 22nd of March, 2022.
 
 We’ll send out a note on our [Twitter](https://twitter.com/fusebitio) when it's released!
 
