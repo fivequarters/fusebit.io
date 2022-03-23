@@ -9,7 +9,7 @@ post_slug: slack-interactive-image-carousel
 tags: ['post', 'developer tools', 'node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-slack-image-carousel.jpeg
-posts_related: ['customize-linear-slack-notifications', 'contacts-from-hubspot-to-salesforce', 'discord-slash-commands']
+posts_related: ['customize-linear-slack-notifications', 'send-hubpsot-companies-to-slack', 'slack-bot-hubspot-integration']
 ---
 
 
