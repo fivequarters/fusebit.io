@@ -25,9 +25,9 @@ Let’s go!
 
 ## From Google Sheets to Slack
 
-There will be three parts of the solution: a Slack Application, the Google Sheets spreadsheet, and a piece of associated AppsScript. You will see some code along the way, but don’t worry - no programming skills are required. You will only copy & paste a few lines of it.
+There will be three parts of the solution: a Slack Application, the Google Sheets spreadsheet, and a piece of associated AppsScript (a Google script language for adding custom behaviors to Google apps). You will see some code along the way, but don’t worry - no programming skills are required. You will only copy & paste a few lines of it.
 
-Your Google Spreadsheet contains the chart you want to send to Slack. We will associate a piece of a custom script with the spreadsheet and configure it to run on a regular basis, for example daily. The script will get an image of a chart you created in the Google Spreadsheet, and upload it as a file to Slack using Slack APIs and the Slack Application you will register.
+Your Google Spreadsheet contains the chart you want to send to Slack. We will associate a piece of a custom script with the spreadsheet and configure it to run regularly, for example daily. The script will get an image of a chart you created in the Google Spreadsheet, and upload it as a file to Slack using Slack APIs and the Slack Application you will register.
 
 ## Google Sheet With a Chart
 
@@ -136,7 +136,7 @@ Next, modify lines 2, 4, and 6:
 
 Save the script by clicking the disk symbol. Then, manually test your integration by clicking the _Run_ button above the script panel. During the first run of the script, you will be prompted to authorize access of the script to your spreadsheet.
 
-If everything was set up correctly, you should see the your Google Sheet chart showing up in the Slack channel you selected:
+If everything was set up correctly, you should see your Google Sheet chart showing up in the Slack channel you selected:
 
 ![Upload Google Spreadsheet Chart to Slack](blog-upload-1.png)
 
@@ -156,7 +156,7 @@ Click _Save_, and you are all set. Your chart report will be sent to Slack follo
 
 ## Getting Data Into Your Google Spreadsheet
 
-Now that you can create a beautiful chart in a Google Spreadsheet and automatically send it to Slack, the question is where does the data underlying that chart come from? Google Sheet rarely is the source of truth and you need to import that data from an external system like Salesforce or QuickBooks.
+Now that you can create a beautiful chart in a Google Spreadsheet and automatically send it to Slack, the question is where does the data underlying that chart come from? Google Sheet rarely is the source of truth and you need to import the latest data from an external data source like Salesforce or QuickBooks.
 
 If you are a developer, you should check out the [Fusebit Add-On for Google Sheets](https://fusebit.io/blog/run-nodejs-from-google-sheets/). Using Fusebit, you can use Node.js and npm packages along with Fusebit SaaS Connectors to automate the import of data from any number of external systems or databases.
 
