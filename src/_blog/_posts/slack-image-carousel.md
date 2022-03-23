@@ -15,9 +15,9 @@ posts_related: ['customize-linear-slack-notifications', 'send-hubpsot-companies-
 
 Have you ever wondered how to create a great image slideshow carousel with Slack using Block Kit? This seems like a simple task, but you need to take into account several things in order to get it working:
 
-Understand [Block Kit](https://api.slack.com/block-kit) (Slack official building blocks for creating user interfaces)
-Configure and create a Slack Application. We use [Fusebit](https://developer.fusebit.io/docs/slack) to easily and rapidly create our application, but you can roll your own too!
-Learn how to handle elements interactivity
+    - Understand [Block Kit](https://api.slack.com/block-kit) (Slack official building blocks for creating user interfaces)
+    - Configure and create a Slack Application. We use [Fusebit](https://developer.fusebit.io/docs/slack) to easily and rapidly create our application, but you can roll your own too!
+    - Learn how to handle elements interactivity
 
 At the end of this blog post, you will learn how to create an image carousel like the following in Slack:
 
