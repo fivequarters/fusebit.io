@@ -98,6 +98,7 @@ Next, we tell `lerna` to update the version by the `patch` step (duplicate and c
           git add -A
           git commit -m "Bump: $(cat lerna.json | jq -r .version)"
           git push
+
 ```
 
 Finally, we make sure we increment the tag in the repository so that each release is tagged correctly:
@@ -108,6 +109,7 @@ Finally, we make sure we increment the tag in the repository so that each releas
           VERSION=`jq -rc ".version" lerna.json`
           git tag v${VERSION} || true
           git push --tags || true
+
 ```
 
 With these GitHub Actions in place, merging a PR causes the latest version numbers to bump, a new tagged release to be issued, and the `package.json` files to be updated correctly. Lerna handles all of those details automatically, which substantially reduces the number of manual changes we had to do when dealing with our primary integration repository.
@@ -115,13 +117,13 @@ With these GitHub Actions in place, merging a PR causes the latest version numbe
 Since Fusebit supports dozens (and soon, hundreds) of different integrations, managing the versions when a core package (such as `@fusebit/framework`) changed was a phenomenal amount of work.  Using Lerna and a discontinuous semver substantially increased our development velocity by allowing individual developers not to have to worry about bumping version numbers on dependent packages.
 ## Downsides
 This approach is definitely counter to some of the other trends in JavaScript, and disagrees with some aspects of the tooling (and especially, has a slight negative impact on version control).
-### Churn in your `package.json` files
+### Churn in your package.json files
 Because the versioning is moving in lockstep, `lerna` will increment the `version` field in each `package.json` every time the global version is incremented. This also induces churn in the `package-lock.json` files.
 
 The primary impact here is that code diffs get a little noisier (unless you exclude `package.json` files entirely), and “lines of code changed” metrics have a constant `N` attached to each commit.
 
 That’s acceptable, though, because you shouldn’t be [using LOC metrics anyways](https://docs.google.com/document/d/18j_LC-u_rhToVp3GBHLiheTOmaVdqKz0DqIUT84ZslI/edit).
-### What about `pkgC`?
+### What about pkgC?
 
 What about `pkgC`, an unrelated package in the same monorepo? It’s version is bumping, but it doesn’t have any changes:
 ![discontinuous semver pkgc](blog-semver-pkgc.png "discontinuous semver pkgc")
@@ -132,7 +134,7 @@ It’s not ideal, but still encourages erroring on the side of safety for the en
 
 Maybe you have a better suggestion? :)
 
-### Churn in `package.json` and `package-lock.json`
+### Churn in package.json and package-lock.json
 
 Adding new projects to our repository using lerna places a new package-lock.json file in each project directory. While this allows us to separate dependencies out (some packages require specific versions of TypeScript, for example), it also means that every new integration that Fusebit supports is also paired with a ~20kloc diff. This basically renders LOC statistics useless which is [largely supported by research](https://docs.google.com/document/d/18j_LC-u_rhToVp3GBHLiheTOmaVdqKz0DqIUT84ZslI/edit).
 ### Customer clarity
