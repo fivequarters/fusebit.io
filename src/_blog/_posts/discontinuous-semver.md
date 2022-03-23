@@ -97,8 +97,7 @@ Next, we tell `lerna` to update the version by the `patch` step (duplicate and c
           git config --global user.name "The GOAT"
           git add -A
           git commit -m "Bump: $(cat lerna.json | jq -r .version)"
-          git push
-
+          git push 
 ```
 
 Finally, we make sure we increment the tag in the repository so that each release is tagged correctly:
@@ -108,8 +107,7 @@ Finally, we make sure we increment the tag in the repository so that each releas
         run: |
           VERSION=`jq -rc ".version" lerna.json`
           git tag v${VERSION} || true
-          git push --tags || true
-
+          git push --tags || true 
 ```
 
 With these GitHub Actions in place, merging a PR causes the latest version numbers to bump, a new tagged release to be issued, and the `package.json` files to be updated correctly. Lerna handles all of those details automatically, which substantially reduces the number of manual changes we had to do when dealing with our primary integration repository.
