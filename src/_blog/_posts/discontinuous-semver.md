@@ -1,5 +1,5 @@
 ---
-post_title: Discontinuous Semver, Versioning in the land of Monolithics
+post_title: Discontinuous Semver, Versioning in the Land of Monolithics
 post_author: Benn Bollay
 post_author_avatar: benn.png
 date: '2022-03-22'
