@@ -1,5 +1,5 @@
 ---
-post_title: 'A Built-in Test Runner Is Coming to Node and Why Should You Care'
+post_title: 'A Built-in Test Runner Is Coming to Node and Why You Should Care'
 post_author: Shehzad Akbar
 Post_author_avatar: shehzad.png
 date: '2022-03-24'
@@ -36,6 +36,7 @@ A new module called `node:test`will be shipped as a core Node module. While the 
 
 ```javascript
 const test = require('node:test');
+const assert = require('assert');
 
 test('synchronous passing test', (t) => {
   // This test passes because it does not throw an exception.
@@ -44,7 +45,7 @@ test('synchronous passing test', (t) => {
 });
 ```
 
-There are a few salient design considerations in the current approach:
+The actual method is fairly minimalistic, `test([name][, options][, fn])`, and returns a Promise once the test completes.  However, there are a few salient design considerations in the current approach:
 
 
 
@@ -54,8 +55,6 @@ There are a few salient design considerations in the current approach:
     * Asynchronous tests will return a Promise, and will be considered passing if the returned Promise does not reject.
 * The test context's test() method allows subtests to be created, each subtest will perform exactly like the top-level test function.
 * Individual tests can be skipped by passing the skip option to the test or calling the test context's skip() method.
-
-The actual method is fairly minimalistic, `test([name][, options][, fn])`, and returns a Promise once the test completes.  
 
 For instance, you would skip a test like so: 
 
@@ -81,7 +80,7 @@ test('top level test', async (t) => {
 });
 ```
 
-It’s fairly straightforward to understand, but here’s a quick outline of the different parameters.
+For the function, it’s fairly straightforward to understand, but here’s a quick outline of the different parameters.
 
 
 
