@@ -1,5 +1,5 @@
 ---
-post_title: Signing JWT securely from your browser using WebCrypto
+post_title: Signing JWT Securely From Your Browser Using WebCrypto
 post_author: Benn Bollay
 post_author_avatar: benn.png
 date: '2022-03-23'
