@@ -13,14 +13,14 @@ posts_related: ['customize-linear-slack-notifications', 'send-hubpsot-companies-
 ---
 
 
-Have you ever wondered how to create a great image slideshow carousel with Slack using Block Kit? This seems like a simple task, but without first class support in Slack’s Block Kit, you’ll need more than just a simple `postMessage` call.  You’ll need to understand [Block Kit](https://api.slack.com/block-kit) (Slack official building blocks for creating user interfaces), configure and create a Slack Application, and support inbound “interactivity” events from Slack on a server somewhere!
+Have you ever wondered how to create a great image slideshow carousel with Slack using Block Kit? This seems like a simple task, but without first class support in Slack’s Block Kit, you’ll need more than just a simple `postMessage` call.  You’ll need to understand [Block Kit](https://api.slack.com/block-kit) (Slack's official building blocks for creating user interfaces), configure and create a Slack Application, and support inbound “interactivity” events from Slack on a server somewhere!
 
 We use [Fusebit](https://developer.fusebit.io/docs/slack) in this demonstration to easily and rapidly create our application and handle the requests from Slack, but you can roll your own too!
 
 If you want to jump ahead, you can play with our demonstration Slack Image Carousel here [on Fusebit](https://api.us-west-1.on.fusebit.io/v1/run/sub-c2eaf0578e7140ca/share/share/edit?integrationId=slack-image-carousel-demo), as well as see running code.
 
+By the end of this blog post, you will learn how to create an image carousel like the following in Slack:
 
-At the end of this blog post, you will learn how to create an image carousel like the following in Slack:
 
 
 ![Create an interactive Image Carousel in Slack with-shadow](carousel.gif 'Interactive Image Carousel in Slack')
@@ -38,6 +38,7 @@ The carousel needs 2 different types of components: *Informational* and *interac
 Let’s review the layout of the carousel from the example above:
 
 
+
 ![Create an interactive Image Carousel in Slack with-shadow](blog-slack-image-carousel-layout.png 'Interactive Image Carousel in Slack layout')
 
 
@@ -46,6 +47,7 @@ Let’s review the layout of the carousel from the example above:
   3. **Item title**: A [section](https://api.slack.com/reference/block-kit/blocks#section) block with the item text and an optional content.
   4. **Item image**: An [image block](https://api.slack.com/reference/block-kit/blocks#image) used to display an image, in our example, dog photos.
   5. **Navigation controls**: Two [button elements](https://api.slack.com/reference/block-kit/block-elements#button) providing back and forth controls.
+
 
 Let’s see an example of each section in Slack Block Kit! You can copy and paste the code in the online [Block Kit Builder](https://app.slack.com/block-kit-builder/) to preview the results.
 
@@ -57,7 +59,8 @@ Next button value =  n+1 modulus the number of items
 
 Previous button value =  n-1 or number of items if n == 0
 
-Navigation controls keep the memory of the pagination of the carousel; we use the value property to calculate  the page all the time:
+Navigation controls keep the memory of the pagination of the carousel; we use the value property to calculate the page all the time:
+
 
 ```json
 {
@@ -68,8 +71,6 @@ Navigation controls keep the memory of the pagination of the carousel; we use th
   },
   "value": "4"
 }
-
-
 ```
 
 ```json
@@ -111,9 +112,7 @@ Navigation controls keep the memory of the pagination of the carousel; we use th
            ]
        }
    ]
-}
-
- 
+} 
 ```
 
 
@@ -217,11 +216,13 @@ Now, using the previous `buildCarousel` function, let’s build the first carous
 ```
 
 ## Configuring your Slack app
+
 Now that we have the building blocks, we need to configure a Slack app in order to display the carousel on a specific channel and handle the navigation controls.
 
 If you don’t have your own Slack application, please follow the instructions on using [Fusebit](https://developer.fusebit.io/docs/slack).  Fusebit provides a free-tier for their integration platform that works quite well for this use case.
 
 On the application configuration in Slack, navigate to the OAuth & Permissions menu, localize the Scopes section and add the scope **chat:write** to the bot token scopes.
+
 
 ![Create an interactive Image Carousel in Slack with-shadow](slack-carousel-scope.png 'Interactive Carousel required scope')
 
@@ -229,13 +230,15 @@ With your Slack application working correctly, let’s see the next  steps in or
 
 We need to **enable** [interactivity](https://api.slack.com/messaging/interactivity#components) in your Slack application. Navigate to your Slack application’s interactivity and shortcuts section and set up a request URL. Slack will send a POST request to this URL with interactivity details from a specific user action.
 
+![Create an interactive Image Carousel in Slack with-shadow](carousel-interactivity-config.png 'Interactivity configuration')
+
 If you’re using Fusebit, the URL is located in your Slack Connector settings, under the *Events API Request URL* (1).  You will also want to specify the name of the Integration you want to handle the interactivity events as the “Default Event Handler” (2).  Save the configuration, and move on to the integration itself.
 
-![Create an interactive Image Carousel in Slack with-shadow](carousel-interactivity-config.png 'Interactivity configuration')
+![Create an interactive Image Carousel in Slack with-shadow](carousel-connector-config.png 'Connector configuration')
 
 If you’re using your own application, you’ll need to configure a POST endpoint at a url, and perform the necessary authentication and authorization of the incoming request before processing the incoming interactivity event. [Learn how to do it](https://api.slack.com/messaging/interactivity#components)
 
-![Create an interactive Image Carousel in Slack with-shadow](carousel-connector-config.png 'Carousel connector configuration')
+## Handling interactivity
 
 Now we know how to handle the first element, let’s see how to do it for the other items from the list.
 
@@ -247,12 +250,11 @@ We need to accomplish the following things:
 
 ### Updating pagination state in each navigation control
 
-If you’re using Fusebit, the interactivity events are handled under the immediate response route. If you’re using your endpoint, ensure you properly handle that endpoint.
+If you’re using Fusebit, the interactivity events are handled under the `immediate response` route. If you’re using your endpoint, ensure you properly handle that endpoint.
 
-We’ll use Fusebit for this code, but the same code can be used directly in a KoaJS router, or with slight modifications (replacing `ctx` with `req` and `res`) in a classic Express app -after you implement the necessary authorization checks on the event, of course.
+We’ll use Fusebit for this code, but the same code can be used directly in a KoaJS router, or with slight modifications (replacing `ctx` with `req` and `res`) in a classic Express app - after you implement the necessary authorization checks on the event, of course.
 
 Parse the payload from the interactivity event and get the button value from the actions array. In our use case, it’s safe to assume that the action will always be an array of a single item.
-
 
 ```javascript
 router.post('/api/fusebit/webhook/event/immediate-response', async (ctx) => {
@@ -273,9 +275,10 @@ router.post('/api/fusebit/webhook/event/immediate-response', async (ctx) => {
 
 ```
 
-The `response_url` coming from the interaction payload is used to publish messages back to the original Slack message where the interaction happened. You can [read more about handling message responses](https://api.slack.com/interactivity/handling#message_responses).
+The `response_url` coming from the interaction payload is used to publish messages back to the original Slack message where the interaction happened. [Read more about handling message responses](https://api.slack.com/interactivity/handling#message_responses).
 
-We also use the great [superagent](https://www.npmjs.com/package/superagent) library for our HTTP request - you can replace this with `request()` if you want to - but why would you?
+We also use the great [superagent](https://www.npmjs.com/package/superagent) library for our HTTP request. You can replace this with `request()` if you want to - but why would you?
+
 
 
 
