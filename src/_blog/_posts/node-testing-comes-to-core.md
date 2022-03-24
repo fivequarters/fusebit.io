@@ -1,5 +1,5 @@
 ---
-post_title: 'node:test is coming to Node, What is it? and why should you care?'
+post_title: 'A Built-in Test Runner is coming to Node Core, What is it? and why should you care?'
 post_author: Shehzad Akbar
 Post_author_avatar: shehzad.png
 date: '2022-03-22'
@@ -9,33 +9,32 @@ post_slug: node-testing-comes-to-core
 tags: ['node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-node-testing.png 
-posts_related: ['nodejs-https-imports',node-fetch','monkey-patching-http-request']
+posts_related: ['nodejs-https-imports','node-fetch','monkey-patching-http-request']
 ---
 
 Node.js is adding a built-in testing module to Node core. It will come in the form of a new `node:test` module that exposes an API for creating, and executing JavaScript tests. As the tests execute, the results will be output using standard [TAP](https://testanything.org/) format.
 
-This is early in the development stage and things can change drastically, [follow the conversation](https://github.com/nodejs/node/pull/42325) along in Github. It's also available in [nightly builds](https://nodejs.org/download/nightly/) released after the 22nd of March, 2022.
+This is early in the development stage and things can change drastically, [follow the conversation](https://github.com/nodejs/node/pull/42325) along in Github. It's also available in [nightly builds](https://nodejs.org/download/nightly/v18.0.0-nightly20220324094b2ae9ba/) released after the 24th of March, 2022.
 
 In this post, I’ll go through the details of this new feature and I’ll also make sure to send out an update when the feature is officially released. Follow us on [Twitter](https://twitter.com/fusebitio) to be notified when!
 
-## Why Built-in Testing? 
+## Why a Built-in Test Runner? 
 
 Testing is a critical part of all non-trivial software development practices, and with Javascript being a dynamic language, it becomes even more important to make sure all your _units_ are covered. 
 
-Currently, Node.js doesn’t have anything out-of-box that supports unit testing and, as a result, third-party testing frameworks, such as [Mocha](https://mochajs.org/) or [Jest](https://jestjs.io/), have gained popularity over time. However, the use of external libraries adds complexity to your environment configurations and CI/CD workflows, as well as adding maintenance overhead.
+Currently, Node.js doesn’t have a test runner out-of-box that supports unit testing and, as a result, third-party testing frameworks, such as [Mocha](https://mochajs.org/) or [Jest](https://jestjs.io/), have gained popularity over time. However, the use of external libraries adds complexity to your environment configurations and CI/CD workflows, as well as adding maintenance overhead.
 
 Additionally, figuring out which tool to choose can be really troublesome. While some frameworks are great at getting you set up quickly and running tests with minimal effort, they may not necessarily have features like support for async testing or auto-mocking. Other tools may have these capabilities, but might not be as straightforward to set up or lack robust community support to help troubleshoot issues. 
 
 You get the idea…
 
-By adding built-in testing as a part of Node.js core, the intention is to enable a **limited** subset of the functionality provided by all/most test frameworks in a lightweight manner. This way, users can get started really quickly right from the beginning, and then add functionality on top as needed.
+By adding a built-in test runner as a part of Node.js core, the intention is to enable a **limited** subset of the functionality provided by all/most test frameworks in a lightweight manner. This way, users can get started really quickly right from the beginning, and then add functionality on top as needed.
 
 ## How Does It Work?
 
-A new module called `node:test`will be shipped as a core Node module. While the current PR only supports executing individual test files, the plan is to eventaully allow you to use a `--test` flag to automatically execute all tests defined in a configuration. 
+A new module called `node:test`will be shipped as a core Node module. While the current iteration only supports executing individual test files, the plan is to eventaully allow you to use a `--test` flag to automatically execute all tests defined in a configuration. 
 
 ```javascript
-
 const test = require('node:test');
 
 test('synchronous passing test', (t) => {
@@ -43,11 +42,9 @@ test('synchronous passing test', (t) => {
   assert.strictEqual(1, 1);
 
 });
-
-
 ```
 
-There are a few salient design considerations in this approach.
+There are a few salient design considerations in the current approach:
 
 
 
@@ -64,17 +61,14 @@ For instance, you would skip a test like so:
 
 
 ```javascript
-
 test('skip option with message', { skip: 'this is skipped' }, (t) => {
   // This code is never executed.
 });
-
 ```
 
 Or, you can pass in separate subtests like so:
 
 ```javascript
-
 test('top level test', async (t) => {
   await t.test('subtest 1', (t) => {
     assert.strictEqual(1, 1);
@@ -85,7 +79,6 @@ test('top level test', async (t) => {
   });
 
 });
-
 ```
 
 It’s fairly straightforward to understand, but here’s a quick outline of the different parameters.
@@ -101,11 +94,11 @@ It’s fairly straightforward to understand, but here’s a quick outline of the
 
 ## When Can I Use It?
 
-[Colin](https://twitter.com/cjihrig), the architect behind this initiative, has indicated that he wants to make this available behind an experimental flag before Node 18 is pushed out, which is currently scheduled for April 19th. 
+[Colin](https://twitter.com/cjihrig), the architect behind this initiative, has indicated that it will be available behind an experimental flag when Node 18 is pushed out, which is currently scheduled for April 19th. 
 
-It's also available in [nightly builds](https://nodejs.org/download/nightly/) released after the 22nd of March, 2022.
+It's also available in [nightly builds](https://nodejs.org/download/nightly/v18.0.0-nightly20220324094b2ae9ba/) released after the 24th of March, 2022.
 
-We’ll send out a note on our [Twitter](https://twitter.com/fusebitio) when it's released!
+We’ll send out a note on our [Twitter](https://twitter.com/fusebitio) when Node 18 is released so be sure to follow us!
 
 ## Conclusion
 
