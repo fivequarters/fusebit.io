@@ -2,7 +2,7 @@
 post_title: Create an interactive Image Carousel in Slack
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
-date: '2022-03-23'
+date: '2022-03-24'
 post_image: blog-slack-image-carousel.jpeg
 post_excerpt: Learn how to use Slack block kit to build an interactive Image Carousel 
 post_slug: slack-interactive-image-carousel
@@ -280,5 +280,5 @@ Hopefully, you have a working Image carousel in your Slack workspace!
 
 Slack block kit provides a powerful mechanism to build custom user interfaces. In this blog post, we covered how to use it to render navigation controls and how to handle user actions via the Slack interactivity feature.
 
-[Build complicated interactions and integrations like this for your app on Fusebit, for free!](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=slack-interactive-image-carousel 'Install the bot CTA_SMALL')
+Build complicated interactions and integrations like this for your app on Fusebit.[Sign Up and Get Started Now](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=slack-interactive-image-carousel 'Install the bot CTA_SMALL')
 
