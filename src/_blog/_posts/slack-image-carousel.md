@@ -1,5 +1,5 @@
 ---
-post_title: Create an interactive Image Carousel in Slack
+post_title: Create an Interactive Image Carousel in Slack
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-03-24'
