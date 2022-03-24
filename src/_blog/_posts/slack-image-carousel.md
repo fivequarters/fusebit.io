@@ -229,9 +229,13 @@ With your Slack application working correctly, let’s see the next  steps in or
 
 We need to **enable** [interactivity](https://api.slack.com/messaging/interactivity#components) in your Slack application. Navigate to your Slack application’s interactivity and shortcuts section and set up a request URL. Slack will send a POST request to this URL with interactivity details from a specific user action.
 
-If you’re using Fusebit, the URL is located in your Slack Connector settings, under the *Events API Request URL*.  You will also want to specify the name of the Integration you want to handle the interactivity events as the “Default Event Handler”.  Save the configuration, and move on to the integration itself.
+If you’re using Fusebit, the URL is located in your Slack Connector settings, under the *Events API Request URL* (1).  You will also want to specify the name of the Integration you want to handle the interactivity events as the “Default Event Handler” (2).  Save the configuration, and move on to the integration itself.
+
+![Create an interactive Image Carousel in Slack with-shadow](carousel-interactivity-config.png 'Interactivity configuration')
 
 If you’re using your own application, you’ll need to configure a POST endpoint at a url, and perform the necessary authentication and authorization of the incoming request before processing the incoming interactivity event. [Learn how to do it](https://api.slack.com/messaging/interactivity#components)
+
+![Create an interactive Image Carousel in Slack with-shadow](carousel-connector-config.png 'Carousel connector configuration')
 
 Now we know how to handle the first element, let’s see how to do it for the other items from the list.
 
