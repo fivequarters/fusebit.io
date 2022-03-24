@@ -86,7 +86,7 @@ Navigation controls keep the memory of the pagination of the carousel; we use th
            },
            "accessory": {
                "type": "image",
-               "image_url":  "https://i.imgur.com/ypH7AsV.jpeg",
+               "image_url": "https://i.imgur.com/ypH7AsV.jpeg",
                "alt_text": "Lilly Awaiting her Snoot Boops"
            }
        },
@@ -226,7 +226,7 @@ On the application configuration in Slack, navigate to the OAuth & Permissions m
 
 ![Create an interactive Image Carousel in Slack with-shadow](slack-carousel-scope.png 'Interactive Carousel required scope')
 
-With your Slack application working correctly, let’s see the next  steps in order to handle user interactivity in your carousel:
+With your Slack application working correctly, let’s see the next steps in order to handle user interactivity in your carousel:
 
 We need to **enable** [interactivity](https://api.slack.com/messaging/interactivity#components) in your Slack application. Navigate to your Slack application’s interactivity and shortcuts section and set up a request URL. Slack will send a POST request to this URL with interactivity details from a specific user action.
 
