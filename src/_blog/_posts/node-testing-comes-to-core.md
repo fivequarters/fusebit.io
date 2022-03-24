@@ -1,12 +1,12 @@
 ---
-post_title: 'A Built-in Test Runner is coming to Node Core, What is it? and why should you care?'
+post_title: 'A Built-in Test Runner Is Coming to Node and Why Should You Care'
 post_author: Shehzad Akbar
 Post_author_avatar: shehzad.png
-date: '2022-03-22'
+date: '2022-03-24'
 post_image: blog-node-testing.png
 post_excerpt: Node.js is adding a built-in testing module to Node core. It will come in the form of a new node test module that exposes an API for creating, and executing JavaScript tests. 
 post_slug: node-testing-comes-to-core
-tags: ['node.js']
+tags: ['post','node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-node-testing.png 
 posts_related: ['nodejs-https-imports','node-fetch','monkey-patching-http-request']
