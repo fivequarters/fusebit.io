@@ -243,7 +243,7 @@ We need to accomplish the following things:
 
 ### Updating pagination state in each navigation control
 
-If you’re using Fusebit, the interactivity events are handled under the `immediate response` route. If you’re using your own endpoint, ensure you are handling that endpoint properly.
+If you’re using Fusebit, the interactivity events are handled under the immediate response route. If you’re using your endpoint, ensure you properly handle that endpoint.
 
 We’ll use Fusebit for this code, but the same code can be used directly in a KoaJS router, or with slight modifications (replacing `ctx` with `req` and `res`) in a classic Express app -after you implement the necessary authorization checks on the event, of course.
 
