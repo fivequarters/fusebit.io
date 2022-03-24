@@ -1,7 +1,7 @@
 ---
 post_title: 'A Built-in Test Runner Is Coming to Node and Why You Should Care'
 post_author: Shehzad Akbar
-Post_author_avatar: shehzad.png
+post_author_avatar: shehzad.png
 date: '2022-03-24'
 post_image: blog-node-testing.png
 post_excerpt: Node.js is adding a built-in testing module to Node core. It will come in the form of a new node test module that exposes an API for creating, and executing JavaScript tests. 
