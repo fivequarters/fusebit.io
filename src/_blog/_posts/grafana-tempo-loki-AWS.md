@@ -235,4 +235,4 @@ In this health check routine, we attempt to access the tempo endpoint and expect
 
 ## Before you go...
 
-Come check out how we are using Grafana in the [Fusebit integration platform](https://manage.fusebit.io/signup?utm_source=aws.amazon.com&utm_medium=referral&utm_campaign=grafana-infra-at-scale), and read tutorial [how to embed Grafana into React](https://fusebit.io/blog/grafana-in-react/?utm_source=github.com&utm_medium=referral&utm_campaign=none/). If you find this developer content helpful, follow [@fusebitio](https://twitter.com/fusebitio) on Twitter to be notified of our latest articles.
+Come check out how we are using Grafana in the [Fusebit integration platform](https://manage.fusebit.io/signup?utm_source=aws.amazon.com&utm_medium=referral&utm_campaign=grafana-infra-at-scale), and read tutorial [how to embed Grafana into React](https://fusebit.io/blog/grafana-in-react/?utm_source=github.com&utm_medium=referral&utm_campaign=none). If you find this developer content helpful, follow [@fusebitio](https://twitter.com/fusebitio) on Twitter to be notified of our latest articles.
