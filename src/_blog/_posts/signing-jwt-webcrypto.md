@@ -5,7 +5,7 @@ post_author_avatar: matthew.png
 date: '2022-03-25'
 post_image: blog-jwt-webcrypto.png
 post_excerpt: With the Web Crypto API, we have a large variety of untapped opportunities available to client-side SaaS Web applications!
-post_slug: blue-green-deployments-AWS
+post_slug: signing-jwt-from-browser-using-webcrypto
 tags: ['post', 'developer tools']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-jwt-webcrypto.png
