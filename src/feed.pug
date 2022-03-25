@@ -1,0 +1,14 @@
+---
+permalink: "| feed.xml"
+eleventyExcludeFromCollections: true
+---
+
+- const oneWeekAgo = (Date.now() - 15 * 24 * 60 * 60 * 1000)
+
+<?xml version="1.0" encoding="utf-8"?>
+feed(xmlns="http://www.w3.org/2005/Atom") 
+    each page in collections.all
+        if !page.url.includes('404') && page.date > oneWeekAgo
+            url
+                loc= `${site.url}${page.url === '/' ? '' : page.url}`
+                lastmod=page.date.toISOString()

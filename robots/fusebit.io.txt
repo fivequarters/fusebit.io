@@ -1,4 +1,5 @@
 Sitemap: https://fusebit.io/sitemap.xml
+Rss: https://fusebit.io/feed.xml
 
 User-agent: *
 Disallow: /docs/
