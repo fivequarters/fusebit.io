@@ -17,7 +17,7 @@ posts_related:
   ]
 ---
 
-You have just deployed your brand new API to the cloud. First users are showing up. You want them to have a great experience. How do you monitor the health of your API and get alerted about downtime? There are many commercial tools that can monitor your API for you. In this post, I will show how you can do it yourself in under 2 minutes and completely free.
+You have just deployed your brand new API to the cloud. First users are showing up. You want them to have a great experience. How do you monitor the health of your API and get alerted about downtime? There are many commercial tools that offer application monitoring. In this post, I will show how you can do it yourself in under 2 minutes and completely free.
 
 ![Free API Health Monitoring And Alerting for Early Stage Startups](blog-health-1.png)
 
@@ -31,7 +31,7 @@ Or follow the more detailed instructions below to understand how it all hangs to
 
 ## Free Health Monitoring and Alerting with Google Sheets and Slack
 
-The basic idea is to set up a Google Spreadsheet with a custom Apps Script triggered every minute. The script issues an HTTP GET request against the URL of your API to check for its health (2xx is good, anything else is bad - you may need to add an endpoint like this to your app). The result is then stored in the spreadsheet itself and used to create a health dashboard and a health histogram. In addition, the Apps Script sends a notification to Slack using Slack Incoming Webhooks whenever the status of your API changes. This way you can get the 2:45 am alerts that you were so yearning for.
+The basic idea is to set up a Google Spreadsheet with a custom Apps Script triggered every minute. The script issues an HTTP GET request against the URL of your API to check for its health (2xx is good, anything else is bad - you may need to add an endpoint like this to your app). The result data is then collected in the spreadsheet itself and used to create a health dashboard and a health histogram. In addition, the Apps Script sends a notification to Slack using Slack Incoming Webhooks whenever the status of your API changes. This way you can get the 2:45 am alerts that you were so yearning for.
 
 The good news is that we at [Fusebit](https://fusebit.io) have already created this spreadsheet for you so that you can just make a copy, configure, and profit. Let’s go!
 
@@ -63,7 +63,7 @@ Now, go back to the _Health_ tab in your spreadsheet. You should see the result 
 
 On the left, you can see the current status of the API (_Healthy_), and the timestamp of that health check. If your API is in a failed state, you will also see the duration of the current downtime period.
 
-On the right, you can see a histogram of the API health that eventually will show the last 24 hours' worth of health checks. The example above contains just a single measurement, but once you have been running this for 24 hours, you will see a more complete picture:
+On the right, you can see a histogram of the API health that eventually will show the last 24 hours' worth of health checks, which is how much of the result data is retained. The example above contains just a single measurement, but once you have been running this for 24 hours, you will see a more complete picture:
 
 ![Free API Health Monitoring And Alerting for Early Stage Startups](blog-health-1.png)
 
@@ -77,7 +77,7 @@ And that’s it! You will now be getting your notifications delivered to Slack.
 
 ![Free API Health Monitoring And Alerting for Early Stage Startups](blog-health-8.png)
 
-Your health monitoring and alerting system on a shoestring is now complete. It is running in the background even if you close your spreadsheet and will send you a Slack notification when needed so that you can sleep calmly. Or not.
+Your health monitoring and alerting tool on a shoestring is now complete. It is running in the background even if you close your spreadsheet and will send you a Slack notification when needed so that you can sleep calmly. Or not.
 
 If you ever want to turn it off, simply delete the spreadsheet. If you want to temporarily disable it, remove the URL from Config!B10.
 
