@@ -27,11 +27,11 @@ There are a couple of non-negotiable requirements when designing the infrastruct
 There are five key elements necessary: compute for running the GLT stack, shared storage for storing traces and logs, service discovery to be able to share in-memory state, traffic management of the application and request forwarding, and, finally, health monitoring to understand the health of the system.
 ![GLT Architecture](architecture-grafana-loki-tempo.png "GLT architecture")
 
-### Compute:
+### Compute
 
 For the compute layer, we settled on using fleets of EC2 instances running `docker-compose` to run the GLT stack, similar to how we showed it in the [blue green blog](https://fusebit.io/blog/blue-green-deployments-AWS/).
 
-### Storage:
+### Storage
 
 The storage requirements of GLT are relatively simple. Loki and Tempo rely on block storage, so the obvious choice is S3. Grafana requires a SQL database. Because we already have RDS lying around for a separate system, we just used [AWS RDS Serverless v1 for Postgres](https://aws.amazon.com/rds/aurora/serverless/).
 
@@ -78,7 +78,7 @@ storage_config:
 
 Credentials are provided automatically through the IAM Role the EC2 instance is executing within.
 
-### Discovery:
+### Discovery
 
 The system discovery layer is slightly more complex.
 
@@ -180,7 +180,7 @@ With ALBs, you can attach security groups to the load balancers directly, allowi
 
 **Note:** AWS ALB, on paper, supports the use of gRPC based communication. However, looking at the AWS ALB gRPC support closer, it is limited to HTTP/2 with TLS as the transport layer, which Tempo does not support for gRPC transport.
 
-### Health:
+### Health
 
 Tempo and Loki do not implement a health endpoint, making it difficult to determine the entire system's health and ensure that when Loki and Tempo fail, the failure gets propagated upward toward AWS to trigger self-healing actions. Therefore, we built a small service that pulls health status from downstream systems:
 
@@ -235,4 +235,4 @@ In this health check routine, we attempt to access the tempo endpoint and expect
 
 ## Before you go...
 
-Come check out how you can use [Grafana with Fusebit integrations](https://manage.fusebit.io/signup?utm_source=aws.amazon.com&utm_medium=referral&utm_campaign=grafana-infra-at-scale), or check out the [client-side implementation blog by Benn](https://fusebit.io/blog/grafana-in-react/). Also, check out some other blogs about how [we build systems here at Fusebit](https://fusebit.io/blog/emergency-circuit-breaker-aws-waf/) and [here](https://fusebit.io/blog/blue-green-deployments-AWS/).
+Come check out how we are using Grafana in the [Fusebit integration platform](https://manage.fusebit.io/signup?utm_source=aws.amazon.com&utm_medium=referral&utm_campaign=grafana-infra-at-scale), and read tutorial [how to embed Grafana into React](https://fusebit.io/blog/grafana-in-react/?utm_source=github.com&utm_medium=referral&utm_campaign=none/). If you find this developer content helpful, follow [@fusebitio](https://twitter.com/fusebitio) on Twitter to be notified of our latest articles.
