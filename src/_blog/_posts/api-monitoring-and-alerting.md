@@ -3,12 +3,12 @@ post_title: Free API Health Monitoring And Alerting for Early Stage Startups
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2022-03-25'
-post_image: api-metering-express.jpg
+post_image: blog-api-monitoring-alerting.png
 post_excerpt: Monitor the health and uptime of your HTTP API using Google Sheets, and get downtime alerts through Slack. Completely free. Set up in 2 minutes.
 post_slug: api-monitoring-and-alerting
 tags: ['post', 'developer tools', 'integrations']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/api-metering-express.jpg
+post_og_image: https://fusebit.io/assets/images/blog/blog-api-monitoring-alerting.png
 posts_related:
   [
     'run-nodejs-from-google-sheets',
