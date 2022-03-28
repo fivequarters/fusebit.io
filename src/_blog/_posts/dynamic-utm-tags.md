@@ -14,9 +14,9 @@ posts_related: ['google-search-console-nodejs','api-metering-and-analytics-for-e
 
 ## The Reporting Challenge
 
-UTM Parameters, or "Urchin tracking module", are the standard way marketing and growth professionals measure the impact of campaigns. Even though UTM tracking tags are part of the Google Analytics ecosystem (thanks for a 2005 acquisition), almost all analytics platforms use them.
+UTM Parameters, or "Urchin tracking module", are the standard way marketing and growth professionals measure the impact of campaigns. Even though UTM tracking tags are part of the Google Analytics ecosystem (thanks for a 2005 acquisition), many digital marketing tools and analytics platforms can also consume the UTM data.
 
-While UTMs are ubiquitous in analytics, the best practice requires constant effort to ensure external links are tagged. The reality is that only a few links contain UTM tags. Links that do have UTMs are often only digital marketing campaigns, generated through manual tagging with the help of a campaign tracking URL builder. This creates a challenge when you want to create standard reports to compare the performance across all marketing channels. This is even more important when your analytics stack extends beyond the Google ecosystem.
+While UTMs are ubiquitous in marketing, the best practice requires constant effort to ensure external links are tagged. The reality is that only a few links contain UTM tags. Links that do have UTMs are often only digital marketing campaigns, generated through manual tagging with the help of a campaign tracking URL builder. This creates a challenge when you want to create standard reports to compare the performance across all marketing channels if your marketing technology stack **extends beyond the Google ecosystem**.
 
 Below is a screenshot of a Mixpanel report I created to look at the sources coming to fusebit.io. The issue is that the source analysis in Mixpanel assumes utm_source is set.
 
