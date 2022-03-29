@@ -7,6 +7,17 @@
 
 ## Running and serving a dev build
 
+Create a `.env` file:
+
+```
+INTERCOM_APP_ID=
+BASE_URL=http://localhost:3001
+CANONICAL_URL=http://localhost:3001
+PORTAL_BASE_URL=https://manage.fusebit.io
+CONNECTORS_FEED_URL=https://manage.fusebit.io/feed/integrationsFeed.json
+```
+
+Run the server:
 ```sh
 npm run dev
 ```
