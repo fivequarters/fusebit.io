@@ -63,11 +63,11 @@ These approaches are not mutually exclusive, and you can mix both of them accord
 AssemblyScript provides a standard JavaScript-like [standard library](https://www.assemblyscript.org/stdlib/globals.html) similar to those used by JavaScript.
 
 ```typescript
-    // It takes in two 32-bit integer values
-    // And returns a 32-bit integer value.
-    export function addInteger(a: i32, b: i32): i32 {
-      return a + b;
-    }
+// It takes in two 32-bit integer values
+// And returns a 32-bit integer value.
+export function addInteger(a: i32, b: i32): i32 {
+  return a + b;
+}
 ```
 
 
@@ -91,23 +91,23 @@ Let’s understand the main difference between TypeScript and AssemblyScript: th
 This is a non-portable example of AssemblyScript code that is not 100% accurate with TypeScript:
 
 ```typescript
-let someFloat: f32 = 1.5
-let someInt: i32 = <i32>someFloat
+const someFloat: f32 = 1.5
+const someInt: i32 = <i32>someFloat
 ```
 In TypeScript, all numeric types are aliases of `number,` so there is no distinction between these numeric types. 
 
 The generated portable TypeScript code using AssemblyScript compiler will be:
 
 ```typescript
-let someFloat: f32 = 1.5
-let someInt: i32 = i32(someFloat)
+const someFloat: f32 = 1.5
+const someInt: i32 = i32(someFloat)
 ```
 
 After compiling the code with the regular typescript compiler, the result will be
 
 ```javascript
-var someFloat = 1.5
-var someInt = someFloat | 0
+const someFloat = 1.5
+const someInt = someFloat | 0
 ```
 
 [Read more about code portability](https://www.assemblyscript.org/compiler.html#portability)
@@ -255,25 +255,26 @@ Hopefully, this blog post helped you increase your interest in experimenting wit
 Did you know you can run that WebAssembly code in Node.js? Just add the following code in a new file at the root level of your project and run it as a regular node.js file.
 
 ```javascript
-   import * as fs from 'fs';
-   const wasmBuffer = fs.readFileSync('./build/release.wasm');
-   WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
-      const add = wasmModule.instance.exports.addInteger;
-      const sum = add(1,2);
-      console.log(sum); // Outputs: 3
+import * as fs from 'fs';
+
+const wasmBuffer = fs.readFileSync('./build/release.wasm');
+WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
+  const add = wasmModule.instance.exports.addInteger;
+  const sum = add(1,2);
+  console.log(sum); // Outputs: 3
 });
 ```
 
 Note: if you are using CommonJS instead, ensure you change the way you import the fs library:
 
 ```javascript
-   const fs = require('fs');
-   const wasmBuffer = fs.readFileSync('./build/release.wasm');
-   WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
-      const add = wasmModule.instance.exports.addInteger;
-      const sum = add(1,2);
-      console.log(sum); // Outputs: 3
-});
+const fs = require('fs');
 
+const wasmBuffer = fs.readFileSync('./build/release.wasm');
+WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
+  const add = wasmModule.instance.exports.addInteger;
+  const sum = add(1,2);
+  console.log(sum); // Outputs: 3
+});
 ```
 
