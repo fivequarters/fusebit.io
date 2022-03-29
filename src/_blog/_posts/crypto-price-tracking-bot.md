@@ -4,7 +4,7 @@ post_author: Yavor Georgiev
 post_author_avatar: yavor.png
 date: '2022-03-28'
 post_image: blog-crypto-bot.jpg
-post_excerpt: TBD
+post_excerpt: Track your favorite crypto coins and get notifications of price changes in Slack
 post_slug: crypto-price-tracking-bot
 tags: ['post', 'developer tools']
 post_date_in_url: false
