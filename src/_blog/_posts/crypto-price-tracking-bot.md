@@ -29,9 +29,9 @@ Once you have your key, sign up for Fusebit:
 
 [Sign up for Fusebit for free](https://manage.fusebit.io?key=e2e-crypto-slack-bot 'Sign up for Fusebit for free CTA_LARGE')
 
-1. Select **Slack Crypto Bot** when creating a new integration and specify the API key you obtained earlier.
+1. Select **Slack Crypto Bot** when creating a new integration and specify the API key you obtained earlier
 1. Click the **Edit** button and then **Run** once the editor loads
-1. Finally, you will need to authorize access to a Slack workspace and the bot will then send you a DM with the current price for Bitcoin.
+1. Finally, you will need to authorize access to a Slack workspace and the bot will then send you a DM with the current price for Bitcoin
 
 ![Slack message sent by bot](blog-crypto-bot-slack-message.png)
 
@@ -42,7 +42,7 @@ If you got this far, then congrats, everything is working! But the fun is just b
 To get the bot to run regularly on a schedule:
 
 1. Select **Configuration** in the Fusebit Editor
-1. Add a similar section to the object. Useful [reference for the `cron` string](https://crontab.guru)
+1. Add a similar section to the object. (Useful [reference for the `cron` string](https://crontab.guru))
 
 ```json
 "schedule": [
