@@ -200,7 +200,7 @@ This will generate a build folder with the debug and release targets (by default
 
 In your index.html file (located at the root level of your project), add the following code:
 
-```html
+```markup
 <script type="module">
    import { addInteger } from "./build/release.js";
    document.body.innerText = addInteger(1,2);
@@ -254,7 +254,7 @@ Hopefully, this blog post helped you increase your interest in experimenting wit
 
 Did you know you can run that WebAssembly code in Node.js? Just add the following code in a new file at the root level of your project and run it as a regular node.js file.
 
-```nodejs
+```javascript
    import * as fs from 'fs';
    const wasmBuffer = fs.readFileSync('./build/release.wasm');
    WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
@@ -266,7 +266,7 @@ Did you know you can run that WebAssembly code in Node.js? Just add the followin
 
 Note: if you are using CommonJS instead, ensure you change the way you import the fs library:
 
-```nodejs
+```javascript
    const fs = require('fs');
    const wasmBuffer = fs.readFileSync('./build/release.wasm');
    WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
