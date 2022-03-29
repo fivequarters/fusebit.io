@@ -194,8 +194,7 @@ const serverPort = 3002;
 
 // Start the tunnel right after you start your Http server using fastify (see Handling the authorization callback step)
 const tunnel = await fusetunnel({
-  port: serverPort,
-  host: 'https://tunnel.dev.fusebit.io',
+  port: serverPort
 });
 // Authorization details for google API are explained in previous steps.
 const calendar = google.calendar({ version: 'v3' });
