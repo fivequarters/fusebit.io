@@ -95,6 +95,11 @@ jobs:
           CLOUDFRONT_ID: E25L57ELU5N7RT
         run: ./scripts/invalidate_cloudfront.sh
 
+      - name: Publish Sitemap
+        env: 
+          GOOGLE_SEARCH_CONSOLE_JSON_KEY: ${{ secrets.GOOGLE_SEARCH_CONSOLE_JSON_KEY }}
+        run: ./scripts/publish_sitemap/publish.sh
+
       - name: Notify slack success
         if: success()
         env:
