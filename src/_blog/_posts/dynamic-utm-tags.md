@@ -18,11 +18,11 @@ UTM Parameters, or "Urchin tracking module", are the standard way marketing and 
 
 While UTMs are ubiquitous in marketing, the best practice requires constant effort to ensure external links are tagged. The reality is that only a few links contain UTM tags. Links that do have UTMs are often only digital marketing campaigns, generated through manual tagging with the help of a campaign tracking URL builder. This creates a challenge when you want to create standard reports to compare the performance across all marketing channels if your marketing technology stack **extends beyond the Google ecosystem**.
 
-Below is a screenshot of a Mixpanel report I created to look at the sources coming to fusebit.io. The issue is that the source analysis in Mixpanel assumes utm_source is set.
+At Fusebit, we are using Segment as our customer data platform (CDP), and have Mixpanel, Google Analytics, and other solutions as destinations. Below is a screenshot of a Mixpanel report I created to look at the incoming sources coming to fusebit.io. The issue is that the source analysis in Mixpanel assumes utm_source is set.
 
 ![Mixpanel Source Report Before Dynamic UTMs with-shadow](blog-dynamic-utm-mixpanel-sources-before.png "Mixpanel Source Report Before Dynamic UTMs")
 
-What was frustrating about the report above was that I knew I was getting traffic from other sources, but those sources were not using UTM and thus were not included in the report. I created workarounds, but it was painful. The pain was relieved when I found a solution to the missing UTM tags.
+What was frustrating about the report above was that I knew I was getting traffic from other sources, but those sources were not using UTM and thus were not included in the report. I created workarounds, but it was painful. The pain was relieved when I found a solution to backfill the missing source data.
 
 This article will provide a solution to that reporting challenge described above and allow you to create streamlined reports based on your website’s traffic source by adding automatic UTM tracking.
 
