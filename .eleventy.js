@@ -20,7 +20,7 @@ function getImageMeta(src, widths) {
     return Image.statsSync(url, options);
 }
 
-function getHTMLFromMarkdown (markdownString) {
+function getHTMLFromMarkdown(markdownString) {
     return markdown.toHTML(markdownString);
 }
 
