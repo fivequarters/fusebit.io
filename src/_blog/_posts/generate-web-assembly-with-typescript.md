@@ -23,7 +23,7 @@ You can use different programming languages to produce WebAssembly, from JavaScr
 
 ## Why WebAssembly
 
-There are many compelling use cases, and Wasm opens the doors to porting computational heavy stuff to the web:
+There are many compelling use cases. Wasm opens the doors to porting computational heavy stuff to the web:
 - Image and video manipulation
 - Music streaming
 - Games
@@ -33,6 +33,10 @@ There are many compelling use cases, and Wasm opens the doors to porting computa
 - VR applications
 - VPN
 - Encryption
+
+You can even run Doom from the browser using Wasm: 
+- [Running Doom in Grafana](https://grafana.com/blog/2022/03/31/can-grafana-run-doom/)
+- [Multiplayer Doom on Cloudflare workers](https://blog.cloudflare.com/doom-multiplayer-workers/)
 
 [And many more](https://webassembly.org/docs/use-cases/)...
 
@@ -44,13 +48,13 @@ As we already mentioned, you can target Wasm with different programming language
 
 If you work with JavaScript and Node.js, there is a high possibility you are using [TypeScript](https://www.typescriptlang.org/). According to the State of JS Survey from 2021, [69% of developers are using it today](https://2021.stateofjs.com/en-US/conclusion/). One of TypeScript’s main advantages is that it adds statically typed support to JavaScript.
 
-JavaScript developers feel more natural and frictionless to keep using TypeScript for generating Wasm; this is where AssemblyScript comes into play.
+JavaScript developers feel more natural and frictionless to keep using a language similar to TypeScript for generating Wasm; this is where AssemblyScript comes into play.
 
 ## Writing AssemblyScript
 
 AssemblyScript code will look similar to TypeScript. No worries if you are not familiar with it. I promise you will get it if you’re already familiar with JavaScript.
 
-The only difference between regular TypeScript and AssemblyScript is the typings. AssemblyScript uses [WebAssembly types](https://www.assemblyscript.org/types.html).
+The main difference between regular TypeScript and AssemblyScript is the typings. AssemblyScript uses [WebAssembly types](https://www.assemblyscript.org/types.html).
 
 Let’s understand the difference with the following example:
 
