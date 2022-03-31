@@ -12,16 +12,16 @@ post_og_image: https://fusebit.io/assets/images/blog/generate-web-assembly-with-
 posts_related: ['node-testing-comes-to-core', 'key-generation-webcrypto', 'api-monitoring-and-alerting']
 ---
 
-
 [WebAssembly](https://webassembly.org/), also referred as Wasm, is a binary format created for the web. It allows you to access browser functionality through the same Web APIs accessible from your regular JavaScript. One of the biggest promises of WebAssembly is efficiency and velocity, aiming to run at [near-native performance speed](https://webassembly.org/docs/portability/#assumptions-for-efficient-execution) safely by respecting the permissions security policies of the browser.
 
 Despite its web nature, WebAssembly can also run in [non-web](https://webassembly.org/docs/non-web/) modes, such as servers, IoT devices, Mobile/Desktop applications, taking into account some web features will not be available.
 
 While the four major browsers currently support WebAssembly - Firefox, Chrome, Safari, and Edge - some features are fully supported.
-[Checkout](https://webassembly.org/roadmap/) if your browser already supports some features (check your browser column). See specific browser version support via [caniuse](https://caniuse.com/wasm)
+[Checkout](https://webassembly.org/roadmap/) if your browser already supports some features (check your browser column). See specific browser version support via [caniuse](https://caniuse.com/wasm).
 
 You can use different programming languages to produce WebAssembly, from JavaScript to Haskell. You can even use Python in the browser with [pyodide](https://pyodide.org).
-# Why WebAssembly
+
+## Why WebAssembly
 
 There are many compelling use cases, and Wasm opens the doors to porting computational heavy stuff to the web:
 - Image and video manipulation
@@ -38,7 +38,7 @@ There are many compelling use cases, and Wasm opens the doors to porting computa
 
 In this blog post, we will learn how to use a variant of TypeScript to produce WebAssembly and communicate with it using JavaScript, just from your browser! We will be using [AssemblyScript](https://www.assemblyscript.org/).
 
-# Why AssemblyScript
+## Why AssemblyScript
 
 As we already mentioned, you can target Wasm with different programming languages, even JavaScript.
 
@@ -46,7 +46,7 @@ If you work with JavaScript and Node.js, there is a high possibility you are usi
 
 JavaScript developers feel more natural and frictionless to keep using TypeScript for generating Wasm; this is where AssemblyScript comes into play.
 
-# Writing AssemblyScript
+## Writing AssemblyScript
 
 AssemblyScript code will look similar to TypeScript. No worries if you are not familiar with it. I promise you will get it if you’re already familiar with JavaScript.
 
@@ -58,7 +58,7 @@ You can write AssemblyScript in two different ways:
 
 These approaches are not mutually exclusive, and you can mix both of them according to your needs.
 
-## Standard library
+### Standard library
 
 AssemblyScript provides a standard JavaScript-like [standard library](https://www.assemblyscript.org/stdlib/globals.html) similar to those used by JavaScript.
 
@@ -70,13 +70,9 @@ export function addInteger(a: i32, b: i32): i32 {
 }
 ```
 
+### Low-level WebAssembly
 
-## Low-level WebAssembly
-
-In some instances, you will need to write low-level WebAssembly
-An extract of the previous function in WebAssembly will look like the following instruction:
-
-
+In some instances, you will need to write low-level WebAssembly. An extract of the previous function in WebAssembly will look like the following instruction:
 
 ```wasm
 (func $assembly/index/addInteger (param $0 i32) (param $1 i32) (result i32)
@@ -112,13 +108,13 @@ const someInt = someFloat | 0
 
 [Read more about code portability](https://www.assemblyscript.org/compiler.html#portability)
 
-You should avoid non-strict TypeScript code since not all will be valid AssemblyScript code. [Read more about TypeScript strict mode](https://www.typescriptlang.org/tsconfig/#strict)
+You should avoid non-strict TypeScript code since not all will be valid AssemblyScript code. [Read more about TypeScript strict mode](https://www.typescriptlang.org/tsconfig/#strict).
 
-If you feel curious about the AssemblyScript typings, you can find them [here](https://github.com/AssemblyScript/assemblyscript/blob/main/std/assembly.json) and [here](https://github.com/AssemblyScript/assemblyscript/blob/main/tsconfig-base.json)
+If you feel curious about the AssemblyScript typings, check out the [assembly.json](https://github.com/AssemblyScript/assemblyscript/blob/main/std/assembly.json) and [tsconfig-base.json](https://github.com/AssemblyScript/assemblyscript/blob/main/tsconfig-base.json) GitHub repos.
 
-## Writing your first WebAssembly code with AssemblyScript
+### Writing your first WebAssembly code with AssemblyScript
 
-Ensure you have Node.js latest LTS version installed on your machine; you can get it from [here](https://nodejs.org/). Using older versions of Node.js can lead to errors using the AssemblyScript compiler.
+Ensure you have Node.js latest LTS version installed on your machine; you can get it from [nodejs.org](https://nodejs.org/). Using older versions of Node.js can lead to errors using the AssemblyScript compiler.
 
 Initialize a new Node.js project by running the following command in your favorite terminal.
 
@@ -184,7 +180,6 @@ export function addInteger(a: i32, b: i32): i32 {
 
 As you can see, this is close to a regular TypeScript code, and the only difference is the typings that come for WebAssembly types; in this case, i32 represents a 32-bit signed integer. In TypeScript, you would use just a number type.
 
-
 Compile your code to Wasm
 
 In your terminal run
@@ -194,7 +189,6 @@ In your terminal run
 ```
 
 This will generate a build folder with the debug and release targets (by default).Ensure you have the following files created:
-
 
 ![Generate WebAssembly with TypeScript with-shadow](assembly-script-2.png 'Build files')
 
@@ -218,19 +212,16 @@ npm run start
 
 Now, open your browser and see the result printed on the screen!
 
-You can read the official guide [here](https://www.assemblyscript.org/getting-started.html#setting-up-a-new-project)
+You can also read the official [AssemblyScript getting started guide](https://www.assemblyscript.org/getting-started.html#setting-up-a-new-project).
 
-
-## Debugging WebAssembly
+### Debugging WebAssembly
 
 You can debug your WebAssembly code from a supported browser. Let’s review how you can do it using Chrome.
 
 1. Ensure that you’re running the `asc` compiler with a debugging target. Ensure source maps are enabled since it will help you inspect your code clearer from your browser.
 2. Ensure you have WebAssembly debugging enabled (check the option under Chrome developer tools settings > Experiments)
 
-
 ![Generate WebAssembly with TypeScript with-shadow](assembly-script-4.png 'Debugging Wasm')
-
 
 3. Once enabled, you need to reload your browser; just click Reload DevTools from the message that appeared after you closed the settings window.
 
@@ -240,7 +231,7 @@ You can debug your WebAssembly code from a supported browser. Let’s review how
 
 ![Generate WebAssembly with TypeScript with-shadow](assembly-script-6.png 'Inspecting Wasm')
 
-# To wrap up
+## To wrap up
 
 This blog post is just the tip of the Iceberg. AssemblyScript is a well-documented project with advanced [examples](https://www.assemblyscript.org/examples.html) and exciting implementations.
 
@@ -250,7 +241,7 @@ Hopefully, this blog post helped you increase your interest in experimenting wit
 
 [Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
 
-# Bonus section
+## Bonus section
 
 Did you know you can run that WebAssembly code in Node.js? Just add the following code in a new file at the root level of your project and run it as a regular node.js file.
 
@@ -277,4 +268,3 @@ WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
   console.log(sum); // Outputs: 3
 });
 ```
-
