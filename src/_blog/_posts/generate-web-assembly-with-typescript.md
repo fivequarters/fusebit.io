@@ -1,6 +1,6 @@
 ---
 post_title: Generate WebAssembly with AssemblyScript, a TypeScript-like language
-post_author: bencho
+post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-03-31'
 post_image: assembly-script-main.jpg
