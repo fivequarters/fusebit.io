@@ -285,7 +285,7 @@ export function move():void {
 ```
 The move function recalculates the next position of the Pendulum in the x direction. We use the pendulum formula to calculate the position.
 
-[View source code on GitHub](https://github.com/fusebit/blog-examples) 
+[View source code on GitHub](https://github.com/fusebit/blog-examples/tree/main/assembly-script) 
 
 
 
