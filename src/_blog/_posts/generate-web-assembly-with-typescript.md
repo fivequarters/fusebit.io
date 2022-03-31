@@ -1,5 +1,5 @@
 ---
-post_title: Generate WebAssembly with TypeScript using AssemblyScript
+post_title: Generate Webassembly With Typescript Using Assemblyscript
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-03-29'
@@ -99,14 +99,14 @@ const someFloat: f32 = 1.5
 const someInt: i32 = i32(someFloat)
 ```
 
-After compiling the code with the regular typescript compiler, the result will be
+After compiling the code with the regular typescript compiler, the result will be:
 
 ```javascript
 const someFloat = 1.5
 const someInt = someFloat | 0
 ```
 
-[Read more about code portability](https://www.assemblyscript.org/compiler.html#portability)
+[Read more about code portability on assemblyscript.org](https://www.assemblyscript.org/compiler.html#portability)/
 
 You should avoid non-strict TypeScript code since not all will be valid AssemblyScript code. [Read more about TypeScript strict mode](https://www.typescriptlang.org/tsconfig/#strict).
 
@@ -116,13 +116,13 @@ If you feel curious about the AssemblyScript typings, check out the [assembly.js
 
 Ensure you have Node.js latest LTS version installed on your machine; you can get it from [nodejs.org](https://nodejs.org/). Using older versions of Node.js can lead to errors using the AssemblyScript compiler.
 
-Initialize a new Node.js project by running the following command in your favorite terminal.
+Initialize a new Node.js project by running the following command in your favorite terminal:
 
 ```bash
  npm init --yes
 ```
 
-Install the compiler as a development dependency
+Install the compiler as a development dependency:
 
 ```bash
    npm install --save-dev assemblyscript
@@ -137,7 +137,7 @@ The AssemblyScript project provides a utility called **asinit** used for scaffol
 - Add proper configuration to your package.json file.
 - Example HTML file that loads the module in a browser.
 
-Run the utility via npx
+Run the utility via npx:
 
 ```bash
   npx asinit .
@@ -180,7 +180,7 @@ export function addInteger(a: i32, b: i32): i32 {
 
 As you can see, this is close to a regular TypeScript code, and the only difference is the typings that come for WebAssembly types; in this case, i32 represents a 32-bit signed integer. In TypeScript, you would use just a number type.
 
-Compile your code to Wasm
+Compile your code to Wasm:
 
 In your terminal run
 
@@ -202,7 +202,7 @@ In your index.html file (located at the root level of your project), add the fol
 
 ```
 
-Start the local server to view the result
+Start the local server to view the result:
 
 ```bash
 npm run start
@@ -239,7 +239,7 @@ I firmly believe this project can reduce the gap in Wasm adoption and open up th
 
 Hopefully, this blog post helped you increase your interest in experimenting with WebAssembly yourself. Don’t hesitate to reach out if you have any questions, and we’ll be happy to help push through. You can find me on the [Fusebit community Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg).
 
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
+[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=generate-web-assembly-with-typescript) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
 
 ## Bonus section
 
@@ -256,7 +256,7 @@ WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
 });
 ```
 
-Note: if you are using CommonJS instead, ensure you change the way you import the fs library:
+Note: if you are using `CommonJS` instead, ensure you change the way you import the `fs` library:
 
 ```javascript
 const fs = require('fs');
