@@ -63,11 +63,13 @@ For instance, the server you’re pulling from might be unavailable due to an ou
 
 A good principle to follow would be to try and stick to reliable sources that you can trust so you can leverage the benefits of direct imports, and if you are unsure about the source - then implement stricter safeguards to prevent any issues with your application.
 
-Another thing to consider is that you may be tempted to try and use popular CDNs that host JavaScript ESM-compatible modules such as [https://esm.run](https://esm.run) or [https://unpkg.com](https://unpkg.com). After all, part of the promise of this feature is that the same modules can now work client-and server-side. However, as of Node 17.6, the current implenentation fails when accessing CDN-hosted modules, due to [an issue](https://github.com/nodejs/node/issues/42098) that is actively being worked on.
+Another thing to consider is that you may be tempted to try and use popular CDNs that host JavaScript ESM-compatible modules such as [https://esm.run](https://esm.run) or [https://unpkg.com](https://unpkg.com). After all, part of the promise of this feature is that the same modules can now work client-and server-side. 	
+
+***UPDATE***: *In an earlier version of this post, we discovered that there was an issue when accessing CDN-hosted modules, however as of Node 17.7.1, we can [confirm](https://github.com/nodejs/node/issues/42098#issuecomment-1064654699) that this issue has now been fixed.*
 
 ## How do I use it?
 
-You can run `node --experimental-network-imports` and then use import without needing any additional modules when the feature ships. This feature is currently available behind a flag in [Node 17.6](https://nodejs.org/dist/v17.6.0) and later versions.
+You can run `node --experimental-network-imports` and then use import without needing any additional modules when the feature ships. This feature is currently available behind a flag in [Node 17.6](https://nodejs.org/dist/v17.6.0) and later versions. However, we would encourage you to always pull the latest version as this is actively being worked on.
 
 Here’s a quick guide using a javascript file with an absolute path to a module, to get you going:
 
