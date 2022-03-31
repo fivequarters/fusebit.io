@@ -64,7 +64,7 @@ This is a non-portable AssemblyScript code that is not 100% accurate with TypeSc
 let someFloat: f32 = 1.5
 let someInt: i32 = <i32>someFloat
 ```
-In TypeScript, all numeric types are aliases of `number,` so there is no distinction between these numeric types. 
+In TypeScript, all numeric types are aliases of `number`, so there is no distinction between these numeric types. 
 
 The generated portable TypeScript code using AssemblyScript compiler will be:
 
@@ -201,8 +201,8 @@ This will generate a build folder with the debug and release targets (by default
 
 ```markup
 <script type="module">
-   import { addInteger } from "./build/release.js";
-   document.body.innerText = addInteger(1,2);
+ import { addInteger } from "./build/release.js";
+ document.body.innerText = addInteger(1,2);
 </script>
 ```
 
@@ -256,6 +256,8 @@ Alright, drawing a pendulum in the browser is not desperately in need of using W
 
 The Wasm code will be responsible for the position calculation of our pendulum, there are two functions:
 
+### Main function
+
 ```typescript
 export function init(startPositionX: f64, amplitude: u32, w: u32, h: u32): void {
  angle = 0;
@@ -269,7 +271,7 @@ export function init(startPositionX: f64, amplitude: u32, w: u32, h: u32): void 
 This function is in charge of the initialization of variables by storing them in a class object called Pendulum; another responsibility of this function is memory assignment; it uses the configured canvas width and height to calculate the needed memory. If you don’t assign memory correctly, your Wasm may fail. [Read about memory management](https://www.assemblyscript.org/stdlib/globals.html#memory)
 
 
-Move function
+### Move function
 
 ```typescript
 export function move():void {
