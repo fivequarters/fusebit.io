@@ -1,10 +1,10 @@
 ---
-post_title: Track Your Favorite Crypto Prices in Slack With This Bot
+post_title: Track Your Favorite Crypto Prices in Slack With This Node.js Bot
 post_author: Yavor Georgiev
 post_author_avatar: yavor.png
 date: '2022-03-28'
 post_image: blog-crypto-bot.jpg
-post_excerpt: Track your favorite crypto coins and get notifications of price changes in Slack
+post_excerpt: Track your favorite crypto coins and get notifications of price changes in Slack using Node.js and JavaScript
 post_slug: crypto-price-tracking-bot
 tags: ['post', 'developer tools']
 post_date_in_url: false
@@ -54,7 +54,7 @@ To get the bot to run regularly on a schedule:
 ]
 ```
 
-You may also want to check for the value of another crypto coin. Simply change the following line to a different symbol.
+You may also want to check for the value of another crypto coin. Simply change the following line to a different symbol. You need to be familiar with Node.js and JavaScript to make this change.
 
 ```javascript
 const ticker = 'BTC';
