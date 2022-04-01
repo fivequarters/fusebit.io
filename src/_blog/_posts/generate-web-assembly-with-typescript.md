@@ -34,7 +34,7 @@ There are many compelling use cases. Wasm opens the doors to porting computation
 - VPN
 - Encryption
 
-You can even run Doom from the browser using Wasm: 
+You can even run Doom from the browser using Wasm: 🤯
 - [Running Doom in Grafana](https://grafana.com/blog/2022/03/31/can-grafana-run-doom/)
 - [Multiplayer Doom on Cloudflare workers](https://blog.cloudflare.com/doom-multiplayer-workers/)
 
@@ -242,14 +242,12 @@ You can also read the official [AssemblyScript getting started guide](https://ww
 
 Alright, drawing a pendulum in the browser is not desperately in need of using Wasm, but the main idea is to help you to get some concepts on how you can use Wasm to rely on the Math calculations needed to paint our Pendulum:
 
-
 <iframe src="https://codesandbox.io/embed/tender-ritchie-06ory9?autoresize=1&fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="tender-ritchie-06ory9"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
-
 
 [![Edit tender-ritchie-06ory9](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/tender-ritchie-06ory9?autoresize=1&fontsize=14&hidenavigation=1&theme=dark)
 
@@ -270,7 +268,6 @@ export function init(startPositionX: f64, amplitude: u32, w: u32, h: u32): void 
 
 This function is in charge of the initialization of variables by storing them in a class object called Pendulum; another responsibility of this function is memory assignment; it uses the configured canvas width and height to calculate the needed memory. If you don’t assign memory correctly, your Wasm may fail. [Read about memory management](https://www.assemblyscript.org/stdlib/globals.html#memory)
 
-
 ### Move Function
 
 ```typescript
@@ -286,8 +283,6 @@ export function move():void {
 The move function recalculates the next position of the Pendulum in the x direction. We use the pendulum formula to calculate the position.
 
 [View source code on GitHub](https://github.com/fusebit/blog-examples/tree/main/assembly-script) 
-
-
 
 ### Debugging WebAssembly
 
