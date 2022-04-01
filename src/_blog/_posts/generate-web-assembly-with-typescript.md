@@ -1,5 +1,5 @@
 ---
-post_title: Generate WebAssembly with AssemblyScript, a TypeScript-like language
+post_title: Generate WebAssembly With AssemblyScript, a TypeScript-like language
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-03-31'
@@ -8,7 +8,7 @@ post_excerpt: Learn how to write WebAssembly code with the familiarity of a Type
 post_slug: generate-web-assembly-with-typescript
 tags: ['post', 'developer tools', 'node.js']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/generate-web-assembly-with-typescript.jpeg
+post_og_image: https://fusebit.io/assets/images/blog/assembly-script-main.jpg
 posts_related: ['node-testing-comes-to-core', 'key-generation-webcrypto', 'api-monitoring-and-alerting']
 ---
 
@@ -73,14 +73,14 @@ let someFloat: f32 = 1.5
 let someInt: i32 = i32(someFloat)
 ```
 
-After compiling the code with the regular typescript compiler, the result will be
+After compiling the code with the regular typescript compiler, the result will be:
 
 ```javascript
 var someFloat = 1.5
 var someInt = someFloat | 0
 ```
 
-[Read more about code portability](https://www.assemblyscript.org/compiler.html#portability)
+[Read more about code portability on assemblyscript.org](https://www.assemblyscript.org/compiler.html#portability)
 
 You can write AssemblyScript in two different ways:
 - Standard library
@@ -88,7 +88,7 @@ You can write AssemblyScript in two different ways:
 
 These approaches are not mutually exclusive, and you can mix both of them according to your needs.
 
-### Standard library
+### Standard Library
 
 AssemblyScript provides a standard JavaScript-like [standard library](https://www.assemblyscript.org/stdlib/globals.html) similar to those used by JavaScript.
 
@@ -142,7 +142,7 @@ The AssemblyScript project provides a utility called **asinit** used for scaffol
 - Add proper configuration to your package.json file.
 - Example HTML file that loads the module in a browser.
 
-Run the utility via npx
+Run the utility via npx:
 
 ```bash
 npx asinit .
@@ -185,7 +185,7 @@ export function addInteger(a: i32, b: i32): i32 {
 As you can see, this is close to a regular TypeScript code, and the only difference is the typings that come for WebAssembly types; in this case, i32 represents a 32-bit signed integer. In TypeScript, you would use just a number type.
 
 
-2. Compile your code to Wasm
+2. Compile your code to Wasm:
 
 In your terminal run
 
@@ -226,7 +226,7 @@ export const {
 
 ```
 
-4. Start the local server to view the result
+4. Start the local server to view the result:
 
 ```bash
 npm run start
@@ -238,8 +238,8 @@ Now, open your browser and see the result printed on the screen!
 
 You can also read the official [AssemblyScript getting started guide](https://www.assemblyscript.org/getting-started.html#setting-up-a-new-project).
 
-
 ## Another example creating a pendulum in the browser
+
 Alright, drawing a pendulum in the browser is not desperately in need of using Wasm, but the main idea is to help you to get some concepts on how you can use Wasm to rely on the Math calculations needed to paint our Pendulum:
 
 
@@ -271,7 +271,7 @@ export function init(startPositionX: f64, amplitude: u32, w: u32, h: u32): void 
 This function is in charge of the initialization of variables by storing them in a class object called Pendulum; another responsibility of this function is memory assignment; it uses the configured canvas width and height to calculate the needed memory. If you don’t assign memory correctly, your Wasm may fail. [Read about memory management](https://www.assemblyscript.org/stdlib/globals.html#memory)
 
 
-### Move function
+### Move Function
 
 ```typescript
 export function move():void {
@@ -305,7 +305,8 @@ You can debug your WebAssembly code from a supported browser. Let’s review how
 4. Now you can add breakpoints to your code and inspect it! 
 
 ![Generate WebAssembly with TypeScript with-shadow](assembly-script-6.png 'Inspecting Wasm')
-## To wrap up
+
+## To Wrap Up
 
 This blog post is just the tip of the Iceberg. AssemblyScript is a well-documented project with advanced [examples](https://www.assemblyscript.org/examples.html) and exciting implementations.
 
@@ -313,7 +314,7 @@ I firmly believe this project can reduce the gap in Wasm adoption and open up th
 
 Hopefully, this blog post helped you increase your interest in experimenting with WebAssembly yourself. Don’t hesitate to reach out if you have any questions, and we’ll be happy to help push through. You can find me on the [Fusebit community Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg).
 
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
+[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=generate-web-assembly-with-typescript) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=generate-web-assembly-with-typescript)!
 
 ## Bonus section
 
@@ -329,7 +330,7 @@ WebAssembly.instantiate(wasmBuffer).then(wasmModule => {
 });
 ```
 
-Note: if you are using CommonJS instead, ensure you change the way you import the fs library:
+Note: if you are using `CommonJS` instead, ensure you change the way you import the `fs` library:
 
 ```javascript
 const fs = require('fs');
