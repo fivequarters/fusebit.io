@@ -2,7 +2,7 @@
 post_title: Generate WebAssembly With AssemblyScript, a TypeScript-like language
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
-date: '2022-03-31'
+date: '2022-04-01'
 post_image: assembly-script-main.jpg
 post_excerpt: Learn how to write WebAssembly code with the familiarity of a TypeScript-like language, create low-level code with the existing web ecosystem you already know.
 post_slug: generate-web-assembly-with-typescript
