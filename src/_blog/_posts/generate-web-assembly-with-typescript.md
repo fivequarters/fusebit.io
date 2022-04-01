@@ -117,7 +117,7 @@ You should avoid non-strict TypeScript code since not all will be valid Assembly
 
 If you feel curious about the AssemblyScript typings, check out the [assembly.json](https://github.com/AssemblyScript/assemblyscript/blob/main/std/assembly.json) and [tsconfig-base.json](https://github.com/AssemblyScript/assemblyscript/blob/main/tsconfig-base.json) GitHub repos.
 
-### Writing your first WebAssembly code with AssemblyScript
+### Writing Your First AssemblyScript
 
 Ensure you have Node.js latest LTS version installed on your machine; you can get it from [nodejs.org](https://nodejs.org/). Using older versions of Node.js can lead to errors using the AssemblyScript compiler.
 
@@ -184,7 +184,6 @@ export function addInteger(a: i32, b: i32): i32 {
 
 As you can see, this is close to a regular TypeScript code, and the only difference is the typings that come for WebAssembly types; in this case, i32 represents a 32-bit signed integer. In TypeScript, you would use just a number type.
 
-
 2. Compile your code to Wasm:
 
 In your terminal run
@@ -238,9 +237,9 @@ Now, open your browser and see the result printed on the screen!
 
 You can also read the official [AssemblyScript getting started guide](https://www.assemblyscript.org/getting-started.html#setting-up-a-new-project).
 
-## Another example creating a pendulum in the browser
+## Example: Create a Browser-Based Pendulum
 
-Alright, drawing a pendulum in the browser is not desperately in need of using Wasm, but the main idea is to help you to get some concepts on how you can use Wasm to rely on the Math calculations needed to paint our Pendulum:
+Alright, drawing a pendulum in the browser is not desperately in need of using Wasm, but the main idea is to help you to get some concepts on how you can use Wasm to rely on the math calculations needed to animate and paint our pendulum:
 
 <iframe src="https://codesandbox.io/embed/tender-ritchie-06ory9?autoresize=1&fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -250,7 +249,6 @@ Alright, drawing a pendulum in the browser is not desperately in need of using W
    ></iframe>
 
 [![Edit tender-ritchie-06ory9](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/tender-ritchie-06ory9?autoresize=1&fontsize=14&hidenavigation=1&theme=dark)
-
 
 The Wasm code will be responsible for the position calculation of our pendulum, there are two functions:
 
