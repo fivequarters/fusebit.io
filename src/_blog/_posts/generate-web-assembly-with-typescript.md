@@ -1,5 +1,5 @@
 ---
-post_title: Generate WebAssembly With AssemblyScript, a TypeScript-like language
+post_title: Generate WebAssembly With AssemblyScript, a TypeScript-like Language
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-04-01'
