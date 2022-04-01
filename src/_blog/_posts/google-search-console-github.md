@@ -3,7 +3,7 @@
 post_title: Use the Google Search Console API and Github Actions to Automate SEO
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
-date: 'YYYY-MM-DD'
+date: '2022-04-01'
 post_image: blog-google-search-img.png
 post_excerpt: In this post, I’ll walk you through a simple use case - integrate your publishing workflow directly to the Google Search Console with Github Actions and automatically submit an updated sitemap for indexing. As a result, without having to do anything, your new blog post or product page will be immediately searchable on Google.
 post_slug: google-search-console-github
@@ -45,43 +45,28 @@ Note that in the example below, we’ve specified `GOOGLE_SEARCH_CONSOLE_JSON_KE
 ```javascript
 
 const { google } = require('googleapis');
-
 const { JWT } = require('google-auth-library');
-
 const searchconsole = google.searchconsole('v1');
 
 const keys = JSON.parse(Buffer.from(process.env.GOOGLE_SEARCH_CONSOLE_JSON_KEY, 'base64').toString('utf-8'));
-
 const client = new JWT({
-
   email: keys.client_email,
-
   key: keys.private_key,
-
   scopes: ['https://www.googleapis.com/auth/webmasters', 'https://www.googleapis.com/auth/webmasters.readonly'],
-
 });
 
 google.options({ auth: client });
 
 (async () => {
-
   try {
-
     await searchconsole.sitemaps.submit({
-
       // UPDATE THIS TO YOUR OWN SITEMAP
-
       feedpath: 'https://fusebit.io/sitemap.xml',
-
       siteUrl: 'https://fusebit.io/',
-
     });
 
   } catch (e) {
-
     console.log(e);
-
   }
 
 })();
@@ -98,9 +83,7 @@ Note that you may have to update the file and make it executable, you  can do th
 #!/usr/bin/env bash
 
 # -- Standard Header --
-
 echoerr() { printf "%s\n" "$*" >&2; }
-
 export FUSEBIT_DEBUG=
 
 node scripts/publish_sitemap/publish.js
@@ -122,8 +105,7 @@ For context, A workflow is a configurable automated process that will run one or
 
 To do this create a top level directory called `.github` with the following structure:
 
-
-![Github Workflow Directory](blog/blog-gsc-github-workflow-structure.png 'Github Workflow Directory')
+![Github Workflow Directory](blog-gsc-github-workflow-structure.png 'Github Workflow Directory')
 
 
 In this folder, add your workflow file:
@@ -132,15 +114,11 @@ In this folder, add your workflow file:
 ```
 
 on: [push]
-
 jobs:
 
       - name: Publish Sitemap
-
         env: 
-
           GOOGLE_SEARCH_CONSOLE_JSON_KEY: ${{ secrets.GOOGLE_SEARCH_CONSOLE_JSON_KEY }}
-
         run: ./scripts/publish_sitemap/publish.sh
 
 ```
@@ -156,28 +134,23 @@ To do this, in your terminal window, navigate to the directory where your `keys.
 
 Generate an encoded version of this file by running the following command: 
  
-```cat keys.json | base64 | pbcopy```
+`cat keys.json | base64 | pbcopy`
 
 This will copy the file encoding to your clipboard and you will paste it in the next step. 
 
 Next, for your Github Organization navigate to **Settings > Security > Secrets > Actions **and click on **New Organization Secret**
 
-
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
+![Github Secrets Menu](blog-gsc-github-org-secrets.png 'Github Secrets Menu')
 
 
 On this screen, set the name to `GOOGLE_SEARCH_CONSOLE_JSON_KEY`, paste in the encoded file from your clipboard and hit save.
 
+![Github Add Secret](blog-gsc-github-add-secret.png 'Github Add Secret')
+
+
 That’s it! Now anytime you publish an update to your website, Github will automatically trigger the Workflow Action that will submit an updated sitemap to Google using your publish scripts. You can check on the Google Search Console to verify the results!
 
-
-
---GOOGLE SEARCH CONSOLE IMAGE
-
+![Github Add Secret](blog-gsc-search-console-result.png 'Github Add Secret')
 
 
 ## Conclusion
