@@ -41,7 +41,7 @@ In the `publish.js` file, we’re essentially setting up our connection to Googl
 
 Note that in the example below, we’ve specified `GOOGLE_SEARCH_CONSOLE_JSON_KEY` as an environment variable and will walk you through how to get this stored into your Github below.
 
-#### **`publish.js`**
+#### **`File: publish.js`**
 ```javascript
 
 const { google } = require('googleapis');
@@ -76,7 +76,7 @@ In the `publish.sh` file, we’re invoking a bash command to run the above file.
 
 Note that you may have to update the file and make it executable, you  can do this easily by running the following command in your terminal: `chmod +x scripts/publish_sitemap/publish.sh`
 
-#### **File: `publish.sh`**
+#### **`File: publish.sh`**
 ```bash
 #!/usr/bin/env bash
 
@@ -107,7 +107,7 @@ To do this create a top level directory called `.github` with the following stru
 
 In this folder, add your workflow file:
 
-#### **File: `publish_sitemap.yml`**
+#### **`File: publish_sitemap.yml`**
 ```yaml
 on: [push]
 jobs:
@@ -123,7 +123,7 @@ Whenever you push to a branch with this file in it, Github will automatically ex
 
 ## 3. Add your credentials as a Secret in Github
 
-The last step is to add the GOOGLE_SEARCH_CONSOLE_JSON_KEY environment variable as secret in your Github repo. Otherwise, Google won’t be able to authenticate your request and return an error.
+The last step is to add the `GOOGLE_SEARCH_CONSOLE_JSON_KEY` environment variable as secret in your Github repo. Otherwise, Google won’t be able to authenticate your request and return an error.
 
 To do this, in your terminal window, navigate to the directory where your `keys.json` file is stored, this is the file that contains your Client ID, Private key etc.
 
