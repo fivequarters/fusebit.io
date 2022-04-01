@@ -70,7 +70,6 @@ google.options({ auth: client });
   }
 
 })();
-
 ```
 
 In the `publish.sh` file, we’re invoking a bash command to run the above file. 
@@ -78,8 +77,7 @@ In the `publish.sh` file, we’re invoking a bash command to run the above file.
 Note that you may have to update the file and make it executable, you  can do this easily by running the following command in your terminal: `chmod +x scripts/publish_sitemap/publish.sh`
 
 #### **File: `publish.sh`**
-```console
-
+```bash
 #!/usr/bin/env bash
 
 # -- Standard Header --
@@ -87,7 +85,6 @@ echoerr() { printf "%s\n" "$*" >&2; }
 export FUSEBIT_DEBUG=
 
 node scripts/publish_sitemap/publish.js
-
 ```
 
 Finally, make sure to install your dependencies and you can do this by installing the two google npm package:  
@@ -111,8 +108,7 @@ To do this create a top level directory called `.github` with the following stru
 In this folder, add your workflow file:
 
 #### **File: `publish_sitemap.yml`**
-```console
-
+```yaml
 on: [push]
 jobs:
 
@@ -120,7 +116,6 @@ jobs:
         env: 
           GOOGLE_SEARCH_CONSOLE_JSON_KEY: ${{ secrets.GOOGLE_SEARCH_CONSOLE_JSON_KEY }}
         run: ./scripts/publish_sitemap/publish.sh
-
 ```
 
 Whenever you push to a branch with this file in it, Github will automatically execute the script using the provided environment variables. 
