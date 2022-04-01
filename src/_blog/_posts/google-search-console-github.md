@@ -7,7 +7,7 @@ date: '2022-04-01'
 post_image: blog-google-search-img.png
 post_excerpt: In this post, I’ll walk you through a simple use case - integrate your publishing workflow directly to the Google Search Console with Github Actions and automatically submit an updated sitemap for indexing. As a result, without having to do anything, your new blog post or product page will be immediately searchable on Google.
 post_slug: google-search-console-github
-tags: [‘post’,’node.js’,growth’,’google’]
+tags: ['post','growth']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/google-search-console-github.png
 posts_related: ['google-search-console-nodejs','run-nodejs-from-google-sheets','make-git-your-api',]
@@ -77,8 +77,8 @@ In the `publish.sh` file, we’re invoking a bash command to run the above file.
 
 Note that you may have to update the file and make it executable, you  can do this easily by running the following command in your terminal: `chmod +x scripts/publish_sitemap/publish.sh`
 
-#### **`publish.sh`**
-```
+#### **File: `publish.sh`**
+```console
 
 #!/usr/bin/env bash
 
@@ -110,8 +110,8 @@ To do this create a top level directory called `.github` with the following stru
 
 In this folder, add your workflow file:
 
-#### **`publish_sitemap.yml`**
-```
+#### **File: `publish_sitemap.yml`**
+```console
 
 on: [push]
 jobs:
