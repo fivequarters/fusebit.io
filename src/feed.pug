@@ -7,13 +7,13 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Fusebit</title>
-    <description>Content about JavaScript, NodeJS, and Integrations!</description>
-    <copyright>Copyright 2022 by Fusebit, Inc.  All rights reserved.</copyright>
+    <title>Fusebit Blog</title>
+    <description>Content about JavaScript, Node.js, and Integrations!</description>
+    <copyright>Copyright #{currentYear} by Fusebit, Inc.  All rights reserved.</copyright>
     <language>en</language>
     pubDate=currentDate
     lastBuildDate=currentDate
-    <link>https://www.fusebit.io</link>
+    <link>https://fusebit.io/blog/</link>
     atom:link(href=`${site.url}/feed.xml` rel="self" type="application/rss+xml")
 
     each page in collections.all
