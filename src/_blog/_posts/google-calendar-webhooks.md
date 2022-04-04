@@ -180,7 +180,7 @@ You can watch Calendar resources changes using [Google Calendar Push notificatio
 
 - You must provide a unique identifier for your watch event, representing a notification channel within your project. In this example, we will use a universally unique identifier (`UUID`).
 - Provide a type property with a value of `web_hook`
-- A `Webhook address` will be the URL that listens and responds to notifications. It must use `HTTPS`. If you want to run this code locally, you can run a tunnel that allows you to expose your application securely. You can use [Fusetunnel](https://www.npmjs.com/package/@fusebit/tunnel) for that.
+- A `Webhook address` will be the URL that listens and responds to notifications. It must use `HTTPS`. If you want to run this code locally, you can run a tunnel that allows you to expose your application securely. You can use [Localtunnel](https://www.npmjs.com/package/localtunnel) for that.
 - A `token` (optional). You can provide a token used to validate incoming webhooks preventing notifications spoofing attacks to guarantee that it is a legit Webhook call from Google. You can also use this to route the webhook message to the proper destination, taking into account the max length of this property is 256 characters.
 - Set an expiration property (optional) if you want the watcher to expire and stop sending notifications.
 
@@ -188,12 +188,12 @@ Let’s see a code example:
 
 ```javascript
 const { google } = require('googleapis');
-const fusetunnel = require('@fusebit/tunnel');
+const localtunnel = require('localtunnel');
 const { v4: uuidv4 } = require('uuid');
 const serverPort = 3002;
 
 // Start the tunnel right after you start your Http server using fastify (see Handling the authorization callback step)
-const tunnel = await fusetunnel({
+const tunnel = await localtunnel({
   port: serverPort
 });
 // Authorization details for google API are explained in previous steps.
