@@ -9,7 +9,7 @@ post_slug: google-search-console-nodejs
 tags: ['post', 'developer tools','node.js','growth']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-google-search-console-nodejs.png
-posts_related: ['node-fetch','run-nodejs-from-google-sheets','run-every-nodejs-version-in-lambda']
+posts_related: ['node-fetch','run-nodejs-from-google-sheets','google-search-console-github']
 ---
 
 Google Search Console is a free service offered by Google that helps you monitor, maintain, and troubleshoot your site's presence in Google Search results. You don't have to use the Search Console to be included in Google Search results, but Search Console helps you understand and improve how Google sees your site.
@@ -85,6 +85,8 @@ Whether it's a new product page or a new blog post, you want to make them easily
         console.log(res.data);
       }
 ```
+
+Read our more [detailed walkthrough](https://fusebit.io/blog/google-search-console-github/) outlining how to set this up for your own website by leveraging Github Actions.
 
 ## Check to see if it has been indexed
 
