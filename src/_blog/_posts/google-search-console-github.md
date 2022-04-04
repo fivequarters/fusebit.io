@@ -4,7 +4,7 @@ post_title: Use the Google Search Console API and Github Actions to Automate SEO
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-04-01'
-post_image: blog-google-search-img.png
+post_image: blog-gsc-main.png
 post_excerpt: Learn how to integrate your website publishing workflow to automatically submit new content to Google to be indexed and discovered by organic search visitors.
 post_slug: google-search-console-github
 tags: ['post','growth']
