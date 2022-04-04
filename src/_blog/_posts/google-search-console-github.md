@@ -1,13 +1,13 @@
 ---
 
-post_title: Use the Google Search Console API and Github Actions to Automate SEO
+post_title: Use the Google Search Console API and GitHub Actions to Automate SEO
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-04-01'
 post_image: blog-gsc-main.png
 post_excerpt: Learn how to integrate your website publishing workflow to automatically submit new content to Google to be indexed and discovered by organic search visitors.
 post_slug: google-search-console-github
-tags: ['post','growth']
+tags: ['post','growth','integrations']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/google-search-console-github.png
 posts_related: ['google-search-console-nodejs','run-nodejs-from-google-sheets','make-git-your-api',]
@@ -18,27 +18,27 @@ In an earlier [blog post](https://fusebit.io/blog/google-search-console-nodejs/)
 
 The real value, however, comes from integrating this capability into your existing CI and publishing workflow. This integration will  leverage the efficiencies gained from automation and focus on what matters most, growing your business presence online.
 
-In this post, I’ll walk you through a simple use case - integrate your publishing workflow directly to the Google Search Console with [Github Actions](https://docs.github.com/en/actions) and automatically submit an updated sitemap for indexing. As a result, without having to do anything, your new blog post or product page will be immediately searchable on Google.
+In this post, I’ll walk you through a simple use case - integrate your publishing workflow directly to the Google Search Console with [GitHub Actions](https://docs.github.com/en/actions) and automatically submit an updated sitemap for indexing. As a result, without having to do anything, your new blog post or product page will be immediately searchable on Google.
 
 It’s super quick and you will only need to do three things:
 
-1. Add the Google Search Console API Code to your Github repository
-2. Add the Github Actions Configuration File to your Repo
-3. Add your credentials as a Secret in Github
+1. Add the Google Search Console API Code to your GitHub repository
+2. Add the GitHub Actions Configuration File to your Repo
+3. Add your credentials as a Secret in GitHub
 
 Let’s get started. 
 
-As a reminder, we also have a [github repo](https://github.com/fusebit/google-searchconsole-nodejs/tree/main/githubactions) containing all the files that you need to get this up and running.
+As a reminder, we also have a [GitHub repo](https://github.com/fusebit/google-searchconsole-nodejs/tree/main/githubactions) containing all the files that you need to get this up and running.
 
-## 1. Add the Google Search Console API Code to your Github repository
+## 1. Add the Google Search Console API Code to your GitHub repository
 
-Essentially, we need to tell Github exactly which files to run when publishing your website. To do this create a top level directory called `scripts` with the following structure:
+Essentially, we need to tell GitHub exactly which files to run when publishing your website. To do this create a top level directory called `scripts` with the following structure:
 
-![Github Scripts Directory with-shadow](blog-gsc-scripts-directory-structure.png 'Github Scripts Directory')
+![GitHub Scripts Directory with-shadow](blog-gsc-scripts-directory-structure.png 'GitHub Scripts Directory')
 
 In the `publish.js` file, we’re essentially setting up our connection to Google’s Search Console and submitting an updated sitemap directly through the API.
 
-Note that in the example below, we’ve specified `GOOGLE_SEARCH_CONSOLE_JSON_KEY` as an environment variable and will walk you through how to get this stored into your Github below.
+Note that in the example below, we’ve specified `GOOGLE_SEARCH_CONSOLE_JSON_KEY` as an environment variable and will walk you through how to get this stored into your GitHub below.
 
 #### **`File: publish.js`**
 ```javascript
@@ -92,15 +92,15 @@ Finally, make sure to install your dependencies and you can do this by installin
 
 `npm install google-auth-library`
 
-## 2. Add the Github Actions Configuration File to your Repo
+## 2. Add the GitHub Actions Configuration File to your Repo
 
-Now, once you’ve uploaded the Search Console specific pieces, you want to upload the [Github Actions Workflow](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#workflows) file.  
+Now, once you’ve uploaded the Search Console specific pieces, you want to upload the [GitHub Actions Workflow](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#workflows) file.  
 
 For context, A workflow is a configurable automated process that will run one or more jobs. Workflows are defined by a YAML file checked into your repository and will run when triggered by an event in your repository, or they can be triggered manually, or at a defined schedule.
 
 To do this create a top level directory called `.github` with the following structure:
 
-![Github Workflow Directory with-shadow](blog-gsc-github-workflow-structure.png 'Github Workflow Directory')
+![GitHub Workflow Directory with-shadow](blog-gsc-github-workflow-structure.png 'GitHub Workflow Directory')
 
 In this folder, add your workflow file:
 
@@ -115,11 +115,11 @@ jobs:
         run: ./scripts/publish_sitemap/publish.sh
 ```
 
-Whenever you push to a branch with this file in it, Github will automatically execute the script using the provided environment variables. 
+Whenever you push to a branch with this file in it, GitHub will automatically execute the script using the provided environment variables. 
 
-## 3. Add your credentials as a Secret in Github
+## 3. Add your credentials as a Secret in GitHub
 
-The last step is to add the `GOOGLE_SEARCH_CONSOLE_JSON_KEY` environment variable as secret in your Github repo. Otherwise, Google won’t be able to authenticate your request and return an error.
+The last step is to add the `GOOGLE_SEARCH_CONSOLE_JSON_KEY` environment variable as secret in your GitHub repo. Otherwise, Google won’t be able to authenticate your request and return an error.
 
 To do this, in your terminal window, navigate to the directory where your `keys.json` file is stored, this is the file that contains your Client ID, Private key etc.
 
@@ -129,17 +129,17 @@ Generate an encoded version of this file by running the following command:
 
 This will copy the file encoding to your clipboard and you will paste it in the next step. 
 
-Next, for your Github Organization navigate to: **Settings > Security > Secrets > Actions **and click on **New Organization Secret**
+Next, for your GitHub Organization navigate to: **Settings > Security > Secrets > Actions **and click on **New Organization Secret**
 
-![Github Secrets Menu with-shadow](blog-gsc-github-org-secrets.png 'Github Secrets Menu')
+![GitHub Secrets Menu with-shadow](blog-gsc-github-org-secrets.png 'GitHub Secrets Menu')
 
 On this screen, set the name to `GOOGLE_SEARCH_CONSOLE_JSON_KEY`, paste in the encoded file from your clipboard and hit save.
 
-![Github Add Secret with-shadow](blog-gsc-github-add-secret.png 'Github Add Secret')
+![GitHub Add Secret with-shadow](blog-gsc-github-add-secret.png 'GitHub Add Secret')
 
-That’s it! Now anytime you publish an update to your website, Github will automatically trigger the Workflow Action that will submit an updated sitemap to Google using your publish scripts. You can check on the Google Search Console to verify the results!
+That’s it! Now anytime you publish an update to your website, GitHub will automatically trigger the Workflow Action that will submit an updated sitemap to Google using your publish scripts. You can check on the Google Search Console to verify the results!
 
-![Github Add Secret with-shadow](blog-gsc-search-console-result.png 'Github Add Secret')
+![GitHub Add Secret with-shadow](blog-gsc-search-console-result.png 'GitHub Add Secret')
 
 ## Conclusion
 
