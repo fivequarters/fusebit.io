@@ -34,7 +34,7 @@ As a reminder, we also have a [github repo](https://github.com/fusebit/google-se
 
 Essentially, we need to tell Github exactly which files to run when publishing your website. To do this create a top level directory called `scripts` with the following structure:
 
-![Github Scripts Directory](blog-gsc-scripts-directory-structure.png 'Github Scripts Directory')
+![Github Scripts Directory with-shadow](blog-gsc-scripts-directory-structure.png 'Github Scripts Directory')
 
 In the `publish.js` file, we’re essentially setting up our connection to Google’s Search Console and submitting an updated sitemap directly through the API.
 
@@ -100,7 +100,7 @@ For context, A workflow is a configurable automated process that will run one or
 
 To do this create a top level directory called `.github` with the following structure:
 
-![Github Workflow Directory](blog-gsc-github-workflow-structure.png 'Github Workflow Directory')
+![Github Workflow Directory with-shadow](blog-gsc-github-workflow-structure.png 'Github Workflow Directory')
 
 In this folder, add your workflow file:
 
@@ -131,15 +131,15 @@ This will copy the file encoding to your clipboard and you will paste it in the 
 
 Next, for your Github Organization navigate to: **Settings > Security > Secrets > Actions **and click on **New Organization Secret**
 
-![Github Secrets Menu](blog-gsc-github-org-secrets.png 'Github Secrets Menu')
+![Github Secrets Menu with-shadow](blog-gsc-github-org-secrets.png 'Github Secrets Menu')
 
 On this screen, set the name to `GOOGLE_SEARCH_CONSOLE_JSON_KEY`, paste in the encoded file from your clipboard and hit save.
 
-![Github Add Secret](blog-gsc-github-add-secret.png 'Github Add Secret')
+![Github Add Secret with-shadow](blog-gsc-github-add-secret.png 'Github Add Secret')
 
 That’s it! Now anytime you publish an update to your website, Github will automatically trigger the Workflow Action that will submit an updated sitemap to Google using your publish scripts. You can check on the Google Search Console to verify the results!
 
-![Github Add Secret](blog-gsc-search-console-result.png 'Github Add Secret')
+![Github Add Secret with-shadow](blog-gsc-search-console-result.png 'Github Add Secret')
 
 ## Conclusion
 
