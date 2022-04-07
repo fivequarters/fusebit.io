@@ -72,8 +72,8 @@ fastify.register(fp(dbPlugin), { url: 'https://example.com' })
 
 Fastify's straightforward approach to plugins works giving a great developer experience, and it's a big part of the framework's success.
 
-### NestJs
-NestJs is another popular Node.js web framework that aims to provide scalable server-side applications with an extensible application architecture that allows you to write modular code.
+### NestJS
+NestJS is another popular Node.js web framework that aims to provide scalable server-side applications with an extensible application architecture that allows you to write modular code.
 
 This framework relies heavily on a concept called [Dependency Injection](https://martinfowler.com/articles/injection.html) or DI. A software design pattern that manages your object dependencies differently. It uses a technique called Inversion of Control (IoC). Instead of explicitly knowing how to construct a service, it relies on a service injector that handles all the details about creating the service, known as the DI container; your application only knows how to interact with it via a well-defined interface.
 
@@ -181,4 +181,4 @@ You’ve learned how popular web frameworks define a standard interface for regi
 Don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on [Twitter](https://twitter.com/degrammer).
 
 
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
+[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=web-frameworks-plugins-architecture-overview) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
