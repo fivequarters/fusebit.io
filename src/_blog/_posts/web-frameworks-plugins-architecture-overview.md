@@ -1,5 +1,5 @@
 ---
-post_title: Plugin architecture overview between Express, Fastify and NestJS
+post_title: Plugin Architecture Overview Between Express, Fastify and NestJS
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-04-07'
@@ -25,6 +25,7 @@ A plugin enables a system to extend its core capabilities by providing a common 
 In this blog post we’re going to review different architectural approaches to plug-ins of some popular Node.js tools such as Fastify, NestJS and ExpressJS.
 
 ## How a Plugin works
+
 There are some non-negotiable principles for a plugin system:
 - **Keep it simple**: Authoring a plugin should be simple, don’t complicate your plugin system with many configuration files. Favor convention over configuration.
 - **Keep it independent**: A plugin should work independently of other plugins, and follow a [low-coupling approach](https://en.wikipedia.org/wiki/Loose_coupling). All the functionality should be encapsulated and prevent side effects to the core system. (e.g., removing a plugin shouldn’t affect the core system or other plugins).
@@ -39,6 +40,7 @@ Let’s review how the most popular web frameworks of Node.js handle the plugin 
 [Fastify](https://www.fastify.io/), [NestJS](https://nestjs.com/) and [ExpressJS](https://expressjs.com/)
 
 ### Fastify
+
 A high-performance web framework, being one of the fastest frameworks for Node.js.
 The core is a minimalist web framework by design; you will be using their plugin system all the time. 
 Everything is a plugin, consisting of a single exported function specified in the register method (part of the Fastify core).
@@ -73,11 +75,12 @@ fastify.register(fp(dbPlugin), { url: 'https://example.com' })
 Fastify's straightforward approach to plugins works giving a great developer experience, and it's a big part of the framework's success.
 
 ### NestJS
+
 NestJS is another popular Node.js web framework that aims to provide scalable server-side applications with an extensible application architecture that allows you to write modular code.
 
 This framework relies heavily on a concept called [Dependency Injection](https://martinfowler.com/articles/injection.html) or DI. A software design pattern that manages your object dependencies differently. It uses a technique called Inversion of Control (IoC). Instead of explicitly knowing how to construct a service, it relies on a service injector that handles all the details about creating the service, known as the DI container; your application only knows how to interact with it via a well-defined interface.
 
- The main advantage of using this pattern is that you can define abstractions that allow you to change a specific service's implementation details without breaking the contract with the consuming client.
+The main advantage of using this pattern is that you can define abstractions that allow you to change a specific service's implementation details without breaking the contract with the consuming client.
 
 NestJS relies on [ES2016 decorators](https://github.com/tc39/proposal-decorators) to specify a service injected with the NestJS IoC Container. These services are known as  [providers](https://docs.nestjs.com/fundamentals/custom-providers). In the end, they’re just functions called during a class definition.
 
@@ -133,8 +136,8 @@ If you are curious about this topic, TypeScript uses the [reflect-metadata](http
 
 Using DI has its ups and downs, but we can’t wait to see how we will write Node.js programs using this pattern once decorators are standardized and fully available. 
 
-
 ### Express
+
 Express is one of the most popular web frameworks for Node.js, the way you extend the framework functionality is by using [Middlewares](https://expressjs.com/en/guide/writing-middleware.html)
 The concept is similar to Fastify, functions that have access to the request and response objects with a next function to indicate that the middleware has finished processing successfully (identical to the `done` callback from Fastify). The next function runs in the context of an Express router.
 A middleware can be added globally or to specific routes. Let’s see an example:
@@ -176,9 +179,9 @@ const mw = require('./middleware')
 app.use(mw({ url: 'http://localhost'}))
 ```
 ## To Wrap up
+
 You’ve learned how popular web frameworks define a standard interface for registering plugins and extending their functionality by using third-party plugins or building your own.
 
 Don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on [Twitter](https://twitter.com/degrammer).
-
 
 [Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=web-frameworks-plugins-architecture-overview) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
