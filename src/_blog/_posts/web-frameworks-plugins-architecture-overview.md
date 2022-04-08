@@ -2,7 +2,7 @@
 post_title: Plugin Architecture Overview Between Express, Fastify and NestJS
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
-date: '2022-04-07'
+date: '2022-04-08'
 post_image: blog-web-frameworks-plugins-architecture.png
 post_excerpt: Learn how the most popular Node.js web frameworks approach extensibility and modularity throughout different plugin patterns.
 post_slug: web-frameworks-plugins-architecture-overview
