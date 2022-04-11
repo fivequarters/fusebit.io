@@ -1,5 +1,5 @@
 ---
-post_title: Build a plugin system with Node.js
+post_title: Build a Plugin System With Node.js
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-04-11'
@@ -21,7 +21,7 @@ This blog post will cover how to build a plugin system from scratch. As an examp
 
 You can build a plugin system as complex as you want. We want to make a plugin system that aims for simple yet powerful enough to allow your system to be flexible.
 
-## Building a Plugin system with Node.js
+## Building a Plugin System With Node.js
 We’re going to build a CLI application that allows a user to select and apply a text transformation plugin to an entry text.
 
 Let’s define the main components acting in our plugin system:
@@ -33,8 +33,8 @@ Let’s define the main components acting in our plugin system:
 ![Build a plugin system with Node.js with-shadow](build-plugin-with-node-2.png 'Plugin components overview')
 
 ### System Core
-The Core of our example is a simple CLI program with a text prompt that can execute transformation plugins chosen by the user. In case there are no plugins added, we load an `echo` plugin by default, so the user at least can see something in action.
-- The CLI is wrapped around a TextCLI class with a constructor that receives a `pluginManager`.
+The Core of our example is CLI program with a text prompt that can execute transformation plugins chosen by the user. In case there are no plugins added, we load an `echo` plugin by default, so the user at least can see something in action.
+- The CLI is wrapped around a TextCLI class with a constructor that receives a **pluginManager**.
 - The CLI is displayed by calling the **displayPrompt** method.
 - The plugin manager can create an instance of the selected plugin by using the registered plugin name:
 
@@ -44,7 +44,8 @@ console.log(`This is the transformed result for ${answer.text}: ${textPlugin.tra
 ```
 
 As you may have noticed, we use [TypeScript generics](https://www.typescriptlang.org/docs/handbook/2/generics.html) to keep a great developer experience by using the editor’s IntelliSense to see the supported plugin methods. Our plugin system only supports a **TextPlugin** with a `transformText` method.
-See the full implementation of the **TextCLI** class. We use the popular [inquirer](https://www.npmjs.com/package/inquirer) npm package to create the command-line interface.
+
+Let's see the full implementation of the **TextCLI** class. We use the popular [inquirer](https://www.npmjs.com/package/inquirer) npm package to create the command-line interface.
 
 ```typescript
 import PluginManager from '@text-plugins/plugin-manager';
@@ -119,6 +120,9 @@ manager.registerPlugin({
 });
 ```
 
+Co-located plugins organized in a folder with the core system.
+
+![Build a plugin system with Node.js with-shadow](build-plugin-with-node-3.png 'Co-located plugins')
 ### Independent npm package
 A npm package installed from a private or public npm registry.
 
@@ -131,10 +135,7 @@ manager.registerPlugin({
 });
 ```
 
-See source code on [GitHub](https://github.com/fusebit/blog-examples/blob/main/plugin-system/packages/colors/src/index.ts)
-Co-located plugins organized in a folder with the core system.
-
-![Build a plugin system with Node.js with-shadow](build-plugin-with-node-3.png 'Co-located plugins')
+See source code on [GitHub](https://github.com/fusebit/blog-examples/blob/main/plugin-system/packages/colors/src/index.ts).
 
 The key part of our system is the plugin manager, a special class that handles two important functionalities:
 - Register a plugin
@@ -184,7 +185,8 @@ interface IPlugin {
 }
 ```
 
-[See source code on GitHub] (https://github.com/fusebit/blog-examples/blob/main/plugin-system/packages/plugin-manager/src/index.ts)
+[See source code on GitHub](https://github.com/fusebit/blog-examples/blob/main/plugin-system/packages/plugin-manager/src/index.ts)
+
 The plugin manager is added to the System core via its constructor:
 
 ```typescript
@@ -197,7 +199,7 @@ new TextCLI(manager).displayPrompt();
 [See GitHub source code](https://github.com/fusebit/blog-examples/blob/main/plugin-system/packages/core/src/index.ts)
 
 ### Load plugin
-Loading a plugin creates an instance of the plugin found by name. If any, it injects the options object, which is very useful to specify configuration values to our plugin (similar to Fastify).
+Loading a plugin creates an instance of the plugin found by name. If any, it injects the `options` object, which is very useful to specify configuration values to our plugin (similar to Fastify).
 Despite loading the plugin dynamically, we use the power of TypeScript generics to have a smooth developer experience. This generic type represents the plugin contract. Our example will describe the authorized actions that each plugin can perform.
 
 ```typescript
@@ -213,9 +215,12 @@ Despite loading the plugin dynamically, we use the power of TypeScript generics 
 
 ### The Plugin contract
 A plugin contract represents what actions a plugin can execute by interacting with the system services layer. In our example, we will use it to expose different transform behaviors to the CLI: Change color, replace characters, uppercase the text, etc.
-They’re simple enough to understand how this works, but you can extend these principles to build more complex contracts.
+They’re simple enough to understand how it works, but you can extend these principles to build more complex contracts.
+
 One of the critical parts of a Plugin is that it should respect the application contract. Since we’re using TypeScript in our example, it is easy to define the constraints of the plugin by defining clear actions supported. In this case, the application will support only text transformer plugins.
-We can represent the plugin contract using an [abstract class](https://www.typescriptlang.org/docs/handbook/2/classes.html#abstract-classes-and-members). An abstract class defines methods that need to be implemented by another Class. In our case, the plugin implementation for a text transformer.
+We can represent the plugin contract using an [abstract class](https://www.typescriptlang.org/docs/handbook/2/classes.html#abstract-classes-and-members).
+
+An abstract class defines methods that need to be implemented by another Class. In our case, the plugin implementation for a text transformer.
 
 ```typescript
 abstract class TextPlugin {
@@ -244,7 +249,7 @@ This is a really simple plugin that converts the text to a rainbow:
 
 ![Build a plugin system with Node.js with-shadow](build-plugin-with-node-4.png 'CLI plugin list')
 
-![Build a plugin system with Node.js with-shadow](build-plugin-with-node-4.png 'Rainbow plugin example')
+![Build a plugin system with Node.js with-shadow](build-plugin-with-node-5.png 'Rainbow plugin example')
 
 [See source code at GitHub](https://github.com/fusebit/blog-examples/blob/main/plugin-system/packages/colors/src/index.ts)
 Let’s see another transformation plugin:
