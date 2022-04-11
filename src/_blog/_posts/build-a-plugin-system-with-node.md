@@ -4,7 +4,7 @@ post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-04-11'
 post_image: build-a-plugin-system-with-node.jpeg
-post_excerpt: Writing a plugin system enables your application to be extensible, modular and customizable. Learn how to write your own from scratch using Node.js and TypeScript.
+post_excerpt: Writing a plugin system enables your application to be extensible, modular, and customizable. Learn how to write your own from scratch using Node.js and TypeScript.
 post_slug: build-a-plugin-system-with-node
 tags: ['post', 'developer tools', 'node.js']
 post_date_in_url: false
@@ -12,16 +12,16 @@ post_og_image: https://fusebit.io/assets/images/blog/build-a-plugin-system-with-
 posts_related: ['web-frameworks-plugins-architecture-overview','node-testing-comes-to-core', 'generate-web-assembly-with-typescript']
 ---
 
-Writing a plugin system enables your application to be extensible, modular and customizable.
-This is a guiding principle for the most popular Node.js web frameworks,  as we already covered in our previous blog post [Plugin Architecture Overview Between Express, Fastify and NestJS](https://fusebit.io/blog/web-frameworks-plugins-architecture-overview/). 
+Writing a plugin system enables your application to be extensible, modular, and customizable. This is a guiding principle for the most popular Node.js web frameworks,  as we already covered in our previous blog post [Plugin Architecture Overview Between Express, Fastify and NestJS](https://fusebit.io/blog/web-frameworks-plugins-architecture-overview/). 
 
 This blog post will cover how to build a plugin system from scratch. As an example, we will be creating a simple CLI application that applies a text transformation plugin to an entry text, and the user selects the plugin to use:
 
 ![Build a plugin system with Node.js with-shadow](build-a-plugin-system-with-node-1.gif 'CLI example application')
 
-You can build a plugin system as complex as you want. We want to make a plugin system that aims for simple yet powerful enough to allow your system to be flexible.
+You can build a plugin system as complex as you want, but it comes at a cost. I recommend you design a plugin system that aims for simplicity, yet powerful enough to allow your system to be highly customizable.
 
 ## Building a Plugin System With Node.js
+
 We’re going to build a CLI application that allows a user to select and apply a text transformation plugin to an entry text.
 
 Let’s define the main components acting in our plugin system:
@@ -33,6 +33,7 @@ Let’s define the main components acting in our plugin system:
 ![Build a plugin system with Node.js with-shadow](build-plugin-with-node-2.png 'Plugin components overview')
 
 ### System Core
+
 The Core of our example is CLI program with a text prompt that can execute transformation plugins chosen by the user. In case there are no plugins added, we load an `echo` plugin by default, so the user at least can see something in action.
 - The CLI is wrapped around a TextCLI class with a constructor that receives a **pluginManager**.
 - The CLI is displayed by calling the **displayPrompt** method.
@@ -102,9 +103,11 @@ export default TextCLI;
 ```
 
 ### Plugin Manager
+
 The application will load the plugins as npm packages or modules within the same application (co-located). Up to you! But if you’re allowing third-party developers to extend the functionality of your application via plugins, npm packages are the best option! We will cover both examples.
 
 ### Co-located plugin
+
 The Plugin manager registers a plugin located in a relative path from your core application:
 
 ```typescript
@@ -123,7 +126,9 @@ manager.registerPlugin({
 Co-located plugins organized in a folder with the core system.
 
 ![Build a plugin system with Node.js with-shadow](build-plugin-with-node-3.png 'Co-located plugins')
+
 ### Independent npm package
+
 A npm package installed from a private or public npm registry.
 
 ```typescript
@@ -199,6 +204,7 @@ new TextCLI(manager).displayPrompt();
 [See GitHub source code](https://github.com/fusebit/blog-examples/blob/main/plugin-system/packages/core/src/index.ts)
 
 ### Load plugin
+
 Loading a plugin creates an instance of the plugin found by name. If any, it injects the `options` object, which is very useful to specify configuration values to our plugin (similar to Fastify).
 Despite loading the plugin dynamically, we use the power of TypeScript generics to have a smooth developer experience. This generic type represents the plugin contract. Our example will describe the authorized actions that each plugin can perform.
 
@@ -214,6 +220,7 @@ Despite loading the plugin dynamically, we use the power of TypeScript generics 
 ```
 
 ### The Plugin contract
+
 A plugin contract represents what actions a plugin can execute by interacting with the system services layer. In our example, we will use it to expose different transform behaviors to the CLI: Change color, replace characters, uppercase the text, etc.
 They’re simple enough to understand how it works, but you can extend these principles to build more complex contracts.
 
@@ -280,11 +287,11 @@ manager.registerPlugin({
 ```
 
 ## To Wrap up
+
 So far, you’ve learned how to create a basic plugin system with Node.js by relying on the power of TypeScript and understanding how to define a standard interface for registering plugins; The plugin manager can be as complicated as you want, using Dependendency injection, reflection, etc. Think about optimizations you can add to it! The basic principles should still apply.
 
 See the full source code on [GitHub](https://github.com/fusebit/blog-examples/tree/main/plugin-system)
 
 Let us know what you think, don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on [Twitter](https://twitter.com/degrammer).
 
-
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=build-a-plugin-system-with-node) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
+[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=build-a-plugin-system-with-node) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
