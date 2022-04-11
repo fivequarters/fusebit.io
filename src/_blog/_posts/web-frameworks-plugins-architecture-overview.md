@@ -20,7 +20,7 @@ A plugin enables a system to extend its core capabilities by providing a common 
 - Offer new features that can be opted-in from an application.
 - Make your application flexible to be adapted to different use cases.
 - Applications or Frameworks offering a plugin system can be a core differentiator and influence its success.
-- An application designed to keep its core as small as possible and offer extended functionalities via plugins. [One interesting example of this model is Fastify](​​https://www.fastify.io/docs/latest/Guides/Write-Plugin/)
+- An application designed to keep its core as small as possible and offer extended functionalities via plugins. [One interesting example of this is Fastify](https://www.fastify.io/docs/latest/Guides/Write-Plugin/)
 
 In this blog post we’re going to review different architectural approaches to plug-ins of some popular Node.js tools such as Fastify, NestJS and ExpressJS.
 
@@ -184,4 +184,4 @@ You’ve learned how popular web frameworks define a standard interface for regi
 
 Don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on [Twitter](https://twitter.com/degrammer).
 
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=web-frameworks-plugins-architecture-overview) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
+[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=web-frameworks-plugins-architecture-overview) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
