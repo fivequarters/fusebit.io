@@ -20,7 +20,7 @@ A plugin enables a system to extend its core capabilities by providing a common 
 - Offer new features that can be opted-in from an application.
 - Make your application flexible to be adapted to different use cases.
 - Applications or Frameworks offering a plugin system can be a core differentiator and influence its success.
-- An application designed to keep its core as small as possible and offer extended functionalities via plugins. [One interesting example of this model is Fastify](​​https://www.fastify.io/docs/latest/Guides/Write-Plugin/)
+- An application designed to keep its core as small as possible and offer extended functionalities via plugins. [One interesting example of this is Fastify](​​https://www.fastify.io/docs/latest/Guides/Write-Plugin/)
 
 In this blog post we’re going to review different architectural approaches to plug-ins of some popular Node.js tools such as Fastify, NestJS and ExpressJS.
 
