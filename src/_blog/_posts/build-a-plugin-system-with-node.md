@@ -17,7 +17,7 @@ This is a guiding principle for the most popular Node.js web frameworks,  as we 
 
 This blog post will cover how to build a plugin system from scratch. As an example, we will be creating a simple CLI application that applies a text transformation plugin to an entry text, and the user selects the plugin to use:
 
-![Build a plugin system with Node.js with-shadow](build-plugin-with-node-1.png 'CLI example application')
+![Build a plugin system with Node.js with-shadow](build-a-plugin-system-with-node-1.gif 'CLI example application')
 
 You can build a plugin system as complex as you want. We want to make a plugin system that aims for simple yet powerful enough to allow your system to be flexible.
 
@@ -103,7 +103,7 @@ export default TextCLI;
 ### Plugin Manager
 The application will load the plugins as npm packages or modules within the same application (co-located). Up to you! But if you’re allowing third-party developers to extend the functionality of your application via plugins, npm packages are the best option! We will cover both examples.
 
-## Co-located plugin
+### Co-located plugin
 The Plugin manager registers a plugin located in a relative path from your core application:
 
 ```typescript
@@ -119,7 +119,7 @@ manager.registerPlugin({
 });
 ```
 
-## Independent npm package
+### Independent npm package
 A npm package installed from a private or public npm registry.
 
 ```typescript
