@@ -14,15 +14,15 @@ footer.footer
                     include ../Logo/Logo
 
             ul.footer__links 
-                li.footer__links--title  Integrations
+                li.footer__links--title  Popular Integrations
 
-                +footerLink('/pricing/', 'Pricing', 0)
-                +footerLink('https://go.fusebit.io/slack/', 'Slack', 0, true, 'Slack Connector Link Clicked', 'Footer')
-                +footerLink('https://go.fusebit.io/hubspot/', 'HubSpot', 0, true, 'HubSpot Connector Link Clicked', 'Footer')
-                +footerLink('https://go.fusebit.io/salesforce/', 'Salesforce', 0, true, 'Salesforce Connector Link Clicked', 'Footer')
-                +footerLink('https://go.fusebit.io/linear/', 'Linear', 0, true, 'Linear Connector Link Clicked', 'Footer')
-                +footerLink('https://go.fusebit.io/fusebot/', 'Slash Commands', 0, true, 'Slash Commands Link Clicked', 'Footer')
-                +footerLink('/integrations/', '...More', 0, true, 'More Integrations Link Clicked', 'Footer')
+                +footerLink('/integrations/i=google', 'Google', 0)
+                +footerLink('/integrations/i=discord', 'Discord', 0)
+                +footerLink('/integrations/i=githubapp', 'GitHub', 0)
+                +footerLink('/integrations/i=asana', 'Asana', 0)
+                +footerLink('/integrations/i=linkedin', 'LinkedIn', 0)
+                +footerLink('/integrations/i=salesforce', 'Salesforce', 0)
+                +footerLink('/integrations/', '...More', 0, true, '... More', 'Footer')
 
             ul.footer__links 
                 li.footer__links--title  Developers
@@ -35,6 +35,7 @@ footer.footer
                 li.footer__links--title  Company
    
                 +footerLink('/about/', 'About Us', 0)
+                +footerLink('/pricing/', 'Pricing', 0)
                 +footerLink('/support/', 'Support', 0)
                 +footerLink('/careers/', 'Careers', 0)
                 +footerLink('/contact/', 'Contact', 0)
