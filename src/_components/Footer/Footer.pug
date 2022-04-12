@@ -14,27 +14,28 @@ footer.footer
                     include ../Logo/Logo
 
             ul.footer__links 
-                li.footer__links--title  Integrations
-
-                +footerLink('/pricing/', 'Pricing', 0)
-                +footerLink('https://go.fusebit.io/slack/', 'Slack', 0, true, 'Slack Connector Link Clicked', 'Footer')
-                +footerLink('https://go.fusebit.io/hubspot/', 'HubSpot', 0, true, 'HubSpot Connector Link Clicked', 'Footer')
-                +footerLink('https://go.fusebit.io/salesforce/', 'Salesforce', 0, true, 'Salesforce Connector Link Clicked', 'Footer')
-                +footerLink('https://go.fusebit.io/linear/', 'Linear', 0, true, 'Linear Connector Link Clicked', 'Footer')
-                +footerLink('https://go.fusebit.io/fusebot/', 'Slash Commands', 0, true, 'Slash Commands Link Clicked', 'Footer')
-                +footerLink('/integrations/', '...More', 0, true, 'More Integrations Link Clicked', 'Footer')
-
-            ul.footer__links 
                 li.footer__links--title  Developers
                 
                 +footerLink('https://developer.fusebit.io/docs', 'Documentation', 0, true, 'Developer Docs Link Clicked', 'Footer')
                 +footerLink('https://developer.fusebit.io/reference', 'API Reference', 0, true, 'Developer API Reference Link Clicked', 'Footer')
-                +footerLink('/blog/', 'Integration Stories', 0)
+                +footerLink('/blog/', 'Developer Blog', 0)
                 
+            ul.footer__links 
+                li.footer__links--title  Popular Integrations
+
+                +footerLink('/integrations/?i=google', 'Google', 0, true, 'Google Integration Link Clicked', 'Footer')
+                +footerLink('/integrations/?i=discord', 'Discord', 0, true, 'Discord Integration Link Clicked', 'Footer')
+                +footerLink('/integrations/?i=githubapp', 'GitHub', 0, true, 'GitHub Integration Link Clicked', 'Footer')
+                +footerLink('/integrations/?i=asana', 'Asana', 0, true, 'Asana Integration Link Clicked', 'Footer')
+                +footerLink('/integrations/?i=linkedin', 'LinkedIn', 0, true, 'LinkedIn Integration Link Clicked', 'Footer')
+                +footerLink('/integrations/?i=salesforce', 'Salesforce', 0, true, 'Salesforce Integration Link Clicked', 'Footer')
+                +footerLink('/integrations/', '...More', 0, true, 'More Integrations Link Clicked', 'Footer')
+
             ul.footer__links 
                 li.footer__links--title  Company
    
                 +footerLink('/about/', 'About Us', 0)
+                +footerLink('/pricing/', 'Pricing', 0)
                 +footerLink('/support/', 'Support', 0)
                 +footerLink('/careers/', 'Careers', 0)
                 +footerLink('/contact/', 'Contact', 0)

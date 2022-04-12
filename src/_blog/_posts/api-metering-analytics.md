@@ -93,7 +93,7 @@ The cost is of course a function of the load on your system, but BigQuery has a 
 
 ## Implementation
 
-If you have an Express application in Node.js and want to meter your HTTP APIs, read the follow-on blog post [API Metering for Express Apps Using BigQuery](https://fusebit.io/blog/api-metering-and-analytics-for-express/)) that introduces a convenient Express middleware.
+If you have an Express application in Node.js and want to meter your HTTP APIs, read the follow-on blog post [API Metering for Express Apps Using BigQuery](https://fusebit.io/blog/api-metering-analytics-express/)) that introduces a convenient Express middleware.
 
 ## What is Fusebit?
 

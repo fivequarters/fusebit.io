@@ -47,4 +47,4 @@ With this architecture, we were able to use a single CloudWatch Event to schedul
 
 ### Shameless plug
 
-This is just one of many interesting technical problems we are continuously solving when building the integration platform at Fusebit. If you enjoy working on developer-centric products and cracking this type of technical problems on a daily basis and in a good company, [we are hiring](https://fusebit.io/careers)!
+This is just one of many interesting technical problems we are continuously solving when building the integration platform at Fusebit. If you enjoy working on developer-centric products and cracking this type of technical problems on a daily basis and in a good company, [we are hiring](https://fusebit.io/careers/)!
