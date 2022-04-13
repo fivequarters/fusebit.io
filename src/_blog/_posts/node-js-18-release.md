@@ -1,6 +1,7 @@
 ---
 post_title: Node.js 18 Roundup - Why You Should Care
-post_authors: [{ name: 'Shehzad Akbar', avatar: 'shehzad.png' }]
+post_author: Shehzad Akbar
+post_author_avatar: shehzad.png
 date: '2022-04-14'
 post_image: njs18-hero.png
 post_excerpt : node-18 is finally here, and fusebit has been following what’s included for months now. Read our summaries of the big features in this latest Node release.
