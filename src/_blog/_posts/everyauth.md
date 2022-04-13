@@ -3,12 +3,12 @@ post_title: 'Introducing EveryAuth: The Easiest Way to Call 3rd Party APIs From 
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2022-04-11'
-post_image: blog-bots-hooks-extensions-main.jpg
+post_image: everyauth-main.jpg
 post_excerpt: EveryAuth handles OAuth flow to external services and manages your users’ credentials so that you can focus on your integration logic rather than busywork.
 post_slug: everyauth
 tags: ['post', 'authentication', 'integrations']
 post_date_in_url: false
-post_og_image: blog-bots-hooks-extensions-main.jpg
+post_og_image: blog-social-everyauth.png
 posts_related:
   [
     'bots-hooks-extensions',
