@@ -8,7 +8,7 @@ post_excerpt : node-18 is finally here, and fusebit has been following what’s 
 post_slug: nodejs-18
 tags:
 post_date_in_url: false
-post_og_image:
+post_og_image: 'hero'
 posts_related: ['run-every-nodejs-version-in-lambda','run-nodejs-from-google-sheets',’undici-mocking’]
 ---
 
@@ -26,7 +26,7 @@ In other notable upgrades, you can also look forward to:
 
 For more details and a full commit list of what made it in, you can head over directly into the [release PR](https://github.com/nodejs/node/pull/42262) for Node.js 18!
 
-## Want More Node.js Content?
+## Want More Node.js Updates?
 
 Fusebit is an integration platform built for developers like yourself and it’s also powered entirely by Node.js. As a result, we dedicate time to making sure we are active in the community and take deeper looks into any upcoming features. We also stay on top of other Node.js initiatives such as [next-10](https://github.com/nodejs/next-10) to get a sense of where the platform is headed.
 
