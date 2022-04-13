@@ -7,7 +7,7 @@ post_excerpt : node-18 is finally here, and fusebit has been following what’s 
 post_slug: nodejs-18
 tags:
 post_date_in_url: false
-post_og_image: 'hero'
+post_og_image:
 posts_related: ['run-every-nodejs-version-in-lambda','run-nodejs-from-google-sheets',’undici-mocking’]
 ---
 
