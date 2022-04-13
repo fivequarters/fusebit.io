@@ -1,5 +1,5 @@
 ---
-post_title: Node.js 18 Roundup: Why You Should Care
+post_title: 'Node.js 18 Roundup: Why You Should Care'
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-04-14'
