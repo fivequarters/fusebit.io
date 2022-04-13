@@ -98,9 +98,9 @@ Now that we understand the primary role of a refresh token, let's review some re
 
 Storing of Refresh Tokens should be in long-term safe storage:
 
-- Long-term: Use durable storage like a database. It could be a relational or non-relational database. Just keep in consideration that your refresh token storage should survive server restarts. Considering in-memory storage doesn't work due to its volatile nature.
+- **Long-term** Use durable storage like a database. It could be a relational or non-relational database. Just keep in consideration that your refresh token storage should survive server restarts. Considering in-memory storage doesn't work due to its volatile nature.
  
-- Safe: Use encryption-at-rest all the time. It guarantees that your refresh tokens are still safe if your storage is compromised since they're encrypted. Using encryption-at-rest can impact the performance of your application since the process of encryption and decryption requires processing.
+- **Safe** Use encryption-at-rest all the time. It guarantees that your refresh tokens are still safe if your storage is compromised since they're encrypted. Using encryption-at-rest can impact the performance of your application since the process of encryption and decryption requires processing.
 
 ### Consistency
 
