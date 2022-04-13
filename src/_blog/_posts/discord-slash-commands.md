@@ -1,5 +1,5 @@
 ---
-post_title: Add Slash Commands to Your Discord Bot!
+post_title: How To Add Slash Commands to Your Discord Bot
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-01-19'
@@ -17,20 +17,24 @@ Slash Commands are an extremely powerful way to provide rich interactivity for m
 
 ## What will I learn in this blog post?
 
-In this blog post, I'll walk you through how to configure, register and handle Slash Commands for your own Discord bot through Fusebit.  You can follow along and build your Slash Command directly using [this integration template](https://manage.fusebit.io/?key=discord-slash-commands&utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=discord-slash-command). 
+In this blog post, I'll walk you through how to configure, register and handle Slash Commands for your own Discord bot through Fusebit. To get started, you will need to get two housekeeping items out of the way.
 
-There are two main steps:
+First create a Fusebit account below and keep this blog post open in another tab.
+
+[Create Free Fusebit Account](https://manage.fusebit.io/?key=discord-slash-commands&utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=discord-slash-command 'Create Fusebit Account CTA_LARGE'). 
+
+Second, you will need to set up your own Discord App and Bot. [Follow our developer guide](https://developer.fusebit.io/docs/discord#creating-your-own-discord-app) to see how to set one up and configure it for Fusebit.
+
+**For this integration to work, you will need to configure your own discord application and bot with the following scopes: `applications.commands`,`identify`, `incoming.webhook`, `bot` and set the bot permissions=2147486720**
+
+Now that those items are out of the way, there are two main steps to building a custom Discord slash command bot:
 
 1. Configure & Register a Discord Slash Command
 2. Listen for & Respond to a Discord Slash Command 
 
-Before you get started, If you don’t already have one, you will need to set up your own Discord App and Bot. [Follow our developer guide](https://developer.fusebit.io/docs/discord#creating-your-own-discord-app) to see how to set one up and configure it for Fusebit.
+Let’s get started! 
 
-**For this integration to work, you will need to configure your own discord application and bot with the following scopes: `applications.commands`,`identify`, `incoming.webhook`, `bot` and set the bot permissions=2147486720**
-
-Ok, now that you’ve set up your own Discord App and Bot  - let’s get started! 
-
-## Test the Integration
+## How To Test the Integration
 
 To demonstrate how to send a message to a channel through the Discord API using channel webhooks, we mocked out a simple ‘test’ endpoint that you can invoke right from inside the editor.
 
@@ -50,10 +54,9 @@ In the test endpoint, we reference a discordClient.
 
 This is the SDK client used to invoke the Discord endpoints. Because of Fusebit magic, those objects are already supplied with the right credentials (such as API Keys and API Tokens), based on the authorization you completed earlier.
 
-
 ## Configure & Register a Discord Slash Command
 
-### Configure your Slash Command 
+### How To Configure your Slash Command 
 
 Slash Commands are typically one level, but Discord enables developers to make more organized and complex groups of application commands that can be one level deep within a group. Learn more about this through the Discord Developer Portal [here](https://discord.com/developers/docs/interactions/application-commands#slash-commands).
 
@@ -88,7 +91,7 @@ function configureSlashCommand() {
 
 Learn more about the different option types [here](https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-type). 
 
-### Register your Slash Command
+### How To Register your Slash Command
 
 Once you are done configuring your Slash Command, Discord allows you to also register your Slash Commands as guild commands as well as globally to all users. This can be helpful for testing your commands locally before making them available to everyone. 
 
@@ -100,9 +103,8 @@ If you need to find your Guild ID, [here’s a quick guide](https://support.disc
 
 If you wish to register your Slash Command globally for all users of your Integration, you can run the <code>router.post('/api/tenant/:tenantId/slash-command'</code> endpoint instead. 
 
-
 ## Listen for & Respond to a Discord Slash Command 
-### Listen for Slash Commands
+### How To Listen for Slash Commands
 
 Nothing to do here! If you configured your app correctly through the developer docs, Fusebit will automatically listen for Slash Commands from servers where your app was authenticated against.
 
@@ -141,4 +143,4 @@ With Fusebit, it is easy to build a Discord bot that integrates deeply with any 
 [PagerDuty + Discord Integration](https://fusebit.io/blog/pagerduty-discord-integration/)
 
 ### Before you go…
-If you are looking to create flexible and powerful integrations using other platforms, check out [Fusebit](https://fusebit.io/), and follow us on [Twitter](https://twitter.com/fusebitio)!
+If you are looking to create flexible and powerful integrations using other platforms, check out [Fusebit](https://fusebit.io/), and follow us on [Twitter](https://twitter.com/fusebitio) for more developer topics.
