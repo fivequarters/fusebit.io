@@ -17,7 +17,7 @@ block content
                 each author, i in (post_authors || [])
                     .post__author
                         if author.avatar
-                            img(src= post_author_avatar width="50" height="50")
+                            img(src= author.avatar width="50" height="50")
                         span.post__author-name #{author.name}
                     if i !== post_authors.length - 1
                         .post__info-divider

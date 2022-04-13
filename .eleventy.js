@@ -20,10 +20,6 @@ function getImageMeta(src, widths) {
     return Image.statsSync(url, options);
 }
 
-function getHTMLFromMarkdown(markdownString) {
-    return markdown.toHTML(markdownString);
-}
-
 function getImageUrl(src, width, format = 'jpeg', widths) {
     const metadata = getImageMeta(src, widths);
 
