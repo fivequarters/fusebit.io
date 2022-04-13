@@ -3,7 +3,7 @@ post_title: Node.js 18 Release - What Features You Should Care About
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-04-14'
-post_image: njs18-hero.png
+post_image: blog-njs18-hero.png
 post_excerpt : node-18 is finally here, and fusebit has been following what’s included for months now. Read our summaries of the big features in this latest Node release.
 post_slug: node-18-release
 tags: ['post']
