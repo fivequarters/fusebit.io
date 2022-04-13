@@ -1,7 +1,6 @@
 ---
 post_title: Build a Plugin System With Node.js
-post_author: Rubén Restrepo
-post_author_avatar: bencho.png
+post_authors: [{ name: 'Rubén Restrepo', avatar: 'bencho.png'}]
 date: '2022-04-11'
 post_image: build-a-plugin-system-with-node.jpeg
 post_excerpt: Writing a plugin system enables your application to be extensible, modular, and customizable. Learn how to write your own from scratch using Node.js and TypeScript.
