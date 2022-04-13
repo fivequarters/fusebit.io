@@ -19,13 +19,13 @@ posts_related:
 
 The [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) project is the easiest way to call third-party APIs from your app without learning OAuth.
 
-The day has come to add integrations to your app. You want to connect to third-party services like Salesforce, Slack, or HubSpot on behalf of your users. The first problem you need to solve is having your users authorize your app to access external APIs. The solution usually requires you to do the following:
+The day has come to add integrations to your app. Say you want to connect to your users' Salesforce, Slack, or HubSpot. The first step is having your users authorize your app to access those APIs. This usually requires you to do the following:
 
 - Register an OAuth client for a specific service.
 - Take your users through the OAuth authorization flow.
 - Update your database and logic to store and refresh your users' credentials for later use.
 
-The [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) project makes this authorization and credential management work disappear so that you can focus on the integration logic.
+The [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) project makes this authorization and credential management work disappear so that you can focus on the core of your app.
 
 ```javascript
 import everyauth from '@fusebit/everyauth-express';
@@ -104,7 +104,7 @@ router.get('/doSomethingWithSlack', async (req, res) => {
 
 ### Pre-Created OAuth Applications
 
-Your app must be pre-registered with the target platform like Salesforce, Slack, or Google before asking your users for authorization to connect to it on their behalf. The registration process can be as simple as Slack or as gnarly as Google. During the registration process, you usually specify the set of permissions your app will require and are assigned a client ID and client secret that identifies your app. EveryAuth comes with a number of shared, pre-registered OAuth applications to popular services with basic permissions so that you can skip this part of the process and get right down to calling the APIs. You can later reconfigure EveryAuth to use your own OAuth client ID and secret with the exact permissions you need using the EveryAuth CLI.
+Your app must be pre-registered with the target platform like Salesforce, Slack, or Google before asking your users for authorization to connect to it on their behalf. The registration process can be as simple as Slack or as gnarly as Google. During the registration process, you usually specify the set of permissions your app will require and are assigned a client ID and client secret that identifies your app. EveryAuth comes with a number of shared, pre-registered OAuth applications to [popular services](https://github.com/fusebit/everyauth-express#supported-services) with basic permissions so that you can skip this part of the process and get right down to calling the APIs. You can later reconfigure EveryAuth to use your own OAuth client ID and secret with the exact permissions you need using the EveryAuth CLI.
 
 ```bash
 everyauth service set slack \
@@ -144,7 +144,7 @@ The [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) pr
 
 To ask a user of your app for authorization to a specific third-party API, you direct the user's browser to an endpoint of your app implemented using EveryAuth Express middleware (_/slack_ in the example above). The middleware will then take the browser through a series of redirects to obtain the user's authorization to the target service like Salesforce, HubSpot, or Slack. Control is returned to your application with a final redirect when the process is done..
 
-When the time comes to call an external API, your app communicates again with EveryAuth through the _getIdenity_ call to obtain the access token. EveryAuth ensures the access token is always fresh and will use the refresh token to get a new access token if necessary.
+When the time comes to call an external API, your app communicates again with EveryAuth through _getIdentity_ call to obtain the access token. EveryAuth ensures the access token is always fresh and refreshes it as necessary so that you don't need to think about it.
 
 ## How Do I Get Started?
 
