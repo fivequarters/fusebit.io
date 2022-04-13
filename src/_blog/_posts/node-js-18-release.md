@@ -1,5 +1,5 @@
 ---
-post_title: Node.js 18 Release - What You Should Care About
+post_title: Node.js 18 Release - What Features You Should Care About
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-04-14'
