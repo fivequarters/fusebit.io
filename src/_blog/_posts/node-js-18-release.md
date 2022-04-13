@@ -1,5 +1,5 @@
 ---
-post_title: Node.js 18 Release - What Features You Should Care About
+post_title: Node.js 18 Release - Top New Features
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-04-14'
@@ -21,8 +21,12 @@ We’ve been following this release for a few months now and have also written s
 
 In other notable upgrades, you can also look forward to: 
 - [Webstreams API](https://github.com/nodejs/node/pull/42225), [Blob](https://github.com/nodejs/node/pull/41270) and [BroadcastChannel](https://github.com/nodejs/node/pull/41271) have graduated out of experimental and are now available globally by default.
-- A [Command-line Argument Parsing API](https://github.com/nodejs/node/pull/42675) will be available as an experimental feature 
+- `headersTimeout` and `requestTimeout` logic has been [added](https://github.com/nodejs/node/pull/41263) to automatically close any open connections no longer needed.
 - The Javascript Engine is now being [upgraded from V8](https://github.com/nodejs/node/pull/41610) to X
+
+Notable misses: 
+
+- A [Command-line Argument Parsing API](https://github.com/nodejs/node/pull/42675) almost made it in to this release, but should be rolled out in the next minor release.
 
 For more details and a full commit list of what made it in, you can head over directly into the [release PR](https://github.com/nodejs/node/pull/42262) for Node.js 18!
 
