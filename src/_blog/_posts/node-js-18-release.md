@@ -25,6 +25,8 @@ In other notable upgrades, you can also look forward to:
 
 For more details and a full commit list of what made it in, you can head over directly into the [release PR](https://github.com/nodejs/node/pull/42262) for Node.js 18!
 
+## Want More Node.js Content?
+
 Fusebit is an integration platform built for developers like yourself and it’s also powered entirely by Node.js. As a result, we dedicate time to making sure we are active in the community and take deeper looks into any upcoming features. We also stay on top of other Node.js initiatives such as [next-10](https://github.com/nodejs/next-10) to get a sense of where the platform is headed.
 
 If you like reading about Node.js and are interested in learning more about where it is headed, follow us on [twitter](https://twitter.com/fusebitio).
