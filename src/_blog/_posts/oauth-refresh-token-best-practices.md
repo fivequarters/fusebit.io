@@ -25,7 +25,7 @@ Depending on your application’s needs - both options are valid. For example, y
 
 In this blog post, we will focus on alternative number two: **The authorization server automatically issues a new access token once it expires**.
 
-This approach guarantees a seamless user experience. You're not asking the user to re-authenticate each time the access token expires, but how do you provide authorization without doing so? As you may already guess from this blog post title, by using a **refresh token**.
+This approach guarantees a seamless user experience. You're not asking the user to re-authenticate each time the access token expires, but how do you provide authorization without doing so? As you may already guess from this blog post title, using a **refresh token**.
 
 A refresh token is used in the following scenarios:
 
@@ -46,9 +46,9 @@ Support of OAuth refresh tokens is available in the following authorization gran
 
 - [Client credentials](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4). The client specifies a Client ID and Client Secret to authenticate themselves (the client is also the resource owner) and requests an access token.
 - [Authorization code](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1). The authorization server issues an access token in exchange for an authorization code. This flow is optimized for confidential clients since it requires a Client Secret.
-- [Resource Owner Password Credentials Grant](https://datatracker.ietf.org/doc/html/rfc6749#section-4.3). Use this flow with caution. Use this flow only when other authorization grant types are unsuitable for your use case.
+- [Resource Owner Password Credentials Grant](https://datatracker.ietf.org/doc/html/rfc6749#section-4.3). Use this flow with caution. This flow should only be used when other authorization grant types are unsuitable for your use case.
 
-As a good security practice, Implicit grant type is not longer recommended, see our Single Page Application section for more details.
+As a good security practice, [Implicit grant type](https://datatracker.ietf.org/doc/html/rfc6749#section-4.2) is not longer recommended, see our Single Page Application section for more details.
 
 Let’s review how refresh token works in the context of your application by following this diagram:
 
@@ -58,9 +58,9 @@ Let’s review how refresh token works in the context of your application by fol
 2. The authorization server validates the authorization grant and authenticates the authorized client. If valid, it issues an access token and a refresh token. The client needs to store this refresh token safely.
 3. The client can now request protected data to the resource server using the issued access token.
 4. The resource server validates the access token. Once valid, it returns the requested data.
-5. In this scenario, the application, requests data from a protected resource butthis time, the access token has now expired.
+5. In this scenario, the application requests data from a protected resource, but this time, the access token has now expired.
 6. After validating the access token, the resource server found that the token has expired, doesn’t serve the request, and returns an error with an invalid token response message.
-7. After getting the invalid token response, the application requests a new access token request using the stored refresh token.
+7. After getting the invalid token response, the application issues a new access token request using the stored refresh token.
 8. The authorization server uses the refresh token and issues a new access token with the stored refresh token.
 
 There is a repetition of steps from 5 to 8 each time an access token is invalid.
@@ -78,7 +78,7 @@ Sample of an OAuth response that includes a refresh token:
 
 The `"expires_in"` value is the number of seconds the access token will be valid.
 
-Some service that supports refresh token expiration will return the expiration for the access token and the refresh token.
+Some services that supports refresh token expiration will return the expiration for the access token and the refresh token.
 
 ```json
 {
@@ -98,29 +98,26 @@ Now that we understand the primary role of a refresh token, let's review some re
 
 Storing of Refresh Tokens should be in long-term safe storage:
 
-- **Long-term**: Use durable storage like a database. It could be a relational or non-relational database. Just keep in consideration that your refresh token storage should survive server restarts. Considering in-memory storage doesn't work due to its volatile nature.
+- Long-term: Use durable storage like a database. It could be a relational or non-relational database. Just keep in consideration that your refresh token storage should survive server restarts. Considering in-memory storage doesn't work due to its volatile nature.
  
-- **Safe**: Use encryption-at-rest all the time. It guarantees that your refresh tokens are still safe if your storage is compromised since they're encrypted. Using encryption-at-rest can impact the performance of your application since the process of encryption and decryption requires processing.
+- Safe: Use encryption-at-rest all the time. It guarantees that your refresh tokens are still safe if your storage is compromised since they're encrypted. Using encryption-at-rest can impact the performance of your application since the process of encryption and decryption requires processing.
 
 ### Consistency
 
-A refresh token is used to get a new non-expired access token with the same granted credentials. Requesting additional scopes not issued in the original expired access token is optional, but is not recommended.
+A refresh token is used to get a new non-expired access token with the same credentials. Your application shouldn’t request additional scopes not issued in the original expired access token. The Authorization Server already knows the original scopes granted to the access token.
 
-You don't usually specify the scopes when requesting a refresh token since the Authorization Server already knows the original scopes granted to the access token.
-
-If the Authorization Server returns a new refresh token as part of the new token request, store the new refresh token; otherwise, assume the current Refresh Token used remains valid.
+If the Authorization Server returns a new refresh token as part of the new token request, store the new refresh token; otherwise, assume the current refresh token used remains valid.
 
 ### Security
 
 Refresh tokens must be kept confidential in transit using [TLS](https://datatracker.ietf.org/doc/html/rfc6749#section-1.6) and shared only among the Authorization Server and the Client to whom the refresh tokens were issued.
-
-As a [good security practice](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics#section-4.13), Authorization Servers will return a new refresh token each time it is issued, known as Refresh Token Rotation.
 
 ### Refresh Token Rotation
 
 Refresh token rotation is a security measure offered to mitigate risks associated with leaked refresh tokens, single page applications (SPA) are especially vulnerable to this (Read more about it in our Single Page Application section).
 An attacker can access a refresh token by using a [replay attack](https://auth0.com/docs/secure/security-guidance/prevent-threats#replay-attacks).
 The rotation mechanism implies that a refresh token can be used only once, giving the authorization server the ability to detect refresh tokens reuse.
+
 The authorization server can detect a breach from a compromised refresh token by identifying an invalid refresh token usage, either by the legitimate client or the attacker.
 When a new refresh token is issued, the authorization server retains the previous one. With this technique, the authorization server can detect a breach from a compromised refresh token by identifying an invalidated refresh token usage, either by the legitimate client or the attacker. (Reuse detection).
 
@@ -150,18 +147,17 @@ Today, the recommended approach is to use the [authorization code](https://datat
 
 A malicious attacker can use a compromised refresh token to issue a new access token to request protected data to the resource server.
 The authorization server can contain this risk by detecting refresh token reuse using refresh token rotation.
-If your application uses refresh token rotation, it can now store it in local storage or browser memory. [You can try a service that supports it like Auth0](https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation).
+If your application uses refresh token rotation, it can now store it in local storage or browser memory. [You can use a service like Auth0 that supports token rotation](https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation).
 
 ### Refresh Token Revocation
 
 There are several reasons a user needs to remove authorization access to their account from your application:
 
-- A user log-outs from your application
-- A user wants to stop using your application
+- A user log-outs from your application.
+- A user wants to stop using your application.
 - Due to security risks, the application will no longer be supported or disabled temporarily 😵.
 
-Ensure your application once your user has removed authorization from your application, 
-Popular authorization service providers like [Auth0](https://auth0.com/docs/secure/tokens/refresh-tokens/revoke-refresh-tokens) support refresh token removal via token/revoke endpoint.
+Popular authorization and authentication service providers like [Auth0](https://auth0.com/docs/secure/tokens/refresh-tokens/revoke-refresh-tokens) support refresh token removal via `token/revoke` endpoint.
 
 ## To Wrap up
 
