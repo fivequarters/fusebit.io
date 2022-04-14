@@ -1,5 +1,5 @@
 ---
-post_title: 'Introducing EveryAuth: The Easiest Way For Your App To Access APIs Like Slack, Salesforce, or Github'
+post_title: 'EveryAuth: The Easiest Way For Your App To Access APIs Like Slack, Salesforce, or Github'
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2022-04-14'
