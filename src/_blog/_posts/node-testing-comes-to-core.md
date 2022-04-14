@@ -9,7 +9,7 @@ post_slug: node-testing-comes-to-core
 tags: ['post','node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-node-testing.png 
-posts_related: ['nodejs-https-imports','node-fetch','monkey-patching-http-request']
+posts_related: ['nodejs-https-imports','node-fetch','everyauth']
 ---
 
 Node.js is adding a built-in testing module to Node core. It will come in the form of a new `node:test` module that exposes an API for creating, and executing JavaScript tests. As the tests execute, the results will be output using standard [TAP](https://testanything.org/) format.
