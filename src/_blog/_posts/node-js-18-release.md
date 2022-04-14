@@ -6,7 +6,7 @@ date: '2022-04-14'
 post_image: blog-njs18-hero.png
 post_excerpt : node-18 is finally here, and fusebit has been following what’s included for months now. Read our summaries of the big features in this latest Node release.
 post_slug: node-18-release
-tags: []
+tags: ['post','node.js']
 post_date_in_url: false
 post_og_image: 'hero'
 posts_related: ['run-every-nodejs-version-in-lambda','run-nodejs-from-google-sheets',’undici-mocking’]
