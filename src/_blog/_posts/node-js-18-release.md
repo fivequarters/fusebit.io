@@ -26,7 +26,7 @@ We've been following this release for a few months now and documenting our analy
 
 - [Webstreams API](https://github.com/nodejs/node/pull/42225), [Blob](https://github.com/nodejs/node/pull/41270) and [BroadcastChannel](https://github.com/nodejs/node/pull/41271) have graduated out of experimental and are now available globally by default.
 - `headersTimeout` and `requestTimeout` [logic has been added](https://github.com/nodejs/node/pull/41263) to automatically close any open connections no longer needed.
-- The V8 engine is being [updated to version 10.1](https://github.com/nodejs/node/pull/41610). This new version includes the `findLast` and `findLastIndex` array methods, improvements to the `Intl.Locale` API, The `Intl.supportedValuesOf` function and performance upgrades to the class fields and private class methods (the initialization of them is now as fast as ordinary property stores).
+- The V8 engine is being [updated to version 10.1](https://github.com/nodejs/node/pull/41610). This new version includes the `findLast` and `findLastIndex` array methods, improvements to the `Intl.Locale` API, The `Intl.supportedValuesOf` function and performance upgrades to the class fields and private class methods.
 
 ### Notable misses 
 
