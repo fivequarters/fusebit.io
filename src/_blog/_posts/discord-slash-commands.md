@@ -54,7 +54,7 @@ Now that those items are out of the way, there are two main parts to building a 
 1. Configure & Register a Discord Slash Command
 2. Listen for & Respond to a Discord Slash Command 
 
-Let’s get started building your Discord bot!
+Let’s get started below.
 
 ## Configure & Register a Discord Slash Command
 
