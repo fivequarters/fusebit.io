@@ -12,19 +12,23 @@ post_og_image: https://fusebit.io/assets/images/blog/blog-njs18-hero.png
 posts_related: ['run-every-nodejs-version-in-lambda','run-nodejs-from-google-sheets',’undici-mocking’]
 ---
 
-Node.js 18 is finally here! 
+Node.js 18 is finally here and we are super excited to see it live! Read through for a recap of the new features available in this latest release. 
 
-We’ve been following this release for a few months now and have also written summaries of the big key features coming out. Here’s a quick recap of our explorations of the major changes coming in this latest release:
+## Node.js 18 Features Overview
+
+We've been following this release for a few months now and documenting our analysis of some of the big new features. Here's a quick recap of those articles:
+
 - [fetch() API](https://fusebit.io/blog/node-fetch/) - fetch() is a promise-based client that supports many high-level HTTP features, while also focusing on the most common scenario: sending simplified HTTP requests. To those coming from the browser world, it is similar to XMLHttpRequest, but standardized and with an expanded and more flexible feature set. 
 - [Test Runner](https://fusebit.io/blog/node-testing-comes-to-core/) (experimental) - A built-in testing module to Node core, behind an experimental flag for now. It will come in the form of a new `node:test` module that exposes an API for creating, and executing JavaScript tests. 
 - [Direct Network Imports](https://fusebit.io/blog/nodejs-https-imports/) (experimental) - There will now be support for direct network imports, behind an experimental flag for now. This enables you to use HTTPS URLs to directly import modules over HTTPS into your project at run-time instead of relying on a package manager to install at build-time. 
 
-In other notable upgrades, you can also look forward to: 
+### Other Notable Changes
+
 - [Webstreams API](https://github.com/nodejs/node/pull/42225), [Blob](https://github.com/nodejs/node/pull/41270) and [BroadcastChannel](https://github.com/nodejs/node/pull/41271) have graduated out of experimental and are now available globally by default.
 - `headersTimeout` and `requestTimeout` [logic has been added](https://github.com/nodejs/node/pull/41263) to automatically close any open connections no longer needed.
 - The V8 engine is being [updated to version 10.1](https://github.com/nodejs/node/pull/41610). This new version includes the `findLast` and `findLastIndex` array methods, improvements to the `Intl.Locale` API, The `Intl.supportedValuesOf` function and performance upgrades to the class fields and private class methods (the initialization of them is now as fast as ordinary property stores).
 
-Notable misses: 
+### Notable misses 
 
 - The addition of a [Command-line Argument Parsing API](https://github.com/nodejs/node/pull/42675) almost made it in to this release, but should be rolled out in the next minor release within the next few weeks.
 
