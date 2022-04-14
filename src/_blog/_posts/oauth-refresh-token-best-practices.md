@@ -4,7 +4,7 @@ post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-04-13'
 post_image: oauth-refresh-token-best-practices.jpeg
-post_excerpt: Learn the best practices you should consider for managing OAuth 2.0 refresh tokens.
+post_excerpt: Learn the best practices you should consider for managing OAuth 2.0 refresh tokens and access to your app.
 post_slug: oauth-refresh-token-best-practices
 tags: ['post', 'authentication']
 post_date_in_url: false
@@ -25,7 +25,7 @@ Depending on your application’s needs - both options are valid. For example, y
 
 In this blog post, we will focus on alternative number two: **The authorization server automatically issues a new access token once it expires**.
 
-This approach guarantees a seamless user experience. You're not asking the user to re-authenticate each time the access token expires, but how do you provide authorization without doing so? As you may already guess from this blog post title, using a **refresh token**.
+This approach guarantees a seamless user experience. You're not asking the user to re-authenticate each time the access token expires, but how do you provide authorization without doing so? As you may already guess from this blog post title, using a **refresh token**. 
 
 A refresh token is used in the following scenarios:
 
@@ -33,7 +33,9 @@ A refresh token is used in the following scenarios:
 - **Native Applications** like mobile and desktop apps using the Authorization code flow.
 - **Single Page Applications** can also use refresh tokens under specific scenarios. (See Single Page Application section).
 
-## Refresh tokens entering into action
+If you would like to make your developer life easier and skip learning OAuth token management, check out [EveryAuth](https://github.com/fusebit/everyauth-express), which is the easiest way for your app to access APIs like Slack, Salesforce, or Github.
+
+## How To Refresh Tokens Entering Into Action
 
 Access tokens with a limited lifespan will eventually expire, removing access to the protected resources needed by your application users.
 If your application's users need access beyond the lifespan of an access token, they can retrieve a new one using a refresh token. That's their single purpose; you can't use a refresh token to access protected resources. That's the access token's responsibility.
@@ -163,6 +165,8 @@ Popular authorization and authentication service providers like [Auth0](https://
 
 You’ve learned the best practices of refresh token management. It’s possible to offer your application users a seamless and secure experience. By following these basic principles, you will sleep better 😴, confident you’re handling your refresh tokens properly.
 
-Let us know what you think, don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on [Twitter](https://twitter.com/degrammer).
+If OAuth is still a lot to wrap your head around, check our our project called [EveryAuth](https://github.com/fusebit/everyauth-express). EveryAuth is the easiest way for your app to access APIs like Slack, Salesforce, or Github. Check out [EveryAuth on GitHub](https://github.com/fusebit/everyauth-express) and use for free to quickly add API authentication to your apps.
 
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signuputm_source=fusebit.io&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=oauth-refresh-token-best-practices) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
+Let us know what you think, don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on Twitter [@degrammer](https://twitter.com/degrammer).
+
+[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signuputm_source=fusebit.io&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=oauth-refresh-token-best-practices) or look at our [getting started developer guide](https://developer.fusebit.io/docs/getting-started)!
