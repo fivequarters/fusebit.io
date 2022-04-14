@@ -1,6 +1,7 @@
 ---
 post_title: Bots, Hooks, and Extensions
-post_authors: [{ name: 'Tomasz Janczuk', avatar: 'tomek.png' }]
+post_author: Tomasz Janczuk
+post_author_avatar: tomek.png
 date: '2021-10-26'
 post_image: blog-bots-hooks-extensions-main.jpg
 post_excerpt: Identify the set of technical challenges you will need to think about and solve to add a robust integration story to your app.
