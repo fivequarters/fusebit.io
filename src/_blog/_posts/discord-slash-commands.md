@@ -15,28 +15,23 @@ According to the Verge, “[Discord is quietly building an app empire of bots](h
 
 Slash Commands are an extremely powerful way to provide rich interactivity for members of your Discord server, all you have to do is type “/” and you're ready to use your favorite bot. You can easily see all the bot’s commands, input validation, and error handling help you get the command right the first time.
 
-## What will I learn in this blog post?
+In this blog post, I'll walk you through how to configure, register and handle Slash Commands for your own Discord bot through Fusebit. 
 
-In this blog post, I'll walk you through how to configure, register and handle Slash Commands for your own Discord bot through Fusebit. To get started, you will need to get two housekeeping items out of the way.
+## Setting Up Your Discord Slash Command Bot
 
-First, create a Fusebit account below and keep this blog post open in another tab.
+To get started, you will need to get **two housekeeping items out of the way**.
 
-[Create Free Fusebit Account](https://manage.fusebit.io/?key=discord-slash-commands&utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=discord-slash-command 'Create Fusebit Account CTA_LARGE'). 
+**First**, create a Fusebit account below and keep this blog post open in a separate tab.
 
-Second, you will need to set up your own Discord App and Bot. [Follow our developer guide](https://developer.fusebit.io/docs/discord#creating-your-own-discord-app) to see how to set one up and configure it for Fusebit.
+[Create Free Fusebit Account](https://manage.fusebit.io/?key=discord-slash-commands&utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=discord-slash-command 'Create Fusebit Account CTA_LARGE')
 
-**For this integration to work, you will need to configure your own discord application and bot with the following scopes: `applications.commands`,`identify`, `incoming.webhook`, `bot` and set the bot permissions=2147486720**
+**Second**, you will need to set up your own Discord App and Bot. [Follow our developer guide](https://developer.fusebit.io/docs/discord#creating-your-own-discord-app) to see how to set one up and configure it for Fusebit.
 
-Now that those items are out of the way, there are two main steps to building a custom Discord slash command bot:
+***Note: For this integration to work, you will need to configure your own discord application and bot with the following scopes: `applications.commands`,`identify`, `incoming.webhook`, `bot` and set the bot permissions=2147486720***
 
-1. Configure & Register a Discord Slash Command
-2. Listen for & Respond to a Discord Slash Command 
+### How To Test That Everything Is Configured Correctly
 
-Let’s get started! 
-
-## How To Test the Integration
-
-To demonstrate how to send a message to a channel through the Discord API using channel webhooks, we mocked out a simple ‘test’ endpoint that you can invoke right from inside the editor.
+To demonstrate how to send a message to a channel through the Discord API using channel webhooks, we mocked out a simple ‘test’ endpoint that you can invoke right from inside the Fusebit code editor.
 
 You will need to login to your Discord before successfully running this integration for the first time. Once you have successfully authorized, you will receive a message in the Discord channel you selected to receive incoming webhook messages from.
 
@@ -53,6 +48,13 @@ In the test endpoint, we reference a discordClient.
 ```
 
 This is the SDK client used to invoke the Discord endpoints. Because of Fusebit magic, those objects are already supplied with the right credentials (such as API Keys and API Tokens), based on the authorization you completed earlier.
+
+Now that those items are out of the way, there are two main parts to building a custom Discord slash command bot:
+
+1. Configure & Register a Discord Slash Command
+2. Listen for & Respond to a Discord Slash Command 
+
+Let’s get started building your Discord bot!
 
 ## Configure & Register a Discord Slash Command
 
