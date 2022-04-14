@@ -6,29 +6,29 @@ date: '2022-04-14'
 post_image: blog-njs18-hero.png
 post_excerpt : node-18 is finally here, and fusebit has been following what’s included for months now. Read our summaries of the big features in this latest Node release.
 post_slug: node-18-release
-tags: []
+tags: ['post', 'nodejs']
 post_date_in_url: false
-post_og_image: 'hero'
+post_og_image: https://fusebit.io/assets/images/blog/blog-njs18-hero.png
 posts_related: ['run-every-nodejs-version-in-lambda','run-nodejs-from-google-sheets',’undici-mocking’]
 ---
 
 Node.js 18 is finally here! 
 
 We’ve been following this release for a few months now and have also written summaries of the big key features coming out. Here’s a quick recap of our explorations of the major changes coming in this latest release:
-- [fetch() API](https://fusebit.io/blog/node-fetch/) - fetch() is a promise-based client that supports many high-level HTTP features, while also focusing on the most common scenario: sending simplified HTTP requests. To those coming from the browser world, it is similar to XMLHttpRequest, but standardized and with an expanded and more flexible feature set.  g
-- [Test Runner](https://fusebit.io/blog/node-testing-comes-to-core/) (Experimental) - A built-in testing module to Node core, behind an experimental flag for now. It will come in the form of a new `node:test` module that exposes an API for creating, and executing JavaScript tests. 
-- [Direct Network Imports](https://fusebit.io/blog/nodejs-https-imports/) (Experimental) - There will now be support for direct network imports, behind an experimental flag for now. This enables you to use HTTPS URLs to directly import modules over HTTPS into your project at run-time instead of relying on a package manager to install at build-time. 
+- [fetch() API](https://fusebit.io/blog/node-fetch/) - fetch() is a promise-based client that supports many high-level HTTP features, while also focusing on the most common scenario: sending simplified HTTP requests. To those coming from the browser world, it is similar to XMLHttpRequest, but standardized and with an expanded and more flexible feature set. 
+- [Test Runner](https://fusebit.io/blog/node-testing-comes-to-core/) (experimental) - A built-in testing module to Node core, behind an experimental flag for now. It will come in the form of a new `node:test` module that exposes an API for creating, and executing JavaScript tests. 
+- [Direct Network Imports](https://fusebit.io/blog/nodejs-https-imports/) (experimental) - There will now be support for direct network imports, behind an experimental flag for now. This enables you to use HTTPS URLs to directly import modules over HTTPS into your project at run-time instead of relying on a package manager to install at build-time. 
 
 In other notable upgrades, you can also look forward to: 
 - [Webstreams API](https://github.com/nodejs/node/pull/42225), [Blob](https://github.com/nodejs/node/pull/41270) and [BroadcastChannel](https://github.com/nodejs/node/pull/41271) have graduated out of experimental and are now available globally by default.
-- `headersTimeout` and `requestTimeout` logic has been [added](https://github.com/nodejs/node/pull/41263) to automatically close any open connections no longer needed.
-- The Javascript Engine is now being [upgraded from V8](https://github.com/nodejs/node/pull/41610) to X
+- `headersTimeout` and `requestTimeout` [logic has been added](https://github.com/nodejs/node/pull/41263) to automatically close any open connections no longer needed.
+- The V8 engine is being [updated to version 10.1](https://github.com/nodejs/node/pull/41610). This new version includes the `findLast` and `findLastIndex` array methods, improvements to the `Intl.Locale` API, The `Intl.supportedValuesOf` function and performance upgrades to the class fields and private class methods (the initialization of them is now as fast as ordinary property stores).
 
 Notable misses: 
 
-- A [Command-line Argument Parsing API](https://github.com/nodejs/node/pull/42675) almost made it in to this release, but should be rolled out in the next minor release.
+- The addition of a [Command-line Argument Parsing API](https://github.com/nodejs/node/pull/42675) almost made it in to this release, but should be rolled out in the next minor release within the next few weeks.
 
-For more details and a full commit list of what made it in, you can head over directly into the [release PR](https://github.com/nodejs/node/pull/42262) for Node.js 18!
+For more details and a full commit list of what made it in, you can head over directly into the [release PR](https://github.com/nodejs/node/pull/42262) for Node.js 18! **A huge shoutout**to [Beth Griggs](https://twitter.com/bethgriggs_) and the entire Node.js Release Working Group for making the entire process extremely organized and easy to follow.
 
 ## Want More Node.js Updates?
 
