@@ -8,7 +8,7 @@ post_excerpt: EveryAuth handles OAuth flow to external services and manages your
 post_slug: everyauth
 tags: ['post', 'authentication', 'integrations']
 post_date_in_url: false
-post_og_image: blog-social-everyauth.png
+post_og_image: https://fusebit.io/assets/images/blog/blog-social-everyauth.png
 posts_related:
   [
     'bots-hooks-extensions',
