@@ -32,7 +32,7 @@ We've been following this release for a few months now and documenting our analy
 
 - The addition of a [Command-line Argument Parsing API](https://github.com/nodejs/node/pull/42675) almost made it in to this release, but should be rolled out in the next minor release within the next few weeks.
 
-For more details and a full commit list of what made it in, you can head over directly into the [release PR](https://github.com/nodejs/node/pull/42262) for Node.js 18! **A huge shoutout**to [Beth Griggs](https://twitter.com/bethgriggs_) and the entire Node.js Release Working Group for making the entire process extremely organized and easy to follow.
+For more details and a full commit list of what made it in, you can head over directly into the [release PR](https://github.com/nodejs/node/pull/42262) for Node.js 18! **A huge shoutout** to [Beth Griggs](https://twitter.com/bethgriggs_) and the entire Node.js Release Working Group for making the entire process extremely organized and easy to follow.
 
 ## Want More Node.js Updates?
 
