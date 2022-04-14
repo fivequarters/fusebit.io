@@ -1,6 +1,7 @@
 ---
 post_title: 'Introducing EveryAuth: The Easiest Way For Your App To Access APIs Like Slack, Salesforce, or Github'
-post_authors: [{ name: 'Tomasz Janczuk', avatar: 'tomek.png' }]
+post_author: Tomasz Janczuk
+post_author_avatar: tomek.png
 date: '2022-04-14'
 post_image: everyauth-main.jpg
 post_excerpt: EveryAuth handles OAuth flow to external services and manages your users’ credentials so that you can focus on your integration logic rather than busywork.
