@@ -1,8 +1,8 @@
 ---
-post_title: 'Introducing EveryAuth: The Easiest Way to Call 3rd Party APIs From Your App'
+post_title: 'Introducing EveryAuth: The Easiest Way For Your App To Access APIs Like Slack, Salesforce, or Github'
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
-date: '2022-04-11'
+date: '2022-04-14'
 post_image: everyauth-main.jpg
 post_excerpt: EveryAuth handles OAuth flow to external services and manages your users’ credentials so that you can focus on your integration logic rather than busywork.
 post_slug: everyauth
@@ -17,7 +17,7 @@ posts_related:
   ]
 ---
 
-The [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) project is the easiest way to call third-party APIs from your app without learning OAuth.
+The [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) project is the easiest way for your app to access APIs like Slack, Salesforce, or Github..
 
 The day has come to add integrations to your app. Say you want to connect to your users' Salesforce, Slack, or HubSpot. The first step is having your users authorize your app to access those APIs. This usually requires you to do the following:
 
