@@ -19,7 +19,7 @@ Slash Commands are an extremely powerful way to provide rich interactivity for m
 
 In this blog post, I'll walk you through how to configure, register and handle Slash Commands for your own Discord bot through Fusebit. To get started, you will need to get two housekeeping items out of the way.
 
-First create a Fusebit account below and keep this blog post open in another tab.
+First, create a Fusebit account below and keep this blog post open in another tab.
 
 [Create Free Fusebit Account](https://manage.fusebit.io/?key=discord-slash-commands&utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=discord-slash-command 'Create Fusebit Account CTA_LARGE'). 
 
@@ -142,5 +142,6 @@ With Fusebit, it is easy to build a Discord bot that integrates deeply with any 
 
 [PagerDuty + Discord Integration](https://fusebit.io/blog/pagerduty-discord-integration/)
 
-### Before you go…
-If you are looking to create flexible and powerful integrations using other platforms, check out [Fusebit](https://fusebit.io/), and follow us on [Twitter](https://twitter.com/fusebitio) for more developer topics.
+### How To Get More Discord and Developer Tips
+
+If you are looking to create flexible and powerful integrations using other platforms like Slack, Salesforce and GitHub, check out [Fusebit](https://fusebit.io/) to get started, and follow us on Twitter [@fusebitio](https://twitter.com/fusebitio) for our daily developer posts.
