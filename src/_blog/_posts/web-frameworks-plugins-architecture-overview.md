@@ -9,7 +9,7 @@ post_slug: web-frameworks-plugins-architecture-overview
 tags: ['post', 'developer tools', 'node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-web-frameworks-plugins-architecture.png
-posts_related: ['node-testing-comes-to-core', 'generate-web-assembly-with-typescript', 'crypto-price-tracking-bot']
+posts_related: ['everyauth', 'node-testing-comes-to-core', 'crypto-price-tracking-bot']
 ---
 
 A plugin enables a system to extend its core capabilities by providing a common foundation for developing them; it allows you to build modular, customizable, extensible, and easily maintainable applications.
