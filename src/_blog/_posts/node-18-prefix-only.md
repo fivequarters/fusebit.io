@@ -8,7 +8,7 @@ post_slug: node-18-prefix-only-modules
 tags: ['post', 'node.js']
 post_date_in_url: false
 post_og_image: 'hero'
-posts_related: ['node-js-release','nodejs-https-imports','everyauth']
+posts_related: ['node-18-release','nodejs-https-imports','everyauth']
 ---
 
 Fusebit recently shared a Node.js announcement about the [new test runner module coming to Node.js 18.0.0](https://fusebit.io/blog/node-testing-comes-to-core/), which is [scheduled for release on April 19, 2022](https://github.com/nodejs/node/pull/42262). While the test runner module is a notable change to Node.js, it brings a potentially more significant change along with it: prefix-only core modules. This post explains what prefix-only core modules are and what you need to know about them. 
