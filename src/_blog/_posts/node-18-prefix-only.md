@@ -36,7 +36,8 @@ const assert = require('assert');
 ```
 
 As it turns out, all core modules can be imported using the `'node:'` prefix. But, why would you want to use this more verbose naming convention? The biggest reason is to make it explicit that a module comes from Node.js core. Because userland modules cannot be loaded via the `'node:'` prefix, it becomes immediately obvious to tools and people reading the code that the module is from Node.js core.
-## Introducing prefix-only core modules
+
+## Introducing Prefix-Only Core Modules
 
 Until now, all core modules functioned the same regardless of whether the `'node:'` prefix was used or not. In other words, there was no difference between importing `'fs'` and `'node:fs'`. However, with the introduction of the test runner module this is no longer the case.
 
@@ -55,12 +56,13 @@ However, the following imports will not load the same code:
 import test from 'test';  // Does not use the node: prefix. Tries to load from userland.
 Import assert from 'assert';  // Does not use the node: prefix. Loads from core.
 ```
-## The upside of prefix-only core modules
+## The Upside
+
 As previously mentioned, the explicit distinction between Node core modules and userland modules is the biggest benefit of prefix-only modules. For the Node.js core project, this change also makes it significantly easier to introduce new modules. Because core modules take precedence over userland modules during module loading, introducing a new core module has historically been treated as a breaking change and sometimes involved reaching out to npm module authors to negotiate the use of a module name. Prefix-only core modules provide a clear delineation between core and userland, reducing much of the friction involved in adding a new core module.
 
 Using `'node:'` as a namespacing mechanism also allows new core modules to be introduced with more appealing names. For example, the new test runner was able to claim the name `'test'` instead of something longer like `'test_runner'` because there was no chance of a naming conflict.
 
-## Potential pitfalls of prefix-only core modules
+## Potential Pitfalls
 
 Although the Node.js project has discussed prefix-only modules for a while, adopting them has been a somewhat contentious process because they come with potentially significant drawbacks. The first drawback is the introduction of inconsistency in the module system. While, `'fs'`, `'http'`, and all of the other existing core modules exhibit one behavior, `'node:test'` and likely all future core modules exhibit a subtly different behavior. This difference in behavior is likely to confuse even experienced Node.js users.
 
