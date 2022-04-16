@@ -17,7 +17,7 @@ Before diving into the details of this change, let's look at an example:
 
 ```js
 import test from 'node:test';
-Import assert from 'node:assert';
+import assert from 'node:assert';
 
 test('synchronous passing test', (t) => {
   // This test passes because it does not throw an exception.
@@ -47,14 +47,14 @@ For backwards compatibility purposes, the behavior of all other core modules rem
 
 ```js
 import test from 'node:test';  // Uses the node: prefix. Loads from core.
-Import assert from 'assert';  // Does not use the node: prefix. Loads from core.
+import assert from 'assert';  // Does not use the node: prefix. Loads from core.
 ```
 
 However, the following imports will not load the same code:
 
 ```js
 import test from 'test';  // Does not use the node: prefix. Tries to load from userland.
-Import assert from 'assert';  // Does not use the node: prefix. Loads from core.
+import assert from 'assert';  // Does not use the node: prefix. Loads from core.
 ```
 ## The Upside
 
