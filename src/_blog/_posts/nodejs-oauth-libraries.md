@@ -6,7 +6,7 @@ date: '2022-04-14'
 post_image: blog-nodejs-oauth-libraries-hero.png
 post_excerpt : Finding a Node.js OAuth Library for your app gets confusing really quickly. Read this post to learn about the more popular options and what they each do.
 post_slug: nodejs-oauth-libraries
-tags: ['post', 'nodejs', 'authentication']
+tags: ['post', 'node.js', 'authentication']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-nodejs-oauth-libraries-hero.png
 posts_related: ['everyauth','oauth-refresh-token-best-practices','node-js-18-release'] 
