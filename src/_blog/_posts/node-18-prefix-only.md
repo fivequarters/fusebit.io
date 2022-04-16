@@ -2,7 +2,7 @@
 post_title: Node.js 18 Introduces Prefix-Only Core Modules
 post_authors: [{ name: 'Colin Ihrig', avatar: ColinIhrig.png' }]
 date: '2022-04-16’
-post_image: node-18-prefix-only-main.png
+post_image: node-18-prefix-only-main.jpg
 post_excerpt: Node.js 18 is introducing a new type of core module that can't be imported like all of the other core modules. These new modules are called prefix-only core modules, and you need to understand how they work.
 post_slug: node-18-prefix-only-modules
 tags: ['post', 'node.js']
