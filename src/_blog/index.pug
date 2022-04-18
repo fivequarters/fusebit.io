@@ -13,7 +13,10 @@ include ../_components/mixins.pug
 
 section.section.section--no-margin
 .layout
-    h1.list__title Developer Blog
+    div.list__title-wrapper
+        h1.list__title Developer Blog
+        a.list__title-link(href="/feed.xml" rel="noopener")
+            img(src="rssfeed.png" width="50" height="50")
     .list__tags
         each currentTag in filters.keys(collections).filter(c => c !== 'all')
             a.list__tag(href=`${currentTag === 'post' ? '/blog/' : `/blog/tags/${currentTag}/`}` class= `${currentTag === tag ? 'list__tag--active' : ''}`)= `${currentTag === 'post' ? 'all' : currentTag}`
