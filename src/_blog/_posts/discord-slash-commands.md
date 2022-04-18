@@ -27,7 +27,7 @@ To get started, you will need to get **two housekeeping items out of the way**.
 
 **Second**, you will need to set up your own Discord App and Bot. [Follow our developer guide](https://developer.fusebit.io/docs/discord#creating-your-own-discord-app) to see how to set one up and configure it for Fusebit.
 
-***Note: For this integration to work, you will need to configure your own discord application and bot with the following scopes: `applications.commands`,`identify`, `incoming.webhook`, `bot` and set the bot permissions=2147486720***
+*Note: For this integration to work, you will need to configure your own discord application and bot with the following scopes: `applications.commands`,`identify`, `incoming.webhook`, `bot` and set the bot permissions=2147486720*
 
 ### How To Test That Everything Is Configured Correctly
 
