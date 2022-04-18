@@ -20,6 +20,7 @@ We've been following this release for a few months now and documenting our analy
 
 - [fetch() API](https://fusebit.io/blog/node-fetch/) - fetch() is a promise-based client that supports many high-level HTTP features, while also focusing on the most common scenario: sending simplified HTTP requests. To those coming from the browser world, it is similar to XMLHttpRequest, but standardized and with an expanded and more flexible feature set. 
 - [Test Runner](https://fusebit.io/blog/node-testing-comes-to-core/) (experimental) - A built-in testing module to Node core, behind an experimental flag for now. It will come in the form of a new `node:test` module that exposes an API for creating, and executing JavaScript tests. 
+- [Prefix-only core Modules](https://fusebit.io/blog/node-18-prefix-only-modules/) - A new way to 'import' modules that levrages a 'node:' prefix which makes it immediately obvious that the modules are from Node.js core. Test runner is the first feature to use this in action! 
 - [Direct Network Imports](https://fusebit.io/blog/nodejs-https-imports/) (experimental) - There will now be support for direct network imports, behind an experimental flag for now. This enables you to use HTTPS URLs to directly import modules over HTTPS into your project at run-time instead of relying on a package manager to install at build-time. 
 
 ### Other Notable Changes
