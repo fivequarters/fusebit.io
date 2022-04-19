@@ -12,7 +12,7 @@ post_og_image: https://fusebit.io/assets/images/blog/blog-njs18-hero.png
 posts_related: ['node-18-prefix-only-modules','run-every-nodejs-version-in-lambda',’undici-mocking’]
 ---
 
-Node.js 18 is here and we are super excited to see it live on April 19th, 2022! Read through for a recap of the new features available in this latest release. 
+Node.js 18 is here and we are super excited to see it released on April 19th, 2022! Read through for a recap of the new features available in this latest release. 
 
 ## Node.js 18 Features Overview
 
