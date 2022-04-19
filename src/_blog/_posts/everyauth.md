@@ -27,6 +27,8 @@ The day has come to add integrations to your app. Say you want to connect to you
 
 The [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) project makes this authorization and credential management work disappear so that you can focus on the core of your app.
 
+[Try EveryAuth For Free](https://github.com/fusebit/everyauth-express#getting-started 'Try EveryAuth For Free CTA_LARGE')
+
 ```javascript
 import everyauth from '@fusebit/everyauth-express';
 import { WebClient } from '@slack/web-api';
@@ -155,5 +157,7 @@ When the time comes to call an external API, your app communicates again with Ev
 ## How Do I Get Started?
 
 Check out the step-by-step instructions on Github at [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) to get started.
+
+[Try EveryAuth For Free](https://github.com/fusebit/everyauth-express#getting-started 'Try EveryAuth For Free CTA_LARGE')
 
 EveryAuth is part of [Fusebit](https://fusebit.io)'s code-first integration platform that helps developers add integrations to their apps. We live and breathe integrations. Follow us on Twitter [@fusebitio](https://twitter.com/fusebitio) for great developer content, and check out other OSS projects at [github.com/fusebit](https://github.com/fusebit).
