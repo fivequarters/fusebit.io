@@ -15,7 +15,7 @@ There are hundreds of data integrations you can do between HubSpot and Slack. On
 
 With just a few steps and lines of code, you can easily create it!
 
-1. Click [Install the integration](https://manage.fusebit.io/make/slack-send-message+hubspot-crud-companies 'Install the integration CTA_SMALL') to get started
+1. Click <a class="cta_small" href="https://manage.fusebit.io/make/slack-send-message+hubspot-crud-companies">Install the integration</a> to get started
 2. Create an account or login to Fusebit
 3. You will be redirected to the Fusebit web editor with already most of the code you need. ![HubSpot Slack Snippet](blog-hubspot-to-slack-snippet.png "HubSpot Slack Snippet")
 4. Now, let’s fetch HubSpot companies, we can do this with one line of code: 

@@ -15,7 +15,7 @@ According to the Verge, “[Discord is quietly building an app empire of bots](h
 
 Slash Commands are an extremely powerful way to provide rich interactivity for members of your Discord server, all you have to do is type “/” and you're ready to use your favorite bot. You can easily see all the bot’s commands, input validation, and error handling help you get the command right the first time.
 
-In this blog post, I'll walk you through how to configure, register and handle Slash Commands for your own Discord bot through Fusebit. 
+In this blog post, I'll walk you through how to configure, register and handle Slash Commands for your own Discord bot through Fusebit.
 
 ## Setting Up Your Discord Slash Command Bot
 
@@ -23,11 +23,11 @@ To get started, you will need to get **two housekeeping items out of the way**.
 
 **First**, create a Fusebit account below and keep this blog post open in a separate tab.
 
-[Create Free Fusebit Account](https://manage.fusebit.io/?key=discord-slash-commands&utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=discord-slash-command 'Create Fusebit Account CTA_LARGE')
+<a class="cta_large" href="https://manage.fusebit.io/?key=discord-slash-commands&utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=discord-slash-command">Create Free Fusebit Account</a>
 
 **Second**, you will need to set up your own Discord App and Bot. [Follow our developer guide](https://developer.fusebit.io/docs/discord#creating-your-own-discord-app) to see how to set one up and configure it for Fusebit.
 
-*Note: For this integration to work, you will need to configure your own discord application and bot with the following scopes: `applications.commands`,`identify`, `incoming.webhook`, `bot` and set the bot permissions=2147486720*
+_Note: For this integration to work, you will need to configure your own discord application and bot with the following scopes: `applications.commands`,`identify`, `incoming.webhook`, `bot` and set the bot permissions=2147486720_
 
 ### How To Test That Everything Is Configured Correctly
 
@@ -41,10 +41,14 @@ You will also see a message in your console letting you know that the message wa
 
 ![discord slash commands server with-shadow](discord-slash-server.png 'discord slash commands server')
 
-In the test endpoint, we reference a discordClient. 
+In the test endpoint, we reference a discordClient.
 
 ```javascript
-  const discordClient = await integration.tenant.getSdkByTenant(ctx, discordConnector, ctx.params.tenantId);
+const discordClient = await integration.tenant.getSdkByTenant(
+  ctx,
+  discordConnector,
+  ctx.params.tenantId
+);
 ```
 
 This is the SDK client used to invoke the Discord endpoints. Because of Fusebit magic, those objects are already supplied with the right credentials (such as API Keys and API Tokens), based on the authorization you completed earlier.
@@ -52,19 +56,19 @@ This is the SDK client used to invoke the Discord endpoints. Because of Fusebit 
 Now that those items are out of the way, there are two main parts to building a custom Discord slash command bot:
 
 1. Configure & Register a Discord Slash Command
-2. Listen for & Respond to a Discord Slash Command 
+2. Listen for & Respond to a Discord Slash Command
 
 Let’s get started below.
 
 ## Configure & Register a Discord Slash Command
 
-### How To Configure your Slash Command 
+### How To Configure your Slash Command
 
 Slash Commands are typically one level, but Discord enables developers to make more organized and complex groups of application commands that can be one level deep within a group. Learn more about this through the Discord Developer Portal [here](https://discord.com/developers/docs/interactions/application-commands#slash-commands).
 
-In this blog post, we will walk through how to register a single Slash Command only and you can do that by using the `configureSlashCommand()` function. 
+In this blog post, we will walk through how to register a single Slash Command only and you can do that by using the `configureSlashCommand()` function.
 
-In this example, we are using ‘command’ as the command name, along with parameterOne and parameterTwo as the command options, you will retrieve these values later in this tutorial. 
+In this example, we are using ‘command’ as the command name, along with parameterOne and parameterTwo as the command options, you will retrieve these values later in this tutorial.
 
 ```javascript
 function configureSlashCommand() {
@@ -91,21 +95,22 @@ function configureSlashCommand() {
 }
 ```
 
-Learn more about the different option types [here](https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-type). 
+Learn more about the different option types [here](https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-option-type).
 
 ### How To Register your Slash Command
 
-Once you are done configuring your Slash Command, Discord allows you to also register your Slash Commands as guild commands as well as globally to all users. This can be helpful for testing your commands locally before making them available to everyone. 
+Once you are done configuring your Slash Command, Discord allows you to also register your Slash Commands as guild commands as well as globally to all users. This can be helpful for testing your commands locally before making them available to everyone.
 
-You can simply register your Slash Command to your specific guild by running the <code>router.post('/api/tenant/:tenantId/:guild/slash-command'</code> endpoint in line 47 directly from the Run button.  
+You can simply register your Slash Command to your specific guild by running the <code>router.post('/api/tenant/:tenantId/:guild/slash-command'</code> endpoint in line 47 directly from the Run button.
 
 If you need to find your Guild ID, [here’s a quick guide](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-).
 
 ![discord slash commands](discord-slash-gif.gif 'discord slash commands')
 
-If you wish to register your Slash Command globally for all users of your Integration, you can run the <code>router.post('/api/tenant/:tenantId/slash-command'</code> endpoint instead. 
+If you wish to register your Slash Command globally for all users of your Integration, you can run the <code>router.post('/api/tenant/:tenantId/slash-command'</code> endpoint instead.
 
-## Listen for & Respond to a Discord Slash Command 
+## Listen for & Respond to a Discord Slash Command
+
 ### How To Listen for Slash Commands
 
 Nothing to do here! If you configured your app correctly through the developer docs, Fusebit will automatically listen for Slash Commands from servers where your app was authenticated against.
@@ -114,7 +119,7 @@ Look for the <code>integration.event.on('/:componentName/webhook/:eventType')</c
 
 **Responding to Slash Commands**
 
-Discord sends an Application ID & Message Token that can be used to track a series of interactions for the same message and send follow up messages to the Discord user.  
+Discord sends an Application ID & Message Token that can be used to track a series of interactions for the same message and send follow up messages to the Discord user.
 
 ```javascript
 integration.event.on('/:componentName/webhook/:eventType', async (ctx) => {
@@ -134,7 +139,7 @@ integration.event.on('/:componentName/webhook/:eventType', async (ctx) => {
 
 In the code here, we’re extracting the parameters that we had specified as name values in the options while configuring the Slash Command and sending back a response in the form of a Discord message object.
 
-Done! You should now have a good understanding of how to add your own Discord Slash Commands for your bot and to reply with the appropriate context!. 
+Done! You should now have a good understanding of how to add your own Discord Slash Commands for your bot and to reply with the appropriate context!.
 
 **Pro Tip:** You can also add more Connectors such as Github, Linear, etc., and work directly with their REST APIs within the same Integration.
 

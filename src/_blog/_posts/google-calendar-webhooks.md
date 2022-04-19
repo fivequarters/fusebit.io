@@ -311,4 +311,5 @@ Google Calendar watch events allow you to integrate powerful features within you
 
 Handling authorization and secure token management can be a challenge at scale; all these moving parts explained in this blog post can be quickly done by using the Fusebit integration platform.
 
-[Get Started for Free with Fusebit](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=google-calendar-webhooks 'Install the bot CTA_SMALL')
+<a class="cta_small" href="https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=google-calendar-webhooks">Get Started for Free with Fusebit</a>
+
