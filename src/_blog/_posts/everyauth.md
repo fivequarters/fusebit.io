@@ -29,6 +29,8 @@ The [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) pr
 
 [Try EveryAuth For Free](https://github.com/fusebit/everyauth-express#getting-started 'Try EveryAuth For Free CTA_LARGE')
 
+Below is an exampe of using EveryAuth to authorize users on Slack and use those tokens to interactive with Slack. Easy, right?
+
 ```javascript
 import everyauth from '@fusebit/everyauth-express';
 import { WebClient } from '@slack/web-api';
@@ -56,13 +58,13 @@ router.get('/slack/finished', async (req, res) => {
 });
 ```
 
-If you are ready to jump in, head over to the [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) project on GitHub for detailed instructions. Or read on to learn more about EveryAuth.
+If you are ready to jump in, head over to the [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) project on GitHub for detailed instructions on how to get started.
 
-## More than OAuth
+## Why Should You Try EveryAuth?
 
 There is more to calling external APIs from your app than OAuth, just like there is more to electricity than an electric outlet.
 
-### OAuth, Normalized
+### Reduce OAuth Learning Curve
 
 The [OAuth protocol](https://oauth.net/2/) is designed to allow users of your app to authorize it to call external APIs on their behalf. The protocol has enough flexibility for specific implementations to differ. As a developer, you need to understand the specifics of the individual services you are connecting to. EveryAuth reduces the OAuth learning curve by normalizing the protocol of various services and getting you to access data from them faster.
 
@@ -77,51 +79,7 @@ router.use('/linear', everyauth.authorize('linear', { /* ... */ });
 // ...
 ```
 
-### Secure, Multi-Tenant OAuth Credentials Storage
-
-After obtaining the authorization to connect to an external web service on behalf of your end-user, your app will usually make the actual API call only later. The OAuth protocol calls this situation _offline access_. It addresses this scenario by supporting _refresh tokens_ - long-lived credentials that must be exchanged for short-lived _access tokens_ closer to calling the target API. Your app must store the refresh tokens and associate them with a specific user or tenant.
-
-EveryAuth provides a secure, multi-tenant credentials storage, backed by [Fusebit](https://fusebit.io), with a flexible indexing capability so that you don't need to change the database schema of your app to store your users' credentials.
-
-```javascript
-import everyauth from '@fusebit/everyauth-express';
-
-router.get('/doSomethingWithSlack', async (req, res) => {
-  // Look up Slack credentials using keys native to your app
-  const myUserId = req.user.id;
-  const userCredentials = await everyauth.getIdentity('slack', myUserId);
-});
-```
-
-### Credentials Lifecycle Management
-
-To call an OAuth-protected third-party API, your app needs to exchange the refresh token for an access token. Although this part of the protocol is fairly standard, differences in implementations between services still exist. In addition to understanding them, your app also needs to keep track of when access tokens expire so that they are refreshed in a timely manner.
-
-EveryAuth abstracts all this logic away from your app, providing you with an access token guaranteed to be current just in time to call the target API of the resource server.
-
-```javascript
-import everyauth from '@fusebit/everyauth-express';
-
-router.get('/doSomethingWithSlack', async (req, res) => {
-  const userCredentials = await everyauth.getIdentity('slack', req.user.id);
-  // userCredentials.accessToken is guaranteed to be fresh
-});
-```
-
-### Pre-Created OAuth Applications
-
-Your app must be pre-registered with the target platform like Salesforce, Slack, or Google before asking your users for authorization to connect to it on their behalf. The registration process can be as simple as Slack or as gnarly as Google. During the registration process, you usually specify the set of permissions your app will require and are assigned a client ID and client secret that identifies your app.
-
-EveryAuth comes with a number of shared, pre-registered OAuth applications to [popular services](https://github.com/fusebit/everyauth-express#supported-services) with basic permissions so that you can skip this part of the process and get right down to calling the APIs. You can later reconfigure EveryAuth to use your own OAuth client ID and secret with the exact permissions you need using the EveryAuth CLI.
-
-```bash
-everyauth service set slack \
-  --scope "chat:write users:read channels:read" \
-  --clientId "{your-client-id}" \
-  --clientSecret "{your-client-secret}"
-```
-
-### Express Middleware
+### Express Middleware For Faster Setup
 
 To enable your users to authorize your web app to a third-party service using OAuth requires you to add OAuth-specific endpoints to your app. EveryAuth makes it as simple as a few lines of code with the Express middleware for Node.js.
 
@@ -142,6 +100,50 @@ router.get('/slack/finished', async (req, res) => {
   const userCredentials = await everyauth.getIdentity('slack', req.user.id);
   // ...
 });
+```
+
+### Multi-Tenant OAuth Credentials Storage For Improved Security
+
+After obtaining the authorization to connect to an external web service on behalf of your end-user, your app will usually make the actual API call only later. The OAuth protocol calls this situation _offline access_. It addresses this scenario by supporting _refresh tokens_ - long-lived credentials that must be exchanged for short-lived _access tokens_ closer to calling the target API. Your app must store the refresh tokens and associate them with a specific user or tenant.
+
+EveryAuth provides a secure, multi-tenant credentials storage, backed by [Fusebit](https://fusebit.io), with a flexible indexing capability so that you don't need to change the database schema of your app to store your users' credentials.
+
+```javascript
+import everyauth from '@fusebit/everyauth-express';
+
+router.get('/doSomethingWithSlack', async (req, res) => {
+  // Look up Slack credentials using keys native to your app
+  const myUserId = req.user.id;
+  const userCredentials = await everyauth.getIdentity('slack', myUserId);
+});
+```
+
+### Credentials Lifecycle Management To Reduce Production Headaches
+
+To call an OAuth-protected third-party API, your app needs to exchange the refresh token for an access token. Although this part of the protocol is fairly standard, differences in implementations between services still exist. In addition to understanding them, your app also needs to keep track of when access tokens expire so that they are refreshed in a timely manner.
+
+EveryAuth abstracts all this logic away from your app, providing you with an access token guaranteed to be current just in time to call the target API of the resource server.
+
+```javascript
+import everyauth from '@fusebit/everyauth-express';
+
+router.get('/doSomethingWithSlack', async (req, res) => {
+  const userCredentials = await everyauth.getIdentity('slack', req.user.id);
+  // userCredentials.accessToken is guaranteed to be fresh
+});
+```
+
+### Ready-Made OAuth Applications To Get You Deployed Quickly
+
+Your app must be pre-registered with the target platform like Salesforce, Slack, or Google before asking your users for authorization to connect to it on their behalf. The registration process can be as simple as Slack or as gnarly as Google. During the registration process, you usually specify the set of permissions your app will require and are assigned a client ID and client secret that identifies your app.
+
+EveryAuth comes with a number of shared, pre-registered OAuth applications to [popular services](https://github.com/fusebit/everyauth-express#supported-services) with basic permissions so that you can skip this part of the process and get right down to calling the APIs. You can later reconfigure EveryAuth to use your own OAuth client ID and secret with the exact permissions you need using the EveryAuth CLI.
+
+```bash
+everyauth service set slack \
+  --scope "chat:write users:read channels:read" \
+  --clientId "{your-client-id}" \
+  --clientSecret "{your-client-secret}"
 ```
 
 ## How Does EveryAuth Work?
