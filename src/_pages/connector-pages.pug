@@ -1,0 +1,24 @@
+---
+pagination:
+    data: connectors
+    size: 1
+    alias: connector
+permalink: "| connectors/#{connector.name}.html"
+eleventyExcludeFromCollections: true
+---
+
+extends ../_layouts/default.pug
+
+block seo_variables
+    - var title = connector.name + ` - Fusebit`
+
+block page_variable
+    - var pageClass = 'connectorDetail'
+
+block content
+    h1 Hi
+
+block scripts
+    script.
+        analytics.page('About Us', { objectLocation: 'About Us', domain: 'fusebit.io' });
+
