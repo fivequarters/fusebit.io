@@ -118,9 +118,9 @@ block scripts
         
         const links = document.querySelectorAll('a');
         links.forEach((link) => {
-            const title = link.title;
-            if (title.indexOf("CTA") > 0) {
-                const buttonSize = title.indexOf("SMALL") > 0 ? "Small" : "Large";
+            const linkClass = link.className;
+            if (linkClass?.indexOf("cta") > 0) {
+                const buttonSize = linkClass.indexOf("small") > 0 ? "Small" : "Large";
                 
                 analytics.trackLink(link, "Blog Post Button Clicked", {
                     objectLocation: "Blog",
