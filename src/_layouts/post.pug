@@ -48,7 +48,12 @@ block content
             .post__content
                 .post__hero-image
                     != filters.getImageTag(`blog/${post_image}`, 'Hero Image', null, { id:"hero-image" })
-                article.article.post__article!= content
+                article.article
+                    .post__sidebar
+                        h5.post__sidebar--title TABLE OF CONTENTS
+                        .post__sidebar--section.post__sidebar--section-active Section Name
+                        .post__sidebar--section Second Section
+                    .post__article!= content
             .post__navigation-container
                 - const prevPost = filters.getNextCollectionItem(collections.post, page) || null
                 - const nextPost = filters.getPreviousCollectionItem(collections.post, page) || null

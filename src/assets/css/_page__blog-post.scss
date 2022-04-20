@@ -6,10 +6,39 @@
         padding-bottom: calc(var(--paddingLayout) + 150px);
     }
 
+    &__sidebar {
+        position: sticky;
+        top: 0;
+        height: 100%;
+        padding: 120px 50px 60px 0;
+
+        &--title {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        &--section {
+            color: var(--dark);
+            padding: 10px 20px;
+            font-weight: 500;
+            border-left: 1px solid rgb(216, 216, 216);
+            transition: all .15s linear;
+
+            &:hover {
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            &-active {
+                font-weight: 600;
+            }
+        }
+    }
+
     &__article {
         padding: 30px 0;
-        max-width: 900px;
-        margin: 0 auto;
+        max-width: 800px;
+        margin-left: auto;
         overflow: visible;
     }
 
