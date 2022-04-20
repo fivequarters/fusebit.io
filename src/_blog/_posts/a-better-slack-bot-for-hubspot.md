@@ -29,7 +29,7 @@ One item to note about the “lookup” keyword is that it can be placed anywher
 
 **Try it out now!**
 
-1. [Install the bot](https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/hubspot-slack-bot/api/service/start 'Install the bot CTA_SMALL') for free.
+1. <a class="cta_small" href="https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/hubspot-slack-bot/api/service/start">Install the bot</a> for free.
 
 2. You will need to authorize access to your HubSpot instance and Slack workspace.
 3. Add the bot to a Slack channel, by clicking the drop-down next to the channel name, clicking **Integrations**, and then selecting **Add an App** and then finding “HubSpot Bot”.
@@ -50,6 +50,7 @@ You can edit the code of the Integration by hitting the Edit button in the middl
 ![Edit Integration](blog-slack-bot-hubspot-edit.png 'Edit Integration')
 
 ## Test the Integration
+
 We can invoke the `test` method of this integration right from inside the editor to see how this works, but we first need to configure a test request passing the HubSpot email to look up:
 
 ![Configuration slack bot](blog-slack-bot-hubspot-config.png 'Configuration slack bot')
@@ -83,7 +84,8 @@ You should also see a message in Slack with the search result.
 Feel free to modify the `hubSpotClient.crm.contacts.searchApi.doSearch` (line 54) and `slackClient.chat.postMessage` (line 65) calls in the `lookupAndPost` method to customize what your bot does. If you want to have custom properties, you can change it in the line 40 in `properties`.
 
 ## Enabling search from Slack
-So far we’ve tested this integration from inside Fusebit using the Run button. However we really want to be able to start the search from inside Slack by sending a “lookup” command. 
+
+So far we’ve tested this integration from inside Fusebit using the Run button. However we really want to be able to start the search from inside Slack by sending a “lookup” command.
 
 1. In the Fusebit portal, select the Slack connector. You will need to create your own Slack application to be able to receive Slack events. [Follow our developer guide](https://developer.fusebit.io/docs/slack#receiving-events-from-slack-event-api-support) to see how.
 2. You will need to go to the integration Installs tab and delete any existing installs after you switch over to your own Slack application, and you will have to re-authenticate.

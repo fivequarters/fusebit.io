@@ -27,7 +27,7 @@ First, you need to obtain a [free CoinAPI key](https://docs.coinapi.io), which y
 
 Once you have your key, sign up for Fusebit:
 
-[Sign up for Fusebit for free](https://manage.fusebit.io?key=e2e-crypto-slack-bot 'Sign up for Fusebit for free CTA_LARGE')
+<a class="cta_large" href="https://manage.fusebit.io?key=e2e-crypto-slack-bot" target="_blank" rel="noopener">Sign up for Fusebit for free</a>
 
 1. Select **Slack Crypto Bot** when creating a new integration and specify the API key you obtained earlier
 1. Click the **Edit** button and then **Run** once the editor loads
