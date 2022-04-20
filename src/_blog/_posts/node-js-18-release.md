@@ -1,8 +1,8 @@
 ---
-post_title: Node.js 18 Release - Top New Features
+post_title: Node 18 Release - Top New Features
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
-date: '2022-04-14'
+date: '2022-04-19'
 post_image: blog-njs18-hero.png
 post_excerpt : node-18 is finally here, and fusebit has been following what’s included for months now. Read our summaries of the big features in this latest Node release.
 post_slug: node-18-release
@@ -12,7 +12,7 @@ post_og_image: https://fusebit.io/assets/images/blog/blog-njs18-hero.png
 posts_related: ['node-18-prefix-only-modules','run-every-nodejs-version-in-lambda',’undici-mocking’]
 ---
 
-Node.js 18 is finally here and we are super excited to see it live! Read through for a recap of the new features available in this latest release. 
+Node.js 18 is here and we are super excited to see it released on April 19th, 2022! Read through for a recap of the new features available in this latest release. 
 
 ## Node.js 18 Features Overview
 
