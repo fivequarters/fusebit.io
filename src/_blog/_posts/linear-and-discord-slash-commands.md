@@ -21,7 +21,7 @@ So, we built one out for you -- one that gets you started quickly and is fully c
 
 **Try it out now!**
 
-1. [Install the bot](https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/linear-discord-bot/api/service/start 'Install the bot CTA_SMALL') for free.
+1. <a class="cta_small" href="https://api.us-west-1.on.fusebit.io/v2/account/acc-f64569d3c8c14166/subscription/sub-1431c8fd3dc14cbe/integration/linear-discord-bot/api/service/start">Install the bot</a> for free.
 2. You will need to authorize access to your Discord server and Linear account.
 3. In the Discord server, type the “/linear issue create” command followed by the title of the issue you wish to create. You will be asked to identify the team you want to create this issue for.
 4. Done! You created an issue in Linear through this Discord bot

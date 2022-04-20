@@ -207,14 +207,20 @@ For a normal link, just add it like so:
 
 For a button link, there are two size options, small and large.
 
-To add a small button link, add a title with the word `CTA_SMALL`:
+To add a small button link, add an anker with the class `cta_small`:
 
 ```
-[Your Text](https://yourlink.com 'Install the integration CTA_SMALL')
+<a class="cta_small" href="https://yourlink.com">Your Text</a>
 ```
 
-To add a large button link, add a title with the word `CTA_LARGE`:
+To add a large button link, add an anker with the class `cta_large`:
 
 ```
-[Your Text](https://yourlink.com 'Install the integration CTA_LARGE')
+<a class="cta_large" href="https://yourlink.com">Your Text</a>
+```
+
+To open the link in a new tab, add the `target` and `rel` to the anker:
+
+```
+<a class="cta_large" href="https://yourlink.com" target="_blank" rel="noopener">Your Text</a>
 ```
