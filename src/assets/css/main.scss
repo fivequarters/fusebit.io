@@ -40,6 +40,10 @@
     @import '_page_pricing--hero';
 }
 
+.connector {
+    @import '_page__connector--hero';
+}
+
 .careers {
     @import '_page__careers--hero';
     @import '_page__careers--description';

@@ -3,7 +3,7 @@ pagination:
     data: connectors
     size: 1
     alias: connector
-permalink: "| connectors/#{connector.name}.html"
+permalink: "| connectors/#{connector.id}.html"
 eleventyExcludeFromCollections: true
 ---
 
@@ -13,12 +13,12 @@ block seo_variables
     - var title = connector.name + ` - Fusebit`
 
 block page_variable
-    - var pageClass = 'connectorDetail'
+    - var pageClass = 'connector'
 
 block content
-    h1 Hi
+    include ../_components/Connector/Hero/Hero
 
 block scripts
     script.
-        analytics.page('About Us', { objectLocation: 'About Us', domain: 'fusebit.io' });
+        analytics.page("Connector Detail", { objectLocation: "Connector Detail", domain: 'fusebit.io' });
 
