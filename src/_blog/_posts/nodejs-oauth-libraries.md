@@ -81,9 +81,9 @@ EveryAuth is the easiest way for your app to access APIs like Slack, Salesforce,
 
 > If you're building a Node.js Express app and want to add integrations such as Google, Discord or Asana to it without having to worry about the headache of OAuth flows & access token management, then this is the library for you.
 
-EveryAuth is an express middleware that handles authentication and authorization with third party services for you. Out of the box, it comes pre-built with OAuth clients to get you started quickly, all you need to do is point your users to it and the installation flow kicks off automatically. Then, when you're ready to move to production, you can easily configure your own OAuth client to get full control over the experience. Once authenticated, EveryAuth will automatically handle the credentials lifecycle management for each user - meaning everytime you make a request, the access token is guaranteed to be current. 
+EveryAuth is an express middleware that handles authentication and authorization with third party services for you. Out of the box, it comes pre-built with OAuth clients to get you started quickly, all you need to do is point your users to it and the installation flow kicks off automatically. Once authenticated, EveryAuth will automatically handle the credentials lifecycle management for each user - meaning everytime you make a request, the access token is guaranteed to be current. Then, when you're ready to move to production, you can easily configure your own OAuth client to get full control over the experience.
 
-It also comes with a handy cli tool called `everyauth-cli` which you use to initialize everyauth in your app, manage multi-tenant identities and also add in your custom configurations as well.
+It also comes with a handy cli tool called `everyauth-cli` which you use to initialize everyauth in your app, manage tenant identities and also add in your custom configurations as well.
 
 ## [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) (Honorable Mention)
 
