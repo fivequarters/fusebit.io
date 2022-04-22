@@ -27,7 +27,7 @@ The day has come to add integrations to your app. Say you want to connect to you
 
 EveryAuth makes this authorization and credential management work disappear so that you can focus on the core of your app.
 
-Below is an exampe of using EveryAuth to authorize users on Slack and use those tokens to interactive with Slack. Easy, right?
+Below is an exampe of using EveryAuth to authorize users on Slack and use those tokens to interactive with Slack.
 
 ```javascript
 import everyauth from '@fusebit/everyauth-express';
@@ -56,7 +56,9 @@ router.get('/slack/finished', async (req, res) => {
 });
 ```
 
-If you are ready to jump in, head over to the [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) project on GitHub for detailed instructions on how to get started.
+<a class="cta_large" href="https://github.com/fusebit/everyauth-express#getting-started">Get Started with EveryAuth on GitHub</a>
+
+Need more on the developer benefits of EveryAuth? Continue on reading.
 
 ## Why Should You Try EveryAuth?
 
