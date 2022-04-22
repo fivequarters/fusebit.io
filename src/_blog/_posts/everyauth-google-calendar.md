@@ -1,5 +1,5 @@
 ---
-post_title: Integrate Google Calendar in 15 Minutes With Your Node.js Express App Using EveryAuth
+post_title: Integrate Google Calendar To Your Node.js Express App Quickly Using EveryAuth
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-04-22'
