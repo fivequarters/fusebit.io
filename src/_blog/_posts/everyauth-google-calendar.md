@@ -5,11 +5,11 @@ post_author_avatar: shehzad.png
 date: '2022-04-22'
 post_image: blog-everyauth-gcal-hero.png
 post_excerpt: Add a Google Calendar integration to your Node.js Express app without having to worry about the headache of OAuth flows & access token management. 
-post_slug: everyauth-google-calendar
+post_slug: integrate-google-calendar-node-everyauth
 tags: ['post','node.js','authentication']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-everyauth-gcal-hero.png
-posts_related: ['everyauth','TBD','TBD'] 
+posts_related: ['everyauth','using-github-with-everyauth','oauth-refresh-token-best-practices'] 
 ---
 
 Fusebit recently announced a new product called [EveryAuth](https://fusebit.io/blog/everyauth/?utm_source=fusebit.io&utm_medium=referral&utm_campaign=none), the easiest way for your app to access APIs like Slack, Salesforce, or Github. Suppose you're working on a Node.js Express app and want to add a Google Calendar integration to it without having to worry about the headache of OAuth flows & access token management. In that case,this article is for you.
