@@ -214,4 +214,6 @@ We are actually tracking two different Promises, here.  The first is the one cre
 
 ## Next steps
 
-I would love to better integrate the output with VS Code or some other performance rendering library, and lord knows more testing - especially with the Express app - is definitely called for.  But in the meantime, hopefully this will be useful for you! Want more like this? Follow [@fusebitio](https://twitter.com/fusebitio) for more entertaining (and useful) developer content.
+I would love to better integrate the output with VS Code or some other performance rendering library, and lord knows more testing - especially with the Express app - is definitely called for.  But in the meantime, hopefully this will be useful for you!
+
+Want more like this? Follow [@fusebitio](https://twitter.com/fusebitio) for more entertaining (and useful) developer content.
