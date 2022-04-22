@@ -84,19 +84,19 @@ EveryAuth simplifies a lot the authorization flow:
 
 ```javascript
 app.use(
-'/authorize/:userId',
-(req, res, next) => {
+  '/authorize/:userId',
+  (req, res, next) => {
     if (!req.params.userId) {
-    return res.redirect('/');
+      return res.redirect('/');
     }
     return next();
-},
-everyauth.authorize('githuboauth', {
+  },
+  everyauth.authorize('githuboauth', {
     // The endpoint of your app where control will be returned afterwards
     finishedUrl: '/finished',
     // The user ID of the authenticated user the credentials will be associated with
     mapToUserId: (req) => req.params.userId,
-})
+  })
 );
 ```
 
@@ -113,19 +113,19 @@ We will get the authorizing GitHub user information and public repositories usin
 
 ```javascript
 app.get('/finished', async (req, res) => {
-    // Get userId from the authorization redirect or via session if already authorized.
-    if (req.query.userId) {
+  // Get userId from the authorization redirect or via session if already authorized.
+  if (req.query.userId) {
     req.session.userId = req.query.userId;
-    }
-    const userId = req.query.userId || req.session.userId;
-    if (!userId) {
+  }
+  const userId = req.query.userId || req.session.userId;
+  if (!userId) {
     res.redirect('/');
-    }
-    const userCredentials = await everyauth.getIdentity('githuboauth', userId);
-    const client = new Octokit({ auth: userCredentials?.accessToken });
-    const { data } = await client.rest.users.getAuthenticated();
-    const { data: repos } = await client.request('GET /user/repos', {});
-    . . . render the data
+  }
+  const userCredentials = await everyauth.getIdentity('githuboauth', userId);
+  const client = new Octokit({ auth: userCredentials?.accessToken });
+  const { data } = await client.rest.users.getAuthenticated();
+  const { data: repos } = await client.request('GET /user/repos', {});
+  ... render the data
 });
 ```
 
@@ -195,11 +195,11 @@ Render the data:
 
 ```javascript
 res.render('index', {
-    title: `GitHub Profile for ${data.login}`,
-    ...data,
-    used_storage: Math.round((data.disk_usage * 100) / data.plan.space, 2),
-    public_repos: repos,
-});
+  title: `GitHub Profile for ${data.login}`,
+  ...data,
+  used_storage: Math.round((data.disk_usage * 100) / data.plan.space, 2),
+  public_repos: repos,
+})
 ```
 
 Run your application (assuming your code is defined in index.js file)
