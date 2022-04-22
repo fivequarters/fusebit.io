@@ -53,6 +53,7 @@ Next, let’s install the following dependencies:
 * [uuid](https://www.npmjs.com/package/uuid) - Generate a Universally Unique Identifier
 * [cookie-session](https://www.npmjs.com/package/cookie-session) - Simple cookie-based session middleware
 * [mustache-express](https://www.npmjs.com/package/mustache-express) - Use Mustache templating with Express
+* [moment](https://www.npmjs.com/package/moment) - A JavaScript date library for parsing, validating, manipulating, and formatting dates
 
 ```shell
 npm i express
@@ -61,6 +62,7 @@ npm i googleapis
 npm i uuid
 npm i cookie-session
 npm i mustache-express
+npm i moment
 ```
 
 Create a new `index.js` file, which includes all the dependencies and sets up your express app. You can use the provided file from the repo above (recommended) or scaffold a new one using `npx express-generator` to start from scratch.
