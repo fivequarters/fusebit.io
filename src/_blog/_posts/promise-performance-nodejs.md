@@ -17,15 +17,13 @@ Now, _*cough cough*_-years later, I’m looking at my Express backend in Node.js
 
 Most of our time in modern web application backend code is spent doing “broker” work. Broker processes take a message or event from one source - say, an HTTP POST request from a browser - perform some basic manipulation, and then send it on to another location, like a database. Or another web client. Or the blockchain, if you’re into that kinda Web3 thing.
 
-What does performance improvement mean in the contexts of an environment where, not only is the performance not constrained by the CPU, but when there might be dozens of other systems involved?
+What does performance improvement mean in the contexts of an environment where, not only is the performance not constrained by the CPU, but when there might be dozens of other systems involved? The answer is often not algorithmic but architectural. Where do you add caching? What calls can be delayed or performed asynchronously so that the client is not blocked on the response? What’s the minimum amount of data necessary to complete the request?
 
-The answer is often not algorithmic but architectural. Where do you add caching? What calls can be delayed or performed asynchronously so that the client is not blocked on the response? What’s the minimum amount of data necessary to complete the request?
-
-Answering this question in a broker-style backend requires understanding how long different asynchronous operations take, which in turn means understanding how long various JavaScript Promises take, in order to best identify the [hot spots to focus our efforts around[(https://en.wikipedia.org/wiki/Amdahl's_law).
+Answering this question in a broker-style backend requires understanding how long different asynchronous operations take, which in turn means understanding how long various JavaScript Promises take, in order to best identify the [hot spots to focus our efforts around](https://en.wikipedia.org/wiki/Amdahl's_law).
 
 If we want to understand the architectural performance of our system, we need to first measure the steps taken to process a request.
 
-## A Simple Example…
+## A Simple Example
 
 I always like to start off with some real code, so let’s put together a simple example to help frame the conversation:
 
@@ -144,7 +142,7 @@ Neat!  Now we’re able to see exactly which sections are using a lot of time!
 
 You can use the `PromisePerf` class around any `async` function.
 
-## What about our Express app?
+## What About Our Express app?
 
 Solving the same problem for Express middleware requires a bit more finesse since it becomes necessary to ensure that the Promise cost tracking stops when the current middleware exits. You can see the apparently-standard way of hooking `res.end` in the [ExpressPerf.ts](https://github.com/bennbollay/promise-perf/blob/main/src/ExpressPerf.ts) file.  While the [test code lives in test/mock/router.js](https://github.com/bennbollay/promise-perf/blob/main/test/mock/router.js), the middleware is added very simply with the addition of these lines:
 
@@ -216,4 +214,4 @@ We are actually tracking two different Promises, here.  The first is the one cre
 
 I would love to better integrate the output with VS Code or some other performance rendering library, and lord knows more testing - especially with the Express app - is definitely called for.  But in the meantime, hopefully this will be useful for you!
 
-Want more like this? Follow [@fusebitio](https://twitter.com/fusebitio) for more entertaining (and useful) developer content.
+Want more developer articles like this? Follow [@fusebitio](https://twitter.com/fusebitio) for more entertaining (and useful) developer content.
