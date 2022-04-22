@@ -5,11 +5,11 @@ post_author_avatar: bencho.png
 date: '2022-04-22'
 post_image: github-everyauth-example.png
 post_excerpt: Learn how to interact with GitHub API from an Express application using EveryAuth
-post_slug: using-github-with-everyauth
+post_slug: integrate-github-api-everyauth
 tags: ['post', 'authentication']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/github-everyauth-example.png
-posts_related: ['everyauth','api-metering-analytics-express', 'nodejs-oauth-libraries']
+posts_related: ['everyauth','integrate-google-calendar-node-everyauth', 'nodejs-oauth-libraries']
 ---
 
 Recently Fusebit announced [EveryAuth](https://fusebit.io/blog/everyauth/?utm_source=fusebit.io&utm_medium=referral&utm_campaign=none) project that allows you to integrate with multiple services via OAuth easily. Learn how to use EveryAuth with GitHub API using a GitHub OAuth Application.
