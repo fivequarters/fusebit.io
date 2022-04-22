@@ -17,7 +17,7 @@ posts_related:
   ]
 ---
 
-The [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) project is the easiest way for your app to access APIs like Slack, Salesforce, or Github..
+EveryAuth is the easiest way for your app to access APIs like Slack, Salesforce, or Github..
 
 The day has come to add integrations to your app. Say you want to connect to your users' Salesforce, Slack, or HubSpot. The first step is having your users authorize your app to access those APIs. This usually requires you to do the following:
 
@@ -25,11 +25,9 @@ The day has come to add integrations to your app. Say you want to connect to you
 - Take your users through the OAuth authorization flow.
 - Update your database and logic to store and refresh your users' credentials for later use.
 
-The [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) project makes this authorization and credential management work disappear so that you can focus on the core of your app.
+EveryAuth makes this authorization and credential management work disappear so that you can focus on the core of your app.
 
-<a class="cta_large" href="https://github.com/fusebit/everyauth-express#getting-started">Try EveryAuth For Free</a>
-
-Below is an exampe of using EveryAuth to authorize users on Slack and use those tokens to interactive with Slack. Easy, right?
+Below is an exampe of using EveryAuth to authorize users on Slack and use those tokens to interactive with Slack.
 
 ```javascript
 import everyauth from '@fusebit/everyauth-express';
@@ -58,7 +56,11 @@ router.get('/slack/finished', async (req, res) => {
 });
 ```
 
-If you are ready to jump in, head over to the [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) project on GitHub for detailed instructions on how to get started.
+The developers at Fusebit built EveryAuth to make API authenticating easy for app developers. Are you ready?
+
+<a class="cta_large" href="https://github.com/fusebit/everyauth-express#getting-started">Get Started with EveryAuth on GitHub</a>
+
+Want to learn more about the benefits of EveryAuth? Continue on reading.
 
 ## Why Should You Try EveryAuth?
 
@@ -160,6 +162,6 @@ When the time comes to call an external API, your app communicates again with Ev
 
 Check out the step-by-step instructions on Github at [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) to get started.
 
-<a class="cta_large" href="https://github.com/fusebit/everyauth-express#getting-started">Try EveryAuth For Free</a>
+<a class="cta_large" href="https://github.com/fusebit/everyauth-express#getting-started">Get Started with EveryAuth on GitHub</a>
 
 EveryAuth is part of [Fusebit](https://fusebit.io)'s code-first integration platform that helps developers add integrations to their apps. We live and breathe integrations. Follow us on Twitter [@fusebitio](https://twitter.com/fusebitio) for great developer content, and check out other OSS projects at [github.com/fusebit](https://github.com/fusebit).
