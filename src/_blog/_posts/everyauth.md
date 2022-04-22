@@ -158,6 +158,6 @@ When the time comes to call an external API, your app communicates again with Ev
 
 Check out the step-by-step instructions on Github at [fusebit/everyauth-express](https://github.com/fusebit/everyauth-express) to get started.
 
-<a class="cta_large" href="https://github.com/fusebit/everyauth-express#getting-started">Get Started with EveryAuth</a>
+<a class="cta_large" href="https://github.com/fusebit/everyauth-express#getting-started">Get Started with EveryAuth on GitHub</a>
 
 EveryAuth is part of [Fusebit](https://fusebit.io)'s code-first integration platform that helps developers add integrations to their apps. We live and breathe integrations. Follow us on Twitter [@fusebitio](https://twitter.com/fusebitio) for great developer content, and check out other OSS projects at [github.com/fusebit](https://github.com/fusebit).
