@@ -60,7 +60,7 @@ The developers at Fusebit built EveryAuth to make API authenticating easy for ap
 
 <a class="cta_large" href="https://github.com/fusebit/everyauth-express#getting-started">Get Started with EveryAuth on GitHub</a>
 
-Need more benefits of EveryAuth? Continue on reading.
+Want to learn more about the benefits of EveryAuth? Continue on reading.
 
 ## Why Should You Try EveryAuth?
 
