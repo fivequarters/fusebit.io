@@ -220,5 +220,4 @@ Congratulations! 👏 You’ve learned that interacting with GitHub API via a Gi
 
 Let us know what you think, don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on [Twitter](https://twitter.com/degrammer).
 
-
 [Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signuputm_source=fusebit.io&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=using-github-with-everyauth) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
