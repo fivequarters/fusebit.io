@@ -11,6 +11,10 @@ post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-promise-performance-social.jpg
 ---
 
+**Tl;dr**: Let's use the [Promise Perf](https://github.com/bennbollay/promise-perf) library to measure the task-orientated duration of `Promises` and `async` methods in NodeJS!
+
+# Introduction
+
 I started my career off in high-performance embedded C, spending hours looking at [oprofile](https://oprofile.sourceforge.io/news/) reports, assembly, and trying to micro-optimize page loading strategies to wring the last cycle of performance out of an algorithm. It was a great time to be an engineer: computers were slow, algorithms simple, and you could reasonably understand the underlying hardware’s optimization strategies (if there were any!).
 
 Now, _*cough cough*_-years later, I’m looking at my Express backend in Node.js, trying to figure out why it takes _so long_ to satisfy a browser request. Sure, I could use the various profiling tools - ones built largely to the same stochastic sampling thesis as oprofile - to take samples of where CPU time is spent but, frankly, who is doing CPU-intensive work in JavaScript? That’s crazy talk!
