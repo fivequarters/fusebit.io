@@ -1,5 +1,5 @@
 ---
-post_title: 15 Minutes to Integrate Google Calendar with your Node.js Express app using EveryAuth
+post_title: Integrate Google Calendar in 15 Minutes With Your Node.js Express App Using EveryAuth
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-04-22'
@@ -12,7 +12,7 @@ post_og_image: https://fusebit.io/assets/images/blog/blog-everyauth-gcal-hero.pn
 posts_related: ['everyauth','TBD','TBD'] 
 ---
 
-Fusebit recently announced a new product called [Every Auth](https://fusebit.io/blog/everyauth/?utm_source=fusebit.io&utm_medium=referral&utm_campaign=none), the easiest way for your app to access APIs like Slack, Salesforce, or Github. Suppose you're working on a Node.js Express app and want to add a Google Calendar integration to it without having to worry about the headache of OAuth flows & access token management. In that case,this article is for you.
+Fusebit recently announced a new product called [EveryAuth](https://fusebit.io/blog/everyauth/?utm_source=fusebit.io&utm_medium=referral&utm_campaign=none), the easiest way for your app to access APIs like Slack, Salesforce, or Github. Suppose you're working on a Node.js Express app and want to add a Google Calendar integration to it without having to worry about the headache of OAuth flows & access token management. In that case,this article is for you.
 
 Learn how to use EveryAuth, in your Node.js Express app, with the Google Calendar API to: 
 
@@ -21,12 +21,9 @@ Learn how to use EveryAuth, in your Node.js Express app, with the Google Calenda
 * Add new events to a calendar using simple text e.g., “Schedule Dinner tomorrow night at 8 PM”
 * Securely persist login credentials, so users don’t have to sign in again
 
-
 ![App Flow with-shadow](blog-everyauth-gcal-appflow.gif "App Flow")
 
-
 You can do this all within 30 minutes by downloading the full code from our [GitHub repo](https://github.com/fusebit/everyauth-express/tree/main/examples/googlecalendar)** **and following along below. In this example repo, I use Mustache templating along with Bootstrap for the front-end to keep it simple, but you can switch it out for your framework of choice (React, Angular, Next.js etc.)
-
 
 ## Getting Setup
 
@@ -74,9 +71,7 @@ The first screen that users will see is the Sign In page, this is where they wil
 
 EveryAuth handles authentication and authorization for you, all you need to do is point your users to it and the installation flow kicks off automatically.  Let's add this first route to your express app, the landing page. 
 
-
 ![Sign In Landing Page with-shadow](blog-everyauth-gcal-signin.png "Sign In Landing Page")
-
 
 > If you haven’t already, you **need** to configure EveryAuth in your development environment first. You can follow the [getting started](https://github.com/fusebit/everyauth-express#getting-started) guide from the EveryAuth GitHub Repository. Remember to set the appropriate scopes using `everyauth service set google --scope https://www.googleapis.com/auth/calendar`
 
@@ -111,7 +106,6 @@ Done!
 
 Your user has authenticated themselves with Google and your app now has the authorization to make calls and retrieve data on their behalf. 
 
-
 ## Call the Google Calendar API
 
 EveryAuth uses the concept of an _identity _to associate the user to your app and store their access credentials securely. Behind the scenes, it makes sure to automatically refresh access tokens on time so that whenever your app talks to the Google Calendar API, it’s always using the most current token.
@@ -128,7 +122,6 @@ So, first, you are going to retrieve this token by calling `everyauth.getIdentit
   google.options({ auth: myAuth });
 ```
 
-
 ### Get list of Calendars
 
 ![List of Calendars with-shadow](blog-everyauth-gcal-calendarlist.png "List of Events")
@@ -144,7 +137,6 @@ To get a list of calendars under the user's account, make a call using `calendar
   });
  return calendarList;
 ```
-
 
 ### Get List of Events
 
@@ -181,7 +173,6 @@ Google Calendar has a really nifty feature called [Quick Add](https://developers
   });
  return addQuickEvent;
 ```
-
 
 ## Persisted Login
 
@@ -235,11 +226,10 @@ app.get("/", (req, res) => {
 
 Done! Now you can rest assured knowing that users can access their google calendars safely, securely and conveniently from right within your app.
 
-
 ## Conclusion
 
 Congratulations! You have now learned how easy it is to integrate Google Calendar into your app with EveryAuth! 
 
-Make sure to check out the complete code in [GitHub](https://github.com/fusebit/everyauth-express/tree/main/examples/googlecalendar)** **and play around with it!
+Make sure to check out the complete code in [GitHub](https://github.com/fusebit/everyauth-express/tree/main/examples/googlecalendar) and play around with it!
 
 If you have any questions, you can reach out to me directly through our [community Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg), on [Twitter](https://twitter.com/shehzadakbar) and at [shehzad@fusebit.io](mailto:shehzad@fusebit.io).
