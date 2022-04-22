@@ -112,16 +112,19 @@ In this route, you can now interact with the GitHub API by leveraging the EveryA
 We will get the authorizing GitHub user information and public repositories using the REST API.
 
 ```javascript
-app.get('/finished', async (req, res) => {
-  // Get userId from the authorization redirect or via session if already authorized.
+// Get userId from the authorization redirect or via session if already authorized.
+const handleSession = (req, res, next) => {
   if (req.query.userId) {
     req.session.userId = req.query.userId;
   }
-  const userId = req.query.userId || req.session.userId;
-  if (!userId) {
-    res.redirect('/');
+  if (!req.session.userId) {
+    return res.redirect('/');
   }
-  const userCredentials = await everyauth.getIdentity('githuboauth', userId);
+  return next();
+};
+
+app.get('/finished', handleSession, async (req, res) => {
+  const userCredentials = await everyauth.getIdentity('githuboauth', req.session.userId);
   const client = new Octokit({ auth: userCredentials?.accessToken });
   const { data } = await client.rest.users.getAuthenticated();
   const { data: repos } = await client.request('GET /user/repos', {});
