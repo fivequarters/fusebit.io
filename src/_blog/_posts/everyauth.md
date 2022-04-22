@@ -56,9 +56,11 @@ router.get('/slack/finished', async (req, res) => {
 });
 ```
 
+The developers at Fusebit built EveryAuth to make API authenticating easy for app developers. Are you ready?
+
 <a class="cta_large" href="https://github.com/fusebit/everyauth-express#getting-started">Get Started with EveryAuth on GitHub</a>
 
-Need more on the developer benefits of EveryAuth? Continue on reading.
+Need more benefits of EveryAuth? Continue on reading.
 
 ## Why Should You Try EveryAuth?
 
