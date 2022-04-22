@@ -63,17 +63,15 @@ npm i cookie-session
 npm i mustache-express
 ```
 
-Create a new `index.js` file, which includes all the dependencies and sets up your express app. You can use the provided file from the repo above (recommended) or scaffold a new one using `npx express-generator’ to start from scratch.
+Create a new `index.js` file, which includes all the dependencies and sets up your express app. You can use the provided file from the repo above (recommended) or scaffold a new one using `npx express-generator` to start from scratch.
 
 ## Sign-In Flow
 
-The first screen that users will see is the Sign In page, this is where they will use their Google Account and authorize your app to access their calendar. 
+> EveryAuth handles authentication and authorization for you, all you need to do is point your users to it and the installation flow kicks off automatically.  
 
-EveryAuth handles authentication and authorization for you, all you need to do is point your users to it and the installation flow kicks off automatically.  Let's add this first route to your express app, the landing page. 
+The first screen that users will see is the Sign In page, this is where they will use their Google Account and authorize your app to access their calendar. Let's add this first route to your express app, the landing page. 
 
 ![Sign In Landing Page with-shadow](blog-everyauth-gcal-signin.png "Sign In Landing Page")
-
-> If you haven’t already, you **need** to configure EveryAuth in your development environment first. You can follow the [getting started](https://github.com/fusebit/everyauth-express#getting-started) guide from the EveryAuth GitHub Repository. Remember to set the appropriate scopes using `everyauth service set google --scope https://www.googleapis.com/auth/calendar`
 
 When a user visits, generate a new UUID  as an identifier and pass it along to the `index` template. This is also really useful because it enables multiple users to sign-in through your app. You may choose to replace this with an identifier that is unique to your app.
 
@@ -86,7 +84,7 @@ app.get("/", (req, res) => {
 
 ```
 
-When a user clicks on ‘Sign In’ they are redirected to ‘/google/authorize/:userId’ and this is where EveryAuth kicks in. It will automatically redirect them to Google to perform the authorization flow, and then return them back to `/google/calendarlist`, or whatever route you define.
+When a user clicks on ‘Sign In’ they are redirected to `/google/authorize/:userId` and this is where EveryAuth kicks in. It will automatically redirect them to Google to perform the authorization flow, and then return them back to `/google/calendarlist`, or whatever route you define.
 
 ```javascript
 
@@ -108,7 +106,7 @@ Your user has authenticated themselves with Google and your app now has the auth
 
 ## Call the Google Calendar API
 
-EveryAuth uses the concept of an _identity _to associate the user to your app and store their access credentials securely. Behind the scenes, it makes sure to automatically refresh access tokens on time so that whenever your app talks to the Google Calendar API, it’s always using the most current token.
+> EveryAuth uses the concept of an identity to associate the user to your app and store their access credentials securely. Behind the scenes, it makes sure to automatically refresh access tokens on time so that whenever your app talks to the Google Calendar API, it’s always using the most current token.
 
 So, first, you are going to retrieve this token by calling `everyauth.getIdentity(“google”, userId)`. Then you can use the access token from that identity to instantiate the Google client and make the API calls you want.
 
@@ -178,7 +176,7 @@ Google Calendar has a really nifty feature called [Quick Add](https://developers
 
 So far, in the examples above, we assume that the user is logging in every time, but that’s a poor experience. We can make that better, very easily.
 
-When EveryAuth redirects a user from the sign-in page to the `finishedURL` it also includes the ‘userId’ as part of the query parameter. We will use this functionality and leverage a well-known cookie-session library and express middleware to make sure that if they have already authenticated before - it automatically takes them to their calendar. 
+> When EveryAuth redirects a user from the sign-in page to the `finishedURL` it also includes the `userId` as part of the query parameter. We can  use this functionality along with express middleware and cookie-sessions to make sure that if they have already authenticated before - it automatically takes them to their calendar. 
 
 First, add cookieSession to your app:
 
