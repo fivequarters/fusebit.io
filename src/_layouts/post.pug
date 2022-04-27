@@ -50,9 +50,8 @@ block content
                     != filters.getImageTag(`blog/${post_image}`, 'Hero Image', null, { id:"hero-image" })
                 article.article
                     .post__sidebar
-                        h5.post__sidebar--title TABLE OF CONTENTS
-                        .post__sidebar--section.post__sidebar--section-active Section Name
-                        .post__sidebar--section Second Section
+                        h5.post__sidebar--title Table of contents
+                        .post__sidebar--sections
                     .post__article!= content
             .post__navigation-container
                 - const prevPost = filters.getNextCollectionItem(collections.post, page) || null
@@ -134,4 +133,20 @@ block scripts
                 });
             }
         });
+
+        const children = document.querySelector(".post__article")?.childNodes;
+        const sidebar = document.querySelector(".post__sidebar--sections");
+        for (child in children) {
+            const element = children[child];
+            if (element?.nodeName?.includes("H")) {
+                console.log(element);
+                const section = document.createElement("div");
+                section.innerHTML = element.innerHTML;
+                section.classList.add("post__sidebar--section");
+                if (sidebar.childElementCount < 1) {
+                    section.classList.add("post__sidebar--section-active");
+                } 
+                sidebar.append(section);
+            }
+        }
 
