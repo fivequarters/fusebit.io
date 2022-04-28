@@ -3,7 +3,7 @@ post_title: Integrating With the HubSpot API using EveryAuth
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2022-04-27'
-post_image: everyauth-hubspot-main.jpg
+post_image: everyauth-hubspot-main.png
 post_excerpt: How to add HubSpot integration to your Node.js app using EveryAuth
 post_slug: everyauth-hubspot
 tags: ['post', 'authentication', 'integrations']
