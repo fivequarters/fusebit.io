@@ -8,7 +8,7 @@ post_excerpt: How to add Salesforce integration to your Node.js app using EveryA
 post_slug: everyauth-salesforce
 tags: ['post', 'authentication', 'integrations']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/everyauth-salesforce-main.png
+post_og_image: 'hero'
 posts_related:
   ['everyauth', 'everyauth-hubspot', 'integrate-github-api-everyauth']
 ---
@@ -345,4 +345,4 @@ Using [EveryAuth](https://github.com/fusebit/everyauth-express), we have created
 
 All that without you having to learn about OAuth, touch your application’s database, or register an application in Salesforce.
 
-Check out [our blog](https://fusebit.io/blog) and follow us on Twitter [@fusebitio](https://twitter.com/fusebitio) for other great developer content.
+Check out [our developer blog](https://fusebit.io/blog/) and follow us on Twitter [@fusebitio](https://twitter.com/fusebitio) for other great developer content.
