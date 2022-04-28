@@ -3,12 +3,12 @@ post_title: Integrating With the Salesforce API using EveryAuth
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2022-04-27'
-post_image: everyauth-salesforce.png
+post_image: everyauth-salesforce-main.png
 post_excerpt: How to add Salesforce integration to your Node.js app using EveryAuth
 post_slug: everyauth-salesforce
 tags: ['post', 'authentication', 'integrations']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/everyauth-salesforce.png
+post_og_image: https://fusebit.io/assets/images/blog/everyauth-salesforce-main.png
 posts_related:
   ['everyauth', 'everyauth-hubspot', 'integrate-github-api-everyauth']
 ---
