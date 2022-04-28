@@ -6,7 +6,7 @@ pagination:
     alias: tag
     filter: 
         - all
-permalink: "| #{tag === 'post' ? 'blog/index.html' : process.env.ELEVENTY_ENV === 'production' ? `blog/tags/${tag}/index.html` : `blog/tags/${tag}.html`}"
+permalink: "| #{tag === 'post' ? 'blog/index.html' : process.env.ELEVENTY_ENV === 'production' ? `blog/tags/${tag.replace(':hidden', '')}/index.html` : `blog/tags/${tag.replace(':hidden', '')}.html`}"
 ---
 
 include ../_components/mixins.pug
