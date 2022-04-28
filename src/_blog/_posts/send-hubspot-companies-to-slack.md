@@ -1,6 +1,6 @@
 ---
 post_title: Send HubSpot Companies to Slack!
-post_author: Liz Parody
+post_author: Lizz Parody
 post_author_avatar: liz.png
 date: '2021-12-15'
 post_image: blog-hubspot-to-slack-main.png

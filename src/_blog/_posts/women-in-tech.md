@@ -1,6 +1,6 @@
 ---
 post_title: 5 Women in Tech That Influence Your Everyday Life - And 5 You Should Follow Today
-post_author: Liz Parody
+post_author: Lizz Parody
 post_author_avatar: liz.png
 date: '2022-03-08'
 post_image: blog-iwd-main.png
@@ -81,4 +81,4 @@ She has been in the tech industry for over 20 years and she was involved in the 
 
 Happy International Women’s Day! Let’s support #WomenInTech
 
--[Liz Parody](https://twitter.com/lizparody23)
+-[Lizz Parody](https://twitter.com/lizzparody)

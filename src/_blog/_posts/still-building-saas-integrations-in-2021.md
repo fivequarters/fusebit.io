@@ -1,6 +1,6 @@
 ---
 post_title: Still Building SaaS Integrations In 2021?
-post_author: Liz Parody
+post_author: Lizz Parody
 post_author_avatar: liz.png
 date: '2021-10-19'
 post_image: blog-integrations-2021.jpeg

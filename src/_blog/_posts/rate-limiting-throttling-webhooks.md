@@ -1,6 +1,6 @@
 ---
 post_title: Webhook Rate Limits and Throttling
-post_author: Liz Parody
+post_author: Lizz Parody
 post_author_avatar: liz.png
 date: '2022-02-08'
 post_image: webhook-rate-limit-throttling.png
