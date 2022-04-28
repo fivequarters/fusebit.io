@@ -155,7 +155,7 @@ date: '2019-08-26'
 post_image: blog-interview-with-auth0-main.png
 post_excerpt: We spoke with Eugenio Pace, the co-founder and CEO of [Auth0](https://auth0.com/), to get the scoop on his company's approach to integrations.
 post_slug: interview-with-eugenio-pace-auth0-ceo
-tags: ['post']
+tags: ['post', 'unicorn:hidden']
 post_date_in_url: true
 post_og_image: https://cdn.fusebit.io/twitter/twitter-orange.png
 posts_related: ['nodejs-https-imports','run-every-nodejs-version-in-lambda','run-nodejs-from-google-sheets']
