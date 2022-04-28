@@ -338,4 +338,4 @@ Using [EveryAuth](https://github.com/fusebit/everyauth-express), we have created
 
 All that without you having to learn about OAuth, touch your application’s database, or register an application in HubSpot.
 
-Check out [our blog](https://fusebit.io/blog/) and follow us on Twitter [@fusebitio](https://twitter.com/fusebitio) for other great developer content.
+Check out [our developer blog](https://fusebit.io/blog/) and follow us on Twitter [@fusebitio](https://twitter.com/fusebitio) for other great developer content.
