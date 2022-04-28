@@ -133,9 +133,7 @@ post_excerpt: string | The post excerpt that's going to be shown in the blog hom
 
 post_slug: string | This prop will set the slug of the post, if omitted the slug will be generated from the title.
 
-tags: string[] | The list of tags you want to set to an article, **'post' is always required when creating a blog post**.
-
-If you want the tag to be hidden from the tab bar, add the `:hidden` suffix to the tag, for example: ["post", "crypto:hidden"]
+tags: string[] | The list of tags you want to set to an article, **'post' is always required when creating a blog post**. If you want the tag to be hidden from the tab bar, add the `:hidden` suffix to the tag, for example: ["post", "crypto:hidden"]
 
 post_date_in_url: boolean | When setting this prop you can define if you want a date path in your url or not. If omitted defaults to `false`.
 
