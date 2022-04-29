@@ -1,17 +1,16 @@
 ---
-post_title: Linear EveryAuth Example
+post_title: Connect Your Express Application to the Linear API using EveryAuth
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-04-29'
 post_image: linear-everyauth-example.png
-post_excerpt: Learn how to interact with Linear API from an Express application using EveryAuth
+Post_excerpt: Learn how to use the Linear API by creating an Express application that displays a custom form to create new issues
 post_slug: using-linear-with-everyauth
 tags: ['post', 'authentication']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/linear-everyauth-example.png
-posts_related: ['everyauth','integrate-github-api-everyauth', 'integrate-gitlab-api-everyauth']
+posts_related: ['everyauth','integrate-github-api-everyauth', 'integrate-linear-api-everyauth']
 ---
-
 
 Recently Fusebit announced [EveryAuth](https://fusebit.io/blog/everyauth/?utm_source=fusebit.io&utm_medium=referral&utm_campaign=none) project that allows you to integrate with multiple services via OAuth easily. Learn how to use EveryAuth with Linear API using the [@linear/sdk](https://www.npmjs.com/package/@linear/sdk) package.
 
@@ -20,11 +19,9 @@ You have an existing Express.js application that needs to integrate with Linear 
 - Last 10 updated `Open` assigned issues
 - A custom form for new linear issue creation
 
-The application will look like the following once you authorize the application to interact with your Linear account:
+The application will look like this once you authorize the application to interact with your Linear account:
 
 ![Using Linear API with EveryAuth with-shadow](blog-using-linear-with-everyauth.png 'Linear example with EveryAuth')
-
-
 ## Configuring EveryAuth
 
 This blog post assumes you already have EveryAuth configured in your development environment. In case you don’t, follow the [configuration steps](https://github.com/fusebit/everyauth-express#getting-started) from the EveryAuth GitHub Repository.
@@ -73,8 +70,8 @@ npm i cookie-session
 
 There are two critical routes we need to add to our application:
 
-- Authorize route
-- Finished route
+Authorize route
+Finished route
 
 Let’s understand the role of each route:
 
@@ -86,21 +83,21 @@ EveryAuth provides an out-of-the-box shared Linear OAuth Client so that you can 
 EveryAuth simplifies a lot the authorization flow:
 
 ```javascript
-app.use(
-  '/authorize/:userId',
-  (req, res, next) => {
-    if (!req.params.userId) {
-      return res.redirect('/');
-    }
-    return next();
-  },
-  everyauth.authorize('linear’, {
-    // The endpoint of your app where control will be returned afterwards
-    finishedUrl: '/finished',
-    // The user ID of the authenticated user the credentials will be associated with
-    mapToUserId: (req) => req.params.userId,
-  })
-);
+  app.use(
+    '/authorize/:userId',
+    (req, res, next) => {
+      if (!req.params.userId) {
+        return res.redirect('/');
+      }
+      return next();
+    },
+    everyauth.authorize('linear’, {
+      // The endpoint of your app where control will be returned afterwards
+      finishedUrl: '/finished',
+      // The user ID of the authenticated user the credentials will be associated with
+      mapToUserId: (req) => req.params.userId,
+   })
+  );
 ```
 
 You can define any name you want for the authorization route. In our previous example, it’s called `authorize`, but it’s up to you, and your application needs to use a different name/path. 
@@ -108,11 +105,13 @@ You can define any name you want for the authorization route. In our previous ex
 ### Finished route
 
 After the authorization flow finishes, control is returned to your application by redirecting the user to the configured `finishedUrl` in the `authorize` route.
-The redirection includes query parameters that your application can use to know the [operation status](https://github.com/fusebit/everyauth-express#parameters---2).
+The redirection includes query parameters that your application can use to know the [operation status](https://github.com/fusebit/everyauth-express#authorizeserviceid-options).
 You can use any path for the route. Just ensure it matches what you have configured in the `finishedUrl` property.
 In this route, you can now interact with the Linear API by leveraging the EveryAuth service to get a fresh access token.
+
+### Show User Profile and Last Ten Issues
  
-We will get the authorizing Linear user information and last 10 `Open` issues assigned to the user using the REST API.
+We will get the information of the user who authenticated  with Linear n and also the last 10 `Open` issues assigned to them, using the REST API.
 
 ```javascript
 app.get('/finished', handleSession, async (req, res) => {
@@ -144,8 +143,15 @@ app.get('/finished', handleSession, async (req, res) => {
     },
   });
 
-  . . . render the data
+ res.render('index', {
+    title: `Linear demo for ${me.displayName}`,
+    ...me,
+    issues: myIssues.nodes,
+    teams: teams.nodes,
+  });
 ```
+
+### Display the data
 
 Now, we need to display the data. We will use a simple template engine called [pug](https://www.npmjs.com/package/pug), which allows us to quickly render an HTML page with the data returned from Linear.
 
@@ -156,7 +162,7 @@ npm i pug
 ```
 
 ```javascript
-app.set('view engine', 'pug');
+  app.set('view engine', 'pug');
 ```
 
 Define the pug template by creating a `views` folder and the name of the view. In our case, it’s called `index.pug`. Add the following code:
@@ -187,7 +193,7 @@ Define the pug template by creating a `views` folder and the name of the view. I
               .item 
                 label(for='title')='Title'
                 input(type="text" id='title' name='title')
-              .item 
+              .ite 
                 label(for='description')='Description'
                 textarea(name="description" id='description' cols="30" rows="10")
             .send-area
@@ -205,23 +211,12 @@ Define the pug template by creating a `views` folder and the name of the view. I
               p.issue-description=val.description
 ```
 
-Render the data:
-
-```javascript
- res.render('index', {
-    title: `Linear demo for ${me.displayName}`,
-    ...me,
-    issues: myIssues.nodes,
-    teams: teams.nodes,
-  });
-```
-
 ## Handle issue creation form
 To handle the issue creation form, let’s define a new route that receives the POST request that comes with the following information:
 
-- Team
-- Title
-- Description
+Team
+Title
+Description
 
 ```javascript
 app.post('/create-issue', handleSession, async (req, res) => {
@@ -286,10 +281,10 @@ Navigate to `http://localhost:3000`
 Check out the complete code in [GitHub](https://github.com/fusebit/everyauth-express/tree/main/examples/linear)
 
 ## To Wrap up
-Congratulations! 🎊 You’ve learned that interacting with Linear API is easy with EveryAuth!
+Congratulations! 🎊 You’ve learned that integrating your app  with the Linear API is easy with EveryAuth!
 Learn more about [Linear API](https://developers.linear.app/docs/sdk/getting-started) and get some inspiring ideas to extend your application with this awesome API. 
 
 Let us know what you think, don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on [Twitter](https://twitter.com/degrammer).
 
 
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signuputm_source=fusebit.io&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=using-linear-with-everyauth) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
+[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=using-linear-with-everyauth) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
