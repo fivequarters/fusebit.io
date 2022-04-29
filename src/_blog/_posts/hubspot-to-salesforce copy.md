@@ -7,7 +7,7 @@ post_image: everyauth-slack.png
 post_excerpt: 
 tags: ['post', 'authentication', 'integrations']
 post_date_in_url: false
-post_og_image: 'hero'
+post_og_image: https://fusebit.io/assets/images/blog/everyauth-slack.png
 posts_related: ['everyauth', 'everyauth-hubspot', 'integrate-github-api-everyauth']
 ---
 
