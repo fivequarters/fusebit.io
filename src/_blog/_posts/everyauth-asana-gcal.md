@@ -1,11 +1,11 @@
 ---
 
-post_title: A Scalable Integrations Story with Asana, Google Calendar and EveryAuth
+post_title: A Scalable Integrations Story with Asana, Google Calendar, and EveryAuth
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-04-29'
 post_image: blog-everyauth-asana-gcal-hero.png
-post_excerpt: Earlier, I walked through how to get set up with Google Calendar within minutes using EveryAuth. Learn how to scale this to multiple services, starting with Asana.
+post_excerpt: Previously, I walked through how to get set up with Google Calendar within minutes using EveryAuth. Learn today how to scale this to multiple services, starting with Asana.
 post_slug: everyauth-scalable-asana-gcal
 tags: ['post','authentication', 'node.js']
 post_date_in_url: false
@@ -41,11 +41,9 @@ You suddenly realize that you can use EveryAuth to handle all those pieces above
 
 You can do this all within 30 minutes by downloading the full code from the [EveryAuth Github Repo](https://github.com/fusebit/everyauth-express/tree/main/examples/asana-googlecalendar)** **and following along below. In this example repo, I use Mustache templating along with Bootstrap for the front-end to keep it simple, but you can switch it out for your framework of choice (React, Angular, Next.js etc.)
 
-
 ## What exactly does EveryAuth do?
 
 EveryAuth takes care of the above pieces by:
-
 
 * Providing a shared Asana application so that you don’t need to [register your own](https://developers.asana.com/docs/oauth) with to get started (you still can if you want to later).  
 * Taking care of all OAuth handshakes and exchanges for you behind the scenes based on the service so you don’t need to learn about implementation details and differences between Google and Asana.  
@@ -54,7 +52,6 @@ EveryAuth takes care of the above pieces by:
 * Providing a CLI management tool that helps you manage all of your customers’ credentials and service configuration.  
 
 After you integrate EveryAuth with your app, you can still use any SDK you want to communicate with the target platform for ultimate flexibility. 
-
 
 ## Google EveryAuth Blog Post Refresher
 
@@ -135,7 +132,6 @@ const handleSession = (req, res, next) => {
 
 This is the main piece we will be upgrading next in order to integrate Asana into the ‘WLLM’ app.
 
-
 ## Adding Asana 
 
 Adding Asana into your app, using EveryAuth, is exactly the same process as adding Google (like above). 
@@ -150,7 +146,6 @@ That being said, here’s a few things app-side that you’ll want to figure out
 * How do we enable users to authenticate with both services in the same flow?
 * How do we ensure that users have authenticated with both Google and Asana?
 
-
 ### Install Asana
 
 In our example, we’re using the officially supported [Asana Node SDK](https://www.npmjs.com/package/asana), so let’s add that to our app:
@@ -164,7 +159,6 @@ const asana = require("asana");
 ```
 
 Asana doesn’t have a complicated OAuth scopes hierarchy, so you do not have to make any changes to the shared connector to get started. For production, you may want to consider [configuring your own service](https://github.com/fusebit/everyauth-express/blob/main/docs/asana.md#configure-asana-service) in the future to leverage your own branding and labeling on the OAuth flow. 
-
 
 ### Add Asana into your App
 
@@ -197,7 +191,6 @@ That’s it, now you can redirect your users to `/google/authorize/:userId` OR �
 
 > Out of box, EveryAuth comes with a [number of supported services]([https://github.com/fusebit/everyauth-express#supported-services](https://github.com/fusebit/everyauth-express#supported-services)), including Google and Asana. If there’s one missing, ping us and let us know - we can easily add it in for you!
 
-
 ## Call the Asana API
 
 This part is **identical **to the way we worked with Google. We use EveryAuth to retrieve the latest, always fresh, access token and use that to instantiate a new Asana client.
@@ -211,7 +204,6 @@ This part is **identical **to the way we worked with Google. We use EveryAuth to
     asanaCredentials.accessToken
   );
 ```
-
 
 ### Get list of Tasks
 
@@ -243,7 +235,6 @@ This part is **identical **to the way we worked with Google. We use EveryAuth to
   }
 return taskDetails;
 ```
-
 
 ### Add new Asana Task to Google Calendar
 
@@ -300,7 +291,6 @@ app.post('/tasks/calendar/', setSession, ensureSession, async (req, res) => {
 });
 ```
 
-
 ## Persisted Login
 
 Of course, you also want your users to only have to sign in once, and not every time they return to your app.
@@ -320,8 +310,6 @@ Of course, there are many different ways to solve this problem and the approache
 
 ![alt_text](images/image4.png "image_tooltip")
 
-
-
 ### isAllSessionsComplete
 
 ```javascript
@@ -340,7 +328,6 @@ const isAllSessionsComplete = (req, res, next) => {
 }
 ```
 
-
 ### ensureSession
 
 ```javascript
@@ -355,7 +342,6 @@ const ensureSession = (req, res, next) => {
   return next();
 };
 ```
-
 
 ### setSession
 
@@ -402,7 +388,6 @@ app.post('/tasks/calendar/', setSession, ensureSession, async (req, res) => {
 ```
 
 Done! Now you can rest assured knowing that users can sync their Asana Tasks to their Google Calendar safely, securely and conveniently from right within WLLM.
-
 
 ## Conclusion
 
