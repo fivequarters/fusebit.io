@@ -2,7 +2,7 @@
 post_title: Integrating With the Gitlab API Using EveryAuth
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
-date: '2022-04-28'
+date: '2022-04-29'
 post_image: gitlab-everyauth-example.jpg
 post_excerpt: Learn how to interact with Gitlab API from an Express application using EveryAuth
 post_slug: integrate-gitlab-api-everyauth
@@ -122,6 +122,8 @@ app.get('/finished', handleSession, async (req, res) => {
    . . . render the data
 });
 ```
+
+### Display GitLab user information
 
 Now, we need to display the data. We will use a simple template engine called [pug](https://www.npmjs.com/package/pug), which allows us to quickly render an HTML page with the data returned from GitHub.
 
