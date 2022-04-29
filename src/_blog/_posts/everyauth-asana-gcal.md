@@ -4,26 +4,21 @@ post_title: A Scalable Integrations Story with Asana, Google Calendar and EveryA
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-04-29'
-post_image: 
-post_excerpt: (max 180 characteres)
+post_image: blog-everyauth-asana-gcal-hero.png
+post_excerpt: Earlier, I walked through how to get set up with Google Calendar within minutes using EveryAuth. Learn how to scale this to multiple services, starting with Asana.
 post_slug: everyauth-scalable-asana-gcal
 tags: ['post','authentication', 'node.js']
 post_date_in_url: false
-post_og_image: 
+post_og_image: https://fusebit.io/assets/images/blog/blog-everyauth-asana-gcal-hero.png
 posts_related: ['everyauth','integrate-github-api-everyauth','integrate-google-calendar-node-everyauth'] 
 
 ---
 
 Fusebit recently announced a new product called [Every Auth](https://fusebit.io/blog/everyauth/?utm_source=fusebit.io&utm_medium=referral&utm_campaign=none), the easiest way for your app to access APIs like Slack, Salesforce, or Github. In an earlier [blog post](https://fusebit.io/blog/integrate-google-calendar-node-everyauth) I walked through how to get set up with Google Calendar within minutes. In this article, I’m going to show you how easy it is to add in a second (or third, fourth, fifth…) integration, Asana, to your app.
 
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.png "image_tooltip")
-
+![App Screen with-shadow](blog-everyauth-asana-gcal-appscreen.png "App Screen")
 
 Let’s get started.
-
 
 ## Use Case
 
@@ -63,23 +58,24 @@ After you integrate EveryAuth with your app, you can still use any SDK you want 
 
 ## Google EveryAuth Blog Post Refresher
 
-If you followed my earlier [blog post](https://fusebit.io/blog/integrate-google-calendar-node-everyauth) with Google, you will already be setup, but here’s a quick refresher of the things you will already have done:
+If you followed my earlier [blog post](https://fusebit.io/blog/integrate-google-calendar-node-everyauth) with Google, you will already be setup. 
+
+![App Flow with-shadow](blog-everyauth-gcal-appflow.gif "App Flow")
+
+Here’s a quick refresher of the things you will already have done:
 
 Installed the EveryAuth Management CLI, along with the EveryAuth-Express middleware, and initialized the Google service with the right scopes:
 
 ```shell
-
 npm install -g @fusebit/everyauth-cli
 npm i @fusebit/everyauth-express
 everyauth init
 everyauth service set google --scope https://www.googleapis.com/auth/calendar
-
 ```
 
 Added a route to automatically redirect your users to the Google OAuth flow and have them land on your calendar page once they successfully authenticate:
 
 ``` javascript
-
 // Sign In Button redirects to Google OAuth Flow
 app.use(
   '/google/authorize/:userId',
@@ -91,13 +87,11 @@ app.use(
   })
 
 );
-
 ```
 
 Retrieved your users, always fresh, access credentials and authenticated a new Google client:
 
 ```javascript
-
   // Retrieve access token using userId
   const userCredentials = await everyauth.getIdentity("google", userId);
 
@@ -105,13 +99,11 @@ Retrieved your users, always fresh, access credentials and authenticated a new G
   const myAuth = new google.auth.OAuth2();
   myAuth.setCredentials({ access_token: userCredentials.accessToken });
   google.options({ auth: myAuth });
-
 ```
 
 Used that authenticated client to securely access the Google API on behalf of your user:
 
 ```javascript
-
   // Get list of events
   const calendar = google.calendar({ version: "v3" });
   const calendarEvents = await calendar.events.list({
@@ -121,13 +113,11 @@ Used that authenticated client to securely access the Google API on behalf of yo
   });
 
   return calendarEvents;
-
 ```
 
 Finally, you will have added authentication middleware, `handleSession`, to ensure that your routes are protected to ensure the person has already signed-in and previously authenticated your app with Google. 
 
 ```javascript
-
 // Get userId from the authorization redirect or via session if already authorized.
 const handleSession = (req, res, next) => {
 
@@ -141,7 +131,6 @@ const handleSession = (req, res, next) => {
 
   return next();
 };
-
 ```
 
 This is the main piece we will be upgrading next in order to integrate Asana into the ‘WLLM’ app.
@@ -153,8 +142,9 @@ Adding Asana into your app, using EveryAuth, is exactly the same process as addi
 
 > This is actually one of the biggest value propositions of EveryAuth, it **doesn’t matter** **what service you’re integrating with**, your software development **experience will always be the same**.
 
-That being said, here’s a few things app-side that you’ll want to figure out:
+![Asana Tasks with-shadow](blog-everyauth-asana-gcal-tasks.png "Asana Tasks")
 
+That being said, here’s a few things app-side that you’ll want to figure out:
 
 * How do we add Asana integration into our app?
 * How do we enable users to authenticate with both services in the same flow?
@@ -201,7 +191,6 @@ SERVICES.forEach((service) => {
     })
   );
 });
-
 ```
 
 That’s it, now you can redirect your users to `/google/authorize/:userId` OR ‘/asana/authorize/:userId’ programmatically and it will kick off the authentication flow for them. You can also easily add any service into the mix without having to do any extra coding. 
@@ -214,7 +203,6 @@ That’s it, now you can redirect your users to `/google/authorize/:userId` OR �
 This part is **identical **to the way we worked with Google. We use EveryAuth to retrieve the latest, always fresh, access token and use that to instantiate a new Asana client.
 
 ```javascript
-
   // Retrieve an always fresh access token using userId
   const asanaCredentials = await everyauth.getIdentity("asana", req.session.asanaUserId);
 
@@ -222,20 +210,14 @@ This part is **identical **to the way we worked with Google. We use EveryAuth to
   const asanaClient = asana.Client.create().useAccessToken(
     asanaCredentials.accessToken
   );
-
 ```
 
 
 ### Get list of Tasks
 
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image2.png "image_tooltip")
-
+![Asana Tasks with-shadow](blog-everyauth-asana-gcal-taskslist.png "Asana Tasks")
 
 ```javascript
-
 // Retrieve authenticated user profile & workspaces
   const me = await asanaClient.users.me();
   const workspace = me.workspaces[0].gid;
@@ -260,19 +242,14 @@ This part is **identical **to the way we worked with Google. We use EveryAuth to
     });
   }
 return taskDetails;
-
 ```
 
 
 ### Add new Asana Task to Google Calendar
 
+![Add Tasks with-shadow](blog-everyauth-asana-gcal-addtask.png "Add Tasks")
+
 The value of having multiple integrations in one app is the ability to talk to each other. So, in this example below, you will see how we’re displaying a list of Asana tasks, but when a user clicks on any one of them - it will add that task to their Google Calendar, seamlessly.
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
-
 
 ```html
        <form
@@ -297,7 +274,6 @@ The value of having multiple integrations in one app is the ability to talk to e
 ```
 
 ```javascript
-
 // Add a new event to a calendar by ID
 app.post('/tasks/calendar/', setSession, ensureSession, async (req, res) => {
 
@@ -322,7 +298,6 @@ app.post('/tasks/calendar/', setSession, ensureSession, async (req, res) => {
 
   res.redirect(`/tasks`);
 });
-
 ```
 
 
@@ -350,7 +325,6 @@ Of course, there are many different ways to solve this problem and the approache
 ### isAllSessionsComplete
 
 ```javascript
-
 // Check if all sessions are completed
 const isAllSessionsComplete = (req, res, next) => {
 
@@ -364,14 +338,12 @@ const isAllSessionsComplete = (req, res, next) => {
   res.locals.fullyAuthenticated = isSessionComplete;
   return next();
 }
-
 ```
 
 
 ### ensureSession
 
 ```javascript
-
 // Check is all sessions are complete
 const ensureSession = (req, res, next) => {
   SERVICES.forEach((service) => {
@@ -382,14 +354,12 @@ const ensureSession = (req, res, next) => {
   });
   return next();
 };
-
 ```
 
 
 ### setSession
 
 ```javascript
-
 // Set Session UserId for service
 const setSession = (req, res, next) => {
   // If it returns a userID, retreive Service Name
@@ -404,7 +374,6 @@ const setSession = (req, res, next) => {
   }
   return next();
 };
-
 ```
 
 Finally, you need to upgrade your routes to include this middleware. 
@@ -418,7 +387,6 @@ app.get("/", isAllSessionsComplete, (req, res) => {
   }
   return res.render("index", { userId: uuidv4() });
 });
-
 ```
 
 Next, for all your other routes, we want to make sure that the user has authenticated with all the services before they can enter.
@@ -431,7 +399,6 @@ Next, for all your other routes, we want to make sure that the user has authenti
 app.post('/tasks/calendar/', setSession, ensureSession, async (req, res) => {
 … your code
 }
-
 ```
 
 Done! Now you can rest assured knowing that users can sync their Asana Tasks to their Google Calendar safely, securely and conveniently from right within WLLM.
