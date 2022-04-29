@@ -86,21 +86,21 @@ EveryAuth provides an out-of-the-box shared Linear OAuth Client so that you can 
 EveryAuth simplifies a lot the authorization flow:
 
 ```javascript
-  app.use(
-    '/authorize/:userId',
-    (req, res, next) => {
-      if (!req.params.userId) {
-        return res.redirect('/');
-      }
-      return next();
-    },
-    everyauth.authorize('linear’, {
-      // The endpoint of your app where control will be returned afterwards
-      finishedUrl: '/finished',
-      // The user ID of the authenticated user the credentials will be associated with
-      mapToUserId: (req) => req.params.userId,
-   })
-  );
+app.use(
+  '/authorize/:userId',
+  (req, res, next) => {
+    if (!req.params.userId) {
+      return res.redirect('/');
+    }
+    return next();
+  },
+  everyauth.authorize('linear’, {
+    // The endpoint of your app where control will be returned afterwards
+    finishedUrl: '/finished',
+    // The user ID of the authenticated user the credentials will be associated with
+    mapToUserId: (req) => req.params.userId,
+  })
+);
 ```
 
 You can define any name you want for the authorization route. In our previous example, it’s called `authorize`, but it’s up to you, and your application needs to use a different name/path. 
@@ -187,7 +187,7 @@ Define the pug template by creating a `views` folder and the name of the view. I
               .item 
                 label(for='title')='Title'
                 input(type="text" id='title' name='title')
-              .ite 
+              .item 
                 label(for='description')='Description'
                 textarea(name="description" id='description' cols="30" rows="10")
             .send-area
