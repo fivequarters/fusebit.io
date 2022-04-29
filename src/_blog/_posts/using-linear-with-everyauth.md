@@ -4,7 +4,7 @@ post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-04-29'
 post_image: linear-everyauth-example.png
-Post_excerpt: Learn how to use the Linear API by creating an Express application that displays a custom form to create new issues
+post_excerpt: Learn how to use the Linear API by creating an Express application that displays a custom form to create new issues
 post_slug: using-linear-with-everyauth
 tags: ['post', 'authentication']
 post_date_in_url: false
