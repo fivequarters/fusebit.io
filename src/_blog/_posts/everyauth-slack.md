@@ -3,11 +3,11 @@ post_title: Using Slack API with EveryAuth
 post_author: Lizz Parody
 post_author_avatar: liz.png
 date: '2022-04-28'
-post_image: everyauth-slack.png
+post_image: everyauth-slack.jpg
 post_excerpt: In this blog post, we will build a contact card that allows people to send you a direct message to your Slack without using Slack!
 tags: ['post', 'authentication', 'integrations']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/everyauth-slack.png
+post_og_image: https://fusebit.io/assets/images/blog/everyauth-slack.jpg
 posts_related: ['everyauth', 'everyauth-hubspot', 'integrate-github-api-everyauth']
 ---
 
