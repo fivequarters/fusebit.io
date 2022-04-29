@@ -4,7 +4,7 @@ post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-04-29'
 post_image: gitlab-everyauth-example.jpg
-post_excerpt: Learn how to interact with Gitlab API from an Express application using EveryAuth
+post_excerpt: Learn how to interact with GitLab API by getting your top 10 starred repositories using EveryAuth.
 post_slug: integrate-gitlab-api-everyauth
 tags: ['post', 'authentication']
 post_date_in_url: false
@@ -246,5 +246,4 @@ Congratulations! You’ve learned that interacting with Gitlab API is easy with 
 
 Let us know what you think, don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on [Twitter](https://twitter.com/degrammer).
 
-
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=using-gitlab-with-everyauth) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
+[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=using-gitlab-with-everyauth) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
