@@ -238,8 +238,6 @@ return taskDetails;
 
 ### Add new Asana Task to Google Calendar
 
-![Add Tasks with-shadow](blog-everyauth-asana-gcal-addtask.png "Add Tasks")
-
 The value of having multiple integrations in one app is the ability to talk to each other. So, in this example below, you will see how we’re displaying a list of Asana tasks, but when a user clicks on any one of them - it will add that task to their Google Calendar, seamlessly.
 
 ```html
@@ -304,8 +302,6 @@ Of course, there are many different ways to solve this problem and the approache
 * `isAllSessionsComplete`: Check if the user is fully authenticated across all services
 * `ensureSession`: Find which service the user has not authenticated with yet, and redirect them to the auth flow for it
 * `setSession`: Retrieve the serviceID and set a unique session to the service
-
-![Middleware Auth Flow with-shadow](blog-everyauth-asana-gcal-addtask.png "Middleware Auth Flow")
 
 ### isAllSessionsComplete
 
