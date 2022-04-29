@@ -1,6 +1,6 @@
 ---
 
-post_title: A Scalable Integrations Story with Asana, Google Calendar, and EveryAuth
+post_title: A Scalable Integrations Story With Asana, Google Calendar, and EveryAuth
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-04-29'
