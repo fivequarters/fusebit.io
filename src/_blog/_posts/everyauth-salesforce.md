@@ -1,5 +1,5 @@
 ---
-post_title: Integrating With the Salesforce API using EveryAuth
+post_title: Integrating With the Salesforce API Using EveryAuth
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2022-04-29'
