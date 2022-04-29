@@ -390,6 +390,6 @@ Done! Now you can rest assured knowing that users can sync their Asana Tasks to 
 
 Congratulations! You have now learned how easy it is to integrate multiple different services into your app with EveryAuth! 
 
-Make sure to check out the complete code in [GitHub](https://github.com/fusebit/everyauth-express/tree/main/examples/googlecalendar)** **and play around with it!
+Make sure to check out the complete code in [GitHub](https://github.com/fusebit/everyauth-express/tree/main/examples/googlecalendar) and play around with it!
 
 If you have any questions, you can reach out to me directly through our [community Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg), on [Twitter](https://twitter.com/shehzadakbar) and at [shehzad@fusebit.io](mailto:shehzad@fusebit.io).
