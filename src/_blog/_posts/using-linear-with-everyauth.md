@@ -70,8 +70,8 @@ npm i cookie-session
 
 There are two critical routes we need to add to our application:
 
-Authorize route
-Finished route
+- Authorize route
+- Finished route
 
 Let’s understand the role of each route:
 
@@ -83,21 +83,21 @@ EveryAuth provides an out-of-the-box shared Linear OAuth Client so that you can 
 EveryAuth simplifies a lot the authorization flow:
 
 ```javascript
-  app.use(
-    '/authorize/:userId',
-    (req, res, next) => {
-      if (!req.params.userId) {
-        return res.redirect('/');
-      }
-      return next();
-    },
-    everyauth.authorize('linear’, {
-      // The endpoint of your app where control will be returned afterwards
-      finishedUrl: '/finished',
-      // The user ID of the authenticated user the credentials will be associated with
-      mapToUserId: (req) => req.params.userId,
-   })
-  );
+app.use(
+  '/authorize/:userId',
+  (req, res, next) => {
+    if (!req.params.userId) {
+      return res.redirect('/');
+    }
+    return next();
+  },
+  everyauth.authorize('linear’, {
+    // The endpoint of your app where control will be returned afterwards
+    finishedUrl: '/finished',
+    // The user ID of the authenticated user the credentials will be associated with
+    mapToUserId: (req) => req.params.userId,
+  })
+);
 ```
 
 You can define any name you want for the authorization route. In our previous example, it’s called `authorize`, but it’s up to you, and your application needs to use a different name/path. 
@@ -162,53 +162,53 @@ npm i pug
 ```
 
 ```javascript
-  app.set('view engine', 'pug');
+app.set('view engine', 'pug');
 ```
 
 Define the pug template by creating a `views` folder and the name of the view. In our case, it’s called `index.pug`. Add the following code:
 
 ```pug
-  html
-  head
-    title=title
-    style
-      include ./style.css
-  body
-    .container
-      .profile
-        .top
-          img.pic(src=avatarUrl alt='Linear Avatar')
-          h2=name 
-          a(href=url) View profile
-          p=bio
-          span=`Created ${createdIssueCount} issues.`
-          form(action="/create-issue" method="post")
-            fieldset
-              legend(align='left')='Create a new issue'
-              .item
-                label(for='team')='Select a team'
-                select(id='teamId' name='teamId')
-                  each val in teams
-                    option(value=val.id select)=val.name
-              .item 
-                label(for='title')='Title'
-                input(type="text" id='title' name='title')
-              .ite 
-                label(for='description')='Description'
-                textarea(name="description" id='description' cols="30" rows="10")
-            .send-area
-              button.send-button(action='submit')
-                i(class="fa-solid fa-bounce fa-comment")
-                span='Create issue'
-      .issues
-        h2 Your last updated open issues (#{issues.length})
-        ul
-          each val in issues 
-            li.issue
-              span.identifier=val.identifier
-              span.priority=val.priorityLabel
-              a(href=val.url title=val.title target="_blank") #{val.title}
-              p.issue-description=val.description
+html
+head
+  title=title
+  style
+    include ./style.css
+body
+  .container
+    .profile
+      .top
+        img.pic(src=avatarUrl alt='Linear Avatar')
+        h2=name 
+        a(href=url) View profile
+        p=bio
+        span=`Created ${createdIssueCount} issues.`
+        form(action="/create-issue" method="post")
+          fieldset
+            legend(align='left')='Create a new issue'
+            .item
+              label(for='team')='Select a team'
+              select(id='teamId' name='teamId')
+                each val in teams
+                  option(value=val.id select)=val.name
+            .item 
+              label(for='title')='Title'
+              input(type="text" id='title' name='title')
+            .item 
+              label(for='description')='Description'
+              textarea(name="description" id='description' cols="30" rows="10")
+          .send-area
+            button.send-button(action='submit')
+              i(class="fa-solid fa-bounce fa-comment")
+              span='Create issue'
+    .issues
+      h2 Your last updated open issues (#{issues.length})
+      ul
+        each val in issues 
+          li.issue
+            span.identifier=val.identifier
+            span.priority=val.priorityLabel
+            a(href=val.url title=val.title target="_blank") #{val.title}
+            p.issue-description=val.description
 ```
 
 ## Handle issue creation form
