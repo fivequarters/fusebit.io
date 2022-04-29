@@ -303,6 +303,8 @@ Of course, there are many different ways to solve this problem and the approache
 * `ensureSession`: Find which service the user has not authenticated with yet, and redirect them to the auth flow for it
 * `setSession`: Retrieve the serviceID and set a unique session to the service
 
+![Auth Middleware Flow with-shadow](blog-everyauth-asana-gcal-middleware.png "Auth Middleware Flow")
+
 ### isAllSessionsComplete
 
 ```javascript
