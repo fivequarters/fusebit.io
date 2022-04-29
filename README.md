@@ -133,7 +133,7 @@ post_excerpt: string | The post excerpt that's going to be shown in the blog hom
 
 post_slug: string | This prop will set the slug of the post, if omitted the slug will be generated from the title.
 
-tags: string[] | The list of tags you want to set to an article, **'post' is always required when creating a blog post**.
+tags: string[] | The list of tags you want to set to an article, **'post' is always required when creating a blog post**. If you want the tag to be hidden from the tab bar, add the `:hidden` suffix to the tag, for example: ["post", "crypto:hidden"]
 
 post_date_in_url: boolean | When setting this prop you can define if you want a date path in your url or not. If omitted defaults to `false`.
 
@@ -155,7 +155,7 @@ date: '2019-08-26'
 post_image: blog-interview-with-auth0-main.png
 post_excerpt: We spoke with Eugenio Pace, the co-founder and CEO of [Auth0](https://auth0.com/), to get the scoop on his company's approach to integrations.
 post_slug: interview-with-eugenio-pace-auth0-ceo
-tags: ['post']
+tags: ['post', 'unicorn:hidden']
 post_date_in_url: true
 post_og_image: https://cdn.fusebit.io/twitter/twitter-orange.png
 posts_related: ['nodejs-https-imports','run-every-nodejs-version-in-lambda','run-nodejs-from-google-sheets']

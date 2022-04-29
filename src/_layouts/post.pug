@@ -31,7 +31,7 @@ block content
                 .post__info-divider
                 span.post__date= `${filters.format(new Date(date.replace('-', '/')), 'd MMMM yyyy')}`
             h1 #{post_title}
-            - const postTags = tags.filter(tag => tag !== 'post')
+            - const postTags = tags.filter(tag => tag !== 'post' && !tag.includes(":hidden"))
             if postTags.length > 0
                 .post__tags
                     img(src='/assets/images/tag.svg' alt="Tag") 
