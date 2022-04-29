@@ -64,11 +64,11 @@ npm i cookie-session
 
 ## Add Routes
 
-There are two main routes we need to add to our application:
+There are three main routes we need to add to our application:
 
-Authorize route
-Finished route
-Message route
+* Authorize route
+* Finished route
+* Message route
 
 Let’s understand the role of each route:
 ### Authorize route
