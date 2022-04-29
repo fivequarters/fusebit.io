@@ -1,5 +1,5 @@
 ---
-post_title: Connect Your Express Application to the Linear API using EveryAuth
+post_title: Connect Your Express Application to the Linear API Using EveryAuth
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-04-29'
