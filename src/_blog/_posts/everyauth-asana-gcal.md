@@ -305,10 +305,7 @@ Of course, there are many different ways to solve this problem and the approache
 * `ensureSession`: Find which service the user has not authenticated with yet, and redirect them to the auth flow for it
 * `setSession`: Retrieve the serviceID and set a unique session to the service
 
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
+![Middleware Auth Flow with-shadow](blog-everyauth-asana-gcal-addtask.png "Middleware Auth Flow")
 
 ### isAllSessionsComplete
 
