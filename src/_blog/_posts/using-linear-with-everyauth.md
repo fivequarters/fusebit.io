@@ -43,7 +43,7 @@ Let’s add support to EveryAuth and configure the Linear service so we can inte
 
 ## Install dependencies
 
-For interacting with Gitlab API from Node.js we will use the popular Node.js SDK for GitLab [@gitbeaker/node](https://www.npmjs.com/package/@gitbeaker/node)
+For interacting with Linear API from Node.js we will use the official [@linear/sdk](https://www.npmjs.com/package/@linear/sdk)
 
 ```shell
 npm i @linear/sdk
