@@ -8,7 +8,7 @@ post_excerpt: Learn how to use the Linear API by creating an Express application
 post_slug: using-linear-with-everyauth
 tags: ['post', 'authentication']
 post_date_in_url: false
-post_og_image: 'hero'
+post_og_image: https://fusebit.io/assets/images/blog/linear-everyauth-example.png
 posts_related: ['everyauth','integrate-github-api-everyauth', 'integrate-linear-api-everyauth']
 ---
 
