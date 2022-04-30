@@ -4,24 +4,20 @@ post_author: Lizz Parody
 post_author_avatar: liz.png
 date: '2022-04-28'
 post_image: everyauth-slack.jpg
-post_excerpt: In this blog post, we will build a contact card that allows people to send you a direct message to your Slack without using Slack!
+post_excerpt: Let's build a web form that allows people to send you a Slack direct message ... without using Slack!
 tags: ['post', 'authentication', 'integrations']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/everyauth-slack.jpg
 posts_related: ['everyauth', 'everyauth-hubspot', 'integrate-github-api-everyauth']
 ---
 
-Fusebit recently announced the [EveryAuth](https://fusebit.io/blog/everyauth/?utm_source=fusebit.io&utm_medium=referral&utm_campaign=none) project that allows you to integrate with multiple services via OAuth easily. In this blog post, you will learn how to use EveryAuth with Slack.
+Fusebit recently announced the [EveryAuth](https://fusebit.io/blog/everyauth/) project that allows you to easily authenticate your users to access APIs like Salesforce, GitHub, and Slack. In this article, you will learn how to use EveryAuth to build a web form that allows people to send you a direct message to your Slack using an Express.js application.
 
-In this blog post, we will build a contact card that allows people to send you a direct message to your Slack without using Slack!
-We will use a regular Express.js application that does the following:
-
-Display user's Slack profile information (e.g., name, profile picture)
-Allow anyone to type a message a send it
-
-In the end, the result will be similar to the following image read below.
+In the end, the result will be similar to the following:
 
 ![Slack API EveryAuth](blog-everyauth-slack.png 'Slack API EveryAuth')
+
+Let's get started!
 
 ## Configuring EveryAuth
 
@@ -42,7 +38,7 @@ app.listen(port, () => {
 
 Let’s add support to EveryAuth and configure the Slack service so we can interact with their API.
 
-## Install dependencies
+## Install Dependencies
 
 For interacting with the Slack API from Node.js, we will use the official [Slack SDK](https://www.npmjs.com/package/@slack/web-api) and install the Slack web API.
 
@@ -71,7 +67,8 @@ There are three main routes we need to add to our application:
 * Message route
 
 Let’s understand the role of each route:
-### Authorize route
+
+### Authorize the Route
 
 EveryAuth middleware enables your application to perform an authorization flow for a particular service or user. You don’t need to configure your own Slack App; EveryAuth provides out-of-the-box shared OAuth Clients so that you can get up and running quickly.
 
@@ -97,7 +94,7 @@ EveryAuth simplifies a lot the authorization flow:
 
 You can define any name you want for the authorization route.
 
-### Finished route
+### Finished the Route
 
 After the authorization flow finishes, control is returned to your application by redirecting the user to the configured `finishedUrl` in the `authorize` route.
 The redirection includes query parameters that your application can use to know the [user id](https://github.com/fusebit/everyauth-express#parameters---2).
@@ -164,9 +161,10 @@ Define the pug template by creating a `views` folder and the name of the view. I
                 span='Send me a message'
 ```
 
-### Message route
+### Message the Route
 
 This route will send a direct message to the Slack you have authorized.
+
 In order to send a direct message, we use the `user id` instead of a channel name, EveryAuth exposes a property called `native` that includes the response returned after authorizing your application in Slack. The Slack access token response includes a property that allow us to get the authorizing user id via `authed_user`
 
 ```javascript
@@ -204,7 +202,8 @@ Navigate to `http://localhost:3000`
 
 Check out the complete code in [GitHub](https://github.com/fusebit/everyauth-express/tree/main/examples/slack)
 
-## To Wrap up
+## To Wrap Up
+
 Congratulations! You’ve learned that interacting with Slack API is easy with EveryAuth!
 
 Let us know what you think, don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on [Twitter](https://twitter.com/LizzParody).
