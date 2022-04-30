@@ -2,7 +2,7 @@
 post_title: Integrate With the Slack API and Send Messages Using EveryAuth
 post_author: Lizz Parody
 post_author_avatar: liz.png
-date: '2022-04-28'
+date: '2022-04-30'
 post_image: everyauth-slack.jpg
 post_excerpt: Let's build a web form that allows people to send you a Slack direct message ... without using Slack!
 tags: ['post', 'authentication', 'integrations']
@@ -68,7 +68,7 @@ There are three main routes we need to add to our application:
 
 Let’s understand the role of each route:
 
-### Authorize the Route
+### Authorize Route
 
 EveryAuth middleware enables your application to perform an authorization flow for a particular service or user. You don’t need to configure your own Slack App; EveryAuth provides out-of-the-box shared OAuth Clients so that you can get up and running quickly.
 
@@ -94,7 +94,7 @@ EveryAuth simplifies a lot the authorization flow:
 
 You can define any name you want for the authorization route.
 
-### Finished the Route
+### Finalize Route
 
 After the authorization flow finishes, control is returned to your application by redirecting the user to the configured `finishedUrl` in the `authorize` route.
 The redirection includes query parameters that your application can use to know the [user id](https://github.com/fusebit/everyauth-express#parameters---2).
@@ -161,7 +161,7 @@ Define the pug template by creating a `views` folder and the name of the view. I
                 span='Send me a message'
 ```
 
-### Message the Route
+### Message Route
 
 This route will send a direct message to the Slack you have authorized.
 
