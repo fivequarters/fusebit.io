@@ -1,6 +1,6 @@
 ---
 post_title: Creating Linear issues from slash commands in GitHub!
-post_author: Liz Parody
+post_author: Lizz Parody
 post_author_avatar: liz.png
 date: '2022-01-06'
 post_image: blog-linear-github-main.png

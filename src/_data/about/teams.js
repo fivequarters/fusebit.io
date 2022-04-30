@@ -289,12 +289,12 @@ module.exports = {
             },
         },
         {
-            name: 'Liz Parody',
+            name: 'Lizz Parody',
             img: 'liz.jpg',
             job: 'Head Developer Advocate',
             social: {
-                github: 'https://github.com/lizparody',
-                twitter: 'https://twitter.com/lizparody23',
+                github: 'https://github.com/lizzparody',
+                twitter: 'https://twitter.com/lizzparody',
                 linkedin: 'https://www.linkedin.com/in/lizparody',
             },
             dot: {
