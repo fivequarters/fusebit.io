@@ -1,5 +1,5 @@
 ---
-post_title: Using Slack API with EveryAuth
+post_title: Integrate With the Slack API and Send Messages Using EveryAuth
 post_author: Lizz Parody
 post_author_avatar: liz.png
 date: '2022-04-28'
