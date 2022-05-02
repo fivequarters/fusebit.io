@@ -24,6 +24,7 @@
         //- }
         
     ]
+
 header.header 
     .header__container 
         .header__logo 
@@ -41,7 +42,8 @@ header.header
                 li
                     a.track-with-segment(href=homepage.links.loginLink data-event-name="Login Button Clicked" data-object-location="Header") Login
                 li 
-                    a.track-with-segment.header__links--signUp.get-started(href=homepage.links.getStartedLink data-event-name="Sign Up Button Clicked", data-object-location="Header") Get Started
+                    if site_cta !== "disabled"
+                        a.track-with-segment.header__links--signUp.get-started(href=site_cta ? site_cta : homepage.links.getStartedLink data-event-name="Sign Up Button Clicked", data-object-location="Header") Get Started
 
         .header__menuMobile--btn 
             span.top 
@@ -59,14 +61,11 @@ header.header
                 li
                     a.track-with-segment(href=homepage.links.loginLink data-event-name="Login Button Clicked" data-object-location="Header") Login
                 li 
-                    a.track-with-segment.header__links--signUp.get-started(href=homepage.links.getStartedLink data-event-name="Sign Up Button Clicked", data-object-location="Header") Get Started
+                    if site_cta !== "disabled"
+                        a.track-with-segment.header__links--signUp.get-started(href=site_cta ? site_cta : homepage.links.getStartedLink data-event-name="Sign Up Button Clicked", data-object-location="Header") Get Started
 
         .menuMobile__social 
             include ../SocialMedia/SocialMedia
-
-
-
-
 
     script.
             window.addEventListener('load', () => {
