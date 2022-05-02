@@ -14,7 +14,7 @@ posts_related: ['everyauth','integrate-github-api-everyauth','integrate-google-c
 
 ---
 
-Fusebit recently announced a new product called [Every Auth](https://fusebit.io/blog/everyauth/?utm_source=fusebit.io&utm_medium=referral&utm_campaign=none), the easiest way for your app to access APIs like Slack, Salesforce, or Github. In an earlier [blog post](https://fusebit.io/blog/integrate-google-calendar-node-everyauth/) I walked through how to get set up with Google Calendar within minutes. In this article, I’m going to show you how easy it is to add in a second (or third, fourth, fifth…) integration, Asana, to your app.
+Fusebit recently announced a new product called [EveryAuth](https://fusebit.io/blog/everyauth/?utm_source=fusebit.io&utm_medium=referral&utm_campaign=none), the easiest way for your app to access APIs like Slack, Salesforce, or Github. In an earlier [blog post](https://fusebit.io/blog/integrate-google-calendar-node-everyauth/) I walked through how to get set up with Google Calendar within minutes. In this article, I’m going to show you how easy it is to add in a second (or third, fourth, fifth…) integration, Asana, to your app.
 
 ![App Screen with-shadow](blog-everyauth-asana-gcal-appscreen.png "App Screen")
 
