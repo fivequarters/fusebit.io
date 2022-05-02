@@ -76,7 +76,7 @@ Let’s understand the role of each route:
 
 ### Authorize route
 
-EveryAuth middleware enables your application to perform an authorization flow for a particular service. We will be using [githuboauth](https://github.com/fusebit/everyauth-express/blob/main/docs/githuboauth.md) service to use a GitHub OAuth Application. A GitHub App is also supported. For the example of this blog, either service will work since both applications can act as the authorizing user. Understand when to use [GitHub OAuth Apps vs. GitHub Apps](https://fusebit.io/blog/github-oauth-apps-vs-github-apps).
+EveryAuth middleware enables your application to perform an authorization flow for a particular service. We will be using [githuboauth](https://github.com/fusebit/everyauth-express/blob/main/docs/githuboauth.md) service to use a GitHub OAuth Application. A GitHub App is also supported. For the example of this blog, either service will work since both applications can act as the authorizing user. Understand when to use [GitHub OAuth Apps vs. GitHub Apps](https://fusebit.io/blog/github-oauth-apps-vs-github-apps/).
 
 You don’t need to configure your own GitHub OAuth App; EveryAuth provides out-of-the-box shared OAuth Clients so that you can get up and running quickly.
 
