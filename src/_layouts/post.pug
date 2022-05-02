@@ -1,12 +1,14 @@
 extends default.pug
 
-block page_variable
+block seo_variables
     - const ogConfig = { hero: `${site.url}${filters.getImageUrl(`blog/${post_image}`, 900)}`, site: og_image }
+    - var og_image = typeof post_og_image === "string" ? ogConfig[post_og_image] || post_og_image : ogConfig.hero
+
+block page_variable
     - var pageClass = 'blog__page'
     - var title = post_title
     - var slug = post_slug
     - var description = post_excerpt
-    - var og_image = typeof post_og_image !== "undefined" ? ogConfig[post_og_image] || post_og_image : ogConfig.hero
 
 block content
     section.section
