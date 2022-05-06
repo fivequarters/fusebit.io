@@ -3,13 +3,13 @@ post_title: Managing OAuth User Credentials in Your Node.js App
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-05-06'
-post_image: blog-web-frameworks-plugins-architecture.png
-post_excerpt: (max 180 characteres)
-post_slug: 
-tags: ['post']
+post_image: blog-manage-oauth-user-creds-hero.png
+post_excerpt:  Learn how to implement and manage the OAuth Authorization Code Flow in your Node.js / Express app
+post_slug: manage-oauth-user-creds
+tags: ['post','authentication']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/blog-web-frameworks-plugins-architecture.png
-posts_related: ['slug-1','slug-2','slug-3']
+post_og_image: https://fusebit.io/assets/images/blog/blog-manage-oauth-user-creds-hero.png
+posts_related: ['everyauth','everyauth-salesforce','nodejs-oauth-libraries']
 ---
 Before OAuth existed, if you wanted to authorize an app to access resources in other services, users would have to share their username and password with your app directly, you would then access these third-party applications by impersonating the user's identity with their credentials. However, this fast became a security issue and we needed a way to facilitate API Access delegation without sharing user passwords. 
 
@@ -23,9 +23,12 @@ In this post, I'll dive into how you can specifically manage this flow in your N
 
 For the purposes of this example, let’s assume your accounting app - _Budgetly_, needs to provide an integration with Salesforce so users can automatically have their invoices imported into Budgetly. These are the steps, which i’ll go through in detail in the following sections, you will need to follow and implement in your app to have this working:
 
-* **Register a Verified App:** First, you will need to register as a ‘[verified app](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&type=5)’ with Salesforce, you will receive a Client ID & Client Secret that is unique to this app.
+* **Register a Verified App:** First, you will need to register an [OAuth app](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&type=5)’ with Salesforce, you will receive a Client ID & Client Secret that is unique to this app.
+
 * **Retrieve an Authorization Code:** Next, you will add this ‘verified app’ to Budgetly so users have a way to authorize Budgetly with their credentials. Once authenticated successfully, you will receive an authorization code.
-* **Retrieve Access Token:** Then, you will use this authorization code to retrieve an ‘access token’ and a `refresh token`. The former will be used by Budgetly to access the Salesforce APIs to retrieve those invoices on their behalf while the other token will be used to get more tokens (see next point). \
+
+* **Retrieve Access Token:** Then, you will use this authorization code to retrieve an `access token’ and a `refresh token`. The former will be used by Budgetly to access the Salesforce APIs to retrieve those invoices on their behalf while the other token will be used to get more tokens (see next point).
+
 * **Retrieve Fresh Access Token:** For security reasons, `access tokens` are short-lived and expire very quickly (15 minutes for Salesforce). To make sure that this token is always fresh - Budgetly will have to go back to Salesforce and ask for an updated `access token` before it expires by using the longer-lasting `refresh token` as part of its request.
 
 ## Retrieve an Authorization Code
@@ -35,7 +38,7 @@ Let’s assume that you were able to successfully register an app with Salesforc
 First, you will need to set up the Authentication URL which consists of three things:
 
 * Authorization Endpoint URL (from Salesforce)
-* Client ID & Redirect URI (Configured with your ‘Verified App’)
+* Client ID & Redirect URI (Configured with your OAuth App)
 * Requested OAuth Scopes 
 
 ```javascript
@@ -83,7 +86,6 @@ For this, you will make a request to the `token` endpoint, you will need:
 * Authorization Code (Retrieved from Auth Callback)
 
 ```javascript
-
 // Salesforce Token Endpoint
 const salesforce_access_token_endpoint = '[https://login.salesforce.com/services/oauth2/token](https://login.salesforce.com/services/oauth2/token)'
 
