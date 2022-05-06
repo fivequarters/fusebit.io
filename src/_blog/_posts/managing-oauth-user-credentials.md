@@ -3,12 +3,12 @@ post_title: Managing OAuth User Credentials in Your Node.js App
 post_author: Shehzad Akbar
 post_author_avatar: shehzad.png
 date: '2022-05-06'
-post_image: 
+post_image: blog-web-frameworks-plugins-architecture.png
 post_excerpt: (max 180 characteres)
 post_slug: 
 tags: ['post']
 post_date_in_url: false
-post_og_image: 
+post_og_image: https://fusebit.io/assets/images/blog/blog-web-frameworks-plugins-architecture.png
 posts_related: ['slug-1','slug-2','slug-3']
 ---
 Before OAuth existed, if you wanted to authorize an app to access resources in other services, users would have to share their username and password with your app directly, you would then access these third-party applications by impersonating the user's identity with their credentials. However, this fast became a security issue and we needed a way to facilitate API Access delegation without sharing user passwords. 
