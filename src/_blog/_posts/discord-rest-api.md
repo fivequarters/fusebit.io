@@ -76,7 +76,7 @@ Next, enter a redirect URL, as Discord requires at least one redirect URL in ord
 ### Step 3: Generate an App Authorization (Invite) Link
 Before we can send requests to the Discord API on behalf of a user, the user must first authorize our app. Because of this, we need a way for them to accept or decline access. To make this process easy, Discord has an invite URL generator tool built into the application's settings page. 
 
-<center> To generate an invite link, navigate to the **URL Generator** tab under the OAuth2 section. Once you're on the page, select the scopes that are relevant for your application, and the tool will generate the appropriate invite link for that scope. Scopes determine what your application can and can not do on behalf of a user. </center>
+To generate an invite link, navigate to the **URL Generator** tab under the OAuth2 section. Once you're on the page, select the scopes that are relevant for your application, and the tool will generate the appropriate invite link for that scope. Scopes determine what your application can and can not do on behalf of a user.
 
 ![Discord Rest API Invite link](discord-rest-api-invite-link.png 'Discord Rest API Invite link')
 
@@ -110,7 +110,7 @@ For this tutorial, we'll be using Postman to make all requests. Below is the con
 * redirect_uri: "http://localhost/discord/redirect"
 If the request is successful, you should get a response that looks like this: 
 
-```JSON
+```json
 {
     "access_token": "z4HhmDy5ghijpIRL1YFzhCeVFabcdef",
     "expires_in": 604800,
@@ -143,7 +143,8 @@ So, let's try to retrieve a user's profile using the authorization token we acqu
 **Header:** 
 * Authorization: "Bearer [PLACE VALUE FOR access_token HERE]"
 Once you're done, hit **Send** and you should get the following response: 
-```JSON
+
+```json
 {
     "id": "669871802121453571",
     "username": "eapius",
@@ -183,7 +184,7 @@ The configuration to use in Postman for this request is shown below:
 
 After setting up the request in Postman, hit **Send**. If the current user has active connections, you should get a response similar to the JSON data below: 
 
-```JSON
+```json
 [
     {
         "type": "twitter",
