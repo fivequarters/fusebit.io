@@ -263,92 +263,92 @@ npm i pug
 ```
 
 ```javascript
-  app.set('view engine', 'pug');
+app.set('view engine', 'pug');
 ```
 
 Define the pug template by creating a `views` folder and the name of the view. In our case, it’s called `index.pug`. Add the following code:
 
 ```pug
-  html
-  head
-    title='StackOverflow Top Questions and Answers'
-    style
-      include ./style.css
-  body
-    .header
-      .logo
-        img.logo(src='https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.svg')
-      .profile
-        img.pic(src=user.profile_image alt='StackOverflow profile image')
-        section
-          a(href=user.link)=user.display_name
-        section
-          span #{user.reputation}
-          unless !user.badge_counts.bronze
-            span.shield.bronze
-                i(class='fa-solid fa-shield')
-            span #{user.badge_counts.bronze}
-          unless !user.badge_counts.silver
-            span.shield.silver
-                i(class='fa-solid fa-shield')
-            span #{user.badge_counts.silver}
-          unless !user.badge_counts.gold
-            span.shield.gold
-                i(class='fa-solid fa-shield')
-            span #{user.badge_counts.gold}
-          span
-              i(class='fa fa-location-dot fa-bounce')
-          span #{user.location}
-        .action 
-          a(href=page)=pageTitle
-    .container
-      .top-questions
-        h1=`Top 10 Questions`
-        unless questions.length
-          .empty 
-            i(class='fa-solid fa-face-frown fa-bounce')
-            span='No questions found'
-        each question in questions
-            .question-item 
-              h2!=question.title
-              .stats 
-                section
-                  span
-                      i(class='fa-solid fa-eye')
-                  span=question.view_count
-                section
-                  span
-                      i(class='fa-solid fa-star')
-                  span=question.score
-                section
-                  span
-                      i(class='fa-solid fa-link')
-                  a(href=question.link target='_blank')='View question'
-              .author
-                img(src=question.owner.profile_image)
-                span=`Question by ${question.owner.display_name}`
-              .tags
-                each tag in question.tags 
-                  div.tag=tag
-              .answer-body!=question.body
-      .top-answers
-        h1=`Top 10 Answers`
-        each answer in answers
-            .question-item 
-              h2!=answer.title
-              .stats 
-                section
-                  span
-                      i(class='fa-solid fa-star')
-                  span=answer.score
-                section
-                  span
-                      i(class='fa-solid fa-link')
-                  a(href=answer.link target='_blank')='View Question'
-              .author
-                img(src=answer.owner.profile_image)
-                span=`Answer by ${answer.owner.display_name}`
-              .answer-body!=answer.body
+html
+head
+  title='StackOverflow Top Questions and Answers'
+  style
+    include ./style.css
+body
+  .header
+    .logo
+      img.logo(src='https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.svg')
+    .profile
+      img.pic(src=user.profile_image alt='StackOverflow profile image')
+      section
+        a(href=user.link)=user.display_name
+      section
+        span #{user.reputation}
+        unless !user.badge_counts.bronze
+          span.shield.bronze
+              i(class='fa-solid fa-shield')
+          span #{user.badge_counts.bronze}
+        unless !user.badge_counts.silver
+          span.shield.silver
+              i(class='fa-solid fa-shield')
+          span #{user.badge_counts.silver}
+        unless !user.badge_counts.gold
+          span.shield.gold
+              i(class='fa-solid fa-shield')
+          span #{user.badge_counts.gold}
+        span
+            i(class='fa fa-location-dot fa-bounce')
+        span #{user.location}
+      .action 
+        a(href=page)=pageTitle
+  .container
+    .top-questions
+      h1=`Top 10 Questions`
+      unless questions.length
+        .empty 
+          i(class='fa-solid fa-face-frown fa-bounce')
+          span='No questions found'
+      each question in questions
+          .question-item 
+            h2!=question.title
+            .stats 
+              section
+                span
+                    i(class='fa-solid fa-eye')
+                span=question.view_count
+              section
+                span
+                    i(class='fa-solid fa-star')
+                span=question.score
+              section
+                span
+                    i(class='fa-solid fa-link')
+                a(href=question.link target='_blank')='View question'
+            .author
+              img(src=question.owner.profile_image)
+              span=`Question by ${question.owner.display_name}`
+            .tags
+              each tag in question.tags 
+                div.tag=tag
+            .answer-body!=question.body
+    .top-answers
+      h1=`Top 10 Answers`
+      each answer in answers
+          .question-item 
+            h2!=answer.title
+            .stats 
+              section
+                span
+                    i(class='fa-solid fa-star')
+                span=answer.score
+              section
+                span
+                    i(class='fa-solid fa-link')
+                a(href=answer.link target='_blank')='View Question'
+            .author
+              img(src=answer.owner.profile_image)
+              span=`Answer by ${answer.owner.display_name}`
+            .answer-body!=answer.body
 ```
 
 Run your application (assuming your code is defined in index.js file)
