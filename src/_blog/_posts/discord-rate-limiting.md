@@ -26,7 +26,7 @@ Discord has different rate limits for routes and discord bots. On top of that, D
 
 The response header will look like this: 
 
-```http
+```
 X-RateLimit-Limit: 30
 X-RateLimit-Remaining: 0
 X-RateLimit-Reset: 1470222023
