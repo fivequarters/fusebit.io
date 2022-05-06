@@ -5,7 +5,7 @@ post_author_avatar: carlos.png
 date: '2022-05-06'
 post_image: github-pulls-main.png
 post_excerpt: The GitHub API is powerful, but getting started might be frustrating. In this post, we'll walk you through a GitHub API pull request.
-post_slug: everyauth
+post_slug: github-pulls-api-manage-prs
 tags: ['post', 'developer tools']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/github-pulls-main.png
