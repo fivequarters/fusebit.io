@@ -116,7 +116,7 @@ const final_token_url = url.toString()
 
 Once you POST to the final_token_url, you can expect to get back something like this:
 
-```JSON
+```javascript
 {
 "access_token": "00DB0000000TfcR!AQQAQFhoK8vTMg_rKA.esrJ2bCs.OOIjJgl.9Cx6O7KqjZmHMLOyVb.U61BU9tm4xRusf7d3fD1P9oefzqS6i9sJMPWj48IK",
 "signature": "d/SxeYBxH0GSVko0HMgcUxuZy0PA2cDDz1u7g7JtDHw=",
