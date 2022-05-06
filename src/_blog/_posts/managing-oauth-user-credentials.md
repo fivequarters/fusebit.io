@@ -117,7 +117,6 @@ const final_token_url = url.toString()
 Once you POST to the final_token_url, you can expect to get back something like this:
 
 ```JSON
-
 {
 "access_token": "00DB0000000TfcR!AQQAQFhoK8vTMg_rKA.esrJ2bCs.OOIjJgl.9Cx6O7KqjZmHMLOyVb.U61BU9tm4xRusf7d3fD1P9oefzqS6i9sJMPWj48IK",
 "signature": "d/SxeYBxH0GSVko0HMgcUxuZy0PA2cDDz1u7g7JtDHw=",
@@ -129,7 +128,6 @@ Once you POST to the final_token_url, you can expect to get back something like 
 "token_type": "Bearer",
 "issued_at": "1558553873237"
 }
-
 ```
 
 ## Retrieve an Invoice
@@ -149,7 +147,6 @@ const conn = new jsforce.Connection({
 conn.query("SELECT Id, Name, Amount, FROM Invoices", function(err, result) {
   console.log("total : " + result.totalSize);
 });
-
 ```
 
 ## Retrieve a Fresh Access Token 
