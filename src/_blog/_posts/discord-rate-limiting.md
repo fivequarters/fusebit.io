@@ -26,7 +26,7 @@ Discord has different rate limits for routes and discord bots. On top of that, D
 
 The response header will look like this: 
 
-```
+```http
 X-RateLimit-Limit: 30
 X-RateLimit-Remaining: 0
 X-RateLimit-Reset: 1470222023
@@ -34,7 +34,7 @@ X-RateLimit-Reset-After: 1
 X-RateLimit-Bucket: pass1234
 ```
 
-Now let's understand what these terms mean. Here, `X-RateLimit-Limit` means the total number of requests we can make to this endpoint. The **X-RateLimit-Remaining** means the remaining requests available during the bucket time window before the limit is reset.
+Now let's understand what these terms mean. Here, `X-RateLimit-Limit` means the total number of requests we can make to this endpoint. The `X-RateLimit-Remaining` means the remaining requests available during the bucket time window before the limit is reset.
 
 `X-RateLimit-Reset` gives the Epoch time when the rate limit will be reset. If you haven't heard of it, Epoch time is the universal Unix time, which is the time elapsed since Jan 1, 1970. Many computer systems and software use this time, which can be easily converted into a human-readable format. 
 
@@ -46,7 +46,7 @@ Discord will return a 429 status code after reaching a rate limit. Your applicat
 
 An example response from a request being rate limited will look like the following:
 
-```
+```http
 < HTTP/1.1 429 TOO MANY REQUESTS
 < Content-Type: application/json
 < Retry-After: 65
@@ -110,7 +110,7 @@ One of the most popular free and open-source global request proxies is called [t
 
 You can also use the reverse proxy feature of NGINX to achieve the same goal, as it allows setting of the global rate limit. The NGINX config will look like below. 
 
-```
+```http
 limit_req_zone $proxy_host zone=global:1m rate=40r/s;
 log_format discord_logs '$remote_addr [$time_local] 
 $upstream_http_cf_ray $upstream_http_cf_request_id 
@@ -141,5 +141,5 @@ Now you should have the information and tools you need to fix any Discord API ra
 
 If you enjoy this article, follow @fusebitio on Twitter for the latest developer content on Node.js, JavaScript, and APIs.
 
-This post was written by Nabendu Biswas. [Nabendu](https://thewebdev.tech/) has been working in the software industry for the past 15 years, starting as a C++ developer, then moving on to databases. For the past six years he’s been working as a web-developer working in the JavaScript ecosystem, and developing web-apps in ReactJS, NodeJS, GraphQL. He loves to blog about what he learns and what he’s up to.
+*This post was written by Nabendu Biswas. [Nabendu](https://thewebdev.tech/) has been working in the software industry for the past 15 years, starting as a C++ developer, then moving on to databases. For the past six years he’s been working as a web-developer working in the JavaScript ecosystem, and developing web-apps in ReactJS, NodeJS, GraphQL. He loves to blog about what he learns and what he’s up to.*
 
