@@ -1,7 +1,7 @@
 ---
 post_title: Discord API Rate Limiting, A Troubleshooting Guide
 post_author: Nabendu Biswas
-*post_author_avatar: nabendu.png
+post_author_avatar: nabendu.png
 date: '2022-05-06'
 post_image: discord-rate-limiting.png
 post_excerpt: This article provides you with the tools needed to fix any Discord API rate limiting issues that you encounter, making it much easier.
