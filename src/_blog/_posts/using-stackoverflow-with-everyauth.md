@@ -24,11 +24,11 @@ Once you run and authorize the application, you should be able to see something 
 
 **Authorizing user top 10 Questions and Answers:**
 
-![Using StackOverflow API with EveryAuth with-shadow](blog-everyauth-so-1.png StackOverflow example with EveryAuth')
+![Using StackOverflow API with EveryAuth with-shadow](blog-everyauth-so-1.png 'StackOverflow example with EveryAuth')
 
-** Top 10 StackOverflow Questions and Answers:**
+**Top 10 StackOverflow Questions and Answers:**
 
-![Using StackOverflow API with EveryAuth with-shadow](blog-everyauth-so-2.png StackOverflow example with EveryAuth')
+![Using StackOverflow API with EveryAuth with-shadow](blog-everyauth-so-2.png 'StackOverflow example with EveryAuth')
 
 Both views will include the user profile information at the top of the page. If you noticed, we even have badges and reputation data!
 
@@ -176,11 +176,11 @@ For the answers endpoint we use the following data:
 
 You may wonder what’s going on with those weird values for the filter property 🤪, no worries, they mean something, it represents filter values that we are requesting to the API that are not part of the default response (like the body property), they’re configured in the `try it` section of each documented endpoint in StackOverflow, it will look like this:
 
-![Using StackOverflow API with EveryAuth with-shadow](blog-everyauth-so-3.png StackOverflow example with EveryAuth')
+![Using StackOverflow API with EveryAuth with-shadow](blog-everyauth-so-3.png 'StackOverflow example with EveryAuth')
 
 Then, you select the fields you want to return from the specific request generating a filter you already saw in our previous example.
 
-![Using StackOverflow API with EveryAuth with-shadow](blog-everyauth-so-4.png StackOverflow example with EveryAuth')
+![Using StackOverflow API with EveryAuth with-shadow](blog-everyauth-so-4.png 'StackOverflow example with EveryAuth')
 
 ### Get the Top 10 Questions and Answers from StackOverflow.
 
