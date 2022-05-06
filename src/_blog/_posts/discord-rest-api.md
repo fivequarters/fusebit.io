@@ -85,8 +85,10 @@ Finally, to test that everything works, copy the generated URL and open it in a 
 ![Discord rest API example'](discrod-rest-api-example.png 'Discord rest API example') 
 
 Clicking on Authorize from the above page should redirect the user to the redirect URL we specified in the previous step. However, there will be some additional query strings in the URL. If the authorization was successful, the URL should look link this:
+
 `http://localhost/discord/redirect?code=y3pnUdjLc0jWebnyK0zwwbbRaaiXki`
-Note down the value for the **code** parameter, which is **y3pnUdjLc0jWebnyK0zwwbbRaaiXki** for the above example. Also, note that this value will be unique for each session. In the next step, we'll use the code to retrieve the user authorization token. 
+
+Note down the value for the **code** parameter, which is `y3pnUdjLc0jWebnyK0zwwbbRaaiXki` for the above example. Also, note that this value will be unique for each session. In the next step, we'll use the code to retrieve the user authorization token. 
 
 ### Step 4: Request an Authorization Token for the User
 
@@ -99,9 +101,7 @@ In order to get the authorization token, we need to swap the value for the code 
 For this tutorial, we'll be using Postman to make all requests. Below is the configuration for the request: 
 
 **Request type:** POST, 
-
 **Content-type:** x-www-form-urlencoded 
-
 **Body:** 
 * client_id: "YOUR APP ID"
 * client_secret: "YOUR CLIENT SECRET"
@@ -133,13 +133,11 @@ In the next section, we'll take a look at two practical examples of making reque
 
 The scopes you select while setting up your invite URL affect what endpoint you can access. For example, the identity scope gives access to endpoints like `/users/@me`. It's important to note this, as the API may return an unauthorized error message when you work outside your scope. If you experience an authorization issue, check your scope to see if you've it set correctly. 
 
-### Example1: Read User Profile
+### Example 1: Read User Profile
 So, let's try to retrieve a user's profile using the authorization token we acquired in the last step. Open Postman and start a new request with the following configurations: 
 
 **Endpoint:** [https://discord.com/api/users/@me](https://discord.com/api/users/@me) 
-
 **Request type:** GET 
-
 **Header:** 
 * Authorization: "Bearer [PLACE VALUE FOR access_token HERE]"
 Once you're done, hit **Send** and you should get the following response: 
@@ -175,9 +173,7 @@ In this example, we'll be making requests to the **connections** endpoint. This 
 The configuration to use in Postman for this request is shown below: 
 
 **Endpoint:** https://discord.com/api/users/@me/connections 
-
 **Request type:** GET 
-
 **Header:** 
 
 * Authorization: "Bearer [PLACE VALUE FOR access_token HERE]"
@@ -201,7 +197,7 @@ After setting up the request in Postman, hit **Send**. If the current user has a
 ## Summing Up
 In this post, you've learned what the Discord API is, how to set it up, and the steps for making requests to its endpoints. The next thing I recommend is figuring out how to parse the response data in your preferred programming language. That will help you take the example usage above and turn it into a practical application that you can use to enhance your Discord usage. 
 
-You can do many useful things by parsing the data from the Discord REST API. For example, you can parse the value for the **/users/@m**e endpoint to display a user's Discord profile photo in your custom web or mobile app. Similarly, you can parse the JSON response for the **/users/@me/connections** endpoint to show a user's ID on external services like Facebook and Twitter. 
+You can do many useful things by parsing the data from the Discord REST API. For example, you can parse the value for the `/users/@me` endpoint to display a user's Discord profile photo in your custom web or mobile app. Similarly, you can parse the JSON response for the `/users/@me/connections` endpoint to show a user's ID on external services like Facebook and Twitter. 
 
 If you enjoy this article, follow [@fusebitio](https://twitter.com/fusebitio) on Twitter for the latest developer content on Node.js, JavaScript, and APIs.
 
