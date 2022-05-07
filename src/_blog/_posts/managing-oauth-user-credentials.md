@@ -23,13 +23,13 @@ In this post, I'll dive into how you can specifically manage this flow in your N
 
 For the purposes of this example, let’s assume your accounting app - _Budgetly_, needs to provide an integration with Salesforce so users can automatically have their invoices imported into Budgetly. These are the steps, which i’ll go through in detail in the following sections, you will need to follow and implement in your app to have this working:
 
-* **Register a Verified App:** First, you will need to register an [OAuth app](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&type=5)’ with Salesforce, you will receive a Client ID & Client Secret that is unique to this app.
+***Register a Verified App:** First, you will need to register an [OAuth app](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&type=5)’ with Salesforce, you will receive a Client ID & Client Secret that is unique to this app.
 
-* **Retrieve an Authorization Code:** Next, you will add this ‘verified app’ to Budgetly so users have a way to authorize Budgetly with their credentials. Once authenticated successfully, you will receive an authorization code.
+***Retrieve an Authorization Code:** Next, you will add this ‘verified app’ to Budgetly so users have a way to authorize Budgetly with their credentials. Once authenticated successfully, you will receive an authorization code.
 
-* **Retrieve Access Token:** Then, you will use this authorization code to retrieve an `access token’ and a `refresh token`. The former will be used by Budgetly to access the Salesforce APIs to retrieve those invoices on their behalf while the other token will be used to get more tokens (see next point).
+***Retrieve Access Token:** Then, you will use this authorization code to retrieve an `access token’ and a `refresh token`. The former will be used by Budgetly to access the Salesforce APIs to retrieve those invoices on their behalf while the other token will be used to get more tokens (see next point).
 
-* **Retrieve Fresh Access Token:** For security reasons, `access tokens` are short-lived and expire very quickly (15 minutes for Salesforce). To make sure that this token is always fresh - Budgetly will have to go back to Salesforce and ask for an updated `access token` before it expires by using the longer-lasting `refresh token` as part of its request.
+***Retrieve Fresh Access Token:** For security reasons, `access tokens` are short-lived and expire very quickly (15 minutes for Salesforce). To make sure that this token is always fresh - Budgetly will have to go back to Salesforce and ask for an updated `access token` before it expires by using the longer-lasting `refresh token` as part of its request.
 
 ## Retrieve an Authorization Code
 
@@ -120,11 +120,11 @@ Once you POST to the final_token_url, you can expect to get back something like 
 
 ```javascript
 {
-"access_token": "00DB0000000TfcR!AQQAQFhoK8vTMg_rKA.esrJ2bCs.OOIjJgl.9Cx6O7KqjZmHMLOyVb.U61BU9tm4xRusf7d3fD1P9oefzqS6i9sJMPWj48IK",
+"access_token": "00DB0000000TfcR!AQQAQFhoK8vTMg_rKA.....",
 "signature": "d/SxeYBxH0GSVko0HMgcUxuZy0PA2cDDz1u7g7JtDHw=",
 "refresh_token": "abnDDt5xcv6&4ffASafawfa4G/grshfsd67FJgndft4w5q",
 "scope": "api refresh_token offline_access",
-"id_token": "eyJraWQiOiIyMjAiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdF9oYXNoIjoiSVBRNkJOTjlvUnUyazdaYnYwbkZrUSIsInN1YiI6Imh0dHBzOi8vbG9...",
+"id_token": "eyJraWQiOiIyMjAiLCJ0eXAiOiJKV1QiLCJhbGciOiJ...",
 "instance_url": "https://mycompany.my.salesforce.com",
 "id": "https://login.salesforce.com/id/00DB0000000TfcRMAS/005B0000005Bk90IAC",
 "token_type": "Bearer",
