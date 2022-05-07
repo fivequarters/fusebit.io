@@ -139,7 +139,7 @@ In this post, we've learned about rate limit issues in the Discord API. We also 
 
 Now you should have the information and tools you need to fix any Discord API rate limiting issues that you encounter, making working with the Discord API much easier. You could work toward avoiding hitting Discord API rate limits altogether by having a `discord.py` bot for smaller communities, and using the solutions with Redis and a central global proxy server for bigger communities. 
 
-If you enjoy this article, follow @fusebitio on Twitter for the latest developer content on Node.js, JavaScript, and APIs.
+If you enjoy this article, follow [@fusebitio](https://twitter.com/fusebitio) on Twitter for the latest developer content on Node.js, JavaScript, and APIs.
 
 *This post was written by Nabendu Biswas. [Nabendu](https://thewebdev.tech/) has been working in the software industry for the past 15 years, starting as a C++ developer, then moving on to databases. For the past six years he’s been working as a web-developer working in the JavaScript ecosystem, and developing web-apps in ReactJS, NodeJS, GraphQL. He loves to blog about what he learns and what he’s up to.*
 
