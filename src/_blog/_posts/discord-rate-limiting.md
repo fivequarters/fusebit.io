@@ -4,7 +4,7 @@ post_author: Nabendu Biswas
 post_author_avatar: nabendu.png
 date: '2022-05-06'
 post_image: discord-rate-limiting.png
-post_excerpt: This article provides you with the tools needed to fix any Discord API rate limiting issues that you encounter, making it much easier.
+post_excerpt: This article provides you with the tools needed to fix any Discord API rate limiting issues that you encounter.
 post_slug: discord-rate-limiting
 tags: ['post', 'developer tools']
 post_date_in_url: false
