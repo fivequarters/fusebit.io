@@ -70,8 +70,9 @@ const final_auth_url = url.toString()
 ```
 
 Your final redirect URL will look something like this: 
-
-`https://login.salesforce.com/services/oauth2/authorize?client_id=3MVG9IHf89I1t8hrvswazsWedXWY0i1qK20PSFaInvUgLFB6vrcb9bbWFTSIHpO8G2jxBLJA6uZGyPFC5Aejq&redirect_uri=https://app.budgetly.io/dashboard&response_type=code&scope=api%20refresh_token%20offline_access`
+```shell
+https://login.salesforce.com/services/oauth2/authorize?client_id=3MVG9IHf89I1t8hrvswazsWedXWY0i1qK20PSFaInvUgLFB6vrcb9bbWFTSIHpO8G2jxBLJA6uZGyPFC5Aejq&redirect_uri=https://app.budgetly.io/dashboard&response_type=code&scope=api%20refresh_token%20offline_access
+```
 
 Users will be taken to an OAuth Consent Screen, and once they have successfully authenticated, you will receive an authorization code in the callback from Salesforce.
 
