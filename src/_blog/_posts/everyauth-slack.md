@@ -8,7 +8,7 @@ post_excerpt: Let's build a web form that allows people to send you a Slack dire
 post_slug: everyauth-slack-messages
 tags: ['post', 'authentication', 'integrations']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/everyauth-slack.jpg
+post_og_image: 'hero'
 posts_related: ['everyauth', 'everyauth-hubspot', 'integrate-github-api-everyauth']
 ---
 
