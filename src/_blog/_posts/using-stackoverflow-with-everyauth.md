@@ -1,10 +1,10 @@
 ---
-post_title: Easily Authorize The StackOverflow API with EveryAuth
+post_title: Easily Authorize The Stack Overflow API with EveryAuth
 post_author: Rubén Restrepo
 post_author_avatar: bencho.png
 date: '2022-05-06'
 post_image: stackoverflow-everyauth-example.png
-post_excerpt: Learn how to interact with StackOverflow API from an Express application to display user and global top 10 questions and answers using EveryAuth.
+post_excerpt: Learn how to interact with Stack Overflow API from an Express application to display user and global top 10 questions and answers using EveryAuth.
 post_slug: using-stackoverflow-with-everyauth
 tags: ['post', 'authentication']
 post_date_in_url: false
@@ -14,24 +14,23 @@ posts_related: ['everyauth','integrate-github-api-everyauth', 'integrate-linear-
 
 Recently Fusebit announced [EveryAuth](https://fusebit.io/blog/everyauth/?utm_source=fusebit.io&utm_medium=referral&utm_campaign=none) project that allows you to integrate with multiple services via OAuth easily. 
 
-This article shows an example of EveryAuth using an Express.js application that integrates with the StackOverflow API using the [superagent](https://www.npmjs.com/package/superagent) package to display the following information:
+This article shows an example of EveryAuth using an Express.js application that integrates with the Stack Overflow API using the [superagent](https://www.npmjs.com/package/superagent) package to display the following information:
 
-- StackOverflow's authorized user profile information: picture, name, location, reputation, and badge counts.
-- StackOverflow's authorizing user top 10 questions and answers.
-- StackOverflow's top 10 questions and answers.
+- Stack Overflow's authorized user profile information: picture, name, location, reputation, and badge counts.
+- Stack Overflow's authorizing user top 10 questions and answers.
+- Stack Overflow's top 10 questions and answers.
 
 Once you run and authorize the application, you should be able to see something like the following image:
 
 **Authorizing user top 10 Questions and Answers:**
 
-![Using StackOverflow API with EveryAuth with-shadow](blog-everyauth-so-1.png 'StackOverflow example with EveryAuth')
+![Using Stack Overflow API with EveryAuth with-shadow](blog-everyauth-so-1.png 'StackOverflow example with EveryAuth')
 
 **Top 10 StackOverflow Questions and Answers:**
 
-![Using StackOverflow API with EveryAuth with-shadow](blog-everyauth-so-2.png 'StackOverflow example with EveryAuth')
+![Using Stack Overflow API with EveryAuth with-shadow](blog-everyauth-so-2.png 'StackOverflow example with EveryAuth')
 
 Both views will include the user profile information at the top of the page. If you noticed, we even have badges and reputation data!
-
 
 ## Configuring EveryAuth
 
@@ -50,7 +49,7 @@ app.listen(port, () => {
 });
 ```
 
-Let’s add support to EveryAuth and configure the StackOverflow service so we can interact with their API.
+Let’s add support to EveryAuth and configure the Stack Overflow service so we can interact with their API.
 
 Install the following dependencies:
 
@@ -64,7 +63,7 @@ Let’s review the why we need them:
 - [uuid](https://www.npmjs.com/package/uuid) package. Used to generate a unique identifier for the userId.
 - [cookie-session](https://www.npmjs.com/package/cookie-session) package to allow your application to establish a session (an HTTP-Only cookie) to store the authorizing user id.
 
-StackOverflow does not provide an official Node.js SDK. In this example, we will build our wrapper using the [superagent](https://www.npmjs.com/package/superagent) library.
+Stack Overflow does not provide an official Node.js SDK. In this example, we will build our wrapper using the [superagent](https://www.npmjs.com/package/superagent) library.
 
 ## Add Routes
 
@@ -78,7 +77,7 @@ Let’s understand the role of each route:
 ### Authorize Route
 
 EveryAuth middleware enables your application to perform an authorization flow for a particular service.
-EveryAuth provides an out-of-the-box shared StackOverflow OAuth Client so that you can get up and running quickly.
+EveryAuth provides an out-of-the-box shared Stack Overflow OAuth Client so that you can get up and running quickly.
 
 EveryAuth simplifies a lot the authorization flow:
 
@@ -101,21 +100,21 @@ You can define any name you want for the authorization route. In our previous ex
 After the authorization flow finishes, control is returned to your application by redirecting the user to the configured `finishedUrl` in the `authorize` route.
 The redirection includes query parameters that your application can use to know the [operation status](https://github.com/fusebit/everyauth-express#parameters---2).
 You can use any path for the route. Just ensure it matches what you have configured in the `finishedUrl` property.
-In this route, you can now interact with the StackOverflow API by leveraging the EveryAuth service to get a fresh access token. We will use it to display the authorizing StackOverflow user top 10 questions and answers using the REST API.
+In this route, you can now interact with the Stack Overflow API by leveraging the EveryAuth service to get a fresh access token. We will use it to display the authorizing Stack Overflow user top 10 questions and answers using the REST API.
 
 ### Get user top 10 StackOverflow Questions and Answers
 
 ```javascript
 /**
- * Display Top 10 StackOverflow Questions and Answers of all time for the authorizing user
+ * Display Top 10 Stack Overflow Questions and Answers of all time for the authorizing user
  */
 app.get('/finished', validateSession, async (req, res) => {
-  // Get StackOverflow service credentials.
+  // Get Stack Overflow service credentials.
   const userCredentials = await everyauth.getIdentity('stackoverflow', req.session.userId);
   const { client_key, access_token } = userCredentials.native;
 
-  // Configure a StackOverflow API request with the authorizing access token and client key.
-  // These values are provided in the token response from the StackOverflow API.
+  // Configure a Stack Overflow API request with the authorizing access token and client key.
+  // These values are provided in the token response from the Stack Overflow API.
   const stackOverflowRequest = stackOverflowApi({ access_token, client_key });
 
   // Get the current authorizing user profile information
@@ -174,21 +173,21 @@ For the answers endpoint we use the following data:
 - owner.display_name
 - body
 
-You may wonder what’s going on with those weird values for the filter property 🤪, no worries, they mean something, it represents filter values that we are requesting to the API that are not part of the default response (like the body property), they’re configured in the `try it` section of each documented endpoint in StackOverflow, it will look like this:
+You may wonder what’s going on with those weird values for the filter property 🤪, no worries, they mean something, it represents filter values that we are requesting to the API that are not part of the default response (like the body property), they’re configured in the `try it` section of each documented endpoint in Stack Overflow, it will look like this:
 
-![Using StackOverflow API with EveryAuth with-shadow](blog-everyauth-so-3.png 'StackOverflow example with EveryAuth')
+![Using Stack Overflow API with EveryAuth with-shadow](blog-everyauth-so-3.png 'Stack Overflow example with EveryAuth')
 
 Then, you select the fields you want to return from the specific request generating a filter you already saw in our previous example.
 
-![Using StackOverflow API with EveryAuth with-shadow](blog-everyauth-so-4.png 'StackOverflow example with EveryAuth')
+![Using Stack Overflow API with EveryAuth with-shadow](blog-everyauth-so-4.png 'Stack Overflow example with EveryAuth')
 
-### Get the Top 10 Questions and Answers from StackOverflow.
+### Get the Top 10 Questions and Answers from Stack Overflow.
 
-Let’s define another route, called `stack-overflow-top`,  in our express application that will show the top 10 questions and answers from StackOverflow
+Let’s define another route, called `stack-overflow-top`,  in our express application that will show the top 10 questions and answers from Stack Overflow
 
 ```javascript
 /**
- * Display Top 10 StackOverflow Questions and Answers
+ * Display Top 10 Stack Overflow Questions and Answers
  */
 app.get('/stack-overflow-top', validateSession, async (req, res) => {
   // Get StackOverflow service credentials.
@@ -232,11 +231,11 @@ app.get('/stack-overflow-top', validateSession, async (req, res) => {
 ```
 As you may notice, the endpoints are similar to user-specific endpoints. This API is public, meaning it accepts unauthenticated requests to get the data. We think it was nice to include it in our demo application 😎.
 
-Both previous examples, are using a function called `stackOverflowRequest`, there is no official Node.js SDK for StackOverflow, but we can define a function that does the job for us, let’s see it:
+Both previous examples, are using a function called `stackOverflowRequest`, there is no official Node.js SDK for Stack Overflow, but we can define a function that does the job for us, let’s see it:
 
 ```javascript
 /**
- * StackOverflow REST API wrapper used to perform authorized GET requests.
+ * Stack Overflow REST API wrapper used to perform authorized GET requests.
  */
 const stackOverflowApi = ({ access_token, client_key }) => {
   return async (path, extraParams = {}) => {
@@ -251,10 +250,10 @@ const stackOverflowApi = ({ access_token, client_key }) => {
 };
 ```
 
-**Note:** This wrapper only supports GET requests to StackOverflow API, but it can be easily modified to support other methods.
+**Note:** This wrapper only supports GET requests to Stack Overflow API, but it can be easily modified to support other methods.
 
 Now, let’s see the magic that happens behind the `send.render` function!
-We need to display the data. We will use a simple template engine called [pug](https://www.npmjs.com/package/pug), which allows us to quickly render an HTML page with the data returned from StackOverflow.
+We need to display the data. We will use a simple template engine called [pug](https://www.npmjs.com/package/pug), which allows us to quickly render an HTML page with the data returned from Stack Overflow.
 
 Install the dependency and set it as the default view engine:
 
@@ -271,7 +270,7 @@ Define the pug template by creating a `views` folder and the name of the view. I
 ```pug
 html
 head
-  title='StackOverflow Top Questions and Answers'
+  title='Stack Overflow Top Questions and Answers'
   style
     include ./style.css
 body
@@ -279,7 +278,7 @@ body
     .logo
       img.logo(src='https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.svg')
     .profile
-      img.pic(src=user.profile_image alt='StackOverflow profile image')
+      img.pic(src=user.profile_image alt='Stack Overflow profile image')
       section
         a(href=user.link)=user.display_name
       section
@@ -362,7 +361,7 @@ Navigate to `http://localhost:3000`
 Check out the complete code in [GitHub](https://github.com/fusebit/everyauth-express/tree/main/examples/stackoverflow)
 
 ## To Wrap up
-Congratulations! You’ve learned that interacting with StackOverflow API is easy with EveryAuth!
+Congratulations! You’ve learned that interacting with Stack Overflow API is easy with EveryAuth!
 
 Let us know what you think, don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on [Twitter](https://twitter.com/degrammer).
 
