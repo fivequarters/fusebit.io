@@ -37,7 +37,7 @@ With all of that out of the way, let's get started. I'll walk you through some c
 
 ## Listing Pull Requests for a Given Repository
 
-To get all pull requests for a given repository, you need to know its name and the name of the user or organization to which it belongs. Then, make a GET request using this template: 
+To get all pull requests for a given repository, you need to know its name and the name of the user or organization to which it belongs. Then, make a GET request using this template:
 
 `GET repos/<OWNER>/<REPOSITORY-NAME>/pulls`
 
@@ -58,12 +58,19 @@ The **state** parameter accepts **open, closed**, and **all**.On the other hand,
 ## Listing Comments for Pull Requests
 
 Another equally easy scenario involves listing all comments for all pull requests on a given repository. For that, use the following template: 
+
 `GET /repos/<OWNER>/<REPOSITORY-NAME>/pulls/comments`
+
 Let's use Node as an example again: 
+
 `curl https://api.github.com/repos/nodejs/node/pulls/comments`
+
 In this case, we're retrieving all comments from all pull requests. But what about getting the comments for one specific pull request? In this case, you'd use the following template: 
+
 `GET /repos/<OWNER>/<REPOSITORY-NAME>/pulls/<PULL-REQUEST-ID>/comments`
+
 The next example retrieves the comments for the pull request number 42837 on the Node.js repository: 
+
 `curl https://api.github.com/repos/nodejs/node/pulls/42837/comments`
 
 ## Creating a Pull Request
@@ -159,7 +166,7 @@ The response you get from the call is an object with four properties:
 * **Data:**  The actual data for the pull request created
 The following image shows part of the actual response I got after making the request: 
 
-![Merge pull request github](github-pulls-merge-pr.png 'Merge pull request github')
+![Merge pull request github with-shadow](github-pulls-merge-pr.png 'Merge pull request github')
 
 ## Merging a Pull Request
 Since you now have a pull request, it seems like the next logical step is to merge it, right? So, let's see how to do just that. 
