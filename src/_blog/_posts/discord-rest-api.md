@@ -35,7 +35,6 @@ The Discord API is a set of tools that enables developers to build bots or exten
 
 With Discord's REST API, it's possible for developers to fetch users' data, like their names and profile photos, by making HTTP calls to a specific endpoint. The developer can then use the data in an external app or in a Discord application. 
 
-
 > The **Discord API** is a set of tools that **enables** developers to build bots or extend the **functionality** of their app using data and services exposed by **Discord**.
 
 ## How to Set Up the Discord REST API
