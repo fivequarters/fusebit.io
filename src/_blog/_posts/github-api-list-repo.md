@@ -193,3 +193,4 @@ Thanks for reading!
 
 *This post was written by Carlos Schults. [Carlos](https://carlosschults.net) is a consultant and software engineer with experience in desktop, web, and mobile development. Though his primary language is C#, he has experience with a number of languages and platforms. His main interests include automated testing, version control, and code quality.*
 
+TEST: traying to make git rebase work :( 
