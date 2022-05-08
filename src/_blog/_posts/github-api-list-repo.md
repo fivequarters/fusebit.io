@@ -60,7 +60,7 @@ As you can see, one of the properties of the JSON response is "repos_urls," whos
 
 That works, but the response is too long to include here. Here's an excerpt as captured using my browser: 
 
-![github list repositories](github-list-repos.png 'github list repos')
+![github list repositories with-shadow](github-list-repos.png 'github list repos')
 
 So, to list all public repos from a user, send a GET request to `https://api.github.com/users/<USER-NAME>/repos`, replacing <USER-NAME> with the actual user from whom you want to retrieve the repositories. 
 
@@ -132,7 +132,7 @@ The request above performs a search that looks for repositories with the word "n
 
 Unsurprisingly, the first result is Node itself: 
 
-![github list repos search api](github-list-repos-search-api.png 'github list repos search api')
+![github list repos search api with-shadow](github-list-repos-search-api.png 'github list repos search api')
 
 GitHub's search API is quite powerful, and covering it in-depth would be out of the scope of this single post. 
 
@@ -191,5 +191,3 @@ If you enjoy this article, follow [@fusebitio](https://twitter.com/fusebitio) on
 Thanks for reading!   
 
 *This post was written by Carlos Schults. [Carlos](https://carlosschults.net) is a consultant and software engineer with experience in desktop, web, and mobile development. Though his primary language is C#, he has experience with a number of languages and platforms. His main interests include automated testing, version control, and code quality.*
-
-TEST: traying to make git rebase work :( 
