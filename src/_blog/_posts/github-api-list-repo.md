@@ -140,7 +140,6 @@ GitHub's search API is quite powerful, and covering it in-depth would be out of 
 
 Understanding the underlying endpoints is recommended when working with the GitHub API.Most of the time, when developing an integration, you'll be using a wrapper library written for your favorite programming language. 
 
-
 > Most of the time when developing an integration you’ll be using a wrapper library written for your favorite programming language
 
 I'll provide a quick example using C# and .NET 6. Let's start by creating a new project: 
