@@ -8,7 +8,7 @@ post_excerpt: The GitHub API is powerful, but getting started might be frustrati
 post_slug: github-pulls-api-manage-prs
 tags: ['post', 'developer tools']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/github-pulls-main.png
+post_og_image: 'hero'
 posts_related:
   [
     'integrate-github-api-everyauth',
@@ -42,7 +42,6 @@ To get all pull requests for a given repository, you need to know its name and t
 `GET repos/<OWNER>/<REPOSITORY-NAME>/pulls`
 
 Where <OWNER> is the user or organization and <REPOSITORY-NAME> is the name for the repository. For this example and all of the next ones, the base URL you'll use for calls is **[https://api.github.com](https://api.github.com)**. 
-
 
 With that in mind, let's see a sample request using cURL: 
 
@@ -186,7 +185,6 @@ Of course, replace my username and repo name with yours. That's it. After this, 
   }
 ```
 Here, the sha property refers to the SHA-1 hash that uniquely identifies the resulting merge commit. Merged obviously indicates that the merge was successful, and we finally have a human-friendly success message. 
-
 
 >Dig in and learn more about the API. It has plenty of **valuable options**, more than can fit in the scope of a single blog post
 
