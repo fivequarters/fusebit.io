@@ -1,14 +1,14 @@
 ---
-post_title: GitHub's Search API, An Introduction With Examples
+post_title: GitHub Search API, An Introduction With Examples
 post_author: Siddhant Varma
 post_author_avatar: siddhant.png
 date: '2022-05-12'
 post_image: github-search-api-main.png
-post_excerpt: Learn how to construct search queries to use Github Search API to search users, repositories, commits and code messages.
+post_excerpt: Learn how to construct search queries to use GitHub Search API to search users, repositories, commits, and code messages.
 post_slug: github-search-api
 tags: ['post', 'developer tools']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/github-search-api-main.png
+post_og_image: 'hero'
 posts_related:
   [
     'github-pulls-api-manage-prs',
@@ -148,7 +148,6 @@ Let's search for all the commits in the React documentation repository pertainin
 Let's hit this endpoint and see what we get back: 
 
 ![github search api queries](github-search-api-queries-6.png "github search api queries") 
-
 
 Notice how all the commit messages in the returned list of commits contain the keyword "upgrade." Hence we have searched through all the upgrade-related commits in the React documentation repository. 
 
