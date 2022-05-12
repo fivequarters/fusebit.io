@@ -67,7 +67,7 @@ There are two critical routes we need to add to our application:
 
 Let’s understand the role of each route:
 
-### Authorize route
+### Authorize Route
 
 The EveryAuth middleware enables your application to perform an authorization flow for a particular service.
 It provides an out-of-the-box shared Reddit OAuth Client to get up to speed quickly. EveryAuth makes your life easier by simplifying a lot of the authorization flow.
@@ -90,7 +90,7 @@ The authorization screen displayed by Reddit will look like this:
 
 ![Using Reddit API with EveryAuth with-shadow](reddit-everyauth-example-authorize.png 'Reddit example with EveryAuth')
 
-### Finished route
+### Finished Route
 
 After the authorization flow finishes, control is returned to your application by redirecting the user to the configured `finishedUrl` in the `authorize` route.
 The redirection includes query parameters that your application can use to know the [operation status](https://github.com/fusebit/everyauth-express#parameters---2).
@@ -218,7 +218,7 @@ Navigate to `http://localhost:3000`
 
 Check out the complete code in [GitHub](https://github.com/fusebit/everyauth-express/tree/main/examples/reddit)
 
-## To Wrap up
+## To Wrap Up
 
 Congratulations! 🎉 You’ve learned that interacting with Reddit API is easy with EveryAuth!
 
