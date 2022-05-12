@@ -59,7 +59,7 @@ Great! We're all set to test and query GitHub Search APIs directly from our edit
 
 The easier way to get started with the Search API is to see what all we can search on GitHub. For this, head over to your browser and open [api.github.com](https://api.github.com/). Once you do that, you should see a list of all the APIs GitHub offers: 
 
-![github search api overview](github-search-api-overview.png "github search api overview")
+![github search api overview with-shadow](github-search-api-overview.png "github search api overview")
 
 As you can see, we can use the search API to search: 
 
