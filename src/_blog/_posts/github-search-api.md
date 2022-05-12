@@ -1,14 +1,14 @@
 ---
 post_title: GitHub's Search API, An Introduction With Examples
 post_author: Siddhant Varma
-*post_author_avatar: siddhant.png
+post_author_avatar: siddhant.png
 date: '2022-05-12'
-*post_image: everyauth-main.jpg
+post_image: github-search-api-main.png
 post_excerpt: Learn how to construct search queries to use Github Search API to search users, repositories, commits and code messages.
 post_slug: github-search-api
 tags: ['post', 'developer tools']
 post_date_in_url: false
-* post_og_image: https://fusebit.io/assets/images/blog/blog-social-everyauth.png
+* post_og_image: https://fusebit.io/assets/images/blog/github-search-api-main.png
 posts_related:
   [
     'github-pulls-api-manage-prs',
@@ -172,7 +172,7 @@ Surprisingly, the [official React repository](https://github.com/facebook/react)
 
 In this tutorial, we have seen how to construct search queries and use GitHub's search API to search users, commits, code, and repositories. However, as I pointed out earlier, there's more you can search through GitHub. The [official docs](https://docs.github.com/en/rest/reference/search) are the best place to start. You can further learn how to search for pull requests, topics, and labels. 
 
-*********** ![alt_text](images/image17.png "image_tooltip")
+> If you're looking for integrations, check out **Fusebit**. It allows you to **easily create integrations** with your favorite platforms, such as GitHub, Slack, and much more!
 
 Or how about you build a small app that parses the data result by these search APIs for something useful? This app could manifest into an internal tool you can use at work to automate a Github search workflow. It could also turn out to be something interesting that you can use for your own personal or open source projects you contribute to on GitHub. Maybe the client of this app is a powerful integration tool you might need badly! But if you're looking for integrations, check out [Fusebit](https://fusebit.io/integrations/). It allows you to easily create integrations for your customers with your favorite platforms, such as GitHub, Slack, and much more! 
 
