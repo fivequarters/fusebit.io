@@ -8,7 +8,7 @@ post_excerpt: Learn how to construct search queries to use Github Search API to 
 post_slug: github-search-api
 tags: ['post', 'developer tools']
 post_date_in_url: false
-* post_og_image: https://fusebit.io/assets/images/blog/github-search-api-main.png
+post_og_image: https://fusebit.io/assets/images/blog/github-search-api-main.png
 posts_related:
   [
     'github-pulls-api-manage-prs',
