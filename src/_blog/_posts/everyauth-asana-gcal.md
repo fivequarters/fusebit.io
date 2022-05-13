@@ -55,7 +55,7 @@ After you integrate EveryAuth with your app, you can still use any SDK you want 
 
 ## Google EveryAuth Blog Post Refresher
 
-If you followed my earlier [blog post](https://fusebit.io/blog/integrate-google-calendar-node-everyauth) with Google, you will already be setup. 
+If you followed my earlier [blog post](https://fusebit.io/blog/integrate-google-calendar-node-everyauth/) with Google, you will already be setup. 
 
 ![App Flow with-shadow](blog-everyauth-gcal-appflow.gif "App Flow")
 
