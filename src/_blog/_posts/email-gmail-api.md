@@ -100,7 +100,7 @@ After the application is authorized, a new **token.js** file will be created, co
 
 The code will also log a list of labels associated with your account on your console once the application is authorized (**listLabels_ _**function). 
 
-![Integrating the Gmail API With an Application](send-email-gmail-listLabels.png.png "Integrating the Gmail API With an Application")
+![Integrating the Gmail API With an Application](send-email-gmail-listLabels.png "Integrating the Gmail API With an Application")
 
 ## Sending Emails With Nodemailer and the Gmail API
 
