@@ -1,0 +1,142 @@
+section.testimonials.section
+    .background.background--straight.background--degradedNeutralLight.testimonials__background
+    .background.testimonials__background
+        .mark.mark--big.mark--light-violet.mark--right.mark--bottom.testimonials__mark
+    .testimonials__container.layout
+        .testimonials__wrapper.testimonials__wrapper--head
+            h2.testimonials__title 
+                | Our customers
+                i _
+
+            p.testimonials__text 
+                | We believe customers are our best advocates. Here's what some of them have to say
+
+        .testimonials__wrapper.testimonials__wrapper--content 
+            .testimonials__cards.swiper-container
+                .swiper-wrapper
+                    .swiper-slide 
+                        .testimonials__card
+                            .testimonials__card--brand
+                                != filters.getImageTag(`testimonials/testimonials__brand-1.png`, 'FactoryFour logo')
+
+                            p.testimonials__card--text
+                                | Fusebit has become an 
+                                strong indispensable part 
+                                | of all of our customers’ deployments. Without Fusebit, we would not be able to keep up with unique integration requirements of manufacturing’s fragmented software ecosystem.
+
+                            .testimonials__card--user 
+                                .testimonials__card--user-image 
+                                    != filters.getImageTag(`testimonials/testimonials__user-1.png`, 'Alex Mathews profile image')
+
+                                .testimonials__card--user-data
+                                    h4 Alex Mathews
+                                    p FactoryFour CEO
+
+                    .swiper-slide 
+                        .testimonials__card
+                            .testimonials__card--brand
+                                != filters.getImageTag(`testimonials/testimonials__brand-2.png`, 'Hyperproof logo')
+
+                            p.testimonials__card--text
+                                | Our integration needs are very custom and complex. The Fusebit platform stood out from alternatives because of the 
+                                strong power, flexibility, and speed 
+                                | of bringing a new solution to production.
+
+                            .testimonials__card--user 
+                                .testimonials__card--user-image 
+                                    != filters.getImageTag(`testimonials/testimonials__user-2.png`, 'Craig Unger profile image')
+
+                                .testimonials__card--user-data
+                                    h4 Craig Unger 
+                                    p Hyperproof CEO
+
+                    .swiper-slide 
+                        .testimonials__card
+                            .testimonials__card--brand
+                                != filters.getImageTag(`testimonials/testimonials__crowd.dev.svg`, 'Crowd.dev logo')
+
+                            p.testimonials__card--text
+                                | After a no-code integrations provider failed us due to its rigidity, 
+                                strong Fusebit allowed us to ship complex integrations 
+                                | for our customers within a week! They addressed most of our pain-points of building integrations and allowed us to 
+                                | focus on customising our business logic, without worrying about maintenance. 
+                                
+                            .testimonials__card--user 
+                                .testimonials__card--user-image 
+                                    != filters.getImageTag(`testimonials/testimonials__joan.png`, 'Joan Reyero profile image')
+
+                                .testimonials__card--user-data
+                                    h4 Joan Reyero
+                                    p Crowd.dev CTO 
+
+
+                    .swiper-slide 
+                        .testimonials__card
+                            .testimonials__card--brand
+                                != filters.getImageTag(`testimonials/testimonials__onramp.svg`, 'OnRamp logo')
+
+                            p.testimonials__card--text
+                                | Leveraging Fusebit enables our team to focus on innovative and impactful feature work 
+                                strong rather than spending time managing integration libraries,  connectivity, authentication code
+                                | . Fusebit 
+                                strong saves us time and allows us to stay focused on our mission
+                                |, creating OnRamp, the best-in-class customer onboarding solution.   
+                                
+                            .testimonials__card--user 
+                                .testimonials__card--user-image 
+                                    != filters.getImageTag(`testimonials/testimonials__sean.png`, 'Sean Boice profile image')
+
+                                .testimonials__card--user-data
+                                    h4 Sean Boice
+                                    p OnRamp Founding Engineer 
+
+                .testimonials__pagination.swiper-pagination
+
+    script.
+
+        const testimonials = document.querySelector('.testimonials');
+        if(testimonials) {
+            const testimonialsSwiper = new Swiper('.testimonials__cards', {
+                loop: true,
+                slidesPerView: 1,
+                slidesPerColumnFill: 'row',
+                spaceBetween: 30,
+                autoplay: {
+                    delay: 2500,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                breakpoints: {
+                    700: {
+                        slidesPerView: 2,
+                    },
+                    1000: {
+                        slidesPerView: 3,
+                        loop: true,
+                    }
+                },
+                on: {
+                    init: () => {
+                        toggleSwiperWrapperStatus();
+
+                        window.addEventListener('resize', toggleSwiperWrapperStatus);
+                    },
+                    slideChange: () => {
+                        //handleScrolledSwiper();
+                    }
+                }
+            });
+
+            function esDesktop() {
+                return window.matchMedia('(min-width: 1200px)').matches;
+            }
+            function toggleSwiperWrapperStatus() {
+                const swiperWrapper = document.querySelector('.testimonials__cards .swiper-wrapper');
+                if(esDesktop()) {
+                    swiperWrapper.classList.add('swiper-wrapper--disable');
+                } else {
+                    swiperWrapper.classList.remove('swiper-wrapper--disable');
+                }
+            }
+        }

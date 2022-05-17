@@ -1,0 +1,8 @@
+- const contactFormURL = "https://webforms.pipedrive.com/f/1wXjk3nDLlnHCsVz8BSiPLekCynejsB51ZRwFBtquTIEzqapYxNDK4PfOvu3Pk7h9";
+
++modal("modal__contact", contactFormURL)
+
+script.
+    window.addEventListener('load', () => {
+        openModalFromHash('#contact', '#modal__contact');
+    });

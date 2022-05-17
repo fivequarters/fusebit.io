@@ -1,0 +1,55 @@
+mixin pathDot 
+    .prefooter__path--dot
+
+mixin path 
+    svg(width="926" height="461" fill="none" xmlns="http://www.w3.org/2000/svg" class="prefooter__dot-desktop-path")
+        path(fill-rule="evenodd" clip-rule="evenodd" d="M806 15c0 .3359-.01.6693-.031 1H926v-2H805.969c.021.3307.031.6641.031 1zm-210 1h178.031c-.021-.3307-.031-.6641-.031-1s.01-.6693.031-1H596c-22.644 0-41 18.3563-41 41v79h2V55c0-21.5391 17.461-39 39-39z" fill="#D7E5FF")
+        path(class="prefooter__path--path" d="M15 364h278c19.33 0 35 15.67 35 35v26c0 19.33 15.67 35 35 35h206c19.33 0 35-15.67 35-35V264c0-19.33 15.67-35 35-35h28c19.33 0 35-15.67 35-35V50c0-19.33 15.67-35 35-35h189" stroke="#D7E5FF" stroke-width="2")
+        path(fill="#fff" d="M572 80h161v316H572z")
+        circle(cx="790" cy="15" transform="rotate(90 790 15)" fill="#fff" r="15")
+        circle(cx="790" cy="2" r="1" transform="rotate(90 790 2)" fill="#D7E5FF")
+        circle(cx="790" cy="28" r="1" transform="rotate(90 790 28)" fill="#D7E5FF")
+        circle(cx="790" cy="15" r="7" transform="rotate(90 790 15)" stroke="#D7E5FF" stroke-width="2")
+        circle(cx="15" cy="364" transform="rotate(90 15 364)" fill="#ffffff" r="15")
+        circle(cx="15" cy="351" r="1" transform="rotate(90 15 351)" fill="#D7E5FF")
+        circle(cx="15" cy="377" r="1" transform="rotate(90 15 377)" fill="#D7E5FF")
+        circle(cx="15" cy="364" r="7" transform="rotate(90 15 364)" stroke="#D7E5FF" stroke-width="2")
+
+mixin mobile_path
+    svg(width='320' height='234' viewBox='0 0 320 234' fill='none' xmlns='http://www.w3.org/2000/svg' class="prefooter__dot-mobile-path")
+        path(opacity='0.6' fill-rule='evenodd' clip-rule='evenodd' d='M257.017 1.31963C257.017 1.49528 257.012 1.66966 257.001 1.84263H319.762V0.796875H257.001C257.012 0.969757 257.017 1.14406 257.017 1.31963ZM223.553 1.84263H240.301C240.291 1.66966 240.285 1.49528 240.285 1.31963C240.285 1.14406 240.291 0.969757 240.301 0.796875H223.553H147.213C135.373 0.796875 125.775 10.395 125.775 22.2348V63.542H126.821V22.2348C126.821 10.9725 135.95 1.84263 147.213 1.84263H216.92C208.326 4.63578 202.115 12.7099 202.115 22.2348V35.3067H203.16V22.2348C203.16 10.9725 212.29 1.84263 223.553 1.84263ZM-83.8549 183.28H-148.215V184.326H-83.8549C-83.8834 184.156 -83.8983 183.981 -83.8983 183.803C-83.8983 183.625 -83.8834 183.451 -83.8549 183.28ZM-77.6671 183.28C-77.6386 183.451 -77.6238 183.625 -77.6238 183.803C-77.6238 183.981 -77.6386 184.156 -77.6671 184.326H-13.5742C-2.31192 184.326 6.81795 193.456 6.81795 204.718V212.561C6.81795 224.401 16.416 233.999 28.2558 233.999H130.217C142.056 233.999 151.655 224.401 151.655 212.561V200.535H150.609V212.561C150.609 223.824 141.479 232.954 130.217 232.954H28.2558C16.9936 232.954 7.86371 223.824 7.86371 212.561V204.718C7.86371 192.879 -1.73438 183.28 -13.5742 183.28H-77.6671Z' fill='#D7E5FF' id="prefooter__dot-mobile-path")
+    svg(width='9' height='15' viewbox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg' class="prefooter__mobile-path-circle")
+        g(opacity='0.7')
+            circle(cx='4.65291' cy='0.522876' r='0.522876' transform='rotate(90 4.65291 0.522876)' fill='#D7E5FF')
+            circle(cx='4.65291' cy='14.1186' r='0.522876' transform='rotate(90 4.65291 14.1186)' fill='#D7E5FF')
+            circle(cx='4.65293' cy='7.31973' r='3.66013' transform='rotate(90 4.65293 7.31973)' stroke='#D7E5FF' stroke-width='1.04575')
+
+
+
+
+section.prefooter.section.section--no-margin
+    .background.background--white.prefooter__background
+        .mark.mark--small.mark--dark-violet.mark--right.prefooter__mark
+    .prefooter__container.layout.layout--no-padding-bottom
+        .prefooter__content
+            h2.prefooter__title 
+                | It is time to 
+                span supercharge 
+                | your integrations
+                i _
+
+            p.prefooter__text 
+                | Schedule a demo now and get your integration story under control. Spend more time on your product and with your customers, less worrying about integrations.
+
+            a.track-with-segment.prefooter__cta.get-started(href="#contact" data-event-name="Schedule Demo Button Clicked" data-object-location="Home Page Supercharge")
+                span.prefooter__cta--text Schedule Demo
+                span.prefooter__cta--icon
+                    svg(width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M1.36396 1.44268L7.72792 7.80664L1.36396 14.1706" stroke="white" stroke-width="2")
+
+        .prefooter__animation-container 
+            .prefooter__animation
+                img(src="../../../assets/images/homepage/prefooter/prefooter__img.png" alt="imagen" width="600" height="316")
+                +path
+                +mobile_path
+                +pathDot
