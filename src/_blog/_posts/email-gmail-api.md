@@ -62,7 +62,7 @@ Now that we've enabled the Gmail API for our use, we need proper keys for authen
 
 To generate the keys, navigate to the Credentials tab from the sidebar and set up the consent screen (i.e., fill out the complete application form). This will generate the client ID and client secret, which you can copy from the screen or download as a JSON file and rename it to **credentials.json**. 
 
-![Generate the API Key and Secret Key](send-email-gmail-api-secret-key.png "Generate the API Key and Secret Key")
+![Generate the API Key and Secret Key with-shadow](send-email-gmail-api-secret-key.png "Generate the API Key and Secret Key")
  
 ## Integrating the Gmail API With an Application (Initial Setup)
 
@@ -98,7 +98,7 @@ Enter the code from that page here: <<CODE>>
 
 After the application is authorized, a new **token.js** file will be created, containing two tokens (the access token and refresh token) that we'll use to send emails in the next step. 
 
-The code will also log a list of labels associated with your account on your console once the application is authorized (**listLabels_ _**function). 
+The code will also log a list of labels associated with your account on your console once the application is authorized (**listLabels** function). 
 
 ![Integrating the Gmail API With an Application](send-email-gmail-listLabels.png "Integrating the Gmail API With an Application")
 
@@ -112,7 +112,7 @@ To install [Nodemailer](https://www.npmjs.com/package/nodemailer), use the **npm
 
 Now let's add our secrets to the **.env** file. (Install the [dotenv](https://www.npmjs.com/package/dotenv) package using **npm i dotenv**.) 
 
-```
+```json
 EMAIL_ADDRESS=
 REFRESH_TOKEN= //This comes from the token.js
 CLIENT_SECRET=
@@ -121,7 +121,7 @@ CLIENT_ID=
 
 After that, create an OAuth client and transporter using the following code in a new file (**mail.js**): 
 
-```
+```javascript
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
@@ -187,7 +187,7 @@ In the above function, we return **nodeTransporte**r, which will now be used to 
  
 Just below the **setupTransporter** function, paste the following code: 
 
-```
+```javascript
 const sendEmailViaGmail = async (options) => {
   let gmailTransporter = await createTransporter();
   await gmailTransporter.sendMail(options);
@@ -221,7 +221,7 @@ Sending attachments in emails has always been tricky when it comes to coding and
 
 To add attachments to our email, we need to add another key named **attachments** (array of objects) to the **options** parameters of the **sendEmailViaGmail** function. The code provided below shows how you can do that. 
 
-```
+```javascript
 sendEmailViaGmail({
   subject: "Exploring Gmail API",
   text: "Hi, this is a test email from Node.js using Gmail API",
@@ -250,7 +250,7 @@ Sending HTML emails is still widely used for both business and personal purposes
 
 To send emails with an HTML body, check out the below-mentioned code: 
 
-```
+```javascript
 sendEmailViaGmail({
   subject: "Exploring Gmail API",
   to: "abc@gmail.com",
@@ -267,7 +267,7 @@ When you're working with promotional emails, in-line images play an important ro
 
 Check out the code below to understand it properly: 
 
-```
+```javascript
 sendEmailViaGmail({
   subject: "Exploring Gmail API",
   to: "abc@gmail.com",
