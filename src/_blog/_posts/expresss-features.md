@@ -43,9 +43,7 @@ Express can be used to incorporate middleware in request and response processing
 You can install Express 5 beta using this command:
 
 ```shell
-
 npm install express@5.0.0-beta.1 --save
-
 ```
 
 Below are a few new features to try out, along with changes to keep in mind.
@@ -59,37 +57,31 @@ First, new parameter modifiers have been added. These include the `?`, `*`, and 
 This route path, for example, will match `/hello/1/world`, `/hello/1/2/world`, and so on, but not `/hello/world`:
 
 ```js
-
 app.get('/hello/:ids+/world', (req, res) => {
 
     res.send('Hello World!');
 
 });
-
 ```
 
 This route path will match `/hello/world`, `/hello/1/world`, `/hello/1/2/world`, and so on:
 
 ```js
-
 app.get('/hello/:ids*/world', (req, res) => {
 
     res.send('Hello World!');
 
 });
-
 ```
 
 This route path will match `/hello/world`, `/hello/1/world`, and so on, but not `/hello/1/2/world`:
 
 ```js
-
 app.get('/hello/:id?/world', (req, res) => {
 
     res.send('Hello World!');
 
 });
-
 ```
 
 Another change is that all matching group expressions have to be [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp). For example, while it’s fine to use just `(*)` in a path string pattern in Express 4, this will not work in Express 5. `(.*)` should be used instead since it’s valid RegExp.
@@ -99,25 +91,21 @@ In Express 4, named matching groups were made available by both name and positio
 In the example below, making a request to `hello/1` would return `{"0":"1","id":"1"}` as a response in Express 4:
 
 ```js
-
 app.get('/hello/:id(*)', (req, res) => {
 
     res.send(req.params);
 
 });
-
 ```
 
 Making a request to `hello/1` would return `{"id":"1"}` as a response in Express 5:
 
 ```js
-
 app.get('/hello/:id(.*)', (req, res) => {
 
     res.send(req.params);
 
 });
-
 ```
 
 In Express 4, regular expressions could be used outside of matching groups. With Express 5, all regular expressions can only be used in matching groups.
@@ -125,25 +113,21 @@ In Express 4, regular expressions could be used outside of matching groups. With
 For example, this would match `/hello` in Express 4 but would not work in Express 5:
 
 ```js
-
 app.get('/\\D{5}', (req, res) => {
 
     res.send('Hello world!');
 
 });
-
 ```
 
 The regular expression needs to be added to a matching group for it to match the `/hello` path in Express 5:
 
 ```js
-
 app.get('/(\\D{5})', (req, res) => {
 
     res.send('Hello world!');
 
 });
-
 ```
 
 Lastly, `*` can no longer be used as a special path segment character in Express 5.
@@ -151,13 +135,11 @@ Lastly, `*` can no longer be used as a special path segment character in Express
 In Express 4, this route would match `/hello/there/world`. This will not work in Express 5:
 
 ```js
-
 app.get('/hello/*/world', (req, res) => {
 
     res.send('Hello world!');
 
 });
-
 ```
 
 ### Rejected Promise Handling
@@ -167,7 +149,6 @@ When a promise is rejected or has an error thrown, it can be passed to error han
 In Express 4, making a request to either of the routes below will result in the app crashing. In Express 5, the app does not crash, and instead, `500` responses are returned. The response body will either be the error or the rejected value:
 
 ```js
-
 const express = require('express');
 
 const app = express();
@@ -189,7 +170,6 @@ app.get('/throw', async() => {
 });
 
 app.listen(3000);
-
 ```
 
 ### Return of app.router
@@ -199,7 +179,6 @@ app.listen(3000);
 Here’s an example:
 
 ```js
-
 const express = require('express');
 
 const app = express();
@@ -213,7 +192,6 @@ router.get('/hi', (req, res) => {
 });
 
 app.listen(3000);
-
 ```
 
 ### Return of the Port to req.host
@@ -223,7 +201,6 @@ app.listen(3000);
 If the app is running on `http://localhost:3000`, this code snippet will log `localhost:3000` on Express 5, but `localhost` on Express 4:
 
 ```js
-
 const express = require('express');
 
 const app = express();
@@ -233,7 +210,6 @@ app.get('/', (req, res) => {
     console.log(`host: ${req.host}`);
 
 });
-
 ```
 
 ### Changes to Query Parsing
@@ -243,25 +219,21 @@ In Express 5, the default query parser has been changed from extended to simple.
 Check this using the following code snippet:
 
 ```js
-
 const express = require('express');
 
 const app = express();
 
 console.log(app.get("query parser"));
-
 ```
 
 Note that you are not limited to using the simple or extended query parser. You can also use a custom parsing function. You can change the default query parser using [`app.set`](http://expressjs.com/en/5x/api.html#app.set):
 
 ```js
-
 const express = require('express');
 
 const app = express();
 
 app.set("query parser", "extended");
-
 ```
 
 ### Enforced Asynchronous Behavior by res.render
