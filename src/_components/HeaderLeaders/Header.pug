@@ -1,0 +1,112 @@
+-
+    const headerLinks = [
+        {
+            text: 'Developer Docs',
+            link: 'https://developer.fusebit.io',
+            eventName: 'Developer Docs Link Clicked',
+            objectLocation: 'Header',
+        },
+        {
+            text: 'Integrations',
+            link: '/integrations/',
+        },
+        {
+            text: 'Pricing',
+            link: '/pricing/',
+        },
+        {
+            text: 'Blog',
+            link: '/blog/',
+        },
+        //- {
+        //-     text: 'Careers',
+        //-     link: '/careers/',
+        //- }
+        
+    ]
+
+header.header 
+    .header__container 
+        .header__logo 
+            //- a(href="/" target) 
+            include ../Logo/Logo
+
+        .header__menu 
+            ul 
+                each link in headerLinks
+                    li
+                        a(href=link.link target='_blank' onclick=link.onClick class=link.eventName ? 'track-with-segment' : '' data-event-name=link.eventName data-object-location=link.objectLocation)=link.text
+
+        .header__links 
+            ul  
+                li
+                    a.track-with-segment(href=homepage.links.loginLink target='_blank' data-event-name="Login Button Clicked" data-object-location="Header") Login
+                li 
+                    if site_cta !== "disabled"
+                        a.track-with-segment.header__links--signUp.get-started(href="#contact" data-event-name="Schedule Demo Button Clicked", data-object-location="Header") Schedule Demo
+
+        .header__menuMobile--btn 
+            span.top 
+            span.center1
+            span.center2
+            span.bottom
+
+    .header__menuMobile
+
+        .menuMobile__links
+            ul 
+                each link in headerLinks
+                    li
+                        a(href=link.link target='_blank' onclick=link.onClick id=link.linkId class=link.eventName ? 'track-with-segment' : '' data-event-name=link.eventName data-object-location=link.objectLocation)=link.text
+                li
+                    a.track-with-segment(href=homepage.links.loginLink target='_blank' data-event-name="Login Button Clicked" data-object-location="Header") Login
+                li 
+                    if site_cta !== "disabled"
+                        a.track-with-segment.header__links--signUp.get-started(href="#contact" data-event-name="Schedule Demo Button Clicked", data-object-location="Header") Schedule Demo
+
+        .menuMobile__social 
+            include ../SocialMedia/SocialMedia
+
+    script.
+            window.addEventListener('load', () => {
+                let prevScroll = window.pageYOffset;
+                const isBlogSite = window.location.pathname.includes('blog');
+                const isMakeSite = window.location.pathname.includes('make');
+
+                if(isBlogSite || isMakeSite) {
+                    const header = document.querySelector('.header');
+                    header.classList.add('header--compact');
+                }
+
+                window.addEventListener('scroll', () => {
+                    const currentScroll = window.pageYOffset;
+                    const header = document.querySelector('.header');
+                    const HIDE_NAVBAR_AT = window.innerWidth >= 1000 ? 70 : 30;
+
+                    if (currentScroll < HIDE_NAVBAR_AT) {
+
+                        if(!isBlogSite && !isMakeSite) {
+                            header.classList.remove('header--compact');
+                        }
+
+                        return
+                    } 
+
+                    if (prevScroll > currentScroll) {
+                        header.classList.add('header--compact');
+                        header.classList.remove('header--hidden');
+                    } else {
+                        header.classList.add('header--hidden');
+                    }
+
+                    prevScroll = currentScroll;
+                });
+
+                const header = document.querySelector('.header');
+                const menuMobileBtn = document.querySelector('.header__menuMobile--btn');
+
+                menuMobileBtn.addEventListener('click', () => {
+                    header.classList.toggle('header__menuMobile--open');
+                    document.querySelector('html').classList.toggle('hidden');
+                });
+            });

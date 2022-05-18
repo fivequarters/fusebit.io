@@ -1,0 +1,126 @@
+mixin pathDot 
+    .integrations__path--dot
+
+mixin path 
+    svg(class="integrations__path" width="28" height="2100" fill="none")
+        path.integrations__path--desktop--path(d="M14 8.004v1100" stroke="#D7E5FF" stroke-width="2")
+        path.integrations__path--mobile--path(d="M14 8.004v2000" stroke="#D7E5FF" stroke-width="2")
+        g(opacity=".9")
+            circle(cx="1" cy="8.004" r="1" fill="#D7E5FF")
+            circle(cx="27" cy="8.004" r="1" fill="#D7E5FF")
+            circle(cx="14" cy="8.004" r="7" stroke="#D7E5FF" stroke-width="2")
+
+
+section.integrations.section.section--no-margin
+    .background.background--neutralLight.integrations__background
+        .mark.mark--big.mark--dark-violet.mark--right.integrations__mark-big
+        .mark.mark--small.mark--light-violet.mark--right.integrations__mark-small
+    .integrations__container.layout.layout--no-padding-bottom
+        .integrations__wrapper.integrations__wrapper--head
+            h2.integrations__title 
+                | Ultimate  
+                span flexibility
+                | through code
+                i _
+
+            p.integrations__text 
+                | We believe the best integrations require the flexibility of code. Our developer-friendly platform empowers your engineering team with a code-first solution.
+
+        .integrations__wrapper.integrations__wrapper--content
+            ul.integrations__dataList
+                //.integrations__item-active
+                li.integrations__item(data-image="0") 
+                    .integrations__item--content 
+                        h5.integrations__item--title 
+                            | Extensible code-first model 
+                            span 
+                                svg(width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M1.65685 1.17518L7.31371 6.83203L1.65685 12.4889" stroke="#03032D" stroke-width="2")
+
+                        p.integrations__item--text 
+                            | Stay productive and efficient with our Node.js and serverless stack
+
+                        .integrations__item--icon 
+                            svg(id="icon--coding" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M23.7539 11.3826l-5.55-5.88007c-.3411-.36178-.9105-.37828-1.2723-.03689-.3612.34111-.378.91079-.0366 1.27229L21.8621 12l-4.9671 5.2626c-.3414.3615-.3246.9309.0366 1.2723.174.1641.3963.2454.6177.2454.2391 0 .4779-.0948.6546-.2817l5.5501-5.8804c.3272-.347.3272-.8888-.0001-1.2356zM7.10516 17.2623l-4.96681-5.2624 4.96681-5.26229c.34111-.3615.32461-.93122-.03689-1.27229-.36122-.34111-.93122-.32461-1.27229.0369L.245951 11.3823c-.3272835.3467-.3272835.8888 0 1.2357l5.550309 5.8803c.177.1875.41551.282.65462.282.22139 0 .44372-.0816.61739-.2457.36183-.3411.378-.9108.03689-1.2723zM13.4574 2.47024c-.4911-.07439-.9507.26279-1.0257.7539L9.79168 20.5042c-.075.4914.26252.9508.75392 1.0258.0462.0069.0918.0102.1371.0102.4371 0 .8205-.3189.8886-.7641l2.64-17.28013c.075-.49144-.2625-.95073-.7539-1.02573z" fill="#03032D")
+
+
+                    .integrations__item--image
+                        != filters.getImageTag(`homepage/enjoyFreedom/integrations--step1.png`, 'We provide an extensible code-first model')
+
+                li.integrations__item(data-image="1")
+                    .integrations__item--content 
+                        h5.integrations__item--title 
+                            | Powerful package ecosystem
+                            span 
+                                svg(width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M1.65685 1.17518L7.31371 6.83203L1.65685 12.4889" stroke="#03032D" stroke-width="2")
+
+                        p.integrations__item--text 
+                            | There's a package for everything among the 500k+ packages on npm 
+
+                        .integrations__item--icon 
+                            svg(id="icon--share" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                g(clip-path="url(#clip0)")
+                                    path(d="M23.6165 17.2685c-.1595-.5941-.4911-1.1123-.9518-1.5016.525-2.012.4637-4.1119-.1856-6.11698-.7299-2.2544-2.1346-4.17239-4.0623-5.54658-.4221-.30093-1.0088-.20339-1.3103.21793-.3015.42126-.2038 1.00673.2184 1.30762 1.5974 1.13869 2.7615 2.7285 3.3667 4.59741.5131 1.5847.5836 3.2401.2126 4.835-1.0959-.0642-2.1886.4755-2.7739 1.4858-.4001.6905-.5065 1.4951-.2997 2.2654.207.7709.7028 1.4151 1.3961 1.814 1.4238.8192 3.2612.3381 4.0901-1.0927.4002-.6904.5066-1.495.2997-2.2653zm-1.9259 1.327c-.3078.5311-.9922.7137-1.5256.4068h-.0001c-.2582-.1486-.4427-.3882-.5197-.675-.0769-.2861-.0373-.5851.1114-.8417.4937-.8521 1.7878-.691 2.0454.2682.0768.2861.0372.5851-.1114.8417zM1.88615 12.9676c.03113.003.06197.0045.09258.0045.47756 0 .88622-.3619.9337-.8461.19093-1.9476.99047-3.747 2.31221-5.20369C6.34598 5.6865 7.75035 4.79752 9.32306 4.32009c.49237.97805 1.50744 1.65122 2.67784 1.65122 1.6514 0 2.9948-1.33936 2.9948-2.98565C14.9957 1.33936 13.6523 0 12.0009 0c-1.4663 0-2.68895 1.05633-2.94475 2.44556-2.01131.55266-3.80592 1.65553-5.22403 3.21839-1.59436 1.75711-2.55886 3.9285-2.78934 6.27945-.050534.5153.32709.9738.84337 1.0242zM12.0009 1.87481c.6155 0 1.1162.49833 1.1162 1.11089 0 .61257-.5007 1.11085-1.1162 1.11085-.6157 0-1.1162-.49857-1.1162-1.11089 0-.61257.5008-1.11085 1.1162-1.11085zm3.7655 19.43729c-1.7887.8094-3.753 1.0191-5.6805.6068-1.63345-.3495-3.1072-1.116-4.30786-2.2329.17494-.2647.30858-.5582.39324-.8734.20686-.7704.1004-1.5749-.29967-2.2655-.82566-1.4249-2.66049-1.9151-4.09018-1.0926-.69328.3989-1.189122 1.0431-1.396075 1.814-.206812.7703-.100406 1.5749.299719 2.2654.734676 1.268 2.264536 1.7933 3.598216 1.3191 1.48599 1.4595 3.34172 2.4567 5.40891 2.899 2.2792.4876 4.6509.2626 6.85-.7323.4725-.2138.6819-.7693.4677-1.2409-.2143-.4714-.771-.6804-1.2435-.4667zM4.35665 18.3273c-.2542.9468-1.54678 1.1287-2.04534.2682-.14869-.2566-.18825-.5556-.11142-.8417.07697-.2868.26156-.5264.51975-.675.53306-.3067 1.21757-.1248 1.52559.4068.14869.2566.1883.5556.11142.8417z" fill="#03032D")
+                                defs
+                                    clipPath(id="clip0")
+                                        path(fill="#fff" d="M0 0h24v24H0z")
+
+
+                    .integrations__item--image
+                        != filters.getImageTag(`homepage/enjoyFreedom/integrations--step2.png`, 'The package\'s powerful ecosystem')
+
+                li.integrations__item(data-image="2") 
+                    .integrations__item--content 
+                        h5.integrations__item--title 
+                            | Versioning, source control, and CI/CD
+                            span 
+                                svg(width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M1.65685 1.17518L7.31371 6.83203L1.65685 12.4889" stroke="#03032D" stroke-width="2")
+
+                        p.integrations__item--text 
+                            | Ensures Fusebit fits seamlessly into your devops pipeline
+
+                        .integrations__item--icon 
+                            svg(id="icon--verified" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                g(clip-path="url(#clip0)")
+                                    path(d="M21.547 3.88634L12.3595 0.0717881C12.1293 -0.0237432 11.8706 -0.02379 11.6405 0.0717881L2.45302 3.88634C2.10309 4.03165 1.875 4.37327 1.875 4.75216V9.38927C1.875 15.7743 5.73417 21.5177 11.6457 23.9306C11.8728 24.0233 12.1272 24.0233 12.3543 23.9306C18.2657 21.5178 22.125 15.7743 22.125 9.38927V4.75216C22.125 4.37327 21.897 4.03165 21.547 3.88634V3.88634ZM20.25 9.38927C20.25 14.8172 17.0625 19.8139 12 22.0443C7.07278 19.8735 3.75 14.9643 3.75 9.38927V5.37804L12 1.95269L20.25 5.37804V9.38927ZM10.9638 12.5493L14.9933 8.51979C15.3594 8.15369 15.953 8.15365 16.3192 8.51979C16.6853 8.88593 16.6852 9.47951 16.3191 9.8456L11.6267 14.538C11.2605 14.9042 10.6669 14.9041 10.3009 14.538L7.68084 11.918C7.3147 11.5519 7.3147 10.9583 7.68084 10.5922C8.04698 10.2261 8.64056 10.226 9.00666 10.5922L10.9638 12.5493Z" fill="#03032D")
+                                defs
+                                    clipPath(id="clip0")
+                                        rect(width="24" height="24" fill="white")
+
+
+
+                    .integrations__item--image
+                        != filters.getImageTag(`homepage/enjoyFreedom/integrations--step3.png`, 'First-class support for versioning')
+            
+            script.
+                let integrationsSection = document.querySelector('.integrations');
+                if(integrationsSection) {
+
+                    let desplegables = integrationsSection.querySelectorAll('.integrations__item--title');
+
+                    desplegables.forEach(desplegable => {
+
+                        desplegable.addEventListener('click', () => {
+                            if(!desplegable.parentNode.parentNode.classList.contains('integrations__item-active')) {
+                                let parent = desplegable.parentNode;
+
+                                desplegables.forEach(item => item.parentNode.parentNode.classList.remove('integrations__item-active', 'integrations__item-active-indicator'));
+                                desplegable.parentNode.parentNode.classList.add('integrations__item-active');
+
+                                if (window.matchMedia('(max-width: 720px)').matches) {
+                                    desplegable.scrollIntoView();
+
+                                }
+
+                            }
+                        })
+
+                    })
+
+                }
+
+        //+path 
+        //+pathDot

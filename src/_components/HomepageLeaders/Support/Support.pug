@@ -1,0 +1,88 @@
+include ./Card/Card
+
+mixin pathDot(id="", color='') 
+    .support__path--dot(id=id style=`background: ${color} !important`)
+
+mixin path1 
+    svg.support__path--base(width="28" height="1043" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path.support__path--base--path(d="M14.0001 8v817" stroke="#D7E5FF" stroke-width="2")
+        path.support__path--base--path--mobile(d="M14.0001 8v910" stroke="#D7E5FF" stroke-width="2")
+        path(fill="#fff" d="M0 0h28v24H0z")
+        circle(cx="1" cy="8" r="1" fill="#D7E5FF")
+        circle(cx="27" cy="8" r="1" fill="#D7E5FF")
+        circle(cx="14" cy="8" r="7" stroke="#D7E5FF" stroke-width="2")
+
+mixin pathCard1
+    svg.support__path--card1(width="111" height="388" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path.support__path--card1--path(d="M13.9998 8v291.5c0 22.091 17.9086 40 40 40h16c22.0914 0 40.0002 17.908 40.0002 40v8.5" stroke="#D7E5FF" stroke-width="2")
+
+mixin pathCard2
+    svg.support__path--card2(width="478" height="388" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path.support__path--card2--path(d="M13.9998 8v291.5c0 22.091 17.9086 40 40 40H437c22.091 0 40 17.908 40 40v8.5" stroke="#D7E5FF" stroke-width="2")
+
+
+mixin pathCard3
+    svg.support__path--card3(width="847" height="388" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path.support__path--card3--path(d="M13.9998 8v291.498c0 22.091 17.9086 40 40 40H805.5c22.091 0 40 17.909 40 40v8.5" stroke="#D7E5FF" stroke-width="2")
+
+
+
+
+section.section.support
+    .background
+        .mark.mark--small.mark--dark-violet.mark--right.mark--bottom.support__mark
+    .support__container.layout.layout--no-padding-top
+        .support__wrapper.support__wrapper--head
+            .support__content 
+                h2.support__title
+                    | Cut
+                    span development time 
+                    | by 90%
+                    i _
+
+                p.support__text Fusebit supports popular SaaS APIs to save your engineering team's time. Our uniform model is simple to learn and covers all your integration needs in one place.
+
+            .support__image 
+                != filters.getImageTag(`support/support __brands.png`, 'Brands', null, {class: 'support__image--img'})
+                
+                svg.support__image--frame(viewBox="-35 -10 680 360" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(opacity=".8" d="M162.37 16.5035l288.478 1.5004C538.535 18.46 609.249 89.9138 608.793 177.6c-.456 87.687-71.91 158.401-159.597 157.945l-288.478-1.5c-87.6861-.456-158.40044-71.91-157.94436-159.597C3.22972 86.7617 74.6835 16.0474 162.37 16.5035z" stroke="#D7E5FF" stroke-width="1.9002")
+                    circle(r="14.2515" fill="#fff" stroke="#fff" stroke-width="1.9002")
+                        animateMotion(dur="10s" repeatCount="indefinite" path="M162.37 16.5035l288.478 1.5004C538.535 18.46 609.249 89.9138 608.793 177.6c-.456 87.687-71.91 158.401-159.597 157.945l-288.478-1.5c-87.6861-.456-158.40044-71.91-157.94436-159.597C3.22972 86.7617 74.6835 16.0474 162.37 16.5035z")
+                    circle(r="6.5499" fill="#fff" stroke="#D7E5FF" stroke-width="1.9002")
+                        animateMotion(dur="10s" repeatCount="indefinite" path="M162.37 16.5035l288.478 1.5004C538.535 18.46 609.249 89.9138 608.793 177.6c-.456 87.687-71.91 158.401-159.597 157.945l-288.478-1.5c-87.6861-.456-158.40044-71.91-157.94436-159.597C3.22972 86.7617 74.6835 16.0474 162.37 16.5035z")
+
+
+        .support__wrapper.support__wrapper--content
+            .support__cards
+                - 
+                    const cardsData = [
+                        {
+                            img: `../assets/images/support/support__icon1.svg`,
+                            highlight: `Connectors`,
+                            text: `to most popular third-party APIs accelerate development work`,
+                            path: `path__01`
+                        },
+                        {
+                            img: `../assets/images/support/support__icon2.svg`,
+                            highlight: `Ready-made templates`,
+                            text: `for common scenarios such as bots, task sync, and many others`,
+                            path: `path__02`
+                        },
+                        {
+                            img: `../assets/images/support/support__icon3.svg`,
+                            highlight: `Standardized authentication model`,
+                            text: `covers OAuth2 and other auth schemes`,
+                            path: `path__03`
+                        },
+                    ];
+
+                +card(cardsData[0])
+                +card(cardsData[1])
+                +card(cardsData[2])
+
+        +pathDot('support__dot--card0')
+        +pathCard1
+        +pathCard2
+        +pathCard3
+        +path1

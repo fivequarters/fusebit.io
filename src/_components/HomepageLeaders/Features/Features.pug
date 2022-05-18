@@ -1,0 +1,132 @@
+mixin pathDot 
+    .features__path--dot
+
+mixin path1 
+    svg.features__path--base.features__path--base--desktop(width="568" height="2720" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path.features__path--base--path1(d="M.999725 0v1024.47c0 22.09 17.908575 40 39.999975 40H526.051c22.092 0 40 17.91 40 40V1880" stroke="#D7E5FF" stroke-width="2")
+        path.features__path--base--path2(d="M1.00044 0v1923" stroke="#D7E5FF" stroke-width="2")
+
+mixin path1--mobile
+    svg.features__path--base.features__path--base--mobile(width="568" height="2620" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path.features__path--base--path3(d="M1.00044 0v2560" stroke="#D7E5FF" stroke-width="2")
+
+mixin indicator(title)
+    div(class=`${!title ? 'features__list--item-indicator' : title}`)
+        svg(width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg")
+            circle(cx="15" cy="15" r="15" fill="#3474EC")
+            circle(cx="2" cy="15" r="1" fill="#D7E5FF")
+            circle(cx="28" cy="15" r="1" fill="#D7E5FF")
+            circle(cx="15" cy="15" r="7" stroke="#D7E5FF" stroke-width="2")
+
+section.section.features
+    .background.features__marks-container
+        .mark.mark--big.mark--rainbow.mark--left.mark--bottom.features__mark-left
+        .mark.mark--big.mark--rainbow.mark--right.features__mark-right
+    .background.features__background
+    .features__container.layout
+        .features__wrapper 
+
+            .features__content 
+                h2.features__title.features__title--1
+                    | Spend more time on  
+                    span 
+                        | your product 
+                        i _
+
+                    +indicator('features__title--1--indicator')
+
+                p.features__text 
+                    | Focus your team on what adds value to your product and customers and leave the boilerplate integration mechanics to us.
+
+                ul.features__list.features__list--1st
+                    //.features__list--item-active
+                    li.features__list--item#f1
+                        span 
+                            include ./Icons/security
+
+                        | Robust multi-tenant runtime keeps your <br /> customer data secure
+
+                        +indicator
+
+                    li.features__list--item#f2
+                        span 
+                            include ./Icons/padlock
+
+                        | Third-party auth token storage + automatic <br/> renewal 
+
+                        +indicator
+
+                    li.features__list--item#f3
+                        span 
+                            include ./Icons/coding
+
+
+                        | Embeddable white-label configuration and lifecycle management components
+
+                        +indicator
+
+
+            .features__images.features__images--marketplace
+                //include ./Marketplace/
+                != filters.getImageTag(`homepage/leaveBoilerplate/step1.png`, 'Leave boilerplate integration code to us', null, {'data-step': '1'})
+                != filters.getImageTag(`homepage/leaveBoilerplate/step2.png`, 'Leave boilerplate integration code to us', null, {style: 'display: none;', 'data-step': '2'})
+                != filters.getImageTag(`homepage/leaveBoilerplate/step3.png`, 'Leave boilerplate integration code to us', null, {style: 'display: none;', 'data-step': '3'})
+                != filters.getImageTag(`homepage/leaveBoilerplate/step4.png`, 'Leave boilerplate integration code to us', null, {style: 'display: none;', 'data-step': '4'})
+                script.
+                    let currentImgMarketplaceIndex = 1;
+                    setInterval(() => {
+                        const all = document.querySelectorAll('.features__images--marketplace img')
+                        all.forEach(i => i.style.display = 'none');
+                        currentImgMarketplaceIndex++;
+                        if (currentImgMarketplaceIndex === 5) currentImgMarketplaceIndex = 1;
+                        all[currentImgMarketplaceIndex - 1].style.display = 'block';
+                    }, 2000)
+
+        .features__wrapper
+
+            .features__content 
+                h2.features__title.features__title--sm.features__title--2
+                    | Reduce 
+                    span maintenance cost
+                        i _
+
+                    +indicator('features__title--2--indicator')
+
+                p.features__text 
+                    |  Spend less time on maintenance and let Fusebit ensure your integrations are running smoothly and securely.
+
+                ul.features__list.features__list--2nd
+                    li.features__list--item#f4
+                        span 
+                            include ./Icons/settings
+
+                        | Automated health checks ensure integrations stay up with minimal upkeep
+
+                        +indicator
+
+
+                    li.features__list--item#f5
+                        span 
+                            include ./Icons/speedometer
+
+                        | Throttling, and monitoring capabilities ensure system reliability even as usage scales
+
+                        +indicator
+
+                    li.features__list--item#f6
+                        span 
+                            include ./Icons/alert
+
+                        | Alerting
+
+                        +indicator
+
+
+            .features__images.features__images--graph
+                != filters.getImageTag(`features__bg/graph1.png`, 'Don\'t spend time worrying about infrastructure', null, {'data-graph': '1'})
+
+        +pathDot
+        +path1
+        +path1--mobile
+
+

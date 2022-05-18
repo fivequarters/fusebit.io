@@ -1,0 +1,24 @@
+extends ../_layouts/default-leader.pug
+
+block seo_variables
+    - var title = 'Fusebit - Build integrations for your app with ease'
+
+block page_variable
+    - var pageClass = 'homepage'
+
+block content
+    include ../_components/HomepageLeaders/Hero/Hero
+    include ../_components/HomepageLeaders/Support/Support
+    include ../_components/HomepageLeaders/Features/Features
+    include ../_components/HomepageLeaders/Integrate/Integrate
+    include ../_components/HomepageLeaders/Integrations/Integrations
+    include ../_components/HomepageLeaders/WeProvide/WeProvide
+    include ../_components/HomepageLeaders/Testimonials/Testimonials
+    include ../_components/HomepageLeaders/Prefooter/Prefooter
+    
+    include ../_components/HomepageLeaders/Path1/Path1
+    include ../_components/HomepageLeaders/Path2/Path2
+
+block scripts
+    script.
+        analytics.page('Home Page Leaders', { objectLocation: 'Home Page', domain:  'fusebit.io' });
