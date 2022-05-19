@@ -1,7 +1,7 @@
 ---
 post_title: How to Use the Gmail API in Node.js - A Step-by-Step Tutorial
 post_author: Siddhant Varma
-post_author_avatar: Siddhant.png
+post_author_avatar: siddhant.png
 date: '2022-04-19'
 post_image: gmail-api-node-tutorial.png
 post_excerpt: Follow this step by step guide to setting up and using Gmail API in NodeJS to read email, drafts and send mails via Nodemailer.
