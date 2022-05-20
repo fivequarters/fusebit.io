@@ -1,5 +1,5 @@
 ---
-post_title: Create Your First Node.js GitHub Action, Step-by-Step Guide
+post_title: Create Your First Node.js GitHub Action, a How-To Guide
 post_author: Dawid Ziolkowski
 post_author_avatar: dawid.png
 date: '2022-05-19'
@@ -170,6 +170,6 @@ You can click on the "security scan" block to see the details of the scan. You c
 
 As you can see, GitHub Actions are quite easy to start with. They work well with Node.js applications and even come with many predefined Node.js templates. In a matter of minutes, you can have automated build, test, and security scanning for your application. But the fact that GitHub Actions are simple to use doesn't mean they have limited capabilities. In fact, you can create very complex workflows with GitHub Actions. There are plenty of triggers available, so you can create multiple actions for different purposes. GitHub Marketplace also offers plenty of easy-to-use templates for recurring tasks. 
 
-Check out Fusebit. [Fusebit](https://fusebit.io/) is a code-first SaaS integration platform for developers to add third-party integrations to their products or projects. It prioritizes developer experience at all levels, and its flexible, cloud-native architecture facilitates seamless deployment and operation of your projects at scale.
+Check out Fusebit. [Fusebit](https://fusebit.io) is a code-first SaaS integration platform for developers to add third-party integrations to their products or projects. It prioritizes developer experience at all levels, and its flexible, cloud-native architecture facilitates seamless deployment, and operation of your projects at scale.
 
 _This post was written by Dawid Ziolkowski. [Dawid](https://medium.com/@dawid.ziolkowski) has 10 years of experience as a Network/System Engineer at the beginning, DevOps in between, Cloud Native Engineer recently. He’s worked for an IT outsourcing company, a research institute, telco, a hosting company, and a consultancy company, so he’s gathered a lot of knowledge from different perspectives. Nowadays he’s helping companies move to cloud and/or redesign their infrastructure for a more Cloud Native approach._
