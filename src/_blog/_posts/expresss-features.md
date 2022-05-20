@@ -1,7 +1,7 @@
 ---
 post_title: New Express 5 Features to Try
 post_author: Zara Cooper
-post_author_avatar: liz.png
+post_author_avatar: zara.png
 date: '2022-05-17'
 post_image: new-express-features.png
 post_excerpt: Express.js 5 is currently in Beta. In this article, we will cover the new Express.js 5 features and why Node.js developers should try them out.
