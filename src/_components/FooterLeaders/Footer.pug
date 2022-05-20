@@ -1,6 +1,6 @@
 mixin footerLink(link, linkText, badge, trackedWithSegment, eventName, objectLocation)
     li.footer__link 
-        a(href=link, target='_blank', data-object-location=objectLocation, data-event-name=eventName class=trackedWithSegment ? 'track-with-segment' : '')=linkText
+        a(href=link, data-object-location=objectLocation, data-event-name=eventName class=trackedWithSegment ? 'track-with-segment' : '')=linkText
         if(badge)
             .footer__link--badge
                 span= badge
@@ -10,8 +10,8 @@ footer.footer
     .footer__container 
         .footer__wrapper.footer__wrapper--head
             .footer__logo 
-                //- a(href="/") 
-                include ../Logo/Logo
+                a(href="/") 
+                    include ../Logo/Logo
 
             ul.footer__links 
                 li.footer__links--title  Developers
