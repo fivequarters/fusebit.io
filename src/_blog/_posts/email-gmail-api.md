@@ -19,7 +19,7 @@ posts_related:
 
 Sending emails is the cornerstone of any business, small or large. But when it comes to sending many emails, you need to find an appropriate way to send them—quickly and without any hiccups. There are many ways to achieve this, and one such way is using the Gmail API. 
 
-In this blog post, we'll learn how to send emails using the Gmail API. But before getting into that, let's cover what the Gmail API is and what it offers. 
+In this post, we'll learn how to send emails using the Gmail API. But before getting into that, let's cover what the Gmail API is and what it offers. 
 
 ## Introduction to the Gmail API
 
@@ -31,7 +31,6 @@ Some of the functionalities that you can achieve using Gmail APIs are as follows
 * Upload attachments
 * Search for messages
 * Receive push notifications and much more
-
 
 ## Understanding Prerequisites
 
@@ -285,8 +284,8 @@ And that’s all for this guide.
 
 ## Conclusion
 
-Sending emails using the [Gmail API](https://developers.google.com/gmail/api) is not a piece of cake. But with the help of our guide, you can now easily send emails with the Gmail API. We hope that this guide has helped you understand the basics of sending emails, along with tasks like adding attachments and images and using HTML in emails. If you have any questions regarding the Gmail API, feel free to reach out to us on [Twitter](https://twitter.com/fusebitio). 
+Sending emails using the [Gmail API](https://developers.google.com/gmail/api) is not a piece of cake. But with the help of our guide, you can now easily send emails with the Gmail API. We hope that this guide has helped you understand the basics of sending emails, along with tasks like adding attachments and images and using HTML in emails. If you have any questions regarding the Gmail API, feel free to reach out to Fusebit on [Twitter](https://twitter.com/fusebitio). 
 
-Also check out Fusebit. [Fusebit](https://fusebit.io/) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=everyauth-slack) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)! 
+Also check out the Fusebit platform. [Fusebit](https://fusebit.io/) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. They used monkey patching to make integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=send-email-gmail-api) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)! 
 
 _This post was written by Stuti Malik. [Stuti](https://medium.com/@stutim44) is a hardworking and performance driven professional in cybersecurity and development, ready to take challenging roles to develop advanced projects with efficiency and quality._
