@@ -4,8 +4,8 @@ post_author: Zara Cooper
 post_author_avatar: liz.png
 date: '2022-05-17'
 post_image: new-express-features.png
-post_excerpt: Express.js 5 is currently in Beta! In this guide, you will cover the new Express.js 5 features and why Node.js developers should try them out.
-post_slug: new-express-features
+post_excerpt: Express.js 5 is currently in Beta. In this article, we will cover the new Express.js 5 features and why Node.js developers should try them out.
+post_slug: new-express-5-features
 tags: ['post', 'developer tools']
 post_date_in_url: false
 post_og_image: 'hero'
@@ -246,4 +246,4 @@ Express 5, while still in its beta stage, introduces some exciting changes that 
 
 If you try Express 5 for your next project, you could also use Fusebit to build it. [Fusebit](https://fusebit.io/) is a code-first SaaS integration platform for developers to add third-party integrations to their products or projects. It prioritizes developer experience at all levels, and its flexible, cloud-native architecture facilitates seamless deployment and operation of your projects at scale.
 
-For more developer content like this, [follow Fusebit on Twitter](https://twitter.com/fusebitio).
+For more developer content like this, [follow Fusebit on Twitter](https://twitter.com/fusebitio) to be alerted on the latest published articles.
