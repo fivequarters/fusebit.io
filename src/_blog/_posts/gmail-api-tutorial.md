@@ -187,20 +187,20 @@ Next, we'll create our `app.js` file inside the root directory. This is where we
 Add the following code inside it:
 
 ```js
-const express=require("express");
+const express = require("express");
 
-require('dotenv').config()
+require("dotenv").config();
 
 const app = express();
 
-app.listen(process.env.PORT, ()=>{
-    console.log("listening on port " + process.env.PORT);
-})
+app.listen(process.env.PORT, () => {
+  console.log("listening on port " + process.env.PORT);
+});
 
-app.get("/", async(req, res)=>{
-    // const result=await sendMail();
-    res.send('Welcome to Gmail API with NodeJS')
-})
+app.get("/", async (req, res) => {
+  // const result=await sendMail();
+  res.send("Welcome to Gmail API with NodeJS");
+});
 ```
 
 We're creating an express app and listening on the port we declared earlier in our `.env` file. Let's start the app by running:
@@ -218,19 +218,18 @@ All the APIs we build in Node.js will eventually interact with a Gmail API to fe
 Each of these requests will have some configurations, like the request method, URL, and headers. We'll create a common **utils.js** file inside the root directory with the following helper function:
 
 ```js
-const generateConfig=(url,accessToken)=>{
+const generateConfig = (url, accessToken) => {
+  return {
+    method: "get",
+    url: url,
+    headers: {
+      Authorization: `Bearer ${accessToken} `,
+      "Content-type": "application/json",
+    },
+  };
+};
 
-    return {
-        method: "get",
-        url: url,
-        headers: {
-          Authorization: `Bearer ${accessToken} `,
-          "Content-type": "application/json"
-        },
-    };
-}
-
-module.exports={ generateConfig }
+module.exports = { generateConfig };
 ```
 
 ## Adding Auth and Nodemailer Constants
@@ -240,26 +239,26 @@ Similar to the helper function, we'll also create a constant that defines an **a
 Inside **/constants.js**, add the following code:
 
 ```js
-require('dotenv').config()
+require("dotenv").config();
 
-const auth={
-    type:'OAuth2',
-    user:'sid.cd.varma@gmail.com',
-    clientId:process.env.CLIENT_ID,
-    clientSecret:process.env.CLIENT_SECRET,
-    refreshToken:process.env.REFRESH_TOKEN
-}
+const auth = {
+  type: "OAuth2",
+  user: "sid.cd.varma@gmail.com",
+  clientId: process.env.CLIENT_ID,
+  clientSecret: process.env.CLIENT_SECRET,
+  refreshToken: process.env.REFRESH_TOKEN,
+};
 
 const mailoptions = {
-    from:'Siddhant &lt;sid.cd.varma@gmail.com>',
-    to:'sid.cd.varma@gmail.com',
-    subject:'Gmail API NodeJS',
-}
+  from: "Siddhant &lt;sid.cd.varma@gmail.com>",
+  to: "sid.cd.varma@gmail.com",
+  subject: "Gmail API NodeJS",
+};
 
-module.exports={
-    auth,
-    mailoptions
-}
+module.exports = {
+  auth,
+  mailoptions,
+};
 ```
 
 ## Creating API Routes
@@ -293,64 +292,60 @@ Notice that each of these routes is attached to a controller present in the** /c
 Inside **/controllers.js**, add the following code:
 
 ```js
-const axios=require('axios');
-const { generateConfig } =require('./utils')
-const nodemailer=require("nodemailer");
-const CONSTANTS=require('./constants')
-const {google}=require("googleapis")
+const axios = require("axios");
+const { generateConfig } = require("./utils");
+const nodemailer = require("nodemailer");
+const CONSTANTS = require("./constants");
+const { google } = require("googleapis");
 
-require('dotenv').config()
+require("dotenv").config();
 
-const oAuth2Client=new google.auth.OAuth2(process.env.CLIENT_ID, process.env.CLIENT_SECRET, process.env.REDIRECT_URL)
+const oAuth2Client = new google.auth.OAuth2(
+  process.env.CLIENT_ID,
+  process.env.CLIENT_SECRET,
+  process.env.REDIRECT_URL
+);
 
 oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
 
-async function sendMail(req,res){
-
-    try{
-
-    }catch(error){
-        console.log(error)
-        res.send(error)
-    }
-}
-
-async function getUser(req,res){
-
-    try{
-   
-    } catch(error) {
-        console.log(error)
-        res.send(error)
-    }
-}
-
-async function getDrafts(req,res){
-
-    try{     
-
-    } catch(error) {
-        console.log(error)
-        return error;
-    }
-}
-
-async function readMail (req,res){
-
-    try{
-       
-    } catch(error) {
-      res.send(error)
-    }
-  };
-
-  module.exports={
-      getUser,
-      sendMail,
-      getDrafts,
-      searchMail,
-      readMail,
+async function sendMail(req, res) {
+  try {
+  } catch (error) {
+    console.log(error);
+    res.send(error);
   }
+}
+
+async function getUser(req, res) {
+  try {
+  } catch (error) {
+    console.log(error);
+    res.send(error);
+  }
+}
+
+async function getDrafts(req, res) {
+  try {
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+async function readMail(req, res) {
+  try {
+  } catch (error) {
+    res.send(error);
+  }
+}
+
+module.exports = {
+  getUser,
+  sendMail,
+  getDrafts,
+  searchMail,
+  readMail,
+};
 ```
 
 We have created some async functions for each of our routes. Let's fill each of these as we try them out.
@@ -360,19 +355,17 @@ We have created some async functions for each of our routes. Let's fill each of 
 Here's what our **getUser** function looks like:
 
 ```js
-async function getUser(req,res){
-
-    try{
-        const url=`https://gmail.googleapis.com/gmail/v1/users/${req.params.email}/profile`
-        const {token}=await oAuth2Client.getAccessToken();
-        const config=generateConfig(url,token);
-        const response=await axios(config)
-        res.json(response.data)
-
-    }catch(error){
-        console.log(error)
-        res.send(error)
-    }
+async function getUser(req, res) {
+  try {
+    const url = `https://gmail.googleapis.com/gmail/v1/users/${req.params.email}/profile`;
+    const { token } = await oAuth2Client.getAccessToken();
+    const config = generateConfig(url, token);
+    const response = await axios(config);
+    res.json(response.data);
+  } catch (error) {
+    console.log(error);
+    res.send(error);
+  }
 }
 ```
 
@@ -403,18 +396,17 @@ Awesome!
 We can now complete our **getDrafts** function as shown below:
 
 ```js
-async function getDrafts(req,res){
-
-    try{
-        const url=`https://gmail.googleapis.com/gmail/v1/users/${req.params.email}/drafts`
-        const {token}=await oAuth2Client.getAccessToken();
-        const config=generateConfig(url,token);
-        const response=await axios(config)
-        res.json(response.data)
-    }catch(error){
-        console.log(error)
-        return error;
-    }
+async function getDrafts(req, res) {
+  try {
+    const url = `https://gmail.googleapis.com/gmail/v1/users/${req.params.email}/drafts`;
+    const { token } = await oAuth2Client.getAccessToken();
+    const config = generateConfig(url, token);
+    const response = await axios(config);
+    res.json(response.data);
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
 }
 ```
 
@@ -433,23 +425,20 @@ We can actually grab a message ID and get more information about that individual
 Here's what our completed **readMail** function looks like:
 
 ```js
-async function readMail (req,res){
+async function readMail(req, res) {
+  try {
+    const url = `https://gmail.googleapis.com//gmail/v1/users/sid.cd.varma@gmail.com/messages/${req.params.messageId}`;
+    const { token } = await oAuth2Client.getAccessToken();
+    const config = generateConfig(url, token);
+    const response = await axios(config);
 
-    try{
-        const url=`https://gmail.googleapis.com//gmail/v1/users/sid.cd.varma@gmail.com/messages/${req.params.messageId}`
-        const {token}=await oAuth2Client.getAccessToken();        
-        const config=generateConfig(url,token)
-        const response = await axios(config);
+    let data = await response.data;
 
-        let data= await response.data;
-
-        res.json(data)
-    }
-
-    catch(error){
-        res.send(error)
-    }
-  };
+    res.json(data);
+  } catch (error) {
+    res.send(error);
+  }
+}
 ```
 
 And now we'll visit **http://localhost:8000/api/mail/read/17f63b4513fb51c0** with the message ID passed in the route:
@@ -463,30 +452,28 @@ And we get some email information about the draft message. Nice!
 Finally, we'll use the Gmail API and Nodemailer to send an email message. Here's the finished **sendMail** function:
 
 ```js
-async function sendMail(req,res){
+async function sendMail(req, res) {
+  try {
+    const accessToken = await oAuth2Client.getAccessToken();
+    const transport = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        ...CONSTANTS.auth,
+        accessToken: accessToken,
+      },
+    });
 
-    try{
-        const accessToken=await oAuth2Client.getAccessToken()
-        const transport=nodemailer.createTransport({
-            service:'gmail',
-            auth:{
-                ...CONSTANTS.auth,
-                accessToken:accessToken
-            }
-        })
+    const mailOptions = {
+      ...CONSTANTS.mailoptions,
+      text: "The Gmail API with NodeJS works",
+    };
 
-        const mailOptions={
-            ...CONSTANTS.mailoptions,
-            text:'The Gmail API with NodeJS works'
-        }
-
-        const result=await transport.sendMail(mailOptions)
-        res.send(result)
-
-    }catch(error){
-        console.log(error)
-        res.send(error)
-    }
+    const result = await transport.sendMail(mailOptions);
+    res.send(result);
+  } catch (error) {
+    console.log(error);
+    res.send(error);
+  }
 }
 ```
 
