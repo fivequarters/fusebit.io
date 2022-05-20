@@ -4,7 +4,7 @@ post_author: Siddhant Varma
 post_author_avatar: siddhant.png
 date: '2022-05-19'
 post_image: gmail-api-node-tutorial.png
-post_excerpt: Follow this step by step guide to setting up and using Gmail API in NodeJS to read email, drafts and send mails via Nodemailer.
+post_excerpt: Follow this guide to setting up and using Gmail API in Node.js to read, drafts, and send emails.
 post_slug: gmail-api-node-tutorial
 tags: ['post', 'developer tools']
 post_date_in_url: false
@@ -14,7 +14,7 @@ posts_related: ['everyauth-scalable-asana-gcal', 'everyauth-hubspot', 'integrate
 
 Ever wonder if there is a more interesting way of using Gmail without even opening your Gmail account? It's possible via the Gmail APIs, which offer tons of useful features. Some of the popular ones include creating an email draft, updating an email draft, sending emails, managing email threads, and searching messages.
 
-So in this post, I'll walk you through step by step how to start using the Gmail API in Node.js.
+So in this post, I'll walk you through step-by-step how to start using the Gmail API in Node.js.
 
 ## Gmail API Setup in Node.JS
 
@@ -96,7 +96,7 @@ After that, scroll down to add a redirect URI. Enter [https://developers.google.
 
 Make sure the URI doesn't contain a slash (/) at the end. After that, click on **Create** to create an OAuth client. That should create an OAuth client for your project and should also generate some useful **client-id** and **client-secret** keys for your project.
 
-### **Generate Access and Refresh Tokens**
+### Generate Access and Refresh Tokens
 
 Now we need to generate an access token that we will use to authenticate our Gmail API requests. Without it, we won't be able to make legitimate requests to the Gmail API.
 
@@ -138,7 +138,7 @@ Notice how we get back some authorization code now. We will use it to generate r
 
 And that's it! You're all set up to start using the Gmail API in a Node.js application. Awesome. Let's now create a new Node.js app where we can interact with this Gmail API.
 
-## **Set Up and Create an npm Project**
+## Set Up and Create an npm Project
 
 To get started, we'll first create a brand-new npm project. Inside a directory of your choice, run:
 
@@ -287,7 +287,7 @@ Let's quickly go over what each route represents:
 
 Notice that each of these routes is attached to a controller present in the** /controllers.js** file. But this file doesn't exist yet, so let's go ahead and create it.
 
-## **Creating Controllers Boilerplate**
+## Creating Controllers Boilerplate
 
 Inside **/controllers.js**, add the following code:
 
@@ -420,7 +420,7 @@ Threads are like conversations where messages are grouped together. For example,
 
 We can actually grab a message ID and get more information about that individual email or message. So let's do that next.
 
-## **Read Emails**
+## Read Emails
 
 Here's what our completed **readMail** function looks like:
 
