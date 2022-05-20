@@ -24,15 +24,15 @@ In order to use any Google API, there are some prerequisite steps we need to per
 
 Make sure you have a Google account and are currently logged in. To use any Google API, we first need to create a project in the Google console. Head over to [the Google Cloud Platform](https://console.cloud.google.com/). If you already created a Google Cloud project earlier, this is what your screen should look like:
 
-![Gmail API in Node.js tutorial](gmail-api-node-1.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-1.png "Gmail API in Node.js")
 
 We will now create a new Google Cloud project:
 
-![Gmail API in Node.js tutorial](gmail-api-node-2.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-2.png "Gmail API in Node.js")
 
 Enter the name you wish to use for the project:
 
-![Gmail API in Node.js tutorial](gmail-api-node-3.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-3.png "Gmail API in Node.js")
 
 And now in a few seconds, you'll have your own new Google Cloud console project created for you. Great!
 
@@ -40,31 +40,31 @@ And now in a few seconds, you'll have your own new Google Cloud console project 
 
 Next, we'll add a new OAuth consent screen with some configurations. Inside your project's dashboard, head over to the **APIs & Services** screen.
 
-![Gmail API in Node.js tutorial](gmail-api-node-4.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-4.png "Gmail API in Node.js")
 
 Then, select **OAuth consent screen**.
 
-![Gmail API in Node.js tutorial](gmail-api-node-5.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-5.png "Gmail API in Node.js")
 
 After that, choose **External** in the consent screen.
 
-![Gmail API in Node.js tutorial](gmail-api-node-6.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-6.png "Gmail API in Node.js")
 
 You'll then be prompted to enter some app information. Add that information:
 
-![Gmail API in Node.js tutorial](gmail-api-node-7.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-7.png "Gmail API in Node.js")
 
 Next, add some developer contact information:
 
-![Gmail API in Node.js tutorial](gmail-api-node-8.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-8.png "Gmail API in Node.js")
 
 We'll use the default scopes available. So on the next screen, select **Save and Continue** as it is.
 
-![Gmail API in Node.js tutorial](gmail-api-node-9.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-9.png "Gmail API in Node.js")
 
 Then, we'll add our own email or an email you'd use to test the app:
 
-![Gmail API in Node.js tutorial](gmail-api-node-10.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-10.png "Gmail API in Node.js")
 
 Finally, you can review the app details in the summary. Click **Save and Continue**. At this point, your OAuth consent screen has been completely set up. Awesome!
 
@@ -72,27 +72,27 @@ Finally, you can review the app details in the summary. Click **Save and Continu
 
 Now we'll go over to the **Credentials** tab to create an OAuth client ID.
 
-![Gmail API in Node.js tutorial](gmail-api-node-11.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-11.png "Gmail API in Node.js")
 
 That should open up the **Credentials** tab for you:
 
-![Gmail API in Node.js tutorial](gmail-api-node-12.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-12.png "Gmail API in Node.js")
 
 As you can see, we currently do not have any OAuth 2.0 Client ID. So we'll go ahead and create one by clicking on **Create Credentials**:
 
-![Gmail API in Node.js tutorial](gmail-api-node-13.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-13.png "Gmail API in Node.js")
 
 And consequently, select **OAuth client ID** in the dropdown:
 
-![Gmail API in Node.js tutorial](gmail-api-node-14.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-14.png "Gmail API in Node.js")
 
 Then, choose **Web application** as the application type and let the application name be **Web client 1**:
 
-![Gmail API in Node.js tutorial](gmail-api-node-15.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-15.png "Gmail API in Node.js")
 
 After that, scroll down to add a redirect URI. Enter [https://developers.google.com/oauthplayground](https://developers.google.com/oauthplayground) inside here:
 
-![Gmail API in Node.js tutorial](gmail-api-node-16.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-16.png "Gmail API in Node.js")
 
 Make sure the URI doesn't contain a slash (/) at the end. After that, click on **Create** to create an OAuth client. That should create an OAuth client for your project and should also generate some useful **client-id** and **client-secret** keys for your project.
 
@@ -102,39 +102,39 @@ Now we need to generate an access token that we will use to authenticate our Gma
 
 To do that, as a first step, we'll visit the redirect URI we added previously. Head over to [https://developers.google.com/oauthplayground/](https://developers.google.com/oauthplayground/):
 
-![Gmail API in Node.js tutorial](gmail-api-node-17.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-17.png "Gmail API in Node.js")
 
 We want to use Gmail API, so we'll put in our scope to authorize the Gmail API. Put the **https://mail.google.com** scope inside it:
 
-![Gmail API in Node.js tutorial](gmail-api-node-18.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-18.png "Gmail API in Node.js")
 
 After that, select the gear icon on the right and leave everything as it is. Tick the **Use your own OAuth credentials** checkbox and enter your OAuth 2 client-id and client-secret. Then click **Close**.
 
-![Gmail API in Node.js tutorial](gmail-api-node-19.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-19.png "Gmail API in Node.js")
 
 After that, next to the scope, click on **Authorize APIs**:
 
-![Gmail API in Node.js tutorial](gmail-api-node-20.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-20.png "Gmail API in Node.js")
 
 Once you do that, Google will ask you to sign in via your test account:
 
-![Gmail API in Node.js tutorial](gmail-api-node-21.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-21.png "Gmail API in Node.js")
 
 Then it might prompt you that the app is still unverified, but we'll skip the verification since it takes up to two or three days:
 
-![Gmail API in Node.js tutorial](gmail-api-node-22.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-22.png "Gmail API in Node.js")
 
 After you click **Continue**, you'll see your Google Cloud app asking for some permissions. We need to select **Continue** here as well. This will allow us to do any mail operations from our test account via the Gmail API.
 
-![Gmail API in Node.js tutorial](gmail-api-node-23.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-23.png "Gmail API in Node.js")
 
 Finally, you should be redirected back to the playground:
 
-![Gmail API in Node.js tutorial](gmail-api-node-24.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-24.png "Gmail API in Node.js")
 
 Notice how we get back some authorization code now. We will use it to generate refresh tokens and access tokens. Click on **Exchange authorization code for tokens** and you will get back some refresh tokens and access tokens.
 
-![Gmail API in Node.js tutorial](gmail-api-node-25.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-25.png "Gmail API in Node.js")
 
 And that's it! You're all set up to start using the Gmail API in a Node.js application. Awesome. Let's now create a new Node.js app where we can interact with this Gmail API.
 
@@ -209,7 +209,7 @@ node app.js
 
 And if you now visit `http://localhost:8000`, you should see a message on the page:
 
-![Gmail API in Node.js tutorial](gmail-api-node-26.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-26.png "Gmail API in Node.js")
 
 ## Generate Request Configurations Helper Function
 
@@ -383,11 +383,11 @@ app.use('/api',routes);
 
 Great! Now let's try to get our test user's information back via the API:
 
-![Gmail API in Node.js tutorial](gmail-api-node-27.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-27.png "Gmail API in Node.js")
 
 It gets back the email address and total emails and threads for our test user. We can also verify that back in our Gmail account:
 
-![Gmail API in Node.js tutorial](gmail-api-node-28.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-28.png "Gmail API in Node.js")
 
 Awesome!
 
@@ -412,7 +412,7 @@ async function getDrafts(req, res) {
 
 To test this out, we'll hit the endpoint **http://localhost:8000/api/mail/drafts/sid.cd.varma@gmail.com**. Make sure to put in your own test user email there:
 
-![Gmail API in Node.js tutorial](gmail-api-node-29.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-29.png "Gmail API in Node.js")
 
 It gives us back a bunch of draft IDs and corresponding message information. Each **message** object has an **id**, which is the ID of the actual message, and a **threadId**.
 
@@ -443,7 +443,7 @@ async function readMail(req, res) {
 
 And now we'll visit **http://localhost:8000/api/mail/read/17f63b4513fb51c0** with the message ID passed in the route:
 
-![Gmail API in Node.js tutorial](gmail-api-node-30.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-30.png "Gmail API in Node.js")
 
 And we get some email information about the draft message. Nice!
 
@@ -481,19 +481,19 @@ We first create a **transport** object via Nodemailer and pass in the service an
 
 Finally, we call the **sendMail** function on the transport and pass in the **mailOptions** to it. Let's try it out now:
 
-![Gmail API in Node.js tutorial](gmail-api-node-31.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-31.png "Gmail API in Node.js")
 
 Looks like it worked, right? But let's also verify it in the inbox.
 
-![Gmail API in Node.js tutorial](gmail-api-node-32.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-32.png "Gmail API in Node.js")
 
 There is new mail for us! Let's open it:
 
-![Gmail API in Node.js tutorial](gmail-api-node-33.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-33.png "Gmail API in Node.js")
 
 It actually worked! Let's verify it further by looking at the sender information:
 
-![Gmail API in Node.js tutorial](gmail-api-node-34.png "Gmail API in Node.js")
+![Gmail API in Node.js tutorial with-shadow](gmail-api-node-34.png "Gmail API in Node.js")
 
 Oh yes, that's our Gmail API Node.js app's email. Sweet! We can now send emails easily via our Node.js API. You can also send full HTML inside the **text** field of the **mailOptions** object.
 
