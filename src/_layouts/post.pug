@@ -50,12 +50,22 @@ block content
                     != filters.getImageTag(`blog/${post_image}`, 'Hero Image', null, { id:"hero-image" })
                 article.article
                     .post__sidebar
-                        .post__sidebar--toc-wrapper
-                            h5.post__sidebar--title Table of contents
-                            .post__sidebar--sections
-                            .post__sidebar--separator
-                            .post__sidebar--section Related Posts
-
+                        .post__sidebar--wrapper
+                            .post__sidebar--toc-wrapper
+                                h5.post__sidebar--title Table of contents
+                                .post__sidebar--sections
+                                if posts_related
+                                    .post__sidebar--separator
+                                    .post__sidebar--section Related Posts
+                            if docs_related
+                                .post__sidebar--toc-wrapper.post__sidebar--toc-wrapper-margin
+                                    each doc in docs_related
+                                        a.post__sidebar--section.post__sidebar--section-link(href=doc.url target="_blank" rel="noopener") 
+                                            img(src='/assets/images/tag.svg' alt='link')
+                                            | #{doc.text}
+                            if post_cta
+                                .post__sidebar--cta-wrapper
+                                    +cta(post_cta.text, post_cta.url, 'post__sidebar--cta', null, true, "eventName", "eventLocation", true, "_blank", "noopener")
                     .post__article!= content
             .post__navigation-container
                 - const prevPost = filters.getNextCollectionItem(collections.post, page) || null
@@ -143,9 +153,8 @@ block scripts
         for (child in children) {
             const element = children[child];
             if (element?.nodeName?.includes("H")) {
-                console.log(element);
                 const section = document.createElement("div");
-                section.innerHTML = element.innerHTML;
+                section.innerText = element.innerText;
                 section.classList.add("post__sidebar--section");
                 if (sidebar.childElementCount < 1) {
                     section.classList.add("post__sidebar--section-active");
