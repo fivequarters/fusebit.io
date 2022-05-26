@@ -4,7 +4,7 @@ post_author: Matthew Zhao
 post_author_avatar: matthew.png
 date: '2022-05-26'
 post_image: everyauth-pagerduty.png
-post_excerpt: EveryAuth is the easiest way to integrate with the PagerDuty API so you can manage services and incidents on the user's behalf.
+post_excerpt: EveryAuth is the easiest way to integrate with the PagerDuty API so you can manage services and incidents your user's behalf.
 post_slug: everyauth-pagerduty
 tags: ['post', 'authentication', 'integrations']
 post_date_in_url: false
@@ -12,7 +12,7 @@ post_og_image: 'hero'
 posts_related: ['everyauth', 'everyauth-hubspot', 'integrate-github-api-everyauth']
 ---
 
-EveryAuth is the easiest way to integrate with the PagerDuty API so you can manage services and incidents on the user's behalf. In this article, we will go through building an EveryAuth app that fetches data from PagerDuty.
+EveryAuth is the easiest way to integrate with the PagerDuty API so you can manage services and incidents your user's behalf. In this article, we will go through building an EveryAuth app that fetches data from PagerDuty.
 
 ![Screenshot demo](https://github.com/fusebit/everyauth-express/blob/main/examples/pagerduty/pd-demo.png?raw=true "Screenshot demo")
 
@@ -271,7 +271,7 @@ html
             a(href=incident.service.html_url) #{incident.service.summary}
 ```
 
-Finally, a little CSS magic is in order, add this in `views/style.css`:
+Finally, a little (minified) CSS magic is in order, add this in `views/style.css`:
 
 ```css
 *{margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"}h2{margin:10px}.header{display:flex;flex-direction:row;height:80px;align-items:center;justify-content:center;background-color:#e3ecf6;position:fixed;width:100%;top:0;z-index:1;box-shadow:#8a8686 0 -1px 18px 10px}.logo{height:40px;padding:10px;margin-bottom:10px}.container{margin-top:80px;padding:10px}.logo-container{display:flex;flex-direction:row;align-items:center;justify-content:center;align-content:center;flex-wrap:wrap}.profile{display:flex;flex-direction:row;align-items:center;justify-content:space-around;flex-wrap:nowrap;color:#2d2d2d}.profile .pic{height:40px;height:40px;width:40px;border-radius:50%;margin:auto auto 10px auto;display:block;box-shadow:0 3px 0 1px rgb(37 39 40 / 10%);margin:10px;border:solid 1px #e2d7d0;padding:5px}.error{background-color:#e888a9;padding:10px;color:#fff;border-left:solid 10px #e91e63}.services{display:flex;flex-direction:column}.service{background-color:#f3f3f3;padding:10px;display:flex;flex-direction:row}svg.active{color:#009688}svg.critical{color:#e91e63}svg.warning{color:#d8932d}.status-critical{border-left:solid 5px #e91e63!important}.status-active{border-left:solid 5px #009688!important}.status-warning{border-left:solid 5px #d8932d!important}.footer button{background:#1155e6;border-radius:5px;box-shadow:0 2px 1px 0 #e5e5e5;padding:14px;font-size:16px;color:#fff;border:0;cursor:pointer}.footer button svg{padding-right:5px;color:#ffeb3b}.footer{background-color:#e3e3e3;padding:10px;border-radius:0 0 10px 10px}.status{background-color:#fff;box-shadow:5px 4px 5px 2px #a29b9b;border-radius:10px;padding:10px;text-align:center;width:100px;margin-right:10px;margin-bottom:auto}.status svg{padding-right:5px}.service-container{border:solid 1px;margin:10px;padding:10px;background-color:#fff}.details{padding:10px}.details a{font-size:18px}.incident{width:400px;margin:0 auto;background-color:#f3f3f3;padding:10px}.success{background-color:#139085;padding:10px;color:#fff}
@@ -291,8 +291,8 @@ Example app listening on port 3000
 
 And you can head to `http://localhost:3000/`, and it should redirect you to EveryAuth to authenticate with PagerDuty.
 
-# Conclusion
+## Conclusion
 
 Congratulations! In less than 200 lines of code and 5 minutes, you are able to set up a brand new Express app that natively integrates with PagerDuty, without ever dealing with the complexity that is OAuth.
 
-Come check out other SaaS systems that EveryAuth can authenticate with. For example, [slack](https://fusebit.io/blog/everyauth-slack-messages/), [github](https://fusebit.io/blog/integrate-github-api-everyauth/), and [linear](https://fusebit.io/blog/using-linear-with-everyauth/). Also follow us on Twitter at [@fusebitio](https://twitter.com/fusebitio)
+Come check out other SaaS systems that EveryAuth can authenticate with. For example, [slack](https://fusebit.io/blog/everyauth-slack-messages/), [github](https://fusebit.io/blog/integrate-github-api-everyauth/), and [linear](https://fusebit.io/blog/using-linear-with-everyauth/). Also follow us on Twitter at [@fusebitio](https://twitter.com/fusebitio) for more helpful developer content.
