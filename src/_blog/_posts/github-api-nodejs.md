@@ -154,14 +154,9 @@ nodemon app
 
 Once you do that, here's what your terminal should look like:
 
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
 ![GitHub API in Node.js Tutorial](github-api-nodejs-5.png "GitHub API in Node.js Tutorial")
 
 And if you now visit **http://localhost:8080**, you should see the following page: 
-
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 ![GitHub API in Node.js Tutorial with-shadow](github-api-nodejs-6.png "GitHub API in Node.js Tutorial")
  
