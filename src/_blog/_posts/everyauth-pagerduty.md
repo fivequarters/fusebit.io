@@ -1,5 +1,5 @@
 ---
-post_title: Integrate With the Slack API and Send Messages Using EveryAuth
+post_title: Connect Your Express Application With PagerDuty Using EveryAuth
 post_author: Matthew Zhao
 post_author_avatar: matthew.png
 date: '2022-05-26'
