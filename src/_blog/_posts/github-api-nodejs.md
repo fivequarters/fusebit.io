@@ -4,7 +4,7 @@ post_author: Siddhant Varma
 post_author_avatar: siddhant.png
 date: '2022-05-26'
 post_image: github-api-nodejs-tutorial.png
-post_excerpt: Learn how to use Github API in NodeJS by building your own APIs for getting user, commits, and repository information from Github.
+post_excerpt: Learn how to use Github API in Node.js by building your own APIs for getting user, commits, and repository information from Github.
 post_slug: github-api-nodejs
 tags: ['post', 'developer tools']
 post_date_in_url: false
@@ -332,8 +332,8 @@ That works as well! Finally, let's test the endpoint **/commit/:user/:reponame**
 
 ## What More You Can Explore
 
-It was fun working with GitHub APIs and building our own APIs with Node.js on top of it! If you wish to look at the entire code for this tutorial, you can check that out [here](https://github.com/FuzzySid/Github-API-NodeJS). How about you now take a real-life problem and create an automated GitHub workflow via its APIs? You can also explore some [other cool APIs that GitHub offers](https://api.github.com/), as well as read [the official docs](https://docs.github.com/en/rest) to understand these APIs and their usage in depth. 
+It was fun working with GitHub APIs and building our own APIs with Node.js on top of it! If you wish to look at the entire code for this tutorial, you can check that out [on GitHub](https://github.com/FuzzySid/Github-API-NodeJS). How about you now take a real-life problem and create an automated GitHub workflow via its APIs? You can also explore some [other cool APIs that GitHub offers](https://api.github.com/), as well as read [the official docs](https://docs.github.com/en/rest) to understand these APIs and their usage in depth. 
 
-Further, you can build some cool integrations using these APIs for your side or work projects. By the way, if you're bullish on integrations, check out [Fusebit](https://fusebit.io/). It offers some neat [integrations](https://fusebit.io/integrations/) with your favorite tools like GitHub, Slack, Asana, Discord, and much more! 
+Further, you can build some cool integrations using these APIs for your side or work projects. By the way, if you're bullish on integrations, check out [Fusebit](https://fusebit.io). It offers some neat [integrations](https://fusebit.io/integrations/) with your favorite tools like GitHub, Slack, Asana, Discord, and much more! 
 
 _This post was written by Siddhant Varma. [Siddhant](https://www.linkedin.com/in/siddhantvarma99/) is a full stack JavaScript developer with expertise in frontend engineering. He’s worked with scaling multiple startups in India and has experience building products in the Ed-Tech and healthcare industries. Siddhant has a passion for teaching and a knack for writing. He's also taught programming to many graduates, helping them become better future developers._
