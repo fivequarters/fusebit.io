@@ -3,7 +3,7 @@ const freeCard = {
     title: 'Developer',
     price: 'Free Forever',
     features: [
-        '10 SaaS integrations',
+        '3 SaaS integrations',
         'Add integrations to your multi-tenant application',
         'Accelerate integration development with Fusebit Framework, Node.js, and NPM',
         'Run, scale, secure, and monitor integrations in Fusebit Cloud Runtime',
@@ -25,10 +25,10 @@ const freeCard = {
 const businessCard = {
     highlightColor: 'var(--yellow)',
     title: 'Team',
-    price: '$199/mo',
+    price: '$499/mo',
     features: [
         'All the features of Developer, plus',
-        '30 SaaS integrations',
+        '10 SaaS integrations',
         'Advanced integration analytics',
         'Email support',
     ],
