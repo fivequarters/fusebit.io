@@ -33,19 +33,19 @@ As a first step, you need a private API key to access the GitHub APIs as an auth
 
 Your GitHub API's private key is a personal access token that you can generate from your GitHub account. First, log in to your GitHub account and go to the Settings section on your homepage.
 
-![GitHub API in Node.js Tutorial](github-api-nodejs-1 "GitHub API in Node.js Tutorial")
+![GitHub API in Node.js Tutorial](github-api-nodejs-1.png "GitHub API in Node.js Tutorial")
 
 Then, go to **Developer Settings** from the Settings page. 
 
-![GitHub API in Node.js Tutorial](github-api-nodejs-2 "GitHub API in Node.js Tutorial")
+![GitHub API in Node.js Tutorial](github-api-nodejs-2.png "GitHub API in Node.js Tutorial")
  
 Next, select the **Personal Access Tokens** section from the left panel of Developer Settings. 
 
-![GitHub API in Node.js Tutorial](github-api-nodejs-3 "GitHub API in Node.js Tutorial")
+![GitHub API in Node.js Tutorial](github-api-nodejs-3.png "GitHub API in Node.js Tutorial")
 
 Then click on **Generate New Token**. After that, you can select all the privileges you want to enable for this access token. For brevity, you can select all of them. Set an expiry on the token and click on **Generate**. You'll now have a personal access token generated for you. Copy this and save it somewhere—we'll be using this as our API key inside our Node.js app. 
 
-![GitHub API in Node.js Tutorial](github-api-nodejs-4 "GitHub API in Node.js Tutorial")
+![GitHub API in Node.js Tutorial](github-api-nodejs-4.png "GitHub API in Node.js Tutorial")
 
 ## Create and Set up a Node.js App
 
@@ -157,13 +157,13 @@ Once you do that, here's what your terminal should look like:
 <p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![GitHub API in Node.js Tutorial](github-api-nodejs-5 "GitHub API in Node.js Tutorial")
+![GitHub API in Node.js Tutorial](github-api-nodejs-5.png "GitHub API in Node.js Tutorial")
 
 And if you now visit **http://localhost:8080**, you should see the following page: 
 
 <p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
-![GitHub API in Node.js Tutorial](github-api-nodejs-6 "GitHub API in Node.js Tutorial")
+![GitHub API in Node.js Tutorial with-shadow](github-api-nodejs-6.png "GitHub API in Node.js Tutorial")
  
 Awesome! Let's move ahead. 
 
@@ -228,7 +228,7 @@ We add our API key, hostname, and user agent from earlier created constants. Add
 
 Anyway, let's now create our API routes for different API endpoints. 
 
-![GitHub API in Node.js Tutorial](github-api-nodejs-7 "GitHub API in Node.js Tutorial")
+![GitHub API in Node.js Tutorial](github-api-nodejs-7.png "GitHub API in Node.js Tutorial")
 
 ## Add API Routes
 
@@ -323,17 +323,17 @@ We can directly test these APIs in our browser since all of them are GET APIs. F
 
 Visit the endpoint **http://localhost:8080/github_api/user/fuzzysid** and you should get back the following:
 
-![GitHub API in Node.js Tutorial](github-api-nodejs-8 "GitHub API in Node.js Tutorial")
+![GitHub API in Node.js Tutorial with-shadow](github-api-nodejs-8.png "GitHub API in Node.js Tutorial")
 
 Looks like that's me! Alright, now let's test the endpoint** /repo/:user/:reponame**. This endpoint will take the username and a repository name to fetch the information. I'll put in my own username and my [react-todo](https://github.com/FuzzySid/react-todo) repository's name.
 
 So now if you visit the endpoint **http://localhost:8080/github_api/repo/fuzzysid/react-todo**, you should get back the following response:
 
-![GitHub API in Node.js Tutorial](github-api-nodejs-9 "GitHub API in Node.js Tutorial")
+![GitHub API in Node.js Tutorial with-shadow](github-api-nodejs-9.png "GitHub API in Node.js Tutorial")
 
 That works as well! Finally, let's test the endpoint **/commit/:user/:reponame**. It takes the same route parameters as the previous one and gives back the commit history of that repository. Let's use this to check the commit history of my react-todo repository:
 
-![GitHub API in Node.js Tutorial](github-api-nodejs-10 "GitHub API in Node.js Tutorial")
+![GitHub API in Node.js Tutorial with-shadow](github-api-nodejs-10 "GitHub API in Node.js Tutorial")
 
 ## What More You Can Explore
 
