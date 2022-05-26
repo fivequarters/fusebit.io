@@ -56,7 +56,7 @@ block content
                                 .post__sidebar--sections
                                 if posts_related
                                     .post__sidebar--separator
-                                    .post__sidebar--section Related Posts
+                                    .post__sidebar--section(id="related-posts-cta") Related Posts
                             if docs_related
                                 .post__sidebar--toc-wrapper.post__sidebar--toc-wrapper-margin
                                     each doc in docs_related
@@ -87,7 +87,7 @@ block content
         if posts_related
             .layout.post__trending-layout
                 h2 Related Content
-                .post-card-container.post__trending-list
+                .post-card-container.post__trending-list(id="related-content")
                     each relatedPost in posts_related
                         each post in [...collections.post].filter((post) => post.data.post_slug === relatedPost).slice(0, 3)
                             +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
@@ -150,6 +150,8 @@ block scripts
 
         const children = document.querySelector(".post__article")?.childNodes;
         const sidebar = document.querySelector(".post__sidebar--sections");
+        const relatedContent = document.getElementById("related-content");
+        const relatedPostsCta = document.getElementById("related-posts-cta");
         for (child in children) {
             const element = children[child];
             if (element?.nodeName?.includes("H")) {
@@ -161,5 +163,11 @@ block scripts
                 } 
                 sidebar.append(section);
             }
+        }
+
+        if (relatedContent && relatedPostsCta) {
+            relatedPostsCta.addEventListener("click", () => {
+                relatedContent.scrollIntoView();
+            });
         }
 
