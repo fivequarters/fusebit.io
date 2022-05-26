@@ -333,7 +333,7 @@ So now if you visit the endpoint **http://localhost:8080/github_api/repo/fuzzysi
 
 That works as well! Finally, let's test the endpoint **/commit/:user/:reponame**. It takes the same route parameters as the previous one and gives back the commit history of that repository. Let's use this to check the commit history of my react-todo repository:
 
-![GitHub API in Node.js Tutorial with-shadow](github-api-nodejs-10 "GitHub API in Node.js Tutorial")
+![GitHub API in Node.js Tutorial with-shadow](github-api-nodejs-10.png "GitHub API in Node.js Tutorial")
 
 ## What More You Can Explore
 
