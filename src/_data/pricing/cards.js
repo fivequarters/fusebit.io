@@ -1,7 +1,7 @@
 const freeCard = {
     highlightColor: 'var(--green)',
     title: 'Developer',
-    price: 'Free Forever',
+    price: 'Free',
     features: [
         '3 SaaS integrations',
         'Add integrations to your multi-tenant application',
@@ -25,7 +25,7 @@ const freeCard = {
 const businessCard = {
     highlightColor: 'var(--yellow)',
     title: 'Team',
-    price: '$499/mo',
+    price: '$499/month',
     features: [
         'All the features of Developer, plus',
         '10 SaaS integrations',
@@ -46,7 +46,7 @@ const businessCard = {
 const enterpriseCard = {
     highlightColor: 'var(--orange)',
     title: 'Enterprise',
-    price: 'Custom pricing',
+    price: 'Custom Pricing',
     features: [
         'Everything in Team, plus',
         'Unlimited SaaS integrations',
