@@ -38,6 +38,12 @@
             font-weight: 600;
             margin: 0;
             margin-bottom: 16px;
+
+            &-cta {
+                width: fit-content;
+                margin-bottom: 0;
+                cursor: pointer;
+            }
         }
 
         &--sections {
@@ -69,11 +75,16 @@
             &-link {
                 display: flex;
                 align-items: center;
-                color: var(--orange);
+                color: var(--dark);
                 text-decoration: none;
                 font-weight: 500;
 
-                img {
+                &:hover {
+                    color: var(--dark);
+                    cursor: pointer;
+                }
+
+                svg {
                     margin: 0;
                     margin-right: 10px;
                 }

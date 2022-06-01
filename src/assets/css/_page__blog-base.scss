@@ -7,6 +7,7 @@ h6,
 p {
     font-family: var(--sora);
     color: var(--dark);
+    transition: all .15s linear;
 }
 
 pre {
