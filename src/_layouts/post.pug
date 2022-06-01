@@ -51,14 +51,20 @@ block content
                 article.article
                     .post__sidebar
                         .post__sidebar--wrapper
+                            .post__sidebar--cross-mobile
+                                <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1.5L17 17.5" stroke="#03032d" stroke-width="2"/>
+                                    <path d="M17 1.5L1 17.5" stroke="#03032d" stroke-width="2"/>
+                                </svg>
                             .post__sidebar--toc-wrapper
                                 h5.post__sidebar--title Table of Contents
                                 .post__sidebar--sections
                                 if posts_related
                                     .post__sidebar--separator
                                     .post__sidebar--title.post__sidebar--title-cta(id="related-content-cta") Related Content
+                                    .post__sidebar--separator.post__sidebar--separator-mobile-visible
                             if docs_related
-                                .post__sidebar--toc-wrapper.post__sidebar--toc-wrapper-margin
+                                .post__sidebar--toc-wrapper.post__sidebar--toc-wrapper-links
                                     each doc in docs_related
                                         a.post__sidebar--section.post__sidebar--section-link(href=doc.url target="_blank" rel="noopener") 
                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,6 +72,7 @@ block content
                                                 <path d="M8.35378 11.5354L7.11635 12.7729C6.86103 13.0284 6.55786 13.2312 6.22416 13.3695C5.89047 13.5079 5.53278 13.5791 5.17154 13.5792C4.8103 13.5793 4.45258 13.5082 4.11881 13.37C3.78505 13.2318 3.48179 13.0292 3.22635 12.7738C2.97092 12.5183 2.76831 12.2151 2.63011 11.8813C2.4919 11.5475 2.42081 11.1898 2.4209 10.8286C2.42098 10.4673 2.49224 10.1096 2.6306 9.77595C2.76896 9.44226 2.9717 9.13909 3.22726 8.88377L4.99503 7.116C5.25039 6.86064 5.55355 6.65808 5.88719 6.51988C6.22084 6.38168 6.57844 6.31055 6.93957 6.31055C7.30071 6.31055 7.65831 6.38168 7.99195 6.51988C8.3256 6.65808 8.62875 6.86064 8.88412 7.116" stroke="#03032d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                             | #{doc.text}
+                                    .post__sidebar--separator.post__sidebar--separator-mobile-visible
                             if post_cta
                                 .post__sidebar--cta-wrapper
                                     +cta(post_cta.text, post_cta.url, 'post__sidebar--cta', null, true, "eventName", "eventLocation", true, "_blank", "noopener")
