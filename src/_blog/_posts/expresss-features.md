@@ -9,7 +9,7 @@ post_slug: new-express-5-features
 tags: ['post', 'developer tools']
 post_date_in_url: false
 post_og_image: 'hero'
-posts_related: ['using-linear-with-everyauth', 'using-reddit-with-everyauth', 'web-frameworks-plugins-architecture-overview']
+posts_related: ['everyauth-scalable-asana-gcal', 'integrate-gitlab-api-everyauth', 'integrate-google-calendar-node-everyauth']
 ---
 
 Express is one of the [most popular Node.js web frameworks](https://insights.stackoverflow.com/survey/2021#web-frameworks), thanks to its minimalism and the flexibility it gives developers when building Node.js apps. With it, you can easily build fast server-side web apps and powerful APIs. Because Express is a lightweight layer on top of Node.js, it doesn’t hinder developers from fully leveraging Node.js features.
