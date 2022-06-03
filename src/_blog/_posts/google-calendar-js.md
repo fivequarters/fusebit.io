@@ -191,8 +191,6 @@ node main.js
 
 If you don’t have any errors in the code, Google Calendar will successfully add the event. 
 
-![google calendar api javascript](google-calendar-api-3.png "google calendar api javascript")
-
 ### List Events Using Google Calendar API
 
 Now that we've added events to the calendar, how do we know that the events are in there? Let’s write another function that will list all upcoming events. To get started, add the function below underneath the addCalendarEvent function. Make sure you comment on the line of code where you call the addCalendarEvent function to avoid adding multiple events again and again. 
