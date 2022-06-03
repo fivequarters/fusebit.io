@@ -42,6 +42,11 @@ header.header
                     a.track-with-segment(href=homepage.links.loginLink data-event-name="Login Button Clicked" data-object-location="Header") Login
                 li 
                     a.track-with-segment.header__links--signUp.get-started(href=homepage.links.getStartedLink data-event-name="Sign Up Button Clicked", data-object-location="Header") Get Started
+        
+        .header__sidebarMobile--btn.header__sidebarMobile--btn-hidden
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 3H3C1.9 3 1 3.9 1 5V17C1 18.1 1.9 19 3 19H8V21H16V19H21C22.1 19 23 18.1 23 17V5C23 3.9 22.1 3 21 3ZM21 17H3V5H21V17ZM19 8H8V10H19V8ZM19 12H8V14H19V12ZM7 8H5V10H7V8ZM7 12H5V14H7V12Z" fill="white"/>
+            </svg>
 
         .header__menuMobile--btn 
             span.top 
@@ -73,6 +78,12 @@ header.header
                 let prevScroll = window.pageYOffset;
                 const isBlogSite = window.location.pathname.includes('blog');
                 const isMakeSite = window.location.pathname.includes('make');
+                const sidebar = document.querySelector(".post__sidebar");
+                const sidebarMobileBtn = document?.querySelector(".header__sidebarMobile--btn");
+
+                if (sidebar) {
+                    sidebarMobileBtn.classList.remove("header__sidebarMobile--btn-hidden");
+                }
 
                 if(isBlogSite || isMakeSite) {
                     const header = document.querySelector('.header');
@@ -105,9 +116,21 @@ header.header
 
                 const header = document.querySelector('.header');
                 const menuMobileBtn = document.querySelector('.header__menuMobile--btn');
+                const menuSidebarMobileBtn = document.querySelector('.header__sidebarMobile--btn');
 
                 menuMobileBtn.addEventListener('click', () => {
                     header.classList.toggle('header__menuMobile--open');
                     document.querySelector('html').classList.toggle('hidden');
+                    if (header.classList.contains('header__menuMobile--open')) {
+                        sidebarMobileBtn.classList.add("header__sidebarMobile--btn-hidden");
+                    } else {
+                        setTimeout(() => {
+                            sidebarMobileBtn.classList.remove("header__sidebarMobile--btn-hidden");
+                        }, 200);
+                    }
+                });
+
+                menuSidebarMobileBtn.addEventListener('click', () => {
+                    sidebar.classList.add("post__sidebar--mobile-active");
                 });
             });
