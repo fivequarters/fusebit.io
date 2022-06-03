@@ -5,7 +5,7 @@ post_author_avatar: subha.png
 date: '2022-06-03'
 post_image: japa-test-runner.png
 post_excerpt: Japa is a fast, small, and simple API-first Node.js test runner with a rich feature set. Learn what Japa is and break down its feature set with code examples.
-post_slug: japa-test-runner
+post_slug: japa-node-test-runner
 tags: ['post', 'developer tools']
 post_date_in_url: false
 post_og_image: 'hero'
@@ -254,9 +254,7 @@ The [Japa documentation](https://japa.dev/creating-reporters) offers more detail
 
 The Japa Node.js test runner offers a quick, easy way to test your backend without spending a lot of time and work on setup. Not only that, but you have multiple options for configuring Japa to best meet your use case. You should now have a good sense of how Japa can work for you, but for more details, check the [Japa documentation](https://japa.dev/).
 
-Another way to improve your projects is with a developer-friendly platform like [Fusebit](https://fusebit.io/). The platform allows you to quickly and easily add multiple third-party integrations to your projects. The test runner in the Fusebit Editor uses JavaScript in a Node.js environment. Fusebit also offers ready-made templates for common scenarios, so that you spend less time learning and more time on building your product.
-
-The cloud-native platform handles scalability and maintenance for you, and its flexibility means there are few limits on what you can build.
+Another way to improve your projects is with a developer-friendly platform like [Fusebit](https://fusebit.io/). The platform allows you to quickly and easily add multiple third-party integrations to your projects. The test runner in the Fusebit Editor uses JavaScript in a Node.js environment. Fusebit also offers ready-made templates for common scenarios, so that you spend less time learning and more time on building your product. The Fusebit cloud-native platform handles scalability and maintenance for you, and its flexibility means there are few limits on what you can build.
 
 You can get started with Fusebit’s [free plan](https://fusebit.io/pricing/) or learn more about the platform in the [documentation](https://developer.fusebit.io/docs).
 
