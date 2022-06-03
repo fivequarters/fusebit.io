@@ -4,7 +4,7 @@ post_author: Success Ologunsua
 post_author_avatar: success.png
 date: '2022-06-03'
 post_image: process-large-files.png
-post_excerpt: Processing large files takes a lot of memory and can severely impact the performance of your Node.js application. Using Node.js streams, you can optimize how large files are handled
+post_excerpt: Processing large files takes a lot of memory and can severely impact the performance of your Node.js application. Using Node.js streams, you can optimize how large files are handled.
 post_slug: process-large-files-nodejs-streams
 tags: ['post', 'developer tools']
 post_date_in_url: false
@@ -207,7 +207,7 @@ You’ll see that a `business_data_output.csv` file has been created and that th
 
 Node.js streams are an effective way of handling data in input/output operations. In this tutorial, you learned how to read large files with just the source file path, how to parse the streamed data, and how to output the data. You’ve seen firsthand how streams can be used to build large-scale, high-performing applications.
 
-Note that using streams in your application can increase its complexity, so be sure that your application really needs this functionality before implementing Node.js streams.​​
+Note that using streams in your application can increase its complexity, so be sure that your application really needs this functionality before implementing Node.js streams.
 
 If you’d like to do even more with your application, try [Fusebit](https://fusebit.io/). The developer-friendly integration platform allows you to easily add third-party integrations to your project, and its integration logic runs in a Node.js environment. You can use the SaaS cloud-native platform for seamless editing, debugging, deployment, and scaling.
 
