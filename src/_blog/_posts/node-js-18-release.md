@@ -10,11 +10,6 @@ tags: ['post', 'node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-njs18-hero.png
 posts_related: ['node-18-prefix-only-modules','run-every-nodejs-version-in-lambda',’undici-mocking’]
-docs_related: [
-    { text: 'Setting up CI/CD', url: 'https://developer.fusebit.io/docs/setting-up-cicd'},
-    { text: 'Developing Locally', url: 'https://developer.fusebit.io/docs/developing-locally'}
-]
-post_cta: { text: 'Get Started Now', url: 'https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=CTAs'}
 ---
 
 Node.js 18 is here and we are super excited to see it released on April 19th, 2022! Read through for a recap of the new features available in this latest release. 
