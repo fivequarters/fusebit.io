@@ -6,7 +6,7 @@ date: "2019-06-08"
 post_image: blog-new-trend-main.png
 post_excerpt: Most people buy cars to get from A to B, not because they like driving. That’s why Uber and Lyft are so successful...
 post_slug: twilio-segment-github-serverless-extensibility
-tags: ['post', 'serverless']
+tags: ['post','Business']
 post_date_in_url: true
 ---
 
