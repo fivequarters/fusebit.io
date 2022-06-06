@@ -6,7 +6,7 @@ date: '2021-10-27'
 post_image: blog-koa-main.jpg
 post_excerpt: In this post you can learn how to run Koa on AWS Lambda and the differences with Express.
 post_slug: koa-in-the-cloud
-tags: ['post','serverless']
+tags: ['post']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-koa-social-card.png
 ---
