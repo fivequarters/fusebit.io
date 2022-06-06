@@ -6,7 +6,7 @@ date: '2019-07-04'
 post_image: blog-buy-build-main.jpg
 post_excerpt: Are you ready for the new way companies use your SaaS?
 post_slug: buy-then-build-and-integrate
-tags: ['post']
+tags: ['post','Business']
 post_date_in_url: true
 ---
 
