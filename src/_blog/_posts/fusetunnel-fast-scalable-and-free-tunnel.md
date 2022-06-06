@@ -1,6 +1,6 @@
 ---
 post_title: Fusetunnel - A Fast, Scalable, and Free Tunnel
-post_author: Liz Parody
+post_author: Lizz Parody
 post_author_avatar: liz.png
 date: '2021-10-07'
 post_image: blog-fusetunnel-main.png

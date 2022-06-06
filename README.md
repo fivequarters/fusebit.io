@@ -123,7 +123,7 @@ post_author: string | The author name of the post
 
 post_author_avatar: string | The url of the author avatar image
 
-post_authors: array of objects | The list of authors for a post. Each object in the list can have the following keys: `name` **required** and `avatar` **optional**. i.e `[{ name: 'Randall Tombaugh', avatar: 'randall.png' }, { name: 'Yavor', avatar: 'yavor.png' }]`
+post_authors: array of objects | The list of authors for a post. Each object in the list can have the following keys: `name` **required** and `avatar` **optional**. i.e [{ name: 'Randall Tombaugh', avatar: 'randall.png' }, { name: 'Yavor', avatar: 'yavor.png' }]
 
 date: string | The date of the post with the following format: 'YYYY-MM-DD'. This prop will be used to order the collections of posts by date.
 
@@ -133,17 +133,19 @@ post_excerpt: string | The post excerpt that's going to be shown in the blog hom
 
 post_slug: string | This prop will set the slug of the post, if omitted the slug will be generated from the title.
 
-tags: string[] | The list of tags you want to set to an article, **'post' is always required when creating a blog post**.
+tags: string[] | The list of tags you want to set to an article, **'post' is always required when creating a blog post**. If you want the tag to be hidden from the tab bar, add the `:hidden` suffix to the tag, for example: ["post", "crypto:hidden"]
 
 post_date_in_url: boolean | When setting this prop you can define if you want a date path in your url or not. If omitted defaults to `false`.
 
-post_og_image: string | Could be `hero`, `site` or a custom url. `hero` will set the hero image of the post. `site` will set the default og image of the marketing site. If this prop is omitted it'll default to `hero`.
+post_og_image: string | Could be 'hero', 'site' or a custom url. 'hero' will set the hero image of the post. 'site' will set the default og image of the marketing site. If this prop is omitted it'll default to 'hero'.
 
 posts_related: string[] | A URL slugs list of the related posts. If ommited, the most recent posts will be displayed by default. It works with 1, 2 or a maximum of 3 values on the array.
 
 docs_related: { text: string; url: string }[] | A list of related docs for the sidebar. If ommited, there won't be related docs on the sidebar.
 
 post_cta: { text: string; url: string } | A sidebar CTA. If ommited, there won't be a CTA on the sidebar.
+
+site_cta: string | Could be 'disabled' or a custom url. 'disabled' will remove the header CTA on a specific blog post. if a custom url is used, the url of the header CTA will be set to that value instead of the site-wide CTA value.
 ---
 ```
 
@@ -159,7 +161,7 @@ date: '2019-08-26'
 post_image: blog-interview-with-auth0-main.png
 post_excerpt: We spoke with Eugenio Pace, the co-founder and CEO of [Auth0](https://auth0.com/), to get the scoop on his company's approach to integrations.
 post_slug: interview-with-eugenio-pace-auth0-ceo
-tags: ['post']
+tags: ['post', 'unicorn:hidden']
 post_date_in_url: true
 post_og_image: https://cdn.fusebit.io/twitter/twitter-orange.png
 posts_related: ['nodejs-https-imports','run-every-nodejs-version-in-lambda','run-nodejs-from-google-sheets']
@@ -168,6 +170,7 @@ docs_related: [
     { text: 'Developing Locally', url: 'https://developer.fusebit.io/docs/developing-locally'}
 ]
 post_cta: { text: 'Get Started Now', url: 'https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=CTAs'}
+site_cta: 'disabled'
 ---
 ```
 

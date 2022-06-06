@@ -1,0 +1,107 @@
+.features__integrations
+    .features__integrations__step1
+        span.step1__badge Step 1
+
+        .step1__header
+            .step1__header--brand 
+                img(src="../../assets/images/fusebit__logo--color.svg", alt="")
+
+            h4.step1__header--title Connect Integrations
+
+        .step1__instalables 
+            .step1__instalable 
+                .step1__instalable--logo 
+                    img(src="../../assets/images/icons/slack.svg", alt="Slack")
+            
+                .step1__instalable--brand 
+                    p Slack notifications
+
+                .step1__instalable--btn 
+                    button(data-app="slack")
+                        span Install          
+
+            .step1__instalable 
+                .step1__instalable--logo 
+                    img(src="../../assets/images/icons/jira.svg", alt="Jira")
+            
+                .step1__instalable--brand 
+                    p Jira issue sync
+
+                .step1__instalable--btn 
+                    button(data-app="jira")
+                        span Install       
+
+            .step1__instalable 
+                .step1__instalable--logo 
+                    img(src="../../assets/images/icons/asana.svg", alt="Asana")
+            
+                .step1__instalable--brand 
+                    p Asana task sync
+
+                .step1__instalable--btn 
+                    button(data-app="asana")
+                        span Install   
+
+    .features__integrations__step2.dnone
+        span.step2__badge Step 2
+
+        .step2__header
+            .step2__header--brand 
+                img(src="../../assets/images/icons/slack-logo.svg", alt="")
+
+            h4.step2__header--title Sign in to Fusebit
+
+        form.step2__form(action="#") 
+            .step2__form--row 
+                label(for="#") Email address 
+                input(type="email" id="step2__input--email" placeholder="name@work-email.com" value="demo@demo.com")
+            .step2__form--row 
+                label(for="#") Password
+                input(type="password" id="step2__input--password" placeholder="Your password" value="123456")
+                
+            .step2__form--row 
+                button(type="submit" id="step2__submit") 
+                    span Sign in
+
+    script.
+        let step1View = document.querySelector('.features__integrations__step1') 
+        let step1Btns = step1View.querySelectorAll('button');
+
+        let step2View = document.querySelector('.features__integrations__step2') 
+        let step2Btns = step2View.querySelectorAll('button');
+
+        step1Btns.forEach(btn => {
+            btn.addEventListener('click', (e)=> {
+                e.preventDefault();
+
+                if(e.target.dataset.app == 'jira') {
+                   changeImageSrc('jira-logo.svg');
+
+                } else if(e.target.dataset.app == 'asana') {
+                    changeImageSrc('asana-logo.png');
+
+                } else if(e.target.dataset.app == 'slack') {
+                    changeImageSrc('slack-logo.svg');
+                }
+
+
+                toggleView([step1View, step2View]);
+            })
+        })
+        step2Btns.forEach(btn => {
+            btn.addEventListener('click', (e)=> {
+                e.preventDefault();
+                toggleView([step1View, step2View])
+            })
+        })
+
+        function toggleView(arrObjs) {
+            arrObjs.forEach(obj => obj.classList.toggle('dnone'))
+        }
+        function changeImageSrc(imgName) {
+            let img = document.querySelector('.step2__header--brand img');
+            let imgSrcArr = img.src.split('icons/');
+            imgSrcArr[1] = imgName;
+
+            img.src = imgSrcArr.join('icons/');
+        }

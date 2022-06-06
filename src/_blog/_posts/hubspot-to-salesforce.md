@@ -1,6 +1,6 @@
 ---
 post_title: Import Contacts from HubSpot to Salesforce
-post_author: Liz Parody
+post_author: Lizz Parody
 post_author_avatar: liz.png
 date: '2021-12-22'
 post_image: blog-hubspot-salesfoce-main.png

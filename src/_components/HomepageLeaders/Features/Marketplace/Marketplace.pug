@@ -1,0 +1,292 @@
+mixin step1NavbarLogo(character = 'F')
+    .step1NavbarLogo 
+        p= character.toUpperCase()
+
+mixin step1Card({ image, title })
+    //.marketplaceDemo__card--installed
+    .marketplaceDemo__card
+        img.marketplaceDemo__card--logo(src= image, alt= title)
+
+        h6.marketplaceDemo__card--name= title
+
+        button.marketplaceDemo__card--btn
+            span InstaII
+
+        - let dateArr = new Date().toISOString().slice(0, 10).split('-');
+        span.marketplaceDemo__card--installedDate= `Installed on ${dateArr[1]}/${dateArr[2]}/${dateArr[0]}`
+
+        .marketplaceDemo__card--actions 
+            button.marketplaceDemo__card--actions--settings
+                svg(width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M11.4437 5.12657l-1.1152-.12121c-.1333-.01212-.2424-.10909-.2788-.2303-.07269-.21818-.15754-.42424-.25451-.61818-.0606-.12121-.04848-.25455.03637-.36364l.70304-.87273c.1333-.16969.1212-.41212-.0243-.55757l-.72723-.72727c-.15757-.15758-.4-.1697-.55757-.02425l-.88485.69091c-.10909.08485-.24243.09697-.36364.03637-.19394-.09697-.41212-.19394-.61818-.25455-.13333-.03636-.21818-.14545-.2303-.27879L7.00732.690211C6.98307.472029 6.80125.314453 6.58307.314453H5.54065c-.21818 0-.4.157576-.42424.375758L4.99519 1.80536c-.01212.13334-.10909.24243-.2303.27879-.21818.07273-.42424.15758-.61818.25455-.12121.0606-.25455.04848-.36364-.03637l-.87272-.70303c-.1697-.13333-.41213-.12121-.55758.02424l-.72727.72728c-.15758.15757-.1697.4-.02425.55757l.70303.87273c.08485.09697.09697.24242.03637.36364-.09697.20606-.18182.41212-.25455.61818-.03636.12121-.14545.21818-.27878.2303l-1.115156.12121c-.218182.02425-.375758.20606-.375758.42425v1.04242c0 .21818.157576.4.375758.42424l1.115156.12121c.13333.01213.24242.1091.27878.23031.07273.21818.15758.42424.25455.61818.0606.12121.04848.25455-.03637.36364l-.70303.87272c-.13333.1697-.12121.41212.02425.55758l.72727.7273c.15758.1575.4.1697.55758.0242l.87272-.70302c.09697-.08484.24243-.09697.36364-.03636.20606.09697.41212.18182.61818.25458.12121.0363.21818.1454.2303.2788l.12122 1.1151c.02424.2182.20606.3758.42424.3758h1.04242c.21818 0 .4-.1576.42425-.3758l.12121-1.1151c.01212-.1334.10909-.2425.2303-.2788.21818-.07276.42424-.15761.61818-.25458.12121-.06061.25455-.04848.36364.03636l.87273.70302c.16969.1333.41212.1212.55757-.0242l.72725-.7273c.1576-.15758.1697-.4.0243-.55758l-.70306-.87272c-.08485-.09697-.09697-.24243-.03637-.36364.09697-.20606.18182-.41212.25453-.61818.0364-.12121.1455-.21818.2788-.23031l1.1152-.12121c.2181-.02424.3757-.20606.3757-.42424V5.5387c.0121-.21819-.1454-.38788-.3636-.41213zM6.06186 8.05991c-1.10303 0-2-.89697-2-2s.89697-2 2-2 2 .89697 2 2-.89697 2-2 2z" fill="#441B49")
+
+            button.marketplaceDemo__card--actions--delete
+                svg(width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M11.088 1.73482H8.18194v-.69397c0-.375907-.36144-.679522-.80964-.679522H4.19158c-.46265 0-.80964.303615-.80964.679522v.69397H.475918c-.231325 0-.4192774.18795-.4192774.41928 0 .23132.1879524.41928.4192774.41928h.679522l.63614 7.77832c0 .853.70843 1.5614 1.5759 1.5614H8.1964c.86747 0 1.5759-.6939 1.5759-1.547l.6361-7.80718h.6796c.2313 0 .4192-.18795.4192-.41928 0-.23132-.1879-.40482-.4192-.40482zm-6.88196-.53494h3.15181v.5494H4.20604v-.5494zm.2747 8.06747c-.23133 0-.41928-.18795-.41928-.40482l-.17349-4.04819c-.01446-.1012.02891-.21687.1012-.30361.07229-.07229.17349-.13013.28916-.13013.11566-.01445.21687.02892.30361.10121.08675.08675.13012.18795.13012.30361l.18795 4.0482c0 .24578-.18795.43373-.41927.43373zm3.0506-.39036c-.02892.23133-.20241.39036-.43374.39036-.13012 0-.23132-.04337-.30361-.13012-.08675-.08675-.11566-.20241-.1012-.31807l.20241-4.04819c.02891-.23133.21686-.39037.43373-.39037h.01446c.21687.02892.3759.21687.3759.43374l-.18795 4.06265z" fill="#441B49")
+    
+
+mixin marketplaceDemo__step2
+    .step2.dnone
+        .step2__head
+            .step2__logo 
+                img(src="../../../../assets/images/icons/slack-logo.svg", alt="Slack logo")
+
+            h5.step2__title Sign in to Acme
+
+            button.step2__close 
+                span 
+
+        .step2__content
+            .step2__form
+                .step2__form--row 
+                    label(for="step2_email") Email address
+                    input(type="email" name="step2_email" id="step2_email" placeholder="name@work-email.com" value="john@acme.com") 
+
+                .step2__form--row 
+                    label(for="step2_password") Password
+                    input(type="password" name="step2_password" id="step2_password" placeholder="Your password" value="pineappleizza") 
+
+                .step2__form--row
+                    button.step2__form--submit(type="submit")
+                        span Sign in 
+
+                .step2__form--row.step2__form--row--inline
+                    input.step2__form--persistdata(type="checkbox", id="step2_persistdata" name="step2_persistdata" checked)
+                    label(for="step2_persistdata") Remember me on this device
+
+            .step2__links 
+                ul 
+                    li  
+                        | Forgot your password?
+                        a(href="#") Get help signing in
+
+                    li  
+                        | Looking for another workspace?
+                        a(href="#") Find your workspaces
+
+mixin marketplaceDemo__step3 
+    .step3.dnone 
+        .step3__head 
+            .step3__logo 
+                img(src="../../../../assets/images/icons/slack-logo.svg", alt="Slack logo")
+
+            .step3__user 
+                .step3__user--image 
+                    svg(width="16" height="17" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        rect(width="16" height="16.7111" rx="2.84444" fill="#36C5F0")
+                        path(d="M9.09766 9.18359H6.89453l-.46094 1.32421H5.40625l2.14844-5.68749h.88672l2.15239 5.68749H9.5625l-.46484-1.32421zm-1.92578-.79687h1.64843l-.82422-2.35938-.82421 2.35938z" fill="#fff")
+
+                h6.step3__user--name Acme 
+
+                .step3__user--arrow
+                    svg(width="10" height="5" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M1 .507812L5 4.50781 9 .507812" stroke="#000" stroke-linecap="round" stroke-linejoin="round")
+
+        .step3__content 
+            .step3__connection
+                img(src="../../../../assets/images/marketplaceDemo/step3__connect.png", alt="Logos")
+
+                h5 Budgetly bot is requesting permission to access the Acme Slack workspace
+
+            .step3__permissions
+                h5.step3__permissions--title What will Budgetly bot be able to do?
+                .step3__permissions--permission 
+                    .step3__permissions--permission--icon
+                        svg(width="10" height="10" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            rect(x=".130435" y=".130435" width="4.18394" height="4.18394" rx=".304348" stroke="#000")
+                            rect(x=".130435" y="5.68512" width="4.18394" height="4.18394" rx=".304348" stroke="#000")
+                            rect(x="5.6861" y=".130435" width="4.18394" height="4.18394" rx=".304348" stroke="#000")
+                            rect(x="5.6861" y="5.68512" width="4.18394" height="4.18394" rx=".304348" stroke="#000")
+
+                    p.step3__permissions--permission--text Perform actions in your workspaces
+
+                    .step3__permissions--permission--arrow
+                        svg(width="3" height="5" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M2.65188 2.14827c.19284.19484.19284.50862 0 .70346L.855371 4.66685C.541142 4.98434-2.5e-7 4.76182-2.3e-7 4.31513L-7e-8.684872C-5e-8.238176.541142.0156605.855371.333146L2.65188 2.14827z" fill="#000")
+
+            .step3__actions 
+                button.step3__actions--btn.step3__actions--btn--cancel 
+                    span Cancel
+                button.step3__actions--btn.step3__actions--btn--allow 
+                    span Allow
+
+                
+.marketplaceDemo 
+    .marketplaceDemo__navbar 
+        ul 
+            li.marketplaceDemo__navbar--item.marketplaceDemo__navbar--item-logo
+                +step1NavbarLogo('B')
+
+            li.marketplaceDemo__navbar--item 
+                svg(width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(fill-rule="evenodd" clip-rule="evenodd" d="M7.188.07l6.706 5.565c.207.173.069.519-.208.519h-1.555v6.74a.31.31 0 01-.311.312H8.57a.31.31 0 01-.31-.311V8.988c0-.172-.104-.31-.277-.31h-1.97a.31.31 0 00-.312.31v3.907c0 .173-.104.31-.276.31h-3.25a.31.31 0 01-.31-.31V6.154H.273c-.242 0-.38-.346-.173-.519L6.807.07a.271.271 0 01.38 0z" fill="#03032D")
+
+            li.marketplaceDemo__navbar--item.marketplaceDemo__navbar--item--active
+                svg(width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M15.258 6.836l-1.487-.162a.435.435 0 01-.371-.307 6.287 6.287 0 00-.34-.824.443.443 0 01.049-.485l.937-1.163a.565.565 0 00-.032-.744l-.97-.97a.533.533 0 00-.743-.032l-1.18.921a.443.443 0 01-.485.049 5.206 5.206 0 00-.824-.34.413.413 0 01-.307-.371L9.343.92A.562.562 0 008.777.42h-1.39c-.29 0-.533.21-.565.5L6.66 2.409a.435.435 0 01-.307.372c-.29.096-.565.21-.824.339a.443.443 0 01-.485-.049L3.88 2.133a.565.565 0 00-.743.032l-.97.97a.533.533 0 00-.032.744l.937 1.163a.44.44 0 01.049.485c-.13.275-.243.55-.34.824a.435.435 0 01-.371.307L.923 6.82a.562.562 0 00-.501.566v1.39c0 .29.21.533.5.565l1.488.162a.435.435 0 01.371.307c.097.29.21.566.34.824.08.162.065.34-.049.485l-.937 1.164a.565.565 0 00.032.743l.97.97c.21.21.533.226.743.032l1.164-.937a.44.44 0 01.485-.049c.275.13.55.243.824.34.162.048.291.194.307.371l.162 1.487c.032.291.275.501.566.501h1.39c.29 0 .533-.21.565-.5l.162-1.488a.435.435 0 01.307-.371c.29-.097.565-.21.824-.34a.443.443 0 01.485.049l1.163.937c.227.178.55.162.744-.032l.97-.97a.533.533 0 00.032-.743l-.937-1.164a.44.44 0 01-.049-.485c.13-.275.242-.55.34-.824a.435.435 0 01.371-.307l1.487-.162a.562.562 0 00.501-.566v-1.39c.016-.29-.194-.517-.485-.549zm-7.176 3.911a2.67 2.67 0 01-2.666-2.666 2.67 2.67 0 012.666-2.667A2.67 2.67 0 0110.75 8.08a2.67 2.67 0 01-2.667 2.666z" fill="#03032D")
+
+            li.marketplaceDemo__navbar--item 
+                svg(width="15" height="14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(fill-rule="evenodd" clip-rule="evenodd" d="M2.176.697h9.664c1.192 0 2.168.878 2.168 1.952v8.701c0 1.074-.976 1.952-2.168 1.952H2.176c-1.193 0-2.168-.878-2.168-1.952V2.649C.008 1.575.983.697 2.176.697zm1.678 3.668L6.655 7 3.854 9.634 2.88 8.79 4.785 7 2.88 5.208l.974-.844zm4.572 3.677h2.71v1.22h-2.71v-1.22z" fill="#03032D")
+                
+            li.marketplaceDemo__navbar--item 
+                svg(width="14" height="15" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M7 .135a7 7 0 100 14 7 7 0 000-14zm1.909 9.703c-.344.386-.842.613-1.492.681v.99h-.829v-.985c-1.084-.11-1.755-.741-2.014-1.89L5.856 8.3c.119.722.512 1.083 1.179 1.083.312 0 .543-.077.69-.232a.783.783 0 00.22-.56c0-.226-.073-.398-.22-.514-.147-.117-.475-.265-.981-.444-.456-.158-.812-.314-1.068-.47a1.764 1.764 0 01-.625-.647 1.922 1.922 0 01-.24-.972c0-.485.143-.921.429-1.31.285-.386.735-.623 1.348-.71V2.76h.829v.765c.926.11 1.526.634 1.799 1.572l-1.142.468c-.223-.643-.566-.964-1.033-.964-.234 0-.422.072-.563.216a.716.716 0 00-.213.522c0 .208.069.368.205.48.136.111.43.249.877.413.492.18.878.35 1.158.51.28.16.503.38.67.662.167.282.25.61.25.988 0 .578-.172 1.06-.516 1.446z" fill="#03032D")
+
+            li.marketplaceDemo__navbar--item 
+                svg(width="12" height="14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M5.99 7.309C2.808 7.315.175 9.834.016 13.019a.667.667 0 00.67.697H11.32a.666.666 0 00.664-.698c-.16-3.188-2.798-5.71-5.984-5.71h-.01zM6 .283a3.074 3.074 0 00-3.063 3.07C2.938 5.044 4.313 6.43 6 6.43a3.082 3.082 0 003.067-3.075c0-1.689-1.38-3.07-3.067-3.07z" fill="#03032D")
+
+    .marketplaceDemo__content 
+        .marketplaceDemo__content--head 
+            h4.marketplaceDemo__title 
+                | Budgetly Integration Marketplace
+
+                .marketplaceDemo__title--arrow 
+                    svg(width="10" height="7" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M.628 1.243l4.243 4.242 4.243-4.242" stroke="#000")
+                
+            .marketplaceDemo__minisearch
+                input(type="text" id="minisearch" name="minisearch" placeholder="Search...")
+                svg(width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M6.417 11.083a4.667 4.667 0 100-9.333 4.667 4.667 0 000 9.333zM12.248 12.25L9.711 9.713" stroke="#03032D" stroke-linecap="round" stroke-linejoin="round")
+        
+
+        .marketplaceDemo__content--main
+            .marketplaceDemo__cards 
+                //.marketplaceDemo__card--installed
+                +step1Card({
+                    image: '../../../../assets/images/marketplaceDemo/slack.png',
+                    title: 'Slack notifications'
+                })
+                +step1Card({
+                    image: '../../../../assets/images/marketplaceDemo/salesforce.png',
+                    title: 'Salesforce'
+                })
+                +step1Card({
+                    image: '../../../../assets/images/marketplaceDemo/asana.png',
+                    title: 'Asana task sync'
+                })
+                +step1Card({
+                    image: '../../../../assets/images/marketplaceDemo/github.png',
+                    title: 'GitHub workflow'
+                })
+                +step1Card({
+                    image: '../../../../assets/images/marketplaceDemo/jira.png',
+                    title: 'Jira issue sync'
+                })
+                +step1Card({
+                    image: '../../../../assets/images/marketplaceDemo/slack.png',
+                    title: 'Slack chatbot'
+                })
+
+                .marketplaceDemo__card.marketplaceDemo__card--inactive
+                .marketplaceDemo__card.marketplaceDemo__card--inactive
+                
+    .marketplaceDemo__modal
+        +marketplaceDemo__step2
+        +marketplaceDemo__step3
+
+    
+    script.
+        const marketplaceDemo = document.querySelector('.marketplaceDemo');
+        if(marketplaceDemo) {
+            const step2 = marketplaceDemo.querySelector('.step2');
+            const step3 = marketplaceDemo.querySelector('.step3');
+
+            let currentBtnClicked = undefined;
+            const buttonsStep1 = marketplaceDemo.querySelectorAll('.marketplaceDemo__card--btn');
+            buttonsStep1.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    step2.classList.remove('dnone');
+                    currentBtnClicked = btn;
+
+                    currentBtnClicked.parentNode.classList.add('integrating');
+                })
+            })
+
+            const buttonsStep2 = step2.querySelectorAll('button');
+            buttonsStep2.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    step2.classList.add('dnone');
+
+                    if(!btn.classList.contains('step2__close')) {
+                        step3.classList.remove('dnone');
+
+                    } else {
+                        currentBtnClicked.parentNode.classList.remove('integrating');
+
+                    } 
+
+
+                })
+            });
+
+            const buttonsStep3 = step3.querySelectorAll('button');
+            buttonsStep3.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    step3.classList.add('dnone');
+
+                    const card = currentBtnClicked.parentNode;
+
+                    if(btn.classList.contains('step3__actions--btn--allow')) {
+                        card.classList.add('marketplaceDemo__card--installed');
+
+                    } else {
+                        card.classList.remove('integrating');
+
+                    }
+
+                        currentBtnClicked = undefined;
+                })
+            });
+
+            const buttonsStep4 = document.querySelectorAll('.marketplaceDemo__card--actions--delete');
+            buttonsStep4.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const card = btn.parentNode.parentNode;
+                    card.classList.remove('marketplaceDemo__card--installed', 'integrating');
+
+                })
+            })
+
+            marketplaceDemoClickThrough();
+            function marketplaceDemoClickThrough() {
+                const slackCard = buttonsStep1[0].parentNode;
+                
+                setInterval(() => {
+                    setTimeout(step1, 3000);
+                }, 5000)
+
+                function step1() {
+                    if(!slackCard.classList.contains('integrating')) {
+                        const slackCardInstall = buttonsStep1[0];
+                        slackCardInstall.click();
+
+                        setTimeout(step2, 3000);
+                    }
+                    
+                }
+                function step2() {
+                    const step2 = marketplaceDemo.querySelector('.step2');
+                    const signInButton = step2.querySelector('.step2__form--submit')
+                    
+                    signInButton.click();
+                    setTimeout(step3, 3000);
+                }
+                function step3() {
+                    const step3 = marketplaceDemo.querySelector('.step3');
+                    const allowButton = step3.querySelector('.step3__actions--btn--allow')
+                    
+                    allowButton.click();
+                    setTimeout(step4, 3000);
+                }
+                function step4() {
+                    const removeIntegration = slackCard.querySelector('.marketplaceDemo__card--actions--delete')
+                    
+                    removeIntegration.click();
+                }
+                
+            }
+
+        }

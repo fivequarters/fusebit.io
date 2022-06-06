@@ -6,7 +6,7 @@ date: '2019-08-19'
 post_image: blog-integration-landscape-main.png
 post_excerpt: In the not-too-distant past, the only way for a SaaS company to provide integrations with other tools and services...
 post_slug: integration-landscape
-tags: ['post']
+tags: ['post','business']
 post_date_in_url: true
 ---
 
