@@ -11,60 +11,6 @@ block content
     section.static__page
     
         .static__container
-            .static__navigation 
-                h5 List of content
-                ul 
-                    li 
-                        a(href="#agreement-to-terms") AGREEMENT TO TERMS
-                    li 
-                        a(href="#intellectial-property-rights")  INTELLECTUAL PROPERTY RIGHTS
-                    li 
-                        a(href="#user-representations") USER REPRESENTATIONS
-                    li 
-                        a(href="#user-registration") USER REGISTRATION
-                    li 
-                        a(href="#prohibited-activities") PROHIBITED ACTIVITIES
-                    li 
-                        a(href="#user-generated-contributions") USER GENERATED CONTRIBUTIONS
-                    li 
-                        a(href="#contribution-license") CONTRIBUTION LICENSE
-                    li 
-                        a(href="#social-media") SOCIAL MEDIA
-                    li 
-                        a(href="#submissions") SUBMISSIONS
-                    li 
-                        a(href="#third-party-websites-and-content")  HIRD-PARTY WEBSITES AND CONTENT
-                    li 
-                        a(href="#site-management") SITE MANAGEMENT
-                    li 
-                        a(href="#privacy-policy") PRIVACY POLICY
-                    li 
-                        a(href="#term-and-termination") TERM AND TERMINATION
-                    li 
-                        a(href="#modifications-and-interruptions") MODIFICATIONS AND INTERRUPTIONS
-                    li 
-                        a(href="#governing-law") GOVERNING LAW
-                    li 
-                        a(href="#dispute-resolution") DISPUTE RESOLUTION
-                    li 
-                        a(href="#corrections") CORRECTIONS
-                    li 
-                        a(href="#disclaimer") DISCLAIMER
-                    li 
-                        a(href="#limitations-of-liability") LIMITATIONS OF LIABILITY
-                    li 
-                        a(href="#indemnification") INDEMNIFICATION
-                    li 
-                        a(href="#user-data") USER DATA
-                    li 
-                        a(href="#electronic-communications-transactions-and-signatures") ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES
-                    li 
-                        a(href="#california-users-and-residents") CALIFORNIA USERS AND RESIDENTS
-                    li 
-                        a(href="#miscellaneous") MISCELLANEOUS
-                    li 
-                        a(href="#contact-us") CONTACT US
-            
             .static__wrapper
                 .static__head 
                     h1 Terms of Use
@@ -219,7 +165,12 @@ block content
                         p United States
                         p <a href="mailto:contact@fusebit.io">contact@fusebit.io</a>
 
+            +tableOfContents              
+
 block scripts
     script.
         analytics.page('Terms of Use', { objectLocation: 'Terms of Use', domain: 'fusebit.io' });
 
+        window.addEventListener("load", () => {
+            tableOfContents('.static__content');
+        });
