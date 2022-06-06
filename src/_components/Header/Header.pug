@@ -78,7 +78,7 @@ header.header
                 let prevScroll = window.pageYOffset;
                 const isBlogSite = window.location.pathname.includes('blog');
                 const isMakeSite = window.location.pathname.includes('make');
-                const sidebar = document.querySelector(".post__sidebar");
+                const sidebar = document.querySelector(".sidebar");
                 const sidebarMobileBtn = document?.querySelector(".header__sidebarMobile--btn");
 
                 if (sidebar) {
@@ -129,6 +129,6 @@ header.header
                 });
 
                 menuSidebarMobileBtn.addEventListener('click', () => {
-                    sidebar.classList.add("post__sidebar--mobile-active");
+                    sidebar.classList.add("sidebar--mobile-active");
                 });
             });

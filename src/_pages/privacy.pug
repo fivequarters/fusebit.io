@@ -11,42 +11,6 @@ block content
     section.static__page
 
         .static__container
-
-            .static__navigation 
-                h5 List of content
-                ul 
-                    li
-                        a(href="#introduction-and-background") Introduction and background
-                    li
-                        a(href="#scope-of-this-policy") Scope of this Policy
-                    li
-                        a(href="#what-this-policy-doesnt-cover") What this Policy doesn't cover
-                    li
-                        a(href="#personal-data-we-process") Personal data we process and sources of personal data
-                    li
-                        a(href="#why-and-how-we-process-personal-data") Why and how we process personal data
-                    li
-                        a(href="#personal-data-sharing-and-disclosure") Personal data sharing and disclosure
-                    li
-                        a(href="#where-process-personal-data-and-international-transfers") Where we process personal data and international transfers
-                    li
-                        a(href="#personal-data-retention-and-deletion") Personal data retention and deletion
-                    li
-                        a(href="#your-choices-and-rights") Your choices and rights
-                    li
-                        a(href="#security-of-personal-data") Security of personal data
-                    li
-                        a(href="#childrens-privacy") Children’s privacy
-                    li
-                        a(href="#how-to-contact-fusebit-about-privacy") How to contact Fusebit about privacy
-                    li
-                        a(href="#changes-to-this-policy") Changes to this Policy
-                    li
-                        a(href="#additional-information-europe") Additional information – Europe (including Switzerland and the UK)
-                    li
-                        a(href="#additional-information-california") Additional information – Residents of California, USA
-
-
             .static__wrapper 
                 .static__head 
                     h1 Privacy Policy
@@ -214,7 +178,12 @@ block content
                     p We will verify your request using your email address. If you’ve created an account with us, we will also verify your request using the information associated with your account, including billing information. Government identification may be required. We cannot respond to your request if we cannot verify your identity and/or authority to make the request on behalf of another and confirm the personal data relates to you. Making a verifiable consumer request does not require you to create an account with us.
                     p If you wish to use an authorized agent to submit a request to opt-out on your behalf, you must provide the authorized agent written permission signed by you, the consumer. We may deny a request from an authorized agent if the agent cannot provide to Fusebit your signed permission demonstrating that they have been authorized to act on your behalf.
 
+            +tableOfContents
+
 block scripts
     script.
         analytics.page('Privacy Policy', { objectLocation: 'Privacy Policy', domain: 'fusebit.io' });
 
+        window.addEventListener("load", () => {
+            tableOfContents('.static__content');
+        });

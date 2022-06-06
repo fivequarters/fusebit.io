@@ -70,7 +70,7 @@ block content
     section
         if posts_related
             .layout.post__trending-layout
-                h2 Related Content
+                h2 Related Cont
                 .post-card-container.post__trending-list(id="related-content")
                     each relatedPost in posts_related
                         each post in [...collections.post].filter((post) => post.data.post_slug === relatedPost).slice(0, 3)
