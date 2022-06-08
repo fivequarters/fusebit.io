@@ -5280,6 +5280,7 @@ module.exports = async function () {
             outOfPlan: i.outOfPlan,
             catalog: i.tags.catalog,
             description: i.description,
+            docs: i.resources?.configureAppDocUrl,
             children: integrationsWithParentTags.filter((integration) => integration?.parent?.includes?.(i.id)).map((child) => ({
                 id: child.id,
                 logo: child.smallIcon,
