@@ -1,8 +1,6 @@
 .hero {
     position: relative;
     background-color: #10091D;
-    margin-bottom: 100px;
-    overflow: hidden;
 
     &__mark {
         position: absolute;
@@ -41,6 +39,8 @@
 
     &__container {
         position: relative;
+        width: 90%;
+        max-width: var(--container);
         z-index: 1;
 
         @media only screen and (max-width: 700px) {

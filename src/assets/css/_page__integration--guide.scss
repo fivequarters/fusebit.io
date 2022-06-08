@@ -1,0 +1,34 @@
+.guide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    &__background {
+        z-index: 1;
+    }
+
+    &__container {
+        position: relative;
+        width: 90%;
+        max-width: var(--container);
+        z-index: 1;
+    }
+
+    &__mark-small {
+        @include mark-offset(85px, 90px);
+        top: -24px;
+
+        @media only screen and (max-width: 1200px) {
+            top: -40px;
+        }
+    }
+
+    &__mark-big {
+        @include mark-offset(245px, 40px);
+
+        @media only screen and (max-width: 1200px) {
+            top: -24px;
+        }
+    }
+}
