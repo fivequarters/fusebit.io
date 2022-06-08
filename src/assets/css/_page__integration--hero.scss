@@ -1,0 +1,54 @@
+.hero {
+    position: relative;
+    background-color: #10091D;
+    margin-bottom: 100px;
+    overflow: hidden;
+
+    &__mark {
+        position: absolute;
+        mix-blend-mode: lighten;
+        will-change: filter;
+
+        &--yellow {
+            @include mark(258px, 158px, -135px, null, 45px, null, #FFA600, 0.5, 62px, 22deg);
+        }
+
+        &--red {
+            @include mark(223px, 223px, 0, null, -115px, null, #F820A2, 0.3, 72px, 8deg);
+        }
+
+        &--blue {
+            @include mark(258px, 210px, null, -170px, 72px, null, #0038FF, 0.5, 52px, null);
+
+            &-bottom {
+                width: 300px;
+                left: 0;
+                top: unset;
+                bottom: -159px;
+                filter:blur(100px);
+            }
+        }
+
+        &--blueHighlight {
+            @include mark(390px, 350px, 50%, 50%, 0, null, #0038FF, 0.2, 170px, null);
+            transform: translate(-50%, -50%);
+        }
+
+        &--lightBlue {
+            @include mark(172px, 228px, null, 194px, null, -186px, #B0C9FA, 0.32, 64px, null);
+        }
+    }
+
+    &__container {
+        position: relative;
+        width: 90%;
+        max-width: calc(var(--container) - 4rem);
+        padding-left: 4rem;
+        z-index: 1;
+
+        @media only screen and (max-width: 700px) {
+            width: calc(90% - 2.5rem);
+            padding-left: 2.5rem;
+        }
+    }
+}

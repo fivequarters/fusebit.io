@@ -56,6 +56,10 @@
     @import '_page__integrations--footer';
 }
 
+.integration {
+    @import '_page__integration--hero';
+}
+
 .blog {
     @import '_page__blog-base';
     @import 'component-post-card';

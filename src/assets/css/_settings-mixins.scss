@@ -169,3 +169,17 @@
     margin: 48px auto 0;
     font-family: var(--poppins);
 }
+
+@mixin mark($width, $height, $right, $left, $top, $bottom, $background, $opacity, $blur, $rotate: 0) {
+    width: #{$width};
+    height: #{$height};
+    right: #{$right};
+    left: #{$left};
+    top: #{$top};
+    bottom: #{$bottom};
+    background: #{$background};
+    mix-blend-mode: lighten;
+    opacity: #{$opacity};
+    filter: blur(#{$blur});
+    transform: rotate(#{$rotate});
+}
