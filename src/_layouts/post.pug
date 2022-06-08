@@ -1,12 +1,14 @@
 extends default.pug
 
+block seo_variables
+    - const ogConfig = { hero: `${site.url}${`/assets/images/blog/${post_image}`}`, site: og_image }
+    - var og_image = typeof post_og_image === "string" ? ogConfig[post_og_image] || post_og_image : ogConfig.hero
+
 block page_variable
-    - const ogConfig = { hero: `${site.url}${filters.getImageUrl(`blog/${post_image}`, 900)}`, site: og_image }
     - var pageClass = 'blog__page'
     - var title = post_title
     - var slug = post_slug
     - var description = post_excerpt
-    - var og_image = typeof post_og_image !== "undefined" ? ogConfig[post_og_image] || post_og_image : ogConfig.hero
 
 block content
     section.section
@@ -31,7 +33,7 @@ block content
                 .post__info-divider
                 span.post__date= `${filters.format(new Date(date.replace('-', '/')), 'd MMMM yyyy')}`
             h1 #{post_title}
-            - const postTags = tags.filter(tag => tag !== 'post')
+            - const postTags = tags.filter(tag => tag !== 'post' && !tag.includes(":hidden"))
             if postTags.length > 0
                 .post__tags
                     img(src='/assets/images/tag.svg' alt="Tag") 
@@ -118,9 +120,9 @@ block scripts
         
         const links = document.querySelectorAll('a');
         links.forEach((link) => {
-            const title = link.title;
-            if (title.indexOf("CTA") > 0) {
-                const buttonSize = title.indexOf("SMALL") > 0 ? "Small" : "Large";
+            const linkClass = link.className;
+            if (linkClass?.indexOf("cta") > 0) {
+                const buttonSize = linkClass.indexOf("small") > 0 ? "Small" : "Large";
                 
                 analytics.trackLink(link, "Blog Post Button Clicked", {
                     objectLocation: "Blog",

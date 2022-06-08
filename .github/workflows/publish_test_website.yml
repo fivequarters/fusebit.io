@@ -1,6 +1,7 @@
 ###################################################################
 # Auto-created by the cicd-actions tool
 on:
+  workflow_dispatch:
   push:
     branches:
       - main

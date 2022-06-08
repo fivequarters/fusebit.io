@@ -4,3 +4,4 @@ Rss: https://fusebit.io/feed.xml
 User-agent: *
 Disallow: /docs/
 Disallow: /so/
+Disallow: /make/

@@ -1,0 +1,40 @@
+mixin orbitalBall(size, orbitID, logoImg)
+    //sizes sm - md - lg
+    div(class=`integrate__orbitalball integrate__orbitalball--${size}` id=orbitID)
+        img(src=logoImg alt="Branding")
+
+mixin text
+    h2.integrate__title 
+        span Imagine 
+        | all your integration needs are satisfied
+        i _
+
+    a.track-with-segment.integrate__cta.get-started(href="#contact" data-event-name="Schedule Demo Button Clicked" data-object-location="Home Page Integration Story")
+        span.integrate__cta--text Schedule Demo
+        span.integrate__cta--icon
+            svg(width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M1.36396 1.44268L7.72792 7.80664L1.36396 14.1706" stroke="white" stroke-width="2")
+
+section.integrate.section
+    .background.background--white.integrate__background
+        .mark.mark--small.mark--dark-violet.mark--left.integrate__mark
+    .integrate__container.layout
+        .integrate__text--mobile
+            +text
+        .integrate__orbits
+            .integrate__text--desktop
+                +text
+            img#integrate__orbits--static(src="../../assets/images/integrate__orbit.svg" alt="")
+
+            //include ./Orbital/orbital
+            //+orbitalBall('sm', 'orbit__ball--2', '../../../assets/images/integrate/trello.png')
+
+            //+orbitalBall('sm', 'orbit__ball--3', '../../../assets/images/integrate/asana.png')
+            //+orbitalBall('sm', 'orbit__ball--4', '../../../assets/images/integrate/algo.png')
+
+            //+orbitalBall('sm', 'orbit__ball--5', '../../../assets/images/integrate/discord.png')
+            //+orbitalBall('sm', 'orbit__ball--6', '../../../assets/images/integrate/slack.png')
+
+            //+orbitalBall('sm', 'orbit__ball--7', '../../../assets/images/integrate/github.png')
+            //+orbitalBall('sm', 'orbit__ball--8', '../../../assets/images/integrate/salesforce.png')
+            //+orbitalBall('sm', 'orbit__ball--9', '../../../assets/images/integrate/jira.png')
