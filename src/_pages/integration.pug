@@ -1,0 +1,24 @@
+---
+pagination:
+    data: integrations
+    size: 1
+    alias: integration
+permalink: "| integrations/#{integration.id}.html"
+eleventyExcludeFromCollections: true
+---
+
+extends ../_layouts/default.pug
+
+block seo_variables
+    - var title = integration.name + ` - Fusebit`
+
+block page_variable
+    - var pageClass = 'integration'
+
+block content
+    include ../_components/Integration/Hero/Hero
+
+block scripts
+    script.
+        analytics.page("Integration Detail", { objectLocation: "Integration Detail", domain: 'fusebit.io' });
+
