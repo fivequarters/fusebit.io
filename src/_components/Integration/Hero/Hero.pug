@@ -14,5 +14,8 @@ section.hero.section
                     img.hero__content-logo(src= `data:image/svg+xml;utf8,${encodeURIComponent(integration.logo)}` alt= integration.name)
                 h1.hero__content-title #{integration.name}
             .hero__content-flex
-                +cta("Try Integration", `${site.portalBaseUrl}/signup?key=${integration.id}`, "hero__content-cta", null, true, "Try Integration Button Clicked", "Make", true, "_blank", "noreferrer")
-                +cta("See Documentation", integration.docs, "hero__content-cta hero__content-cta-outlined", null, true, "Try Integration Button Clicked", "Make", false, "_blank", "noreferrer")
+                if integration.outOfPlan
+                    +cta("Try Integration", null, "hero__content-cta", null, true, "Try Integration Fake Button Clicked", "Make", true, "_blank", "noreferrer", `window.Intercom('showNewMessage', "I'm interested in enabling ${integration.name}")`)
+                else
+                    +cta("Try Integration", `${site.portalBaseUrl}/signup?key=${integration.id}`, "hero__content-cta", null, true, "Try Integration Button Clicked", "Make", true, "_blank", "noreferrer")
+                    +cta("See Documentation", integration.docs, "hero__content-cta hero__content-cta-outlined", null, true, "Try Integration Button Clicked", "Make", false, "_blank", "noreferrer")

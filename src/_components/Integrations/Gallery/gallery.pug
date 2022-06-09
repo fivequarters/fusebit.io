@@ -12,10 +12,11 @@ mixin item(img, name, outOfPlan, id, catalog, hidden, description)
                 h4.gallery__item-container-integration-title Build a #{name} integration for your customers in minutes
                 p.gallery__item-container-integration-description #{description}
             if outOfPlan
-                button.gallery__item-container-cta(onclick=`window.Intercom('showNewMessage', "I'm interested in enabling ${name}")` data-event-name="Try Integration Button Clicked" data-object-location="Integrations" data-integration= id, data-integration-type="Fake") Try Integration
+                button.gallery__item-container-cta.gallery__item-container-cta-filled(onclick=`window.Intercom('showNewMessage', "I'm interested in enabling ${name}")` data-event-name="Try Integration Button Clicked" data-object-location="Integrations" data-integration= id, data-integration-type="Fake") Try Integration
             else
                 a.gallery__item-container-cta.gallery__item-container-cta-filled.track-with-segment(href= `${site.portalBaseUrl}/signup?key=${id}` data-event-name="Try Integration Button Clicked" data-object-location="Integrations" data-integration= id, data-integration-type="Real") Try Integration
-                a.gallery__item-container-cta.track-with-segment(href= `/integrations/${id}` data-event-name="More Button Clicked" data-object-location="Integrations" data-integration= id) More
+            
+            a.gallery__item-container-cta.track-with-segment(href= `/integrations/${id}` data-event-name="More Button Clicked" data-object-location="Integrations" data-integration= id) More
 
 section.section
     .layout.gallery__layout
