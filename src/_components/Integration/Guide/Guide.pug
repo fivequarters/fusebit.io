@@ -3,3 +3,6 @@ section.guide.section
         .mark.mark--small.mark--dark-violet.mark--right.guide__mark-small
         .mark.mark--big.mark--rainbow.mark--right.guide__mark-big
     .guide__container.layout
+        .guide__content 
+            h2.guide__content-title Integration Guide
+            p.guide__content-instructions!= filters.markdown(`${integration.guide}`)
