@@ -123,12 +123,12 @@ html(lang='en' class=(pageClass || ''))
     include ../_components/Modal/ModalSignUp
     include ../_components/Modal/ModalDemo
     include ../_components/Modal/ModalPricing
-    include ../_components/HeaderLeaders/Header
+    include ../_components/Header/Header
 
     main(class=(content ? 'blog' : ''))
       block content
 
-    include ../_components/FooterLeaders/Footer
+    include ../_components/Footer/Footer
 
     script(src="/assets/vendor/gsap/gsap.min.js")
     script(src="/assets/vendor/scrollmagic/ScrollMagic.min.js")
