@@ -62,3 +62,33 @@ mixin dropdown(options, id, prelabel)
         .dropdown-menu
             each option in options
                 span.dropdown-item(data-value= option.id data-label= option.label)= option.label
+
+mixin tableOfContents(docs_related, post_cta = { text: 'Get Started', url: site_cta ? site_cta : homepage.links.getStartedLink, disabled: site_cta === 'disabled' })
+    .sidebar
+        .sidebar--mobile-shadow
+        .sidebar--wrapper
+            .sidebar--cross-mobile
+                <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.5L17 17.5" stroke="#03032d" stroke-width="2"/>
+                    <path d="M17 1.5L1 17.5" stroke="#03032d" stroke-width="2"/>
+                </svg>
+            .sidebar--toc-wrapper
+                h5.sidebar--title Table of Contents
+                .sidebar--sections
+                if posts_related
+                    .sidebar--separator
+                    .sidebar--title.sidebar--title-cta(id="related-content-cta") Related Content
+                    .sidebar--separator.sidebar--separator-mobile-visible
+            if docs_related
+                .sidebar--toc-wrapper.sidebar--toc-wrapper-links
+                    each doc in docs_related
+                        a.sidebar--section.sidebar--section-link(href=doc.url target="_blank" rel="noopener") 
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.64654 4.46421L8.88398 3.22677C9.1393 2.97122 9.44246 2.76847 9.77616 2.63011C10.1099 2.49175 10.4675 2.42049 10.8288 2.42041C11.19 2.42033 11.5477 2.49142 11.8815 2.62962C12.2153 2.76782 12.5185 2.97043 12.774 3.22587C13.0294 3.4813 13.232 3.78457 13.3702 4.11833C13.5084 4.45209 13.5795 4.80981 13.5794 5.17105C13.5793 5.53229 13.5081 5.88998 13.3697 6.22368C13.2314 6.55737 13.0286 6.86054 12.7731 7.11586L11.0053 8.88363C10.7499 9.13899 10.4468 9.34155 10.1131 9.47975C9.77949 9.61795 9.42189 9.68908 9.06075 9.68908C8.69962 9.68908 8.34202 9.61795 8.00837 9.47975C7.67473 9.34155 7.37157 9.13899 7.11621 8.88363" stroke="#03032d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8.35378 11.5354L7.11635 12.7729C6.86103 13.0284 6.55786 13.2312 6.22416 13.3695C5.89047 13.5079 5.53278 13.5791 5.17154 13.5792C4.8103 13.5793 4.45258 13.5082 4.11881 13.37C3.78505 13.2318 3.48179 13.0292 3.22635 12.7738C2.97092 12.5183 2.76831 12.2151 2.63011 11.8813C2.4919 11.5475 2.42081 11.1898 2.4209 10.8286C2.42098 10.4673 2.49224 10.1096 2.6306 9.77595C2.76896 9.44226 2.9717 9.13909 3.22726 8.88377L4.99503 7.116C5.25039 6.86064 5.55355 6.65808 5.88719 6.51988C6.22084 6.38168 6.57844 6.31055 6.93957 6.31055C7.30071 6.31055 7.65831 6.38168 7.99195 6.51988C8.3256 6.65808 8.62875 6.86064 8.88412 7.116" stroke="#03032d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            | #{doc.text}
+                    .sidebar--separator.sidebar--separator-mobile-visible
+            if !post_cta.disabled
+                .sidebar--cta-wrapper
+                    +cta(post_cta.text || "", post_cta.url, 'sidebar--cta', null, true, 'Sign Up Button Clicked', 'Blog Sidebar', true, '_blank', 'noopener')
