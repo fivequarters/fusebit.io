@@ -141,6 +141,10 @@ post_og_image: string | Could be 'hero', 'site' or a custom url. 'hero' will set
 
 posts_related: string[] | A URL slugs list of the related posts. If ommited, the most recent posts will be displayed by default. It works with 1, 2 or a maximum of 3 values on the array.
 
+docs_related: { text: string; url: string }[] | A list of related docs for the sidebar. If ommited, there won't be related docs on the sidebar.
+
+post_cta: { text: string; url: string } || { disabled: true } | A sidebar CTA. If ommited, the sidebar will have the same text and url as the header CTA by default.
+
 site_cta: string | Could be 'disabled' or a custom url. 'disabled' will remove the header CTA on a specific blog post. if a custom url is used, the url of the header CTA will be set to that value instead of the site-wide CTA value.
 ---
 ```
@@ -161,6 +165,11 @@ tags: ['post', 'unicorn:hidden']
 post_date_in_url: true
 post_og_image: https://cdn.fusebit.io/twitter/twitter-orange.png
 posts_related: ['nodejs-https-imports','run-every-nodejs-version-in-lambda','run-nodejs-from-google-sheets']
+docs_related: [
+    { text: 'Setting up CI/CD', url: 'https://developer.fusebit.io/docs/setting-up-cicd'},
+    { text: 'Developing Locally', url: 'https://developer.fusebit.io/docs/developing-locally'}
+]
+post_cta: { text: 'Get Started Now', url: 'https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=CTAs'}
 site_cta: 'disabled'
 ---
 ```
