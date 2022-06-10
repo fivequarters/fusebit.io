@@ -31,4 +31,31 @@
             top: -24px;
         }
     }
+
+    &__content {
+        &-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333333;
+            line-height: 180%;
+            margin-bottom: 60px;
+        }
+
+        &-instructions {
+            font-size: 18px;
+            color: #03032D;
+            opacity: 0.6;
+            line-height: 180%;
+            max-width: 676px;
+
+            p {
+                margin-bottom: 30px;  
+            }
+
+            ol {
+                margin-bottom: 30px;
+                list-style: decimal;
+            }
+        }
+    }
 }
