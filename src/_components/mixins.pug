@@ -63,7 +63,7 @@ mixin dropdown(options, id, prelabel)
             each option in options
                 span.dropdown-item(data-value= option.id data-label= option.label)= option.label
 
-mixin tableOfContents(docs_related, post_cta)
+mixin tableOfContents(docs_related, post_cta = { text: 'Get Started', url: site_cta ? site_cta : homepage.links.getStartedLink, disabled: site_cta === 'disabled' })
     .sidebar
         .sidebar--mobile-shadow
         .sidebar--wrapper
@@ -89,6 +89,6 @@ mixin tableOfContents(docs_related, post_cta)
                             </svg>
                             | #{doc.text}
                     .sidebar--separator.sidebar--separator-mobile-visible
-            if post_cta
+            if !post_cta.disabled
                 .sidebar--cta-wrapper
-                    +cta(post_cta.text, post_cta.url, 'sidebar--cta', null, true, "eventName", "eventLocation", true, "_blank", "noopener")
+                    +cta(post_cta.text || "", post_cta.url, 'sidebar--cta', null, true, 'Sign Up Button Clicked', 'Blog Sidebar', true, '_blank', 'noopener')

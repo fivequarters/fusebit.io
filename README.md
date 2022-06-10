@@ -143,7 +143,7 @@ posts_related: string[] | A URL slugs list of the related posts. If ommited, the
 
 docs_related: { text: string; url: string }[] | A list of related docs for the sidebar. If ommited, there won't be related docs on the sidebar.
 
-post_cta: { text: string; url: string } | A sidebar CTA. If ommited, there won't be a CTA on the sidebar.
+post_cta: { text: string; url: string } || { disabled: true } | A sidebar CTA. If ommited, the sidebar will have the same text and url as the header CTA by default.
 
 site_cta: string | Could be 'disabled' or a custom url. 'disabled' will remove the header CTA on a specific blog post. if a custom url is used, the url of the header CTA will be set to that value instead of the site-wide CTA value.
 ---
