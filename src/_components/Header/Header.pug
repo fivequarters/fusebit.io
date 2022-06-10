@@ -43,7 +43,7 @@ header.header
                     a.track-with-segment(href=homepage.links.loginLink data-event-name="Login Button Clicked" data-object-location="Header") Login
                 li
                     if site_cta !== "disabled"
-                        a.track-with-segment.header__links--signUp.get-started(href=site_cta ? site_cta : homepage.links.getStartedLink data-event-name="Sign Up Button Clicked", data-object-location="Header") Get Started
+                        a.track-with-segment.header__links--signUp.get-started(href="#demo" data-event-name="Schedule Demo Button Clicked", data-object-location="Header") Request Demo
 
         .header__sidebarMobile--btn.header__sidebarMobile--btn-hidden
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,7 +67,7 @@ header.header
                     a.track-with-segment(href=homepage.links.loginLink data-event-name="Login Button Clicked" data-object-location="Header") Login
                 li 
                     if site_cta !== "disabled"
-                        a.track-with-segment.header__links--signUp.get-started(href=site_cta ? site_cta : homepage.links.getStartedLink data-event-name="Sign Up Button Clicked", data-object-location="Header") Get Started
+                        a.track-with-segment.header__links--signUp.get-started(href="#demo" data-event-name="Schedule Demo Button Clicked", data-object-location="Header") Request Demo
 
         .menuMobile__social 
             include ../SocialMedia/SocialMedia
