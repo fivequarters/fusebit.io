@@ -8,9 +8,12 @@ mixin integration(logo, name, description, id)
 
 
 section.popular.section.section--no-margin
+    .popular-lines
     .popular__container.layout
         .popular__content
             h2.popular__content-title Popular #{integration.name} Integrations
             +integration(integration.logo, integration.name, integration.description, integration.id)
             each child in integration.children
                 +integration(child.logo, child.name, child.description, child.id)
+
+            +cta("More", null, "popular__content-integration-cta-outlined", null, true, "More Button Clicked", "Popular", true, null, null)

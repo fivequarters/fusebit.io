@@ -5,6 +5,17 @@
     background-image: url(./images/integration/popular/background.svg);
     background-repeat: no-repeat;
 
+    &-lines {
+        position: absolute;
+        top: 137px;
+        right: 0;
+        width: 400px;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(./images/integration/popular/background-lines.svg);
+    }
+
     &__container {
         position: relative;
         width: 90%;
@@ -76,6 +87,22 @@
                 font-weight: 700;
                 height: 40px;
                 width: 130px;
+
+                &-outlined {
+                    font-family: var(--poppins);
+                    font-size: 18px;
+                    line-height: 27px;
+                    font-weight: 500;
+                    background: none;
+                    border: 1px solid #FFFFFF;
+                    color: white;
+                    width: 260px;
+                    margin-top: 40px;
+
+                    &:hover {
+                        background: none;
+                    }
+                }
             }
         }
     }
