@@ -1,0 +1,17 @@
+.popular {
+    position: relative;
+    z-index: 1;
+    background-size: cover !important;
+    background-image: url(./images/integration/popular/background.svg);
+    background-repeat: no-repeat;
+
+    &__container {
+        position: relative;
+        width: 90%;
+        max-width: var(--container);
+        z-index: 1;
+    }
+
+    &__content {
+    }
+}
