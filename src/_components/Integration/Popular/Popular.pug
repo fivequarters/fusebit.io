@@ -1,5 +1,5 @@
-mixin integration(logo, name, description, id)
-    .popular__content-integration
+mixin integration(logo, name, description, id, hidden)
+    .popular__content-integration(class=hidden ? 'show-more-item--hidden show-more-item--hidden-out show-more-item--hidden-animation' : '' class="show-more-item" id= id)
         img.popular__content-integration-icon(src= `data:image/svg+xml;utf8,${encodeURIComponent(logo)}` alt= name)
         .popular__content-integration-description-wrapper 
             .popular__content-integration-description-title #{name}
@@ -13,7 +13,23 @@ section.popular.section.section--no-margin
         .popular__content
             h2.popular__content-title Popular #{integration.name} Integrations
             +integration(integration.logo, integration.name, integration.description, integration.id)
-            each child in integration.children
-                +integration(child.logo, child.name, child.description, child.id)
+            - const buildAmount = 3
+            - let showMoreButton = false
+            each child, index in integration.children
+                - let isHidden = index + 1 >= buildAmount
+                if isHidden
+                    - showMoreButton = true
+                +integration(child.logo, child.name, child.description, child.id, isHidden)
+            if showMoreButton
+                +cta("More", null, "popular__content-integration-cta-outlined", "more", true, "More Button Clicked", "Popular", true, null, null)
 
-            +cta("More", null, "popular__content-integration-cta-outlined", null, true, "More Button Clicked", "Popular", true, null, null)
+    script.
+        let runtimeAmount = 3;
+
+        window.addEventListener('load', async () => {
+            handleShowMore({
+                amount: runtimeAmount,
+                elements: ".show-more-item--hidden",
+                showMoreId: "more",
+            })
+        })
