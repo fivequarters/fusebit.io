@@ -2,3 +2,9 @@ section.popular.section.section--no-margin
     .popular__container.layout
         .popular__content
             h2.popular__content-title Popular #{integration.name} Integrations
+            .popular__content-integration
+                img.popular__content-integration-icon(src= `data:image/svg+xml;utf8,${encodeURIComponent(integration.logo)}` alt= integration.name)
+                .popular__content-integration-description-wrapper 
+                   .popular__content-integration-description-title #{integration.name}
+                   .popular__content-integration-description-text #{integration.description}
+                +cta("Try Now", `${site.portalBaseUrl}/signup?key=${integration.id}`, "popular__content-integration-cta", null, true, "Try Now Button Clicked", "Popular", true, "_blank", "noreferrer")
