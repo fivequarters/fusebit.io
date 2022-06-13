@@ -7,4 +7,9 @@ section.guide.section
         .guide__content 
             h2.guide__content-title Integration Guide
             .guide__content-instructions
-                != filters.markdown(`${integration.guide}`)
+                if integration.guide
+                    != filters.markdown(`${integration.guide}`)
+                else
+                    p Building integrations with #{integration.name} has never been easier thanks to our code-first Integrations -focused development Platform. Use our browser-based editor or deploy locally and use your IDE of choice!
+                    p #{integration.description.split("[")[0]}
+                    p In addition to standing up custom integrations with #{integration.name}, Fusebit’s platform will provide you detailed logging of all executions, health monitoring and notifications when the #{integration.name} API goes down.

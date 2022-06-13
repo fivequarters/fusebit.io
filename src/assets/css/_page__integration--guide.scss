@@ -6,10 +6,10 @@
 
     &__integrations {
         position: absolute;
-        top: 240px;
+        top: 190px;
         right: 0;
         height: 100%;
-        width: 490px;
+        width: 400px;
         background-size: contain;
         background-image: url(./images/integration/guide/integrations.svg);
         background-repeat: no-repeat;
@@ -44,6 +44,9 @@
     }
 
     &__content {
+        padding-top: 80px;
+        padding-bottom: 112px;
+
         &-title {
             font-size: 48px;
             font-weight: 700;

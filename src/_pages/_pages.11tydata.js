@@ -5281,14 +5281,7 @@ module.exports = async function () {
             catalog: i.tags.catalog,
             description: i.description,
             docs: i.resources?.configureAppDocUrl,
-            guide: Object.keys(i.configuration.entities || []).map((key) => {
-              let entity = i.configuration.entities[key];
-              if (entity.entityType === "integration") {
-                return entity.data.files["README.md"];
-              }
-              
-              return null;
-            }).filter((file) => file),
+            guide: i?.website_description,
             children: integrationsWithParentTags.filter((integration) => integration?.parent?.includes?.(i.id)).map((child) => ({
                 id: child.id,
                 logo: child.smallIcon,
