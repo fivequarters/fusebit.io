@@ -1,9 +1,7 @@
 .popular {
     position: relative;
     z-index: 1;
-    background-size: cover !important;
-    background-image: url(./images/integration/popular/background.svg);
-    background-repeat: no-repeat;
+    background-color: #10091D;
 
     &-lines {
         position: absolute;

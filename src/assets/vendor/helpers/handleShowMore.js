@@ -1,9 +1,9 @@
 function handleShowMore({
-    amount, elements, showMoreId, force,
+    amount, elements, showMoreId, force, defaultDisplay
 }) {
     const shouldShowMore = () => {
         if (document.querySelectorAll(elements).length > 0) {
-            document.getElementById(showMoreId).style.display = 'block';
+            document.getElementById(showMoreId).style.display = defaultDisplay || 'block';
         } else {
             document.getElementById(showMoreId).style.display = 'none';
         }

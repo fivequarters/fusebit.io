@@ -13,7 +13,7 @@ section.popular.section.section--no-margin
         .popular__content
             h2.popular__content-title Popular #{integration.name} Integrations
             +integration(integration.logo, integration.name, integration.description, integration.id)
-            - const buildAmount = 3
+            - const buildAmount = 2
             - let showMoreButton = false
             each child, index in integration.children
                 - let isHidden = index + 1 >= buildAmount
@@ -24,12 +24,13 @@ section.popular.section.section--no-margin
                 +cta("More", null, "popular__content-integration-cta-outlined", "more", true, "More Button Clicked", "Popular", true, null, null)
 
     script.
-        let runtimeAmount = 3;
+        let runtimeAmount = 2;
 
         window.addEventListener('load', async () => {
             handleShowMore({
                 amount: runtimeAmount,
                 elements: ".show-more-item--hidden",
                 showMoreId: "more",
+                defaultDisplay: "flex",
             })
         })
