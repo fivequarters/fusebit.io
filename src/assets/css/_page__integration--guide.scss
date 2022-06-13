@@ -4,6 +4,17 @@
     justify-content: center;
     width: 100%;
 
+    &__integrations {
+        position: absolute;
+        top: 240px;
+        right: 0;
+        height: 100%;
+        width: 490px;
+        object-fit: contain;
+        background-image: url(./images/integration/guide/integrations.svg);
+        background-repeat: no-repeat;
+    }
+
     &__background {
         z-index: 1;
     }
