@@ -53,8 +53,13 @@
         } 
 
         &--blueHighlight {
-            @include ellipsis(390px, 488px, 50%, 50%, 0, null, #0038FF, 0.2, 128px, null);
-            transform: translate(-50%, -50%);
+            height: 100%;
+            width: 750px;
+            top: 0;
+            left: 50%;
+            background-size: contain;
+            background-image: url(./images/integration/hero/blue-highlight.svg);
+            transform: translateX(-50%);
         }
 
         &--lightBlue {
