@@ -13,5 +13,16 @@
     }
 
     &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-title {
+            font-size: 48px;
+            line-height: 53px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 88px;
+        }
     }
 }
