@@ -48,6 +48,7 @@
                     flex-direction: column;
                     margin: 0 48px;
                     overflow: hidden;
+                    width: 100%;
                 }
 
                 &-title {
@@ -74,7 +75,7 @@
                 line-height: 24px;
                 font-weight: 700;
                 height: 40px;
-                width: 300px;
+                width: 130px;
             }
         }
     }

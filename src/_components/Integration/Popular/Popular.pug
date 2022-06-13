@@ -12,3 +12,5 @@ section.popular.section.section--no-margin
         .popular__content
             h2.popular__content-title Popular #{integration.name} Integrations
             +integration(integration.logo, integration.name, integration.description, integration.id)
+            each child in integration.children
+                +integration(child.logo, child.name, child.description, child.id)
