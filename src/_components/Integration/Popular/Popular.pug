@@ -9,7 +9,10 @@ mixin integration(logo, name, description, id, hidden)
 
 section.popular.section.section--no-margin
     .popular-lines
+    .popular-top-left-ellipsis
     .popular__container.layout
+        .popular-bottom-left-ellipsis
+        .popular-bottom-right-ellipsis
         .popular__content
             h2.popular__content-title Popular #{integration.name} Integrations
             +integration(integration.logo, integration.name, integration.description, integration.id)
