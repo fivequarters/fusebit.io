@@ -5263,38 +5263,48 @@ module.exports = async function () {
           }
         }
       ]
+    
+    function normalizeIntegration(i) {
+      return {
+        id: i.id,
+        logo: i.smallIcon,
+        name: i.name,
+        outOfPlan: i.outOfPlan,
+        catalog: i.tags.catalog,
+        description: i.description,
+        docs: i?.resources?.configureAppDocUrl,
+        guide: i?.website_description,
+      }
+    }
 
-    const integrationsWithParentTags = integrationsPromise.filter((i) => !i.private);
+    const integrationsFeed = integrationsPromise.filter((i) => !i.private && !i.parent);
+    
+    const integrations = integrationsFeed.map((integration) => {
+      let children = integrationsPromise.reduce((acc, curr) => {
+        if (curr?.parent?.includes?.(integration.id) && !curr.private) {
+          const int = normalizeIntegration(curr);
+          acc.push(int);
+        }
 
-    const integrationsWithoutParentTags = integrationsWithParentTags.filter((i) => !i.parent);
+        return acc;
+      }, []);
+    
+      return {
+        ...normalizeIntegration(integration),
+        children,
+      };
+    });
 
     return {
         permalink:
             process.env.ELEVENTY_ENV === 'production'
                 ? "| #{ page.filePathStem.replace('/_pages/', '/') + (page.filePathStem === '/_pages/index' ? '.html' : '/index.html') }"
                 : "| #{ page.filePathStem.replace('/_pages/', '/') }.html",
-        integrations: integrationsWithoutParentTags.map((i) => ({
-            id: i.id,
-            logo: i.smallIcon,
-            name: i.name,
-            outOfPlan: i.outOfPlan,
-            catalog: i.tags.catalog,
-            description: i.description,
-            docs: i.resources?.configureAppDocUrl,
-            guide: i?.website_description,
-            children: integrationsWithParentTags.filter((integration) => integration?.parent?.includes?.(i.id)).map((child) => ({
-                id: child.id,
-                logo: child.smallIcon,
-                name: child.name,
-                outOfPlan: child.outOfPlan,
-                catalog: child.tags.catalog,
-                description: child.description,
-            }))
-        })),
+        integrations,
         integrationCategories: [
             'All',
             ...new Set(
-                integrationsWithoutParentTags.map((i) => i.tags.catalog.split(',')).flat(),
+              integrationsFeed.map((i) => i.tags.catalog.split(',')).flat(),
             ),
         ],
     };
