@@ -124,7 +124,7 @@ If the request is successful, you should get a response that looks like this:
 ```
 We'll use the value for **access_token** in our next requests. 
 
-For reference, below is a screenshot of the request in Postman:  
+For reference, below is a screenshot of the request in Postman:
 
 ![Discord Rest API Postman](discord-rest-api-oauth-token.png 'Discord Rest API Postman')
 
@@ -202,7 +202,7 @@ After setting up the request in Postman, hit **Send**. If the current user has a
 ## Summing Up
 In this post, you've learned what the Discord API is, how to set it up, and the steps for making requests to its endpoints. The next thing I recommend is figuring out how to parse the response data in your preferred programming language. That will help you take the example usage above and turn it into a practical application that you can use to enhance your Discord usage. 
 
-You can do many useful things by parsing the data from the Discord REST API. For example, you can parse the value for the **/users/@m**e endpoint to display a user's Discord profile photo in your custom web or mobile app. Similarly, you can parse the JSON response for the **/users/@me/connections** endpoint to show a user's ID on external services like Facebook and Twitter. 
+You can do many useful things by parsing the data from the Discord REST API. For example, you can parse the value for the `/users/@me` endpoint to display a user's Discord profile photo in your custom web or mobile app. Similarly, you can parse the JSON response for the `/users/@me/connections` endpoint to show a user's ID on external services like Facebook and Twitter. 
 
 If you enjoy this article, follow [@fusebitio](https://twitter.com/fusebitio) on Twitter for the latest developer content on Node.js, JavaScript, and APIs.
 
