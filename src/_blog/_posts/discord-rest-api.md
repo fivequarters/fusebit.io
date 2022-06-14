@@ -69,9 +69,13 @@ For this tutorial, we'll be using [OAuth2](https://oauth.net/2/) to authenticate
 In order to do this, we need to retrieve the **client ID** and **client secret** for our app. You can find both values on the **OAuth2** section of your application's settings page. 
 
 ![Discord API authentication](discord-rest-api-authentication.png 'Discord API authentication')
+
 Note: **Application ID** and **client ID** have the same value. Also, note down your client secret, as it will only be visible the first time you generate it. 
 
+If you forget to copy the client secret, you’ll need to regenerate a new key by clicking the Rest Secret button. Resetting the client secret will render any old authorization code invalid and cause the OAuth token call to throw a 400 error. In order to prevent this error, always copy the client secret before proceeding.
+
 Next, enter a redirect URL, as Discord requires at least one redirect URL in order for authentication to work. The value you enter here should be a link to some page you control. You can use `http://localhost/discord/redirect` for our example. In our next step, you'll see how the redirect URL actually works. Once you're done, click on the **Save Changes** button.
+
 ### Step 3: Generate an App Authorization (Invite) Link
 Before we can send requests to the Discord API on behalf of a user, the user must first authorize our app. Because of this, we need a way for them to accept or decline access. To make this process easy, Discord has an invite URL generator tool built into the application's settings page. 
 
@@ -120,7 +124,7 @@ If the request is successful, you should get a response that looks like this:
 ```
 We'll use the value for **access_token** in our next requests. 
 
-For reference, below is a screenshot of the request in Postman: 
+For reference, below is a screenshot of the request in Postman:
 
 ![Discord Rest API Postman](discord-rest-api-oauth-token.png 'Discord Rest API Postman')
 
@@ -132,7 +136,8 @@ In the next section, we'll take a look at two practical examples of making reque
 
 The scopes you select while setting up your invite URL affect what endpoint you can access. For example, the identity scope gives access to endpoints like `/users/@me`. It's important to note this, as the API may return an unauthorized error message when you work outside your scope. If you experience an authorization issue, check your scope to see if you've it set correctly. 
 
-### Example 1: Read User Profile
+### Example1: Read User Profile
+
 So, let's try to retrieve a user's profile using the authorization token we acquired in the last step. Open Postman and start a new request with the following configurations: 
 
 **Endpoint:** [https://discord.com/api/users/@me](https://discord.com/api/users/@me) 
@@ -157,6 +162,7 @@ Once you're done, hit **Send** and you should get the following response:
     "mfa_enabled": false
 }
 ```
+
 For reference, here's a screenshot of the above request in Postman: 
 
 ![Discord Rest API user profile](discord-rest-api-postman.png 'Discord Rest API user profile')
@@ -201,4 +207,3 @@ You can do many useful things by parsing the data from the Discord REST API. For
 If you enjoy this article, follow [@fusebitio](https://twitter.com/fusebitio) on Twitter for the latest developer content on Node.js, JavaScript, and APIs.
 
 *This post was written by Pius Aboyi. [Pius](https://www.linkedin.com/in/aboyipius/?originalSubdomain=ng) is a mobile and web developer with over 4 years of experience building for the Android platform. He writes code in Java, Kotlin, and PHP. He loves writing about tech and creating how-to tutorials for developers.*
-
