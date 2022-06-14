@@ -60,6 +60,7 @@
     @import '_page__integration--hero';
     @import '_page__integration--guide';
     @import '_page__integration--popular';
+    @import '_page__integration--posts';
     @import '_page__integration--footer';
 }
 
@@ -87,3 +88,4 @@
 @import 'component-swiper';
 @import 'component-avatar';
 @import 'component-dropdown';
+@import 'component-post-card';
