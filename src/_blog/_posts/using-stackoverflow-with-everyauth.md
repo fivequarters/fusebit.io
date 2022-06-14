@@ -6,7 +6,7 @@ date: '2022-05-06'
 post_image: stackoverflow-everyauth-example.png
 post_excerpt: Learn how to interact with Stack Overflow API from an Express application to display user and global top 10 questions and answers using EveryAuth.
 post_slug: using-stackoverflow-with-everyauth
-tags: ['post', 'authentication']
+tags: ['post', 'authentication', 'google:hidden']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/stackoverflow-everyauth-example.png
 posts_related: ['everyauth','integrate-github-api-everyauth', 'integrate-linear-api-everyauth']

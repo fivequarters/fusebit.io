@@ -2,8 +2,15 @@ section.posts.section.section--no-margin
     .posts__footer-background
     .posts__container.layout
         .posts__content
-            h2.posts__content-title Most Recent Posts
-            .posts__content-list
-                each post in [...collections.post].filter((post) => post.data.post_slug !== slug).reverse().slice(0, 3)
-                    +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
+            - const relatedPosts = [...collections.post].filter((post) => post.data.tags.includes(`${integration.id}:hidden`))
+            if relatedPosts.length > 0
+                h2.posts__content-title Related Content
+                .posts__content-list
+                    each post in relatedPosts
+                        +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
+            else 
+                h2.posts__content-title Most Recent Posts
+                .posts__content-list
+                    each post in [...collections.post].reverse().slice(0, 3)
+                        +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
             
