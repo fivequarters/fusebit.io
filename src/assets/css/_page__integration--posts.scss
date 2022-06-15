@@ -39,6 +39,23 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
             grid-gap: 40px 32px;
+
+            .swiper-wrapper {
+                padding-bottom: 82px;
+                .swiper-slide {
+                    .post-card {
+                        min-height: 580px;
+                    }
+                }
+            }
+        }
+        
+        &-pagination {
+            .swiper-pagination-bullet {
+                background: var(--dark);
+                width: 8px;
+                height: 8px;
+            }
         }
     }
 }
