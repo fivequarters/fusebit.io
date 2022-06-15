@@ -6,7 +6,7 @@ date: '2022-04-29'
 post_image: linear-everyauth-example.png
 post_excerpt: Learn how to use the Linear API by creating an Express application that displays a custom form to create new issues
 post_slug: using-linear-with-everyauth
-tags: ['post', 'authentication']
+tags: ['post', 'authentication', 'google:hidden']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/linear-everyauth-example.png
 posts_related: ['everyauth','integrate-github-api-everyauth', 'integrate-linear-api-everyauth']
