@@ -33,16 +33,42 @@ section.posts.section.section--no-margin
                     delay: 2500,
                 },
                 breakpoints: {
-                    760: {
+                    700: {
                         slidesPerView: 2,
                     },
-                    1150: {
+                    1200: {
                         slidesPerView: 3,
                     }
                 },
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
-                },
+                }
             });
+
+            function calculateCardsHeight() {
+                const cards = document.querySelectorAll('.post-card');
+                let largestCardSize = 0;
+
+                // Normalize cards height
+                cards.forEach((card) => {
+                    card.style.height = 'auto';
+                });
+
+                // Search for the biggest card
+                cards.forEach((card) => {
+                    const cardHeight = card.clientHeight;
+                    if (cardHeight > largestCardSize) {
+                        largestCardSize = cardHeight;
+                    }
+                });
+
+                // Set that height to all the cards
+                cards.forEach((card) => {
+                    card.style.height = `${largestCardSize}px`;
+                });
+            };
+            calculateCardsHeight();
+
+            window.addEventListener('resize', calculateCardsHeight);
         }
