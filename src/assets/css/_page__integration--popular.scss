@@ -5,9 +5,9 @@
 
     &-lines {
         position: absolute;
-        top: 137px;
+        top: 90px;
         right: 0;
-        width: 370px;
+        width: 407px;
         height: 100%;
         background-size: contain;
         background-repeat: no-repeat;
@@ -52,6 +52,7 @@
         width: 90%;
         max-width: var(--container);
         z-index: 1;
+        padding: 144px 0 130px 0;
     }
 
     &__content {
