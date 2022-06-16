@@ -18,9 +18,9 @@ block page_variable
 block content
     include ../_components/Integration/Hero/Hero
     include ../_components/Integration/Guide/Guide
-    //- if !integration.outOfPlan
-    //-     include ../_components/Integration/Popular/Popular
-    //-     include ../_components/Integration/Posts/Posts
+    if !integration.outOfPlan
+        include ../_components/Integration/Popular/Popular
+    include ../_components/Integration/Posts/Posts
 
 block scripts
     script.

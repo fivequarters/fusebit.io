@@ -15,7 +15,11 @@ section.popular.section.section--no-margin
         .popular-bottom-left-ellipsis
         .popular-bottom-right-ellipsis
         .popular__content
-            h2.popular__content-title Popular #{integration.name} Integrations
+            h2.popular__content-title 
+                if integration.children.length > 0
+                    | Popular #{integration.name} Integrations
+                else
+                    | Get Started
             +integration(integration.logo, integration.name, integration.description, integration.id)
             - const buildAmount = 3
             - let showMoreButton = false
