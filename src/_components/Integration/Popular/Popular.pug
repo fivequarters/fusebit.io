@@ -3,7 +3,8 @@ mixin integration(logo, name, description, id, hidden)
         img.popular__content-integration-icon(src= `data:image/svg+xml;utf8,${encodeURIComponent(logo)}` alt= name)
         .popular__content-integration-description-wrapper 
             .popular__content-integration-description-title #{name}
-            .popular__content-integration-description-text #{description}
+            .popular__content-integration-description-text
+                != filters.removeMarkdown(`${description}`)
         +cta("Try Now", `${site.portalBaseUrl}/signup?key=${id}`, "popular__content-integration-cta", null, true, "Try Now Button Clicked", "Popular", true, "_blank", "noreferrer")
 
 
