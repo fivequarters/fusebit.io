@@ -2,6 +2,25 @@
     position: relative;
     background-color: #10091D;
 
+    @media (max-width: 700px) {
+        background: linear-gradient(205.64deg, #07122A 26.16%, #16073A 94.65%);
+    }
+
+    &__top-right-mobile-ellipsis {
+        display: none;
+        @media (max-width: 700px) {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 264px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url(./images/integration/hero/top-right-mobile-ellipsis.svg);
+        }
+    }
+    
     &__mark {
         position: absolute;
         mix-blend-mode: lighten;
@@ -9,6 +28,10 @@
         height: 100%;
         background-size: contain;
         background-repeat: no-repeat;
+
+        @media (max-width: 700px) {
+            display: none;
+        }
 
         &--yellow {
             width: 258px;
@@ -79,7 +102,6 @@
         z-index: 1;
 
         @media only screen and (max-width: 700px) {
-            width: calc(90% - 2.5rem);
             padding-left: 2.5rem;
         }
     }
@@ -89,8 +111,19 @@
             display: flex;
             align-items: center;
 
+            &-column-mobile {
+                @media (max-width: 700px) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+
             &--margin-bottom {
                 margin-bottom: 56px;
+
+                @media (max-width: 700px) {
+                    margin-bottom: 23px;
+                }
             }
         }
 
@@ -99,12 +132,22 @@
             width: 48px;
             object-fit: contain;
 
+            @media (max-width: 700px) {
+                height: 32px;
+                width: 32px;
+            }
+
             &-wrapper {
                 padding: 24px;
                 background: white;
                 box-shadow: 0px 20px 48px rgba(52, 72, 123, 0.1);
                 border-radius: 12px;
                 margin-right: 40px;
+
+                @media (max-width: 700px) {
+                    padding: 16px;
+                    margin-right: 24px;
+                }
             }
         }
 
@@ -114,6 +157,10 @@
             line-height: 110%;
             color: white;
             z-index: 1;
+
+            @media (max-width: 700px) {
+                font-size: 38px;
+            }
         }
 
         &-cta {
@@ -122,9 +169,20 @@
             padding: 20px 32px;
             margin-right: 16px;
 
+            @media (max-width: 700px) {
+                font-size: 16px;
+                line-height: 24px;
+                padding: 12px 14px;
+                margin-bottom: 16px;
+            }
+
             &-outlined {
                 background: none;
                 border: 1px solid white;
+
+                @media (max-width: 700px) {
+                    padding-right: 16px;
+                }
 
                 &:hover {
                     background: none;
