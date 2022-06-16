@@ -19,55 +19,37 @@ section.posts.section.section--no-margin
                             .swiper-slide 
                                 +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
                     .posts__content-pagination.swiper-pagination
+
     script.
-
-        const swiperContainer = document.querySelector('.swiper-container');
-        if (swiperContainer) {
-            const postsSwiper = new Swiper('.posts__content-list', {
-                watchOverflow: true,
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-                slidesPerColumnFill: 'row',
-                spaceBetween: 30,
-                autoplay: {
-                    delay: 2500,
-                },
-                breakpoints: {
-                    700: {
-                        slidesPerView: 2,
+        window.addEventListener("load", () => {
+            const swiperContainer = document.querySelector('.swiper-container');
+            if (swiperContainer) {
+                const postsSwiper = new Swiper('.posts__content-list', {
+                    watchOverflow: true,
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    slidesPerColumnFill: 'row',
+                    spaceBetween: 30,
+                    autoplay: {
+                        delay: 2500,
                     },
-                    1200: {
-                        slidesPerView: 3,
-                    }
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                }
-            });
-
-            function calculateCardsHeight() {
-                const cards = document.querySelectorAll('.post-card');
-                let largestCardSize = 0;
-
-                // Search for the biggest card
-                cards.forEach((card) => {
-                    // Normalize card height
-                    card.style.height = 'auto';
-
-                    // Check the height
-                    const cardHeight = card.clientHeight;
-                    if (cardHeight > largestCardSize) {
-                        largestCardSize = cardHeight;
+                    breakpoints: {
+                        700: {
+                            slidesPerView: 2,
+                        },
+                        1200: {
+                            slidesPerView: 3,
+                        }
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    on: {
+                        init: () => {
+                            calculateCardsHeight('.post-card');
+                        }
                     }
                 });
-
-                // Set that height to all the cards
-                cards.forEach((card) => {
-                    card.style.height = `${largestCardSize}px`;
-                });
-            };
-            calculateCardsHeight();
-
-            window.addEventListener('resize', calculateCardsHeight);
-        }
+            }            
+        });
