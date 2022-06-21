@@ -111,7 +111,7 @@ Next, in Postman, go ahead and put in the API endpoint, then click send. Our res
 
 To create a board, we'll make a **POST** request to the following endpoint:
 
-https://api.trello.com/1/boards?key={APIKey}&token={APIToken}
+`https://api.trello.com/1/boards?key={APIKey}&token={APIToken}`
 
 Unlike the last two examples, this endpoint requires that we provide the body of the request with a JSON object. These data include properties like name, desc (description), idOrganization, and so on, that describe the new board you intend to create.
 
@@ -119,7 +119,7 @@ For simplicity's sake, we’ll only provide the board name and description.
 
 Now in Postman, change the request type to **POST** and change the API endpoint to point to the endpoint provided earlier in this step. Remember to replace the parameter in braces with valid data. Next, in the body of the request, create a JSON object with the name and the description of your board, for example:
 
-{“name” : “Super Hero HQ”, “desc” : “Daily tasks for CodeMan and his Tech Hero pals”}
+`{“name” : “Super Hero HQ”, “desc” : “Daily tasks for CodeMan and his Tech Hero pals”}`
 
 You can use any name and description you like. Once the JSON object is ready, click on the **Send** button to send the request. Below is a picture showing a sample of a request.
 
@@ -139,7 +139,7 @@ The request body will contain a JSON object with properties like email, fullName
 
 Open Postman and make sure the request method is set as **PUT** and again, you replace the terms in curly braces with their actual values. Also, in the body provide your JSON object with the email address, and type the full name of the new member you’re inviting. The value for **type** can be admin, normal, observer, or another option. For example, here's the request body for this example:
 
-{“email” : “memeberEmail@mail.com”, “fullName” : “John Doe”, “type” : “normal”}
+`{“email” : “memeberEmail@mail.com”, “fullName” : “John Doe”, “type” : “normal”}`
 
 After providing the information, click **Send** to make the request. If the request is successful, you’ll receive a response with a list of members assigned to that board, including the new member you invited.
 
@@ -147,7 +147,7 @@ After providing the information, click **Send** to make the request. If the requ
 
 To add a list to a board we make a **POST** request to the following endpoint:
 
-https://api.trello.com/1/boards/{id}/lists?key={APIKey}&token={APIToken}
+`https://api.trello.com/1/boards/{id}/lists?key={APIKey}&token={APIToken}`
 
 Make sure to replace **{id}** with the actual ID of a board, and replace the other parameter in braces with valid data.
 
@@ -163,7 +163,7 @@ In the picture above, you can see the body of the request, and the response we g
 
 To add a card to a list, we make a **POST** request to this endpoint:
 
-https://api.trello.com/1/cards/?idList={listId}&key={APIKey}&token={APIToken}
+`https://api.trello.com/1/cards/?idList={listId}&key={APIKey}&token={APIToken}`
 
 Replace **{listId}** with the actual ID of the list you’re adding the card to, and replace **{APIKey}** and **{APIToken}** with their actual values as well.
 
