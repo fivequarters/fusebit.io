@@ -9,7 +9,7 @@
         top: 190px;
         right: 0;
         height: 100%;
-        width: 400px;
+        width: 290px;
         background-size: contain;
         background-image: url(./images/integration/guide/integrations.svg);
         background-repeat: no-repeat;
@@ -56,6 +56,7 @@
         width: 90%;
         max-width: var(--container);
         z-index: 1;
+        padding-bottom: 50px;
 
         @media (max-width: 1080px) {
             padding-bottom: 400px;
