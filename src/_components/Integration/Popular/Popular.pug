@@ -20,17 +20,25 @@ section.popular.section.section--no-margin
                     | Popular #{integration.name} Integrations
                 else
                     | Get Started
-            +integration(integration.logo, integration.name, integration.description, integration.id)
-            - const buildAmount = 3
-            - let showMoreButton = false
-            each child, index in integration.children
-                - let isHidden = index + 1 >= buildAmount
-                if isHidden
-                    - showMoreButton = true
-                +integration(child.logo, child.name, child.description, child.id, isHidden)
-            if showMoreButton
-                +cta("More", null, "popular__content-integration-cta-outlined", "more", true, "More Button Clicked", "Popular Integrations", true, null, null)
-
+            .popular__content-mobile-hidden
+                +integration(integration.logo, integration.name, integration.description, integration.id)
+                - const buildAmount = 3
+                - let showMoreButton = false
+                each child, index in integration.children
+                    - let isHidden = index + 1 >= buildAmount
+                    if isHidden
+                        - showMoreButton = true
+                    +integration(child.logo, child.name, child.description, child.id, isHidden)
+                if showMoreButton
+                    +cta("More", null, "popular__content-integration-cta-outlined", "more", true, "More Button Clicked", "Popular Integrations", true, null, null)
+            .popular__content-mobile-visible.swiper-container
+                .swiper-wrapper
+                    .swiper-slide
+                        +integration(integration.logo, integration.name, integration.description, integration.id)
+                    each child in integration.children
+                        .swiper-slide
+                            +integration(child.logo, child.name, child.description, child.id, isHidden)
+                .popular__content-pagination.swiper-pagination
     script.
         let runtimeAmount = 3;
 
@@ -40,5 +48,33 @@ section.popular.section.section--no-margin
                 elements: ".show-more-item--hidden",
                 showMoreId: "more",
                 defaultDisplay: "flex",
-            })
+            });
+
+            const swiperContainer = document.querySelector('.swiper-container');
+            if (swiperContainer) {
+                const postsSwiper = new Swiper('.popular__content-mobile-visible', {
+                    watchOverflow: true,
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    slidesPerColumnFill: 'row',
+                    spaceBetween: 30,
+                    autoplay: {
+                        delay: 2500,
+                    },
+                    breakpoints: {
+                        700: {
+                            slidesPerView: 2,
+                        },
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    on: {
+                        init: () => {
+                            calculateCardsHeight('.post-card');
+                        }
+                    }
+                });
+            }
         })
