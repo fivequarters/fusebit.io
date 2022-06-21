@@ -50,7 +50,9 @@ block content
             .post__content
                 .post__hero-image
                     != filters.getImageTag(`blog/${post_image}`, 'Hero Image', null, { id:"hero-image" })
-                article.article.post__article!= content
+                article.article
+                    +tableOfContents(docs_related, post_cta)
+                    .post__article!= content
             .post__navigation-container
                 - const prevPost = filters.getNextCollectionItem(collections.post, page) || null
                 - const nextPost = filters.getPreviousCollectionItem(collections.post, page) || null
@@ -71,7 +73,7 @@ block content
         if posts_related
             .layout.post__trending-layout
                 h2 Related Content
-                .post-card-container.post__trending-list
+                .post-card-container.post__trending-list(id="related-content")
                     each relatedPost in posts_related
                         each post in [...collections.post].filter((post) => post.data.post_slug === relatedPost).slice(0, 3)
                             +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
@@ -131,4 +133,9 @@ block scripts
                 });
             }
         });
+
+        window.addEventListener("load", () => {
+            tableOfContents('.post__article');
+        });
+        
 

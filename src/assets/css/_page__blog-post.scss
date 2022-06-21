@@ -8,9 +8,14 @@
 
     &__article {
         padding: 30px 0;
-        max-width: 900px;
-        margin: 0 auto;
+        max-width: 60%;
+        margin-left: auto;
         overflow: visible;
+
+        @media (max-width: 1000px) {
+            margin: 0 auto;
+            max-width: 100%;
+        }
     }
 
     &__date {

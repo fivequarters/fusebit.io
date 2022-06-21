@@ -96,15 +96,6 @@ html(lang='en' class=(pageClass || ''))
         });
       })
 
-    script(src='https://cdn.onesignal.com/sdks/OneSignalSDK.js' async='')
-    script.
-      window.OneSignal = window.OneSignal || [];
-      OneSignal.push(function() {
-        OneSignal.init({
-          appId: "fd4591c9-6a5b-49a8-9def-577aa6c9f9e0",
-        });
-      });
-
     script.
       window._vwo_code = window._vwo_code || (function(){
       var account_id=594269,
@@ -121,14 +112,14 @@ html(lang='en' class=(pageClass || ''))
 
     include ../_components/Modal/Modal
     include ../_components/Modal/ModalSignUp
-    include ../_components/Modal/ModalDemo
+    include ../_components/Modal/ModalContact
     include ../_components/Modal/ModalPricing
-    include ../_components/HeaderLeaders/Header
+    include ../_components/HeaderDevelopers/Header
 
     main(class=(content ? 'blog' : ''))
       block content
 
-    include ../_components/FooterLeaders/Footer
+    include ../_components/FooterDevelopers/Footer
 
     script(src="/assets/vendor/gsap/gsap.min.js")
     script(src="/assets/vendor/scrollmagic/ScrollMagic.min.js")
