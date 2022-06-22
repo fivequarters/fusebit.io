@@ -13,6 +13,7 @@
         background-size: contain;
         background-image: url(./images/integration/guide/integrations.svg);
         background-repeat: no-repeat;
+        transform: skewY(var(--oppositeAngle));
 
         @media (max-width: 1080px) {
             display: none;
@@ -27,7 +28,7 @@
                 left: 0;
                 height: 490px;
                 width: 100vw;
-                transform: rotate(6deg);
+                transform: skewY(var(--oppositeAngle));
                 background-size: cover;
                 background-image: url(./images/integration/guide/integrations-mobile.svg);
                 background-repeat: no-repeat;

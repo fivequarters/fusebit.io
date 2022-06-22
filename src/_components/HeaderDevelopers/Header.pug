@@ -72,8 +72,15 @@ header.header
                 let prevScroll = window.pageYOffset;
                 const isBlogSite = window.location.pathname.includes('blog');
                 const isMakeSite = window.location.pathname.includes('make');
+                const sidebar = document.querySelector(".sidebar");
+                const sidebarMobileBtn = document?.querySelector(".header__sidebarMobile--btn");
+                const isTablet = window.matchMedia('screen and (max-width: 1000px)').matches;
 
-                if(isBlogSite || isMakeSite) {
+                if (sidebar) {
+                    sidebarMobileBtn.classList.remove("header__sidebarMobile--btn-hidden");
+                }
+
+                if(isBlogSite || isMakeSite || sidebar) {
                     const header = document.querySelector('.header');
                     header.classList.add('header--compact');
                 }
@@ -90,7 +97,7 @@ header.header
                         }
 
                         return
-                    } 
+                    }
 
                     if (prevScroll > currentScroll) {
                         header.classList.add('header--compact');
@@ -104,9 +111,19 @@ header.header
 
                 const header = document.querySelector('.header');
                 const menuMobileBtn = document.querySelector('.header__menuMobile--btn');
+                const menuSidebarMobileBtn = document.querySelector('.header__sidebarMobile--btn');
 
                 menuMobileBtn.addEventListener('click', () => {
                     header.classList.toggle('header__menuMobile--open');
                     document.querySelector('html').classList.toggle('hidden');
+                    if (header.classList.contains('header__menuMobile--open')) {
+                        sidebarMobileBtn.classList.add("header__sidebarMobile--btn-hidden");
+                    } else if (sidebar) {
+                        sidebarMobileBtn.classList.remove("header__sidebarMobile--btn-hidden");
+                    }
+                });
+
+                menuSidebarMobileBtn.addEventListener('click', () => {
+                    sidebar.classList.add("sidebar--mobile-active");
                 });
             });

@@ -14,7 +14,7 @@
             right: 0;
             top: 0;
             height: 100%;
-            width: 264px;
+            width: 250px;
             background-size: contain;
             background-repeat: no-repeat;
             background-image: url(./images/integration/hero/top-right-mobile-ellipsis.svg);
@@ -106,6 +106,7 @@
         @media (max-width: 700px) {
             padding: var(--paddingLayout) 0;
             padding-left: 40px;
+            padding-bottom: 60px;
         }
 
         @media (min-width: 1650px) {
