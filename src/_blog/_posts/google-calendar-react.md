@@ -52,11 +52,11 @@ You'll need an API key to list events from the calendar, but for adding an event
 
 Before generating an API key, navigate to the [library](https://console.cloud.google.com/apis/library) tab in the Google Cloud Console and enable Google Calendar API.
 
-![Google Calendar API in React.js](google-cal-react-1.png "Google Calendar API in React.js")
+![Google Calendar API in React.js with-shadow](google-cal-react-1.png "Google Calendar API in React.js")
 
 It’s time to generate the API key. Move to the Credentials tab from the left sidebar and click "Create Credentials." From the dropdown, select "API key." Once the API key is generated successfully, keep it someplace safe until we start with the actual coding.
 
-![Google Calendar API in React.js](google-cal-react-2.png "Google Calendar API in React.js")
+![Google Calendar API in React.js with-shadow ](google-cal-react-2.png "Google Calendar API in React.js")
 
 ### How to Generate an Access Token From Developer Playground
 
@@ -64,11 +64,11 @@ To add events to your calendar, you must pass an access token in your request he
 
 You can quickly generate an access token from [Google OAuth Playground](https://developers.google.com/oauthplayground/). Select "Google Calendar API V3" from the list and click "Authorize APIs."
 
-![Google Calendar API in React.js](google-cal-react-3.png "Google Calendar API in React.js")
+![Google Calendar API in React.js with-shadow](google-cal-react-3.png "Google Calendar API in React.js")
 
 You will now be redirected to the Google consent screen, where you have to select the Google account you’ll be using. Press Continue to accept the terms, and you’ll be redirected to the following screen:
 
-![Google Calendar API in React.js](google-cal-react-4.png "Google Calendar API in React.js")
+![Google Calendar API in React.js with-shadow](google-cal-react-4.png "Google Calendar API in React.js")
 
 **Note:** The access code is only valid for 3,600 seconds for security reasons.
 
