@@ -86,7 +86,7 @@ The **idModel** property represents the model ID we mentioned earlier. It could 
 
 Once Trello sends data to your callback URL, you can then parse it and use it in your application without calling the endpoint that usually returns similar data. This way, you never hit the API limit and only need to process data when the value changes from the initial value at your last call.
 
-### **4. Use Nested Resources**
+### 4. Use Nested Resources
 
 Resources in Trello are nested by nature. For example, a card is inside a list that is inside a board. As a result, the Trello API offers an option for fetching nested resources in a single request to reduce API calls.
 
@@ -160,7 +160,7 @@ The practices we mentioned include the use of middleware, implementation of thro
 
 Applying the best practices we discussed can eliminate most rate limiting errors.
 
-Finally, if you want to learn more about third party API integrations, you can visit Fusebit’s [blog](https://fusebit.io/blog/tags/integrations/).
+Finally, if you want to learn more about third party API integrations, you can visit Fusebit’s [integration blog](https://fusebit.io/blog/tags/integrations/).
 
 _This post was written by Pius Aboyi. [Pius](https://www.linkedin.com/in/aboyipius/?originalSubdomain=ng) is a mobile and web developer with over 4 years of experience building for the Android platform. He writes code in Java, Kotlin, and PHP. He loves writing about tech and creating how-to tutorials for developers._
 
