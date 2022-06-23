@@ -17,7 +17,7 @@ posts_related:
   ]
 ---
 
-Third-party APIs like the[ Trello](https://trello.com/en) API can make life easier for developers and their organizations in many ways. For instance, teams that use Trello can make use of the API to automate repetitive tasks like adding new members to boards. It's even possible for developers to use such APIs to add new features to their own applications.
+Third-party APIs like the [Trello](https://trello.com/en) API can make life easier for developers and their organizations in many ways. For instance, teams that use Trello can make use of the API to automate repetitive tasks like adding new members to boards. It's even possible for developers to use such APIs to add new features to their own applications.
 
 However, usually, public API services like the Trello API have request limits. The purpose of API rate limiting is to prevent users from overloading and crashing the service. Because of this, when you're using an API from a third party like Trello, it's important to have knowledge of its limits and how to safely work within the limits. In this post, we'll be sharing best practices for avoiding rate limits in the Trello API.
 
