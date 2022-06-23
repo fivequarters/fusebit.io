@@ -372,6 +372,6 @@ You can call the addEvent function with any to-do list or other task management 
 
 ## Conclusion
 
-Google Calendar API is a powerful way to display events in your application. This is a widespread use case for many applications. We hope this post has helped you understand how to use Google Calendar API in your ReactJS application. If you have any questions about using Google Calendar API in ReactJS, feel free to reach out to us on[ Twitter](https://twitter.com/fusebitio) or learn more about integrations [here](https://fusebit.io/integrations/).
+Google Calendar API is a powerful way to display events in your application. This is a widespread use case for many applications. We hope this post has helped you understand how to use Google Calendar API in your ReactJS application. If you have any questions about using Google Calendar API in ReactJS, feel free to reach out to us on [Twitter at @fusebitio](https://twitter.com/fusebitio) or try our [Fusebit integrations](https://fusebit.io/integrations/) yourself.
 
 _This post was written by Keshav Malik. [Keshav](https://theinfosecguy.xyz/) is a full-time developer who loves to build and break stuff. He is constantly on the lookout for new and interesting technologies and enjoys working with a diverse set of technologies in his spare time. He loves music and plays badminton whenever the opportunity presents itself._
