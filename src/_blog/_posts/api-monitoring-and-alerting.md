@@ -69,7 +69,7 @@ On the right, you can see a histogram of the API health that eventually will sho
 
 Now, let’s put a cherry on top of this health monitoring solution: alerting. We will configure the spreadsheet to send Slack notifications whenever the health status of your API changes. You will receive notifications when your API starts failing, another when it recovers from a failure, and also every 5 minutes during continued downtime. (Just in case you hit a snooze button when you receive that first notification at 2:45 am).
 
-First go to your Slack and create a <a href=”https://api.slack.com/messaging/webhooks” target=”_blank”>Slack Incoming Webhook</a> for the Slack channel where you want to receive those notifications. Then put the webhook URL in the Config!B11 cell of your spreadsheet.
+First go to your Slack and create a [Slack Incoming Webhook](https://api.slack.com/messaging/webhooks) for the Slack channel where you want to receive those notifications. Then put the webhook URL in the Config!B11 cell of your spreadsheet.
 
 ![Free API Health Monitoring And Alerting for Early Stage Startups](blog-health-7.png)
 

@@ -54,7 +54,7 @@ The request above retrieves information about Scott Chacon, a co-founder of GitH
 }
 ```
 
-As you can see, one of the properties of the JSON response is "repos_urls," whose value is **["https://api.github.com/users/schacon/repos."]("https://api.github.com/users/schacon/repos.")** Let's hit that endpoint now: 
+As you can see, one of the properties of the JSON response is "repos_urls," whose value is **[https://api.github.com/users/schacon/repos.](https://api.github.com/users/schacon/repos)** Let's hit that endpoint now: 
 
 `curl https://api.github.com/users/schacon/repos`
 

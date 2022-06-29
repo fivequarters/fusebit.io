@@ -47,7 +47,7 @@ EveryAuth takes care of the above pieces by:
 
 * Providing a shared Asana application so that you don’t need to [register your own](https://developers.asana.com/docs/oauth) with to get started (you still can if you want to later).  
 * Taking care of all OAuth handshakes and exchanges for you behind the scenes based on the service so you don’t need to learn about implementation details and differences between Google and Asana.  
-* Handling the secure storage of your customers’ credentials on the [Fusebit]([https://fusebit.io](https://fusebit.io)) platform and automatically renewing them for you, so you don’t have to write all that boilerplate code in your app.  
+* Handling the secure storage of your customers’ credentials on the [Fusebit](https://fusebit.io) platform and automatically renewing them for you, so you don’t have to write all that boilerplate code in your app.  
 * Providing a flexible credential indexing feature that allows you to avoid making changes to your database structure - you can use identifiers specific to your app as indexing keys when referencing credentials stored in EveryAuth.  
 * Providing a CLI management tool that helps you manage all of your customers’ credentials and service configuration.  
 
@@ -189,7 +189,7 @@ SERVICES.forEach((service) => {
 
 That’s it, now you can redirect your users to `/google/authorize/:userId` OR ‘/asana/authorize/:userId’ programmatically and it will kick off the authentication flow for them. You can also easily add any service into the mix without having to do any extra coding. 
 
-> Out of box, EveryAuth comes with a [number of supported services]([https://github.com/fusebit/everyauth-express#supported-services](https://github.com/fusebit/everyauth-express#supported-services)), including Google and Asana. If there’s one missing, ping us and let us know - we can easily add it in for you!
+> Out of box, EveryAuth comes with a [number of supported services](https://github.com/fusebit/everyauth-express#supported-services), including Google and Asana. If there’s one missing, ping us and let us know - we can easily add it in for you!
 
 ## Call the Asana API
 
