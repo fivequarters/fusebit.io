@@ -3,7 +3,7 @@ post_title: Node.js WebSocket Client, 3 Ways to Implement One
 post_author: Juan Reyes
 post_author_avatar: juan.png
 date: '2022-07-07'
-post_image: 
+post_image: nodejs-websocket-client-main.png
 post_excerpt: This article will explore the best ways to implement a NodeJS websocket client. Let's find out more by diving deep in this post.
 post_slug: nodejs-websocket-client
 tags: ['post', 'node.js']
