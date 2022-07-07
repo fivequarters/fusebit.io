@@ -9,7 +9,7 @@ post_slug: webworkers
 tags: ['post', 'developer tools', 'node.js', ‘deno’]
 post_date_in_url: false
 post_og_image: ‘hero’
-posts_related: ['node-18-release','promise-performance-node,'web-frameworks-plugins-architecture-overview']
+posts_related: ['node-18-release','promise-performance-node','web-frameworks-plugins-architecture-overview']
 ---
 
 Deno’s secure, fast & lightweight approach coupled with features like native TypeScript support and [near-perfect compatibility with Web API](https://deno.land/manual/runtime/web_platform_apis) make it a really attractive option for web developers. So it’s no surprise that the Node.js community is looking over their shoulder as Deno grows in popularity. 
