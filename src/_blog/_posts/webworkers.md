@@ -46,7 +46,7 @@ Additionally, consider that Web Workers isn’t a JavaScript feature, it’s a b
 
 So, it’s clear that while ‘multi-threading’ is a common need, the actual use-cases are different. Why then is there a conversation around adding full Web Workers support to Node.js? 
 
-| “Deno supports Web Workers, so Node.js should too!” - Internet
+> “Deno supports Web Workers, so Node.js should too!” - Internet
 
 ## The Case for Web Workers in Node.js
 
