@@ -3,7 +3,7 @@ post_title: A Guide To Events In The Google Calendar API
 post_author: Nabendu Biswas
 post_author_avatar: nabendu.png
 date: '2022-07-07'
-post_image: 
+post_image: events-google-calendar.png
 post_excerpt: While utilizing one of the top calendar apps, there is the very useful Google Calendar APIs which can programmatically generate events. 
 post_slug: events-in-the-google-calendar-API
 tags: ['post', 'developer tools']
