@@ -24,7 +24,7 @@ The question is: would adding Web Workers support really add a ton of value for 
 
 Let’s understand the context of Node.js’s Worker Threads architecture and how it differs from Web Workers before we answer that question.
 
-## Context: Worker Threads & Web Workers
+##  Why Are Worker Threads Implemented Differently Than the Web Workers API?
 
 [Anna Henningsen](https://twitter.com/addaleax), the architect behind Worker Threads, started development on this in 2018 with the primary goal of adding multi-threading support to Node.js within the [context of the needs](https://github.com/nodejs/worker/issues/1) of it's developers, not necessarily to be compatible with Web Worker API in the browser.
 
@@ -44,7 +44,7 @@ Of course, browsers also have similar use cases, but the applications are differ
 
 Additionally, consider that Web Workers isn’t a JavaScript feature, it’s a browser feature that can be accessed through JavaScript code -  that means it’s more expansive and general-purpose by design. 
 
-So, it’s clear that while ‘multi-threading’ is a common need, the actual use-cases are different. Why then is there a conversation around adding full Web Workers support to Node.js? 
+So, it’s clear that while ‘multi-threading’ is a common need, the actual use-cases are different. Why then is there a conversation around adding full Web Workers support to Node.js now? 
 
 > “Deno supports Web Workers, so Node.js should too!” - Internet
 
@@ -71,6 +71,5 @@ So, should Web Workers be added to Node or should developers just switch over to
 Worker Threads is a powerful feature that is purpose-built for Node.js needs (i.e. large server-side operations) - and [does a really good job](https://github.com/nodejs/worker/issues/6) of it as well. An implentation of the Web Workers API, similar to Deno’s approach, would allow developers to spend less time porting their apps to be compatible with browsers and more time focusing on their core app development instead.
 
 What are your thoughts on this? If this is something that resonates with you, and you feel strongly about adding Web Workers support to Node.js Core (or not), [head on over to the Github issue](https://github.com/nodejs/node/issues/43583) and add your thoughts to the discussion! 
-
 
 If you have any questions, you can reach out to me directly through our [community Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg), on [Twitter](https://twitter.com/shehzadakbar) and at [shehzad@fusebit.io](mailto:shehzad@fusebit.io). If you want more Node.js developer posts, follow [@fusebitio](https://twitter.com/fusebitio) on Twitter.
