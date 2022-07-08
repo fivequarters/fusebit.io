@@ -3,12 +3,12 @@ post_title: Unified APIs for Messaging, Accounting, CRM, and Beyond
 post_author: Tomasz Janczuk
 post_author_avatar: tomek.png
 date: '2022-07-07'
-post_image: blog-bots-hooks-extensions-main.jpg
+post_image: unified-api-main.png
 post_excerpt: Using unified APIs for classes of systems can accelerate your integration strategy, but watch out for these common pain points.
 post_slug: unified-apis
 tags: ['post', 'integrations']
 post_date_in_url: false
-post_og_image: https://fusebit.io/assets/images/blog/bots-hooks-extensions-social-card.png
+post_og_image: 'hero'
 posts_related:
   [
     'bots-hooks-extensions',
