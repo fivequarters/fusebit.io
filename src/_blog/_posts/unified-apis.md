@@ -17,7 +17,11 @@ posts_related:
   ]
 ---
 
-There are many choices involved in selecting the right integration strategy for your application. One of them is deciding whether to directly integrate with target systems like Slack, Discord, or Microsoft Teams, or whether to use an intermediary. Integration intermediaries (brokers) often offer _unified APIs_ - a single API and data model to communicate with a class of systems. Using a unified API enables you to quickly add integrations to many of the platforms your customers are using. However, this often happens at the cost of flexibility which may prevent you from implementing the specific integration logic your customers need. In this post, I talk about a win-win strategy that allows you to reap the benefits of using a unified API without the loss of fidelity with the individual target APIs you need.
+There are many choices involved in selecting the right integration strategy for your application. One of them is deciding whether to directly integrate with target systems like Slack, Discord, or Microsoft Teams, or whether to use an intermediary.
+
+Integration intermediaries (brokers) often offer _unified APIs_ - a single API and data model to communicate with a class of systems. Using a unified API enables you to quickly add integrations to many of the platforms your customers rely on. However, this often happens at the cost of flexibility which may prevent you from implementing the specific integration logic your customers need.
+
+In this post, I talk about a win-win strategy that allows you to reap the benefits of using a unified API without the loss of fidelity with the individual target APIs you need.
 
 ## How do Unified APIs Work?
 
@@ -31,7 +35,9 @@ When using unified APIs, your application never communicates directly with the s
 
 ## What Are the Benefits of Using Unified APIs?
 
-The primary benefit of using unified APIs is time to market for adding new integrations. If you offer CRM integrations, it is inevitable your customers or sales team will ask you to support a range of systems in this category, for example HubSpot, Pipedrive, or Salesforce. With unified APIs, adding support for one automatically enables many. Your engineering team can learn just a single API and data model to add integrations to an entire class of systems in your app in a similar time it would take them to directly support a single target system. Instead of slowly grinding through your backlog of Slack, Discord, and Microsoft Teams integrations, you can support all your customer messaging needs by using a unified API for messaging.
+The primary benefit of using unified APIs is time to market for adding new integrations. If you offer CRM integrations, it is inevitable your customers or sales team will ask you to support a range of systems in this category, for example HubSpot, Pipedrive, or Salesforce.
+
+With unified APIs, adding support for one automatically enables many. Your engineering team can learn just a single API and data model to add integrations to an entire class of systems in your app in a similar time it would take them to directly support a single target system. Instead of slowly grinding through your backlog of Slack, Discord, and Microsoft Teams integrations, you can support all your customer messaging needs by using a unified API for messaging.
 
 Another benefit of unified APIs is the reduction of maintenance costs of your integrations. Since you rely on a broker when communicating with specific target systems, it is the broker's responsibility to keep track of any changes to the data model or protocol of individual target systems like HubSpot, Salesforce, or Pipedrive, and react to them as necessary. Ideally, the broker can make the needed adjustments without requiring any changes to your code and without maintenance downtime.
 
@@ -43,7 +49,9 @@ Unified APIs often take the least-common-denominator approach to provide a commo
 
 ![What Are the Challenges of Using Unified APIs?](unified-api-2.png 'What Are the Challenges of Using Unified APIs?')
 
-The lack of fidelity with target APIs is usually more pronounced and painful when implementing B2B integrations, as these systems tend to offer rich configuration capabilities. If your customer is using Salesforce or HubSpot, they are very likely to have created custom fields or otherwise customized their instances in ways that draw outside the lines of the unified API abstractions. When faced with those situations, you are at the mercy of the unified API provider, their roadmap, timelines, and willingness to support your scenario. More often than not, given a sufficiently valuable prospect, you will find yourself writing a one-off, custom solution outside of the unified API just to close the deal. Each of those exceptions will have you question the wisdom of choosing the unified API integration approach in the first place.
+The lack of fidelity with target APIs is usually more pronounced and painful when implementing B2B integrations, as these systems tend to offer rich configuration capabilities. If your customer is using Salesforce or HubSpot, they are very likely to have created custom fields or otherwise customized their instances in ways that draw outside the lines of the unified API abstractions.
+
+When faced with those situations, you are at the mercy of the unified API provider, their roadmap, timelines, and willingness to support your scenario. More often than not, given a sufficiently valuable prospect, you will find yourself writing a one-off, custom solution outside of the unified API just to close the deal. Each of those exceptions will have you question the wisdom of choosing the unified API integration approach in the first place.
 
 ## Unified APIs Done Right - Buy then Build
 
@@ -53,7 +61,9 @@ Having control over the shape of the data model and the mapping to the target sy
 
 ![Unified APIs Done Right - Buy then Build](unified-api-3.png 'Unified APIs Done Right - Buy then Build')
 
-But once you make changes to the implementation of the unified API you bought, what is the benefit compared to just integrating your app with the target systems directly? The unified API is an important concept in your app that allows you to achieve separation of concerns on multiple levels leading to improved efficiency at scale. From the engineering standpoint, you can largely decouple the core engineering workload from the integration workload. In most situations, your integration team can add support to a new customer relationship platform like HubSpot to an existing unified API for CRM that includes Salesforce and Pipedrive without any involvement of the core engineering team. From the organizational standpoint, managing core and integration workloads separately is made easy. Given the well-defined technical interface, you can offshore the work on the unified API while keeping the core engineering of your app in-house.
+But once you make changes to the implementation of the unified API you bought, what is the benefit compared to just integrating your app with the target systems directly? The unified API is an important concept in your app that allows you to achieve separation of concerns on multiple levels leading to improved efficiency at scale.
+
+From the engineering standpoint, you can largely decouple the core engineering workload from the integration workload. In most situations, your integration team can add support to a new customer relationship platform like HubSpot to an existing unified API for CRM that includes Salesforce and Pipedrive without any involvement of the core engineering team. From the organizational standpoint, managing core and integration workloads separately is made easy. Given the well-defined technical interface, you can offshore the work on the unified API while keeping the core engineering of your app in-house.
 
 Starting from an existing unified API and modifying its implementation accelerates your time to market compared to building dedicated, native integrations from scratch. There are many iPaaS solutions that support embedded integration scenarios and contain the right developer tools and features to support fine-tuning a unified API implementation in-house. From handling authentication and authorization to target systems, seamless scalability, security, and reliability, to out-of-the-box connectors - these can all speed up your time to market when building your own unified API.
 
