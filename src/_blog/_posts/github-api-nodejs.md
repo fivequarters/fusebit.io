@@ -253,8 +253,8 @@ Here's what each endpoint represents:
 To use these routes in our app, we'll add the following line inside the **app.js** file: 
 
 ```js
-const router = require('./router');
-app.use('/github_api', router);
+const routes = require('./routes');
+app.use('/github_api', routes);
 ```
 
 Notice how each endpoint invokes a controller from a **controllers.js** file. It's not there yet, so let's go ahead and create it. 
