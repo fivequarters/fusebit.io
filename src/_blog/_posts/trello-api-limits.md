@@ -1,5 +1,5 @@
 ---
-post_title: Trello API Limits, 5 Best Practices to Avoid Rate Limiting
+post_title: 'Trello API Limits: 5 Best Practices to Avoid Rate Limiting'
 post_author: Pius Aboyi
 post_author_avatar: pius.png
 date: '2022-06-22'
