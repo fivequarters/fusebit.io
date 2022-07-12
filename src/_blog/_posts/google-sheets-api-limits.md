@@ -3,7 +3,7 @@ post_title: Google Sheets API Limits, What It Is and How to Avoid It
 post_author: Nabendu Biswas
 post_author_avatar: nabendu.png
 date: '2022-07-12'
-post_image: google-sheets-limits-main.png
+post_image: google-sheets-limits-main.jpg
 post_excerpt: In this post, we'll learn about the Google Sheets API limits. When we're making an app, using Google Sheets, we often hit this rate limit. 
 post_slug: google-sheets-api-limits
 tags: ['post', 'developer tools']
