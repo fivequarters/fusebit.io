@@ -1,5 +1,5 @@
 ---
-post_title: Using the Google Calendar API in React.js, An In-Depth Guide
+post_title: 'Using the Google Calendar API in React.js: An In-Depth Guide'
 post_author: Keshav Malik
 post_author_avatar: keshav.png
 date: '2022-06-22'

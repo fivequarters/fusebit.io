@@ -1,5 +1,5 @@
 ---
-post_title: GitHub Search API, An Introduction With Examples
+post_title: 'GitHub Search API: An Introduction With Examples'
 post_author: Siddhant Varma
 post_author_avatar: siddhant.png
 date: '2022-05-12'

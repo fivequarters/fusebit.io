@@ -1,5 +1,5 @@
 ---
-post_title: Create Your First Node.js GitHub Action, a How-To Guide
+post_title: 'Create Your First Node.js GitHub Action: a How-To Guide'
 post_author: Dawid Ziolkowski
 post_author_avatar: dawid.png
 date: '2022-05-19'

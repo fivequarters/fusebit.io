@@ -1,5 +1,5 @@
 ---
-post_title: Using the GitHub API in Node.js, A Comprehensive Tutorial
+post_title: 'Using the GitHub API in Node.js: A Comprehensive Tutorial'
 post_author: Siddhant Varma
 post_author_avatar: siddhant.png
 date: '2022-05-26'

@@ -1,5 +1,5 @@
 ---
-post_title: Discord API Rate Limiting, A Troubleshooting Guide
+post_title: 'Discord API Rate Limiting: A Troubleshooting Guide'
 post_author: Nabendu Biswas
 post_author_avatar: nabendu.png
 date: '2022-05-06'
