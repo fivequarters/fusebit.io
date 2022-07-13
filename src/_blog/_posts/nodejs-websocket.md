@@ -1,5 +1,5 @@
 ---
-post_title: Node.js WebSocket Client, 3 Ways to Implement One
+post_title: 'Node.js WebSocket Client: 3 Ways to Implement One'
 post_author: Juan Reyes
 post_author_avatar: juan.png
 date: '2022-07-07'

@@ -1,5 +1,5 @@
 ---
-post_title: Sending Email With the Gmail API, A How-To Guide
+post_title: 'Sending Email With the Gmail API: A How-To Guide'
 post_author: Stuti Malik
 post_author_avatar: stuti.png
 date: '2022-05-17'
