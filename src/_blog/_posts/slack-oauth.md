@@ -3,7 +3,7 @@ post_title: 'Slack OAuth: How to Implement It in a Node.js App'
 post_author: Steven Lohrenz
 post_author_avatar: steven.png
 date: '2022-07-18'
-post_image: 
+post_image: slack-oauth-nodejs.png
 post_excerpt: Follow this tutorial to write the code necessary to implement Slack OAuth in a Node.js app then connect it to Slack and a Slack workspace.
 post_slug: slack-oauth
 tags: ['post', 'developer tools']
