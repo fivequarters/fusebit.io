@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 // eslint-disable-next-line func-names
 module.exports = async function () {
-    const integrationsPromise = await fetch(`${process.env.PORTAL_BASE_URL}/feed/integrationsFeed.json`);
+    const integrationsFeedPromise = await fetch(`${process.env.PORTAL_BASE_URL}/feed/integrationsFeed.json`);
 
     function normalizeIntegration(i) {
         return {
@@ -17,14 +17,14 @@ module.exports = async function () {
         };
     }
 
-    const integrationsResolved = await integrationsPromise.json();
+    const integrationsFeed = await integrationsFeedPromise.json();
 
-    const integrationsFeed = integrationsResolved.filter(
+    const integrationsFeedFiltered = integrationsFeed.filter(
         (i) => !i.private && !i.parent,
     );
 
-    const integrations = integrationsFeed.map((integration) => {
-        const children = integrationsResolved.reduce((acc, curr) => {
+    const integrations = integrationsFeedFiltered.map((integration) => {
+        const children = integrationsFeed.reduce((acc, curr) => {
             if (curr?.parent?.includes?.(integration.id) && !curr.private) {
                 const int = normalizeIntegration(curr);
                 acc.push(int);
