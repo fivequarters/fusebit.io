@@ -1,7 +1,7 @@
 ---
 post_title: Import Contacts from HubSpot to Salesforce
 post_author: Lizz Parody
-post_author_avatar: liz.png
+post_author_avatar: lizz.png
 date: '2021-12-22'
 post_image: blog-hubspot-salesfoce-main.png
 post_excerpt: In this blog post, you will learn how to easily import contacts from HubSpot to Salesforce with a few clicks using Fusebit.

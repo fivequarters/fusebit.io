@@ -1,7 +1,7 @@
 ---
 post_title: A Better Slack Bot for HubSpot
 post_author: Lizz Parody
-post_author_avatar: liz.png
+post_author_avatar: lizz.png
 date: '2021-11-25'
 post_image: blog-slack-bot-hubspot-main.png
 post_excerpt: Integrating Slack and HubSpot can be challenging. In this blog post you can learn how to create the exact integration that you want.
