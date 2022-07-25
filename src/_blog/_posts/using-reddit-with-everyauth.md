@@ -6,7 +6,7 @@ date: '2022-05-12'
 post_image: reddit-everyauth-example.png
 post_excerpt: Learn how to interact with the Reddit API in an easy and secure way using Express and EveryAuth.
 post_slug: using-reddit-with-everyauth
-tags: ['post', 'authentication', 'google:hidden']
+tags: ['post', 'authentication']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/reddit-everyauth-example.png
 posts_related: ['everyauth', 'integrate-github-api-everyauth', 'using-stackoverflow-with-everyauth']

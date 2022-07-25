@@ -6,7 +6,7 @@ date: '2022-04-08'
 post_image: blog-web-frameworks-plugins-architecture.png
 post_excerpt: Learn how the most popular Node.js web frameworks approach extensibility and modularity throughout different plugin patterns.
 post_slug: web-frameworks-plugins-architecture-overview
-tags: ['post', 'developer tools', 'node.js', 'google:hidden']
+tags: ['post', 'developer tools', 'node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-web-frameworks-plugins-architecture.png
 posts_related: ['everyauth', 'node-testing-comes-to-core', 'crypto-price-tracking-bot']

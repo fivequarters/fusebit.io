@@ -6,7 +6,7 @@ date: '2022-03-08'
 post_image: blog-iwd-main.png
 post_excerpt: Did you know that the inventor of scientific computing, the first compiler, the personal computer, and the technology behind WiFi, Bluetooth, GPS, were all women?
 post_slug: 5-women-in-tech
-tags: ['post', 'google:hidden']
+tags: ['post']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-iwd-main.png
 ---
