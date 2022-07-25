@@ -1,5 +1,5 @@
 ---
-post_title: GitHub Search API, An Introduction With Examples
+post_title: 'GitHub Search API: An Introduction With Examples'
 post_author: Siddhant Varma
 post_author_avatar: siddhant.png
 date: '2022-05-12'
@@ -99,7 +99,7 @@ We can do that by adding **type:user** as another query parameter in the API. So
 
 And it yields the following response: 
 
-[github search api queries](github-search-api-queries-2.png "github search api queries")
+![github search api queries](github-search-api-queries-2.png "github search api queries")
  
 Notice how we got back 1,365 results this time instead of the original 1,366 results. Let's now update our search query further. Let's say that, among these users, we want to find the most popular users. Maybe the top 40 to 50 users who have more than 30 repositories and 10 followers. 
 

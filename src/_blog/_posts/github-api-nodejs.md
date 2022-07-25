@@ -1,5 +1,5 @@
 ---
-post_title: Using the GitHub API in Node.js, A Comprehensive Tutorial
+post_title: 'Using the GitHub API in Node.js: A Comprehensive Tutorial'
 post_author: Siddhant Varma
 post_author_avatar: siddhant.png
 date: '2022-05-26'
@@ -253,7 +253,8 @@ Here's what each endpoint represents:
 To use these routes in our app, we'll add the following line inside the **app.js** file: 
 
 ```js
-app.use('/github_api', api);
+const routes = require('./routes');
+app.use('/github_api', routes);
 ```
 
 Notice how each endpoint invokes a controller from a **controllers.js** file. It's not there yet, so let's go ahead and create it. 
