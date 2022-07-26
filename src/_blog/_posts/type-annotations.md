@@ -86,7 +86,7 @@ Well, because a picture is worth a thousand words, check this out:
 This means that when you write JavaScript with type annotations, it won’t throw an error anymore. Even if you state that `x` is a string and you assigned it to a number; you won’t see a comment as such, instead, it will remain as a comment inside the javascript engine, the runtime code will be interpreted like this:
 
 ```js
-let x/*: string; */
+let x: string;
 
 x = "Using annotations";
 ```
@@ -188,7 +188,6 @@ For more information on how the process works, visit the [official documentation
 Some argue that Type Annotations are the future, and this proposal will likely be accepted since it is one of the most (or the most) requested features in JavaScript.  
 
 One of the co-autors of this proposal [Gil Tayar](https://www.youtube.com/watch?v=SdV9Xy0E4CM&ab_channel=JSConf), says that if this proposal lands:
-
 
 1. There will be no more transpilations of most of TS and Flow
   * With real browser ESM, removing *all* tooling during development will be possible
