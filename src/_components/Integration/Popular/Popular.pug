@@ -1,0 +1,80 @@
+mixin integration(logo, name, description, id, hidden)
+    .popular__content-integration(class=hidden ? 'show-more-item--hidden show-more-item--hidden-out show-more-item--hidden-animation' : '' class="show-more-item" id= id)
+        img.popular__content-integration-icon(src= `data:image/svg+xml;utf8,${encodeURIComponent(logo)}` alt= name)
+        .popular__content-integration-description-wrapper 
+            .popular__content-integration-description-title #{name}
+            .popular__content-integration-description-text
+                != filters.removeMarkdown(`${description}`)
+        +cta("Try Now", `${site.portalBaseUrl}/signup?key=${id}`, "popular__content-integration-cta", null, true, "Try Now Button Clicked", "Popular", true, "_blank", "noreferrer")
+
+
+section.popular.section.section--no-margin
+    .popular-lines
+    .popular-top-left-ellipsis
+    .popular__container.layout
+        .popular-bottom-left-ellipsis
+        .popular-bottom-right-ellipsis
+        .popular__content
+            h2.popular__content-title 
+                if integration.children.length > 0
+                    | Popular #{integration.name} Integrations
+                else
+                    | Get Started
+            .popular__content-mobile-hidden
+                +integration(integration.logo, integration.name, integration.description, integration.id)
+                - const buildAmount = 3
+                - let showMoreButton = false
+                each child, index in integration.children
+                    - let isHidden = index + 1 >= buildAmount
+                    if isHidden
+                        - showMoreButton = true
+                    +integration(child.logo, child.name, child.description, child.id, isHidden)
+                if showMoreButton
+                    +cta("More", null, "popular__content-integration-cta-outlined", "more", true, "More Button Clicked", "Popular Integrations", true, null, null)
+            .popular__content-mobile-visible.swiper-container
+                .swiper-wrapper
+                    .swiper-slide
+                        +integration(integration.logo, integration.name, integration.description, integration.id)
+                    each child in integration.children
+                        .swiper-slide
+                            +integration(child.logo, child.name, child.description, child.id, isHidden)
+                .popular__content-pagination.swiper-pagination
+    script.
+        let runtimeAmount = 3;
+
+        window.addEventListener('load', async () => {
+            handleShowMore({
+                amount: runtimeAmount,
+                elements: ".show-more-item--hidden",
+                showMoreId: "more",
+                defaultDisplay: "flex",
+            });
+
+            const swiperContainer = document.querySelector('.swiper-container');
+            if (swiperContainer) {
+                const postsSwiper = new Swiper('.popular__content-mobile-visible', {
+                    watchOverflow: true,
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    slidesPerColumnFill: 'row',
+                    spaceBetween: 30,
+                    autoplay: {
+                        delay: 2500,
+                    },
+                    breakpoints: {
+                        700: {
+                            slidesPerView: 2,
+                        },
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    on: {
+                        init: () => {
+                            calculateCardsHeight('.post-card');
+                        }
+                    }
+                });
+            }
+        })

@@ -376,7 +376,8 @@
 .legal__page,
 .blog__page,
 .aboutUs,
-.pricing {
+.pricing,
+.connector {
     .header {
         &:not(&--compact) {
             .header__menu,

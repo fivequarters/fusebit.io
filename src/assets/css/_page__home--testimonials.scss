@@ -41,9 +41,6 @@
                 margin-bottom: 1rem;
             }
         }
-
-        &--content {
-        }
     }
 
     &__title {
@@ -88,10 +85,6 @@
     &__cards {
         .swiper-wrapper {
             padding: 2rem 0;
-
-            /* &--disable {
-                transform: translate3d(0px, 0, 0) !important;
-            } */
         }
     }
 

@@ -144,6 +144,12 @@
             font-size: 14px;
             line-height: 151%;
             font-family: var(--sora);
+
+            &-filled {
+                background-color: var(--orange);
+                color: white;
+                margin-right: 8px;
+            }
         }
     }
 

@@ -1,13 +1,14 @@
 .post-card {
     color: inherit;
-    text-decoration: none;
+    text-decoration-line: none;
     display: flex;
     flex-direction: column;
-    border: 1px solid #e7efff;
     box-sizing: border-box;
     border-radius: 16px;
     min-height: 408px;
     overflow: hidden;
+    background: white;
+    box-shadow: 0px 20px 48px rgba(52, 72, 123, 0.1);
     transition: all 0.4s, opacity 0.5s ease-in;
 
     &-container {
@@ -21,7 +22,7 @@
         height: 192px;
         max-height: 192px;
         overflow: hidden;
-        border-radius: 16px;
+        border-radius: 16px 16px 0 0;
     }
 
     &-image {
@@ -33,12 +34,12 @@
     }
 
     &-content {
-        padding: 24px 24px 32px 24px;
+        padding: 24px 24px 0px 24px;
     }
 
     &-date {
         display: block;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
         color: var(--dark);
         opacity: 0.4;
         font-size: 14px;
@@ -47,15 +48,18 @@
 
     &-title {
         font-size: 20px;
+        font-weight: 600;
         line-height: 1.6;
         margin-bottom: 16px;
         transition: color 0.4s;
+        text-decoration: none;
         margin: 0;
     }
 
     &-excerpt {
         font-size: 16px;
         line-height: 24px;
+        margin: 24px 0;
     }
 
     &:focus,
@@ -67,8 +71,6 @@
     }
 
     &:hover {
-        border: 1px solid rgba(3, 3, 45, 0.4);
-
         .post-card-title {
             color: var(--orange);
         }
@@ -76,7 +78,6 @@
 
     &:focus,
     &:focus-visible {
-        border: 1px solid var(--blue);
         outline: none;
 
         .post-card-title {

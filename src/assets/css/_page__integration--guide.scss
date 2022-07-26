@@ -1,0 +1,133 @@
+.guide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    &__integrations {
+        position: absolute;
+        top: 190px;
+        right: 0;
+        height: 100%;
+        width: 290px;
+        background-size: contain;
+        background-image: url(./images/integration/guide/integrations.svg);
+        background-repeat: no-repeat;
+        transform: skewY(var(--oppositeAngle));
+
+        @media (max-width: 1080px) {
+            display: none;
+        }
+
+        &-mobile {
+            display: none;
+            @media (max-width: 1080px) {
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 490px;
+                width: 100vw;
+                transform: skewY(var(--oppositeAngle));
+                background-size: cover;
+                background-image: url(./images/integration/guide/integrations-mobile.svg);
+                background-repeat: no-repeat;
+            }
+
+            @media (max-width: 945px) {
+                height: 385px;
+            }
+
+            @media (max-width: 500px) {
+                height: 295px;
+            }
+
+            @media (max-width: 390px) {
+                height: 275px;
+            }
+        }
+    }
+
+    &__background {
+        z-index: 1;
+    }
+
+    &__container {
+        position: relative;
+        width: 90%;
+        max-width: var(--container);
+        z-index: 1;
+        padding-bottom: 50px;
+
+        @media (max-width: 1080px) {
+            padding-bottom: 400px;
+        }
+
+        @media (max-width: 945px) {
+            padding-bottom: 325px;
+        }
+
+        @media (max-width: 500px) {
+            padding-bottom: 260px;
+        }
+
+        @media (max-width: 390px) {
+            padding-bottom: 240px;
+        }
+    }
+
+    &__mark-small {
+        @include mark-offset(85px, 90px);
+        top: -24px;
+
+        @media (max-width: 1200px) {
+            top: -16px;
+        }
+    }
+
+    &__mark-big {
+        @include mark-offset(245px, 40px);
+    }
+
+    &__content {
+        &-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333333;
+            line-height: 180%;
+            margin-bottom: 60px;
+
+            @media (max-width: 700px) {
+                font-size: 32px;
+                line-height: 38px;
+                margin-bottom: 44px;
+            }
+        }
+
+        &-instructions {
+            font-size: 18px;
+            color: var(--dark);
+            opacity: 0.6;
+            line-height: 180%;
+            max-width: 676px;
+
+            @media (max-width: 1080px) {
+                max-width: 100%;
+            }
+
+            @media (max-width: 700px) {
+                font-size: 16px;
+                line-height: 26px;
+            }
+
+            p {
+                margin-bottom: 30px;  
+            }
+
+            ol {
+                margin-bottom: 30px;
+                list-style: decimal;
+            }
+        }
+    }
+}

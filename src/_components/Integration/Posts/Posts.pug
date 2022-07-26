@@ -1,0 +1,55 @@
+section.posts.section.section--no-margin
+    .posts__footer-background
+    .posts__container.layout
+        .posts__content
+            - const relatedPosts = [...collections.post].filter((post) => post.data.tags.includes(`${integration.id}:hidden`))
+            if relatedPosts.length > 0
+                h2.posts__content-title Related Content
+                .posts__content-list.swiper-container
+                    .swiper-wrapper
+                        each post in relatedPosts
+                            .swiper-slide 
+                                +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
+                    .posts__content-pagination.swiper-pagination
+            else 
+                h2.posts__content-title Most Recent Posts
+                .posts__content-list.swiper-container
+                    .swiper-wrapper
+                        each post in [...collections.post].reverse().slice(0, 3)
+                            .swiper-slide 
+                                +postCard(post.url, post.data.post_image, post.data.date, post.data.post_title, post.data.post_excerpt)
+                    .posts__content-pagination.swiper-pagination
+
+    script.
+        window.addEventListener("load", () => {
+            const swiperContainer = document.querySelector('.swiper-container');
+            if (swiperContainer) {
+                const postsSwiper = new Swiper('.posts__content-list', {
+                    watchOverflow: true,
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
+                    slidesPerColumnFill: 'row',
+                    spaceBetween: 30,
+                    autoplay: {
+                        delay: 2500,
+                    },
+                    breakpoints: {
+                        700: {
+                            slidesPerView: 2,
+                        },
+                        1200: {
+                            slidesPerView: 3,
+                        }
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    on: {
+                        init: () => {
+                            calculateCardsHeight('.post-card');
+                        }
+                    }
+                });
+            }
+        });

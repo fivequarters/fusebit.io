@@ -4,6 +4,16 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const { format } = require('date-fns');
 const Image = require('@11ty/eleventy-img');
 const { parseHTML } = require('linkedom');
+const md = require('markdown-it')();
+const removeMd = require('remove-markdown');
+
+function markdown(text) {
+    return md.render(text);
+}
+
+function removeMarkdown(text) {
+    return removeMd(text);
+}
 
 function getImageMeta(src, widths) {
     const options = {
@@ -146,6 +156,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter('format', format);
     eleventyConfig.addFilter('getImageTag', getImageTag);
     eleventyConfig.addFilter('getImageUrl', getImageUrl);
+    eleventyConfig.addFilter('markdown', markdown);
+    eleventyConfig.addFilter('removeMarkdown', removeMarkdown);
 
     global.filters = eleventyConfig.javascriptFunctions;
     eleventyConfig.setPugOptions({

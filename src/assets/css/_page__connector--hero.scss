@@ -1,0 +1,34 @@
+.hero {
+    &__layout {
+        padding-bottom: 130px;
+        display: block;
+
+        @media only screen and (max-width: 992px) {
+            padding: 0;
+            margin: 88px auto 0;
+        }
+    }
+
+    &__title {
+        font-size: 56px;
+        font-family: var(--sora);
+        font-weight: 700;
+        max-width: 725px;
+        margin-bottom: 192px;
+        line-height: 110%;
+
+        > span {
+            color: var(--orange);
+        }
+
+        @media only screen and (max-width: 992px) {
+            max-width: 525px;
+            font-size: 38px;
+            margin-bottom: 50px;
+        }
+
+        @media only screen and (max-width: 790px) {
+            max-width: 300px;
+        }
+    }
+}

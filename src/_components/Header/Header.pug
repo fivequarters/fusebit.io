@@ -123,7 +123,7 @@ header.header
                     document.querySelector('html').classList.toggle('hidden');
                     if (header.classList.contains('header__menuMobile--open')) {
                         sidebarMobileBtn.classList.add("header__sidebarMobile--btn-hidden");
-                    } else {
+                    } else if (sidebar) {
                         sidebarMobileBtn.classList.remove("header__sidebarMobile--btn-hidden");
                     }
                 });
