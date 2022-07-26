@@ -21,8 +21,6 @@ Static Typing is the number one feature missing in JavaScript, according to 16K 
 
 ![JavaScript Soft Typing Support](javascript-typing-support-1.png "JavaScript Soft Typing Support")
 
-&lt;embed tweet>
-
 Let’s understand what is happening and why this could have a major impact on how we write JavaScript.
 
 ## A Little Bit of History: TypeScript, JavaScript, and Concepts
@@ -59,8 +57,6 @@ TypeScript is so compatible with JavaScript that if you change a JavaScript file
 
 ![JavaScript Soft Typing Support](javascript-typing-support-3.png "JavaScript Soft Typing Support")
 
-[https://twitter.com/matteocollina/status/1512098879038177283](https://twitter.com/matteocollina/status/1512098879038177283)>
-
 ## Deep Dive into the Proposal: Type Declarations in JavaScript
 
 The main purpose of the proposal is to “Reserve a space for static type syntax inside the ECMAScript language. JavaScript engines would treat type syntax as comments”. [TC39 Proposal]([https://tc39.es/proposal-type-annotations/](https://tc39.es/proposal-type-annotations/)) that means:
@@ -77,7 +73,7 @@ let x: string;
 x = "Using annotations";
 ```
 
-If `x` is assigned to a number `x = `10`, TypeScript will throw an error. However, the JavaScript engine follows the TC39 proposal. The result** **won’t throw an error**, **because ****annotations are equivalent to comments****. They don’t change the semantics of the program.
+If `x` is assigned to a number `x = `10`, TypeScript will throw an error. However, the JavaScript engine follows the TC39 proposal. The result **won’t throw an error**, **because annotations are equivalent to comments**. They don’t change the semantics of the program.
 
 So what’s the difference? 
 
@@ -117,7 +113,7 @@ The type inference can save you some keystrokes and will likely cover approximat
 
 ![JavaScript Soft Typing Support](javascript-typing-support-5.png "JavaScript Soft Typing Support")
 
-<figcaption>Example of inference using VS Code<figcaption>
+<center><figcaption>Example of inference using VS Code<figcaption></center>
 
 ### Type Declarations: Type Alias
 
@@ -146,9 +142,9 @@ There are other types into consideration, but for now, the types above will be s
 
 ## Parameter Optionality
 
-When declaring parameters for a function in JavaScript, all the parameters are ****required** **and if the client has no value for the parameter, they can pass the “null” value instead. If the client doesn’t pass any value (not even null) the parameters will be assigned to `undefined` which can be a source of errors. The ****parameter optionality**** means that the parameters for that function are not required, they are optional.
+When declaring parameters for a function in JavaScript, all the parameters are **required** and if the client has no value for the parameter, they can pass the “null” value instead. If the client doesn’t pass any value (not even null) the parameters will be assigned to `undefined` which can be a source of errors. The **parameter optionality** means that the parameters for that function are not required, they are optional.
 
-****Parameter Optionality Syntax****
+**Parameter Optionality Syntax**
 
 You just need to add the question mark “?” between the parameter name and the colon “:” as shown in the example below.
 
@@ -163,7 +159,7 @@ In this case, param2 is optional, param1 is required.
 
 [Generics]([https://www.typescriptlang.org/docs/handbook/2/generics.html](https://www.typescriptlang.org/docs/handbook/2/generics.html)) is one of the main tools in the toolbox for creating *reusable components* in languages such as C# or Java, this means, being able to create components that work with multiple types instead of just one. This could be useful in the way the user can use their own types.
 
-If you are familiar with TypeScript, this is where the famous ****any** **type comes into play.
+If you are familiar with TypeScript, this is where the famous **any** type comes into play.
 
 ```js
 function myFunction(arg: any): any {
