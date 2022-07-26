@@ -1,7 +1,7 @@
 ---
 post_title: Creating Linear issues from slash commands in GitHub!
 post_author: Lizz Parody
-post_author_avatar: liz.png
+post_author_avatar: lizz.png
 date: '2022-01-06'
 post_image: blog-linear-github-main.png
 post_excerpt: In this blog post, you will learn how to create Linear issues from a GitHub comment (using slash commands).

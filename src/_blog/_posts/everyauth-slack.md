@@ -1,7 +1,7 @@
 ---
 post_title: Integrate With the Slack API and Send Messages Using EveryAuth
 post_author: Lizz Parody
-post_author_avatar: liz.png
+post_author_avatar: lizz.png
 date: '2022-04-30'
 post_image: everyauth-slack.jpg
 post_excerpt: Let's build a web form that allows people to send you a Slack direct message ... without using Slack!

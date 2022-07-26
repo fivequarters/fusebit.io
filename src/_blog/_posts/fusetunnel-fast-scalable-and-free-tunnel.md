@@ -1,7 +1,7 @@
 ---
 post_title: Fusetunnel - A Fast, Scalable, and Free Tunnel
 post_author: Lizz Parody
-post_author_avatar: liz.png
+post_author_avatar: lizz.png
 date: '2021-10-07'
 post_image: blog-fusetunnel-main.png
 post_excerpt: Fusetunnel is end-to-end encrypted, giving a developer greater security for sharing your localhost app.
