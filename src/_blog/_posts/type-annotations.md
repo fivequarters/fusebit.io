@@ -73,7 +73,7 @@ let x: string;
 x = "Using annotations";
 ```
 
-If `x` is assigned to a number `x = `10`, TypeScript will throw an error. However, the JavaScript engine follows the TC39 proposal. The result **won’t throw an error**, **because annotations are equivalent to comments**. They don’t change the semantics of the program.
+If `x` is assigned to a number `x = 10`, TypeScript will throw an error. However, the JavaScript engine follows the TC39 proposal. The result **won’t throw an error**, **because annotations are equivalent to comments**. They don’t change the semantics of the program.
 
 So what’s the difference? 
 
@@ -199,7 +199,7 @@ One of the co-autors of this proposal [Gil Tayar](https://www.youtube.com/watch?
 
 ## About Fusebit
 
-At [[Fusebit](https://fusebit.io/)](https://fusebit.io/), we live and breathe integrations. Our developer-friendly integration platform embraces code-first philosophy to support ultimate flexibility in addressing complex integration scenarios. The platform solves the generic integration challenges and supports creating unified APIs uniquely optimized for your own application and customer needs.
+At [Fusebit](https://fusebit.io/), we live and breathe integrations. Our developer-friendly integration platform embraces code-first philosophy to support ultimate flexibility in addressing complex integration scenarios. The platform solves the generic integration challenges and supports creating unified APIs uniquely optimized for your own application and customer needs.
 
 Relevant links:
 
