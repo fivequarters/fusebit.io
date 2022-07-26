@@ -81,7 +81,7 @@ Well, because a picture is worth a thousand words, check this out:
 
 ![JavaScript Soft Typing Support](javascript-typing-support-4.png "JavaScript Soft Typing Support")
 
-[Before and after type annotations]([https://tc39.es/proposal-type-annotations/](https://tc39.es/proposal-type-annotations/))
+<center><figcaption>[Before and after type annotations](https://tc39.es/proposal-type-annotations/)<figcaption></center>
 
 This means that when you write JavaScript with type annotations, it won’t throw an error anymore. Even if you state that `x` is a string and you assigned it to a number; you won’t see a comment as such, instead, it will remain as a comment inside the javascript engine, the runtime code will be interpreted like this:
 
