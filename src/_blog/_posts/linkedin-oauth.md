@@ -33,23 +33,23 @@ So now, let's first understand what APIs we need to use and how we can get Linke
 
 To use any LinkedIn APIs, head over to [LinkedIn's developer page](https://developer.linkedin.com/). Then, click on **Create app**: 
 
-![LinkedIn OAuth](linkedin-oauth-1.png "LinkedIn OAuth")
+![LinkedIn OAuth with-shadow](linkedin-oauth-1.png "LinkedIn OAuth")
 
 You should land on a page where you'll be asked to enter some information about the app: 
 
-![LinkedIn OAuth](linkedin-oauth-2.png "LinkedIn OAuth")
+![LinkedIn OAuth with-shadow](linkedin-oauth-2.png "LinkedIn OAuth")
 
 Enter the name you want to give your app. 
 
-![LinkedIn OAuth](linkedin-oauth-3.png "LinkedIn OAuth")
+![LinkedIn OAuth with-shadow](linkedin-oauth-3.png "LinkedIn OAuth")
 
 Next, you'll need to create a new LinkedIn page for your app. Without this, you can't complete the app creation process. You can use an existing LinkedIn page of your company or brand as well. However, if you don't have one, you can create a simple dummy LinkedIn page for now: 
 
-![LinkedIn OAuth](linkedin-oauth-4.png "LinkedIn OAuth")
+![LinkedIn OAuth with-shadow](linkedin-oauth-4.png "LinkedIn OAuth")
 
 Once you've created the page, enter it in the field above. Then, you'll need to upload a logo: 
 
-![LinkedIn OAuth](linkedin-oauth-5.png "LinkedIn OAuth")
+![LinkedIn OAuth with-shadow](linkedin-oauth-5.png "LinkedIn OAuth")
 
 This is the image that will appear on the OAuth consent screen of your app. Then, click the **Create App** button. Once you do that, your LinkedIn app will be created! 
 
@@ -57,15 +57,15 @@ This is the image that will appear on the OAuth consent screen of your app. Then
 
 Now that we have created an app, we also need to verify it. If you go to the **Settings** tab of your app, you'll notice under **App settings** that it says that the app is not verified as being with the company. There is a **Verify** button in the company section, so we'll click this to verify the app.
 
-![LinkedIn OAuth](linkedin-oauth-6.png "LinkedIn OAuth")
+![LinkedIn OAuth with-shadow](linkedin-oauth-6.png "LinkedIn OAuth")
 
 Once you do that, you'll get a pop-up to verify the app. Click on the **Verify** button: 
 
-![LinkedIn OAuth](linkedin-oauth-7.png "LinkedIn OAuth")
+![LinkedIn OAuth with-shadow](linkedin-oauth-7.png "LinkedIn OAuth")
 
 To proceed with the verification, you'll need to open the verification URL from your LinkedIn account that has admin privileges to the LinkedIn page you created for the app. 
 
-![LinkedIn OAuth](linkedin-oauth-8.png "LinkedIn OAuth")
+![LinkedIn OAuth with-shadow](linkedin-oauth-8.png "LinkedIn OAuth")
 
 Once you visit that verification URL, your app will be verified. Great! 
 
@@ -73,7 +73,7 @@ Once you visit that verification URL, your app will be verified. Great!
 
 Now that you have a LinkedIn app up and ready, we need to enable the products we want to use it for. Go to the **Products** tab of your app to see the list of products available that you can add to your app: 
 
-![LinkedIn OAuth](linkedin-oauth-9.png "LinkedIn OAuth")
+![LinkedIn OAuth with-shadow](linkedin-oauth-9.png "LinkedIn OAuth")
 
 Select the **Sign In with LinkedIn** product. This is what will allow our own app to let users authenticate via LinkedIn OAuth. Once you select this, you're all set to start using LinkedIn OAuth to add authentication in your app.
 
@@ -81,7 +81,7 @@ Select the **Sign In with LinkedIn** product. This is what will allow our own ap
 
 In order to start using the LinkedIn API or OAuth in your app, you'll need a **Client ID** and a **Client Secret** for your LinkedIn app. You can find this under the **Auth** tab of your LinkedIn app:
 
-![LinkedIn OAuth](linkedin-oauth-10.png "LinkedIn OAuth")
+![LinkedIn OAuth with-shadow](linkedin-oauth-10.png "LinkedIn OAuth")
 
 Grab these credentials and store them somewhere. We'll add them to our Node.js app shortly. We also need to update one more configuration in our app: a redirect URL. 
 
@@ -91,7 +91,7 @@ Your LinkedIn app needs to have an authorized redirect URL or callback URL. This
 
 Under the **Auth** tab, scroll down to the **OAuth 2.0 settings** section. We'll add the following redirect URL: 
 
-![LinkedIn OAuth](linkedin-oauth-11.png "LinkedIn OAuth")
+![LinkedIn OAuth with-shadow](linkedin-oauth-11.png "LinkedIn OAuth")
 
 Now that we're all done with the initial setup for the LinkedIn app, let's create our own Node.js app that will interact with this LinkedIn app. 
 
@@ -295,13 +295,13 @@ app.get("/", (req, res) => {
 
 Once you do that, if you now visit http://localhost:8000, you should see the following page:
 
-![LinkedIn OAuth](linkedin-oauth-12.png "LinkedIn OAuth")
+![LinkedIn OAuth with-shadow](linkedin-oauth-12.png "LinkedIn OAuth")
 
 Awesome! Now let's click that button and authenticate. (You can download a [quick video](https://www.hitsubscribe.com/wp-content/uploads/2022/07/Screen-Recording-2022-07-17-at-10.11.36-PM.mov) of what this will look like.) 
 
 We can now authenticate using LinkedIn in our own [Node.js app!](https://fusebit.io/blog/manage-oauth-user-creds/) After authentication, we get some user-related information like name and profile picture and render it inside our template: 
 
-![LinkedIn OAuth](linkedin-oauth-13.png "LinkedIn OAuth")
+![LinkedIn OAuth with-shadow](linkedin-oauth-13.png "LinkedIn OAuth")
 
 ## Conclusion
 
