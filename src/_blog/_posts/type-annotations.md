@@ -191,7 +191,7 @@ One of the co-autors of this proposal [Gil Tayar](https://www.youtube.com/watch?
 
 
 1. There will be no more transpilations of most of TS and Flow
-  * With real browser ESM, removing **all** tooling during development will be possible
+  * With real browser ESM, removing *all* tooling during development will be possible
 2. Code will still be checked by third-party checkers (TS and Flow)
 3. Slow converge of incompatible TS/FLow to the new syntax
 4. Tooling will become much simpler
