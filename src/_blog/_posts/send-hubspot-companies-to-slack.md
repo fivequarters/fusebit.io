@@ -1,7 +1,7 @@
 ---
 post_title: Send HubSpot Companies to Slack!
 post_author: Lizz Parody
-post_author_avatar: liz.png
+post_author_avatar: lizz.png
 date: '2021-12-15'
 post_image: blog-hubspot-to-slack-main.png
 post_excerpt: There are hundreds of data integrations you can do between HubSpot and Slack. One of them is to send the number of HubSpot companies to a Slack channel.

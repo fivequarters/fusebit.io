@@ -1,7 +1,7 @@
 ---
 post_title: Webhook Rate Limits and Throttling
 post_author: Lizz Parody
-post_author_avatar: liz.png
+post_author_avatar: lizz.png
 date: '2022-02-08'
 post_image: webhook-rate-limit-throttling.png
 post_excerpt: In this blog post you will learn the importance to rate limit in webhooks, rate limiting techniques, exponential backoff retry strategy and general rate limiting recommendations.
