@@ -17,8 +17,6 @@ posts_related:
   ]
 ---
 
-# Authoring npm Packages with Monorepos
-
 Contemporary software is built with many small components. These individual components sometimes share common configurations like versioning, code semantics, and linting and formatting rules. Due to the large amount of common code and configurations, putting all of the components together in a single repository makes sense. A monorepo is one type of architecture that can achieve this.
 
 Monorepos offer various advantages, including:
