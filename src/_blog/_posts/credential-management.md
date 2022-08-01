@@ -3,7 +3,7 @@ post_title: 'Credential Management: What It Is, Best Practices, and Tools'
 post_author: Juan Reyes
 post_author_avatar: juan.png
 date: '2022-08-01'
-post_image: 'credential-management'
+post_image: credential-management.png
 post_excerpt:  I'll walk you through the subject of credential management, what it is, and why it's essential to guarantee a robust level of security.
 post_slug: credential-management
 tags: ['post', 'developer tools']
