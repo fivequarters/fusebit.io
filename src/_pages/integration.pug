@@ -24,5 +24,6 @@ block content
 
 block scripts
     script.
-        analytics.page("Integration Detail", { objectLocation: "Integration Detail", domain: 'fusebit.io' });
+        const integrationId = window.location.pathname.split('/')[2];
+        analytics.page("Integration Detail", { objectLocation: "Integration Detail", domain: 'fusebit.io', integration: integrationId });
 
