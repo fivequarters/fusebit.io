@@ -2,7 +2,7 @@
 post_title: 'GitLab OAuth: 4 Easy Steps to Implement It in Your Node.js App'
 post_author: Mercy Kibet
 post_author_avatar: mercy.png
-date: '2022-06-19'
+date: '2022-08-01'
 post_image: gitlab-oauth.png
 post_excerpt: This blog post will give you an overview of GitLab OAuth and how to implement it in your Node.js web application. 
 post_slug: gitlab-oauth
