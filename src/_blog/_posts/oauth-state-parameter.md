@@ -17,8 +17,6 @@ posts_related:
   ]
 ---
 
-# How to Generate and Validate an OAuth 2.0 State Parameter with Node.js
-
 In a typical OAuth flow, the redirect URI that takes a user to an OAuth provider’s page needs a client ID and scope as required parameters. With these two parameters, your OAuth flow will work fine, but it leaves your application vulnerable to [cross-site request forgery (CSRF)](https://en.wikipedia.org/wiki/Cross-site_request_forgery) attacks.
 
 The state parameter, which is an optional parameter, exists to validate if the requests are from a third party, which can help protect your application. [OAuth 2.0 state parameters](https://auth0.com/docs/secure/attack-protection/state-parameters) help guard against CSRF attacks, maintain application state, and preserve and restore user sessions.
