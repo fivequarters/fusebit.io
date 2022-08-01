@@ -2,7 +2,7 @@
 post_title: How to Generate and Validate an OAuth 2.0 State Parameter with Node.js
 post_author: David Ekete
 post_author_avatar: david.png
-date: '2022-07-27'
+date: '2022-08-01'
 post_image: oauth-state-parameter.png
 post_excerpt: OAuth 2.0 state parameters help guard against CSRF attacks, maintain application state, and preserve user sessions. Learn how to generate and validate OAuth 2.0 state parameters.
 post_slug: oauth-state-parameters-nodejs
