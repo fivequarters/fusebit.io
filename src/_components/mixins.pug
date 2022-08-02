@@ -11,8 +11,8 @@ mixin ctaArrow
         path(d="M1 1L9 9L1 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
 //- TODO: Use an object to pass parameters to mixins, this is getting messy to use
-mixin cta(text, href, className, id, trackWithSegment, name, location, disableArrow, target, rel, onClick)
-    a.cta(id= id href= href  target= target rel= rel class=( trackWithSegment ? "track-with-segment" : false) class= className data-event-name= name || false data-object-location= location || false onclick= onClick)= text
+mixin cta(text, href, className, id, trackWithSegment, name, location, disableArrow, target, rel, onClick, integrationId)
+    a.cta(id= id href= href  target= target rel= rel class=( trackWithSegment ? "track-with-segment" : false) class= className data-event-name= name || false data-object-location= location || false onclick= onClick data-integration= integrationId)= text
         if (!disableArrow) 
             +ctaArrow
 
