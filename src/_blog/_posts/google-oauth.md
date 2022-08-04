@@ -147,7 +147,7 @@ app.get("/", (req, res) => {
 
 The second endpoint leverages Google authentication with the help of **passport**. 
 
-```
+```js
 app.get("/google",passport.authenticate("google", { scope: ["email", "profile"] }));
 ```
 
