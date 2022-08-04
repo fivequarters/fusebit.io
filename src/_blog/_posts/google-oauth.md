@@ -88,7 +88,7 @@ npm install express express-session passport passport-google-oauth2 nodemon
 
 After that, set up **nodemon** to run and watch the server for changes. 
 
-```JS
+```js
 "scripts": {
     "start":"nodemon index.js"
 },
@@ -98,7 +98,7 @@ After that, set up **nodemon** to run and watch the server for changes.
 
 Now that we’ve got our application up and running, it’s time to connect it with Google. To do this,[add your credentials](https://fusebit.io/blog/manage-oauth-user-creds/) for signing in to your Google account to **auth.js**. Here is an example of what an **auth.js** file for testing with **localhost** may look like: 
 
-```JS
+```js
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
 
