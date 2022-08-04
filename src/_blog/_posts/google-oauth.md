@@ -182,7 +182,7 @@ When you click **Log In with Google**, the endpoints above will route you to the
 
 This is a question that most developers ask themselves, but the question you should be asking yourself instead is: Why am I _not_ using Google OAuth? Imagine how daunting handling your authentication can get—Google OAuth is faster and more secure than username- and password-based logins. Once a user signs in with their Google account, they do not have to enter a username and password each time. 
 
-![Google OAuth](google-oauth.png "Google OAuth")
+![Google OAuth with-shadow](google-oauth.png "Google OAuth")
 
 This is great for users who are looking for an easy login process that is also secure. The ease of use puts even more power into your users’ hands by eliminating the need to remember multiple usernames and passwords. As you can see in the picture above, users can log in to their Google Apps with a single click. 
 
