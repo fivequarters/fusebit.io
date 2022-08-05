@@ -39,7 +39,7 @@ And that's just the tip of the iceberg! With the Shopify API, you can do pretty 
 
 Now that we've got a general idea of what the Shopify API is and what it can do, let's take a look at how to set it up and use it with Node.js. 
 
-![alt_text](images/image1.png "image_tooltip")
+> With the Shopify API, you can do pretty much anything you need concerning interactinv with data in Shopify stores.
 
 ## Setting Up a Shopify Node API Project
 
@@ -97,31 +97,31 @@ Please take note of your ngrok address under **Forwarding**, as you need it for 
 
 Before you can connect your app, you need to set up an API key and API secret key for your app. 
 
-![alt_text](images/image2.png "image_tooltip")
+![Shopify API Node.js](shopify-api-1.png "Shopify API Node.js")
 
 Go into your partner portal, select **Apps**, and then **Create App**. 
 
-![alt_text](images/image3.png "image_tooltip")
+![Shopify API Node.js](shopify-api-2.png "Shopify API Node.js")
 
 Select **Create app manually**.
 
-![alt_text](images/image4.png "image_tooltip")
+![Shopify API Node.js](shopify-api-3.png "Shopify API Node.js")
 
 Enter your app name, URL, and allowed URLs for your app. The App URL is **https://{ngrok-url}/**. In your allowed URLs, enter **https://{ngrok-url}/auth/Shopify/callback**, where you substitute the ngrok address in the URL space. Click **Create App** to create your app.
 
-![alt_text](images/image5.png "image_tooltip")
+![Shopify API Node.js](shopify-api-4.png "Shopify API Node.js")
 
 On the next page, scroll down to the **App Info** tab and take note of your API Key and API Secret Key. You'll need these to authenticate your app with Shopify.
 
-![alt_text](images/image6.png "image_tooltip")
+![Shopify API Node.js](shopify-api-5.png "Shopify API Node.js")
 
 Next, you must create or select a store to test your app. Scroll down to **Test your app** and click **Select store**.
 
-![alt_text](images/image7.png "image_tooltip")
+![Shopify API Node.js](shopify-api-6.png "Shopify API Node.js")
 
 Then click on **Create new store**.
 
-![alt_text](images/image8.png "image_tooltip")
+![Shopify API Node.js](shopify-api-7.png "Shopify API Node.js")
 
 Select **Development store**, fill in the store name, store URL, and login details, then click **Save**. 
 
