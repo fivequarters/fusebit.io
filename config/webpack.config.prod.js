@@ -9,6 +9,7 @@ module.exports = merge(common, {
     // Enable minification and tree-shaking
     mode: 'production',
     optimization: {
+        usedExports: true,
         minimize: true,
         minimizer: [new OptimizeCssAssetsPlugin({}), new TerserPlugin({})],
     },
