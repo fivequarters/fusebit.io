@@ -74,11 +74,11 @@ First, run the commands above in your terminal to create the private key we need
 
 Next, we'll generate an application key from Jira. Log in to Jira as an administrator and navigate to Jira settings (cog icon) > Products, and select "Application Links" in the menu on the left side. Select "Create link." 
 
-![Jira Node.js API](jira-oauth-1.png "Jira Node.js API")
+![Jira Node.js API with-shadow](jira-oauth-1.png "Jira Node.js API")
 
 Here, you'll enter any URL of your choice in the "Enter the URL of the application you want to link" field. Now, click on the "continue" button to create your application link. You may get a warning that says "_No response was received from the URL you entered,_" but you can ignore it.
 
-![Jira Node.js API](jira-oauth-2.png "Jira Node.js API")
+![Jira Node.js API with-shadow](jira-oauth-2.png "Jira Node.js API")
 
 Click "continue," and on the next screen fill in the necessary information before selecting the "Create incoming link" checkbox. Then, navigate to the next screen and enter the consumer details for the sample client. The consumer key and consumer name can be any name of your choice. For instance: 
 
@@ -86,12 +86,12 @@ Click "continue," and on the next screen fill in the necessary information befor
 * consumer name = **Example Jira** **app **
 * public key = copy the public key from the **jira_publickey.pem** file you generated previously and paste it into this field (for example, **dv5y+mjc4fZHHoLAwg**...)
 
-![Jira Node.js API](jira-oauth-3.png "Jira Node.js API")
+![Jira Node.js API with-shadow](jira-oauth-3.png "Jira Node.js API")
 
 
 If the link creation is successful, it'll show on your screen under the "Application" sections.
 
-![Jira Node.js API](jira-oauth-4.png "Jira Node.js API")
+![Jira Node.js API with-shadow](jira-oauth-4.png "Jira Node.js API")
 
 ### Application Client
 
@@ -101,7 +101,7 @@ In this tutorial, we'll be creating a Node.js server that'll access our Jira dat
 
 You can clone any of the examples above. However, you can create a folder that'll house our application and run "npm init" to initialize it. 
 
-![Jira Node.js API](jira-oauth-5.png "Jira Node.js API")
+![Jira Node.js API with-shadow](jira-oauth-5.png "Jira Node.js API")
 
 Next, create an "index.js" file and put a modified sample code from Mateusz Dargacz, as shown below, into the "index.js" file you just created.
 
@@ -193,7 +193,6 @@ app.get('/sessions/callback', (request, response) => {
 app.listen(parseInt(process.env.PORT || 8080));
 ```
 
-
 Now, create a "config.js" file in your home directory. This will house the path to your private key and other configurations. The consumer key should be the same as in the last section. 
 
 
@@ -215,7 +214,7 @@ First, run **npm install express cookie-parser express-session oauth fs** to ins
 
 Notice that after the OAuth dance, the access token will be displayed in your terminal, and you'll be taken back to the Node.js server. 
 
-![Jira Node.js API](jira-oauth-6.png "Jira Node.js API")
+![Jira Node.js API with-shadow](jira-oauth-6.png "Jira Node.js API")
 
 ## Jira OAuth Conclusion
 
