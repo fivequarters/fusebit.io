@@ -17,8 +17,6 @@ posts_related:
   ]
 ---
 
-# How to Access Jira Data From a Node.js App Using Jira OAuth
-
 In the world of information technology (IT), data rules. For example, information consists of data. Therefore, to execute tasks in the IT field, you need data. 
 
 Not only is data important in the IT field, but you also need to properly access data to obtain useful information. This is why tools like Jira exist. It allows bug tracking and agile software development, where shipping products happens at a faster rate. It does this through teamwork and aligning development with customer needs and company philosophy. 
