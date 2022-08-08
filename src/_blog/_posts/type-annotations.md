@@ -17,7 +17,7 @@ posts_related:
   ]
 ---
 
-Static Typing is the number one feature missing in JavaScript, according to 16K developers participating in the [State of JavaScript survey 2022]([https://2021.stateofjs.com/en-US/opinions/#currently_missing_from_js_wins](https://2021.stateofjs.com/en-US/opinions/#currently_missing_from_js_wins)). There are so many opinions and conversations around it, that [TC39]([https://tc39.es/](https://tc39.es/)), the committee which standardizes the JavaScript language launched a [new Stage 0 proposal]([https://github.com/tc39/proposal-type-annotations](https://github.com/tc39/proposal-type-annotations)) to enable JavaScript developers to add type annotations to their JavaScript code.
+Static Typing is the number one feature missing in JavaScript, according to 16K developers participating in the [State of JavaScript survey 2022](https://2021.stateofjs.com/en-US/opinions/#currently_missing_from_js_wins). There are so many opinions and conversations around it, that [TC39](https://tc39.es/), the committee which standardizes the JavaScript language launched a [new Stage 0 proposal](https://github.com/tc39/proposal-type-annotations) to enable JavaScript developers to add type annotations to their JavaScript code.
 
 ![JavaScript Soft Typing Support](javascript-typing-support-1.png "JavaScript Soft Typing Support")
 
@@ -25,29 +25,29 @@ Let’s understand what is happening and why this could have a major impact on h
 
 ## A Little Bit of History: TypeScript, JavaScript, and Concepts
 
-When JavaScript was first released 27 years ago, it was designed to be a dynamic language or weakly typed language, meaning that developers don’t have to specify the types of information that will be stored in a variable in advance. JavaScript assigns the type of a variable based on the information assigned to it. (e.g.  arrays, strings, object, etc). The opposite is _*Strong typed*_ language, where specifying types in advance is enforced by the compiler, such as Java, Python and Ruby.
+When JavaScript was first released 27 years ago, it was designed to be a dynamic language or weakly typed language, meaning that developers can't specify the types of information that will be stored in a variable in advance. JavaScript assigns the type of a variable based on the information assigned to it. (e.g.  arrays, strings, object, etc). The opposite is _*Strongly typed*_ language, where specifying types in advance is enforced by the compiler, such as Java, C# and Rust.
 
-Having a loosely typed language is a bittersweet experience.
+Having a weakly typed language is a bittersweet experience.
 
 The sweet part is because it gives you a lot of flexibility and less developer effort as the compiler performs certain kinds of type conversions. The bitter part is because fewer errors are caught at compile time, leaving many bugs to be caught at runtime.
 
 Loosely typed languages allows to things like this: 1 + “1” = 11
 
-And errors like this: ``cannot read property x of undefined``
+And errors like this: `x does not have a method 'foo'`
 
 As well as other similar errors and weird stuff that could be preventable by adding type syntax. That’s why TypeScript was invented.
 
 ### JavaScript + Types = TypeScript 
 
-TypeScript is a superset of JavaScript, is not a JavaScript framework, meaning that you can completely write valid JavaScript without using any extra features Typescript offers. You can build on JavaScript by adding syntax for type declarations, classes, and other object-oriented features with type-checking.
+TypeScript is a superset of JavaScript, meaning that you can completely write valid JavaScript without using any extra features Typescript offers. You can build on JavaScript by adding syntax for type declarations, classes, and other features with type-checking.
 
-In other words, typescript is a type-checking language that doesn’t change how JavaScript is interpreted by the browser.
+In other words, Typescript is a type-checking language that doesn’t change how JavaScript is interpreted by the browser.
 
-[TypeScript]([https://www.typescriptlang.org/](https://www.typescriptlang.org/)) was first released in 2012 and “is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale”, now is the seventh most popular language among developers according to [Stack Overflow survey 2021]([https://insights.stackoverflow.com/survey/2021#most-popular-technologies-language](https://insights.stackoverflow.com/survey/2021#most-popular-technologies-language)), and fourth according to [The State of the Octoverse]([https://octoverse.github.com/#top-languages-over-the-years](https://octoverse.github.com/#top-languages-over-the-years)).
+[TypeScript](https://www.typescriptlang.org/) was first released in 2012 and “is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale”, is now the seventh most popular language among developers according to [Stack Overflow survey 2021](https://insights.stackoverflow.com/survey/2021#most-popular-technologies-language), and fourth according to [The State of the Octoverse](https://octoverse.github.com/#top-languages-over-the-years).
 
 ![JavaScript Soft Typing Support](javascript-typing-support-2.png "JavaScript Soft Typing Support")
 
-Its use and adoption have been extensive, exponential, and explosive! But, it really started to take off in 2017. Its popularity has been growing because, by [providing minimal checking syntax on top of JavaScript](https://thenewstack.io/typescript-getting-popular/), TypeScript allows developers to type check their code, helping find bugs and improve documentation of large JavaScript code bases.
+Its use and adoption have been extensive, exponential, and explosive! But, it really started to take off in 2017. Its popularity has been growing because, by [providing checking syntax on top of JavaScript](https://thenewstack.io/typescript-getting-popular/), TypeScript allows developers to type check their code, helping find bugs and improve documentation of large JavaScript code bases.
 
 Some argue that TypeScript faces the same fate as Coffeescript, which includes improvements for the JavaScript Language such as `for..of` loops. Those improvements were later included in the JavaScript language itself in ES6, making CoffeScript irrelevant. TypeScript, as a “superset” of JS, could become irrelevant if JavaScript itself adopts all the TypeScript improvements.
 
@@ -59,7 +59,7 @@ TypeScript is so compatible with JavaScript that if you change a JavaScript file
 
 ## Deep Dive into the Proposal: Type Declarations in JavaScript
 
-The main purpose of the proposal is to “Reserve a space for static type syntax inside the ECMAScript language. JavaScript engines would treat type syntax as comments”. [TC39 Proposal]([https://tc39.es/proposal-type-annotations/](https://tc39.es/proposal-type-annotations/)) that means:
+The main purpose of the proposal is to “Reserve a space for static type syntax inside the ECMAScript language. JavaScript engines would treat type syntax as comments”. [TC39 Proposal](https://tc39.es/proposal-type-annotations/) that means:
 
 > Everything in this proposal has no runtime behavior and would be ignored by a JavaScript runtime.
 
@@ -105,16 +105,6 @@ function equals(x: number, y: number): boolean {
 
 In this case, only numbers are accepted as parameters, and the return value of the function will be a boolean.
 
-### Type Declarations: Inference
-
-Type inference is the opposite of type annotations; instead of you explicitly declaring a type on variables and functions, you can write information without worrying about the type, the typing support will figure out the type, based on the information you give it.
-
-The type inference can save you some keystrokes and will likely cover approximately 90% of your use cases, as we can see in the following example:
-
-![JavaScript Soft Typing Support](javascript-typing-support-5.png "JavaScript Soft Typing Support")
-
-<center><figcaption>Example of inference using VS Code<figcaption></center>
-
 ### Type Declarations: Type Alias
 
 Type aliasing consists of giving one type a new name; it doesn’t create a new type. It can declare a name for a broader set of types. Aliasing a primitive isn’t very practical as it’s easy using primitive types, but one of the best usages is for documentation purposes. 
@@ -127,11 +117,11 @@ type importantNumber = number;
 
 ## Will all of TypeScript be supported by this proposal?
 
-Short answer: no. Only the main types that are shown in the section below. [For example enums, namespaces and class parameter properties are unlikely to be supported](https://tc39.es/proposal-type-annotations/). In addition, specifying type arguments at function call-sites will require a slightly different syntax.
+Short answer: no. Only the main types that are shown in the section below. [For example enums, namespaces and class parameter properties are unlikely to be supported](https://tc39.es/proposal-type-annotations/). In addition, specifying type arguments at function call-sites may require a slightly different syntax
 
 ## Kinds of Types
 
-[The allowed types in this proposal are]([https://github.com/tc39/proposal-type-annotations/blob/master/syntax/grammar-ideas.md#allowed-types](https://github.com/tc39/proposal-type-annotations/blob/master/syntax/grammar-ideas.md#allowed-types)):
+[The allowed types in this proposal are](https://github.com/tc39/proposal-type-annotations/blob/master/syntax/grammar-ideas.md#allowed-types):
 
 * Simple "identifier" style: `number, Foo, string`
 * Adding `?: number?, ?number, Foo?`
@@ -157,7 +147,7 @@ In this case, param2 is optional, param1 is required.
 
 ## Generics
 
-[Generics]([https://www.typescriptlang.org/docs/handbook/2/generics.html](https://www.typescriptlang.org/docs/handbook/2/generics.html)) is one of the main tools in the toolbox for creating *reusable components* in languages such as C# or Java, this means, being able to create components that work with multiple types instead of just one. This could be useful in the way the user can use their own types.
+[Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html) is one of the main tools in the toolbox for creating *reusable components* in languages such as C# or Java, this means, being able to create components that work with multiple types instead of just one. This could be useful in the way the user can use their own types.
 
 If you are familiar with TypeScript, this is where the famous **any** type comes into play.
 
@@ -183,7 +173,7 @@ Here are the stages for the TC39 process:
 * [📝 Stage 3: Candidate](https://nitayneeman.com/posts/introducing-all-stages-of-the-tc39-process-in-ecmascript/#stage-3-candidate) - waiting for implementation
 * [✅ Stage ](https://nitayneeman.com/posts/introducing-all-stages-of-the-tc39-process-in-ecmascript/#stage-4-finished)4: Accepted
 
-For more information on how the process works, visit the [official documentation]([https://tc39.es/process-document/](https://tc39.es/process-document/)).
+For more information on how the process works, visit the [official documentation](https://tc39.es/process-document/).
 
 Some argue that Type Annotations are the future, and this proposal will likely be accepted since it is one of the most (or the most) requested features in JavaScript.  
 
