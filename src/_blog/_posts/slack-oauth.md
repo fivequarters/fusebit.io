@@ -65,11 +65,11 @@ Next, click on "Create a New Workspace."
 
 Enter your email and click "Continue."
 
-![Slack OAuth Node.js](slack-oauth-2.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-2.png "Slack OAuth Node.js")
  
 Slack asks you for a code for validation. Check your email and enter the code.
 
-![Slack OAuth Node.js](slack-oauth-3.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-3.png "Slack OAuth Node.js")
 
 Then, click on "Create a Workspace."
 
@@ -77,15 +77,15 @@ Then, click on "Create a Workspace."
 
 Enter the name of your company or team and click on "Next." 
 
-![Slack OAuth Node.js](slack-oauth-5.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-5.png "Slack OAuth Node.js")
 
 You can enter your email address and click "Next" or "Skip this Step."
 
-![Slack OAuth Node.js](slack-oauth-6.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-6.png "Slack OAuth Node.js")
 
 After that, enter Slack OAuth and click on "Next." 
 
-![Slack OAuth Node.js](slack-oauth-7.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-7.png "Slack OAuth Node.js")
 
 At this point, Slack opens your new workspace. 
 
@@ -95,25 +95,25 @@ Next, you need to navigate to the [API tools](https://api.slack.com/apps) and se
 
 First, click on "Create an App."
 
-![Slack OAuth Node.js](slack-oauth-8.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-8.png "Slack OAuth Node.js")
  
 Then, select "From Scratch."
 
-![Slack OAuth Node.js](slack-oauth-9.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-9.png "Slack OAuth Node.js")
 
 After that, enter your app name and select the workspace you created above. Next, click "Create App."
 
-![Slack OAuth Node.js](slack-oauth-10.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-10.png "Slack OAuth Node.js")
 
 Once you have the app set up, scroll down to the "App Credentials" section. This section contains the details such as client ID and client secret that you'll need in order to connect to the Slack APIs. Keep them around for easy access later. 
 
 In addition, navigate to "OAuth & Permissions" on the left-hand navigation bar, and scroll down to "Redirect Urls." Click on "Add New Redirect Url," enter https://localhost:3443/auth/slack/callback in the textbox that pops up, and then click on "Add."
 
-![Slack OAuth Node.js](slack-oauth-11.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-11.png "Slack OAuth Node.js")
 
 Scroll down a little further on the same page until you see "Scopes." Click on "Add OAuth Scopes." In the pop-up, select "identity.basic" and add another one for "identity.email."
 
-![Slack OAuth Node.js](slack-oauth-12.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-12.png "Slack OAuth Node.js")
 
 Finally, go to "Manage Distribution" and "Activate Distribution." Here, you can get links to share your app. 
 
@@ -178,7 +178,7 @@ node slack-oauth.js
 
 You should see the message "Your Slack-OAuth app is listening on port 3000" and "Your Slack-Oauth app is listening on port 3443" in the terminal. Navigate to https://localhost:3443 in your web browser, and you should see the message "Successfully setup and running Node and Express."
 
-![Slack OAuth Node.js](slack-oauth-13.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-13.png "Slack OAuth Node.js")
 
 Now you have all you need to start developing our Slack OAuth app. 
 
@@ -257,19 +257,19 @@ node slack-oauth.js
 
 Then, navigate to https://localhost:3443/auth/slack.
 
-![Slack OAuth Node.js](slack-oauth-14.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-14.png "Slack OAuth Node.js")
 
 Click on "Add to Slack." Next, enter your workspace name as you had defined above and click on "Continue."
 
-![Slack OAuth Node.js](slack-oauth-15.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-15.png "Slack OAuth Node.js")
  
 Now, enter your login credentials and click on "Sign In."
 
-![Slack OAuth Node.js](slack-oauth-16.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-16.png "Slack OAuth Node.js")
 
 The next screen is asking if your application is allowed to access details about your workspace. Click on "Allow.
 
-![Slack OAuth Node.js](slack-oauth-17.png "Slack OAuth Node.js")
+![Slack OAuth Node.js with-shadow](slack-oauth-17.png "Slack OAuth Node.js")
  
 On the next screen, you should see the message "You have successfully logged in with your Slack account! Here are the details:" and a dump of what came back from Slack. 
 
