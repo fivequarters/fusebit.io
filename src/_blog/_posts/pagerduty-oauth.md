@@ -209,7 +209,7 @@ The need to tread carefully when dealing with users' personal data can't be over
 
 This can be difficult, especially if your firm is a resource provider that needs to provide resources to a vast number of people. 
 
-While this involves a lot of integrations and code writing, tools like [FuseBit](https://fusebit.io) can make integrations like this easier. For instance, with FuseBit, developers can easily and securely implement integrations without writing zillions of codes. 
+While this involves a lot of integrations and code writing, tools like [Fusebit](https://fusebit.io) can make integrations like this easier. For instance, with FuseBit, developers can easily and securely implement integrations without writing zillions of codes. 
 
 Try it today. 
 
