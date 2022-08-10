@@ -31,7 +31,7 @@ Having a weakly typed language is a bittersweet experience.
 
 The sweet part is because it gives you a lot of flexibility and less developer effort as the compiler performs certain kinds of type conversions. The bitter part is because fewer errors are caught at compile time, leaving many bugs to be caught at runtime.
 
-Loosely typed languages allows to things like this: 1 + “1” = 11
+Weakly typed languages allows to things like this: 1 + “1” = 11
 
 And errors like this: `x does not have a method 'foo'`
 
