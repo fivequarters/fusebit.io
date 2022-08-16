@@ -454,7 +454,7 @@ const getUser = async (access_token) => {
 
 If you open the browser, you should see your username and other Reddit info up on the profile page. 
 
-![Reddit OAuth](reddit-oauth-7.png "Reddit OAuth")
+![Reddit OAuth](reddit-oauth-7.jpg "Reddit OAuth")
 
 Also, you can find the complete code for the example on [this Github repo](https://github.com/buildbro/reddit-oauth-example/). 
 
