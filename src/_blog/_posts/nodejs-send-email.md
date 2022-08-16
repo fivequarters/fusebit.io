@@ -6,7 +6,7 @@ date: '2022-07-19'
 post_image: nodejs-send-email.png
 post_excerpt: Explore three ways to send email from Node.js applications & how to add them to your app. And code samples help you get started right away.
 post_slug: nodejs-send-email
-tags: ['post', 'developer tools', 'nodejs']
+tags: ['post', 'developer tools', 'node.js']
 post_date_in_url: false
 post_og_image: 'hero'
 posts_related:
