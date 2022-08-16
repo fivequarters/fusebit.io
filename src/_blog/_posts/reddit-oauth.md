@@ -39,7 +39,7 @@ Let's walk through an example of adding sign-in with Reddit to an application. F
 
 In order to use the Reddit API, you’ll need to create an application from the developer portal. You can create one by going to [https://www.reddit.com/prefs/apps](https://www.reddit.com/prefs/apps), then clicking the "Are you a developer? Create an app ..." button. 
 
-![Reddit OAuth](reddit-oauth-1.png "Reddit OAuth")
+![Reddit OAuth with-shadow](reddit-oauth-1.png "Reddit OAuth")
 
 > In order to use the **Reddit API**, you’ll need to create an application from the developer portal.
 
@@ -160,7 +160,7 @@ The code from **index.js** file from the last step already includes Reddit's aut
 
 The authorization URL basically links to a page from which a user can grant your application access to their Reddit profile. The following screenshot show this page after the user clicks on the "Sign in with Reddit" button: 
 
-![Reddit OAuth](reddit-oauth-5.png "Reddit OAuth")
+![Reddit OAuth with-shadow](reddit-oauth-5.png "Reddit OAuth")
 
 ### Step 5: How to Get a Reddit OAuth Token
 
