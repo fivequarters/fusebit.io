@@ -90,8 +90,6 @@ Steps on how Application Programming Interface works:
 1. <span style="text-decoration:underline;">Security Cover:</span>
 * Application Programming Interface adds external confidentiality by hiding data between layers of code.
 
-![alt_text](images/image2.jpg "image_tooltip")
-
 ### <span style="text-decoration:underline;">CONS:</span>
 
 Application Programming Interfaces are of great help, especially in this age where smartphones are popular. Even with its tons of advantages, there are some disadvantages. Some disadvantages are: 
