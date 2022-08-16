@@ -12,7 +12,7 @@ module.exports = async function () {
             outOfPlan: i.outOfPlan,
             catalog: i.tags.catalog,
             description: i.description,
-            docs: i?.resources?.configureAppDocUrl,
+            docs: i?.resources?.integrationsDocUrl,
             guide: i?.website_description,
         };
     }
