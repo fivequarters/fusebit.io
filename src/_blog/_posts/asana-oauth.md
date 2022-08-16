@@ -25,7 +25,7 @@ In this post, you'll learn how to implement a Node.js application that connects 
 
 Authentication services identify users to a website and verify that they are who they say they are. Authorization services like OAuth use the identity information provided by the authentication service to decide what resources an authenticated user has access to within the software. This is more easily illustrated using the image below. 
 
-![Asana OAuth](asana-oauth-1.png "Asana OAuth")
+![Asana OAuth with-shadow](asana-oauth-1.png "Asana OAuth")
 
 _The 3 steps to connecting with an OAuth2_
 
@@ -45,7 +45,7 @@ In this exercise, you're going to write a Node.js application that will connect 
 
 Ensure the app you registered on Asana Developers has been configured properly by setting the redirect URL in the OAuth section. The redirect URL is the URL to which the OAuth server sends the temporary code. For the example application, you'll be using a redirect URL value of **[http://localhost:3000/oauth-callback](http://localhost:3000/oauth-callback).** 
 
-![Asana OAuth](asana-oauth-2.png "Asana OAuth")
+![Asana OAuth with-shadow](asana-oauth-2.png "Asana OAuth")
 
 _OAuth configuration_
 
@@ -142,11 +142,11 @@ Once you've added the route handler for the OAuth redirect URL, the Asana OAuth 
 
 Try loading the [http://localhost:3000/](http://localhost:3000/) URL in your browser. If everything is configured correctly, you should first be redirected to a permissions page and then back to your application. The home page will now show your name, your email address, and your picture if it is available. 
 
-![Asana OAuth](asana-oauth-3.png "Asana OAuth")
+![Asana OAuth with-shadow](asana-oauth-3.png "Asana OAuth")
 
 _Grant permission screen_
 
-![Asana OAuth](asana-oauth-4.png "Asana OAuth")
+![Asana OAuth with-shadow](asana-oauth-4.png "Asana OAuth")
 
 Now let's look at how you can fetch additional information from the Asana API. 
 
@@ -209,7 +209,7 @@ Now, carry out the following steps:
 2. Go to [http://localhost:3000/](http://localhost:3000/) so the application generates a new token with the expanded scope.
 3. Navigate to [http://localhost:3000/get-tasks](http://localhost:3000/get-tasks) to view your tasks.
 
-![Asana OAuth](asana-oauth-5.png "Asana OAuth")
+![Asana OAuth with-shadow](asana-oauth-5.png "Asana OAuth")
  
 _A list of tasks in your workspace _
 
