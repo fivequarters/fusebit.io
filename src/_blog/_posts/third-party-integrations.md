@@ -83,11 +83,11 @@ Steps on how Application Programming Interface works:
 * Developers have a stress free life.
 * It saves the time spent building features from scratch.
 * It also reduces development by simplifying the maintenance of software.
-1. <span style="text-decoration:underline;">Innovation:</span>
+2. <span style="text-decoration:underline;">Innovation:</span>
 * Application Programming Interface creates room for flexibility for the developers which leads to the development of powerful applications
-1. <span style="text-decoration:underline;">Monetization:</span>
+3. <span style="text-decoration:underline;">Monetization:</span>
 * Application Programming Interface can be a source of income.
-1. <span style="text-decoration:underline;">Security Cover:</span>
+4. <span style="text-decoration:underline;">Security Cover:</span>
 * Application Programming Interface adds external confidentiality by hiding data between layers of code.
 
 ### <span style="text-decoration:underline;">CONS:</span>
