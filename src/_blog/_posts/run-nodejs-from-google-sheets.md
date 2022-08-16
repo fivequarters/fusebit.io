@@ -6,7 +6,7 @@ date: '2022-01-24'
 post_image: google-sheets-addon-banner.png
 post_excerpt: Import data from any API or data source to Google Sheets using Node.js, NPM, and Fusebit Connectors.
 post_slug: run-nodejs-from-google-sheets
-tags: ['post', 'developer tools', 'integrations', 'addon', 'node.js']
+tags: ['post', 'developer tools', 'integrations', 'node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/twitter-google-sheets-addon.png
 posts_related:
