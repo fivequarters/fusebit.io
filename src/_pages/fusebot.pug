@@ -1,0 +1,14 @@
+extends ../_layouts/default.pug
+
+block seo_variables
+    - var title = 'Fusebot'
+
+block page_variable
+    - var pageClass = 'fusebot'
+
+block content
+    include ../_components/Fusebot/Hero/hero
+
+block scripts
+    script.
+        analytics.page('Fusebot', { objectLocation: 'Fusebot', domain: 'fusebit.io' });

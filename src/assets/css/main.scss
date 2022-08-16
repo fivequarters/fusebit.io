@@ -72,6 +72,10 @@
     @import '_page__blog-list';
 }
 
+.fusebot {
+    @import '_page_fusebot--hero';
+}
+
 // Components
 @import 'component-modal-cta';
 @import 'component-modal';

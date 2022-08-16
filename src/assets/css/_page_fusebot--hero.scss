@@ -1,0 +1,215 @@
+.hero {
+    position: relative;
+    color: var(--neutral);
+    overflow: hidden;
+    background-image: url(./images/homepage/hero/hero--desktop.png);
+    background-position: calc(50vw - 750px) bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__container {
+        width: 90%;
+        max-width: var(--container);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0 auto;
+        padding: 11.375rem 0 6.5rem;
+
+        @media only screen and (max-width: 800px) {
+            padding: 8rem 0;
+        }
+
+        @media only screen and (max-width: 500px) {
+            padding: 5rem 0 8rem;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        max-width: 544px;
+
+        @media only screen and (max-width: 1000px) {
+            max-width: 475px;
+        }
+
+        @media only screen and (max-width: 800px) {
+            max-width: 100%;
+        }
+    }
+
+    &__subtitle {
+        font-weight: 700;
+        @include font-size(16);
+        margin-bottom: 1.5rem;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        &--badge {
+            background: var(--yellow);
+            margin-right: 1rem;
+            padding: 0.5rem;
+            color: var(--dark);
+            border-radius: 0.3rem;
+            text-transform: uppercase;
+            font-family: var(--poppins);
+            @include font-size(10);
+            transition: all 0.2s;
+
+            @media only screen and (max-width: 500px) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        & > span:not(&--badge) {
+            padding: 0.2rem 0;
+            background: -webkit-linear-gradient(
+                left,
+                var(--yellow) -70%,
+                var(--neutralLight)
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            &::selection {
+                background-clip: unset;
+                -webkit-background-clip: unset;
+                -webkit-text-fill-color: #ffffff;
+            }
+        }
+
+        @media only screen and (max-width: 1400px) {
+            @include font-size(16);
+            margin-bottom: 1.5rem;
+
+            &--badge {
+                @include font-size(12);
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            @include font-size(14);
+
+            &--badge {
+                @include font-size(10);
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__title {
+        position: relative;
+        font-family: var(--sora);
+        font-weight: 700;
+        @include font-size(64);
+        line-height: 110%;
+        color: var(--neutralLight);
+        margin-bottom: 2rem;
+
+        @media only screen and (max-width: 1000px) {
+            @include font-size(39);
+            line-height: 56px;
+        }
+
+        @media only screen and (max-width: 700px) {
+            @include font-size(52);
+            line-height: 60px;
+        }
+    }
+
+    &__text {
+        position: relative;
+        width: 82%;
+        @include font-size(18);
+        font-weight: 300;
+        line-height: 29px;
+        margin-bottom: 3rem;
+
+        @media only screen and (max-width: 1000px) {
+            width: 350px;
+            @include font-size(14);
+        }
+
+        @media only screen and (max-width: 800px) {
+            width: 100%;
+        }
+    }
+
+    &__cta {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 64px;
+        background: var(--orange);
+        @include font-size(18);
+        line-height: 27px;
+        color: var(--neutralLight);
+        border-radius: 2rem;
+        z-index: 5;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+
+        svg {
+            position: relative;
+            margin-left: 0.8rem;
+            width: 6px;
+            transition: all 0.2s ease-in-out;
+            path {
+                stroke: white;
+            }
+        }
+
+        &:hover {
+            background: var(--orangeDark);
+            svg {
+                transform: translateX(0.5rem) scale(1.2);
+            }
+        }
+
+        &:active {
+            transition: none;
+            background: var(--yellow);
+        }
+    }
+
+    &__images {
+        width: 100%;
+        position: absolute;
+        opacity: 0;
+        left: 51%;
+
+        img {
+            position: absolute;
+            max-width: 823px;
+            height: auto;
+            top: -6.5rem;
+            left: -3rem;
+
+            // Cross browser fix to blurred hero image
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -o-crisp-edges;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: optimize-contrast;
+            -ms-interpolation-mode: nearest-neighbor;
+        }
+
+        @media only screen and (max-width: 800px) {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        background-image: url(./images/homepage/hero/hero--mobile.png);
+        background-position: 25% bottom;
+    }
+}
