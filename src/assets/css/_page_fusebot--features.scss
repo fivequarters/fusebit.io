@@ -1,0 +1,152 @@
+.features {
+    position: relative;
+    padding: 100px 0;
+
+    &__ellipsis {
+        position: absolute;
+        left: 0;
+        bottom: -275px;
+        height: 1136px;
+        width: 1136px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(./images/fusebot/features/ellipsis.svg);
+    }
+
+    &__container  {
+        width: 90%;
+        max-width: var(--container);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0 auto;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__icon {
+        width: 41px;
+        height: 32px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 8px;
+
+        &-fusebot {
+            height: 56px;
+            width: 56px;
+            margin-left: 8px;
+            background-image: url(./images/fusebot/features/fusebot.svg);
+        }
+
+        &-slack {
+            background-image: url(./images/fusebot/features/slack.svg);
+        }
+
+        &-discord {
+            background-image: url(./images/fusebot/features/discord.svg);
+        }
+    }
+
+    &__title {
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 48px;
+        color: #333333;
+
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 36px;
+        }
+    }
+
+    &__feature {
+        font-size: 18px;
+        color: var(--dark);
+
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 205px;
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+
+                iframe {
+                    margin-right: auto;
+                }
+            }
+
+            &:nth-child(odd) {
+                iframe {
+                    margin-left: auto;
+                }
+            }
+        }
+
+        &-amenity-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        &-icon {
+            height: 24px;
+            width: 24px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 8px;
+
+            &-control {
+                background-image: url(./images/fusebot/features/control.svg);
+            }
+
+            &-money {
+                background-image: url(./images/fusebot/features/money.svg);
+            }
+
+            &-code {
+                background-image: url(./images/fusebot/features/code.svg);
+            }
+
+            &-code-with-dots {
+                background-image: url(./images/fusebot/features/code-with-dots.svg);
+            }
+
+            &-search {
+                background-image: url(./images/fusebot/features/search.svg);
+            }
+
+            &-update {
+                background-image: url(./images/fusebot/features/update.svg);
+            }
+
+            &-build {
+                background-image: url(./images/fusebot/features/build.svg);
+            }
+
+            &-verified {
+                background-image: url(./images/fusebot/features/verified.svg);
+            }
+        }
+
+        &-video {
+            position: relative;
+            width: 544px;
+            height: 304px;
+            border-radius: 8px;
+        }
+    }
+
+    &__cta {
+        font-size: 16px;
+        line-height: 24px;
+        padding: 12px 20px;
+        margin-top: 44px;
+    }
+}

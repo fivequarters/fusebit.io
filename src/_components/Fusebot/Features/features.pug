@@ -1,0 +1,37 @@
+mixin amenity(iconClass, text)
+    .features__feature-amenity-wrapper
+        .features__feature-icon(class= iconClass)
+        .features__feature #{text}
+
+section.features
+    .features__ellipsis
+    .features__container
+        .features__wrapper
+            .features__feature-wrapper
+                div
+                    .features__title-wrapper
+                        .features__icon.features__icon-discord
+                        .features__title Discord +
+                        .features__icon.features__icon-fusebot
+                        .features__title Fusebot
+                    +amenity("features__feature-icon-control", "Check gaming server status")
+                    +amenity("features__feature-icon-money", "Return the value of Dogecoin")
+                    +amenity("features__feature-icon-code", "Develop your own text-based RPG")
+                    +amenity("features__feature-icon-code-with-dots", "... anything else you can code in JS")
+                    a.track-with-segment.track-with-linkedin.fusebot-cta.features__cta(href="https://discord.com/api/oauth2/authorize?client_id=835311178808819712&permissions=2048&redirect_uri=https%3A%2F%2Fgo.us-west-2.fusebot.io%2Fv1%2Frun%2Fsub-af5f271f798a4980%2Fapp%2Ffusebot%2Fdiscord%2Fcallback&response_type=code&scope=identify%20email%20bot%20applications.commands" target="_blank" data-event-name="Add to Discord Button Clicked" data-object-location="Fusebot Page Features")
+                        | Add to Discord
+                iframe.features__feature-video(src="https://www.youtube.com/embed/deePnnN8HLo")
+            .features__feature-wrapper
+                div
+                    .features__title-wrapper
+                        .features__icon.features__icon-slack
+                        .features__title Slack +
+                        .features__icon.features__icon-fusebot
+                        .features__title Fusebot
+                    +amenity("features__feature-icon-search", "List GitHub issues assigned to you")
+                    +amenity("features__feature-icon-update", "Update status on JIRA story")
+                    +amenity("features__feature-icon-build", "Start a Jenkins build")
+                    +amenity("features__feature-icon-verified", "...whatever your team needs!")
+                    a.track-with-segment.track-with-linkedin.fusebot-cta.features__cta(href="https://slack.com/oauth/v2/authorize?client_id=457394426995.2008148616816&scope=chat:write,commands&user_scope" target="_blank" data-event-name="Add to Slack Button Clicked" data-object-location="Fusebot Page Features")
+                        | Add to Slack
+                iframe.features__feature-video(src="https://www.youtube.com/embed/hvvFuz8mF9k")

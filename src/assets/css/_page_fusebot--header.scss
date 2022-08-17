@@ -25,30 +25,16 @@
             font-size: 28px;
             line-height: 40px;
         }
+
+        &--wrapper {
+            display: flex;
+            align-items: center;
+        }
     }
     
     &__cta {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: fit-content;
-        height: fit-content;
-        background: #15D6CF;
         font-size: 16px;
-        font-family: var(--poppins);
-        font-weight: 500;
         line-height: 24px;
-        color: #333333;
-        border-radius: 2rem;
         padding: 12px 20px;
-        margin-left: auto;
-        z-index: 5;
-        overflow: hidden;
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-            opacity: 0.6;
-        }
     }
 }

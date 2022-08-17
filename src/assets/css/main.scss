@@ -75,6 +75,7 @@
 .fusebot {
     @import '_page_fusebot--hero';
     @import '_page_fusebot--header';
+    @import '_page_fusebot--features';
 }
 
 // Components
@@ -95,3 +96,4 @@
 @import 'component-avatar';
 @import 'component-dropdown';
 @import 'component-post-card';
+@import 'component-fusebot-cta';
