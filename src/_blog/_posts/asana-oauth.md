@@ -2,7 +2,7 @@
 post_title: 'Asana OAuth: How to Access User Data Using OAuth'
 post_author: John Pereira
 post_author_avatar: john.png
-date: '2022-08-19'
+date: '2022-08-17'
 post_image: asana-oauth-main.png
 post_excerpt: Learn how to implement a Node.js application that connects to Asana and requests the authenticated user's data by using OAuth 2.
 post_slug: asana-oauth
