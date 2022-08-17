@@ -1,4 +1,4 @@
-extends ../_layouts/default.pug
+extends ../_layouts/default-fusebot.pug
 
 block seo_variables
     - var title = 'Fusebot'
@@ -7,6 +7,7 @@ block page_variable
     - var pageClass = 'fusebot'
 
 block content
+    include ../_components/Fusebot/Header/header
     include ../_components/Fusebot/Hero/hero
 
 block scripts

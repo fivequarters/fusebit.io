@@ -1,0 +1,54 @@
+.header {
+    position: absolute;
+    color: #FFFFFF;
+    font-family: var(--sora);
+
+    &__container  {
+        width: 90%;
+        max-width: var(--container);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0 auto;
+    }
+
+    &__logo {
+        height: 40px;
+        width: 40px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(./images/fusebot/header/fusebot.svg);
+        margin-right: 4px;
+
+        &--title {
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 40px;
+        }
+    }
+    
+    &__cta {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        height: fit-content;
+        background: #15D6CF;
+        font-size: 16px;
+        font-family: var(--poppins);
+        font-weight: 500;
+        line-height: 24px;
+        color: #333333;
+        border-radius: 2rem;
+        padding: 12px 20px;
+        margin-left: auto;
+        z-index: 5;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
