@@ -77,20 +77,20 @@ Steps on how Application Programming Interface works:
 
 ### Pros and cons of APIs
 
-#### <span style="text-decoration:underline;">PROS:</span>
+#### PROS:
 
-1. <span style="text-decoration:underline;">It simplifies application development:</span>
+1. **It simplifies application development:**
 * Developers have a stress free life.
 * It saves the time spent building features from scratch.
 * It also reduces development by simplifying the maintenance of software.
-2. <span style="text-decoration:underline;">Innovation:</span>
+2. **Innovation:**
 * Application Programming Interface creates room for flexibility for the developers which leads to the development of powerful applications
-3. <span style="text-decoration:underline;">Monetization:</span>
+3. **Monetization:**
 * Application Programming Interface can be a source of income.
-4. <span style="text-decoration:underline;">Security Cover:</span>
+4. **Security Cover:**
 * Application Programming Interface adds external confidentiality by hiding data between layers of code.
 
-### <span style="text-decoration:underline;">CONS:</span>
+#### CONS:
 
 Application Programming Interfaces are of great help, especially in this age where smartphones are popular. Even with its tons of advantages, there are some disadvantages. Some disadvantages are: 
 
@@ -100,7 +100,7 @@ Application Programming Interfaces are of great help, especially in this age whe
 * There can be loss of data if an API is hacked.
 * Basic knowledge of programming is needed.
 
-### <span style="text-decoration:underline;">CONCLUSION   </span>
+### Conclusion
 
 Application Programming Interfaces (API) are very useful tools for all [developers](https://fusebit.io/) regardless of the disadvantages. Learning how to integrate Application Programming Interfaces into projects is something all developers must learn. 
 
