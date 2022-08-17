@@ -3,9 +3,11 @@ mixin amenity(iconClass, text)
         .features__feature-icon(class= iconClass)
         .features__feature #{text}
 
-section.features
+section.section.features
     .features__ellipsis
-    .features__container
+    .background
+        .mark.mark--small.mark--dark-violet.mark--right.mark--bottom.features__mark
+    .features__container.layout.layout--no-padding-top
         .features__wrapper
             .features__feature-wrapper
                 div

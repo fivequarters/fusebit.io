@@ -1,16 +1,21 @@
 .features {
     position: relative;
-    padding: 100px 0;
+    padding-top: 100px;
 
     &__ellipsis {
         position: absolute;
         left: 0;
-        bottom: -275px;
+        bottom: -188px;
         height: 1136px;
         width: 1136px;
         background-size: contain;
         background-repeat: no-repeat;
         background-image: url(./images/fusebot/features/ellipsis.svg);
+        z-index: -1;
+    }
+
+    &__mark {
+        @include mark-offset(250px, 25px, false, true);
     }
 
     &__container  {
