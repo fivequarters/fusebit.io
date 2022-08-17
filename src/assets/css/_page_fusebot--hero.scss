@@ -2,10 +2,16 @@
     position: relative;
     color: var(--neutral);
     overflow: hidden;
-    background-image: url(./images/homepage/hero/hero--desktop.png);
-    background-position: calc(50vw - 750px) bottom;
+    background-image: url(./images/fusebot/hero/background.png);
+    background-position: 0 -100px;
     background-size: cover;
     background-repeat: no-repeat;
+    padding-bottom: 50px;
+
+    @media only screen and (max-width: 800px) {
+        background-image: url(./images/homepage/hero/hero--mobile.png);
+        background-position: 25% bottom;
+    }
 
     &__container {
         width: 90%;
@@ -109,18 +115,20 @@
         position: relative;
         font-family: var(--sora);
         font-weight: 700;
-        @include font-size(64);
+        font-size: 56px;
         line-height: 110%;
+        min-width: 543px;
         color: var(--neutralLight);
         margin-bottom: 2rem;
 
         @media only screen and (max-width: 1000px) {
-            @include font-size(39);
+            font-size: 39px;
             line-height: 56px;
+            min-width: none;
         }
 
         @media only screen and (max-width: 700px) {
-            @include font-size(52);
+            font-size: 52px;
             line-height: 60px;
         }
     }
@@ -129,11 +137,14 @@
         position: relative;
         width: 82%;
         @include font-size(18);
+        color: var(--neutralLight);
+        min-width: 534px;
         font-weight: 300;
         line-height: 29px;
         margin-bottom: 3rem;
 
         @media only screen and (max-width: 1000px) {
+            min-width: none;
             width: 350px;
             @include font-size(14);
         }
@@ -143,42 +154,33 @@
         }
     }
 
+    &__cta-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
     &__cta {
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 300px;
-        height: 64px;
-        background: var(--orange);
-        @include font-size(18);
+        width: fit-content;
+        height: fit-content;
+        background: #15D6CF;
+        font-size: 18px;
+        font-family: var(--poppins);
+        font-weight: 500;
         line-height: 27px;
-        color: var(--neutralLight);
+        color: #333333;
         border-radius: 2rem;
+        padding: 16px 24px;
+        margin-right: 24px;
         z-index: 5;
         overflow: hidden;
         transition: all 0.2s ease-in-out;
 
-        svg {
-            position: relative;
-            margin-left: 0.8rem;
-            width: 6px;
-            transition: all 0.2s ease-in-out;
-            path {
-                stroke: white;
-            }
-        }
-
         &:hover {
-            background: var(--orangeDark);
-            svg {
-                transform: translateX(0.5rem) scale(1.2);
-            }
-        }
-
-        &:active {
-            transition: none;
-            background: var(--yellow);
+            opacity: 0.6;
         }
     }
 
@@ -188,12 +190,21 @@
         opacity: 0;
         left: 51%;
 
-        img {
+        @media only screen and (max-width: 800px) {
+            display: none;
+        }
+
+        &--illustration {
             position: absolute;
             max-width: 823px;
             height: auto;
-            top: -6.5rem;
-            left: -3rem;
+            top: 0;
+            left: 50px;
+            width: 726px;
+            height: 552px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url(./images/fusebot/hero/hero-illustration.png);
 
             // Cross browser fix to blurred hero image
             image-rendering: -moz-crisp-edges;
@@ -202,14 +213,5 @@
             image-rendering: optimize-contrast;
             -ms-interpolation-mode: nearest-neighbor;
         }
-
-        @media only screen and (max-width: 800px) {
-            display: none;
-        }
-    }
-
-    @media only screen and (max-width: 800px) {
-        background-image: url(./images/homepage/hero/hero--mobile.png);
-        background-position: 25% bottom;
     }
 }
