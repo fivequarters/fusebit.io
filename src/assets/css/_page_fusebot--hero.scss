@@ -3,14 +3,24 @@
     color: var(--neutral);
     overflow: hidden;
     background-image: url(./images/fusebot/hero/background.png);
-    background-position: 0 -100px;
+    background-position: 0 100%;
     background-size: cover;
     background-repeat: no-repeat;
     padding-bottom: 50px;
 
-    @media only screen and (max-width: 800px) {
-        background-image: url(./images/homepage/hero/hero--mobile.png);
-        background-position: 25% bottom;
+    @media only screen and (min-width: 2500px) {
+        background-position: 500px 100%;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        background-position: -50px 100%;
+        padding-bottom: 0;
+    }
+
+
+    @media only screen and (max-width: 500px) {
+        background-image: url(./images/fusebot/hero/background-mobile.png);
+        background-position: 0 100%;
     }
 
     &__container {
@@ -46,7 +56,7 @@
 
     &__subtitle {
         font-weight: 700;
-        @include font-size(16);
+        font-size: 16px;
         margin-bottom: 1.5rem;
 
         display: flex;
@@ -88,19 +98,19 @@
         }
 
         @media only screen and (max-width: 1400px) {
-            @include font-size(16);
+            font-size: 16px;
             margin-bottom: 1.5rem;
 
             &--badge {
-                @include font-size(12);
+                font-size: 12px;
             }
         }
 
         @media only screen and (max-width: 1000px) {
-            @include font-size(14);
+            font-size: 14px;
 
             &--badge {
-                @include font-size(10);
+                font-size: 10px;
             }
         }
 
@@ -122,21 +132,19 @@
         margin-bottom: 2rem;
 
         @media only screen and (max-width: 1000px) {
-            font-size: 39px;
-            line-height: 56px;
-            min-width: none;
-        }
-
-        @media only screen and (max-width: 700px) {
-            font-size: 52px;
-            line-height: 60px;
+            font-size: 38px;
+            line-height: 41px;
+            min-width: 0;
+            width: 100%;
+            margin-bottom: 24px;
+            margin-top: 42px;
         }
     }
 
     &__text {
         position: relative;
         width: 82%;
-        @include font-size(18);
+        font-size: 18px;
         color: var(--neutralLight);
         min-width: 534px;
         font-weight: 300;
@@ -144,19 +152,29 @@
         margin-bottom: 3rem;
 
         @media only screen and (max-width: 1000px) {
-            min-width: none;
-            width: 350px;
-            @include font-size(14);
-        }
-
-        @media only screen and (max-width: 800px) {
+            min-width: 0;
             width: 100%;
+            font-size: 16px;
+            line-height: 25px;
+            margin-bottom: 32px;
         }
     }
 
-    &__cta-wrapper {
-        display: flex;
-        align-items: center;
+    &__cta {
+        @media only screen and (max-width: 1000px) {
+            margin-right: 0;
+            margin-bottom: 24px;
+        }
+
+        &-wrapper {
+            display: flex;
+            align-items: center;
+    
+            @media only screen and (max-width: 1000px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
     }
 
     &__images {
@@ -187,6 +205,12 @@
             image-rendering: -webkit-optimize-contrast;
             image-rendering: optimize-contrast;
             -ms-interpolation-mode: nearest-neighbor;
+
+            @media only screen and (max-width: 1000px) {
+                left: 150px;
+                width: 100%;
+                height: 361px;
+            }
         }
     }
 }
