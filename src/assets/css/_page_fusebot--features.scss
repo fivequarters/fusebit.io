@@ -5,9 +5,9 @@
     &__ellipsis {
         position: absolute;
         left: 0;
-        bottom: -188px;
+        bottom: -443px;
         height: 1136px;
-        width: 1136px;
+        width: 100%;
         background-size: contain;
         background-repeat: no-repeat;
         background-image: url(./images/fusebot/features/ellipsis.svg);
@@ -31,6 +31,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+        padding-bottom: 50px;
     }
 
     &__icon {
@@ -43,7 +44,7 @@
         &-fusebot {
             height: 56px;
             width: 56px;
-            margin-left: 8px;
+            margin-left: 3px;
             background-image: url(./images/fusebot/features/fusebot.svg);
         }
 
@@ -79,7 +80,7 @@
             width: 100%;
 
             &:not(:last-child) {
-                margin-bottom: 205px;
+                margin-bottom: 100px;
             }
 
             &:nth-child(even) {
