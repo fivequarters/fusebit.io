@@ -16,3 +16,11 @@ block content
 block scripts
     script.
         analytics.page('Fusebot', { objectLocation: 'Fusebot', domain: 'fusebit.io' });
+
+        const scrollLinks = document.querySelectorAll(".scroll-cta");
+        scrollLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                const installationScreenAnchorElement = document.querySelector(".installation__wrapper");
+                installationScreenAnchorElement?.scrollIntoView?.({behavior: "smooth"});
+            });
+        });
