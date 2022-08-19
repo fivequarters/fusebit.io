@@ -18,4 +18,5 @@ section.hero.section
                     +cta("Try Integration", null, "hero__content-cta", null, true, "Try Integration Fake Button Clicked", "Integrations", true, "_blank", "noreferrer", `window.Intercom('showNewMessage', "I'm interested in enabling ${integration.name}")`, integration.id)
                 else
                     +cta("Try Integration", `${site.portalBaseUrl}/signup?key=${integration.id}`, "hero__content-cta", null, true, "Try Integration Button Clicked", "Integrations", true, "_blank", "noreferrer", false, integration.id)
-                    +cta("See Documentation", integration.docs, "hero__content-cta hero__content-cta-outlined", null, true, "See Documentation Button Clicked", "Integrations", false, "_blank", "noreferrer", false, integration.id)
+                    if integration.docs
+                        +cta("See Documentation", integration.docs, "hero__content-cta hero__content-cta-outlined", null, true, "See Documentation Button Clicked", "Integrations", false, "_blank", "noreferrer", false, integration.id)

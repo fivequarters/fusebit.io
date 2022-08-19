@@ -6,7 +6,7 @@ date: '2022-03-23'
 post_image: google-sheets-slack.png
 post_excerpt: This post shows how you can automate sending Google Spreadsheet charts to Slack on a schedule. No programming experience is required.
 post_slug: upload-google-spreadsheet-charts-to-slack
-tags: ['post', 'developer tools', 'integrations', 'addon']
+tags: ['post', 'developer tools', 'integrations']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/google-sheets-slack.png
 posts_related:

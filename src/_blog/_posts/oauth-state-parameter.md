@@ -6,7 +6,7 @@ date: '2022-08-01'
 post_image: oauth-state-parameter.png
 post_excerpt: OAuth 2.0 state parameters help guard against CSRF attacks, maintain application state, and preserve user sessions. Learn how to generate and validate OAuth 2.0 state parameters.
 post_slug: oauth-state-parameters-nodejs
-tags: ['post', 'developer tools', 'nodejs']
+tags: ['post', 'developer tools', 'node.js']
 post_date_in_url: false
 post_og_image: 'hero'
 posts_related:
