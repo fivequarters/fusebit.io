@@ -72,6 +72,14 @@
     @import '_page__blog-list';
 }
 
+.fusebot {
+    @import '_page_fusebot--hero';
+    @import '_page_fusebot--header';
+    @import '_page_fusebot--features';
+    @import '_page_fusebot--try-fusebot';
+    @import '_page_fusebot--installation';
+}
+
 // Components
 @import 'component-modal-cta';
 @import 'component-modal';
@@ -90,3 +98,4 @@
 @import 'component-avatar';
 @import 'component-dropdown';
 @import 'component-post-card';
+@import 'component-fusebot-cta';

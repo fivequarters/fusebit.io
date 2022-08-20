@@ -1,0 +1,38 @@
+.header {
+    position: absolute;
+    color: #FFFFFF;
+    font-family: var(--sora);
+
+    &__container  {
+        width: 90%;
+        max-width: var(--container);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0 auto;
+
+        @media only screen and (max-width: 700px) {
+            padding-top: 16px;
+        }
+    }
+
+    &__logo {
+        height: 40px;
+        width: 40px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(./images/fusebot/header/fusebot.svg);
+        margin-right: 4px;
+
+        &--title {
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 40px;
+        }
+
+        &--wrapper {
+            display: flex;
+            align-items: center;
+        }
+    }
+}

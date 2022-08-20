@@ -1,0 +1,26 @@
+extends ../_layouts/default-fusebot.pug
+
+block seo_variables
+    - var title = 'Fusebot'
+
+block page_variable
+    - var pageClass = 'fusebot'
+
+block content
+    include ../_components/Fusebot/Header/header
+    include ../_components/Fusebot/Hero/hero
+    include ../_components/Fusebot/Features/features
+    include ../_components/Fusebot/TryFusebot/tryFusebot
+    include ../_components/Fusebot/Installation/installation
+
+block scripts
+    script.
+        analytics.page('Fusebot Index', { objectLocation: 'Fusebot', domain: 'fusebit.io' });
+
+        const scrollLinks = document.querySelectorAll(".scroll-cta");
+        scrollLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                const installationScreenAnchorElement = document.querySelector(".installation__wrapper");
+                installationScreenAnchorElement?.scrollIntoView?.({behavior: "smooth"});
+            });
+        });

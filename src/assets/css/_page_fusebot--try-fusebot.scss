@@ -1,0 +1,103 @@
+.try-fusebot {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    &__background {
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transform-origin: 100% 0;
+            transform: skewY(6deg);
+            background: #040439;
+        }
+    }
+
+    &__marks-container {
+        z-index: 1;
+    }
+
+    &__mark-right {
+        @include mark-offset(400px, 60px);
+    }
+
+    &__mark-left {
+        @include mark-offset(300px, 25px, true);
+    }
+
+    &__container {
+        position: relative;
+        width: 90%;
+        max-width: calc(var(--container));
+        z-index: 1;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        padding: 40px 0;
+
+        @media only screen and (max-width: 1000px) {
+            padding: 20px 0;
+        }        
+    }
+
+    &__title {
+        font-size: 48px;
+        line-height: 57px;
+        font-weight: 700;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 56px;
+
+        @media only screen and (max-width: 1000px) {
+            font-size: 32px;
+            line-height: 38px;
+            max-width: 288px;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__quality {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+
+        &-description {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 38px;
+
+            @media only screen and (max-width: 1000px) {
+                font-size: 20px;
+                line-height: 32px;
+            }
+        }
+
+        &-icon {
+            min-height: 24px;
+            min-width: 24px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url(./images/fusebot/tryFusebot/check.svg);
+            margin-right: 16px;
+
+            @media only screen and (max-width: 1000px) {
+                margin-right: 12px;
+            }
+        }
+    }
+}
