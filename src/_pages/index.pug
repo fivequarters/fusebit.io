@@ -6,6 +6,9 @@ block seo_variables
 block page_variable
     - var pageClass = 'homepage'
 
+block head
+    link(rel="prefetch" href="../assets/images/homepage/hero/hero--desktop.webp")
+
 block content
     include ../_components/HomepageLeaders/Hero/Hero
     include ../_components/HomepageLeaders/Support/Support
