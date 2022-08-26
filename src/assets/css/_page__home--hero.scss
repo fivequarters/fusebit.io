@@ -2,7 +2,7 @@
     position: relative;
     color: var(--neutral);
     overflow: hidden;
-    background-image: url(./images/homepage/hero/hero--desktop.png);
+    background-image: url(./images/homepage/hero/hero--desktop.jpg);
     background-position: calc(50vw - 750px) bottom;
     background-size: cover;
     background-repeat: no-repeat;
@@ -205,11 +205,15 @@
 
         @media only screen and (max-width: 800px) {
             display: none;
+
+            & > picture {
+                display: none;
+            }
         }
     }
 
     @media only screen and (max-width: 800px) {
-        background-image: url(./images/homepage/hero/hero--mobile.png);
+        background-image: url(./images/homepage/hero/hero--mobile.jpg);
         background-position: 25% bottom;
     }
 }

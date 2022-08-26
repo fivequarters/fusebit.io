@@ -6,7 +6,7 @@
     color: #ffffff;
     overflow: hidden;
 
-    background: url(./images/homepage/weprovide/weprovide--1920.png) center
+    background: url(./images/homepage/weprovide/weprovide--1920.jpg) center
             center no-repeat,
         #0f091d;
     background-size: 100%;
@@ -297,13 +297,13 @@
     }
 
     @media only screen and (min-height: 1079px) {
-        background: url(./images/homepage/weprovide/weprovide--4500.png) center
+        background: url(./images/homepage/weprovide/weprovide--4500.jpg) center
             center no-repeat;
         background-size: cover;
     }
 
     @media only screen and (max-width: 1500px) {
-        background: url(./images/homepage/weprovide/weprovide--1360.png) center
+        background: url(./images/homepage/weprovide/weprovide--1360.jpg) center
             center no-repeat;
         background-size: 100%;
     }
@@ -313,7 +313,7 @@
     }
 
     @media only screen and (max-width: 500px) {
-        background: url(./images/homepage/weprovide/weprovide--mobile.png)
+        background: url(./images/homepage/weprovide/weprovide--mobile.jpg)
             center center no-repeat;
         background-size: cover;
     }

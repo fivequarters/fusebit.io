@@ -17,24 +17,24 @@
             transform-origin: 100% 0;
             transform: skewY(6deg);
 
-            background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--1920.png)
+            background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--1920.jpg)
                     center top no-repeat,
                 #0f091d;
 
             @media only screen and (min-height: 1079px) {
-                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--4500.png)
+                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--4500.jpg)
                     center top no-repeat;
                 background-size: cover;
             }
 
             @media only screen and (min-height: 3000px) {
-                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--4500.png)
+                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--4500.jpg)
                         center center no-repeat,
                     #0b1024;
             }
 
             @media only screen and (max-width: 1500px) {
-                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--1360.png)
+                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--1360.jpg)
                     center top no-repeat;
                 background-size: 100%;
             }
@@ -44,13 +44,13 @@
             }
 
             @media only screen and (max-width: 1000px) {
-                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--1360.png)
+                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--1360.jpg)
                     center center no-repeat;
                 background-size: cover;
             }
 
             @media only screen and (max-width: 700px) {
-                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--mobile.png)
+                background: url(./images/homepage/leaveBoilerplate/leaveBoilerplate--mobile.jpg)
                     center bottom no-repeat;
                 background-size: cover;
             }

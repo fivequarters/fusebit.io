@@ -18,7 +18,7 @@ function removeMarkdown(text) {
 function getImageMeta(src, widths) {
     const options = {
         widths: widths || [100, 300, 600, 900, 1200, null],
-        formats: ['png', 'webp', 'jpg', 'svg'],
+        formats: ['webp', 'jpg', 'png', 'svg'],
         outputDir: './build/assets/images/11ty',
         urlPath: '/assets/images/11ty',
     };
