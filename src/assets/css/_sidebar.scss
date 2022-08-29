@@ -53,6 +53,39 @@
         }
     }
 
+    &--loading {
+        visibility: hidden;
+
+        @media (max-width: 1000px) {
+            visibility: visible;
+        }
+
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media (max-width: 1000px) {
+                display: none;
+            }
+
+            &-hidden {
+                display: none;
+            }
+
+            @keyframes loading {
+                from {transform: rotate(0)}
+                to {transform: rotate(360deg)}
+            }
+    
+            &-spinner {
+                height: 20px;
+                width: 20px;
+                animation: loading 1s linear infinite;
+            }
+        }
+    }
+
     &--wrapper {
         position: relative;
         display: flex;

@@ -4,9 +4,11 @@ function tableOfContents(childrenSelector) {
     const sidebarCross = document.querySelector('.sidebar--cross-mobile');
     const sidebarShadow = document.querySelector('.sidebar--mobile-shadow');
     const sidebarSections = document.querySelector('.sidebar--sections');
+    const sidebarWrapper = document.querySelector('.sidebar--wrapper');
+    const sidebarLoader = document.querySelector('.sidebar--loading-wrapper');
     const relatedContent = document.getElementById('related-content');
     const relatedPostsCta = document.getElementById('related-content-cta');
-    children.forEach((child) => {
+    children.forEach((child, i) => {
         if (child?.nodeName?.includes('H2')) {
             const section = document.createElement('div');
             section.innerText = child.innerText;
@@ -19,6 +21,11 @@ function tableOfContents(childrenSelector) {
                 sidebar.classList.remove('sidebar--mobile-active');
             });
             sidebarSections.append(section);
+        }
+
+        if (i === children.length - 1) {
+            sidebarWrapper.classList.remove('sidebar--loading');
+            sidebarLoader.classList.add('sidebar--loading-wrapper-hidden');
         }
     });
 
