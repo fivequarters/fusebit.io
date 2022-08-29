@@ -1,6 +1,7 @@
 .popular {
     position: relative;
     z-index: 1;
+    overflow: hidden;
     background: linear-gradient(205.64deg, #07122E 26.16%, #16071E 94.65%);
 
     &-lines {

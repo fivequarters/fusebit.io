@@ -12,8 +12,8 @@ module.exports = merge(common, {
         usedExports: true,
         minimize: true,
         minimizer: [
-            new OptimizeCssAssetsPlugin({}),
             new TerserPlugin({ minify: TerserPlugin.uglifyJsMinify }),
+            new OptimizeCssAssetsPlugin({}),
         ],
     },
     plugins: [
