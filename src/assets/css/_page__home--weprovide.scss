@@ -64,6 +64,21 @@
         }
     }
 
+    &__soc-logo {
+        position: absolute;
+        right: 0;
+        top: 120px;
+        height: 180px;
+        width: 187px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(./images/soc.png);
+
+        @media only screen and (max-width: 780px) {
+           display: none;
+        }
+    }
+
     &__path {
         &--dot {
             position: absolute;
