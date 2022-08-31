@@ -56,7 +56,7 @@ Depending on the service, the OAuth provider may supply additional information w
 
 The list of websites that use OAuth is too long to list. If you see buttons like these on a login page, the website uses OAuth:   
 
-![Microsoft Teams OAuth](microsoft-teams-1.png "Microsoft Teams OAuth")
+![Microsoft Teams OAuth with-shadow](microsoft-teams-1.png "Microsoft Teams OAuth")
 
 If you click any of these buttons, the process we outlined above will begin. 
 
