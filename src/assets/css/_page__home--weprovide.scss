@@ -22,6 +22,14 @@
         @media only screen and (max-width: 700px) {
             padding: 5rem 0;
         }
+
+        @media only screen and (max-width: 780px) {
+            padding-bottom: 16rem;
+        }
+
+        @media only screen and (max-width: 390px) {
+            padding: 1rem 0 16rem;
+         }
     }
 
     &__wrapper {
@@ -31,14 +39,15 @@
         z-index: 1;
 
         &--head {
-            margin-bottom: 4.55rem;
+            margin-bottom: 1rem;
 
             @media only screen and (max-width: 1200px) {
-                margin-bottom: 5.5rem;
+                margin-bottom: 7.3rem;
             }
 
             @media only screen and (max-width: 1000px) {
-                margin-left: 0.9rem;
+                margin-bottom: 3.0rem;
+                margin-left: 0.6rem;
             }
 
             @media only screen and (max-width: 700px) {
@@ -75,7 +84,11 @@
         background-image: url(./images/soc.png);
 
         @media only screen and (max-width: 780px) {
-           display: none;
+           right: unset;
+           left: 50%;
+           top: unset;
+           bottom: 40px;
+           transform: translateX(calc(-50% + 20px));
         }
     }
 
