@@ -156,7 +156,6 @@ app.get("/callback", (req, res) => {
     }).catch((err) => {
         console.log(err);
     })
-
 })
 ```
 
