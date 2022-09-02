@@ -3,7 +3,7 @@ post_title: How to Implement GitHub OAuth in Your Node.js App
 post_author: Harshil Parmar
 post_author_avatar: harshil.png
 date: '2022-09-01'
-post_image: github-oauth.png
+post_image: github-oauth-main.png
 post_excerpt: OAuth is a standard protocol used for authorization. This post will discuss implementing GitHub OAuth in your Node.js app.
 post_slug: github-oauth
 tags: ['post', 'developer tools']
