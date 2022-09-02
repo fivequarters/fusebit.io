@@ -26,14 +26,14 @@ This post will discuss implementing GitHub OAuth in your Node.js app.
 ## What Is Oauth 2.0, Access Token, Callback URL, Client ID, and Client Secret?
 
 * **Oauth 2.0:** This is basically authorization workflow and doesn’t mean validating a user’s identity. It only checks whether the user has permission to access the resources. So, basically, Oauth is allowing a user to use the same account for a different web app.
-* **Access token: **This is nothing but a token by which our app will have access to any third-party Oauth (GitHub in this case) on your behalf.
+* **Access token:** This is nothing but a token by which our app will have access to any third-party Oauth (GitHub in this case) on your behalf.
 * **Callback URL:** We have to tell the authorization server where to redirect a user once the process is done.
 * **Client ID:** For any third-party integration, we have to tell the authorization server (e.g., GitHub) to register our app (Node.js). As a result of this, we'll get[ client ID](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/) that we have to send in the future to get an access token, and the authorization server will easily identify the client by that.
 * **Client secret:** In the process of registering the Oauth application with a server, we'll also get[ client secret](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/). This will be needed to get an access token.
 
 ## Node.js App and Github Oauth Flow
 
-![GitHub OAuth](github-oauth-1.png "GitHub OAuth")
+![GitHub OAuth with-shadow](github-oauth-1.png "GitHub OAuth")
 
 Here is the OAuth flow that we'll perform in today's blog post. There are a total of three requests, including verifying user identity, getting auth code as query, and using that to get access token eventually.
 
@@ -134,7 +134,7 @@ app.get("/auth", (req, res) => {
 
 By clicking on "Login with GitHub," we're redirecting the user to the GitHub authorization page. Here, the client ID is used by GitHub to identify Oauth registration.
 
-![GitHub OAuth](github-oauth-4.jpg "GitHub OAuth")
+![GitHub OAuth with-shadow](github-oauth-4.jpg "GitHub OAuth")
 
 ![GitHub OAuth](github-oauth-5.jpg "GitHub OAuth")
 
