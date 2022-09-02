@@ -161,7 +161,7 @@ app.get("/callback", (req, res) => {
 
 This callback URL will get Auth code, which is required to get access token. So, we have to make a post request to github.com/login/oauth/access_token by providing the client ID, client secret, and code. As a result, GitHub will send back access_token.
 
-![GitHub OAuth](github-oauth-6.jpg "GitHub OAuth")
+![GitHub OAuth with-shadow](github-oauth-6.jpg "GitHub OAuth")
 
 Once you're authorized, you'll get the access token that we're currently printing on the screen. Now it's up to you to determine how you want to use that access token to get information about the user.
 
