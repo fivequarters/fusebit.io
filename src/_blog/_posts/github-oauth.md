@@ -51,13 +51,13 @@ We're currently focusing on web application flow.
 
 We can use this [link](https://github.com/settings/applications/new) to register our app with GitHub.
 
-![GitHub OAuth](github-oauth-2.png "GitHub OAuth")
+![GitHub OAuth](github-oauth-2.jpg "GitHub OAuth")
 
 After registration, you'll see all the details with client ID and client secret.
 
 For getting a client secret, you'll see all the registered details.
 
-![GitHub OAuth](github-oauth-3.png "GitHub OAuth")
+![GitHub OAuth](github-oauth-3.jpg "GitHub OAuth")
 
 Once you click on "Generate a new client secret," you'll have a client secret. Please make sure to copy that and put it in a safe place so we can use it in the future.
 
@@ -134,9 +134,9 @@ app.get("/auth", (req, res) => {
 
 By clicking on "Login with GitHub," we're redirecting the user to the GitHub authorization page. Here, the client ID is used by GitHub to identify Oauth registration.
 
-![GitHub OAuth](github-oauth-4.png "GitHub OAuth")
+![GitHub OAuth](github-oauth-4.jpg "GitHub OAuth")
 
-![GitHub OAuth](github-oauth-5.png "GitHub OAuth")
+![GitHub OAuth](github-oauth-5.jpg "GitHub OAuth")
 
 Now, once we click on "authorize username," it'll redirect us back to the callback URL that we registered earlier.
 
@@ -161,7 +161,7 @@ app.get("/callback", (req, res) => {
 
 This callback URL will get Auth code, which is required to get access token. So, we have to make a post request to github.com/login/oauth/access_token by providing the client ID, client secret, and code. As a result, GitHub will send back access_token.
 
-![GitHub OAuth](github-oauth-6.png "GitHub OAuth")
+![GitHub OAuth](github-oauth-6.jpg "GitHub OAuth")
 
 Once you're authorized, you'll get the access token that we're currently printing on the screen. Now it's up to you to determine how you want to use that access token to get information about the user.
 
