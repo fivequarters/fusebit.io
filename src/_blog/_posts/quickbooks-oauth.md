@@ -63,19 +63,19 @@ Before you can connect an application to the Quickbooks Online API, you must reg
 
 So, sign in to [the portal](https://developer.intuit.com/app/developer/myapps) and go to the applications dashboard. 
 
-![Quickbooks OAuth](quickbooks-oauth-1.png "Quickbooks OAuth")
+![Quickbooks OAuth with-shadow](quickbooks-oauth-1.png "Quickbooks OAuth")
 
 Click on the **Create an app** button. 
 
 This will take you to the select platform page, which only has one option. 
 
-![Quickbooks OAuth](quickbooks-oauth-2.png "Quickbooks OAuth")
+![Quickbooks OAuth with-shadow](quickbooks-oauth-2.png "Quickbooks OAuth")
 
 Click the only option to get past this page. 
 
 This will take you to an options page for your application's name and API options. 
 
-![Quickbooks OAuth](quickbooks-oauth-3.png "Quickbooks OAuth")
+![Quickbooks OAuth with-shadow](quickbooks-oauth-3.png "Quickbooks OAuth")
 
 Give your application a name and check the box next to the accounting API. We don't need to enable payments for this app, because we'll only be wiring up OAuth. 
 
@@ -83,23 +83,23 @@ Click **Create app **and the site will work for a few moments.
 
 You'll receive an email confirmation that your app is now available: 
 
-![Quickbooks OAuth](quickbooks-oauth-4.png "Quickbooks OAuth")
+![Quickbooks OAuth with-shadow](quickbooks-oauth-4.png "Quickbooks OAuth")
 
 Your dashboard has your application now: 
 
-![Quickbooks OAuth](quickbooks-oauth-5.png "Quickbooks OAuth")
+![Quickbooks OAuth with-shadow](quickbooks-oauth-5.png "Quickbooks OAuth")
 
 ### Get QuickBooks OAuth Tokens
 
 Now, click on your application name in the dashboard. 
 
-![Quickbooks OAuth](quickbooks-oauth-6.png "Quickbooks OAuth")
+![Quickbooks OAuth with-shadow](quickbooks-oauth-6.png "Quickbooks OAuth")
 
 This developer page has various tools for working on your app. The selector at the top is useful if you have more than one application. 
 
 The **Keys & Credentials** menu item immediately below **Development Settings** is where you get your OAuth tokens. Click it. 
 
-![Quickbooks OAuth](quickbooks-oauth-7.png "Quickbooks OAuth")
+![Quickbooks OAuth with-shadow](quickbooks-oauth-7.png "Quickbooks OAuth")
 
 Leave this browser tab open, as you'll need the keys and you'll add a new redirect URI soon. 
 
@@ -109,7 +109,7 @@ Now, it's time to run the QuickBooks example code, then we'll go over how it wor
 
 Before running the code, add **http://localhost:8000/callback** as a redirect URI on the Keys & OAUTH page for your app. 
 
-![Quickbooks OAuth](quickbooks-oauth-8.png "Quickbooks OAuth")
+![Quickbooks OAuth with-shadow](quickbooks-oauth-8.png "Quickbooks OAuth")
 
 We're ready to go! 
 
@@ -134,21 +134,21 @@ We've already added the URI, so open http://localhost:8000 in your browser.
 
 This opens a form where you can enter your app keys and the redirect URI: 
 
-![Quickbooks OAuth](quickbooks-oauth-9.png "Quickbooks OAuth")
+![Quickbooks OAuth with-shadow](quickbooks-oauth-9.png "Quickbooks OAuth")
 
 Click Connect to QuickBooks. 
 
 Depending on how many sandbox companies you have, QuickBooks will prompt you to select one. Pick one and click next. 
 
-![Quickbooks OAuth](quickbooks-oauth-10.png "Quickbooks OAuth")
+![Quickbooks OAuth with-shadow](quickbooks-oauth-10.png "Quickbooks OAuth")
 
 Quickbooks will confirm your choice. Click **Connect** to continue. 
 
-![Quickbooks OAuth](quickbooks-oauth-11.png "Quickbooks OAuth")
+![Quickbooks OAuth with-shadow](quickbooks-oauth-11.png "Quickbooks OAuth")
 
 After a few seconds, the form will load again. 
 
-![Quickbooks OAuth](quickbooks-oauth-12.png "Quickbooks OAuth")
+![Quickbooks OAuth with-shadow](quickbooks-oauth-12.png "Quickbooks OAuth")
 
 Click **Display Access Token** to see the tokens. You've connected to QuickBooks Oauth! 
 
