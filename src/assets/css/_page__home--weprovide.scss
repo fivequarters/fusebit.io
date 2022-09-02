@@ -23,12 +23,8 @@
             padding: 5rem 0;
         }
 
-        @media only screen and (max-width: 780px) {
-            padding-bottom: 16rem;
-        }
-
         @media only screen and (max-width: 390px) {
-            padding: 1rem 0 16rem;
+            padding: 1rem 0;
          }
     }
 
@@ -84,11 +80,7 @@
         background-image: url(./images/soc.png);
 
         @media only screen and (max-width: 780px) {
-           right: unset;
-           left: 50%;
-           top: unset;
-           bottom: 40px;
-           transform: translateX(calc(-50% + 20px));
+            display: none;
         }
     }
 
