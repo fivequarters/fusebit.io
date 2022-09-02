@@ -25,11 +25,11 @@ This post will discuss implementing GitHub OAuth in your Node.js app.
 
 ## What Is Oauth 2.0, Access Token, Callback URL, Client ID, and Client Secret?
 
-* **Oauth 2.0: **This is basically authorization workflow and doesn’t mean validating a user’s identity. It only checks whether the user has permission to access the resources. So, basically, Oauth is allowing a user to use the same account for a different web app.
+* **Oauth 2.0:** This is basically authorization workflow and doesn’t mean validating a user’s identity. It only checks whether the user has permission to access the resources. So, basically, Oauth is allowing a user to use the same account for a different web app.
 * **Access token: **This is nothing but a token by which our app will have access to any third-party Oauth (GitHub in this case) on your behalf.
-* **Callback URL: **We have to tell the authorization server where to redirect a user once the process is done.
-* **Client ID: **For any third-party integration, we have to tell the authorization server (e.g., GitHub) to register our app (Node.js). As a result of this, we'll get[ client ID](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/) that we have to send in the future to get an access token, and the authorization server will easily identify the client by that.
-* **Client secret: **In the process of registering the Oauth application with a server, we'll also get[ client secret](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/). This will be needed to get an access token.
+* **Callback URL:** We have to tell the authorization server where to redirect a user once the process is done.
+* **Client ID:** For any third-party integration, we have to tell the authorization server (e.g., GitHub) to register our app (Node.js). As a result of this, we'll get[ client ID](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/) that we have to send in the future to get an access token, and the authorization server will easily identify the client by that.
+* **Client secret:** In the process of registering the Oauth application with a server, we'll also get[ client secret](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/). This will be needed to get an access token.
 
 ## Node.js App and Github Oauth Flow
 
@@ -205,15 +205,15 @@ app.listen(8000, () => {
 
 ## Next Topics to Look Into
 
-**1. Token expiration: **Oauth token can be revoked in the following of ways:
+**1. Token expiration:** Oauth token can be revoked in the following of ways:
 
 * **Pushed publicly:** Oauth token is revoked whenever it's pushed to a public repository or public gist.
 * **Lack of use:** If the Oauth token hasn't been used in one year, GitHub will automatically revoke it.
-* **Revoked by user: **An Oauth token revocation from the user[ account settings](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/reviewing-your-authorized-applications-oauth) will revoke any associated token with a third-party app.
-* **Revoked by Oauth app: **The owner of the Oauth app can revoke authorizations of the app by[ deleting an app authorization](https://docs.github.com/en/rest/apps/oauth-applications#delete-an-app-authorization). Additionally, individual tokens can [be deleted](https://docs.github.com/en/rest/apps/oauth-applications#delete-an-app-token).
-* **Issue of excess tokens: **If a [third-party](https://fusebit.io/blog/third-party-integrations-widgets-apis/) Oauth app creates more than 10 tokens for the same user/scopes, the oldest tokens with a similar scope/user will be revoked.
+* **Revoked by user:** An Oauth token revocation from the user[ account settings](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/reviewing-your-authorized-applications-oauth) will revoke any associated token with a third-party app.
+* **Revoked by Oauth app:** The owner of the Oauth app can revoke authorizations of the app by[ deleting an app authorization](https://docs.github.com/en/rest/apps/oauth-applications#delete-an-app-authorization). Additionally, individual tokens can [be deleted](https://docs.github.com/en/rest/apps/oauth-applications#delete-an-app-token).
+* **Issue of excess tokens:** If a [third-party](https://fusebit.io/blog/third-party-integrations-widgets-apis/) Oauth app creates more than 10 tokens for the same user/scopes, the oldest tokens with a similar scope/user will be revoked.
 
-**2. Scope: **Scope allows us to limit access for OAuth tokens. Furthermore, users can control what things they want to share with third-party apps. There are several scopes available, including repo, public_repo, gist, user, project, etc.
+**2. Scope:** Scope allows us to limit access for OAuth tokens. Furthermore, users can control what things they want to share with third-party apps. There are several scopes available, including repo, public_repo, gist, user, project, etc.
 
 If there's no scope specified, the Oauth app can only access public information from the user's profile with read-only access.
 
