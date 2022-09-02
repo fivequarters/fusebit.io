@@ -3,7 +3,7 @@ post_title: 'QuickBooks OAuth: How to Set up the Online Accounting API in Your W
 post_author: Eric Goebelbecker
 post_author_avatar: eric.png
 date: '2022-08-31'
-post_image: quickbooks-oauth.jpg
+post_image: quickbooks-oauth-main.jpg
 post_excerpt: Intuit uses OAuth2 to authorize applications for access to company data. Here's how to use their library to authorize your Node app.
 post_slug: quickbooks-oauth
 tags: ['post', 'developer tools']
