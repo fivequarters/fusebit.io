@@ -3,7 +3,8 @@ pagination:
     data: integrations
     size: 1
     alias: integration
-permalink: "| integrations/#{integration.id}/"
+    addAllPagesToCollections: true
+permalink: "| integrations/#{integration.id}.html"
 ---
 
 extends ../_layouts/default.pug
