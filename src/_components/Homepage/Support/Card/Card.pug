@@ -1,7 +1,7 @@
 mixin card(data) 
     .card(data-path=data.path)
         .card__image 
-            img(src=data.img alt=data.highlight ? data.highlight : 'Image icon')
+            img(src=data.img alt=data.highlight ? data.highlight : 'Image icon' height="32" width="32")
 
         p.card__content 
             if data.highlight
