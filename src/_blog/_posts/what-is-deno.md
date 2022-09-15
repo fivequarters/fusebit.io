@@ -178,8 +178,6 @@ Deno is a modern alternative to Node.js that attempts to address many of the old
 
 Deno is a compelling choice for new applications, but Node.js remains a worthy contender. You might want to stick with Node.js because you can continue consuming npm packages in the familiar way or because there's so much community support available. You don't need to migrate existing applications unless you've recognized a particular need. Both Deno and Node.js have bright futures ahead, with each being independently maintained.
 
-## To Wrap Up
-
 Whether you choose Node.js or Deno, keep in mind that neither has built-in options for integrating with third-party APIs. While you can manually integrate by making network calls and using official SDKs, this becomes tedious when you need to support several different services. [Fusebit](https://fusebit.io) is an API integration platform that can connect popular APIs such as GitHub, Salesforce, Slack, and Jira to your code. Fusebit handles the boilerplate for you, freeing up engineering teams to focus on the unique aspects of your integration. [Request a demo](https://fusebit.io/#demo) to learn more.
 
 Fusebit will also run Deno, soon! Did you know? Deno is adding native support for npm modules—this is huge news and gets us very excited!
