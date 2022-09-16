@@ -6,7 +6,7 @@ date: '2022-09-15'
 post_image: deno.png
 post_excerpt: Learn the basics of what the Deno runtime environment is all about, and highlight the key features, benefits, and detractions.
 post_slug: what-is-deno
-tags: ['post', 'developer tools']
+tags: ['post', 'developer tools', 'deno']
 post_date_in_url: false
 post_og_image: 'hero'
 posts_related:
