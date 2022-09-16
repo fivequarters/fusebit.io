@@ -86,6 +86,7 @@
         position: relative;
         display: flex;
         justify-content: center;
+        height: 400px;
 
         & img {
             margin: 0 auto;
@@ -93,7 +94,7 @@
             border-radius: 24px;
             height: auto;
             object-fit: cover;
-            max-height: 400px;
+            height: 400px;
         }
     }
 
