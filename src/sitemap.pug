@@ -9,5 +9,5 @@ urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     each page in collections.all
         if !page.url.includes('404')
             url
-                loc= `${site.url}${page.url === '/' ? '' : page.url}`
+                loc= `${site.url}${page.url === '/' ? '' : page.url.replace('.html', '/')}`
                 lastmod=page.date.toISOString()
