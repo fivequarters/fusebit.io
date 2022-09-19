@@ -7,6 +7,11 @@
     background-size: cover;
     background-repeat: no-repeat;
 
+    @media only screen and (max-width: 800px) {
+        background-image: url(./images/homepage/hero/hero--mobile.png);
+        background-position: 25% bottom;
+    }
+
     &__container {
         width: 90%;
         max-width: var(--container);
@@ -21,7 +26,7 @@
         }
 
         @media only screen and (max-width: 500px) {
-            padding: 5rem 0 8rem;
+            padding: 5rem 0 5rem;
         }
     }
 
