@@ -181,6 +181,7 @@ Deno is a compelling choice for new applications, but Node.js remains a worthy c
 
 Whether you choose Node.js or Deno, keep in mind that neither has built-in options for integrating with third-party APIs. While you can manually integrate by making network calls and using official SDKs, this becomes tedious when you need to support several different services. [Fusebit](https://fusebit.io) is an API integration platform that can connect popular APIs such as GitHub, Salesforce, Slack, and Jira to your code. Fusebit handles the boilerplate for you, freeing up engineering teams to focus on the unique aspects of your integration. [Request a demo](https://fusebit.io/#demo) to learn more.
 
+## Before you go...
 Fusebit will also run Deno, soon! Did you know? Deno is adding native support for npm modules—this is huge news and gets us very excited!
 
 To celebrate this, we’re working on adding Deno support directly to Fusebit—this means your favorite integrations platform will include out-of-box compatibility with TypeScript, faster runtimes, and direct import of modules!
