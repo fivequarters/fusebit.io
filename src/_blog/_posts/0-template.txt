@@ -2,7 +2,7 @@
 post_title: 
 post_author: 
 post_author_avatar: .png
-date: '2022-08-19'
+date: '2022-10-18'
 post_image: 
 post_excerpt: 
 post_slug: 
