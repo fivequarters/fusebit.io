@@ -1,5 +1,5 @@
 ---
-post_title: Deno vs. Node.js—Five Major Differences You Should Consider
+post_title: Deno vs. Node.js — Five Major Differences You Should Consider
 post_author: Alvin Charity
 post_author_avatar: alvin.png
 date: '2022-10-18'
