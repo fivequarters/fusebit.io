@@ -660,7 +660,7 @@ deno run --allow-net --allow-env --allow-read --allow-write main.ts
 
 Navigate to [http://localhost:3000](http://localhost:3000) (if your app uses port `3000`), and you should see something like this:
 
-![Screenshot of the initial to-do app user interface](https://i.imgur.com/F8cd8Pj.png)
+![Screenshot of the initial to-do app user interface with-shadow]](https://i.imgur.com/F8cd8Pj.png)
 
 You can find a breakdown of the frontend's functionality in the following sections.
 
@@ -879,7 +879,7 @@ Following, you can see how the **Delete** button calls the `deleteTask` method i
 
 You can test your Deno application manually in the browser:
 
-![A demonstration of the to-do app you have built](https://i.imgur.com/vztKWSx.gif)
+![A demonstration of the to-do app you have built with-shadow]](https://i.imgur.com/vztKWSx.gif)
 
 Unfortunately, manually testing your application isn't feasible as your project grows. It's a good idea to write automated tests to simplify future testing. Then you can run these tests after completing changes to the source code to ensure the entire application is still working.
 
