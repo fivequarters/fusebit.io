@@ -46,9 +46,9 @@ Supporting TypeScript and JSX (for server-side rendering) in Node.js requires a 
 
 Now that you know all the benefits of using Deno Deploy, test it out by creating a small application using the Deno Playground. The playground lets you create, author, and deploy your application without leaving your web browser.
 
-To begin, [log in with GitHub with-shadow](https://dash.deno.com):
+To begin, [log in with GitHub](https://dash.deno.com):
 
-![Deno Deploy login](https://i.imgur.com/GP9g5Gf.png)
+![Deno Deploy login with-shadow](https://i.imgur.com/GP9g5Gf.png)
 
 Then create a project by clicking on **New Project** on the right, which opens  the **New Project** page:
 
