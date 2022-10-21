@@ -46,17 +46,17 @@ Supporting TypeScript and JSX (for server-side rendering) in Node.js requires a 
 
 Now that you know all the benefits of using Deno Deploy, test it out by creating a small application using the Deno Playground. The playground lets you create, author, and deploy your application without leaving your web browser.
 
-To begin, [log in with GitHub](https://dash.deno.com):
+To begin, [log in with GitHub with-shadow](https://dash.deno.com):
 
 ![Deno Deploy login](https://i.imgur.com/GP9g5Gf.png)
 
 Then create a project by clicking on **New Project** on the right, which opens  the **New Project** page:
 
-![**Hello World** project](https://i.imgur.com/wfQEmph.png)
+![**Hello World** project with-shadow](https://i.imgur.com/wfQEmph.png)
 
 Select **Hello World** at the bottom of your screen and then **Play**. Deno Deploy will create a new application for you (*ie* `afraid-bat-63`), and your screen will be horizontally split into two panes:
 
-![Code editor and live execution panes](https://i.imgur.com/bxe0Zpw.png)
+![Code editor and live execution panes with-shadow](https://i.imgur.com/bxe0Zpw.png)
 
 Your code editor is located on the left side, and your execution environment is on the right.
 
@@ -78,7 +78,7 @@ Here, you'll create a small TypeScript web server that serves data from a small 
 
 The application is a public application called [`klafim-books`](https://dash.deno.com/projects/klafim-books), and the code for this application can be found in this [GitHub repository](https://github.com/viebel/klafim-books-deno/blob/main/src/main.ts):
 
-![`klafim-books` screenshot](https://i.imgur.com/Xo5k4mz.png)
+![`klafim-books` screenshot with-shadow](https://i.imgur.com/Xo5k4mz.png)
 
 In the next few sections, you'll explore how this code can be built step-by-step.
 
@@ -117,7 +117,7 @@ To access the database from Deno Deploy, you need to create an environment varia
 postgres://postgres:<password>@db.iunqphksdvsbnfvtgmbb.supabase.co:5432/postgres
 ```
 
-![Application settings](https://i.imgur.com/tkYUhce.png)
+![Application settings with-shadow](https://i.imgur.com/tkYUhce.png)
 
 When a script runs on Deno Deploy, it can access environment variables via the [`deno-environment`](https://deno.land/x/deno_environment) package that exposes a `Deno.env` object:
 
@@ -320,7 +320,7 @@ Your server now listens to port `8000`, and you can access the `/` endpoint by o
 
 To connect a Deno project with a GitHub repository, you need to access the [new project page](https://dash.deno.com/new) and fill in the details:
 
-![New Deno project](https://i.imgur.com/U7ZdW32.jpg)
+![New Deno project with-shadow](https://i.imgur.com/U7ZdW32.jpg)
 
 Don't forget to add the `DATABASE_URL` environment variable.
 
@@ -330,11 +330,11 @@ To check the deployment status of your code, visit the [project page](https://da
 
 Here, you'll find an overview of the project, including the number of requests in the last twenty-four hours and the latest deployments:
 
-![Project status](https://i.imgur.com/fNap6on.jpg)
+![Project status with-shadow](https://i.imgur.com/fNap6on.jpg)
 
 Rolling back to a previous version is straightforward. You just need to select the deployment that you want to roll back to and click **Promote to Production**:
 
-![Rolling back](https://i.imgur.com/JATVH2j.jpg)
+![Rolling back with-shadow](https://i.imgur.com/JATVH2j.jpg)
 
 ## Conclusion
 
