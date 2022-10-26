@@ -245,3 +245,8 @@ export default function SinglePost(props: PageProps) {
 In this article, you learned how the server-side rendering of the [Deno Fresh](https://fresh.deno.dev/) framework speeds up the loading of applications and makes them faster to develop. To demonstrate this, you created a simple blog using Fresh that displayed a list of posts. The dynamic routes enabled you to navigate to each post from the list and display it.
 
 Fresh also enables you to create powerful software-as-a-service (SaaS) applications. If you want to integrate those applications with other platforms, like [Slack](https://slack.com/), GitHub, or [Salesforce](https://www.salesforce.com/), the best platform for that is [Fusebit](https://fusebit.io/). Fusebit is an API integration platform that saves you time when integrating into popular APIs. It handles all the boilerplate needed to integrate your application quickly.
+
+## Fusebit + Deno: Coming soon!
+Deno is adding native support for npm modules—this is huge news and gets us very excited! To celebrate this, we’re working on adding Deno support directly to Fusebit—this means your favorite integrations platform will include out-of-box compatibility with TypeScript, faster runtimes, and direct import of modules!
+
+If this excites you, and you are considering Deno to power your application, join the waiting list to get early access to our beta release.

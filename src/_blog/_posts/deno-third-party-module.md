@@ -121,3 +121,8 @@ Apart from mentioned advantages, there are a few more that stem from [deno.land/
 As you can see, Deno's third-party module system is not only unique but also secure, flexible, and convenient. With its architecture, Deno aims to create an environment that provides a complete experience in a single package, with easy access to all third-party modules available online and no `node_modules` folder or `package.json` file to worry about. If this sounds interesting to you, consider giving Deno a try.
 
 Deno is one of many tools available to improve your developer experience. Another is [Fusebit](https://fusebit.io/), an API integration platform designed to save you development time. It enables you to more smoothly integrate popular APIs like Salesforce and GitHub into your application by handling all the necessary boilerplate both quickly and securely. Check out the [documentation](https://developer.fusebit.io/docs) to learn more.
+
+## Fusebit + Deno: Coming soon!
+Deno is adding native support for npm modules—this is huge news and gets us very excited! To celebrate this, we’re working on adding Deno support directly to Fusebit—this means your favorite integrations platform will include out-of-box compatibility with TypeScript, faster runtimes, and direct import of modules!
+
+If this excites you, and you are considering Deno to power your application, join the waiting list to get early access to our beta release.
