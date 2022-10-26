@@ -6,7 +6,7 @@ date: '2022-10-26'
 post_image: deno-fresh.png
 post_excerpt: Learn  how the server-side rendering of JS with Fresh speeds up the loading of app and makes it faster to develop.
 post_slug: deno-fresh
-tags: ['post', 'developer tools']
+tags: ['post', 'deno']
 post_date_in_url: false
 post_og_image: 'hero'
 posts_related:
@@ -51,9 +51,9 @@ As you can see, the project is named "blog". This command will scaffold out a ne
 
 ![Fresh project folder structure](https://imgur.com/ovECi9p.png)
 
-Using your terminal, switch to the newly created project by running the `cd yourprojectfolder` command and then `deno task start`. Then open your browser and navigate to [http://localhost:8000](http://localhost:8000), where you will see a page with the text "Welcome to \`fresh`":
+Using your terminal, switch to the newly created project by running the `cd yourprojectfolder` command and then `deno task start`. Then open your browser and navigate to [http://localhost:8000](http://localhost:8000), where you will see a page with the text "Welcome to `fresh`":
 
-![Welcome page of a new Deno Fresh project](https://i.imgur.com/wfIUuYJ.png)
+![Welcome page of a new Deno Fresh project with-shadow](https://i.imgur.com/wfIUuYJ.png)
 
 ### Creating the Blog App
 
@@ -153,7 +153,7 @@ export default function SinglePost(props: PageProps) {
 
 The previous code takes the parameter `id` from the URL and is used to match the `id` of every post in the JSON file. If they match, then the title and body of that post will be displayed:
 
-![Title and body of post](https://i.imgur.com/nCnvjvA.png)
+![Title and body of post with-shadow](https://i.imgur.com/nCnvjvA.png)
 
 ### Adding Interactivity
 
