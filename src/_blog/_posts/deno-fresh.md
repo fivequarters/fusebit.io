@@ -15,6 +15,7 @@ posts_related:
     'deno-deploy',
     'deno-vs-node-five-major-differences',
   ]
+post_cta: { text: 'Join Fusebit+Deno Waitlist', url: 'https://forms.gle/qGsTG3qK2ZCWCTNU7'}
 ---
 
 The [Deno Fresh](https://fresh.deno.dev) framework is a full stack JavaScript web framework that you can use to build small- and large-scale web applications. It provides no build steps, and there's no configuration necessary, which means you can deploy instantly. In addition, there is TypeScript support out of the box and zero runtime overhead.

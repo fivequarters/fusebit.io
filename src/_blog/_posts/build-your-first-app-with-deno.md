@@ -15,6 +15,7 @@ posts_related:
     'deno-third-party-module-system',
     'what-is-deno',
   ]
+post_cta: { text: 'Join Fusebit+Deno Waitlist', url: 'https://forms.gle/qGsTG3qK2ZCWCTNU7'}
 ---
 
 [Deno](https://deno.land/) is a V8-based, Rust-built runtime for JavaScript and TypeScript. It's an alternative to [Node.js](https://nodejs.org/en/) that aims to simplify server-side development. Moreover, it supports (and encourages) development in TypeScript out of the box, [which helps you write strongly typed code](https://www.typescriptlang.org/) and makes it easier to catch errors while developing. In addition, Deno has a comprehensive set of [standard modules](https://deno.land/std) that offer rich functionality without any dependencies.

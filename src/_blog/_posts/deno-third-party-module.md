@@ -15,6 +15,7 @@ posts_related:
     'what-is-deno',
     'webworkers',
   ]
+post_cta: { text: 'Join Fusebit+Deno Waitlist', url: 'https://forms.gle/qGsTG3qK2ZCWCTNU7'}
 ---
 
 [Deno](https://deno.land/) is a modern [Rust](https://www.rust-lang.org/)- and [V8](https://v8.dev/)-based runtime for JavaScript, TypeScript, and WebAssembly. It was originally announced in 2018 as a project of Ryan Dahl—previously the creator of Node.js—and then [released as v1.0 in 2020](https://deno.com/blog/v1).

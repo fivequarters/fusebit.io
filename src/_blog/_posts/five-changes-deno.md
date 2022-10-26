@@ -15,6 +15,7 @@ posts_related:
     'webworkers',
     'is-EdgeDB-the-future',
   ]
+post_cta: { text: 'Join Fusebit+Deno Waitlist', url: 'https://forms.gle/qGsTG3qK2ZCWCTNU7'}
 ---
 
 [Deno](https://deno.land) is a secure and modern runtime for JavaScript and TypeScript built on the JavaScript [V8 Chrome Engine](https://en.wikipedia.org/wiki/V8_(JavaScript_engine). It's often compared with [Node.js](https://nodejs.org/en/) because they have common origins and address the same problem. However, Deno exists because of problems identified in Node.js.

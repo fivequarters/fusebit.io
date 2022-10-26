@@ -15,6 +15,7 @@ posts_related:
     'webworkers',
     'node-18-release',
   ]
+post_cta: { text: 'Join Fusebit+Deno Waitlist', url: 'https://forms.gle/qGsTG3qK2ZCWCTNU7'}
 ---
 
 Node.js has long been considered the default JavaScript framework for modern developers. With package management, modules, and the ability to use TypeScript, Node has evolved alongside the JavaScript/TypeScript ecosystem. But when Deno was launched in 2018, developers gained access to a new type of framework that puts TypeScript first and seeks to correct some of the major pitfalls of using Node.

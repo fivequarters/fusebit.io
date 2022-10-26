@@ -15,6 +15,7 @@ posts_related:
     'deno-vs-node-five-major-differences',
     'deno-third-party-module-system',
   ]
+post_cta: { text: 'Join Fusebit+Deno Waitlist', url: 'https://forms.gle/qGsTG3qK2ZCWCTNU7'}
 ---
 
 [Deno Deploy](https://deno.com/deploy) is one of the many serverless JavaScript computing platforms that lets developers deploy code without having to manage a server. It's a high-performance distributed system that runs JavaScript, TypeScript, and WebAssembly at scale.
