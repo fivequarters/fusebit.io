@@ -15,6 +15,7 @@ posts_related:
     'deno-vs-node-five-major-differences',
     'deno-third-party-module-system',
   ]
+post_cta: { text: 'Join Fusebit+Deno Waitlist', url: 'https://forms.gle/qGsTG3qK2ZCWCTNU7'}
 ---
 
 [Deno Deploy](https://deno.com/deploy) is one of the many serverless JavaScript computing platforms that lets developers deploy code without having to manage a server. It's a high-performance distributed system that runs JavaScript, TypeScript, and WebAssembly at scale.
@@ -341,3 +342,8 @@ Rolling back to a previous version is straightforward. You just need to select t
 In this article, you learned that [Deno Deploy](https://deno.com) is fast and secure and has a fully featured web playground that can deploy simple scripts. For more complex projects, you learned how to use the Deno CLI to develop your code locally and deploy automatically via GitHub.
 
 For projects that don't need to connect to third-party platforms, Deno Deploy provides all the necessary features that you need to deploy code efficiently. However, when it comes to connecting with third-party platforms like [Slack](https://slack.com/), GitHub, or [Salesforce](https://www.salesforce.com/), a significant amount of engineering effort and code is required. This is where a service like [Fusebit](https://fusebit.io/), an API integration platform, can save you time. It handles all the boilerplate needed to integrate with APIs in a fast and secure manner.
+
+## Fusebit + Deno: Coming soon!
+Deno is adding native support for npm modules—this is huge news and gets us very excited! To celebrate this, we’re working on adding Deno support directly to Fusebit—this means your favorite integrations platform will include out-of-box compatibility with TypeScript, faster runtimes, and direct import of modules!
+
+If this excites you, and you are considering Deno to power your application, join the waiting list to get early access to our beta release.

@@ -15,6 +15,7 @@ posts_related:
     'webworkers',
     'is-EdgeDB-the-future',
   ]
+post_cta: { text: 'Join Fusebit+Deno Waitlist', url: 'https://forms.gle/qGsTG3qK2ZCWCTNU7'}
 ---
 
 [Deno](https://deno.land) is a secure and modern runtime for JavaScript and TypeScript built on the JavaScript [V8 Chrome Engine](https://en.wikipedia.org/wiki/V8_(JavaScript_engine). It's often compared with [Node.js](https://nodejs.org/en/) because they have common origins and address the same problem. However, Deno exists because of problems identified in Node.js.
@@ -201,3 +202,8 @@ You can learn more about npm specifiers and other recently added features in the
 In this article, you learned about some of the new changes to Deno, including npm specifiers, a proposal to disable type checking on the CLI, and the ability to create detached processes. To find out about more planned features, you can visit the [GitHub project page](https://github.com/denoland/deno/labels/feat).
 
 If you're a professional developer or hobbyist programmer, check out [Fusebit](https://fusebit.io/). Fusebit is the leading multi-tenant application platform for app builders. It saves you time when integrating popular APIs, like [Salesforce](https://www.salesforce.com/) and GitHub, by handling all the boilerplate needed in a fast and secure manner.
+
+## Fusebit + Deno: Coming soon!
+Deno is adding native support for npm modules—this is huge news and gets us very excited! To celebrate this, we’re working on adding Deno support directly to Fusebit—this means your favorite integrations platform will include out-of-box compatibility with TypeScript, faster runtimes, and direct import of modules!
+
+If this excites you, and you are considering Deno to power your application, join the waiting list to get early access to our beta release.

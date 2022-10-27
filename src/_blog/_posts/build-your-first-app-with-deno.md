@@ -15,6 +15,7 @@ posts_related:
     'deno-third-party-module-system',
     'what-is-deno',
   ]
+post_cta: { text: 'Join Fusebit+Deno Waitlist', url: 'https://forms.gle/qGsTG3qK2ZCWCTNU7'}
 ---
 
 [Deno](https://deno.land/) is a V8-based, Rust-built runtime for JavaScript and TypeScript. It's an alternative to [Node.js](https://nodejs.org/en/) that aims to simplify server-side development. Moreover, it supports (and encourages) development in TypeScript out of the box, [which helps you write strongly typed code](https://www.typescriptlang.org/) and makes it easier to catch errors while developing. In addition, Deno has a comprehensive set of [standard modules](https://deno.land/std) that offer rich functionality without any dependencies.
@@ -890,3 +891,8 @@ Deno simplifies automated testing with their [built-in test runner](https://deno
 In this article, you learned about [Deno](https://deno.land) and a few features that differentiate it from Node.js. You then developed a comprehensive to-do app in Deno, consisting of a backend REST API and a web frontend.
 
 Deno is a powerful yet simple alternative to Node.js. If you're considering Deno, check out [Fusebit](https://fusebit.io/). It makes it easy to [integrate your project](https://fusebit.io/integrations/) with popular APIs, including Salesforce, GitHub, and Slack. They handle all the boilerplate code required for these integrations so that you can use them quickly and securely. With Fusebit, you can speed up your project delivery while ensuring you still write high-quality applications.
+
+## Fusebit + Deno: Coming soon!
+Deno is adding native support for npm modules—this is huge news and gets us very excited! To celebrate this, we’re working on adding Deno support directly to Fusebit—this means your favorite integrations platform will include out-of-box compatibility with TypeScript, faster runtimes, and direct import of modules!
+
+If this excites you, and you are considering Deno to power your application, join the waiting list to get early access to our beta release.

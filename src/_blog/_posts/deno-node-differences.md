@@ -15,6 +15,7 @@ posts_related:
     'webworkers',
     'node-18-release',
   ]
+post_cta: { text: 'Join Fusebit+Deno Waitlist', url: 'https://forms.gle/qGsTG3qK2ZCWCTNU7'}
 ---
 
 Node.js has long been considered the default JavaScript framework for modern developers. With package management, modules, and the ability to use TypeScript, Node has evolved alongside the JavaScript/TypeScript ecosystem. But when Deno was launched in 2018, developers gained access to a new type of framework that puts TypeScript first and seeks to correct some of the major pitfalls of using Node.
@@ -179,3 +180,8 @@ Likewise, there are situations where Deno is the clear winner over Node:
 Node and Deno both have a lot to offer for your projects. As the comparison in this article points out, there are situations where one framework is a clear choice over the other. Keep your specific use case and the needs of your organization in mind when you make your selection.
 
 No matter which runtime you choose, you can rely on [Fusebit](https://fusebit.io/) to optimize your integrations. You can better manage your development environment by connecting your tools in a single unified platform. Working with Fusebit removes most of the overhead when coding up an application by providing connections to many popular apps. Fusebit also has a robust system of packages and provides versioning and source control to keep your team on the right track. [Sign up](https://auth.fusebit.io/u/signup) to see how Fusebit can help you.
+
+## Fusebit + Deno: Coming soon!
+Deno is adding native support for npm modules—this is huge news and gets us very excited! To celebrate this, we’re working on adding Deno support directly to Fusebit—this means your favorite integrations platform will include out-of-box compatibility with TypeScript, faster runtimes, and direct import of modules!
+
+If this excites you, and you are considering Deno to power your application, join the waiting list to get early access to our beta release.
