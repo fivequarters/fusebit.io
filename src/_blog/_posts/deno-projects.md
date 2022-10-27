@@ -15,6 +15,7 @@ posts_related:
     'deno-third-party-module-system',
     'changes-comming-to-deno',
   ]
+post_cta: { text: 'Join Fusebit+Deno Waitlist', url: 'https://forms.gle/qGsTG3qK2ZCWCTNU7'}
 ---
 
 [Deno](https://deno.land) is a new JavaScript runtime that was created because of insufficiencies found in [Node.js](https://nodejs.org/en/). Since its debut in 2020, Deno has expanded to include several runtime projects that take advantage of its robustness as both a secure runtime and package manager.
@@ -239,3 +240,9 @@ In this article, you learned about five different Deno tools you can integrate i
 With Fresh and DenoDB, you can write performant full-stack applications capable of retrieving and modifying data persisted in a database. Super Deno lets you write performant tests for HTTP requests defined within your project, and Deno Deploy provides a convenient means of publishing your applications to the web. Finally, CAC eases the process of writing applications destined for the console.
 
 To communicate with remote servers in Deno, consider using [Fusebit](https://fusebit.io), an API integration platform that saves you time when integrating popular APIs, like Salesforce and GitHub. It handles all the boilerplate needed to integrate with APIs in a fast and secure manner.
+
+## Fusebit + Deno: Coming soon!
+
+Deno is adding native support for npm modules—this is huge news and gets us very excited! To celebrate this, we’re working on adding Deno support directly to Fusebit—this means your favorite integrations platform will include out-of-box compatibility with TypeScript, faster runtimes, and direct import of modules!
+
+If this excites you, and you are considering Deno to power your application, [join the waiting list](https://forms.gle/qGsTG3qK2ZCWCTNU7) to get early access to our beta release.
