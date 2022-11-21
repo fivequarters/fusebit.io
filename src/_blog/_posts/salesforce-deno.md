@@ -29,7 +29,7 @@ In this tutorial, you'll learn how to set up your Salesforce account for API acc
 
 If you don't have one already, start by creating a Salesforce Developer Edition (DE) account. To do so, visit [the free-trial registration page](https://developer.salesforce.com/signup) and add your details:
 
-![Creating a Salesforce Developer Edition account](https://i.imgur.com/cIHNoXI.png)
+![Creating a Salesforce Developer Edition account with-shadow](https://i.imgur.com/cIHNoXI.png)
 
 Once you've signed up for the account, you can start setting it up. Salesforce DE comes with API access, which is enabled by default. All you need to do is connect with the API.
 
@@ -39,15 +39,15 @@ A connected app is a Salesforce framework that enables external applications to 
 
 If you're not logged into Salesforce, log in now. Then to create a connected app, go to the **Setup** page, which you can navigate from the upper right-hand corner of the dashboard:
 
-![Salesforce dashboard **Setup** page](https://i.imgur.com/IKO3yt9.png)
+![Salesforce dashboard **Setup** page with-shadow](https://i.imgur.com/IKO3yt9.png)
 
 On the **Setup** page, in the side menu, search for and open the **App Manager**:
 
-![**App Manager**](https://i.imgur.com/riDVMzJ.png)
+![**App Manager** with-shadow](https://i.imgur.com/riDVMzJ.png)
 
 Click the **New Connected App** button and fill in the required details for your new connected app:
 
-![Filling out the connected app details](https://i.imgur.com/wYySglQ.png)
+![Filling out the connected app details with-shadow](https://i.imgur.com/wYySglQ.png)
 
 Check **Enable OAuth Settings** and select the **Access Connect REST API resources (chatter\_api)** OAuth scope. You need to access this API, as the contact details will be needed later in this tutorial.
 
@@ -55,15 +55,15 @@ Since authentication will happen on the backend and its only goal is access to t
 
 Click **Save** at the bottom of the form to save the details and create the app. When this is done, you'll be redirected to the app management section:
 
-![Connected to the app management section](https://i.imgur.com/Jh2HNje.png)
+![Connected to the app management section with-shadow](https://i.imgur.com/Jh2HNje.png)
 
 ### Configuring Connected App Policies
 
 Once you've been redirected to the app management section, there's still some configuration that needs to be done. Click **Manage** and then **Edit Policies**. This will take you to a new section where you can edit the policy settings of your app:
 
-![**Manage** section](https://i.imgur.com/5xQPyRn.png)
+![**Manage** section with-shadow](https://i.imgur.com/5xQPyRn.png)
 
-![**Edit Policies** section](https://i.imgur.com/bvjevLS.png)
+![**Edit Policies** section with-shadow](https://i.imgur.com/bvjevLS.png)
 
 Here, make sure the **Permitted Users** is set to **All users may self-authorize** and the **IP Relaxation** is set to **Relax IP restrictions**. With these settings, you'll be able to access and test the API from localhost without any additional configuration since there won't be any restrictions on who and from which IP can access the app.
 
@@ -71,13 +71,13 @@ Here, make sure the **Permitted Users** is set to **All users may self-authorize
 
 Save your configuration settings by clicking the **Save** button at the bottom of the form, and go back to the main connected app section. You can do so by going back to **App Manager** and selecting the **View** option from the app listing's context menu:
 
-![Selecting the connected app from **App Manager**](https://i.imgur.com/en56VTz.png)
+![Selecting the connected app from **App Manager** with-shadow](https://i.imgur.com/en56VTz.png)
 
 Now, under the **API (Enable OAuth Settings)** section, select **Manage Consumer Details**. Since you're accessing sensitive data, you might need to verify your identity through an email verification code before proceeding:
 
-![**API (Enable OAuth Settings)** section](https://i.imgur.com/fAIvd8Y.png)
+![**API (Enable OAuth Settings)** section with-shadow](https://i.imgur.com/fAIvd8Y.png)
 
-![**Manage Consumer Details**](https://i.imgur.com/Kz1wXQH.png)
+![**Manage Consumer Details** with-shadow](https://i.imgur.com/Kz1wXQH.png)
 
 Copy and store the **Consumer Key** and **Consumer Secret** somewhere safe. You'll need them both to connect to the API.
 
@@ -331,7 +331,7 @@ deno run --allow-env --allow-read --allow-net ./server.js
 
 Provided command line flags, like `--allow-env`, `--allow-read`, and `--allow-net`, give Deno permission to access certain sensitive features of the system. The ones used in the command above allow read-only access to the file system (for reading and serving static files) as well as unrestricted access to environment variables (for app configuration) and the network (to listen on a given port).
 
-![Final result](https://i.imgur.com/ox3GUrj.png)
+![Final result with-shadow](https://i.imgur.com/ox3GUrj.png)
 
 ## Conclusion
 
