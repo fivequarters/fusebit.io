@@ -15,6 +15,7 @@ posts_related:
     'deno-projects-you-should-try',
     'deno-deploy',
   ]
+post_cta: { text: 'Join Fusebit+Deno Waitlist', url: 'https://forms.gle/qGsTG3qK2ZCWCTNU7'}
 ---
 
 Unveiled in 2020, [Deno](https://deno.land), a modern runtime for TypeScript and JavaScript, improves on its predecessor, [Node.js](https://nodejs.org/en/), in areas such as security, dependency management, and developer experience.
@@ -338,3 +339,8 @@ Provided command line flags, like `--allow-env`, `--allow-read`, and `--allow-ne
 After reading this article, you now know how to connect your Deno app with Salesforce through its API. With this foundation, you can further explore the Salesforce REST API and build a customized data preview and analysis app. On top of that, thanks to Deno, you can quickly create the app and know it'll handle anything you throw at it, thanks to its high performance.
 
 [Fusebit](https://fusebit.io) is an API integration platform that saves you time when integrating popular APIs, like Salesforce and GitHub, with your application. It handles all the boilerplate needed to integrate with the APIs in a fast and secure manner. Check out the [official documentation](https://developer.fusebit.io/docs) to learn more.
+
+## Fusebit + Deno: Coming soon!
+Deno is adding native support for npm modules—this is huge news and gets us very excited! To celebrate this, we’re working on adding Deno support directly to Fusebit—this means your favorite integrations platform will include out-of-box compatibility with TypeScript, faster runtimes, and direct import of modules!
+
+If this excites you, and you are considering Deno to power your application, join the waiting list to get early access to our beta release.
