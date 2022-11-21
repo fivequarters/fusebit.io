@@ -343,4 +343,4 @@ After reading this article, you now know how to connect your Deno app with Sales
 ## Fusebit + Deno: Coming soon!
 Deno is adding native support for npm modules—this is huge news and gets us very excited! To celebrate this, we’re working on adding Deno support directly to Fusebit—this means your favorite integrations platform will include out-of-box compatibility with TypeScript, faster runtimes, and direct import of modules!
 
-If this excites you, and you are considering Deno to power your application, join the waiting list to get early access to our beta release.
+If this excites you, and you are considering Deno to power your application, join the [waiting list](https://forms.gle/qGsTG3qK2ZCWCTNU7) to get early access to our beta release.
