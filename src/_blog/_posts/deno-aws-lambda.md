@@ -58,13 +58,13 @@ Once you've navigated to the AWS Lambda dashboard, you'll see a button called **
 
 Click on **Browse serverless app repository** and search for "deno" in the search bar. Choose the first one, written by [Andy Hayden](https://www.linkedin.com/in/ahayd/):
 
-![Search for "deno"](https://imgur.com/9vDdUIq.jpg)
+![Search for "deno" with-shadow](https://imgur.com/9vDdUIq.jpg)
 
 Click on **deno** (highlighted in the previous graphic), and you'll be taken to the configuration window, where you can configure your runtime. However, you won't be making any changes to the configuration in this article.
 
 On the same page, name your application. For this example, you'll see it's named "hello". Next, click on **Deploy** to deploy the runtime for Lambda. It can take a couple of minutes to deploy, but once the deployment is complete, you can view the Physical ID from the window:
 
-![View the Physical ID](https://imgur.com/UBkiXcd.jpg)
+![View the Physical ID with-shadow](https://imgur.com/UBkiXcd.jpg)
 
 Keep this Physical ID with you, as you'll need it later in the tutorial.
 
@@ -74,7 +74,7 @@ Keep this Physical ID with you, as you'll need it later in the tutorial.
 
 After the AWS CLI installation is complete, you'll need to configure it with your AWS account. For this, you'll need the AWS access key ID and the AWS secret key. You can obtain them from the AWS IAM dashboard:
 
-![AWS IAM dashboard](https://i.imgur.com/qIlIFpv.jpg)
+![AWS IAM dashboard with-shadow](https://i.imgur.com/qIlIFpv.jpg)
 
 After successfully creating a user, you can access the keys by visiting the **Security Credentials** tab. Here, creating an access key will give you the access key and secret. Note or download the keys because AWS will not show you the security key again.
 
