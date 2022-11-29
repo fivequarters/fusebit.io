@@ -2,7 +2,7 @@
 post_title: How to Run Deno on AWS Lambda
 post_author: Subha Chanda
 post_author_avatar: subha.png
-date: '2022-11-22'
+date: '2022-11-29'
 post_image: deno-aws-lambda.png
 post_excerpt: Learn how to run Deno in a serverless environment.
 post_slug: deno-aws-lambda
