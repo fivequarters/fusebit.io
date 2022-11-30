@@ -279,15 +279,8 @@ The `response_url` coming from the interaction payload is used to publish messag
 
 We also use the great [superagent](https://www.npmjs.com/package/superagent) library for our HTTP request. You can replace this with `request()` if you want to - but why would you?
 
-
-
-
 ## Conclusion
+
 Hopefully, you have a working Image carousel in your Slack workspace!
 
 Slack block kit provides a powerful mechanism to build custom user interfaces. In this blog post, we covered how to use it to render navigation controls and how to handle user actions via the Slack interactivity feature.
-
-Build complicated interactions and integrations like this for your app on Fusebit.<a class="cta_small" href="https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=slack-interactive-image-carousel">Sign Up and Get Started Now</a>
-
-
-
