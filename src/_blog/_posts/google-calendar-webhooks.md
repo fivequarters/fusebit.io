@@ -310,8 +310,3 @@ for await (const event of eventsList) {
 Google Calendar watch events allow you to integrate powerful features within your application; instead of constantly polling Google Calendar resources, you can configure multiple webhooks to handle different use cases.
 
 Handling authorization and secure token management can be a challenge at scale; all these moving parts explained in this blog post can be quickly done by using the Fusebit integration platform.
-
-Let us know what you think, don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on [Twitter](https://twitter.com/degrammer).
-
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=google-calendar-webhooks) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
-
