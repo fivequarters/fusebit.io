@@ -12,7 +12,7 @@ mixin card(props, index)
             .hero__card-separator
             each feature, i in props.features
                 p.hero__card-feature #{feature}
-            - const link = index === 0 ? homepage.links.getStartedLink : props.link.href
+            - const link = index === 0 ? props.link.href
             +cta(props.link.text, link, props.link.className || "hero__card-link track-with-linkedin", props.link.id, true, props.link.eventName || "Price Tier Button Clicked", props.link.location, true, props.link.target, props.link.rel, props.link.onClick)
         if props.description
             .hero__card-description--wraper
