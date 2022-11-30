@@ -5,7 +5,7 @@ mixin integration(logo, name, description, id, hidden)
             .popular__content-integration-description-title #{name}
             .popular__content-integration-description-text
                 != filters.removeMarkdown(`${description}`)
-        +cta("Request Demo", `https://fusebit.io/#demo`, "popular__content-integration-cta", null, true, "Try Now Button Clicked", "Popular", true, "_blank", "noreferrer")
+        +cta("Demo", `https://fusebit.io/#demo`, "popular__content-integration-cta", null, true, "Try Now Button Clicked", "Popular", true, "", "noreferrer")
 
 
 section.popular.section.section--no-margin
