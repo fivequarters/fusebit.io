@@ -10,7 +10,7 @@ tags: ['post', 'developer tools', 'node.js']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/twitter-everynode.png
 posts_related:
-  ['everyauth', 'nodejs-https-imports', 'run-nodejs-from-google-sheets']
+  ['nodejs-https-imports', 'run-nodejs-from-google-sheets']
 ---
 
 So you want to create an AWS Lambda function running the latest version of Node.js? Maybe you want to use the new [fetch()](https://fusebit.io/blog/node-fetch/) API? Or need that one feature of the latest V8? Or just deploy your next serverless app with the latest and greatest version?
