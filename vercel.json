@@ -3,7 +3,14 @@
     "trailingSlash": true,
     "redirects": [
         { 
-          "source": "/blog/([0-9]{4}/.+/)",
+          "source": "/blog/([0-9]{4}/.+)/",
+          "destination": "https://fusebit.io/blog/", 
+          "statusCode": 301
+        }
+      ]
+    "redirects": [
+        { 
+          "source": "/blog/(discord-slash-commands|everyauth-scalable-asana-gcal|integrate-google-calendar-node-everyauth|everyauth-hubspot|everyauth-pagerduty|everyauth-salesforce|everyauth-slack-messages|everyauth|integrate-github-api-everyauth|integrate-gitlab-api-everyauth|contacts-from-hubspot-to-salesforce|linear-discord-slash-commands|linear-issues-from-github|customize-linear-slack-notifications|pagerduty-discord-integration|send-hubpsot-companies-to-slack|still-building-saas-integrations-in-2021|using-linear-with-everyauth|using-reddit-with-everyauth|using-stackoverflow-with-everyauth)/",
           "destination": "https://fusebit.io/blog/", 
           "statusCode": 301
         }
