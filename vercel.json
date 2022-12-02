@@ -3,8 +3,8 @@
     "trailingSlash": true,
     "redirects": [
         { 
-          "source": "/blog/2021/05/27/scalable-cron-executor-for-aws-lambda",
-          "destination": "https://fusebit.io/blog", 
+          "source": "/blog/2021/05/27/scalable-cron-executor-for-aws-lambda/",
+          "destination": "https://fusebit.io/blog/", 
           "permanent": true
         }
       ]
