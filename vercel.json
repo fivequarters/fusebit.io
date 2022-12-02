@@ -5,7 +5,6 @@
         { 
           "source": "/blog/2021/05/27/scalable-cron-executor-for-aws-lambda/",
           "destination": "https://fusebit.io/blog/", 
-          "permanent": true,
           "statusCode": 301
         }
       ]
