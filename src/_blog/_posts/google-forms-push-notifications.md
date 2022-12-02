@@ -306,5 +306,3 @@ The push request contains a message as part of the body with the following infor
 ## Conclusion
 
 Google forms watch API opens lots of possibilities as you can see in our use cases. We’re looking forward to seeing yours!
-If you want to receive a notification once Google Forms API reaches General Availability, 
-<a class="cta_small" href="https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=google-forms-push-notifications">sign up to Fusebit for free</a>

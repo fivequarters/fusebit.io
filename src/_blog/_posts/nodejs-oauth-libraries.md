@@ -9,7 +9,7 @@ post_slug: nodejs-oauth-libraries
 tags: ['post', 'node.js', 'authentication']
 post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/blog-nodejs-oauth-libraries-hero.png
-posts_related: ['everyauth','oauth-refresh-token-best-practices','node-js-18-release'] 
+posts_related: ['oauth-refresh-token-best-practices','node-js-18-release'] 
 ---
 
 OAuth is an open-standard security framework that lets you authorize different applications to speak to one another and gain access to protected resources. Work on this first started in 2006 as part of Twitter’s efforts to develop its OpenID implementation. Since then, it has evolved with the internet and is almost the de-facto online standard used for authentication and authorization.

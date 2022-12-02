@@ -11,7 +11,6 @@ post_date_in_url: false
 post_og_image: https://fusebit.io/assets/images/blog/bots-hooks-extensions-social-card.png
 posts_related:
   [
-    'everyauth',
     'api-metering-analytics-express',
     'api-metering-and-analytics-for-early-stage-startups',
   ]
