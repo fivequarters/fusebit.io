@@ -13,10 +13,10 @@ const freeCard = {
     ],
     link: {
         id: 'price-tier-1',
-        text: 'Get Started for Free',
+        text: 'Contact',
         location: 'Price Tier 1',
         eventName: 'Price Tier Button Clicked',
-        className: 'hero__card-link get-started',
+        onClick: "openModal('#modal__pricing')",
     },
     description:
         'Up to 5,000 executions of the integration logic per month across all connectors',

@@ -15,7 +15,7 @@ mixin item(img, name, outOfPlan, id, catalog, hidden, description)
                 button.gallery__item-container-cta.gallery__item-container-cta-filled.track-with-linkedin(onclick=`window.Intercom('showNewMessage', "I'm interested in enabling ${name}")` data-event-name="Try Integration Button Clicked" data-object-location="Integrations" data-integration= id data-integration-type="Fake") Try Integration
                 a.gallery__item-container-cta.track-with-segment(href= `/integrations/${id}/` data-event-name="More Button Clicked" data-object-location="Integrations" data-integration= id data-integration-type="Fake") More
             else
-                a.gallery__item-container-cta.gallery__item-container-cta-filled.track-with-segment.track-with-linkedin(href= `${site.portalBaseUrl}/signup?key=${id}` data-event-name="Try Integration Button Clicked" data-object-location="Integrations" data-integration= id data-integration-type="Real") Try Integration
+                a.gallery__item-container-cta.gallery__item-container-cta-filled.track-with-segment.track-with-linkedin(href= `https://fusebit.io/#demo` data-event-name="Try Integration Button Clicked" data-object-location="Integrations" data-integration= id data-integration-type="Real") Request Demo
                 a.gallery__item-container-cta.track-with-segment(href= `/integrations/${id}/` data-event-name="More Button Clicked" data-object-location="Integrations" data-integration= id data-integration-type="Real") More
 section.section
     .layout.gallery__layout
