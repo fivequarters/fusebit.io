@@ -7,7 +7,7 @@ post_image: blog-scheduling-requests-main.jpg
 post_excerpt: Any modern 3rd party HTTP API that sees significant traffic will have some form of rate limiting implemented. The server might rate limit on the number of concurrent connections...
 post_slug: schedule-requests-to-rate-limited-servers
 tags: ['post']
-post_date_in_url: true
+post_date_in_url: false
 ---
 
 Any modern 3rd party HTTP API that sees significant traffic will have some form of rate limiting implemented. The server might rate limit on the number of concurrent connections or on a certain number of requests over a period of time. This ensures that no one user of the API is monopolizing the usage of that API. The server might also implement load shedding, in which it will simply refuse additional connections or requests if the server is overloaded.
