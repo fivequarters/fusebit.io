@@ -165,7 +165,3 @@ Popular authorization and authentication service providers like [Auth0](https://
 You’ve learned the best practices of refresh token management. It’s possible to offer your application users a seamless and secure experience. By following these basic principles, you will sleep better 😴, confident you’re handling your refresh tokens properly.
 
 If OAuth is still a lot to wrap your head around, check our our project called [EveryAuth](https://github.com/fusebit/everyauth-express). EveryAuth is the easiest way for your app to access APIs like Slack, Salesforce, or Github. Check out [EveryAuth on GitHub](https://github.com/fusebit/everyauth-express) and use for free to quickly add API authentication to your apps.
-
-Let us know what you think, don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on Twitter [@degrammer](https://twitter.com/degrammer).
-
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. We used monkey patching ourselves to make our integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signuputm_source=fusebit.io&amp;utm_medium=referral&amp;utm_campaign=blog&amp;utm_content=oauth-refresh-token-best-practices) or look at our [getting started developer guide](https://developer.fusebit.io/docs/getting-started)!
