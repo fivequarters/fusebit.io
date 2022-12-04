@@ -182,6 +182,4 @@ app.use(mw({ url: 'http://localhost'}))
 
 You’ve learned how popular web frameworks define a standard interface for registering plugins and extending their functionality by using third-party plugins or building your own.
 
-Don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on [Twitter](https://twitter.com/degrammer).
-
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=web-frameworks-plugins-architecture-overview) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
+Don’t hesitate to reach out if you have any questions or comments.
