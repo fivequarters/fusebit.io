@@ -46,10 +46,6 @@ There are two main reasons you may want to consider trying out `fetch()` in Node
 - There is a lively ongoing conversation in the community about **how to evolve Node’s HTTP stack** in a way that’s familiar to client developers, but also works with the server programming model, how to move past the limitations of the current HTTP model that’s part of the core, and how to support HTTP/2-3 without over-burdening the user. This experimental core feature is the first step in that conversation, and it gives you an opportunity to try it out and [get involved in the conversation](https://github.com/nodejs/TSC).
 - The `fetch()` implementation is based on [Undici](https://undici.nodejs.org), a new fast, reliable, and spec-compliant HTTP/1.1 client that is now bundled in Node.js core. Because Undici does away with some dated HTTP primitives and builds directly on top of sockets, it can frequently deliver [**substantial improvements in latency and throughput**](https://undici.nodejs.org/#/?id=benchmarks) over the existing implementation.
 
-Fetch is great, right? If you are looking for a quick and easy way to integrate 3rd party APIs like GitHub, Slack, Salesforce, and more in your app and projects, check out the [Fusebit integration platform](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=fetch) or the [EveryAuth GitHub project](https://github.com/fusebit/everyauth-express/).
-
-<a class="cta_large" href="https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=fetch">Take Fusebit APIs for a spin</a>
-
 ## How do you get it?
 
-First, be sure to [update to Node 17.5](https://nodejs.org/dist/v17.5.0/) and run it using the `--experimental-fetch` flag. You can then use the `fetch()` global without needing any additional modules! We will update this post and share via [@fusebito](https://twitter.com/fusebitio) when this experimental feature graduates and becomes available without a flag.
+First, be sure to [update to Node 17.5](https://nodejs.org/dist/v17.5.0/) and run it using the `--experimental-fetch` flag. You can then use the `fetch()` global without needing any additional modules!
