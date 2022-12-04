@@ -305,9 +305,7 @@ This blog post is just the tip of the Iceberg. AssemblyScript is a well-document
 
 I firmly believe this project can reduce the gap in Wasm adoption and open up the gates to drive more interest to use Wasm by using a variant of TypeScript.
 
-Hopefully, this blog post helped you increase your interest in experimenting with WebAssembly yourself. Don’t hesitate to reach out if you have any questions, and we’ll be happy to help push through. You can find me on the [Fusebit community Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg).
-
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=generate-web-assembly-with-typescript) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=generate-web-assembly-with-typescript)!
+Hopefully, this blog post helped you increase your interest in experimenting with WebAssembly yourself. Don’t hesitate to reach out if you have any questions, and we’ll be happy to help push through. 
 
 ## Bonus section
 
