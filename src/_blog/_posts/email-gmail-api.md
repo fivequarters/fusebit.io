@@ -284,8 +284,6 @@ And that’s all for this guide.
 
 ## Conclusion
 
-Sending emails using the [Gmail API](https://developers.google.com/gmail/api) is not a piece of cake. But with the help of our guide, you can now easily send emails with the Gmail API. We hope that this guide has helped you understand the basics of sending emails, along with tasks like adding attachments and images and using HTML in emails. If you have any questions regarding the Gmail API, feel free to reach out to Fusebit on [Twitter](https://twitter.com/fusebitio). 
-
-Also check out the Fusebit platform. [Fusebit](https://fusebit.io/) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. They used monkey patching to make integrations better! To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=send-email-gmail-api) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)! 
+Sending emails using the [Gmail API](https://developers.google.com/gmail/api) is not a piece of cake. But with the help of our guide, you can now easily send emails with the Gmail API. We hope that this guide has helped you understand the basics of sending emails, along with tasks like adding attachments and images and using HTML in emails.
 
 _This post was written by Stuti Malik. [Stuti](https://medium.com/@stutim44) is a hardworking and performance driven professional in cybersecurity and development, ready to take challenging roles to develop advanced projects with efficiency and quality._

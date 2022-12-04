@@ -291,6 +291,4 @@ So far, you’ve learned how to create a basic plugin system with Node.js by rel
 
 See the full source code on [GitHub](https://github.com/fusebit/blog-examples/tree/main/plugin-system)
 
-Let us know what you think, don’t hesitate to reach out if you have any questions or comments. You can also reach out to me directly through our community [Slack](https://join.slack.com/t/fusebitio/shared_invite/zt-qe7uidtf-4cs6OgaomFVgAF_fQZubfg) and on [Twitter](https://twitter.com/degrammer).
-
-[Fusebit](https://fusebit.io) is a code-first integration platform that helps developers integrate their applications with external systems and APIs. To learn more, take [Fusebit for a spin](https://manage.fusebit.io/signup?utm_source=fusebit.io&utm_medium=referral&utm_campaign=blog&utm_content=build-a-plugin-system-with-node) or look at our [getting started guide](https://developer.fusebit.io/docs/getting-started)!
+Let us know what you think, don’t hesitate to reach out if you have any questions or comments.
