@@ -5,7 +5,7 @@ post_author_avatar: siddhant.png
 date: '2022-08-31'
 post_image: discord-oauth-main.png
 post_excerpt: In this tutorial, we'll go over step by step how to use the Discord API and integrate Discord OAuth into your Node.js application.
-post_slug: 
+post_slug: discord-oauth 
 tags: ['post', 'developer tools']
 post_date_in_url: false
 post_og_image: 'hero'
